@@ -7,3 +7,6 @@ next-env.d.ts
 .DS_Store
 .pw-browsers/
 scripts/.ui-shots/
+
+.vercel
+.env*
