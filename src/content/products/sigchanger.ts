@@ -1,0 +1,90 @@
+import type { Product } from "@/content/types";
+import { featureSet, group } from "./_helpers";
+
+export const sigchanger: Product = {
+  id: "sigchanger",
+  slug: "sigchanger",
+  name: "SigChanger",
+  shortDescription:
+    "Design Gmail signatures once and roll them out to everyone in your Google Workspace — consistent branding with no manual setup.",
+  longDescription:
+    "SigChanger connects to Google Workspace, imports your users, and lets admins design brand-locked signature templates in a visual builder. Signatures are assigned by group, scheduled for campaigns or rebrands, and deployed to every mailbox in one step — with audit logs and multi-company support for larger organisations.",
+  tagline: "Turn Gmail Into Brand Ambassadors",
+  category: "operations-it",
+  subcategory: "it-administration",
+  primaryUseCase: "Centrally managed Gmail signatures",
+  audience: ["Google Workspace admins", "IT teams", "Brand & marketing teams"],
+  platforms: ["web"],
+  market: "Global",
+  status: "live",
+  verification: { relationship: "pending", publicSale: "confirmed" },
+  featured: true,
+  websiteUrl: "https://sigchanger.com/",
+  appUrl: "https://sigchanger.com/signup",
+  ...featureSet(
+    group(
+      "Core Capabilities",
+      [
+        ["Google Workspace Sync", "Import and keep your organisation's users in sync from Google Workspace."],
+        ["Visual Signature Builder", "Design signatures visually instead of editing HTML."],
+        ["One-Click Deployment", "Push signatures to every mailbox in one step."],
+        ["Scheduled Rollouts", "Plan signature changes for campaigns, rebrands or compliance updates."],
+        ["AES-256-CBC Encryption", "Stored credentials and data are encrypted."],
+        ["Brand-Locked Templates", "Keep layouts and branding consistent across the organisation."],
+      ],
+      { highlight: 4 },
+    ),
+    group("Automation At Scale", [
+      ["Real-Time Sync", "Directory changes flow through to signatures automatically."],
+      ["Group Rules", "Assign templates by group or department."],
+      ["Instant Updates", "Template edits reach every signature without re-deploying by hand."],
+      ["Smart Notifications", "Get notified about rollouts and changes."],
+    ]),
+    group("Full Control", [
+      ["Asset Library", "Keep logos, banners and images in one place."],
+      ["Privacy-First Security", "Access is limited to what signature management needs."],
+      ["Multi-Company Support", "Manage signatures for more than one company."],
+      ["Admin Dashboard", "One place to manage users, templates and deployments."],
+      ["Audit Logs", "A record of who changed what, and when."],
+      ["Global Deployment", "Roll signatures out across regions and offices."],
+    ]),
+  ),
+  howItWorks: [
+    { title: "Register your company", description: "Create a SigChanger account for your organisation." },
+    { title: "Connect Google Workspace", description: "Authorise access to your Workspace directory." },
+    { title: "Import & sync users", description: "Bring in your users and keep them in sync." },
+    { title: "Design your signature", description: "Build a template in the visual builder." },
+    { title: "Assign & schedule", description: "Choose who gets which template, and when." },
+    { title: "Deploy instantly", description: "Push signatures to every mailbox." },
+  ],
+  integrations: ["google-workspace"],
+  pricing: {
+    currency: "USD",
+    unit: "month",
+    trial: "Free plan with no time limit and no credit card required",
+    note: "Basic and Professional are also offered in INR (₹999 and ₹2,999 per month).",
+    asOf: "2026-10-07",
+    sourceUrl: "https://sigchanger.com/pricing",
+    plans: [
+      { name: "Free", price: "$0", period: "month", description: "Get started with basic signature management", features: ["10 users", "2 templates"], cta: { label: "Start free", href: "https://sigchanger.com/signup" } },
+      { name: "Basic", price: "$29", period: "month", description: "For growing teams that need more control", features: ["50 users", "10 templates", "Daily auto-sync"], cta: { label: "Choose Basic", href: "https://sigchanger.com/pricing" } },
+      { name: "Professional", price: "$79", period: "month", description: "For larger organizations with advanced needs", features: ["200 users", "25 templates", "Hourly auto-sync", "Priority support"], cta: { label: "Choose Professional", href: "https://sigchanger.com/pricing" }, recommended: true },
+      { name: "Enterprise", price: "Custom", description: "Custom solutions for large-scale deployments", features: ["Up to 10,000 users", "100 templates", "Custom integrations"], cta: { label: "Contact sales", href: "https://sigchanger.com/contact-us" } },
+    ],
+  },
+  supportUrl: "https://sigchanger.com/contact-us",
+  useCases: [
+    { title: "Rebrands", description: "Change every signature in the organisation at once when the brand changes." },
+    { title: "Seasonal campaigns", description: "Schedule a campaign banner to go live and come down on set dates." },
+    { title: "Compliance updates", description: "Roll out required disclaimers to everyone consistently." },
+    { title: "Groups of companies", description: "Manage signatures for more than one company from one place." },
+  ],
+  faqs: [
+    { question: "Which email platform does SigChanger work with?", answer: "Gmail in Google Workspace. It connects to your Workspace directory to import and sync users." },
+    { question: "Is the free plan time-limited?", answer: "No. The Free plan has no time limit and needs no credit card." },
+    { question: "Can I schedule changes in advance?", answer: "Yes. Rollouts can be scheduled, and templates can be assigned by group." },
+  ],
+  solutions: ["run-a-well-organised-office"],
+  sources: ["https://sigchanger.com/", "https://sigchanger.com/features", "https://sigchanger.com/pricing", "https://sigchanger.com/about-us"],
+  lastVerified: "2026-10-07",
+};
