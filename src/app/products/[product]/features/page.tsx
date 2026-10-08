@@ -41,6 +41,7 @@ function LinkRow({ f, productSlug }: { f: Feature; productSlug: string }) {
       <span>
         <span className="fz-link__name">{f.name}</span>
         {f.summary && <span className="fz-link__sum">{f.summary}</span>}
+        {f.capabilities?.[0] && <span className="fz-hubcap">{f.capabilities[0]}</span>}
       </span>
       {has ? (
         <span className="fz-link__go" aria-hidden>
@@ -72,6 +73,13 @@ function Tile({ f, productSlug }: { f: Feature; productSlug: string }) {
       </span>
       <h3>{f.name}</h3>
       {f.summary && <p>{f.summary}</p>}
+      {f.capabilities?.length ? (
+        <ul className="fz-hubcaps">
+          {f.capabilities.slice(0, 2).map((c) => (
+            <li key={c}>{c}</li>
+          ))}
+        </ul>
+      ) : null}
     </>
   );
   return (

@@ -1,9 +1,9 @@
 import { HubPageTemplate } from "@/components/templates/EntityTemplates";
-import { getSolutions } from "@/lib/catalog";
+import { getSolutions, productsFor } from "@/lib/catalog";
 import { routes } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo";
 
-const items = () => getSolutions().map((s) => ({ name: s.name, summary: s.summary, href: routes.solution(s.slug), meta: `${s.products.length} products`, icon: "layers" as const }));
+const items = () => getSolutions().map((s) => ({ name: s.name, summary: s.summary, href: routes.solution(s.slug), meta: productsFor(s.products).map((p) => p.name).join(" · ") || `${s.products.length} products`, icon: "layers" as const, detail: s.problem }));
 
 export const metadata = buildMetadata({
   title: "Solutions by business need",

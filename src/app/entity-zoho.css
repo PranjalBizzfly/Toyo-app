@@ -212,3 +212,31 @@ a:hover > .ez-link svg, .ez-link:hover svg { transform: translateX(4px); }
 /* Reserved artwork slot: comparison illustration */
 .ez-figure { display: block; width: 100%; height: auto; margin: 0 0 48px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); }
 @media (max-width: 720px) { .ez-figure { margin-bottom: 32px; } }
+
+/* ---------- per-product fit (ez-fit) ---------- */
+.ez-fit { display: grid; gap: 12px; }
+.ez-fit .ez-define__title a { color: inherit; }
+.ez-fit .ez-define__title a:hover { color: var(--primary); }
+.ez-fit__tag { font-style: italic; }
+.ez-fit__points, .ez-fit__feats { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; font-size: 16px; line-height: 1.6; color: var(--text-secondary); }
+.ez-define__list .ez-fit__points li, .ez-define__list .ez-fit__feats li { padding-left: 0; counter-increment: none; }
+.ez-define__list .ez-fit__points li::before, .ez-define__list .ez-fit__feats li::before { content: none; }
+.ez-fit__points li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; align-items: start; }
+.ez-fit__points svg { width: 16px; height: 16px; margin-top: 5px; color: var(--primary); }
+.ez-define__list .ez-fit__feats li { padding: 12px 14px; border: 1px solid var(--border-soft); border-radius: 6px; background: var(--surface); overflow-wrap: anywhere; }
+.ez-fit__feats a, .ez-fit__feats strong { font-weight: 600; color: var(--heading); }
+.ez-fit__feats a:hover { color: var(--primary); }
+.ez-fit__cap { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-top: 4px; font-size: 14px; line-height: 1.55; color: var(--text-muted); }
+.ez-define__list .ez-fit__aud { font-size: 15px; line-height: 1.6; }
+.ez-define__list .ez-fit__aud strong { font-weight: 600; color: var(--heading); }
+/* Separate each product's block so related information stays grouped. */
+.ez-define__list > li.ez-fit + li.ez-fit { padding-top: 40px; border-top: 1px solid var(--border-soft); }
+.ez-define__list > li.ez-fit + li.ez-fit::before { top: 42px; }
+
+.ez-card__detail { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; margin: 0; font-size: 15px; line-height: 1.6; color: var(--text-secondary); }
+/* Same treatment as the product index cards: divider, then dot-bulleted points. */
+.ez-card__points { list-style: none; display: grid; gap: 8px; margin: 2px 0 0; padding: 14px 0 0; border-top: 1px solid var(--border-soft); font-size: 14.5px; line-height: 1.5; color: var(--text-secondary); }
+.ez-card__points li { position: relative; padding-left: 22px; }
+.ez-card__points li::before { content: ""; position: absolute; left: 2px; top: .5em; width: 9px; height: 9px; border-radius: 50%; background: var(--primary); opacity: .75; }
+.ez-card__body .ez-card__text { flex: 0 0 auto; }
+.ez-card__body > .ez-link { margin-top: auto; }

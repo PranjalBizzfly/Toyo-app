@@ -1,6 +1,7 @@
 import Link from "next/link";
-import type { Comparison, Faq, IconName, Industry, Integration, Product, Resource, Solution } from "@/content/types";
-import { getCategory, productsFor } from "@/lib/catalog";
+import type { Comparison, Faq, Feature, IconName, Industry, Integration, Product, Resource, Solution } from "@/content/types";
+import { getCategory, getFeatures, productsFor } from "@/lib/catalog";
+import { featureHasPage } from "@/lib/rules";
 import { routes } from "@/lib/routes";
 import { ProductLogo } from "@/components/product/cards";
 import { Icon } from "@/components/ui/Icon";
@@ -21,6 +22,10 @@ export interface HubItem {
   href: string;
   meta?: string;
   icon?: IconName;
+  /** Optional second paragraph (e.g. the problem statement). */
+  detail?: string;
+  /** Optional short points (e.g. challenges, products). */
+  points?: string[];
 }
 
 /* ---------- shared pieces ---------- */
@@ -140,6 +145,121 @@ function ProductTiles({ products, title, lead }: { products: Product[]; title: s
   );
 }
 
+
+/* ---------- per-product fit (surfaces each product's own published data) ---------- */
+
+interface FitEntry {
+  product: Product;
+  /** Product-scoped entry (its own industry/solution/integration page), if any. */
+  entry?: { name: string; href: string; points: string[]; text?: string };
+  features: Feature[];
+}
+
+function FeatureList({ product, features }: { product: Product; features: Feature[] }) {
+  if (!features.length) return null;
+  return (
+    <ul className="ez-fit__feats">
+      {features.map((f) => (
+        <li key={f.slug}>
+          {featureHasPage(f) ? <Link href={routes.feature(product.slug, f.slug)}>{f.name}</Link> : <strong>{f.name}</strong>}
+          <span> — {f.summary}</span>
+          {f.capabilities?.[0] && <small className="ez-fit__cap">{f.capabilities[0]}</small>}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function ProductFit({ title, lead, entries }: { title: string; lead?: string; entries: FitEntry[] }) {
+  const shown = entries.filter((e) => e.entry || e.features.length);
+  if (!shown.length) return null;
+  return (
+    <section className="ez-section ez-section--tint">
+      <div className="container ez-define">
+        <div className="ez-define__head">
+          <h2 className="ez-intro__title">{title}</h2>
+          {lead && <p className="ez-intro__lead">{lead}</p>}
+        </div>
+        <ol className="ez-define__list">
+          {shown.map(({ product: p, entry, features }) => (
+            <li key={p.slug} className="ez-fit">
+              <h3 className="ez-define__title">
+                <Link href={routes.product(p.slug)}>{p.name}</Link>
+              </h3>
+              {(p.tagline || p.primaryUseCase) && <p className="ez-fit__tag">{p.tagline ?? p.primaryUseCase}</p>}
+              {entry?.text && <p>{entry.text}</p>}
+              {entry?.points.length ? (
+                <ul className="ez-fit__points">
+                  {entry.points.slice(0, 4).map((t) => (
+                    <li key={t}>
+                      <Icon name="check" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+              <FeatureList product={p} features={features} />
+              {p.audience?.length ? <p className="ez-fit__aud"><strong>For:</strong> {p.audience.slice(0, 4).join(", ")}</p> : null}
+              {entry && (
+                <Link href={entry.href} className="ez-link">
+                  {entry.name} with {p.name} <Icon name="arrow-right" />
+                </Link>
+              )}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
+/** Highlight features first, then the rest, capped. */
+function topFeatures(p: Product, n = 3, filter?: (f: Feature) => boolean): Feature[] {
+  const all = getFeatures(p).filter((f) => f.summary && (!filter || filter(f)));
+  return [...all.filter((f) => f.highlight), ...all.filter((f) => !f.highlight)].slice(0, n);
+}
+
+function industryFit(industry: Industry, products: Product[]): FitEntry[] {
+  return products.map((p) => {
+    const e = p.productIndustries?.find((x) => x.slug === industry.slug);
+    return {
+      product: p,
+      entry: e ? { name: e.name, href: routes.productItem(p.slug, "industries", e.slug), text: e.body?.[0], points: e.howItHelps ?? [] } : undefined,
+      features: e?.features?.length ? topFeatures(p, 3, (f) => e.features!.includes(f.slug)) : topFeatures(p),
+    };
+  });
+}
+
+function solutionFit(solution: Solution, products: Product[]): FitEntry[] {
+  return products.map((p) => {
+    const e = p.productSolutions?.find((x) => x.slug === solution.slug);
+    return {
+      product: p,
+      entry: e ? { name: e.name, href: routes.productItem(p.slug, "solutions", e.slug), text: e.problem, points: e.approach ?? e.benefits ?? [] } : undefined,
+      features: e?.features?.length ? topFeatures(p, 3, (f) => e.features!.includes(f.slug)) : topFeatures(p),
+    };
+  });
+}
+
+function integrationFit(integration: Integration, products: Product[]): FitEntry[] {
+  return products.map((p) => {
+    const e = p.productIntegrations?.find((x) => x.registry === integration.slug || x.slug === integration.slug);
+    const linked = getFeatures(p).filter((f) => f.integrations?.includes(integration.slug) || e?.features?.includes(f.slug));
+    return {
+      product: p,
+      entry: e
+        ? {
+            name: e.name,
+            href: routes.productItem(p.slug, "integrations", e.slug),
+            text: e.connects ?? (e.summary !== integration.summary ? e.summary : undefined),
+            points: e.benefits ?? e.workflow ?? [],
+          }
+        : undefined,
+      features: linked.slice(0, 4),
+    };
+  });
+}
+
 function Faqs({ faqs }: { faqs?: Faq[] }) {
   if (!faqs?.length) return null;
   return (
@@ -236,6 +356,14 @@ export function HubPageTemplate({
                     {i.meta && <span className="ez-card__meta">{i.meta}</span>}
                     <h3 className="ez-card__title">{i.name}</h3>
                     <p className="ez-card__text">{i.summary}</p>
+                    {i.detail && <p className="ez-card__detail">{i.detail}</p>}
+                    {i.points?.length ? (
+                      <ul className="ez-card__points">
+                        {i.points.map((t) => (
+                          <li key={t}>{t}</li>
+                        ))}
+                      </ul>
+                    ) : null}
                     <span className="ez-link">
                       Learn more <Icon name="arrow-right" />
                     </span>
@@ -360,6 +488,7 @@ export function SolutionPageTemplate({ solution }: { solution: Solution }) {
       </Hero>
       <ProblemApproach problem={solution.problem} approach={solution.approach} />
       <ProductTiles products={products} title="The products behind it" lead="Each ToyoApps product below covers one part of the job." />
+      <ProductFit title="What each product contributes" lead="Drawn from each product's own published pages." entries={solutionFit(solution, products)} />
       {solution.body?.length ? (
         <section className="ez-section ez-section--tint">
           <div className="container ez-define">
@@ -439,6 +568,7 @@ export function IndustryPageTemplate({ industry }: { industry: Industry }) {
       ) : null}
       <Prose body={industry.body} kicker={`ToyoApps for ${industry.name}`} title="How ToyoApps helps" />
       <ProductTiles products={products} title={`Products for ${industry.name}`} />
+      <ProductFit title={`How each product serves ${industry.name}`} lead="Drawn from each product's own published pages." entries={industryFit(industry, products)} />
       <Faqs faqs={industry.faqs} />
       <Closing />
     </>
@@ -464,6 +594,7 @@ export function IntegrationPageTemplate({ integration }: { integration: Integrat
       </Hero>
       <Prose body={integration.body} kicker="Integration" title={`About the ${integration.name} integration`} />
       <ProductTiles products={productsFor(integration.products)} title="Works with" />
+      <ProductFit title={`${integration.name} in each product`} lead="What each product says about this connection." entries={integrationFit(integration, productsFor(integration.products))} />
       <Faqs faqs={integration.faqs} />
       <Closing />
     </>

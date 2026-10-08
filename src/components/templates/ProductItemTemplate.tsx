@@ -85,9 +85,24 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
   };
   const category = getCategory(product.category);
   const all = getFeatures(product);
-  const features = (e.features ?? []).map((s) => all.find((f) => f.slug === s)).filter((f): f is Feature => !!f);
+  const listed = (e.features ?? []).map((s) => all.find((f) => f.slug === s)).filter((f): f is Feature => !!f);
+  // Integration items without listed features: fall back to features the source ties to the same registry entry.
+  const features = listed.length || !e.registry ? listed : all.filter((f) => f.integrations?.includes(e.registry!)).slice(0, 6);
+  // Product FAQs that share a topic word with this item (and are not already on the page).
+  const stop = new Set(["with", "your", "from", "into", "about", "their", "using", "setting", "getting", "first", "what", "this", "that", product.name.toLowerCase()]);
+  const words = new Set(
+    `${item.name} ${(e.features ?? []).join(" ")}`
+      .toLowerCase()
+      .split(/[^a-z0-9]+/)
+      .filter((w) => w.length >= 4 && !stop.has(w)),
+  );
+  const ownQs = new Set((e.faqs ?? []).map((f) => f.question));
+  const relatedFaqs = (product.faqs ?? [])
+    .filter((f) => !ownQs.has(f.question) && f.question.toLowerCase().split(/[^a-z0-9]+/).some((w) => words.has(w)))
+    .slice(0, 4);
+  const about = product.longDescription?.split(/\n\s*\n/)[0];
   const registry = e.registry ? getIntegrations().find((i) => i.slug === e.registry) : undefined;
-  const siblings = getProductItems(product, section).filter((i) => i.hasPage && i.slug !== item.slug).slice(0, 4);
+  const siblings = getProductItems(product, section).filter((i) => i.hasPage && i.slug !== item.slug).slice(0, 6);
   const crossLinks = itemSections
     .filter((s) => s !== section)
     .flatMap((s) =>
@@ -278,6 +293,13 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
                   <Link href={routes.feature(product.slug, f.slug)} className="fz-tile">
                     <h3>{f.name}</h3>
                     <p>{f.summary}</p>
+                    {f.capabilities?.length ? (
+                      <ul className="fz-hubcaps">
+                        {f.capabilities.slice(0, 2).map((c) => (
+                          <li key={c}>{c}</li>
+                        ))}
+                      </ul>
+                    ) : null}
                     <span className="fz-more">
                       Learn more <Icon name="arrow-right" />
                     </span>
@@ -286,6 +308,13 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
                   <div className="fz-tile">
                     <h3>{f.name}</h3>
                     <p>{f.summary}</p>
+                    {f.capabilities?.length ? (
+                      <ul className="fz-hubcaps">
+                        {f.capabilities.slice(0, 2).map((c) => (
+                          <li key={c}>{c}</li>
+                        ))}
+                      </ul>
+                    ) : null}
                   </div>
                 )}
               </li>
@@ -314,21 +343,37 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
         </Centered>
       ) : null}
 
-      {e.faqs?.length ? (
-        <Centered id="faq" heading="Frequently asked questions">
+      {e.faqs?.length || relatedFaqs.length ? (
+        <Centered id="faq" heading={e.faqs?.length ? "Frequently asked questions" : `Related ${product.name} questions`}>
           <div className="fz-faq">
-            <FaqList faqs={e.faqs} />
+            <FaqList faqs={[...(e.faqs ?? []), ...relatedFaqs]} />
           </div>
         </Centered>
       ) : null}
 
+      {about && (
+        <Centered id="about" kicker={product.tagline} heading={`About ${product.name}`}>
+          <div className="fz-center fz-about">
+            <p className="fz-lead">{about}</p>
+            {product.primaryUseCase && (
+              <p className="fz-about__use">
+                <strong>Main use:</strong> {product.primaryUseCase}
+              </p>
+            )}
+            <Link href={routes.product(product.slug)} className="fz-more">
+              {product.name} overview <Icon name="arrow-right" />
+            </Link>
+          </div>
+        </Centered>
+      )}
+
       <section className={`fz-sec${tone()}`} aria-label="Details" style={{ paddingBlock: "clamp(40px, 5vw, 64px)" }}>
         <div className="container fz-facts">
-          {e.audience?.length ? (
+          {(e.audience ?? product.audience)?.length ? (
             <div className="fz-fact">
               <h2>Who it&apos;s for</h2>
               <ul className="chips">
-                {e.audience.map((a) => (
+                {(e.audience ?? product.audience ?? []).map((a) => (
                   <li key={a} className="chip">
                     {a}
                   </li>

@@ -153,3 +153,7 @@
 .zc-hero__art, .zc-page-art { display: block; width: 100%; max-width: 960px; height: auto; margin: 40px auto 0; border-radius: var(--radius-sm); background: var(--surface); }
 .zc-hero__art { box-shadow: 0 12px 40px rgb(0 0 0 / 0.18); }
 @media (max-width: 720px) { .zc-hero__art, .zc-page-art { margin-top: 28px; } }
+
+/* ---------- category page: richer related cards ---------- */
+.zc-clamp { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: 15px; }
+.zc-cardmeta { margin: auto 0 0; padding-top: 8px; font-size: 13px; font-weight: 600; letter-spacing: .02em; color: var(--primary); }

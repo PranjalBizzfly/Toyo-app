@@ -13,6 +13,7 @@ import {
   getResources,
   getSolutions,
   isCategoryIndexable,
+  productsFor,
 } from "@/lib/catalog";
 import { routes } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo";
@@ -113,18 +114,26 @@ export default async function CategoryPage({ params }: Props) {
                   <Link key={s.slug} href={routes.solution(s.slug)} className="card">
                     <h3 className="card__title">{s.name}</h3>
                     <p className="text-muted">{s.summary}</p>
+                    <p className="text-muted zc-clamp">{s.problem}</p>
+                    <p className="zc-cardmeta">{productsFor(s.products).map((p) => p.name).join(" · ")}</p>
                   </Link>
                 ))}
               </div>
             </>
           )}
           {industries.length > 0 && (
-            <div className="chips" style={{ marginTop: 32 }}>
-              {industries.map((i) => (
-                <Link key={i.slug} href={routes.industry(i.slug)} className="chip">
-                  {i.name}
-                </Link>
-              ))}
+            <div style={{ marginTop: solutions.length ? 48 : 0 }}>
+              <SectionHeader eyebrow="Industries" title="Industries served" />
+              <div className="grid">
+                {industries.map((i) => (
+                  <Link key={i.slug} href={routes.industry(i.slug)} className="card">
+                    <h3 className="card__title">{i.name}</h3>
+                    <p className="text-muted">{i.summary}</p>
+                    {i.challenges?.[0] && <p className="text-muted zc-clamp">{i.challenges[0]}</p>}
+                    <p className="zc-cardmeta">{productsFor(i.products).map((p) => p.name).join(" · ")}</p>
+                  </Link>
+                ))}
+              </div>
             </div>
           )}
         </Section>

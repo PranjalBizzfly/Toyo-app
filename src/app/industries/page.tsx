@@ -1,9 +1,16 @@
 import { HubPageTemplate } from "@/components/templates/EntityTemplates";
-import { getIndustries } from "@/lib/catalog";
+import { getIndustries, productsFor } from "@/lib/catalog";
 import { routes } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo";
 
-const items = () => getIndustries().map((s) => ({ name: s.name, summary: s.summary, href: routes.industry(s.slug), icon: s.icon }));
+const items = () => getIndustries().map((s) => ({
+    name: s.name,
+    summary: s.summary,
+    href: routes.industry(s.slug),
+    icon: s.icon,
+    meta: productsFor(s.products).map((p) => p.name).join(" · ") || undefined,
+    points: s.challenges?.slice(0, 3),
+  }));
 
 export const metadata = buildMetadata({
   title: "Software by industry",

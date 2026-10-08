@@ -132,8 +132,9 @@ export default function HomePage() {
       text: s.summary,
       href: routes.solution(s.slug),
       meta: productsFor(s.products).map((p) => p.name).join(" · "),
-      tint: undefined as string | undefined,
-      points: productsFor(s.products).map((p) => ({ name: p.name, text: p.tagline ?? p.shortDescription })),
+      // Same card layout as the category cards: icon, label, title, text, product names.
+      tint: productsFor(s.products)[0]?.category as string | undefined,
+      points: undefined as { name: string; text: string }[] | undefined,
     })),
     ...ecosystem.map(({ category, products: list }) => ({
       key: `c-${category.slug}`,

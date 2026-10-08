@@ -313,4 +313,5 @@ a.pz-vcard:hover { transform: translateY(-6px); box-shadow: 0 2px 6px rgb(15 34 
 .pz-spot__art .pz-spot__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
 .pz-spot__art:has(.pz-spot__panel) .pz-spot__img { opacity: .35; }
 .pz-tour__frame .image-slot { display: block; width: 100%; height: auto; border-radius: 26px 26px 0 0; }
+.pz-vcard__art { overflow: hidden; flex: none; }
 .pz-vcard__art .image-slot { width: 100%; height: 100%; object-fit: cover; }
