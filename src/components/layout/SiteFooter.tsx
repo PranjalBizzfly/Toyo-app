@@ -82,6 +82,11 @@ export function SiteFooter() {
               links={[
                 { label: "About Us", href: routes.company() },
                 { label: "Publish Your Software", href: routes.publish() },
+                { label: "Vendors", href: routes.vendors() },
+                { label: "Careers", href: routes.careers() },
+                { label: "Media", href: routes.media() },
+                { label: "Press Kit", href: routes.pressKit() },
+                { label: "Blog", href: routes.blog() },
                 { label: "Contact Us", href: routes.contact() },
               ]}
             />

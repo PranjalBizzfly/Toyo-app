@@ -129,6 +129,9 @@ export const integrations: Integration[] = [
 export const solutions: Solution[] = [
   {
     slug: "run-a-well-organised-office",
+    cardTitle: "Route office requests, keep signatures on-brand and track company SIMs",
+    cardText:
+      "Software for the office jobs that usually run on calls and chat groups. ZapBuzzer routes pantry, print and IT requests to an owner, SigChanger keeps every Gmail signature on-brand across Google Workspace, and Fantom tracks company SIM cards, recharges and call logs in one dashboard.",
     name: "Run a well-organised office",
     summary:
       "Route internal pantry, print and IT requests to an owner, keep every Gmail signature on-brand, and track company SIM recharges and call logs in one place.",
@@ -158,6 +161,9 @@ export const solutions: Solution[] = [
   },
   {
     slug: "manage-people-from-hire-to-growth",
+    cardTitle: "Run HR and payroll, see how the workday went and build daily skills",
+    cardText:
+      "Software for people teams covering the employee lifecycle. HRMagix runs attendance, leave, payroll and reviews for Indian companies, ZUZU shows how the workday went on Windows desktops with AI-written reports, and Zorfly builds communication skills with a five-minute daily mission.",
     name: "Manage your people from hire to growth",
     summary:
       "Run attendance, leave, payroll and reviews in an HRMS, see how the workday actually went on Windows desktops, and build communication skills in five minutes a day.",
@@ -185,6 +191,9 @@ export const solutions: Solution[] = [
   },
   {
     slug: "prepare-for-launch-and-fundraising",
+    cardTitle: "Size your market with cited sources and plan the launch around it",
+    cardText:
+      "Software for founders preparing to raise and launch. Sizoru sizes TAM, SAM and SOM top-down and bottom-up with tier-rated sources in a print-ready PDF, and GetBenj turns a product description into a complete marketing plan with personas, channels and a budget split.",
     name: "Prepare for launch and fundraising",
     summary:
       "Size your market with TAM, SAM and SOM traced to rated sources, then turn a product description into a marketing plan with personas, channels and a budget split.",

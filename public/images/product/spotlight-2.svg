@@ -1,6 +1,78 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="580" height="520" viewBox="0 0 580 520">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="578" height="518" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M260 246h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="276" cy="260" r="5" fill="#8aa0b4"/><path d="M260 282l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="312" text-anchor="middle" font-family="system-ui,sans-serif" font-size="29" fill="#5b7186">product/spotlight-2.svg · 580×520</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="520" viewBox="0 0 580 520" fill="none">
+  
+        <rect width="580" height="520" rx="14" fill="#0E0D24"/>
+        <rect x="16" y="16" width="548" height="488" rx="10" fill="#18153A" stroke="#8B5CF6" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="36" cy="36" r="4" fill="#EF4444"/>
+        <circle cx="50" cy="36" r="4" fill="#F59E0B"/>
+        <circle cx="64" cy="48" r="4" fill="#10B981"/>
+        <text x="82" y="40" fill="#C4B5FD" font-size="11" font-family="system-ui, sans-serif" font-weight="600">Visual Workflow &amp; Automation Pipeline Builder</text>
+        <rect x="440" y="26" width="110" height="20" rx="10" fill="#8B5CF6" fill-opacity="0.2"/>
+        <text x="495" y="39" fill="#C4B5FD" font-size="10" font-family="system-ui" font-weight="bold" text-anchor="middle">Flow Active</text>
+
+        <!-- Visual Flow Graph Steps -->
+        <g transform="translate(32, 66)">
+          <!-- Node 1: Trigger -->
+          <rect width="516" height="74" rx="8" fill="#0D0B1F" stroke="#8B5CF6" stroke-width="1.5"/>
+          <circle cx="36" cy="37" r="16" fill="#8B5CF6"/>
+          <text x="36" y="42" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle" font-family="system-ui">⚡</text>
+          <text x="68" y="28" fill="#C4B5FD" font-size="10" font-weight="bold" font-family="system-ui">TRIGGER EVENT</text>
+          <text x="68" y="44" fill="#FFFFFF" font-size="13" font-weight="bold" font-family="system-ui">When New Business Card or Lead is Ingested</text>
+          <text x="68" y="58" fill="#9CA3AF" font-size="10" font-family="system-ui">Webhook received from Cardizo Mobile OCR Scanner</text>
+          <rect x="430" y="27" width="70" height="20" rx="4" fill="#10B981" fill-opacity="0.2"/>
+          <text x="465" y="40" fill="#10B981" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">PASSED</text>
+        </g>
+
+        <!-- Downward Connector -->
+        <line x1="290" y1="140" x2="290" y2="162" stroke="#8B5CF6" stroke-width="2"/>
+        <polygon points="286,160 290,166 294,160" fill="#8B5CF6"/>
+
+        <g transform="translate(32, 166)">
+          <!-- Node 2: Logic Condition -->
+          <rect width="516" height="74" rx="8" fill="#0D0B1F" stroke="#3B82F6" stroke-width="1.5"/>
+          <circle cx="36" cy="37" r="16" fill="#3B82F6"/>
+          <text x="36" y="42" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle" font-family="system-ui">⚙</text>
+          <text x="68" y="28" fill="#93C5FD" font-size="10" font-weight="bold" font-family="system-ui">CONDITION &amp; ENRICHMENT</text>
+          <text x="68" y="44" fill="#FFFFFF" font-size="13" font-weight="bold" font-family="system-ui">If Contact Has Valid Mobile Phone &amp; Email</text>
+          <text x="68" y="58" fill="#9CA3AF" font-size="10" font-family="system-ui">Match company against ICP taxonomy &amp; LinkedIn domain</text>
+          <rect x="430" y="27" width="70" height="20" rx="4" fill="#10B981" fill-opacity="0.2"/>
+          <text x="465" y="40" fill="#10B981" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">TRUE</text>
+        </g>
+
+        <!-- Downward Connector -->
+        <line x1="290" y1="240" x2="290" y2="262" stroke="#8B5CF6" stroke-width="2"/>
+        <polygon points="286,260 290,266 294,260" fill="#8B5CF6"/>
+
+        <g transform="translate(32, 266)">
+          <!-- Node 3: Execution Actions -->
+          <rect width="516" height="74" rx="8" fill="#0D0B1F" stroke="#10B981" stroke-width="1.5"/>
+          <circle cx="36" cy="37" r="16" fill="#10B981"/>
+          <text x="36" y="42" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle" font-family="system-ui">➔</text>
+          <text x="68" y="28" fill="#6EE7B7" font-size="10" font-weight="bold" font-family="system-ui">MULTI-CHANNEL ACTION</text>
+          <text x="68" y="44" fill="#FFFFFF" font-size="13" font-weight="bold" font-family="system-ui">Dispatch WhatsApp Follow-up &amp; Push to Google Contacts</text>
+          <text x="68" y="58" fill="#9CA3AF" font-size="10" font-family="system-ui">Prefilled greeting link dispatched; internal SLA timer set</text>
+          <rect x="430" y="27" width="70" height="20" rx="4" fill="#10B981" fill-opacity="0.2"/>
+          <text x="465" y="40" fill="#10B981" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">EXECUTED</text>
+        </g>
+
+        <!-- Flow Execution Statistics Container -->
+        <g transform="translate(32, 366)">
+          <rect width="516" height="114" rx="8" fill="#0D0B1F" stroke="#251F4D" stroke-width="1"/>
+          <text x="16" y="24" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">PIPELINE EXECUTION METRICS</text>
+
+          <g transform="translate(16, 40)">
+            <text x="0" y="14" fill="#8B5CF6" font-size="18" font-weight="bold" font-family="system-ui">1,842 Runs</text>
+            <text x="0" y="30" fill="#9CA3AF" font-size="9" font-family="system-ui">Total automated triggers</text>
+
+            <text x="170" y="14" fill="#10B981" font-size="18" font-weight="bold" font-family="system-ui">99.9% Success</text>
+            <text x="170" y="30" fill="#9CA3AF" font-size="9" font-family="system-ui">Zero webhook retries</text>
+
+            <text x="340" y="14" fill="#38BDF8" font-size="18" font-weight="bold" font-family="system-ui">320ms Latency</text>
+            <text x="340" y="30" fill="#9CA3AF" font-size="9" font-family="system-ui">Avg execution time</text>
+          </g>
+
+          <rect x="16" y="80" width="484" height="22" rx="4" fill="#1C1842"/>
+          <text x="242" y="95" fill="#C4B5FD" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">Live Webhook Listener: https://api.toyoapps.com/v1/flow/active</text>
+        </g>
+      
 </svg>

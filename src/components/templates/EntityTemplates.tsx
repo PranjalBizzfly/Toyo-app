@@ -135,7 +135,7 @@ function ProductTiles({ products, title, lead }: { products: Product[]; title: s
                 Learn more <Icon name="arrow-right" />
               </span>
               <span className="ez-tile__shot">
-                <ImageSlot src="/images/entity/product-tile.svg" alt={`${p.name} screenshot`} width={400} height={260} />
+                <ImageSlot src="/images/entity/product-tile.webp" alt={`${p.name} application interface and verified capabilities`} width={400} height={260} />
               </span>
             </Link>
           ))}
@@ -347,7 +347,7 @@ export function HubPageTemplate({
               {items.map((i) => (
                 <Link key={i.href} href={i.href} className="ez-card">
                   <span className="ez-card__band" aria-hidden>
-                    <ImageSlot src="/images/entity/hub-card.svg" alt="" width={370} height={172} />
+                    <ImageSlot src="/images/entity/hub-card.webp" alt={`${i.name} cross-functional solution overview`} width={370} height={172} />
                     <span className="ez-card__icon">
                       <Icon name={i.icon ?? "layers"} />
                     </span>
@@ -413,7 +413,7 @@ export function ResourcesHubTemplate({
             <>
               <Link href={first.href} className="ez-post ez-post--lead">
                 <span className="ez-post__media">
-                  <ImageSlot src="/images/entity/resource-featured.svg" alt={first.name} width={845} height={475} />
+                  <ImageSlot src="/images/entity/resource-featured.webp" alt={first.name} width={845} height={475} />
                 </span>
                 <span className="ez-post__meta">{first.meta}</span>
                 <h2 className="ez-post__title">{first.name}</h2>
@@ -427,7 +427,7 @@ export function ResourcesHubTemplate({
                   {rest.map((r) => (
                     <Link key={r.href} href={r.href} className="ez-post">
                       <span className="ez-post__media">
-                        <ImageSlot src="/images/entity/resource-card.svg" alt={r.name} width={290} height={163} />
+                        <ImageSlot src="/images/entity/resource-card.webp" alt={r.name} width={290} height={163} />
                       </span>
                       {r.meta && <span className="ez-post__meta">{r.meta}</span>}
                       <h3 className="ez-post__title">{r.name}</h3>
@@ -482,7 +482,7 @@ export function SolutionPageTemplate({ solution }: { solution: Solution }) {
         title={solution.name}
         lead={solution.summary}
         align="left"
-        visual={<ImageSlot src="/images/entity/solution-hero.svg" alt={solution.name} width={318} height={440} priority />}
+        visual={<ImageSlot src="/images/entity/solution-hero.webp" alt={solution.name} width={318} height={440} priority />}
       >
         <HeroActions />
       </Hero>
@@ -545,7 +545,7 @@ export function IndustryPageTemplate({ industry }: { industry: Industry }) {
         eyebrow="Industry"
         title={`Software for ${industry.name}`}
         lead={industry.summary}
-        visual={<ImageSlot src="/images/entity/industry-hero.svg" alt={`Software for ${industry.name}`} width={1200} height={320} priority />}
+        visual={<ImageSlot src="/images/entity/industry-hero.webp" alt={`Software for ${industry.name}`} width={1200} height={320} priority />}
       >
         <HeroActions />
       </Hero>
@@ -588,7 +588,7 @@ export function IntegrationPageTemplate({ integration }: { integration: Integrat
         eyebrow={integration.vendor ? `Integration · ${integration.vendor}` : "Integration"}
         title={integration.name}
         lead={integration.summary}
-        visual={<ImageSlot src="/images/entity/integration-hero.svg" alt={`${integration.name} integration`} width={960} height={360} priority />}
+        visual={<ImageSlot src="/images/entity/integration-hero.webp" alt={`${integration.name} integration`} width={960} height={360} priority />}
       >
         <p className="ez-hero__chip">{integration.category}</p>
       </Hero>
@@ -630,7 +630,7 @@ export function ComparisonPageTemplate({ comparison }: { comparison: Comparison 
       ) : null}
       <section className="ez-section">
         <div className="container">
-          <ImageSlot src={`/images/compare/${comparison.slug}.svg`} alt={comparison.name} width={1200} height={400} className="ez-figure" />
+          <ImageSlot src={`/images/compare/${comparison.slug}.webp`} alt={comparison.name} width={1200} height={400} className="ez-figure" />
           <Heading title="Side-by-side comparison" />
           <div className="ez-table">
             <table>
@@ -691,7 +691,7 @@ export function ResourcePageTemplate({ resource, typeLabel }: { resource: Resour
         </div>
       </header>
       <div className="container ez-narrow ez-article-cover">
-        <ImageSlot src="/images/entity/resource-cover.svg" alt={resource.name} width={860} height={484} />
+        <ImageSlot src="/images/entity/resource-cover.webp" alt={resource.name} width={860} height={484} />
       </div>
       <Prose body={resource.body} />
       <ProductTiles products={productsFor(resource.products ?? [])} title="Products in this article" />

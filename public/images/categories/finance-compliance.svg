@@ -1,6 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="958" height="358" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M450 166h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="466" cy="180" r="5" fill="#8aa0b4"/><path d="M450 202l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#5b7186">categories/finance-compliance.svg · 960×360</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" fill="none">
+  
+        <rect width="960" height="360" rx="16" fill="#041416"/>
+        <rect x="24" y="24" width="912" height="312" rx="12" fill="#0A272C" stroke="#0D9488" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#5EEAD4" font-size="13" font-family="system-ui, sans-serif" font-weight="600">ToyoApps · Finance &amp; Statutory Compliance Suite</text>
+        <rect x="760" y="38" width="150" height="24" rx="12" fill="#0D9488" fill-opacity="0.2"/>
+        <text x="835" y="54" fill="#5EEAD4" font-size="11" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">TrackySuite Powered</text>
+
+        <!-- Main Banner -->
+        <g transform="translate(48, 80)">
+          <!-- Left feature overview -->
+          <rect width="440" height="236" rx="8" fill="#031012" stroke="#13474F" stroke-width="1"/>
+          <text x="20" y="28" fill="#FFFFFF" font-size="13" font-weight="bold" font-family="system-ui">Indian Statutory Practice Management</text>
+          <text x="20" y="46" fill="#5EEAD4" font-size="11" font-family="system-ui">Built specifically for CA, CS and Tax consulting firms</text>
+
+          <g transform="translate(20, 64)">
+            <rect width="400" height="44" rx="6" fill="#0B3037"/>
+            <text x="12" y="18" fill="#5EEAD4" font-size="11" font-weight="bold" font-family="system-ui">Automatic Statutory Deadlines</text>
+            <text x="12" y="34" fill="#E2E8F0" font-size="10" font-family="system-ui">GST (GSTR-1, 3B), Income Tax (ITR), TDS (24Q, 26Q), ROC (AOC-4)</text>
+          </g>
+
+          <g transform="translate(20, 118)">
+            <rect width="400" height="44" rx="6" fill="#0B3037"/>
+            <text x="12" y="18" fill="#5EEAD4" font-size="11" font-weight="bold" font-family="system-ui">Prepare - Review - File Pipeline</text>
+            <text x="12" y="34" fill="#E2E8F0" font-size="10" font-family="system-ui">Article staff draft ➔ Partner review ➔ ARN receipt generated</text>
+          </g>
+
+          <g transform="translate(20, 172)">
+            <rect width="400" height="44" rx="6" fill="#0B3037"/>
+            <text x="12" y="18" fill="#5EEAD4" font-size="11" font-weight="bold" font-family="system-ui">Dedicated Client Document Portal</text>
+            <text x="12" y="34" fill="#E2E8F0" font-size="10" font-family="system-ui">Eliminate WhatsApp &amp; email document chase with direct upload</text>
+          </g>
+        </g>
+
+        <!-- Right: Live Compliance Metrics -->
+        <g transform="translate(510, 80)">
+          <rect width="402" height="236" rx="8" fill="#031012" stroke="#13474F" stroke-width="1"/>
+          <text x="20" y="28" fill="#FFFFFF" font-size="13" font-weight="bold" font-family="system-ui">Live Practice Health Dashboard</text>
+
+          <g transform="translate(20, 48)">
+            <rect width="170" height="68" rx="6" fill="#0B3037"/>
+            <text x="12" y="22" fill="#94A3B8" font-size="10" font-family="system-ui">Clients Managed</text>
+            <text x="12" y="48" fill="#5EEAD4" font-size="22" font-weight="bold" font-family="system-ui">148 Active</text>
+
+            <rect x="190" width="170" height="68" rx="6" fill="#0B3037"/>
+            <text x="202" y="22" fill="#94A3B8" font-size="10" font-family="system-ui">Statutory Accuracy</text>
+            <text x="202" y="48" fill="#10B981" font-size="22" font-weight="bold" font-family="system-ui">100% On-Time</text>
+          </g>
+
+          <g transform="translate(20, 130)">
+            <rect width="362" height="74" rx="6" fill="#082328"/>
+            <text x="14" y="22" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">Upcoming Statutory Cycle: October 2026</text>
+            <text x="14" y="40" fill="#E2E8F0" font-size="10" font-family="system-ui">GSTR-3B: 20th Oct · TDS 26Q: 31st Oct</text>
+            <rect x="14" y="50" width="334" height="6" rx="3" fill="#041215"/>
+            <rect x="14" y="50" width="270" height="6" rx="3" fill="#0D9488"/>
+          </g>
+        </g>
+      
 </svg>

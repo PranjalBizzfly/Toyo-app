@@ -21,10 +21,15 @@ export function ImageSlot({
   priority?: boolean;
   className?: string;
 }) {
+  // Normalize SVG image paths under /images/ to .webp format
+  const resolvedSrc = src.startsWith("/images/") && src.endsWith(".svg")
+    ? src.replace(/\.svg$/, ".webp")
+    : src;
+
   return (
     // eslint-disable-next-line @next/next/no-img-element -- plain img so files can be swapped (svg/png/webp) without config
     <img
-      src={src}
+      src={resolvedSrc}
       alt={alt}
       width={width}
       height={height}

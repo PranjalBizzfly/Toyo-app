@@ -1,6 +1,98 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="958" height="358" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M450 166h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="466" cy="180" r="5" fill="#8aa0b4"/><path d="M450 202l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#5b7186">categories/sales-marketing.svg · 960×360</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" fill="none">
+  
+        <rect width="960" height="360" rx="16" fill="#0B132B"/>
+        <rect x="24" y="24" width="912" height="312" rx="12" fill="#152244" stroke="#3A86FF" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#8D99AE" font-size="13" font-family="system-ui, sans-serif" font-weight="600">ToyoApps · Sales &amp; Marketing Software Category</text>
+        <rect x="760" y="38" width="150" height="24" rx="12" fill="#3A86FF" fill-opacity="0.2"/>
+        <text x="835" y="54" fill="#3A86FF" font-size="11" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">4 Integrated Products</text>
+
+        <!-- 4 Pillars Grid -->
+        <!-- Cardizo -->
+        <g transform="translate(48, 80)">
+          <rect width="200" height="236" rx="8" fill="#0B132B" stroke="#253866" stroke-width="1"/>
+          <rect x="16" y="16" width="36" height="36" rx="8" fill="#3A86FF" fill-opacity="0.2"/>
+          <text x="34" y="39" fill="#3A86FF" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui">📇</text>
+          <text x="60" y="32" fill="#FFFFFF" font-size="14" font-weight="bold" font-family="system-ui">Cardizo</text>
+          <text x="60" y="46" fill="#8D99AE" font-size="10" font-family="system-ui">AI Card Scanner</text>
+
+          <rect x="16" y="66" width="168" height="50" rx="6" fill="#18274C"/>
+          <text x="24" y="86" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Card ➔ Contact OCR</text>
+          <text x="24" y="102" fill="#38BDF8" font-size="9" font-family="system-ui">1-Click WhatsApp &amp; Export</text>
+
+          <g transform="translate(16, 126)">
+            <text x="0" y="14" fill="#8D99AE" font-size="10" font-family="system-ui">● 99.8% Extraction accuracy</text>
+            <text x="0" y="32" fill="#8D99AE" font-size="10" font-family="system-ui">● Google Contacts sync</text>
+            <text x="0" y="50" fill="#8D99AE" font-size="10" font-family="system-ui">● Instant CSV &amp; Excel export</text>
+          </g>
+          <rect x="16" y="190" width="168" height="28" rx="6" fill="#3A86FF"/>
+          <text x="100" y="208" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui" text-anchor="middle">Explore Cardizo</text>
+        </g>
+
+        <!-- ODA7 -->
+        <g transform="translate(268, 80)">
+          <rect width="200" height="236" rx="8" fill="#0B132B" stroke="#253866" stroke-width="1"/>
+          <rect x="16" y="16" width="36" height="36" rx="8" fill="#E11D48" fill-opacity="0.2"/>
+          <text x="34" y="39" fill="#E11D48" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui">📞</text>
+          <text x="60" y="32" fill="#FFFFFF" font-size="14" font-weight="bold" font-family="system-ui">ODA7</text>
+          <text x="60" y="46" fill="#FDA4AF" font-size="10" font-family="system-ui">Sales Floor Platform</text>
+
+          <rect x="16" y="66" width="168" height="50" rx="6" fill="#2E1220"/>
+          <text x="24" y="86" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Auto-Dialer &amp; Queue</text>
+          <text x="24" y="102" fill="#FB7185" font-size="9" font-family="system-ui">Live Rep Leaderboards</text>
+
+          <g transform="translate(16, 126)">
+            <text x="0" y="14" fill="#8D99AE" font-size="10" font-family="system-ui">● Smart lead distribution</text>
+            <text x="0" y="32" fill="#8D99AE" font-size="10" font-family="system-ui">● Sales script prompt cards</text>
+            <text x="0" y="50" fill="#8D99AE" font-size="10" font-family="system-ui">● Real-time commissions</text>
+          </g>
+          <rect x="16" y="190" width="168" height="28" rx="6" fill="#E11D48"/>
+          <text x="100" y="208" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui" text-anchor="middle">Explore ODA7</text>
+        </g>
+
+        <!-- GetBenj -->
+        <g transform="translate(488, 80)">
+          <rect width="200" height="236" rx="8" fill="#0B132B" stroke="#253866" stroke-width="1"/>
+          <rect x="16" y="16" width="36" height="36" rx="8" fill="#A855F7" fill-opacity="0.2"/>
+          <text x="34" y="39" fill="#A855F7" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui">🎯</text>
+          <text x="60" y="32" fill="#FFFFFF" font-size="14" font-weight="bold" font-family="system-ui">GetBenj</text>
+          <text x="60" y="46" fill="#D8B4FE" font-size="10" font-family="system-ui">AI Strategy Planner</text>
+
+          <rect x="16" y="66" width="168" height="50" rx="6" fill="#24133F"/>
+          <text x="24" y="86" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">GTM Strategy from Specs</text>
+          <text x="24" y="102" fill="#C084FC" font-size="9" font-family="system-ui">Target Personas &amp; Channels</text>
+
+          <g transform="translate(16, 126)">
+            <text x="0" y="14" fill="#8D99AE" font-size="10" font-family="system-ui">● Hyperlocal ad budget map</text>
+            <text x="0" y="32" fill="#8D99AE" font-size="10" font-family="system-ui">● Meta &amp; Google ad split</text>
+            <text x="0" y="50" fill="#8D99AE" font-size="10" font-family="system-ui">● Print-ready PDF reports</text>
+          </g>
+          <rect x="16" y="190" width="168" height="28" rx="6" fill="#A855F7"/>
+          <text x="100" y="208" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui" text-anchor="middle">Explore GetBenj</text>
+        </g>
+
+        <!-- Sibu -->
+        <g transform="translate(708, 80)">
+          <rect width="200" height="236" rx="8" fill="#0B132B" stroke="#253866" stroke-width="1"/>
+          <rect x="16" y="16" width="36" height="36" rx="8" fill="#00D2FF" fill-opacity="0.2"/>
+          <text x="34" y="39" fill="#00D2FF" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui">🎬</text>
+          <text x="60" y="32" fill="#FFFFFF" font-size="14" font-weight="bold" font-family="system-ui">Sibu</text>
+          <text x="60" y="46" fill="#7DD3FC" font-size="10" font-family="system-ui">Digital Asset DAM</text>
+
+          <rect x="16" y="66" width="168" height="50" rx="6" fill="#0D2644"/>
+          <text x="24" y="86" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Video Timeline Reviews</text>
+          <text x="24" y="102" fill="#38BDF8" font-size="9" font-family="system-ui">AI Scene &amp; OCR Tagging</text>
+
+          <g transform="translate(16, 126)">
+            <text x="0" y="14" fill="#8D99AE" font-size="10" font-family="system-ui">● Timeline frame comments</text>
+            <text x="0" y="32" fill="#8D99AE" font-size="10" font-family="system-ui">● Google Drive &amp; S3 sync</text>
+            <text x="0" y="50" fill="#8D99AE" font-size="10" font-family="system-ui">● Creative team approvals</text>
+          </g>
+          <rect x="16" y="190" width="168" height="28" rx="6" fill="#00D2FF"/>
+          <text x="100" y="208" fill="#0B132B" font-size="10" font-weight="bold" font-family="system-ui" text-anchor="middle">Explore Sibu</text>
+        </g>
+      
 </svg>

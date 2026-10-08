@@ -1,6 +1,133 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="1198" height="418" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M570 196h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="586" cy="210" r="5" fill="#8aa0b4"/><path d="M570 232l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="262" text-anchor="middle" font-family="system-ui,sans-serif" font-size="23" fill="#5b7186">home/hero.svg · 1200×420</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" fill="none">
+  
+        <rect width="1200" height="420" rx="16" fill="#0A1124"/>
+        <rect x="24" y="24" width="1152" height="372" rx="12" fill="#111D3B" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#8D99AE" font-size="13" font-family="system-ui, sans-serif" font-weight="600">ToyoApps · Unified Business Software Workspace</text>
+        <rect x="990" y="38" width="160" height="24" rx="12" fill="#2563EB" fill-opacity="0.2"/>
+        <text x="1070" y="54" fill="#60A5FA" font-size="11" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">16 Integrated SaaS Tools</text>
+
+        <!-- Ecosystem Dashboard Layout -->
+        <!-- App Dock / Launcher Top Bar -->
+        <g transform="translate(48, 76)">
+          <rect width="1104" height="48" rx="8" fill="#0A1329" stroke="#1D3366" stroke-width="1"/>
+          
+          <!-- Dock Items -->
+          <g transform="translate(16, 8)">
+            <rect width="150" height="32" rx="6" fill="#1D4ED8"/>
+            <text x="16" y="20" fill="#FFFFFF" font-size="12" font-weight="bold" font-family="system-ui">📇 Cardizo (Sales)</text>
+          </g>
+
+          <g transform="translate(176, 8)">
+            <rect width="160" height="32" rx="6" fill="#1E293B"/>
+            <text x="16" y="20" fill="#94A3B8" font-size="12" font-weight="bold" font-family="system-ui">💼 HRMagix (Payroll)</text>
+          </g>
+
+          <g transform="translate(346, 8)">
+            <rect width="170" height="32" rx="6" fill="#1E293B"/>
+            <text x="16" y="20" fill="#94A3B8" font-size="12" font-weight="bold" font-family="system-ui">✉ SigChanger (Email)</text>
+          </g>
+
+          <g transform="translate(526, 8)">
+            <rect width="170" height="32" rx="6" fill="#1E293B"/>
+            <text x="16" y="20" fill="#94A3B8" font-size="12" font-weight="bold" font-family="system-ui">⚖ TrackySuite (CA)</text>
+          </g>
+
+          <g transform="translate(706, 8)">
+            <rect width="150" height="32" rx="6" fill="#1E293B"/>
+            <text x="16" y="20" fill="#94A3B8" font-size="12" font-weight="bold" font-family="system-ui">🎬 Sibu (Media)</text>
+          </g>
+
+          <g transform="translate(866, 8)">
+            <rect width="150" height="32" rx="6" fill="#1E293B"/>
+            <text x="16" y="20" fill="#94A3B8" font-size="12" font-weight="bold" font-family="system-ui">⚡ ZapBuzzer (Ops)</text>
+          </g>
+        </g>
+
+        <!-- 3 Interactive App Panes Side-by-Side -->
+        <g transform="translate(48, 138)">
+          <!-- Pane 1: Cardizo Live Scanner -->
+          <g transform="translate(0, 0)">
+            <rect width="350" height="236" rx="8" fill="#0A1329" stroke="#1D3366" stroke-width="1"/>
+            <text x="16" y="26" fill="#FFFFFF" font-size="12" font-weight="bold" font-family="system-ui">Cardizo · Contact Scanner</text>
+            <rect x="250" y="14" width="85" height="18" rx="4" fill="#3B82F6" fill-opacity="0.2"/>
+            <text x="292" y="26" fill="#60A5FA" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">AI SCAN ACTIVE</text>
+            
+            <g transform="translate(16, 44)">
+              <rect width="318" height="60" rx="6" fill="#14244D"/>
+              <text x="12" y="24" fill="#FFFFFF" font-size="12" font-weight="bold" font-family="system-ui">Elena Rostova · CloudTech</text>
+              <text x="12" y="42" fill="#93C5FD" font-size="10" font-family="system-ui">Scanned from business card · 1.2s OCR</text>
+            </g>
+
+            <g transform="translate(16, 114)">
+              <rect width="154" height="32" rx="6" fill="#25D366"/>
+              <text x="77" y="20" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui" text-anchor="middle">💬 WhatsApp Follow-up</text>
+
+              <rect x="164" width="154" height="32" rx="6" fill="#2563EB"/>
+              <text x="241" y="20" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui" text-anchor="middle">➔ Google Contacts</text>
+            </g>
+
+            <g transform="translate(16, 160)">
+              <text x="0" y="14" fill="#8D99AE" font-size="10" font-family="system-ui">Recent contacts: 14 captured this week</text>
+              <text x="0" y="32" fill="#10B981" font-size="10" font-weight="600" font-family="system-ui">● Auto-tagged: #Enterprise #Conference2026</text>
+            </g>
+          </g>
+
+          <!-- Pane 2: TrackySuite Compliance Calendar -->
+          <g transform="translate(376, 0)">
+            <rect width="350" height="236" rx="8" fill="#0A1329" stroke="#1D3366" stroke-width="1"/>
+            <text x="16" y="26" fill="#FFFFFF" font-size="12" font-weight="bold" font-family="system-ui">TrackySuite · Statutory Calendar</text>
+            <rect x="250" y="14" width="85" height="18" rx="4" fill="#0D9488" fill-opacity="0.2"/>
+            <text x="292" y="26" fill="#5EEAD4" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">CA &amp; CS SYNC</text>
+
+            <g transform="translate(16, 44)">
+              <rect width="318" height="42" rx="6" fill="#0A272C"/>
+              <text x="12" y="18" fill="#5EEAD4" font-size="11" font-weight="bold" font-family="system-ui">GSTR-3B Filing · Due 20th Oct</text>
+              <text x="12" y="32" fill="#94A3B8" font-size="9" font-family="system-ui">14 Clients Pending · 24 Completed</text>
+            </g>
+
+            <g transform="translate(16, 94)">
+              <rect width="318" height="42" rx="6" fill="#0A272C"/>
+              <text x="12" y="18" fill="#5EEAD4" font-size="11" font-weight="bold" font-family="system-ui">TDS 26Q Quarterly · Due 31st Oct</text>
+              <text x="12" y="32" fill="#94A3B8" font-size="9" font-family="system-ui">Challans matched with TRACES</text>
+            </g>
+
+            <g transform="translate(16, 146)">
+              <rect width="318" height="34" rx="6" fill="#0D9488"/>
+              <text x="159" y="21" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">Open Practice Management Portal</text>
+            </g>
+          </g>
+
+          <!-- Pane 3: SigChanger &amp; Workspace Rollout -->
+          <g transform="translate(752, 0)">
+            <rect width="352" height="236" rx="8" fill="#0A1329" stroke="#1D3366" stroke-width="1"/>
+            <text x="16" y="26" fill="#FFFFFF" font-size="12" font-weight="bold" font-family="system-ui">SigChanger · Gmail Signature</text>
+            <rect x="250" y="14" width="85" height="18" rx="4" fill="#1A73E8" fill-opacity="0.2"/>
+            <text x="292" y="26" fill="#60A5FA" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">WORKSPACE</text>
+
+            <g transform="translate(16, 44)">
+              <rect width="320" height="74" rx="6" fill="#11274F" stroke="#1A73E8" stroke-width="1"/>
+              <rect x="10" y="10" width="30" height="30" rx="15" fill="#1A73E8"/>
+              <text x="25" y="29" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle" font-family="system-ui">DM</text>
+              <text x="48" y="20" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">David Miller</text>
+              <text x="48" y="32" fill="#93C5FD" font-size="9" font-family="system-ui">VP Engineering · ToyoApps Suite</text>
+              <rect x="10" y="46" width="300" height="18" rx="3" fill="#1E40AF"/>
+              <text x="160" y="58" fill="#FFFFFF" font-size="8" font-weight="bold" font-family="system-ui" text-anchor="middle">Centralized Server-side Signature Rollout</text>
+            </g>
+
+            <g transform="translate(16, 130)">
+              <text x="0" y="14" fill="#8D99AE" font-size="10" font-family="system-ui">Domain status: 185 mailboxes updated</text>
+              <text x="0" y="32" fill="#10B981" font-size="10" font-weight="600" font-family="system-ui">● Google Workspace Directory Synced</text>
+            </g>
+
+            <g transform="translate(16, 175)">
+              <rect width="320" height="34" rx="6" fill="#1A73E8"/>
+              <text x="160" y="21" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">Manage Signatures</text>
+            </g>
+          </g>
+        </g>
+      
 </svg>

@@ -84,7 +84,7 @@ export default async function CategoryPage({ params }: Props) {
           <h1>{category.name} software</h1>
           <hr className="zc-rule" />
           {category.description && <p className="zc-hero__lead">{category.description}</p>}
-          <ImageSlot src={`/images/categories/${category.slug}.svg`} alt={`${category.name} software`} width={960} height={360} priority className="zc-hero__art" />
+          <ImageSlot src={`/images/categories/${category.slug}.webp`} alt={`${category.name} software`} width={960} height={360} priority className="zc-hero__art" />
         </div>
       </header>
 

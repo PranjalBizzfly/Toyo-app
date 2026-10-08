@@ -56,8 +56,8 @@ export default function ContactPage() {
       <section className="co-band">
         <div className="co-wrap co-split">
           <ImageSlot
-            src="/images/company/contact-publish.svg"
-            alt="A software maker publishing a product on ToyoApps"
+            src="/images/company/contact-publish.webp"
+            alt="Software maker publisher dashboard with automated billing, listing preview and marketplace distribution"
             width={380}
             height={340}
             className="co-img co-img--split"

@@ -1,6 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="958" height="358" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M450 166h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="466" cy="180" r="5" fill="#8aa0b4"/><path d="M450 202l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#5b7186">categories/insights-research.svg · 960×360</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" fill="none">
+  
+        <rect width="960" height="360" rx="16" fill="#08140F"/>
+        <rect x="24" y="24" width="912" height="312" rx="12" fill="#0E261E" stroke="#10B981" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#6EE7B7" font-size="13" font-family="system-ui, sans-serif" font-weight="600">ToyoApps · Insights, Market Research &amp; Intelligence</text>
+        <rect x="760" y="38" width="150" height="24" rx="12" fill="#10B981" fill-opacity="0.2"/>
+        <text x="835" y="54" fill="#6EE7B7" font-size="11" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">Sizoru · GetBenj · ZUZU</text>
+
+        <!-- 3 Pillars Grid -->
+        <!-- Sizoru -->
+        <g transform="translate(56, 80)">
+          <rect width="260" height="236" rx="8" fill="#05120D" stroke="#164032" stroke-width="1"/>
+          <rect x="16" y="16" width="36" height="36" rx="8" fill="#10B981" fill-opacity="0.2"/>
+          <text x="34" y="39" fill="#10B981" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui">📊</text>
+          <text x="62" y="32" fill="#FFFFFF" font-size="15" font-weight="bold" font-family="system-ui">Sizoru</text>
+          <text x="62" y="46" fill="#6EE7B7" font-size="10" font-family="system-ui">Market Sizing Engine</text>
+
+          <rect x="16" y="66" width="228" height="48" rx="6" fill="#0A3326"/>
+          <text x="24" y="86" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">TAM / SAM / SOM Research</text>
+          <text x="24" y="102" fill="#34D399" font-size="10" font-family="system-ui">Tier-1 Rated Source Citations</text>
+
+          <g transform="translate(16, 126)">
+            <text x="0" y="14" fill="#94A3B8" font-size="10" font-family="system-ui">● Top-down &amp; bottom-up models</text>
+            <text x="0" y="32" fill="#94A3B8" font-size="10" font-family="system-ui">● Bull, base &amp; bear scenarios</text>
+            <text x="0" y="50" fill="#94A3B8" font-size="10" font-family="system-ui">● Investor-grade PDF export</text>
+          </g>
+          <rect x="16" y="190" width="228" height="28" rx="6" fill="#10B981"/>
+          <text x="130" y="208" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">Explore Sizoru</text>
+        </g>
+
+        <!-- GetBenj -->
+        <g transform="translate(350, 80)">
+          <rect width="260" height="236" rx="8" fill="#05120D" stroke="#164032" stroke-width="1"/>
+          <rect x="16" y="16" width="36" height="36" rx="8" fill="#A855F7" fill-opacity="0.2"/>
+          <text x="34" y="39" fill="#A855F7" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui">🎯</text>
+          <text x="62" y="32" fill="#FFFFFF" font-size="15" font-weight="bold" font-family="system-ui">GetBenj</text>
+          <text x="62" y="46" fill="#D8B4FE" font-size="10" font-family="system-ui">Marketing Plan Generator</text>
+
+          <rect x="16" y="66" width="228" height="48" rx="6" fill="#24133F"/>
+          <text x="24" y="86" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">Product ➔ Go-To-Market Plan</text>
+          <text x="24" y="102" fill="#C084FC" font-size="10" font-family="system-ui">Persona &amp; Channel Budget Split</text>
+
+          <g transform="translate(16, 126)">
+            <text x="0" y="14" fill="#94A3B8" font-size="10" font-family="system-ui">● Hyperlocal ad target mapping</text>
+            <text x="0" y="32" fill="#94A3B8" font-size="10" font-family="system-ui">● Channel CAC &amp; ROAS projections</text>
+            <text x="0" y="50" fill="#94A3B8" font-size="10" font-family="system-ui">● Agency pack multi-brand reports</text>
+          </g>
+          <rect x="16" y="190" width="228" height="28" rx="6" fill="#A855F7"/>
+          <text x="130" y="208" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">Explore GetBenj</text>
+        </g>
+
+        <!-- ZUZU -->
+        <g transform="translate(644, 80)">
+          <rect width="260" height="236" rx="8" fill="#05120D" stroke="#164032" stroke-width="1"/>
+          <rect x="16" y="16" width="36" height="36" rx="8" fill="#2563EB" fill-opacity="0.2"/>
+          <text x="34" y="39" fill="#2563EB" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui">📈</text>
+          <text x="62" y="32" fill="#FFFFFF" font-size="15" font-weight="bold" font-family="system-ui">ZUZU</text>
+          <text x="62" y="46" fill="#93C5FD" font-size="10" font-family="system-ui">Workday Activity Insight</text>
+
+          <rect x="16" y="66" width="228" height="48" rx="6" fill="#142B52"/>
+          <text x="24" y="86" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">AI-Written Daily Work Reports</text>
+          <text x="24" y="102" fill="#60A5FA" font-size="10" font-family="system-ui">Activity Insight with Privacy</text>
+
+          <g transform="translate(16, 126)">
+            <text x="0" y="14" fill="#94A3B8" font-size="10" font-family="system-ui">● Application usage distributions</text>
+            <text x="0" y="32" fill="#94A3B8" font-size="10" font-family="system-ui">● On-device sensitive data redaction</text>
+            <text x="0" y="50" fill="#94A3B8" font-size="10" font-family="system-ui">● Manager insight portals</text>
+          </g>
+          <rect x="16" y="190" width="228" height="28" rx="6" fill="#2563EB"/>
+          <text x="130" y="208" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">Explore ZUZU</text>
+        </g>
+      
 </svg>

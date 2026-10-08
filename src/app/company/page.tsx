@@ -38,8 +38,8 @@ export default function CompanyPage() {
       </section>
 
       <ImageSlot
-        src="/images/company/about-team.svg"
-        alt="The ToyoApps team at work"
+        src="/images/company/about-team.webp"
+        alt="ToyoApps platform architecture, verified catalog registry and SaaS ecosystem infrastructure"
         width={1440}
         height={720}
         className="co-img co-img--full"

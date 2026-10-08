@@ -1,6 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="638" height="358" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M290 166h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="306" cy="180" r="5" fill="#8aa0b4"/><path d="M290 202l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#5b7186">products/taskmagic/card.svg · 640×360</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <filter id="shadow" x="0" y="0" width="640" height="360" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+        <rect width="640" height="360" rx="16" fill="#130826"/>
+        <rect x="24" y="24" width="592" height="312" rx="12" fill="#210F3F" stroke="#9333EA" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#D8B4FE" font-size="12" font-family="system-ui, sans-serif" font-weight="600">TaskMagic · Browser Automation &amp; Visual Web Scraper</text>
+        <rect x="490" y="38" width="110" height="22" rx="11" fill="#10B981" fill-opacity="0.2"/>
+        <text x="545" y="53" fill="#10B981" font-size="11" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">Flow Completed</text>
+
+        <!-- Visual Flow Graph -->
+        <g transform="translate(44, 74)">
+          <rect width="320" height="240" rx="8" fill="#0C051A" stroke="#371A66" stroke-width="1"/>
+          <text x="16" y="24" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">AUTOMATION WORKFLOW RUNNER</text>
+
+          <!-- Step 1 -->
+          <g transform="translate(16, 38)">
+            <rect width="288" height="38" rx="6" fill="#2E1256" stroke="#9333EA" stroke-width="1"/>
+            <circle cx="20" cy="19" r="10" fill="#9333EA"/>
+            <text x="20" y="23" fill="#FFFFFF" font-size="9" font-weight="bold" text-anchor="middle" font-family="system-ui">1</text>
+            <text x="40" y="17" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Navigate to Web Directory</text>
+            <text x="40" y="30" fill="#D8B4FE" font-size="9" font-family="system-ui">URL: https://app.marketplace.com/leads</text>
+          </g>
+          <!-- Connector -->
+          <line x1="160" y1="76" x2="160" y2="88" stroke="#9333EA" stroke-width="2"/>
+
+          <!-- Step 2 -->
+          <g transform="translate(16, 88)">
+            <rect width="288" height="38" rx="6" fill="#2E1256" stroke="#9333EA" stroke-width="1"/>
+            <circle cx="20" cy="19" r="10" fill="#9333EA"/>
+            <text x="20" y="23" fill="#FFFFFF" font-size="9" font-weight="bold" text-anchor="middle" font-family="system-ui">2</text>
+            <text x="40" y="17" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Scrape Structured Table Data</text>
+            <text x="40" y="30" fill="#D8B4FE" font-size="9" font-family="system-ui">Extract: Company, Contact, Phone, Revenue</text>
+          </g>
+          <!-- Connector -->
+          <line x1="160" y1="126" x2="160" y2="138" stroke="#9333EA" stroke-width="2"/>
+
+          <!-- Step 3 -->
+          <g transform="translate(16, 138)">
+            <rect width="288" height="38" rx="6" fill="#2E1256" stroke="#9333EA" stroke-width="1"/>
+            <circle cx="20" cy="19" r="10" fill="#10B981"/>
+            <text x="20" y="23" fill="#FFFFFF" font-size="9" font-weight="bold" text-anchor="middle" font-family="system-ui">3</text>
+            <text x="40" y="17" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Webhook &amp; Google Sheets Export</text>
+            <text x="40" y="30" fill="#10B981" font-size="9" font-family="system-ui">Status: 120 Rows synced successfully</text>
+          </g>
+
+          <g transform="translate(16, 188)">
+            <rect width="288" height="36" rx="6" fill="#16082C"/>
+            <text x="12" y="16" fill="#A855F7" font-size="9" font-family="monospace">Execution Time: 3.8s</text>
+            <text x="12" y="28" fill="#10B981" font-size="9" font-family="monospace">Captcha Solved: Bypass Engine Active</text>
+          </g>
+        </g>
+
+        <!-- Right: Execution Log -->
+        <g transform="translate(380, 74)">
+          <rect width="220" height="240" rx="8" fill="#0C051A" stroke="#371A66" stroke-width="1"/>
+          <text x="14" y="24" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">LIVE AUTOMATION LOGS</text>
+
+          <g transform="translate(14, 38)">
+            <text x="0" y="14" fill="#10B981" font-size="9" font-family="monospace">[00:01] Browser init chrome-headless</text>
+            <text x="0" y="32" fill="#10B981" font-size="9" font-family="monospace">[00:02] Page DOM loaded (200 OK)</text>
+            <text x="0" y="50" fill="#10B981" font-size="9" font-family="monospace">[00:03] Scraped 120 elements</text>
+            <text x="0" y="68" fill="#10B981" font-size="9" font-family="monospace">[00:03] Webhook POST status 200</text>
+            <text x="0" y="86" fill="#38BDF8" font-size="9" font-family="monospace">[00:04] Task completed gracefully</text>
+          </g>
+
+          <g transform="translate(14, 142)">
+            <rect width="192" height="84" rx="6" fill="#1F0D3D"/>
+            <text x="12" y="22" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Trigger Schedule</text>
+            <text x="12" y="38" fill="#D8B4FE" font-size="9" font-family="system-ui">Every weekday at 08:00 AM</text>
+            <rect x="12" y="48" width="168" height="24" rx="4" fill="#9333EA"/>
+            <text x="96" y="64" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui" text-anchor="middle">Record New Action</text>
+          </g>
+        </g>
+      
 </svg>

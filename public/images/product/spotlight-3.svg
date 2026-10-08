@@ -1,6 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="580" height="520" viewBox="0 0 580 520">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="578" height="518" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M260 246h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="276" cy="260" r="5" fill="#8aa0b4"/><path d="M260 282l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="312" text-anchor="middle" font-family="system-ui,sans-serif" font-size="29" fill="#5b7186">product/spotlight-3.svg · 580×520</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="520" viewBox="0 0 580 520" fill="none">
+  
+        <rect width="580" height="520" rx="14" fill="#071518"/>
+        <rect x="16" y="16" width="548" height="488" rx="10" fill="#0F242A" stroke="#0D9488" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="36" cy="36" r="4" fill="#EF4444"/>
+        <circle cx="50" cy="36" r="4" fill="#F59E0B"/>
+        <circle cx="64" cy="36" r="4" fill="#10B981"/>
+        <text x="82" y="40" fill="#5EEAD4" font-size="11" font-family="system-ui, sans-serif" font-weight="600">Analytics, Performance Trends &amp; Compliance Audits</text>
+        <rect x="440" y="26" width="110" height="20" rx="10" fill="#0D9488" fill-opacity="0.2"/>
+        <text x="495" y="39" fill="#5EEAD4" font-size="10" font-family="system-ui" font-weight="bold" text-anchor="middle">Audit Clean</text>
+
+        <!-- KPI Summary Cards -->
+        <g transform="translate(32, 60)">
+          <rect width="164" height="74" rx="8" fill="#061214" stroke="#16383F" stroke-width="1"/>
+          <text x="14" y="24" fill="#9CA3AF" font-size="10" font-family="system-ui">TEAM PERFORMANCE</text>
+          <text x="14" y="50" fill="#5EEAD4" font-size="20" font-weight="bold" font-family="system-ui">98.4%</text>
+          <text x="80" y="50" fill="#10B981" font-size="10" font-family="system-ui">+3.2% vs Q3</text>
+
+          <rect x="176" width="164" height="74" rx="8" fill="#061214" stroke="#16383F" stroke-width="1"/>
+          <text x="14" y="24" fill="#9CA3AF" font-size="10" font-family="system-ui">ACTIVE COMPLIANCE</text>
+          <text x="14" y="50" fill="#FFFFFF" font-size="20" font-weight="bold" font-family="system-ui">142/142</text>
+          <text x="85" y="50" fill="#10B981" font-size="10" font-family="system-ui">100% Filed</text>
+
+          <rect x="352" width="164" height="74" rx="8" fill="#061214" stroke="#16383F" stroke-width="1"/>
+          <text x="14" y="24" fill="#9CA3AF" font-size="10" font-family="system-ui">REVENUE PIPELINE</text>
+          <text x="14" y="50" fill="#F59E0B" font-size="20" font-weight="bold" font-family="system-ui">$18.4K</text>
+          <text x="80" y="50" fill="#F59E0B" font-size="10" font-family="system-ui">MRR Growth</text>
+        </g>
+
+        <!-- Main Trend Line Graph Frame -->
+        <g transform="translate(32, 146)">
+          <rect width="516" height="190" rx="8" fill="#061214" stroke="#16383F" stroke-width="1"/>
+          <text x="16" y="24" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">OPERATIONAL EFFICIENCY OVER TIME</text>
+          
+          <!-- Graph Grid Lines -->
+          <line x1="16" y1="140" x2="500" y2="140" stroke="#122B30" stroke-width="1"/>
+          <line x1="16" y1="90" x2="500" y2="90" stroke="#122B30" stroke-width="1"/>
+          <line x1="16" y1="40" x2="500" y2="40" stroke="#122B30" stroke-width="1"/>
+
+          <!-- Trend curve line -->
+          <path d="M 20 130 Q 140 110 260 70 T 490 35" fill="none" stroke="#0D9488" stroke-width="3"/>
+          <path d="M 20 130 Q 140 110 260 70 T 490 35 L 490 140 L 20 140 Z" fill="#0D9488" fill-opacity="0.1"/>
+
+          <!-- Data Points -->
+          <circle cx="140" cy="110" r="4" fill="#5EEAD4"/>
+          <circle cx="260" cy="70" r="4" fill="#5EEAD4"/>
+          <circle cx="490" cy="35" r="5" fill="#10B981"/>
+
+          <!-- X axis labels -->
+          <text x="20" y="160" fill="#64748B" font-size="9" font-family="system-ui">Week 1</text>
+          <text x="135" y="160" fill="#64748B" font-size="9" font-family="system-ui">Week 2</text>
+          <text x="255" y="160" fill="#64748B" font-size="9" font-family="system-ui">Week 3</text>
+          <text x="375" y="160" fill="#64748B" font-size="9" font-family="system-ui">Week 4</text>
+          <text x="470" y="160" fill="#5EEAD4" font-size="9" font-weight="bold" font-family="system-ui">Current (+34%)</text>
+        </g>
+
+        <!-- Compliance &amp; Export Controls -->
+        <g transform="translate(32, 348)">
+          <rect width="516" height="132" rx="8" fill="#061214" stroke="#16383F" stroke-width="1"/>
+          <text x="16" y="24" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">STATUTORY VERIFICATION &amp; EXPORTS</text>
+
+          <g transform="translate(16, 38)">
+            <rect width="236" height="42" rx="4" fill="#0C252B"/>
+            <text x="10" y="18" fill="#5EEAD4" font-size="10" font-weight="bold" font-family="system-ui">✓ Indian Statutory Tax Trail</text>
+            <text x="10" y="32" fill="#94A3B8" font-size="9" font-family="system-ui">PF, ESI, TDS 26Q receipts validated</text>
+
+            <rect x="248" width="236" height="42" rx="4" fill="#0C252B"/>
+            <text x="10" y="18" fill="#5EEAD4" font-size="10" font-weight="bold" font-family="system-ui">✓ Single-Click Audit Report</text>
+            <text x="10" y="32" fill="#94A3B8" font-size="9" font-family="system-ui">Download board-ready PDF package</text>
+          </g>
+
+          <rect x="16" y="90" width="484" height="30" rx="6" fill="#0D9488"/>
+          <text x="258" y="109" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">Generate Official Compliance Audit Certificate</text>
+        </g>
+      
 </svg>

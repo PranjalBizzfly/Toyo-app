@@ -1,6 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="370" height="172" viewBox="0 0 370 172">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="368" height="170" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M155 72h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="171" cy="86" r="5" fill="#8aa0b4"/><path d="M155 108l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="138" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#5b7186">product/section-card.svg · 370×172</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="370" height="172" viewBox="0 0 370 172" fill="none">
+  
+        <rect width="370" height="172" rx="10" fill="#0C1527"/>
+        <rect x="8" y="8" width="354" height="156" rx="8" fill="#14223E" stroke="#3A86FF" stroke-width="1" stroke-opacity="0.3"/>
+        <circle cx="24" cy="24" r="3" fill="#EF4444"/>
+        <circle cx="34" cy="24" r="3" fill="#F59E0B"/>
+        <circle cx="44" cy="24" r="3" fill="#10B981"/>
+        <text x="58" y="27" fill="#8D99AE" font-size="9" font-family="system-ui, sans-serif" font-weight="600">Product Capability Module</text>
+
+        <!-- Mini Interface Mockup -->
+        <g transform="translate(20, 42)">
+          <rect width="330" height="42" rx="6" fill="#0A1222"/>
+          <circle cx="20" cy="21" r="10" fill="#3A86FF"/>
+          <text x="20" y="25" fill="#FFFFFF" font-size="10" font-weight="bold" text-anchor="middle" font-family="system-ui">✓</text>
+          <text x="38" y="18" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Verified Functional Specification</text>
+          <text x="38" y="32" fill="#93C5FD" font-size="9" font-family="system-ui">Audited against official vendor documentation</text>
+        </g>
+
+        <g transform="translate(20, 94)">
+          <rect width="160" height="52" rx="4" fill="#0A1222"/>
+          <text x="10" y="20" fill="#8D99AE" font-size="8" font-family="system-ui">FEATURE CAPABILITIES</text>
+          <text x="10" y="38" fill="#10B981" font-size="11" font-weight="bold" font-family="system-ui">Production Ready</text>
+
+          <rect x="170" width="160" height="52" rx="4" fill="#0A1222"/>
+          <text x="10" y="20" fill="#8D99AE" font-size="8" font-family="system-ui">INTEGRATION COMPATIBILITY</text>
+          <text x="10" y="38" fill="#38BDF8" font-size="11" font-weight="bold" font-family="system-ui">Full API Support</text>
+        </g>
+      
 </svg>

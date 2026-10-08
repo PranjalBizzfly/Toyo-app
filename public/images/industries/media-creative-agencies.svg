@@ -1,6 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="638" height="358" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M290 166h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="306" cy="180" r="5" fill="#8aa0b4"/><path d="M290 202l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#5b7186">industries/media-creative-agencies.svg · 640×360</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  
+        <rect width="640" height="360" rx="16" fill="#0B1322"/>
+        <rect x="24" y="24" width="592" height="312" rx="12" fill="#13233D" stroke="#00D2FF" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#7DD3FC" font-size="12" font-family="system-ui, sans-serif" font-weight="600">Media &amp; Creative Agencies · Digital Asset Library &amp; Campaign Strategy</text>
+        <rect x="475" y="38" width="125" height="22" rx="11" fill="#00D2FF" fill-opacity="0.2"/>
+        <text x="537" y="53" fill="#00D2FF" font-size="10" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">Sibu + GetBenj</text>
+
+        <!-- Left: Sibu DAM Video Timeline Review -->
+        <g transform="translate(44, 74)">
+          <rect width="320" height="240" rx="8" fill="#070D18" stroke="#1D3860" stroke-width="1"/>
+          <!-- Video preview window -->
+          <rect x="12" y="12" width="296" height="135" rx="6" fill="#0F243E"/>
+          <circle cx="160" cy="68" r="24" fill="#00D2FF" fill-opacity="0.3"/>
+          <polygon points="154,58 172,68 154,78" fill="#00D2FF"/>
+          <text x="24" y="30" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Agency_Spot_Cut_V4_Final.mp4</text>
+          
+          <!-- Scrubber and marker pin -->
+          <g transform="translate(12, 156)">
+            <rect width="296" height="6" rx="3" fill="#1E385C"/>
+            <rect width="160" height="6" rx="3" fill="#00D2FF"/>
+            <circle cx="160" cy="3" r="5" fill="#00F0FF"/>
+            <text x="0" y="20" fill="#7DD3FC" font-size="9" font-family="monospace">00:34.12</text>
+            <text x="255" y="20" fill="#7DD3FC" font-size="9" font-family="monospace">01:00.00</text>
+          </g>
+
+          <!-- Comment pin -->
+          <g transform="translate(12, 184)">
+            <rect width="296" height="38" rx="6" fill="#132B4A" stroke="#00D2FF" stroke-width="1"/>
+            <text x="12" y="16" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Art Director @ 00:34</text>
+            <text x="12" y="29" fill="#93C5FD" font-size="9" font-family="system-ui">"Approved by client. Ready for high-res delivery."</text>
+          </g>
+        </g>
+
+        <!-- Right: Agency Campaign &amp; Asset Tags -->
+        <g transform="translate(380, 74)">
+          <rect width="220" height="240" rx="8" fill="#070D18" stroke="#1D3860" stroke-width="1"/>
+          <text x="14" y="24" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">AI TAGGED ASSETS</text>
+
+          <g transform="translate(14, 38)">
+            <rect width="84" height="20" rx="4" fill="#17355C"/>
+            <text x="42" y="14" fill="#38BDF8" font-size="9" text-anchor="middle" font-family="system-ui">#BrandFilm</text>
+            <rect x="90" width="88" height="20" rx="4" fill="#17355C"/>
+            <text x="134" y="14" fill="#38BDF8" font-size="9" text-anchor="middle" font-family="system-ui">#ClientSocial</text>
+          </g>
+
+          <text x="14" y="86" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">CLIENT MARKETING PLAN</text>
+          <g transform="translate(14, 98)">
+            <rect width="192" height="60" rx="6" fill="#191033" stroke="#A855F7" stroke-width="1"/>
+            <text x="10" y="20" fill="#E9D5FF" font-size="10" font-weight="bold" font-family="system-ui">GetBenj Agency Pack</text>
+            <text x="10" y="36" fill="#C084FC" font-size="9" font-family="system-ui">Budget: 45% Video / 35% Search</text>
+            <text x="10" y="50" fill="#10B981" font-size="9" font-family="system-ui">Strategy PDF ready to export</text>
+          </g>
+
+          <g transform="translate(14, 172)">
+            <rect width="192" height="48" rx="6" fill="#102540"/>
+            <text x="10" y="18" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Cloud Ingestion</text>
+            <text x="10" y="34" fill="#7DD3FC" font-size="9" font-family="system-ui">Dropbox, Drive &amp; AWS S3 Synced</text>
+          </g>
+        </g>
+      
 </svg>

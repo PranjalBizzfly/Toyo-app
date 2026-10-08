@@ -1,6 +1,124 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="720" viewBox="0 0 1440 720">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="1438" height="718" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M690 346h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="706" cy="360" r="5" fill="#8aa0b4"/><path d="M690 382l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="412" text-anchor="middle" font-family="system-ui,sans-serif" font-size="40" fill="#5b7186">company/about-team.svg · 1440×720</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="720" viewBox="0 0 1440 720" fill="none">
+  
+        <rect width="1440" height="720" rx="20" fill="#080F1E"/>
+        <rect x="32" y="32" width="1376" height="656" rx="16" fill="#0F1C36" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="64" cy="64" r="7" fill="#EF4444"/>
+        <circle cx="86" cy="64" r="7" fill="#F59E0B"/>
+        <circle cx="108" cy="64" r="7" fill="#10B981"/>
+        <text x="140" y="70" fill="#94A3B8" font-size="16" font-family="system-ui, sans-serif" font-weight="600">ToyoApps · Platform Architecture &amp; Ecosystem Infrastructure</text>
+        <rect x="1160" y="50" width="220" height="30" rx="15" fill="#2563EB" fill-opacity="0.2"/>
+        <text x="1270" y="70" fill="#60A5FA" font-size="13" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">One Home for Business Software</text>
+
+        <!-- Platform Architecture Diagram -->
+        <!-- Top Tier: Buyers &amp; Software Makers -->
+        <g transform="translate(96, 120)">
+          <rect width="1248" height="90" rx="10" fill="#15264A" stroke="#2D4D8E" stroke-width="1"/>
+          <text x="32" y="36" fill="#FFFFFF" font-size="18" font-weight="bold" font-family="system-ui">1. Discovery &amp; Publisher Experience Layer</text>
+          <text x="32" y="62" fill="#94A3B8" font-size="13" font-family="system-ui">Unified Navigation · Category Taxonomy · Verified Technical Specifications · Maker Listing Workbench</text>
+          <rect x="1050" y="25" width="160" height="40" rx="8" fill="#2563EB"/>
+          <text x="1130" y="50" fill="#FFFFFF" font-size="13" font-weight="bold" font-family="system-ui" text-anchor="middle">Browse &amp; Publish</text>
+        </g>
+
+        <!-- Mid Tier: The 5 Functional Ecosystem Hubs -->
+        <g transform="translate(96, 240)">
+          <!-- Box 1 -->
+          <g transform="translate(0, 0)">
+            <rect width="230" height="200" rx="10" fill="#0A162D" stroke="#1E3766" stroke-width="1"/>
+            <rect x="16" y="16" width="36" height="36" rx="8" fill="#3A86FF" fill-opacity="0.2"/>
+            <text x="34" y="40" fill="#3A86FF" font-size="18" font-weight="bold" text-anchor="middle" font-family="system-ui">📈</text>
+            <text x="64" y="32" fill="#FFFFFF" font-size="14" font-weight="bold" font-family="system-ui">Sales &amp; Marketing</text>
+            <text x="64" y="48" fill="#8D99AE" font-size="11" font-family="system-ui">4 Active Tools</text>
+            <line x1="16" y1="64" x2="214" y2="64" stroke="#1E3766" stroke-width="1"/>
+            <text x="16" y="88" fill="#E2E8F0" font-size="11" font-family="system-ui">● Cardizo (AI Card Scan)</text>
+            <text x="16" y="112" fill="#E2E8F0" font-size="11" font-family="system-ui">● ODA7 (Sales Dialer)</text>
+            <text x="16" y="136" fill="#E2E8F0" font-size="11" font-family="system-ui">● GetBenj (Marketing Plan)</text>
+            <text x="16" y="160" fill="#E2E8F0" font-size="11" font-family="system-ui">● Sibu (Video DAM)</text>
+          </g>
+
+          <!-- Box 2 -->
+          <g transform="translate(254, 0)">
+            <rect width="230" height="200" rx="10" fill="#0A162D" stroke="#1E3766" stroke-width="1"/>
+            <rect x="16" y="16" width="36" height="36" rx="8" fill="#2563EB" fill-opacity="0.2"/>
+            <text x="34" y="40" fill="#2563EB" font-size="18" font-weight="bold" text-anchor="middle" font-family="system-ui">👥</text>
+            <text x="64" y="32" fill="#FFFFFF" font-size="14" font-weight="bold" font-family="system-ui">HR &amp; People</text>
+            <text x="64" y="48" fill="#93C5FD" font-size="11" font-family="system-ui">3 Active Tools</text>
+            <line x1="16" y1="64" x2="214" y2="64" stroke="#1E3766" stroke-width="1"/>
+            <text x="16" y="88" fill="#E2E8F0" font-size="11" font-family="system-ui">● HRMagix (Indian HRMS)</text>
+            <text x="16" y="112" fill="#E2E8F0" font-size="11" font-family="system-ui">● ZUZU (Workday Insight)</text>
+            <text x="16" y="136" fill="#E2E8F0" font-size="11" font-family="system-ui">● Zorfly (Daily Missions)</text>
+            <text x="16" y="160" fill="#10B981" font-size="11" font-family="system-ui">Statutory PF/ESI Ready</text>
+          </g>
+
+          <!-- Box 3 -->
+          <g transform="translate(508, 0)">
+            <rect width="230" height="200" rx="10" fill="#0A162D" stroke="#1E3766" stroke-width="1"/>
+            <rect x="16" y="16" width="36" height="36" rx="8" fill="#06B6D4" fill-opacity="0.2"/>
+            <text x="34" y="40" fill="#06B6D4" font-size="18" font-weight="bold" text-anchor="middle" font-family="system-ui">⚙</text>
+            <text x="64" y="32" fill="#FFFFFF" font-size="14" font-weight="bold" font-family="system-ui">Operations &amp; IT</text>
+            <text x="64" y="48" fill="#7DD3FC" font-size="11" font-family="system-ui">3 Active Tools</text>
+            <line x1="16" y1="64" x2="214" y2="64" stroke="#1E3766" stroke-width="1"/>
+            <text x="16" y="88" fill="#E2E8F0" font-size="11" font-family="system-ui">● ZapBuzzer (SLA Buzzer)</text>
+            <text x="16" y="112" fill="#E2E8F0" font-size="11" font-family="system-ui">● SigChanger (Gmail Signatures)</text>
+            <text x="16" y="136" fill="#E2E8F0" font-size="11" font-family="system-ui">● Fantom (Cloud SIM Tracker)</text>
+            <text x="16" y="160" fill="#F59E0B" font-size="11" font-family="system-ui">Fleetras Ops Ready</text>
+          </g>
+
+          <!-- Box 4 -->
+          <g transform="translate(762, 0)">
+            <rect width="230" height="200" rx="10" fill="#0A162D" stroke="#1E3766" stroke-width="1"/>
+            <rect x="16" y="16" width="36" height="36" rx="8" fill="#0D9488" fill-opacity="0.2"/>
+            <text x="34" y="40" fill="#0D9488" font-size="18" font-weight="bold" text-anchor="middle" font-family="system-ui">⚖</text>
+            <text x="64" y="32" fill="#FFFFFF" font-size="14" font-weight="bold" font-family="system-ui">Finance &amp; Compliance</text>
+            <text x="64" y="48" fill="#5EEAD4" font-size="11" font-family="system-ui">Indian CA/CS Focus</text>
+            <line x1="16" y1="64" x2="214" y2="64" stroke="#1E3766" stroke-width="1"/>
+            <text x="16" y="88" fill="#E2E8F0" font-size="11" font-family="system-ui">● TrackySuite Practice Hub</text>
+            <text x="16" y="112" fill="#E2E8F0" font-size="11" font-family="system-ui">● GST 3B &amp; TDS Deadlines</text>
+            <text x="16" y="136" fill="#E2E8F0" font-size="11" font-family="system-ui">● Client Document Portal</text>
+            <text x="16" y="160" fill="#10B981" font-size="11" font-family="system-ui">Zero Penalty SLA</text>
+          </g>
+
+          <!-- Box 5 -->
+          <g transform="translate(1016, 0)">
+            <rect width="232" height="200" rx="10" fill="#0A162D" stroke="#1E3766" stroke-width="1"/>
+            <rect x="16" y="16" width="36" height="36" rx="8" fill="#10B981" fill-opacity="0.2"/>
+            <text x="34" y="40" fill="#10B981" font-size="18" font-weight="bold" text-anchor="middle" font-family="system-ui">🔍</text>
+            <text x="64" y="32" fill="#FFFFFF" font-size="14" font-weight="bold" font-family="system-ui">Insights &amp; Research</text>
+            <text x="64" y="48" fill="#6EE7B7" font-size="11" font-family="system-ui">3 Active Tools</text>
+            <line x1="16" y1="64" x2="216" y2="64" stroke="#1E3766" stroke-width="1"/>
+            <text x="16" y="88" fill="#E2E8F0" font-size="11" font-family="system-ui">● Sizoru (TAM/SAM/SOM)</text>
+            <text x="16" y="112" fill="#E2E8F0" font-size="11" font-family="system-ui">● GetBenj (Strategy PDF)</text>
+            <text x="16" y="136" fill="#E2E8F0" font-size="11" font-family="system-ui">● ZUZU (Activity Reports)</text>
+            <text x="16" y="160" fill="#38BDF8" font-size="11" font-family="system-ui">Tier-1 Verified Sources</text>
+          </g>
+        </g>
+
+        <!-- Bottom Tier: Shared Infrastructure &amp; Security Core -->
+        <g transform="translate(96, 470)">
+          <rect width="1248" height="170" rx="10" fill="#060C18" stroke="#16294C" stroke-width="1"/>
+          <text x="32" y="36" fill="#FFFFFF" font-size="16" font-weight="bold" font-family="system-ui">Platform Foundation &amp; Verification Pipeline</text>
+          <text x="32" y="58" fill="#94A3B8" font-size="12" font-family="system-ui">Every claim, feature and pricing tier is audited directly against official sources before publication.</text>
+          
+          <g transform="translate(32, 80)">
+            <rect width="280" height="60" rx="8" fill="#0F1C36"/>
+            <text x="16" y="24" fill="#60A5FA" font-size="12" font-weight="bold" font-family="system-ui">1. Provenance Audit</text>
+            <text x="16" y="44" fill="#94A3B8" font-size="10" font-family="system-ui">Zero unverified stats or fake reviews</text>
+          </g>
+          <g transform="translate(340, 80)">
+            <rect width="280" height="60" rx="8" fill="#0F1C36"/>
+            <text x="16" y="24" fill="#10B981" font-size="12" font-weight="bold" font-family="system-ui">2. Single-Sign-On Ready</text>
+            <text x="16" y="44" fill="#94A3B8" font-size="10" font-family="system-ui">Unified account access across SaaS suite</text>
+          </g>
+          <g transform="translate(648, 80)">
+            <rect width="280" height="60" rx="8" fill="#0F1C36"/>
+            <text x="16" y="24" fill="#F59E0B" font-size="12" font-weight="bold" font-family="system-ui">3. Automated Publisher Payouts</text>
+            <text x="16" y="44" fill="#94A3B8" font-size="10" font-family="system-ui">Subscription billing without building a store</text>
+          </g>
+          <g transform="translate(956, 80)">
+            <rect width="260" height="60" rx="8" fill="#0F1C36"/>
+            <text x="16" y="24" fill="#A855F7" font-size="12" font-weight="bold" font-family="system-ui">4. SOC-2 / Privacy Protocols</text>
+            <text x="16" y="44" fill="#94A3B8" font-size="10" font-family="system-ui">On-device privacy masking &amp; security</text>
+          </g>
+        </g>
+      
 </svg>

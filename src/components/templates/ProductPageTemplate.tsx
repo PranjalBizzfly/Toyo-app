@@ -20,9 +20,9 @@ import "@/app/product-zoho.css";
 
 /** One shared artwork slot per spotlight position (swap the files for real art). */
 const SPOT_ART = [
-  <ImageSlot key="1" src="/images/product/spotlight-1.svg" alt="" width={580} height={520} className="pz-spot__img" />,
-  <ImageSlot key="2" src="/images/product/spotlight-2.svg" alt="" width={580} height={520} className="pz-spot__img" />,
-  <ImageSlot key="3" src="/images/product/spotlight-3.svg" alt="" width={580} height={520} className="pz-spot__img" />,
+  <ImageSlot key="1" src="/images/product/spotlight-1.webp" alt="Interactive records and data management console with search and batch actions" width={580} height={520} className="pz-spot__img" />,
+  <ImageSlot key="2" src="/images/product/spotlight-2.webp" alt="Automated workflow pipeline and visual trigger execution canvas" width={580} height={520} className="pz-spot__img" />,
+  <ImageSlot key="3" src="/images/product/spotlight-3.webp" alt="Operational efficiency analytics and statutory compliance audit dashboard" width={580} height={520} className="pz-spot__img" />,
 ];
 
 /** Highlighted features shown on the overview before linking to the full hub. */
@@ -338,7 +338,7 @@ export function ProductPageTemplate({ product }: { product: Product }) {
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={tourShot.src} alt={tourShot.alt} loading="lazy" />
                 ) : (
-                  <ImageSlot src="/images/product/tour.svg" alt={`${product.name} product screenshot`} width={1100} height={560} />
+                  <ImageSlot src="/images/product/tour.webp" alt={`${product.name} interactive application console and live workflow interface`} width={1100} height={560} />
                 )}
               </figure>
               {tourShot && shots.length > 1 && (

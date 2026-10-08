@@ -33,7 +33,7 @@ export default function PublishPage() {
           <div className="co-btns co-btns--hero">
             <Link className="co-btn co-btn--invert" href={routes.contact()}>Get in touch</Link>
           </div>
-          <ImageSlot src="/images/company/publish-hero.svg" alt="A SaaS product listed on ToyoApps" width={1200} height={420} priority className="co-hero__art" />
+          <ImageSlot src="/images/company/publish-hero.webp" alt="A SaaS product listed on ToyoApps" width={1200} height={420} priority className="co-hero__art" />
         </div>
       </section>
 
@@ -69,7 +69,7 @@ export default function PublishPage() {
               </li>
             ))}
           </ol>
-          <ImageSlot src="/images/company/publish-steps.svg" alt="From listing to growth on ToyoApps" width={1200} height={360} className="co-band__art" />
+          <ImageSlot src="/images/company/publish-steps.webp" alt="From listing to growth on ToyoApps" width={1200} height={360} className="co-band__art" />
         </div>
       </section>
 

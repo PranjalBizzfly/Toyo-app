@@ -1,6 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="480" viewBox="0 0 560 480">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="558" height="478" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M250 226h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="266" cy="240" r="5" fill="#8aa0b4"/><path d="M250 262l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="292" text-anchor="middle" font-family="system-ui,sans-serif" font-size="27" fill="#5b7186">features/group-hero.svg · 560×480</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="480" viewBox="0 0 560 480" fill="none">
+  
+        <rect width="560" height="480" rx="14" fill="#0A1326"/>
+        <rect x="16" y="16" width="528" height="448" rx="10" fill="#122040" stroke="#3A86FF" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="36" cy="36" r="4" fill="#EF4444"/>
+        <circle cx="50" cy="36" r="4" fill="#F59E0B"/>
+        <circle cx="64" cy="36" r="4" fill="#10B981"/>
+        <text x="82" y="40" fill="#94A3B8" font-size="11" font-family="system-ui, sans-serif" font-weight="600">Feature Group Capability Cluster</text>
+
+        <!-- Cluster Diagram -->
+        <g transform="translate(32, 64)">
+          <rect width="496" height="380" rx="8" fill="#091122" stroke="#1D3360" stroke-width="1"/>
+          
+          <g transform="translate(20, 20)">
+            <text x="0" y="20" fill="#FFFFFF" font-size="14" font-weight="bold" font-family="system-ui">Cohesive Feature Capabilities</text>
+            <text x="0" y="38" fill="#93C5FD" font-size="10" font-family="system-ui">Multiple tools working together under one roof</text>
+
+            <g transform="translate(0, 56)">
+              <rect width="456" height="66" rx="6" fill="#15244A"/>
+              <text x="14" y="26" fill="#FFFFFF" font-size="12" font-weight="bold" font-family="system-ui">● Core Engine &amp; Processing</text>
+              <text x="14" y="44" fill="#94A3B8" font-size="10" font-family="system-ui">High-throughput task execution with verifiable audits</text>
+            </g>
+
+            <g transform="translate(0, 134)">
+              <rect width="456" height="66" rx="6" fill="#15244A"/>
+              <text x="14" y="26" fill="#FFFFFF" font-size="12" font-weight="bold" font-family="system-ui">● Admin Governance &amp; Control</text>
+              <text x="14" y="44" fill="#94A3B8" font-size="10" font-family="system-ui">Role-based access, domain synchronization and privacy filters</text>
+            </g>
+
+            <g transform="translate(0, 212)">
+              <rect width="456" height="66" rx="6" fill="#15244A"/>
+              <text x="14" y="26" fill="#FFFFFF" font-size="12" font-weight="bold" font-family="system-ui">● Data Export &amp; Integration</text>
+              <text x="14" y="44" fill="#94A3B8" font-size="10" font-family="system-ui">Two-way API connections, webhook feeds, and scheduled PDF reports</text>
+            </g>
+          </g>
+        </g>
+      
 </svg>

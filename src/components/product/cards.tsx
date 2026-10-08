@@ -9,7 +9,7 @@ import { ButtonLink, CheckList, StatusBadge } from "@/components/ui/primitives";
 export function ProductLogo({ product }: { product: Product }) {
   if (product.logo) {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img className="product-card__logo" src={product.logo.src} alt="" style={{ background: "transparent" }} />;
+    return <img className="product-card__logo" src={product.logo.src} alt={`${product.name} logo`} style={{ background: "transparent" }} />;
   }
   return (
     <span className="product-card__logo" style={{ background: productAccent(product) }} aria-hidden>

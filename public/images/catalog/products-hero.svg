@@ -1,6 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="958" height="358" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M450 166h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="466" cy="180" r="5" fill="#8aa0b4"/><path d="M450 202l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#5b7186">catalog/products-hero.svg · 960×360</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" fill="none">
+  
+        <rect width="960" height="360" rx="16" fill="#0B132B"/>
+        <rect x="24" y="24" width="912" height="312" rx="12" fill="#152444" stroke="#3A86FF" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#8D99AE" font-size="13" font-family="system-ui, sans-serif" font-weight="600">ToyoApps · Unified Business Software Directory</text>
+        <rect x="760" y="38" width="150" height="24" rx="12" fill="#3A86FF" fill-opacity="0.2"/>
+        <text x="835" y="54" fill="#3A86FF" font-size="11" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">16 Verified Products</text>
+
+        <!-- Search &amp; Filter Bar -->
+        <g transform="translate(48, 76)">
+          <rect width="864" height="42" rx="8" fill="#0B132B" stroke="#253A66" stroke-width="1"/>
+          <text x="20" y="26" fill="#8D99AE" font-size="14" font-family="system-ui">🔍 Search apps by business function, task, or integration...</text>
+          <rect x="710" y="8" width="140" height="26" rx="6" fill="#3A86FF"/>
+          <text x="780" y="25" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">Browse All Apps</text>
+        </g>
+
+        <!-- Category Filter Pills -->
+        <g transform="translate(48, 130)">
+          <rect width="130" height="26" rx="13" fill="#3A86FF"/>
+          <text x="65" y="17" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui" text-anchor="middle">● All Categories</text>
+
+          <rect x="140" width="145" height="26" rx="13" fill="#1C2E54"/>
+          <text x="212" y="17" fill="#8D99AE" font-size="10" font-family="system-ui" text-anchor="middle">Sales &amp; Marketing (4)</text>
+
+          <rect x="295" width="130" height="26" rx="13" fill="#1C2E54"/>
+          <text x="360" y="17" fill="#8D99AE" font-size="10" font-family="system-ui" text-anchor="middle">HR &amp; People (3)</text>
+
+          <rect x="435" width="145" height="26" rx="13" fill="#1C2E54"/>
+          <text x="507" y="17" fill="#8D99AE" font-size="10" font-family="system-ui" text-anchor="middle">Operations &amp; IT (3)</text>
+
+          <rect x="590" width="165" height="26" rx="13" fill="#1C2E54"/>
+          <text x="672" y="17" fill="#8D99AE" font-size="10" font-family="system-ui" text-anchor="middle">Finance &amp; Compliance (1)</text>
+
+          <rect x="765" width="147" height="26" rx="13" fill="#1C2E54"/>
+          <text x="838" y="17" fill="#8D99AE" font-size="10" font-family="system-ui" text-anchor="middle">Insights &amp; Research (3)</text>
+        </g>
+
+        <!-- Product Cards Showcase Row -->
+        <g transform="translate(48, 172)">
+          <!-- Card 1: Cardizo -->
+          <g transform="translate(0, 0)">
+            <rect width="204" height="140" rx="8" fill="#0B132B" stroke="#253A66" stroke-width="1"/>
+            <text x="14" y="24" fill="#FFFFFF" font-size="13" font-weight="bold" font-family="system-ui">Cardizo</text>
+            <rect x="135" y="12" width="55" height="16" rx="4" fill="#3A86FF" fill-opacity="0.2"/>
+            <text x="162" y="24" fill="#3A86FF" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">AI SCAN</text>
+            <text x="14" y="44" fill="#8D99AE" font-size="10" font-family="system-ui">Business cards ➔ contacts</text>
+            <line x1="14" y1="56" x2="190" y2="56" stroke="#1C2E54" stroke-width="1"/>
+            <text x="14" y="74" fill="#E2E8F0" font-size="9" font-family="system-ui">✓ Instant WhatsApp link</text>
+            <text x="14" y="90" fill="#E2E8F0" font-size="9" font-family="system-ui">✓ Google Contacts export</text>
+            <text x="14" y="120" fill="#10B981" font-size="10" font-weight="bold" font-family="system-ui">Free trial available</text>
+          </g>
+
+          <!-- Card 2: SigChanger -->
+          <g transform="translate(220, 0)">
+            <rect width="204" height="140" rx="8" fill="#0B132B" stroke="#253A66" stroke-width="1"/>
+            <text x="14" y="24" fill="#FFFFFF" font-size="13" font-weight="bold" font-family="system-ui">SigChanger</text>
+            <rect x="135" y="12" width="55" height="16" rx="4" fill="#1A73E8" fill-opacity="0.2"/>
+            <text x="162" y="24" fill="#60A5FA" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">G-SUITE</text>
+            <text x="14" y="44" fill="#8D99AE" font-size="10" font-family="system-ui">Workspace Gmail signatures</text>
+            <line x1="14" y1="56" x2="190" y2="56" stroke="#1C2E54" stroke-width="1"/>
+            <text x="14" y="74" fill="#E2E8F0" font-size="9" font-family="system-ui">✓ Server-side rollout</text>
+            <text x="14" y="90" fill="#E2E8F0" font-size="9" font-family="system-ui">✓ Centralized drag &amp; drop</text>
+            <text x="14" y="120" fill="#10B981" font-size="10" font-weight="bold" font-family="system-ui">Free trial available</text>
+          </g>
+
+          <!-- Card 3: TrackySuite -->
+          <g transform="translate(440, 0)">
+            <rect width="204" height="140" rx="8" fill="#0B132B" stroke="#253A66" stroke-width="1"/>
+            <text x="14" y="24" fill="#FFFFFF" font-size="13" font-weight="bold" font-family="system-ui">TrackySuite</text>
+            <rect x="135" y="12" width="55" height="16" rx="4" fill="#0D9488" fill-opacity="0.2"/>
+            <text x="162" y="24" fill="#5EEAD4" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">CA &amp; CS</text>
+            <text x="14" y="44" fill="#8D99AE" font-size="10" font-family="system-ui">Statutory practice calendar</text>
+            <line x1="14" y1="56" x2="190" y2="56" stroke="#1C2E54" stroke-width="1"/>
+            <text x="14" y="74" fill="#E2E8F0" font-size="9" font-family="system-ui">✓ GST, TDS, ROC deadlines</text>
+            <text x="14" y="90" fill="#E2E8F0" font-size="9" font-family="system-ui">✓ Client document portal</text>
+            <text x="14" y="120" fill="#10B981" font-size="10" font-weight="bold" font-family="system-ui">Free trial available</text>
+          </g>
+
+          <!-- Card 4: HRMagix -->
+          <g transform="translate(660, 0)">
+            <rect width="204" height="140" rx="8" fill="#0B132B" stroke="#253A66" stroke-width="1"/>
+            <text x="14" y="24" fill="#FFFFFF" font-size="13" font-weight="bold" font-family="system-ui">HRMagix</text>
+            <rect x="135" y="12" width="55" height="16" rx="4" fill="#2563EB" fill-opacity="0.2"/>
+            <text x="162" y="24" fill="#93C5FD" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">PAYROLL</text>
+            <text x="14" y="44" fill="#8D99AE" font-size="10" font-family="system-ui">Indian HRMS &amp; statutory slips</text>
+            <line x1="14" y1="56" x2="190" y2="56" stroke="#1C2E54" stroke-width="1"/>
+            <text x="14" y="74" fill="#E2E8F0" font-size="9" font-family="system-ui">✓ PF, ESI, PT, TDS</text>
+            <text x="14" y="90" fill="#E2E8F0" font-size="9" font-family="system-ui">✓ Biometrics &amp; shifts</text>
+            <text x="14" y="120" fill="#10B981" font-size="10" font-weight="bold" font-family="system-ui">Free trial available</text>
+          </g>
+        </g>
+      
 </svg>

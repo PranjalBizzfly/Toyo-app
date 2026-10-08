@@ -20,12 +20,18 @@ export const routes = {
   compare: () => "/compare",
   comparison: (slug: string) => `/compare/${slug}`,
   resources: () => "/resources",
-  resourceType: (type: ResourceType) => `/resources/${type}`,
+  // The blog hub lives at /blog; /resources/blog permanently redirects there (next.config.ts).
+  resourceType: (type: ResourceType) => (type === "blog" ? "/blog" : `/resources/${type}`),
   resource: (type: ResourceType, slug: string) => `/resources/${type}/${slug}`,
   company: () => "/company",
   publish: () => "/publish",
   support: () => "/support",
   contact: () => "/contact",
+  careers: () => "/careers",
+  vendors: () => "/vendors",
+  media: () => "/media",
+  pressKit: () => "/press-kit",
+  blog: () => "/blog",
   legal: (doc: "privacy" | "terms" | "cookies") => `/legal/${doc}`,
 };
 

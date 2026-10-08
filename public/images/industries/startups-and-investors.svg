@@ -1,6 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="638" height="358" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M290 166h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="306" cy="180" r="5" fill="#8aa0b4"/><path d="M290 202l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#5b7186">industries/startups-and-investors.svg · 640×360</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  
+        <rect width="640" height="360" rx="16" fill="#051610"/>
+        <rect x="24" y="24" width="592" height="312" rx="12" fill="#0C2B20" stroke="#10B981" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#6EE7B7" font-size="12" font-family="system-ui, sans-serif" font-weight="600">Startups &amp; Investors · TAM / SAM / SOM Research &amp; Go-to-Market</text>
+        <rect x="475" y="38" width="125" height="22" rx="11" fill="#10B981" fill-opacity="0.2"/>
+        <text x="537" y="53" fill="#10B981" font-size="10" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">Sizoru + GetBenj</text>
+
+        <!-- Left: TAM / SAM / SOM Sizing -->
+        <g transform="translate(44, 74)">
+          <rect width="300" height="240" rx="8" fill="#03100B" stroke="#144634" stroke-width="1"/>
+          <text x="16" y="24" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">INVESTOR-DEFENSIBLE MARKET SIZING</text>
+
+          <g transform="translate(16, 40)">
+            <rect width="268" height="46" rx="6" fill="#0D3528" stroke="#10B981" stroke-width="1"/>
+            <text x="12" y="18" fill="#6EE7B7" font-size="10" font-family="system-ui">TAM (Top-Down Global)</text>
+            <text x="12" y="34" fill="#FFFFFF" font-size="15" font-weight="bold" font-family="system-ui">$18.4 Billion</text>
+            <text x="180" y="34" fill="#A7F3D0" font-size="9" font-family="system-ui">Gartner 2026</text>
+          </g>
+
+          <g transform="translate(16, 94)">
+            <rect width="268" height="46" rx="6" fill="#124534" stroke="#34D399" stroke-width="1"/>
+            <text x="12" y="18" fill="#A7F3D0" font-size="10" font-family="system-ui">SAM (Serviceable Market)</text>
+            <text x="12" y="34" fill="#FFFFFF" font-size="15" font-weight="bold" font-family="system-ui">$4.2 Billion</text>
+            <text x="180" y="34" fill="#A7F3D0" font-size="9" font-family="system-ui">Mid-Market B2B</text>
+          </g>
+
+          <g transform="translate(16, 148)">
+            <rect width="268" height="46" rx="6" fill="#059669"/>
+            <text x="12" y="18" fill="#FFFFFF" font-size="10" font-family="system-ui">SOM (3-Year Capturable)</text>
+            <text x="12" y="34" fill="#FFFFFF" font-size="15" font-weight="bold" font-family="system-ui">$520 Million</text>
+            <text x="180" y="34" fill="#E6FFFA" font-size="9" font-family="system-ui">Bottom-Up Model</text>
+          </g>
+          <text x="16" y="220" fill="#6EE7B7" font-size="10" font-family="system-ui">Variance between models: 3.2% · Tier-1 Citations verified</text>
+        </g>
+
+        <!-- Right: AI Launch Plan Preview -->
+        <g transform="translate(360, 74)">
+          <rect width="240" height="240" rx="8" fill="#03100B" stroke="#144634" stroke-width="1"/>
+          <text x="16" y="24" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">FOUNDER LAUNCH STRATEGY</text>
+
+          <g transform="translate(16, 40)">
+            <rect width="208" height="60" rx="6" fill="#1C1033" stroke="#A855F7" stroke-width="1"/>
+            <text x="10" y="18" fill="#D8B4FE" font-size="10" font-weight="bold" font-family="system-ui">GetBenj GTM Report</text>
+            <text x="10" y="34" fill="#FFFFFF" font-size="10" font-family="system-ui">Target: US &amp; EU Series A ICP</text>
+            <text x="10" y="48" fill="#10B981" font-size="9" font-family="system-ui">Channel: LinkedIn + Intent Search</text>
+          </g>
+
+          <g transform="translate(16, 112)">
+            <rect width="208" height="60" rx="6" fill="#0C2B20"/>
+            <text x="10" y="18" fill="#6EE7B7" font-size="10" font-weight="bold" font-family="system-ui">Pitch Deck Materials</text>
+            <text x="10" y="34" fill="#E2E8F0" font-size="9" font-family="system-ui">Export print-ready PDF</text>
+            <text x="10" y="48" fill="#E2E8F0" font-size="9" font-family="system-ui">With cited sources bibliography</text>
+          </g>
+
+          <rect x="16" y="184" width="208" height="34" rx="6" fill="#10B981"/>
+          <text x="120" y="205" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">Generate Pitch Reports</text>
+        </g>
+      
 </svg>

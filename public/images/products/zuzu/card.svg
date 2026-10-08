@@ -1,6 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="638" height="358" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M290 166h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="306" cy="180" r="5" fill="#8aa0b4"/><path d="M290 202l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#5b7186">products/zuzu/card.svg · 640×360</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <filter id="shadow" x="0" y="0" width="640" height="360" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+        <rect width="640" height="360" rx="16" fill="#0D1117"/>
+        <rect x="24" y="24" width="592" height="312" rx="12" fill="#161B22" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#8B949E" font-size="12" font-family="system-ui, sans-serif" font-weight="600">ZUZU · Windows Workday Insight with On-Device Privacy Redaction</text>
+        <rect x="480" y="38" width="120" height="22" rx="11" fill="#10B981" fill-opacity="0.2"/>
+        <text x="540" y="53" fill="#10B981" font-size="10" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">Privacy Redaction ON</text>
+
+        <!-- Left: Workday Activity Timeline -->
+        <g transform="translate(44, 74)">
+          <rect width="320" height="240" rx="8" fill="#0D1117" stroke="#30363D" stroke-width="1"/>
+          <text x="16" y="24" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">WINDOWS AGENT ACTIVITY TIMELINE</text>
+
+          <g transform="translate(16, 38)">
+            <rect width="288" height="50" rx="6" fill="#1F2937"/>
+            <text x="12" y="20" fill="#9CA3AF" font-size="9" font-family="system-ui">TODAY'S WORKDAY TOTALS</text>
+            <text x="12" y="38" fill="#10B981" font-size="14" font-weight="bold" font-family="system-ui">7h 15m Active</text>
+            <text x="125" y="38" fill="#F59E0B" font-size="14" font-weight="bold" font-family="system-ui">45m Idle</text>
+            <text x="205" y="38" fill="#3B82F6" font-size="14" font-weight="bold" font-family="system-ui">1h 10m Calls</text>
+          </g>
+
+          <!-- Application breakdown bar -->
+          <g transform="translate(16, 100)">
+            <text x="0" y="14" fill="#9CA3AF" font-size="10" font-family="system-ui">App Usage: VS Code (45%), Figma (25%), Jira (15%), Slack (15%)</text>
+            <rect y="22" width="288" height="10" rx="5" fill="#374151"/>
+            <rect y="22" width="130" height="10" rx="5" fill="#2563EB"/>
+            <rect x="132" y="22" width="72" height="10" rx="0" fill="#9333EA"/>
+            <rect x="206" y="22" width="42" height="10" rx="0" fill="#0D9488"/>
+            <rect x="250" y="22" width="38" height="10" rx="5" fill="#F59E0B"/>
+          </g>
+
+          <!-- On-device privacy badge -->
+          <g transform="translate(16, 154)">
+            <rect width="288" height="66" rx="6" fill="#111827" stroke="#10B981" stroke-width="1"/>
+            <text x="12" y="20" fill="#10B981" font-size="10" font-weight="bold" font-family="system-ui">🛡 On-Device Privacy Masking</text>
+            <text x="12" y="36" fill="#D1D5DB" font-size="9" font-family="system-ui">Passwords, banking &amp; private windows painted out on the</text>
+            <text x="12" y="50" fill="#D1D5DB" font-size="9" font-family="system-ui">device before screenshots or logs leave the employee PC.</text>
+          </g>
+        </g>
+
+        <!-- Right: AI-Generated Manager Daily Digest -->
+        <g transform="translate(380, 74)">
+          <rect width="220" height="240" rx="8" fill="#0D1117" stroke="#30363D" stroke-width="1"/>
+          <text x="14" y="24" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">AI MANAGER DAILY DIGEST</text>
+
+          <g transform="translate(14, 38)">
+            <rect width="192" height="110" rx="6" fill="#1F2937"/>
+            <text x="10" y="18" fill="#60A5FA" font-size="10" font-weight="bold" font-family="system-ui">Summary for Sarah Jenkins</text>
+            <text x="10" y="34" fill="#E5E7EB" font-size="9" font-family="system-ui">"Deep work block observed</text>
+            <text x="10" y="48" fill="#E5E7EB" font-size="9" font-family="system-ui">between 10 AM - 1 PM on API</text>
+            <text x="10" y="62" fill="#E5E7EB" font-size="9" font-family="system-ui">refactor in VS Code.</text>
+            <text x="10" y="80" fill="#10B981" font-size="9" font-family="system-ui">Focus index: 92% (High flow)"</text>
+          </g>
+
+          <g transform="translate(14, 160)">
+            <rect width="192" height="64" rx="6" fill="#111827"/>
+            <text x="10" y="18" fill="#9CA3AF" font-size="9" font-family="system-ui">DATA RETENTION POLICY</text>
+            <text x="10" y="34" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">90 Days Retention Set</text>
+            <text x="10" y="50" fill="#9CA3AF" font-size="9" font-family="system-ui">Admin ZIP export available</text>
+          </g>
+        </g>
+      
 </svg>

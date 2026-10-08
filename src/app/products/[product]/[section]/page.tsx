@@ -233,7 +233,7 @@ export default async function ProductSectionPage({ params }: Props) {
                   return (
                   <Link key={l.href} href={l.href} className="pz-vcard">
                     <span className="pz-vcard__art">
-                      <ImageSlot src="/images/product/section-card.svg" alt="" width={370} height={172} />
+                      <ImageSlot src="/images/product/section-card.webp" alt={`${l.name} feature capability and integration overview`} width={370} height={172} />
                     </span>
                     <span className="pz-vcard__body">
                       <h3>{l.name}</h3>

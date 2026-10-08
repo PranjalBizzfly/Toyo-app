@@ -7,14 +7,14 @@ import type { NavLink, NavMenu } from "@/lib/navigation";
 import { ChevronDown, Icon } from "@/components/ui/Icon";
 import { ThemeToggle } from "./ThemeToggle";
 
-function SearchForm({ id, className = "header-search" }: { id: string; className?: string }) {
+function SearchForm({ id, className = "header-search", placeholder = "I'm looking for…" }: { id: string; className?: string; placeholder?: string }) {
   return (
     <form action="/search" role="search" className={className}>
       <Icon name="search" />
       <label htmlFor={id} className="sr-only">
         Search products
       </label>
-      <input id={id} name="q" type="search" placeholder="I'm looking for…" autoComplete="off" />
+      <input id={id} name="q" type="search" placeholder={placeholder} autoComplete="off" />
     </form>
   );
 }
@@ -124,19 +124,16 @@ function ProductsPanel({ menu, onNavigate }: { menu: NavMenu; onNavigate: () => 
 }
 
 /**
- * Compact dropdown card under its trigger (after zoho.com): plain text links.
- * One group → a single list (ending with the hub link). Several groups →
- * columns with small uppercase labels, separated by a thin divider.
+ * Dropdown card under its trigger, after zoho.com's Resources menu: labelled
+ * columns (bold uppercase label, indented plain links) split by a thin divider.
+ * Every non-product menu uses this one layout; no intro, icons or footer link.
  */
 function DropPanel({ menu, onNavigate }: { menu: NavMenu; onNavigate: () => void }) {
-  const grouped = menu.groups.length > 1;
-  // Skip the hub link when an item already points there (e.g. Company → Contact).
-  const showFoot = !menu.groups.some((g) => g.links.some((l) => l.href === menu.footerLink.href));
   return (
-    <div className={`drop${grouped ? " drop--cols" : ""}`} data-cols={Math.min(menu.groups.length, 3)}>
+    <div className="drop" data-cols={Math.min(menu.groups.length, 3)}>
       {menu.groups.map((g) => (
         <section key={g.title} className="drop__col" aria-label={g.title}>
-          {grouped && <h3 className="drop__label">{g.title}</h3>}
+          <h3 className="drop__label">{g.title}</h3>
           <ul>
             {g.links.map((l) => (
               <li key={l.href + l.label}>
@@ -145,21 +142,9 @@ function DropPanel({ menu, onNavigate }: { menu: NavMenu; onNavigate: () => void
                 </Link>
               </li>
             ))}
-            {!grouped && showFoot && (
-              <li className="drop__all">
-                <Link href={menu.footerLink.href} onClick={onNavigate}>
-                  {menu.footerLink.label} <Icon name="arrow-right" />
-                </Link>
-              </li>
-            )}
           </ul>
         </section>
       ))}
-      {grouped && showFoot && (
-        <Link href={menu.footerLink.href} className="drop__foot" onClick={onNavigate}>
-          {menu.footerLink.label} <Icon name="arrow-right" />
-        </Link>
-      )}
     </div>
   );
 }
@@ -231,6 +216,7 @@ export function HeaderNav({ menus }: { menus: NavMenu[] }) {
       </nav>
 
       <div className="header-actions">
+        <SearchForm id="header-search" className="header-search header-search--pill" placeholder="Search products, solutions, etc..." />
         <Link href="/search" className="icon-btn icon-btn--plain header-search-link" aria-label="Search ToyoApps">
           <Icon name="search" />
         </Link>
@@ -238,8 +224,8 @@ export function HeaderNav({ menus }: { menus: NavMenu[] }) {
         <Link href="/contact" className="header-signin">
           Contact
         </Link>
-        <Link href="/products" className="btn btn--outline btn--sm header-cta">
-          Get Started
+        <Link href="/products" className="btn btn--primary btn--sm header-cta">
+          Get Started <Icon name="arrow-right" />
         </Link>
         <button
           type="button"

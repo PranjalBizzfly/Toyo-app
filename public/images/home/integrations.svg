@@ -1,6 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="420" viewBox="0 0 560 420">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="558" height="418" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M250 196h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="266" cy="210" r="5" fill="#8aa0b4"/><path d="M250 232l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="262" text-anchor="middle" font-family="system-ui,sans-serif" font-size="23" fill="#5b7186">home/integrations.svg · 560×420</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="420" viewBox="0 0 560 420" fill="none">
+  
+        <rect width="560" height="420" rx="16" fill="#0A1326"/>
+        <rect x="20" y="20" width="520" height="380" rx="12" fill="#122040" stroke="#00D2FF" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="44" cy="44" r="5" fill="#EF4444"/>
+        <circle cx="60" cy="44" r="5" fill="#F59E0B"/>
+        <circle cx="76" cy="44" r="5" fill="#10B981"/>
+        <text x="96" y="48" fill="#7DD3FC" font-size="12" font-family="system-ui, sans-serif" font-weight="600">Integrations · Connected Ecosystem Hub</text>
+
+        <!-- Mesh Network Diagram -->
+        <g transform="translate(40, 70)">
+          <!-- Center Box: ToyoApps -->
+          <g transform="translate(160, 110)">
+            <rect width="160" height="80" rx="10" fill="#00D2FF" fill-opacity="0.15" stroke="#00D2FF" stroke-width="2"/>
+            <text x="80" y="36" fill="#FFFFFF" font-size="13" font-weight="bold" text-anchor="middle" font-family="system-ui">ToyoApps Suite</text>
+            <text x="80" y="56" fill="#00D2FF" font-size="10" font-weight="bold" text-anchor="middle" font-family="system-ui">API Sync Core</text>
+          </g>
+
+          <!-- Connected Tools -->
+          <!-- Google Workspace -->
+          <g transform="translate(0, 10)">
+            <line x1="130" y1="30" x2="200" y2="110" stroke="#00D2FF" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <rect width="130" height="46" rx="6" fill="#0B162C" stroke="#253E66" stroke-width="1"/>
+            <text x="12" y="20" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Google Workspace</text>
+            <text x="12" y="34" fill="#38BDF8" font-size="9" font-family="system-ui">SigChanger Gmail</text>
+          </g>
+
+          <!-- WhatsApp &amp; Telegram -->
+          <g transform="translate(0, 220)">
+            <line x1="130" y1="20" x2="200" y2="190" stroke="#00D2FF" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <rect width="130" height="46" rx="6" fill="#0B162C" stroke="#253E66" stroke-width="1"/>
+            <text x="12" y="20" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">WhatsApp &amp; Tele</text>
+            <text x="12" y="34" fill="#10B981" font-size="9" font-family="system-ui">Alerts &amp; Status</text>
+          </g>
+
+          <!-- AWS S3 &amp; Cloud Storage -->
+          <g transform="translate(350, 10)">
+            <line x1="0" y1="30" x2="-70" y2="110" stroke="#00D2FF" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <rect width="130" height="46" rx="6" fill="#0B162C" stroke="#253E66" stroke-width="1"/>
+            <text x="12" y="20" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">AWS S3 &amp; Drive</text>
+            <text x="12" y="34" fill="#F59E0B" font-size="9" font-family="system-ui">Sibu Media Sync</text>
+          </g>
+
+          <!-- Slack &amp; Webhooks -->
+          <g transform="translate(350, 220)">
+            <line x1="0" y1="20" x2="-70" y2="190" stroke="#00D2FF" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <rect width="130" height="46" rx="6" fill="#0B162C" stroke="#253E66" stroke-width="1"/>
+            <text x="12" y="20" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Slack &amp; Webhooks</text>
+            <text x="12" y="34" fill="#A855F7" font-size="9" font-family="system-ui">Live Notifications</text>
+          </g>
+        </g>
+
+        <!-- Bottom Status -->
+        <g transform="translate(40, 345)">
+          <rect width="480" height="34" rx="6" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="1"/>
+          <circle cx="20" cy="17" r="5" fill="#10B981"/>
+          <text x="34" y="21" fill="#10B981" font-size="11" font-weight="bold" font-family="system-ui">All Integrations Named by Products Themselves</text>
+        </g>
+      
 </svg>

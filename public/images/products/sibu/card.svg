@@ -1,6 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="638" height="358" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M290 166h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="306" cy="180" r="5" fill="#8aa0b4"/><path d="M290 202l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#5b7186">products/sibu/card.svg · 640×360</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <filter id="shadow" x="0" y="0" width="640" height="360" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+        <rect width="640" height="360" rx="16" fill="#09121E"/>
+        <rect x="24" y="24" width="592" height="312" rx="12" fill="#122036" stroke="#00D2FF" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#7DD3FC" font-size="12" font-family="system-ui, sans-serif" font-weight="600">Sibu · Digital Asset Management &amp; Video Timeline Review</text>
+        <rect x="475" y="38" width="125" height="22" rx="11" fill="#00D2FF" fill-opacity="0.2"/>
+        <text x="537" y="53" fill="#00D2FF" font-size="10" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">Drive &amp; S3 Connected</text>
+
+        <!-- Left: Video Player with Timeline Scrubber &amp; Comments -->
+        <g transform="translate(44, 74)">
+          <rect width="320" height="240" rx="8" fill="#060C14" stroke="#1E385C" stroke-width="1"/>
+          <!-- Video Screen Preview -->
+          <rect x="12" y="12" width="296" height="140" rx="6" fill="#0F243E"/>
+          <!-- Video Scene Visual -->
+          <circle cx="160" cy="70" r="30" fill="#00D2FF" fill-opacity="0.3"/>
+          <polygon points="152,58 174,70 152,82" fill="#00D2FF"/>
+          <text x="24" y="32" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Keynote_Hero_Final_4K.mp4</text>
+          <rect x="238" y="22" width="60" height="18" rx="4" fill="#000000" fill-opacity="0.6"/>
+          <text x="268" y="35" fill="#10B981" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">APPROVED</text>
+
+          <!-- Scrubber Bar -->
+          <g transform="translate(12, 162)">
+            <rect width="296" height="6" rx="3" fill="#1E385C"/>
+            <rect width="180" height="6" rx="3" fill="#00D2FF"/>
+            <!-- Marker Pin -->
+            <circle cx="180" cy="3" r="5" fill="#00F0FF"/>
+            <text x="0" y="22" fill="#7DD3FC" font-size="9" font-family="monospace">01:42.10</text>
+            <text x="255" y="22" fill="#7DD3FC" font-size="9" font-family="monospace">04:15.00</text>
+          </g>
+
+          <!-- Pinned Timeline Comment -->
+          <g transform="translate(12, 192)">
+            <rect width="296" height="36" rx="6" fill="#132B4A" stroke="#00D2FF" stroke-width="1"/>
+            <circle cx="22" cy="18" r="8" fill="#F59E0B"/>
+            <text x="36" y="16" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Marcus Cole @ 01:42</text>
+            <text x="36" y="28" fill="#93C5FD" font-size="9" font-family="system-ui">"Contrast looks perfect here. Ship it!"</text>
+          </g>
+        </g>
+
+        <!-- Right: AI Tagging &amp; Asset Metadata -->
+        <g transform="translate(380, 74)">
+          <rect width="220" height="240" rx="8" fill="#060C14" stroke="#1E385C" stroke-width="1"/>
+          <text x="14" y="24" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">AI SCENE &amp; OCR TAGS</text>
+
+          <g transform="translate(14, 38)">
+            <rect width="88" height="22" rx="4" fill="#17355C"/>
+            <text x="44" y="15" fill="#38BDF8" font-size="9" font-weight="600" font-family="system-ui" text-anchor="middle">#ProductLaunch</text>
+
+            <rect x="96" width="60" height="22" rx="4" fill="#17355C"/>
+            <text x="126" y="15" fill="#38BDF8" font-size="9" font-weight="600" font-family="system-ui" text-anchor="middle">#4K_UHD</text>
+          </g>
+          <g transform="translate(14, 66)">
+            <rect width="70" height="22" rx="4" fill="#17355C"/>
+            <text x="35" y="15" fill="#38BDF8" font-size="9" font-weight="600" font-family="system-ui" text-anchor="middle">#Keynote</text>
+
+            <rect x="78" width="85" height="22" rx="4" fill="#17355C"/>
+            <text x="120" y="15" fill="#38BDF8" font-size="9" font-weight="600" font-family="system-ui" text-anchor="middle">#MotionGraphic</text>
+          </g>
+
+          <text x="14" y="114" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">EXTRACTED ON-SCREEN TEXT</text>
+          <g transform="translate(14, 126)">
+            <rect width="192" height="38" rx="6" fill="#102540"/>
+            <text x="10" y="16" fill="#E2E8F0" font-size="9" font-family="system-ui">"ToyoApps Cloud Engine 2026"</text>
+            <text x="10" y="30" fill="#7DD3FC" font-size="8" font-family="system-ui">Indexed for semantic search</text>
+          </g>
+
+          <text x="14" y="186" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">INTEGRATED STORAGE</text>
+          <g transform="translate(14, 198)">
+            <rect width="192" height="28" rx="6" fill="#102540"/>
+            <text x="10" y="18" fill="#10B981" font-size="9" font-weight="bold" font-family="system-ui">● Google Drive &amp; AWS S3 Synced</text>
+          </g>
+        </g>
+      
 </svg>

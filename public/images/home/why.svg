@@ -1,6 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="1198" height="398" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M570 186h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="586" cy="200" r="5" fill="#8aa0b4"/><path d="M570 222l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="252" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" fill="#5b7186">home/why.svg · 1200×400</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" fill="none">
+  
+        <rect width="1200" height="400" rx="16" fill="#0A1122"/>
+        <rect x="24" y="24" width="1152" height="352" rx="12" fill="#13203C" stroke="#38BDF8" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif" font-weight="600">Why ToyoApps · Fragmented Tool Sprawl vs. Unified Ecosystem</text>
+        <rect x="990" y="38" width="160" height="24" rx="12" fill="#38BDF8" fill-opacity="0.2"/>
+        <text x="1070" y="54" fill="#38BDF8" font-size="11" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">Architectural Contrast</text>
+
+        <!-- Left: Fragmented Traditional SaaS Sprawl (Chaos) -->
+        <g transform="translate(48, 80)">
+          <rect width="520" height="280" rx="10" fill="#170A0F" stroke="#4C1D28" stroke-width="1"/>
+          <text x="24" y="32" fill="#F87171" font-size="14" font-weight="bold" font-family="system-ui">✕ The Problem: Fragmented SaaS Sprawl</text>
+
+          <g transform="translate(24, 52)">
+            <rect width="472" height="46" rx="6" fill="#2E121A"/>
+            <text x="14" y="20" fill="#FDA4AF" font-size="11" font-weight="bold" font-family="system-ui">Disjointed Logins &amp; Fragmented Tools</text>
+            <text x="14" y="34" fill="#9CA3AF" font-size="10" font-family="system-ui">Separate passwords, mismatched billing dates, multiple admin panels</text>
+          </g>
+
+          <g transform="translate(24, 110)">
+            <rect width="472" height="46" rx="6" fill="#2E121A"/>
+            <text x="14" y="20" fill="#FDA4AF" font-size="11" font-weight="bold" font-family="system-ui">Unverifiable Marketing Vanity Metrics</text>
+            <text x="14" y="34" fill="#9CA3AF" font-size="10" font-family="system-ui">Fake customer logos, inflated statistics, pricing hidden behind sales calls</text>
+          </g>
+
+          <g transform="translate(24, 168)">
+            <rect width="472" height="46" rx="6" fill="#2E121A"/>
+            <text x="14" y="20" fill="#FDA4AF" font-size="11" font-weight="bold" font-family="system-ui">Siloed Data &amp; Broken Handoffs</text>
+            <text x="14" y="34" fill="#9CA3AF" font-size="10" font-family="system-ui">No visibility between sales, operations, HR, and compliance workflows</text>
+          </g>
+        </g>
+
+        <!-- Right: The ToyoApps Ecosystem (Order &amp; Integration) -->
+        <g transform="translate(632, 80)">
+          <rect width="520" height="280" rx="10" fill="#07191E" stroke="#134D57" stroke-width="1"/>
+          <text x="24" y="32" fill="#34D399" font-size="14" font-weight="bold" font-family="system-ui">✓ The ToyoApps Solution: Cohesive Ecosystem</text>
+
+          <g transform="translate(24, 52)">
+            <rect width="472" height="46" rx="6" fill="#0C2F36"/>
+            <text x="14" y="20" fill="#5EEAD4" font-size="11" font-weight="bold" font-family="system-ui">16 Products Organized by Business Function</text>
+            <text x="14" y="34" fill="#E2E8F0" font-size="10" font-family="system-ui">Discover by categories, feature pages, solutions, or industry verticals</text>
+          </g>
+
+          <g transform="translate(24, 110)">
+            <rect width="472" height="46" rx="6" fill="#0C2F36"/>
+            <text x="14" y="20" fill="#5EEAD4" font-size="11" font-weight="bold" font-family="system-ui">Strict Data Provenance &amp; Real Technical Specs</text>
+            <text x="14" y="34" fill="#E2E8F0" font-size="10" font-family="system-ui">Everything audited from official product records with verified pricing</text>
+          </g>
+
+          <g transform="translate(24, 168)">
+            <rect width="472" height="46" rx="6" fill="#0C2F36"/>
+            <text x="14" y="20" fill="#5EEAD4" font-size="11" font-weight="bold" font-family="system-ui">Shared Workflows &amp; Standardized Interface</text>
+            <text x="14" y="34" fill="#E2E8F0" font-size="10" font-family="system-ui">Zero re-learning curve when moving from one business tool to the next</text>
+          </g>
+        </g>
+      
 </svg>

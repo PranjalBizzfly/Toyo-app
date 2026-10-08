@@ -1,6 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="958" height="358" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M450 166h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="466" cy="180" r="5" fill="#8aa0b4"/><path d="M450 202l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#5b7186">catalog/integrations-hero.svg · 960×360</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" fill="none">
+  
+        <rect width="960" height="360" rx="16" fill="#0C1527"/>
+        <rect x="24" y="24" width="912" height="312" rx="12" fill="#15243F" stroke="#00D2FF" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#7DD3FC" font-size="13" font-family="system-ui, sans-serif" font-weight="600">ToyoApps · Connected Ecosystem &amp; Integrations Mesh</text>
+        <rect x="760" y="38" width="150" height="24" rx="12" fill="#00D2FF" fill-opacity="0.2"/>
+        <text x="835" y="54" fill="#00D2FF" font-size="11" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">Live Data Pipelines</text>
+
+        <!-- Central Hub Diagram -->
+        <!-- Center Hub -->
+        <g transform="translate(410, 140)">
+          <rect width="140" height="90" rx="12" fill="#00D2FF" fill-opacity="0.15" stroke="#00D2FF" stroke-width="2"/>
+          <circle cx="70" cy="35" r="18" fill="#00D2FF"/>
+          <text x="70" y="41" fill="#0C1527" font-size="14" font-weight="bold" text-anchor="middle" font-family="system-ui">⚡</text>
+          <text x="70" y="70" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle" font-family="system-ui">ToyoApps Hub</text>
+        </g>
+
+        <!-- Surrounding Integration Nodes -->
+        <!-- Node 1: Google Workspace (Top Left) -->
+        <g transform="translate(80, 80)">
+          <line x1="180" y1="40" x2="330" y2="80" stroke="#00D2FF" stroke-width="2" stroke-dasharray="4 2"/>
+          <rect width="180" height="60" rx="8" fill="#0B1321" stroke="#253E66" stroke-width="1"/>
+          <circle cx="28" cy="30" r="14" fill="#1A73E8"/>
+          <text x="28" y="35" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle" font-family="system-ui">G</text>
+          <text x="52" y="26" fill="#FFFFFF" font-size="12" font-weight="bold" font-family="system-ui">Google Workspace</text>
+          <text x="52" y="42" fill="#7DD3FC" font-size="10" font-family="system-ui">SigChanger Gmail API</text>
+        </g>
+
+        <!-- Node 2: WhatsApp &amp; Telegram (Bottom Left) -->
+        <g transform="translate(80, 220)">
+          <line x1="180" y1="30" x2="330" y2="0" stroke="#00D2FF" stroke-width="2" stroke-dasharray="4 2"/>
+          <rect width="180" height="60" rx="8" fill="#0B1321" stroke="#253E66" stroke-width="1"/>
+          <circle cx="28" cy="30" r="14" fill="#25D366"/>
+          <text x="28" y="35" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle" font-family="system-ui">W</text>
+          <text x="52" y="26" fill="#FFFFFF" font-size="12" font-weight="bold" font-family="system-ui">WhatsApp &amp; Telegram</text>
+          <text x="52" y="42" fill="#7DD3FC" font-size="10" font-family="system-ui">ZapBuzzer, Cardizo, Fantom</text>
+        </g>
+
+        <!-- Node 3: Cloud Storage - Drive, Dropbox, AWS S3 (Top Right) -->
+        <g transform="translate(700, 80)">
+          <line x1="0" y1="40" x2="-150" y2="80" stroke="#00D2FF" stroke-width="2" stroke-dasharray="4 2"/>
+          <rect width="180" height="60" rx="8" fill="#0B1321" stroke="#253E66" stroke-width="1"/>
+          <circle cx="28" cy="30" r="14" fill="#F59E0B"/>
+          <text x="28" y="35" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle" font-family="system-ui">☁</text>
+          <text x="52" y="26" fill="#FFFFFF" font-size="12" font-weight="bold" font-family="system-ui">AWS S3, Drive, Dropbox</text>
+          <text x="52" y="42" fill="#7DD3FC" font-size="10" font-family="system-ui">Sibu Asset Ingestion</text>
+        </g>
+
+        <!-- Node 4: Creative &amp; Slack Tools (Bottom Right) -->
+        <g transform="translate(700, 220)">
+          <line x1="0" y1="30" x2="-150" y2="0" stroke="#00D2FF" stroke-width="2" stroke-dasharray="4 2"/>
+          <rect width="180" height="60" rx="8" fill="#0B1321" stroke="#253E66" stroke-width="1"/>
+          <circle cx="28" cy="30" r="14" fill="#A855F7"/>
+          <text x="28" y="35" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle" font-family="system-ui">#</text>
+          <text x="52" y="26" fill="#FFFFFF" font-size="12" font-weight="bold" font-family="system-ui">Slack, Figma &amp; Premiere</text>
+          <text x="52" y="42" fill="#7DD3FC" font-size="10" font-family="system-ui">Creative Ops &amp; Webhooks</text>
+        </g>
+      
 </svg>

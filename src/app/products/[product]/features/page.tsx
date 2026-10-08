@@ -197,9 +197,9 @@ export default async function FeaturesPage({ params }: Props) {
               </div>
               <div className={`fz-media${variant === 2 ? " fz-media--band" : ""}`}>
                 {variant === 0 ? (
-                  <ImageSlot src="/images/features/area-illustration.svg" alt={`${g.group.name} in ${product.name}`} width={450} height={450} className="fz-art" />
+                  <ImageSlot src="/images/features/area-illustration.webp" alt={`${g.group.name} in ${product.name}`} width={450} height={450} className="fz-art" />
                 ) : (
-                  <ImageSlot src="/images/features/area-band.svg" alt={`${g.group.name} in ${product.name}`} width={360} height={480} className="fz-art fz-art--band" />
+                  <ImageSlot src="/images/features/area-band.webp" alt={`${g.group.name} in ${product.name}`} width={360} height={480} className="fz-art fz-art--band" />
                 )}
                 <ul className="fz-links">
                   {g.features.map((f) => (

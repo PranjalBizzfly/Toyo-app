@@ -37,7 +37,7 @@ export interface CatalogSideLink {
 function AppMark({ item }: { item: CatalogItem }) {
   if (item.logo) {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img className="zc-card__logo" src={item.logo} alt="" />;
+    return <img className="zc-card__logo" src={item.logo} alt={`${item.name} logo`} />;
   }
   return (
     <span className="zc-card__logo zc-card__logo--mono" style={{ color: item.accent, borderColor: item.accent }} aria-hidden>
@@ -56,7 +56,6 @@ export function AppCard({ item, featured = false }: { item: CatalogItem; feature
         <h3 className="zc-card__name">
           <Link href={item.href}>{item.name}</Link>
         </h3>
-        {item.pending && <span className="badge badge--warn">Pending verification</span>}
         <p className="zc-card__desc">{item.description}</p>
         <Link href={item.href} className={featured ? "zc-card__btn" : "zc-card__link"} aria-label={`Explore ${item.name}`} tabIndex={-1}>
           Explore

@@ -42,7 +42,7 @@ export default function IntegrationsPage() {
         title="Connect ToyoApps products with the tools you already use"
         lead="Every integration here is one a product names on its own site — cloud storage that feeds Sibu's asset library, Google Workspace for SigChanger, Google Contacts for Cardizo, and WhatsApp and Telegram for alerts and status tracking. Each entry shows which ToyoApps products support it."
       >
-        <ImageSlot src="/images/catalog/integrations-hero.svg" alt="ToyoApps products connected to other business tools" width={960} height={360} priority className="zc-page-art" />
+        <ImageSlot src="/images/catalog/integrations-hero.webp" alt="ToyoApps products connected to other business tools" width={960} height={360} priority className="zc-page-art" />
       </PageHero>
 
       {groups.length === 0 ? (

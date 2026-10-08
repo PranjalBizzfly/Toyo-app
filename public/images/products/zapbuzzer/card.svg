@@ -1,6 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="638" height="358" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M290 166h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="306" cy="180" r="5" fill="#8aa0b4"/><path d="M290 202l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#5b7186">products/zapbuzzer/card.svg · 640×360</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <filter id="shadow" x="0" y="0" width="640" height="360" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+        <rect width="640" height="360" rx="16" fill="#1F1206"/>
+        <rect x="24" y="24" width="592" height="312" rx="12" fill="#351F0B" stroke="#EA580C" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#FDBA74" font-size="12" font-family="system-ui, sans-serif" font-weight="600">ZapBuzzer · Workplace Service Request Buzzer &amp; SLA Escalation</text>
+        <rect x="490" y="38" width="110" height="22" rx="11" fill="#EA580C" fill-opacity="0.25"/>
+        <text x="545" y="53" fill="#FDBA74" font-size="11" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">SLA Active</text>
+
+        <!-- Left: Urgent Request Card with Countdown Timer -->
+        <g transform="translate(44, 74)">
+          <rect width="290" height="240" rx="8" fill="#140A03" stroke="#542C0F" stroke-width="1"/>
+          <text x="16" y="24" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">ACTIVE WORKPLACE REQUEST</text>
+
+          <g transform="translate(16, 38)">
+            <rect width="258" height="64" rx="6" fill="#431E09" stroke="#EA580C" stroke-width="1"/>
+            <text x="12" y="20" fill="#FFA366" font-size="10" font-weight="bold" font-family="system-ui">#1084 · Pantry &amp; Facilities Service</text>
+            <text x="12" y="36" fill="#FFFFFF" font-size="12" font-weight="bold" font-family="system-ui">Coffee Machine Restock · 4th Floor</text>
+            <text x="12" y="50" fill="#FED7AA" font-size="9" font-family="system-ui">Requested by: Marketing Team Hub</text>
+          </g>
+
+          <!-- SLA Countdown Gauge -->
+          <g transform="translate(16, 114)">
+            <rect width="258" height="54" rx="6" fill="#291307"/>
+            <text x="12" y="22" fill="#FDBA74" font-size="10" font-family="system-ui">SLA Countdown Timer</text>
+            <text x="12" y="44" fill="#10B981" font-size="20" font-weight="bold" font-family="system-ui">03:42 mins</text>
+            <text x="150" y="44" fill="#10B981" font-size="10" font-weight="bold" font-family="system-ui">● Within SLA (5m max)</text>
+          </g>
+
+          <!-- Assigned Owner -->
+          <g transform="translate(16, 178)">
+            <rect width="258" height="46" rx="6" fill="#291307"/>
+            <text x="12" y="18" fill="#9CA3AF" font-size="9" font-family="system-ui">ACCEPTED BY</text>
+            <text x="12" y="34" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">Amit Kumar (Facilities Lead)</text>
+            <text x="180" y="34" fill="#10B981" font-size="10" font-weight="bold" font-family="system-ui">Accepted 1m ago</text>
+          </g>
+        </g>
+
+        <!-- Right: Escalation Chain &amp; Alert Broadcast -->
+        <g transform="translate(350, 74)">
+          <rect width="250" height="240" rx="8" fill="#140A03" stroke="#542C0F" stroke-width="1"/>
+          <text x="16" y="24" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">ESCALATION SLA CHAIN</text>
+
+          <g transform="translate(16, 40)">
+            <rect width="218" height="32" rx="4" fill="#291307"/>
+            <text x="10" y="20" fill="#10B981" font-size="10" font-family="system-ui">Level 1: Floor Staff (0 - 5 mins) ✓</text>
+          </g>
+          <g transform="translate(16, 80)">
+            <rect width="218" height="32" rx="4" fill="#291307"/>
+            <text x="10" y="20" fill="#F59E0B" font-size="10" font-family="system-ui">Level 2: Team Lead (5 - 10 mins)</text>
+          </g>
+          <g transform="translate(16, 120)">
+            <rect width="218" height="32" rx="4" fill="#291307"/>
+            <text x="10" y="20" fill="#EF4444" font-size="10" font-family="system-ui">Level 3: Facilities Admin (10m+)</text>
+          </g>
+
+          <!-- Alerts broadcast box -->
+          <g transform="translate(16, 164)">
+            <rect width="218" height="60" rx="6" fill="#431E09"/>
+            <text x="10" y="20" fill="#FFFFFF" font-size="10" font-weight="bold" font-family="system-ui">Multi-Channel Alerts Sent</text>
+            <text x="10" y="36" fill="#FDBA74" font-size="9" font-family="system-ui">💬 Telegram Channel · 📱 App Notification</text>
+            <text x="10" y="50" fill="#FDBA74" font-size="9" font-family="system-ui">✉ Facilities Team Group Email</text>
+          </g>
+        </g>
+      
 </svg>

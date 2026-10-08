@@ -1,6 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="550" viewBox="0 0 1440 550">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="1438" height="548" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M690 261h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="706" cy="275" r="5" fill="#8aa0b4"/><path d="M690 297l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="327" text-anchor="middle" font-family="system-ui,sans-serif" font-size="31" fill="#5b7186">home/team-band.svg · 1440×550</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="550" viewBox="0 0 1440 550" fill="none">
+  
+        <rect width="1440" height="550" rx="20" fill="#070E1C"/>
+        <rect x="32" y="32" width="1376" height="486" rx="16" fill="#0F1B36" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="64" cy="64" r="7" fill="#EF4444"/>
+        <circle cx="86" cy="64" r="7" fill="#F59E0B"/>
+        <circle cx="108" cy="64" r="7" fill="#10B981"/>
+        <text x="140" y="70" fill="#94A3B8" font-size="16" font-family="system-ui, sans-serif" font-weight="600">The Principles Behind ToyoApps · Platform Integrity &amp; Maker Economics</text>
+        <rect x="1160" y="50" width="220" height="30" rx="15" fill="#2563EB" fill-opacity="0.2"/>
+        <text x="1270" y="70" fill="#60A5FA" font-size="13" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">Founding Principles</text>
+
+        <!-- 4 Principle Pillars Cards -->
+        <g transform="translate(96, 120)">
+          <!-- Pillar 1 -->
+          <g transform="translate(0, 0)">
+            <rect width="290" height="350" rx="10" fill="#0A1326" stroke="#1E3360" stroke-width="1"/>
+            <circle cx="40" cy="40" r="20" fill="#2563EB"/>
+            <text x="40" y="46" fill="#FFFFFF" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui">01</text>
+            <text x="74" y="44" fill="#FFFFFF" font-size="16" font-weight="bold" font-family="system-ui">Many Products, One Home</text>
+            
+            <rect x="20" y="80" width="250" height="70" rx="6" fill="#14264F"/>
+            <text x="14" y="104" fill="#93C5FD" font-size="12" font-weight="bold" font-family="system-ui">Curated SaaS Marketplace</text>
+            <text x="14" y="122" fill="#E2E8F0" font-size="11" font-family="system-ui">Business tools organized by the</text>
+            <text x="14" y="136" fill="#E2E8F0" font-size="11" font-family="system-ui">actual job each product accomplishes.</text>
+
+            <g transform="translate(20, 170)">
+              <text x="0" y="16" fill="#94A3B8" font-size="11" font-family="system-ui">● Sales &amp; Marketing</text>
+              <text x="0" y="38" fill="#94A3B8" font-size="11" font-family="system-ui">● HR &amp; Workforce</text>
+              <text x="0" y="60" fill="#94A3B8" font-size="11" font-family="system-ui">● Operations &amp; Facilities</text>
+              <text x="0" y="82" fill="#94A3B8" font-size="11" font-family="system-ui">● Finance &amp; CA Compliance</text>
+              <text x="0" y="104" fill="#94A3B8" font-size="11" font-family="system-ui">● Market Research &amp; Sizing</text>
+            </g>
+          </g>
+
+          <!-- Pillar 2 -->
+          <g transform="translate(318, 0)">
+            <rect width="290" height="350" rx="10" fill="#0A1326" stroke="#1E3360" stroke-width="1"/>
+            <circle cx="40" cy="40" r="20" fill="#10B981"/>
+            <text x="40" y="46" fill="#FFFFFF" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui">02</text>
+            <text x="74" y="44" fill="#FFFFFF" font-size="16" font-weight="bold" font-family="system-ui">Find by What You Need</text>
+
+            <rect x="20" y="80" width="250" height="70" rx="6" fill="#0C2F24"/>
+            <text x="14" y="104" fill="#6EE7B7" font-size="12" font-weight="bold" font-family="system-ui">Task-Centric Discovery</text>
+            <text x="14" y="122" fill="#E2E8F0" font-size="11" font-family="system-ui">Stop guessing software vendors.</text>
+            <text x="14" y="136" fill="#E2E8F0" font-size="11" font-family="system-ui">Search by problem statement.</text>
+
+            <g transform="translate(20, 170)">
+              <text x="0" y="16" fill="#94A3B8" font-size="11" font-family="system-ui">● 4 distinct discovery paths</text>
+              <text x="0" y="38" fill="#94A3B8" font-size="11" font-family="system-ui">● Deep capability tagging</text>
+              <text x="0" y="60" fill="#94A3B8" font-size="11" font-family="system-ui">● Objective feature comparisons</text>
+              <text x="0" y="82" fill="#94A3B8" font-size="11" font-family="system-ui">● Industry-tailored views</text>
+            </g>
+          </g>
+
+          <!-- Pillar 3 -->
+          <g transform="translate(636, 0)">
+            <rect width="290" height="350" rx="10" fill="#0A1326" stroke="#1E3360" stroke-width="1"/>
+            <circle cx="40" cy="40" r="20" fill="#F59E0B"/>
+            <text x="40" y="46" fill="#FFFFFF" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui">03</text>
+            <text x="74" y="44" fill="#FFFFFF" font-size="16" font-weight="bold" font-family="system-ui">Verified Product Specs</text>
+
+            <rect x="20" y="80" width="250" height="70" rx="6" fill="#3D2909"/>
+            <text x="14" y="104" fill="#FDE68A" font-size="12" font-weight="bold" font-family="system-ui">Zero Vanity Inflation</text>
+            <text x="14" y="122" fill="#E2E8F0" font-size="11" font-family="system-ui">Every price and capability is</text>
+            <text x="14" y="136" fill="#E2E8F0" font-size="11" font-family="system-ui">audited from official releases.</text>
+
+            <g transform="translate(20, 170)">
+              <text x="0" y="16" fill="#94A3B8" font-size="11" font-family="system-ui">● Timestamped pricing data</text>
+              <text x="0" y="38" fill="#94A3B8" font-size="11" font-family="system-ui">● Documented integrations only</text>
+              <text x="0" y="60" fill="#94A3B8" font-size="11" font-family="system-ui">● Real screenshots &amp; workflows</text>
+              <text x="0" y="82" fill="#94A3B8" font-size="11" font-family="system-ui">● Transparent trial details</text>
+            </g>
+          </g>
+
+          <!-- Pillar 4 -->
+          <g transform="translate(954, 0)">
+            <rect width="294" height="350" rx="10" fill="#0A1326" stroke="#1E3360" stroke-width="1"/>
+            <circle cx="40" cy="40" r="20" fill="#A855F7"/>
+            <text x="40" y="46" fill="#FFFFFF" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui">04</text>
+            <text x="74" y="44" fill="#FFFFFF" font-size="16" font-weight="bold" font-family="system-ui">Open to SaaS Makers</text>
+
+            <rect x="20" y="80" width="254" height="70" rx="6" fill="#2E1247"/>
+            <text x="14" y="104" fill="#E9D5FF" font-size="12" font-weight="bold" font-family="system-ui">Distribution &amp; Billing</text>
+            <text x="14" y="122" fill="#E2E8F0" font-size="11" font-family="system-ui">Software founders publish,</text>
+            <text x="14" y="136" fill="#E2E8F0" font-size="11" font-family="system-ui">monetize, and scale globally.</text>
+
+            <g transform="translate(20, 170)">
+              <text x="0" y="16" fill="#94A3B8" font-size="11" font-family="system-ui">● Zero storefront code to build</text>
+              <text x="0" y="38" fill="#94A3B8" font-size="11" font-family="system-ui">● Integrated recurring payouts</text>
+              <text x="0" y="60" fill="#94A3B8" font-size="11" font-family="system-ui">● Curated marketplace reach</text>
+              <text x="0" y="82" fill="#94A3B8" font-size="11" font-family="system-ui">● Publisher growth analytics</text>
+            </g>
+          </g>
+        </g>
+      
 </svg>

@@ -1,6 +1,120 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="1098" height="558" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M520 266h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="536" cy="280" r="5" fill="#8aa0b4"/><path d="M520 302l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="332" text-anchor="middle" font-family="system-ui,sans-serif" font-size="31" fill="#5b7186">product/tour.svg · 1100×560</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" fill="none">
+  
+        <rect width="1100" height="560" rx="16" fill="#091122"/>
+        <rect x="24" y="24" width="1052" height="512" rx="12" fill="#0F1B36" stroke="#2563EB" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#94A3B8" font-size="13" font-family="system-ui, sans-serif" font-weight="600">Product Tour · Interactive Application Console &amp; Live Interface</text>
+        <rect x="890" y="38" width="160" height="24" rx="12" fill="#2563EB" fill-opacity="0.2"/>
+        <text x="970" y="54" fill="#60A5FA" font-size="11" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">Production Environment</text>
+
+        <!-- Sidebar Navigation (Left) -->
+        <g transform="translate(48, 76)">
+          <rect width="210" height="440" rx="8" fill="#0A1326" stroke="#1D3360" stroke-width="1"/>
+          <rect x="16" y="16" width="32" height="32" rx="6" fill="#2563EB"/>
+          <text x="32" y="37" fill="#FFFFFF" font-size="14" font-weight="bold" text-anchor="middle" font-family="system-ui">⚡</text>
+          <text x="56" y="28" fill="#FFFFFF" font-size="12" font-weight="bold" font-family="system-ui">ToyoApps</text>
+          <text x="56" y="42" fill="#8D99AE" font-size="9" font-family="system-ui">Workspace v2.4</text>
+          <line x1="16" y1="58" x2="194" y2="58" stroke="#1D3360" stroke-width="1"/>
+
+          <!-- Nav Items -->
+          <g transform="translate(16, 72)">
+            <rect width="178" height="32" rx="4" fill="#2563EB"/>
+            <text x="12" y="20" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">📊 Overview &amp; Activity</text>
+
+            <rect y="40" width="178" height="32" rx="4" fill="#0A1326"/>
+            <text x="12" y="60" fill="#94A3B8" font-size="11" font-family="system-ui">📁 Product Features</text>
+
+            <rect y="80" width="178" height="32" rx="4" fill="#0A1326"/>
+            <text x="12" y="100" fill="#94A3B8" font-size="11" font-family="system-ui">🔄 Automations</text>
+
+            <rect y="120" width="178" height="32" rx="4" fill="#0A1326"/>
+            <text x="12" y="140" fill="#94A3B8" font-size="11" font-family="system-ui">🔗 Integrations</text>
+
+            <rect y="160" width="178" height="32" rx="4" fill="#0A1326"/>
+            <text x="12" y="180" fill="#94A3B8" font-size="11" font-family="system-ui">👥 Team &amp; Roles</text>
+
+            <rect y="200" width="178" height="32" rx="4" fill="#0A1326"/>
+            <text x="12" y="220" fill="#94A3B8" font-size="11" font-family="system-ui">⚙ Settings &amp; API</text>
+          </g>
+
+          <g transform="translate(16, 360)">
+            <rect width="178" height="60" rx="6" fill="#14264F"/>
+            <text x="12" y="20" fill="#60A5FA" font-size="10" font-weight="bold" font-family="system-ui">Active Tier</text>
+            <text x="12" y="36" fill="#FFFFFF" font-size="11" font-family="system-ui">Professional Plan</text>
+            <text x="12" y="50" fill="#10B981" font-size="9" font-family="system-ui">● All features unlocked</text>
+          </g>
+        </g>
+
+        <!-- Main Workspace (Center + Right) -->
+        <g transform="translate(274, 76)">
+          <rect width="802" height="440" rx="8" fill="#0A1326" stroke="#1D3360" stroke-width="1"/>
+          
+          <!-- Top Header -->
+          <g transform="translate(24, 20)">
+            <text x="0" y="20" fill="#FFFFFF" font-size="16" font-weight="bold" font-family="system-ui">Application Workspace &amp; Real-Time Records</text>
+            <text x="0" y="38" fill="#94A3B8" font-size="11" font-family="system-ui">Connected across ToyoApps business suite</text>
+            <rect x="630" y="4" width="120" height="32" rx="6" fill="#2563EB"/>
+            <text x="690" y="24" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">+ Trigger Action</text>
+          </g>
+
+          <!-- 3 Stats Cards -->
+          <g transform="translate(24, 70)">
+            <rect width="234" height="68" rx="6" fill="#14244A"/>
+            <text x="14" y="22" fill="#94A3B8" font-size="10" font-family="system-ui">TOTAL PROCESSED</text>
+            <text x="14" y="48" fill="#FFFFFF" font-size="18" font-weight="bold" font-family="system-ui">48,290 Items</text>
+            <text x="140" y="48" fill="#10B981" font-size="10" font-family="system-ui">99.8% OK</text>
+
+            <rect x="258" width="234" height="68" rx="6" fill="#14244A"/>
+            <text x="14" y="22" fill="#94A3B8" font-size="10" font-family="system-ui">AVG RESPONSE TIME</text>
+            <text x="14" y="48" fill="#38BDF8" font-size="18" font-weight="bold" font-family="system-ui">1.2 Seconds</text>
+            <text x="140" y="48" fill="#38BDF8" font-size="10" font-family="system-ui">Low Latency</text>
+
+            <rect x="516" width="234" height="68" rx="6" fill="#14244A"/>
+            <text x="14" y="22" fill="#94A3B8" font-size="10" font-family="system-ui">CONNECTED TOOLS</text>
+            <text x="14" y="48" fill="#10B981" font-size="18" font-weight="bold" font-family="system-ui">8 Live Syncs</text>
+            <text x="140" y="48" fill="#10B981" font-size="10" font-family="system-ui">Healthy</text>
+          </g>
+
+          <!-- Live Activity Feed Table -->
+          <g transform="translate(24, 154)">
+            <rect width="754" height="260" rx="8" fill="#0F1B36" stroke="#22396B" stroke-width="1"/>
+            <rect width="754" height="32" rx="8" fill="#182A54"/>
+            <text x="16" y="20" fill="#94A3B8" font-size="10" font-weight="bold" font-family="system-ui">EVENT NAME</text>
+            <text x="240" y="20" fill="#94A3B8" font-size="10" font-weight="bold" font-family="system-ui">PAYLOAD / DETAILS</text>
+            <text x="500" y="20" fill="#94A3B8" font-size="10" font-weight="bold" font-family="system-ui">STATUS</text>
+            <text x="640" y="20" fill="#94A3B8" font-size="10" font-weight="bold" font-family="system-ui">TIMESTAMP</text>
+
+            <line x1="0" y1="32" x2="754" y2="32" stroke="#22396B" stroke-width="1"/>
+            <text x="16" y="58" fill="#FFFFFF" font-size="11" font-weight="600" font-family="system-ui">Card OCR Extraction</text>
+            <text x="240" y="58" fill="#E2E8F0" font-size="10" font-family="system-ui">Sarah Jenkins ➔ Google Contacts</text>
+            <rect x="500" y="46" width="60" height="18" rx="4" fill="#10B981" fill-opacity="0.2"/>
+            <text x="530" y="59" fill="#10B981" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">SUCCESS</text>
+            <text x="640" y="58" fill="#8D99AE" font-size="10" font-family="system-ui">1m ago</text>
+
+            <line x1="0" y1="78" x2="754" y2="78" stroke="#22396B" stroke-width="1"/>
+            <text x="16" y="104" fill="#FFFFFF" font-size="11" font-weight="600" font-family="system-ui">Workspace Signature Sync</text>
+            <text x="240" y="104" fill="#E2E8F0" font-size="10" font-family="system-ui">185 Gmail mailboxes updated server-side</text>
+            <rect x="500" y="92" width="60" height="18" rx="4" fill="#10B981" fill-opacity="0.2"/>
+            <text x="530" y="105" fill="#10B981" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">SUCCESS</text>
+            <text x="640" y="104" fill="#8D99AE" font-size="10" font-family="system-ui">14m ago</text>
+
+            <line x1="0" y1="124" x2="754" y2="124" stroke="#22396B" stroke-width="1"/>
+            <text x="16" y="150" fill="#FFFFFF" font-size="11" font-weight="600" font-family="system-ui">CA Statutory Filing</text>
+            <text x="240" y="150" fill="#E2E8F0" font-size="10" font-family="system-ui">GSTR-3B ARN Receipt Generated</text>
+            <rect x="500" y="138" width="60" height="18" rx="4" fill="#10B981" fill-opacity="0.2"/>
+            <text x="530" y="151" fill="#10B981" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">SUCCESS</text>
+            <text x="640" y="150" fill="#8D99AE" font-size="10" font-family="system-ui">42m ago</text>
+
+            <line x1="0" y1="170" x2="754" y2="170" stroke="#22396B" stroke-width="1"/>
+            <text x="16" y="196" fill="#FFFFFF" font-size="11" font-weight="600" font-family="system-ui">Cloud SIM Recharge Alert</text>
+            <text x="240" y="196" fill="#E2E8F0" font-size="10" font-family="system-ui">SIM-01 recharge due in 48h (Airtel)</text>
+            <rect x="500" y="184" width="60" height="18" rx="4" fill="#F59E0B" fill-opacity="0.2"/>
+            <text x="530" y="197" fill="#F59E0B" font-size="9" font-weight="bold" font-family="system-ui" text-anchor="middle">ALERT</text>
+            <text x="640" y="196" fill="#8D99AE" font-size="10" font-family="system-ui">1h ago</text>
+          </g>
+        </g>
+      
 </svg>

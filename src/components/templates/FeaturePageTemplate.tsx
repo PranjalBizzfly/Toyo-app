@@ -105,7 +105,7 @@ export function FeaturePageTemplate({ product, feature }: { product: Product; fe
             {feature.media?.[0] ? (
               <ScreenshotFrame media={feature.media[0]} />
             ) : (
-              <ImageSlot src="/images/features/feature-hero.svg" alt={`${feature.name} in ${product.name}`} width={1000} height={560} priority className="fz-art fz-art--band" />
+              <ImageSlot src="/images/features/feature-hero.webp" alt={`${feature.name} in ${product.name}`} width={1000} height={560} priority className="fz-art fz-art--band" />
             )}
           </div>
           <div className="fz-center" style={{ marginTop: "clamp(56px, 7vw, 96px)" }}>
@@ -192,7 +192,7 @@ export function FeaturePageTemplate({ product, feature }: { product: Product; fe
               {feature.media?.[1] ? (
                 <ScreenshotFrame media={feature.media[1]} />
               ) : (
-                <ImageSlot src="/images/features/feature-screen.svg" alt={`${feature.name} screen in ${product.name}`} width={960} height={540} className="fz-art fz-art--band" />
+                <ImageSlot src="/images/features/feature-screen.webp" alt={`${feature.name} screen in ${product.name}`} width={960} height={540} className="fz-art fz-art--band" />
               )}
             </div>
           </div>

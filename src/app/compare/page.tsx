@@ -31,7 +31,7 @@ export default function ComparePage() {
           <h1>Which ToyoApps product is right for you?</h1>
           <hr className="zc-rule zc-rule--accent" />
           <p className="zc-intro__lead">Side-by-side comparisons based on real product capabilities.</p>
-          <ImageSlot src="/images/catalog/compare-hero.svg" alt="Choosing between ToyoApps products" width={840} height={370} priority className="zc-intro__art" />
+          <ImageSlot src="/images/catalog/compare-hero.webp" alt="Choosing between ToyoApps products" width={840} height={370} priority className="zc-intro__art" />
         </div>
       </header>
 

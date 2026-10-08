@@ -197,9 +197,9 @@ export function FaqList({ faqs, structuredData = true }: { faqs: Faq[]; structur
 
 /* ---------- Status badge ---------- */
 
-export function StatusBadge({ status, pending }: { status: ContentStatus; pending?: boolean }) {
-  if (status === "live") return null;
-  if (pending || status === "pending") return <span className="badge badge--warn">Pending verification</span>;
+// `pending` is still accepted so callers don't change, but pending products show no badge.
+export function StatusBadge({ status }: { status: ContentStatus; pending?: boolean }) {
+  if (status === "live" || status === "pending") return null;
   if (status === "coming-soon") return <span className="badge badge--brand">Coming soon</span>;
   return <span className="badge badge--warn">{status === "draft" ? "Draft" : "Placeholder"}</span>;
 }

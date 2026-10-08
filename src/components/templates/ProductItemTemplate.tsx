@@ -173,7 +173,7 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
               </Link>
             </div>
           </div>
-          <ImageSlot src="/images/features/item-hero.svg" alt={`${title} with ${product.name}`} width={1200} height={400} priority className="fz-vhero__art" />
+          <ImageSlot src="/images/features/item-hero.webp" alt={`${title} with ${product.name}`} width={1200} height={400} priority className="fz-vhero__art" />
         </div>
       </header>
 
@@ -284,7 +284,7 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
       {features.length > 0 && (
         <Centered id="features" kicker={`Key ${product.name} features`} heading={`Built for ${item.name.toLowerCase()}`}>
           <div className="fz-panel fz-panel--shot">
-            <ImageSlot src="/images/features/item-screen.svg" alt={`${product.name} features for ${item.name}`} width={960} height={540} className="fz-art fz-art--band" />
+            <ImageSlot src="/images/features/item-screen.webp" alt={`${product.name} features for ${item.name}`} width={960} height={540} className="fz-art fz-art--band" />
           </div>
           <ul className="fz-tiles">
             {features.map((f) => (

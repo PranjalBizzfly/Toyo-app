@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HomeHero } from "@/components/home/HomeHero";
 import { LogoMarquee } from "@/components/home/LogoMarquee";
 import { ProductLogo } from "@/components/product/cards";
 import { Icon } from "@/components/ui/Icon";
@@ -26,6 +27,7 @@ import { buildMetadata, jsonLd } from "@/lib/seo";
 import { tintStyle } from "@/lib/tint";
 import "@/app/home.css";
 import "@/app/home-zoho.css";
+import "@/app/home-hero.css";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 
 export const metadata = buildMetadata({
@@ -128,8 +130,9 @@ export default function HomePage() {
       key: `s-${s.slug}`,
       kind: "Solution",
       icon: "layers" as IconName,
-      title: s.name,
-      text: s.summary,
+      title: s.cardTitle ?? s.name,
+      // Card copy in the category-card style (who it is for, then what each product does).
+      text: s.cardText ?? s.summary,
       href: routes.solution(s.slug),
       meta: productsFor(s.products).map((p) => p.name).join(" · "),
       // Same card layout as the category cards: icon, label, title, text, product names.
@@ -235,66 +238,14 @@ export default function HomePage() {
   return (
     <div className="home">
       {/* 1. Hero */}
-      <section className="h-hero" aria-labelledby="hero-title">
-        <div className="container h-hero__grid">
-          <div className="h-hero__copy">
-            <p className="h-eyebrow">
-              <span className="pulse-dot" aria-hidden />
-              The {site.name} ecosystem
-            </p>
-            <h1 id="hero-title">The software your business runs on, in one place</h1>
-            <hr className="h-rule" />
-            <p className="h-hero__lead">
-              One home for business software — {plural(products.length, "product")} organised by what you need to get done, from finding
-              customers and running HR to keeping the office on track. Each product has its own pages for features, plans and support,
-              written from the product&apos;s official information.
-            </p>
-            <div className="h-actions">
-              <SquareButton href={routes.products()}>Explore all products</SquareButton>
-              <SquareButton href={routes.solutions()} variant="outline">
-                Browse solutions
-              </SquareButton>
-            </div>
-            <ul className="h-chips" aria-label="Categories">
-              {ecosystem.map(({ category }) => (
-                <li key={category.slug}>
-                  <Link href={routes.category(category.slug)} style={tintStyle(category.slug)}>
-                    <Icon name={category.icon} />
-                    {category.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          {featured.length > 0 && (
-            <div className="h-hero__apps">
-              <p className="h-label">Featured apps</p>
-              <ul>
-                {featured.map((p, i) => (
-                  <li key={p.slug} style={{ ["--i" as string]: i }}>
-                    <Link href={routes.product(p.slug)}>
-                      <ProductLogo product={p} />
-                      <span>
-                        <strong>{p.name}</strong>
-                        <small>{p.tagline ?? catName(p.category)}</small>
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <TextLink href={routes.products()}>Explore all products</TextLink>
-            </div>
-          )}
-        </div>
-        <div className="container hi-hero-art">
-          <ImageSlot src="/images/home/hero.svg" alt={`${site.name} products working together`} width={1200} height={420} priority />
-        </div>
-        <a href="#publish-title" className="scroll-cue" aria-label="Scroll down">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-            <path d="m6 9 6 6 6-6" />
-          </svg>
-        </a>
-      </section>
+      <HomeHero
+        siteName={site.name}
+        products={products}
+        categories={ecosystem}
+        integrations={integrations}
+        industriesCount={industries.length}
+        featurePages={totalFeaturePages}
+      />
 
       {/* 1b. Promo pair over the band (Zoho "promos") */}
       <section className="z-duo hz-duo" aria-label="Get started">
@@ -326,46 +277,61 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 1c. Spotlight band (Zoho suite band) */}
+      {/* 1c. Spotlight band: media + details, then a capabilities grid */}
       {spotlight && (
-        <section className="z-suite" aria-labelledby="spotlight-title">
-          <div className="container z-suite__grid">
-            <div className="z-suite__main">
-              <div className="hi-spot-art">
-                <ImageSlot src="/images/home/spotlight.svg" alt={`${spotlight.name} screenshot`} width={960} height={600} />
+        <section className="z-suite hs-spot" aria-labelledby="spotlight-title">
+          <div className="container">
+            <div className="hs-spot__top">
+              <div className="hs-spot__media">
+                <ImageSlot src="/images/home/spotlight.webp" alt={`${spotlight.name} AI business card scanner and instant contact follow-up console`} width={960} height={600} />
+                <span className="hs-spot__badge">
+                  <ProductLogo product={spotlight} />
+                  <span>
+                    <strong>{spotlight.name}</strong>
+                    <small>{catName(spotlight.category)}</small>
+                  </span>
+                </span>
               </div>
-              <span className="hz-suite__logo">
-                <ProductLogo product={spotlight} />
-              </span>
-              <div>
+              <div className="hs-spot__copy">
                 <p className="z-suite__kicker">Product spotlight · {catName(spotlight.category)}</p>
                 <h2 id="spotlight-title">{spotlight.name}</h2>
                 {spotlight.tagline && <p className="z-suite__lead">{spotlight.tagline}</p>}
-                <p className="z-suite__body">{spotlight.longDescription ?? spotlight.shortDescription}</p>
+                <p className="hs-spot__body">{(spotlight.longDescription ?? spotlight.shortDescription).split(/\n\s*\n/)[0]}</p>
                 {!!spotlight.audience?.length && (
-                  <p className="hz-suite__meta">
-                    <b>Built for:</b> {spotlight.audience.join(", ")}
+                  <p className="hs-spot__meta">
+                    <b>Built for</b>
+                    {spotlight.audience.map((a) => (
+                      <span key={a}>{a}</span>
+                    ))}
                   </p>
                 )}
                 <SquareButton href={routes.product(spotlight.slug)}>Explore {spotlight.name}</SquareButton>
               </div>
             </div>
             {spotlightCaps.length > 0 && (
-              <ul className="z-suite__side" aria-label={`${spotlight.name} capabilities`}>
-                {spotlightCaps.map((f) => (
-                  <li key={f.slug}>
-                    <Link href={featureHref(spotlight, f, hasHub(spotlight))}>
-                      <span className="icon-tile">
-                        <Icon name="check" />
-                      </span>
-                      <span>
-                        <strong>{f.name}</strong>
-                        <small>{f.summary}</small>
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <div className="hs-spot__caps-wrap">
+                <div className="hs-spot__caps-head">
+                  <h3>Key capabilities</h3>
+                  <Link href={routes.product(spotlight.slug)}>
+                    All {spotlight.name} features <span aria-hidden>→</span>
+                  </Link>
+                </div>
+                <ul className="hs-spot__caps" aria-label={`${spotlight.name} capabilities`}>
+                  {spotlightCaps.map((f) => (
+                    <li key={f.slug}>
+                      <Link href={featureHref(spotlight, f, hasHub(spotlight))}>
+                        <span className="icon-tile">
+                          <Icon name="check" />
+                        </span>
+                        <span>
+                          <strong>{f.name}</strong>
+                          <small>{f.summary}</small>
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             )}
           </div>
         </section>
@@ -403,7 +369,7 @@ export default function HomePage() {
                   <li key={p.slug}>
                     <article className="h-card h-fcard">
                       <div className="hi-card-art">
-                        <ImageSlot src={`/images/products/${p.slug}/card.svg`} alt={`${p.name} screenshot`} width={640} height={360} />
+                        <ImageSlot src={`/images/products/${p.slug}/card.webp`} alt={`${p.name} — ${p.tagline ?? p.shortDescription}`} width={640} height={360} />
                       </div>
                       <div className="h-fcard__head">
                         <ProductLogo product={p} />
@@ -583,7 +549,7 @@ export default function HomePage() {
                 return (
                   <li key={ind.slug} className="h-card h-ind">
                     <div className="hi-card-art">
-                      <ImageSlot src={`/images/industries/${ind.slug}.svg`} alt={ind.name} width={640} height={360} />
+                      <ImageSlot src={`/images/industries/${ind.slug}.webp`} alt={`${ind.name} software and workflow solutions`} width={640} height={360} />
                     </div>
                     <span className="h-ind__icon" aria-hidden>
                       <Icon name={ind.icon ?? "building"} />
@@ -662,7 +628,7 @@ export default function HomePage() {
         <div className="container">
           <SectionHead id="how-title" kicker="How it works" title={`How ${site.name} works`} align="center" />
           <div className="hi-band-art">
-            <ImageSlot src="/images/home/how-it-works.svg" alt={`How ${site.name} works`} width={1200} height={360} />
+            <ImageSlot src="/images/home/how-it-works.webp" alt={`How ${site.name} works`} width={1200} height={360} />
           </div>
           <ol className="h-steps">
             {steps.map((s, i) => (
@@ -723,7 +689,7 @@ export default function HomePage() {
                 View all integrations
               </SquareButton>
               <div className="hi-side-art">
-                <ImageSlot src="/images/home/integrations.svg" alt="Connected business tools" width={560} height={420} />
+                <ImageSlot src="/images/home/integrations.webp" alt="Connected business tools" width={560} height={420} />
               </div>
             </div>
             <ul className="h-ints">
@@ -747,7 +713,7 @@ export default function HomePage() {
         <div className="container">
           <SectionHead id="why-title" kicker={`Why ${site.name}`} title="One catalog, built around how you look for software" align="center" />
           <div className="hi-band-art">
-            <ImageSlot src="/images/home/why.svg" alt={`Why ${site.name}`} width={1200} height={400} />
+            <ImageSlot src="/images/home/why.webp" alt={`Why ${site.name}`} width={1200} height={400} />
           </div>
           <ul className="h-why">
             {why.map((w) => (
@@ -789,7 +755,7 @@ export default function HomePage() {
       {/* 16. Values */}
       <section className="hz-values" aria-labelledby="values-title">
         <div className="hz-values__photo">
-          <ImageSlot src="/images/home/team-band.svg" alt={`The people behind ${site.name}`} width={1440} height={550} />
+          <ImageSlot src="/images/home/team-band.webp" alt={`The people behind ${site.name}`} width={1440} height={550} />
         </div>
         <div className="container hz-values__card">
           <SectionHead id="values-title" kicker="Principles" title={`The principles behind ${site.name}`} align="center" />

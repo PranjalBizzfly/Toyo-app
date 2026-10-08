@@ -329,6 +329,10 @@ export interface Solution extends LinkedEntity {
   problem: string;
   approach: string;
   products: string[];
+  /** Homepage card heading in the category-card style (a descriptive line, not the short name). */
+  cardTitle?: string;
+  /** Short card copy in the category-card style: who it is for, then what each product does. */
+  cardText?: string;
 }
 
 export interface Industry extends LinkedEntity {

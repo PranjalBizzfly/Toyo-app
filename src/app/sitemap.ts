@@ -36,6 +36,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url(routes.publish(), 0.6),
     url(routes.support(), 0.4),
     url(routes.contact(), 0.5),
+    url(routes.careers(), 0.5),
+    url(routes.vendors(), 0.5),
+    url(routes.media(), 0.4),
+    url(routes.pressKit(), 0.4),
+    url(routes.blog(), 0.6),
     ...getCategories().filter(isCategoryIndexable).map((c) => url(routes.category(c.slug), 0.8)),
     ...products.flatMap((p) => [
       ...getAvailableSections(p).map((s) => url(routes.productSection(p.slug, s), s === "overview" ? 0.9 : 0.6)),
@@ -60,7 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...pub(getIndustries()).map((s) => url(routes.industry(s.slug), 0.7)),
     ...pub(getIntegrations()).filter(integrationHasPage).map((s) => url(routes.integration(s.slug), 0.5)),
     ...pub(getComparisons()).map((s) => url(routes.comparison(s.slug), 0.6)),
-    ...resourceTypes.filter((t) => getResources(t.type).length).map((t) => url(routes.resourceType(t.type), 0.5)),
+    ...resourceTypes.filter((t) => t.type !== "blog" && getResources(t.type).length).map((t) => url(routes.resourceType(t.type), 0.5)),
     ...pub(getResources()).map((r) => ({ ...url(routes.resource(r.type, r.slug), 0.5), lastModified: r.publishedAt })),
   );
   return entries;

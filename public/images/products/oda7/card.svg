@@ -1,6 +1,84 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="638" height="358" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M290 166h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="306" cy="180" r="5" fill="#8aa0b4"/><path d="M290 202l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#5b7186">products/oda7/card.svg · 640×360</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <filter id="shadow" x="0" y="0" width="640" height="360" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+        <rect width="640" height="360" rx="16" fill="#180C14"/>
+        <rect x="24" y="24" width="592" height="312" rx="12" fill="#2B1423" stroke="#E11D48" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#FDA4AF" font-size="12" font-family="system-ui, sans-serif" font-weight="600">ODA7 · Sales Floor Command: Dialer, Queue &amp; Commission</text>
+        <rect x="490" y="38" width="110" height="22" rx="11" fill="#10B981" fill-opacity="0.2"/>
+        <text x="545" y="53" fill="#10B981" font-size="11" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">16 Calls Active</text>
+
+        <!-- KPI Strip -->
+        <g transform="translate(44, 72)">
+          <rect width="170" height="54" rx="8" fill="#180C14" stroke="#4C1D38" stroke-width="1"/>
+          <text x="16" y="22" fill="#FDA4AF" font-size="11" font-family="system-ui">Floor Dials Today</text>
+          <text x="16" y="44" fill="#FFFFFF" font-size="18" font-weight="bold" font-family="system-ui">384 Calls</text>
+
+          <rect x="185" width="170" height="54" rx="8" fill="#180C14" stroke="#4C1D38" stroke-width="1"/>
+          <text x="201" y="22" fill="#FDA4AF" font-size="11" font-family="system-ui">Qualified Leads</text>
+          <text x="201" y="44" fill="#F43F5E" font-size="18" font-weight="bold" font-family="system-ui">48 Deals</text>
+
+          <rect x="370" width="170" height="54" rx="8" fill="#180C14" stroke="#4C1D38" stroke-width="1"/>
+          <text x="386" y="22" fill="#FDA4AF" font-size="11" font-family="system-ui">Rep Commission Pool</text>
+          <text x="386" y="44" fill="#10B981" font-size="18" font-weight="bold" font-family="system-ui">₹1,42,800</text>
+        </g>
+
+        <!-- Left: Live Dialer &amp; Lead Queue -->
+        <g transform="translate(44, 138)">
+          <rect width="280" height="178" rx="8" fill="#180C14" stroke="#4C1D38" stroke-width="1"/>
+          <text x="14" y="22" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">ACTIVE AUTO-DIALER QUEUE</text>
+          
+          <g transform="translate(14, 32)">
+            <rect width="252" height="40" rx="6" fill="#3D182E" stroke="#E11D48" stroke-width="1"/>
+            <circle cx="20" cy="20" r="10" fill="#E11D48"/>
+            <text x="20" y="24" fill="#FFFFFF" font-size="10" font-weight="bold" text-anchor="middle" font-family="system-ui">📞</text>
+            <text x="40" y="16" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">Rahul Kapoor · TechServe</text>
+            <text x="40" y="30" fill="#FDA4AF" font-size="9" font-family="system-ui">In Call · 02:44 · Script: Objection #2</text>
+          </g>
+
+          <g transform="translate(14, 78)">
+            <rect width="252" height="34" rx="6" fill="#25101E"/>
+            <text x="12" y="14" fill="#FFFFFF" font-size="10" font-family="system-ui">Next: Ananya Sen (Enterprise CRM)</text>
+            <text x="12" y="26" fill="#9CA3AF" font-size="9" font-family="system-ui">Lead Score: 94 · Auto-dial in 8s</text>
+          </g>
+
+          <g transform="translate(14, 118)">
+            <rect width="252" height="34" rx="6" fill="#25101E"/>
+            <text x="12" y="14" fill="#FFFFFF" font-size="10" font-family="system-ui">Next: Deepak Verma (Retail Chain)</text>
+            <text x="12" y="26" fill="#9CA3AF" font-size="9" font-family="system-ui">Lead Score: 88 · Scheduled Callback</text>
+          </g>
+        </g>
+
+        <!-- Right: Sales Rep Leaderboard -->
+        <g transform="translate(340, 138)">
+          <rect width="256" height="178" rx="8" fill="#180C14" stroke="#4C1D38" stroke-width="1"/>
+          <text x="14" y="22" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">REP CONVERSION LEADERBOARD</text>
+          
+          <g transform="translate(14, 34)">
+            <text x="0" y="14" fill="#F59E0B" font-size="11" font-weight="bold" font-family="system-ui">#1 Karan M.</text>
+            <text x="100" y="14" fill="#FFFFFF" font-size="10" font-family="system-ui">52 Dials · 8 Closes</text>
+            <text x="200" y="14" fill="#10B981" font-size="10" font-weight="bold" font-family="system-ui">₹24,000</text>
+          </g>
+          <g transform="translate(14, 66)">
+            <text x="0" y="14" fill="#D1D5DB" font-size="11" font-weight="bold" font-family="system-ui">#2 Sneha R.</text>
+            <text x="100" y="14" fill="#FFFFFF" font-size="10" font-family="system-ui">48 Dials · 6 Closes</text>
+            <text x="200" y="14" fill="#10B981" font-size="10" font-weight="bold" font-family="system-ui">₹18,000</text>
+          </g>
+          <g transform="translate(14, 98)">
+            <text x="0" y="14" fill="#D97706" font-size="11" font-weight="bold" font-family="system-ui">#3 Tarun S.</text>
+            <text x="100" y="14" fill="#FFFFFF" font-size="10" font-family="system-ui">44 Dials · 5 Closes</text>
+            <text x="200" y="14" fill="#10B981" font-size="10" font-weight="bold" font-family="system-ui">₹15,000</text>
+          </g>
+
+          <rect x="14" y="128" width="228" height="34" rx="6" fill="#E11D48"/>
+          <text x="128" y="150" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">Payout Monthly Commissions</text>
+        </g>
+      
 </svg>

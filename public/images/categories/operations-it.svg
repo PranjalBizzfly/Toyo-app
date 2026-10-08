@@ -1,6 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360">
-<rect width="100%" height="100%" fill="#e8eef4"/>
-<rect x="1" y="1" width="958" height="358" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
-<path d="M450 166h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="466" cy="180" r="5" fill="#8aa0b4"/><path d="M450 202l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
-<text x="50%" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#5b7186">categories/operations-it.svg · 960×360</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" fill="none">
+  
+        <rect width="960" height="360" rx="16" fill="#0C1524"/>
+        <rect x="24" y="24" width="912" height="312" rx="12" fill="#16253D" stroke="#06B6D4" stroke-width="1.5" stroke-opacity="0.3"/>
+        <circle cx="48" cy="48" r="5" fill="#EF4444"/>
+        <circle cx="64" cy="48" r="5" fill="#F59E0B"/>
+        <circle cx="80" cy="48" r="5" fill="#10B981"/>
+        <text x="105" y="52" fill="#7DD3FC" font-size="13" font-family="system-ui, sans-serif" font-weight="600">ToyoApps · Operations &amp; IT Infrastructure Suite</text>
+        <rect x="760" y="38" width="150" height="24" rx="12" fill="#06B6D4" fill-opacity="0.2"/>
+        <text x="835" y="54" fill="#38BDF8" font-size="11" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">3 Essential Tools</text>
+
+        <!-- 3 Pillars Grid -->
+        <!-- ZapBuzzer -->
+        <g transform="translate(56, 80)">
+          <rect width="260" height="236" rx="8" fill="#0C1524" stroke="#223C63" stroke-width="1"/>
+          <rect x="16" y="16" width="36" height="36" rx="8" fill="#EA580C" fill-opacity="0.2"/>
+          <text x="34" y="39" fill="#EA580C" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui">⚡</text>
+          <text x="62" y="32" fill="#FFFFFF" font-size="15" font-weight="bold" font-family="system-ui">ZapBuzzer</text>
+          <text x="62" y="46" fill="#FDBA74" font-size="10" font-family="system-ui">Office Requests &amp; SLA Routing</text>
+
+          <rect x="16" y="66" width="228" height="48" rx="6" fill="#351909"/>
+          <text x="24" y="86" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">Pantry, IT &amp; Facilities Tickets</text>
+          <text x="24" y="102" fill="#F97316" font-size="10" font-family="system-ui">SLA Countdown &amp; Escalation</text>
+
+          <g transform="translate(16, 126)">
+            <text x="0" y="14" fill="#94A3B8" font-size="10" font-family="system-ui">● Instant 1-tap request broadcast</text>
+            <text x="0" y="32" fill="#94A3B8" font-size="10" font-family="system-ui">● Telegram &amp; WhatsApp team alerts</text>
+            <text x="0" y="50" fill="#94A3B8" font-size="10" font-family="system-ui">● Staff resolution ratings &amp; audit</text>
+          </g>
+          <rect x="16" y="190" width="228" height="28" rx="6" fill="#EA580C"/>
+          <text x="130" y="208" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">Explore ZapBuzzer</text>
+        </g>
+
+        <!-- SigChanger -->
+        <g transform="translate(350, 80)">
+          <rect width="260" height="236" rx="8" fill="#0C1524" stroke="#223C63" stroke-width="1"/>
+          <rect x="16" y="16" width="36" height="36" rx="8" fill="#1A73E8" fill-opacity="0.2"/>
+          <text x="34" y="39" fill="#1A73E8" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui">✉</text>
+          <text x="62" y="32" fill="#FFFFFF" font-size="15" font-weight="bold" font-family="system-ui">SigChanger</text>
+          <text x="62" y="46" fill="#93C5FD" font-size="10" font-family="system-ui">Google Workspace Signatures</text>
+
+          <rect x="16" y="66" width="228" height="48" rx="6" fill="#11274F"/>
+          <text x="24" y="86" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">Server-Side Gmail Rollout</text>
+          <text x="24" y="102" fill="#38BDF8" font-size="10" font-family="system-ui">No Browser Plugins Required</text>
+
+          <g transform="translate(16, 126)">
+            <text x="0" y="14" fill="#94A3B8" font-size="10" font-family="system-ui">● Syncs Workspace user directory</text>
+            <text x="0" y="32" fill="#94A3B8" font-size="10" font-family="system-ui">● Drag-and-drop template designer</text>
+            <text x="0" y="50" fill="#94A3B8" font-size="10" font-family="system-ui">● Department banners &amp; campaigns</text>
+          </g>
+          <rect x="16" y="190" width="228" height="28" rx="6" fill="#1A73E8"/>
+          <text x="130" y="208" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">Explore SigChanger</text>
+        </g>
+
+        <!-- Fantom -->
+        <g transform="translate(644, 80)">
+          <rect width="260" height="236" rx="8" fill="#0C1524" stroke="#223C63" stroke-width="1"/>
+          <text x="34" y="39" fill="#06B6D4" font-size="16" font-weight="bold" text-anchor="middle" font-family="system-ui">📱</text>
+          <rect x="16" y="16" width="36" height="36" rx="8" fill="#06B6D4" fill-opacity="0.2"/>
+          <text x="62" y="32" fill="#FFFFFF" font-size="15" font-weight="bold" font-family="system-ui">Fantom</text>
+          <text x="62" y="46" fill="#7DD3FC" font-size="10" font-family="system-ui">Cloud SIM &amp; Device Manager</text>
+
+          <rect x="16" y="66" width="228" height="48" rx="6" fill="#0E2D3A"/>
+          <text x="24" y="86" fill="#FFFFFF" font-size="11" font-weight="bold" font-family="system-ui">Recharge &amp; Call Log Dashboard</text>
+          <text x="24" y="102" fill="#22D3EE" font-size="10" font-family="system-ui">WhatsApp &amp; Telegram Tracking</text>
+
+          <g transform="translate(16, 126)">
+            <text x="0" y="14" fill="#94A3B8" font-size="10" font-family="system-ui">● Android call logs cloud sync</text>
+            <text x="0" y="32" fill="#94A3B8" font-size="10" font-family="system-ui">● SIM expiry &amp; recharge alerts</text>
+            <text x="0" y="50" fill="#94A3B8" font-size="10" font-family="system-ui">● Central telecom inventory</text>
+          </g>
+          <rect x="16" y="190" width="228" height="28" rx="6" fill="#06B6D4"/>
+          <text x="130" y="208" fill="#0B132B" font-size="11" font-weight="bold" font-family="system-ui" text-anchor="middle">Explore Fantom</text>
+        </g>
+      
 </svg>

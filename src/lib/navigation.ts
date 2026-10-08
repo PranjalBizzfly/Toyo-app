@@ -124,8 +124,23 @@ export function getMainNav(): NavMenu[] {
           links: [
             { label: "About ToyoApps", href: routes.company(), icon: "building", description: "Who we are and what we are building." },
             { label: "Publish your software", href: routes.publish(), icon: "store", description: "List and sell your SaaS on ToyoApps." },
-            { label: "Support", href: routes.support(), icon: "headset", description: "Help with ToyoApps and its products." },
-            { label: "Contact", href: routes.contact(), icon: "chat", description: "Talk to the ToyoApps team." },
+            { label: "Vendors", href: routes.vendors(), icon: "box", description: "How the vendor relationship works." },
+            { label: "Careers", href: routes.careers(), icon: "briefcase", description: "Open roles at ToyoApps." },
+          ],
+        },
+        {
+          title: "News & media",
+          links: [
+            { label: "Blog", href: routes.blog(), icon: "layers", description: "Guides and support topics across our products." },
+            { label: "Media", href: routes.media(), icon: "megaphone", description: "Company and product updates." },
+            { label: "Press kit", href: routes.pressKit(), icon: "spark", description: "Logos, colours and boilerplates." },
+          ],
+        },
+        {
+          title: "Support",
+          links: [
+            { label: "Help & support", href: routes.support(), icon: "headset", description: "Help with ToyoApps and its products." },
+            { label: "Contact us", href: routes.contact(), icon: "chat", description: "Talk to the ToyoApps team." },
           ],
         },
       ],
@@ -153,7 +168,7 @@ function optionalMenus(): NavMenu[] {
       intro: { title: "Solutions", text: `${plural(solutions.length, "business goal")}, each matched to the ToyoApps products that get it done.` },
       groups: [
         {
-          title: "Solutions",
+          title: "By goal",
           links: solutions.slice(0, 9).map((x) => ({
             label: x.name,
             href: routes.solution(x.slug),
@@ -161,6 +176,14 @@ function optionalMenus(): NavMenu[] {
             icon: "layers" as IconName,
             meta: productNames(x.products, "Uses"),
           })),
+        },
+        {
+          title: "Explore",
+          links: [
+            { label: "All solutions", href: routes.solutions() },
+            ...(industries.length ? [{ label: "Industries", href: routes.industries() }] : []),
+            { label: "All products", href: routes.products() },
+          ],
         },
       ],
       footerLink: { label: "All solutions", href: routes.solutions() },
@@ -173,7 +196,7 @@ function optionalMenus(): NavMenu[] {
       intro: { title: "Industries", text: `ToyoApps products by sector — ${plural(industries.length, "industry").replace(/ys$/, "ies")} with tools picked for how they work.` },
       groups: [
         {
-          title: "Industries",
+          title: "By industry",
           links: industries.slice(0, 9).map((x) => ({
             label: x.name,
             href: routes.industry(x.slug),
@@ -181,6 +204,14 @@ function optionalMenus(): NavMenu[] {
             icon: x.icon ?? ("building" as IconName),
             meta: productNames(x.products, "Products:"),
           })),
+        },
+        {
+          title: "Explore",
+          links: [
+            { label: "All industries", href: routes.industries() },
+            ...(solutions.length ? [{ label: "Solutions", href: routes.solutions() }] : []),
+            { label: "All products", href: routes.products() },
+          ],
         },
       ],
       footerLink: { label: "All industries", href: routes.industries() },
@@ -259,6 +290,11 @@ export function getFooterColumns(): NavGroup[] {
       links: [
         { label: "About", href: routes.company() },
         { label: "Publish your software", href: routes.publish() },
+        { label: "Vendors", href: routes.vendors() },
+        { label: "Careers", href: routes.careers() },
+        { label: "Media", href: routes.media() },
+        { label: "Press kit", href: routes.pressKit() },
+        { label: "Blog", href: routes.blog() },
       ],
     },
     {

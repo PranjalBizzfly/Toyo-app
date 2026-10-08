@@ -83,7 +83,7 @@ export default async function FeatureGroupPage({ params }: Props) {
                 </a>
               </div>
             </div>
-            <ImageSlot src="/images/features/group-hero.svg" alt={`${group.name} in ${product.name}`} width={560} height={480} priority className="fz-art fz-hero__art" />
+            <ImageSlot src="/images/features/group-hero.webp" alt={`${group.name} in ${product.name}`} width={560} height={480} priority className="fz-art fz-hero__art" />
           </div>
         </div>
       </header>
@@ -121,7 +121,7 @@ export default async function FeatureGroupPage({ params }: Props) {
               )}
             </div>
             <div className="fz-panel fz-panel--shot">
-              <ImageSlot src="/images/features/group-feature.svg" alt={`${f.name} in ${product.name}`} width={960} height={540} className="fz-art fz-art--band" />
+              <ImageSlot src="/images/features/group-feature.webp" alt={`${f.name} in ${product.name}`} width={960} height={540} className="fz-art fz-art--band" />
             </div>
           </div>
         </section>
