@@ -11,3 +11,5 @@ scripts/.ui-shots/
 .vercel
 .env*
 scripts/.ref/
+scripts/.research/
+scripts/_tmp_zoho/
