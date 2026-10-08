@@ -133,3 +133,55 @@ There are no feature-detail, feature-group, industry, solution or comparison URL
 Every product page links to the product's **official website** with `rel="noopener"`. This is the primary CTA when the product has no ToyoApps checkout. The link is a normal followed link, since the sites are related.
 - Sign-up CTAs go to the product's own sign-up URL as recorded in the source map.
 - The ToyoApps site never hosts a product's login.
+
+---
+
+## 6. Feature-page rule (applies to every product, current and future)
+
+Added 8 October 2026.
+
+Every product follows the same architecture:
+
+> Overview → Feature groups → Feature pages → How it works → Use cases → Industries → Integrations → Pricing → Security → Resources → FAQs
+
+Each section exists only when the product's official source provides content for it.
+
+**A feature gets its own page** (`/products/[product]/features/[feature]`) when all three of these hold:
+- `hasPage` is set;
+- a "what it is" body exists;
+- there are at least **3 verified capabilities or how-it-works steps** (`MIN_FEATURE_DETAIL` in `src/lib/rules.ts`).
+
+A feature page shows, when the source supports each item:
+- what it is
+- the problem it solves
+- how it works
+- main capabilities
+- benefits
+- who uses it
+- use cases
+- related features and integrations
+- FAQs
+- source links
+
+**Other gated pages:**
+
+| Page | Exists when |
+|---|---|
+| Feature-group hub (`/features/group/[group]`) | The group has real intro text and at least 3 features |
+| Security (`/products/[product]/security`) | The site states at least 3 security measures |
+
+**Product content source:** every product site is crawled with `scripts/research-crawl.mjs` into `scripts/.research/<slug>.md`, which is git-ignored. All feature content is written from those official-page texts. Features that have only a name or a one-liner stay on the product overview without a page.
+
+## 7. Product-scoped detail pages (added 8 October 2026)
+
+Each product can also own detail pages under its own URL:
+
+`/products/[product]/{solutions|industries|integrations|compare|resources|support}/[item]`
+
+- **Data:** `productSolutions`, `productIndustries`, `productIntegrations`, `productComparisons`, `productResources` and `supportTopics` on the product record.
+- **Template:** `ProductItemTemplate` renders all six types.
+- **Content gate:** `entityHasPage` in `src/lib/rules.ts`. A page needs a summary, at least one explanatory paragraph, and at least 4 concrete points. Entries that don't meet it are still listed on the section hub, but get no page of their own.
+- **Comparisons:** allowed only when the product's own official site publishes the comparison.
+- **Search:** `/search` indexes every page type and labels each result with its type.
+- **Sitemap and audit:** both include these pages automatically. Run `node scripts/audit.mjs <url>` to get the per-product page counts and the quality checks.
+- **Official preview sites:** HRMagix, Sibu and ZapBuzzer's new websites, hosted at `*-website.vercel.app`, are used as official sources.
