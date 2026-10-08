@@ -95,9 +95,25 @@ export interface Feature extends SeoFields {
   summary: string;
   /** Slug of a FeatureCategory on the same product. */
   category?: string;
-  /** Long-form body (paragraphs). Required for a detail page. */
+  /** "What it is" — long-form paragraphs from the official source. Required for a detail page. */
   body?: string[];
+  /** The problem the feature addresses, as stated or directly described by the source. */
+  problem?: string;
+  /** Steps of how the feature works, in order. */
+  howItWorks?: string[];
+  /** Concrete capabilities of the feature. */
+  capabilities?: string[];
   benefits?: string[];
+  /** Who uses the feature (roles/teams named by the source). */
+  audience?: string[];
+  /** Situations the source describes the feature being used in. */
+  useCases?: { title: string; description: string }[];
+  /** Integration slugs (global registry) the source ties to this feature. */
+  integrations?: string[];
+  /** Feature slugs on the same product that the source connects to this one. */
+  relatedFeatures?: string[];
+  /** Official page(s) this feature's detail was taken from. */
+  sources?: string[];
   media?: MediaAsset[];
   faqs?: Faq[];
   /** Highlight on the product overview. */
@@ -189,6 +205,15 @@ export interface Product extends SeoFields {
   screenshots?: MediaAsset[];
   benefits?: { title: string; description: string }[];
   howItWorks?: { title: string; description: string }[];
+  /** Security and privacy measures stated by the product's official site. */
+  security?: { title: string; description: string }[];
+  /** Product-scoped detail pages — each generated only with enough real content. */
+  productSolutions?: ProductSolution[];
+  productIndustries?: ProductIndustry[];
+  productIntegrations?: ProductIntegration[];
+  productComparisons?: ProductComparison[];
+  productResources?: ProductResource[];
+  supportTopics?: ProductSupportTopic[];
   featureCategories?: FeatureCategory[];
   features?: Feature[];
   /** Concrete situations the product is used in, as described by its site. */
@@ -208,6 +233,82 @@ export interface Product extends SeoFields {
   docsUrl?: string;
   /** Override CTAs on the product page. */
   primaryCta?: Cta;
+}
+
+/* ------------------------------------------------------------------ */
+/* Product-scoped detail entities                                      */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Fields shared by every product-scoped detail page (solution, industry,
+ * integration, comparison, resource, support topic). All content must come
+ * from the product's official source; `sources` lists those pages.
+ * A detail page exists only when it carries enough real material — see
+ * `entityHasPage` in src/lib/rules.ts.
+ */
+interface ProductDetailBase {
+  slug: string;
+  name: string;
+  /** One-line summary for cards and meta description. */
+  summary: string;
+  /** "What it is" paragraphs. */
+  body?: string[];
+  /** Feature slugs on the same product this page relates to. */
+  features?: string[];
+  faqs?: Faq[];
+  /** Official source URLs the content was written from. */
+  sources: string[];
+}
+
+/** A business problem the product solves (/products/[p]/solutions/[slug]). */
+export interface ProductSolution extends ProductDetailBase {
+  problem?: string;
+  /** How the product solves it. */
+  approach?: string[];
+  workflow?: string[];
+  benefits?: string[];
+  audience?: string[];
+}
+
+/** An industry the product explicitly serves (/products/[p]/industries/[slug]). */
+export interface ProductIndustry extends ProductDetailBase {
+  challenges?: string[];
+  /** How the product addresses those challenges. */
+  howItHelps?: string[];
+  useCases?: { title: string; description: string }[];
+}
+
+/** A documented integration (/products/[p]/integrations/[slug]). */
+export interface ProductIntegration extends ProductDetailBase {
+  /** What the integration connects, in one sentence. */
+  connects?: string;
+  workflow?: string[];
+  benefits?: string[];
+  setup?: string[];
+  /** Matching entry in the global integrations registry, if any. */
+  registry?: string;
+}
+
+/** A comparison published by the product itself (/products/[p]/compare/[slug]). */
+export interface ProductComparison extends ProductDetailBase {
+  competitor: string;
+  /** Points of difference stated by the source. */
+  differences?: string[];
+  rows?: { criterion: string; product: string; competitor: string }[];
+}
+
+/** A real resource published by the product (/products/[p]/resources/[slug]). */
+export interface ProductResource extends ProductDetailBase {
+  type: "guide" | "tutorial" | "checklist" | "documentation" | "article" | "glossary" | "video" | "case-study";
+  keyPoints?: string[];
+  steps?: string[];
+}
+
+/** A support / documentation topic (/products/[p]/support/[slug]). */
+export interface ProductSupportTopic extends ProductDetailBase {
+  steps?: string[];
+  keyPoints?: string[];
+  links?: Cta[];
 }
 
 /* ------------------------------------------------------------------ */

@@ -1,5 +1,274 @@
-import type { Product } from "@/content/types";
-import { featureSet, group } from "./_helpers";
+import type { Feature, FeatureCategory, Product } from "@/content/types";
+
+const HOME = "https://cardizo.com/";
+const PRICING = "https://cardizo.com/pricing";
+
+const featureCategories: FeatureCategory[] = [
+  {
+    slug: "features",
+    name: "Features",
+    description: "Cardizo's contact intelligence stack — “not a card storage app, a relationship operating system”.",
+  },
+];
+
+const features: Feature[] = [
+  {
+    slug: "ai-card-scanning",
+    name: "AI card scanning",
+    summary: "Snap front and back; name, company, phones, emails, address and services become structured fields.",
+    category: "features",
+    highlight: true,
+    hasPage: true,
+    body: [
+      "Cardizo reads a photo of a visiting card and turns it into a contact record. You upload the front of the card, and optionally the back, and Claude Vision extracts the details into clean, editable fields.",
+      "Each extraction comes with a confidence score, and you can correct any field. Contacts can also be added by hand, so you can start before AI extraction is switched on.",
+      "AI extraction runs on your own Anthropic API key, which you connect under Settings → Integrations. How many cards you can scan each month depends on your plan, from 50 on Free to unlimited on Business and Enterprise.",
+    ],
+    problem: "Retyping the details from a stack of paper visiting cards by hand, or leaving them in a drawer where they are never used.",
+    howItWorks: [
+      "Photograph the front of the card and upload it; add the back too if it carries more details.",
+      "Claude Vision reads both sides and pulls out the name, company, phone numbers, emails, address and services.",
+      "The details land in structured, editable fields, each extraction shown with a confidence score.",
+      "Check the result, correct any field that was misread, and save the card as a contact.",
+      "Tag the new contact by event, city, relationship and intent so it can be found later.",
+    ],
+    capabilities: [
+      "Extracts the name, company, phone numbers, emails, postal address and listed services from a card photo into separate fields.",
+      "Reads the back of a card as well as the front, so details printed on either side are captured.",
+      "Shows a confidence score for each extraction, so you know which results to double-check.",
+      "Keeps every extracted field editable, so a misread number or spelling can be fixed before saving.",
+      "Lets you add contacts manually with no AI at all, which works before an API key is connected.",
+      "Monthly scan allowance set by plan: 50 on Free, 1,000 on Starter, 5,000 on Professional and unlimited on Business and Enterprise.",
+    ],
+    benefits: [
+      "Cards collected at an event become usable contacts the same day instead of a pile to type up later.",
+      "Structured fields mean the phone numbers and emails can be used directly for WhatsApp and email follow-ups.",
+      "The confidence score points you to the fields worth checking rather than re-reading every card.",
+    ],
+    audience: ["Founders", "Business-development teams", "Sales teams"],
+    useCases: [
+      { title: "After a trade show", description: "Upload the cards you collected, let Claude Vision fill in the fields, and correct the few low-confidence results before tagging them with the event." },
+      { title: "Cards with details on both sides", description: "Upload the back as well as the front so services or a second address printed on the reverse are captured too." },
+    ],
+    relatedFeatures: ["tag-first-memory", "relationship-intelligence", "sync-everywhere"],
+    faqs: [
+      { question: "Do I need an API key to get started?", answer: "No. You can add contacts manually straight away. To switch on AI extraction, add your Anthropic API key under Settings → Integrations." },
+      { question: "Which details does the scan pick up?", answer: "Cardizo extracts the name, company, phone numbers, emails, address and services printed on the card. Each lands in its own editable field, with a confidence score for the extraction." },
+      { question: "How many cards can I scan?", answer: "It depends on the plan. Free includes 50 scans a month, Starter 1,000, Professional 5,000, and Business and Enterprise are unlimited." },
+    ],
+    sources: [HOME, PRICING],
+  },
+  {
+    slug: "tag-first-memory",
+    name: "Tag-first memory",
+    summary: "Tag every card by event, city, relationship and intent, then search across the tags.",
+    category: "features",
+    highlight: true,
+    hasPage: true,
+    body: [
+      "Cardizo organises contacts around tags rather than names. Each card can be tagged with the event where you met, the city, your relationship and your intent.",
+      "Search then combines tags — the site's example is “Investor + Pune + Dubai Expo” — so the right card comes up even when you have forgotten the person's name.",
+    ],
+    problem: "Remembering who gave you a business card, when you no longer remember their name.",
+    howItWorks: [
+      "Scan or add a contact.",
+      "Tag it with the event where you met, the city, your relationship and your intent.",
+      "Later, search by combining tags, such as a role, a city and an event.",
+      "Open the matching card and follow up from it.",
+    ],
+    capabilities: [
+      "Tags each contact with the event where you met, such as an expo or conference.",
+      "Tags each contact with a city, so people can be grouped by place.",
+      "Tags each contact with your relationship and your intent, recording why the person matters.",
+      "Searches across several tags at once, so a card can be found without knowing the person's name.",
+      "Events can be shared across a team workspace, so colleagues tag against the same event.",
+    ],
+    benefits: [
+      "You find people by the context you remember — where and why you met — rather than by a name you forgot.",
+      "Tags gathered at scan time make later follow-ups targeted, for example everyone met at one event.",
+    ],
+    audience: ["Founders", "Business-development teams"],
+    useCases: [
+      { title: "Finding an investor from an expo", description: "Search “Investor + Pune + Dubai Expo” to surface the card of someone you met there, without knowing their name." },
+      { title: "Working through one event's contacts", description: "Filter by an event tag to pull up everyone you met there and plan follow-ups for the whole group." },
+    ],
+    relatedFeatures: ["ai-card-scanning", "built-for-teams", "whatsapp-plus-email-outreach"],
+    faqs: [
+      { question: "What can I tag a contact with?", answer: "Cardizo's tags cover the event where you met, the city, your relationship and your intent. Search combines them to bring back the right card." },
+      { question: "Do I need to remember the person's name?", answer: "No. Cardizo's example search, “Investor + Pune + Dubai Expo”, finds a card from its tags alone." },
+    ],
+    sources: [HOME],
+  },
+  {
+    slug: "whatsapp-plus-email-outreach",
+    name: "WhatsApp + email outreach",
+    summary: "One click opens WhatsApp with a prefilled message; AI-written emails go out with the card photo attached.",
+    category: "features",
+    highlight: true,
+    hasPage: true,
+    body: [
+      "Cardizo lets you follow up straight from a contact. One click opens WhatsApp with a custom, prefilled message for that person.",
+      "For email, Cardizo writes the message with AI and attaches the photo of the person's card, so they remember meeting you. WhatsApp and email integrations are included from the Professional plan.",
+    ],
+    problem: "Follow-up messages that arrive days later with no reminder of where the two of you met.",
+    howItWorks: [
+      "Open a saved contact in Cardizo.",
+      "Click to open WhatsApp with a custom message already filled in, or choose email.",
+      "For email, Cardizo's AI drafts the message.",
+      "The photo of the person's card is attached, so they recall the meeting.",
+    ],
+    capabilities: [
+      "Opens a WhatsApp chat with the contact in one click, with a custom message already prefilled.",
+      "Drafts follow-up emails with AI rather than starting from a blank message.",
+      "Attaches the photo of the person's own card to the email as a reminder of the meeting.",
+      "WhatsApp Integration and Email Integration are listed on the Professional, Business and Enterprise plans.",
+    ],
+    benefits: [
+      "Follow-ups go out from the contact record itself, without copying numbers into another app.",
+      "The attached card photo gives the recipient immediate context about who you are.",
+    ],
+    audience: ["Sales teams", "Business-development teams", "Founders"],
+    useCases: [
+      { title: "Same-day follow-up after a meeting", description: "Open the contact you just scanned and send a prefilled WhatsApp message before the day ends." },
+      { title: "Formal follow-up by email", description: "Send an AI-drafted email with the person's card photo attached, so they place you straight away." },
+    ],
+    integrations: ["whatsapp"],
+    relatedFeatures: ["relationship-intelligence", "tag-first-memory"],
+    faqs: [
+      { question: "Which plans include WhatsApp and email integration?", answer: "Cardizo's pricing lists WhatsApp Integration and Email Integration from the Professional plan (₹999 a month) upwards, including Business and Enterprise." },
+      { question: "Why is the card photo attached to emails?", answer: "Cardizo attaches the photo of the person's card so they remember meeting you when the email arrives." },
+    ],
+    sources: [HOME, PRICING],
+  },
+  {
+    slug: "relationship-intelligence",
+    name: "Relationship intelligence",
+    summary: "AI summaries of who someone is, why they matter and when you last spoke, plus smart follow-ups.",
+    category: "features",
+    highlight: true,
+    hasPage: true,
+    body: [
+      "For each contact, Cardizo's AI writes a summary of who the person is, why they matter to you and when you last spoke.",
+      "It also suggests follow-ups, so leads you collected do not go cold.",
+    ],
+    problem: "Leads going cold after a meeting because nobody followed up.",
+    capabilities: [
+      "Writes an AI summary of who each contact is.",
+      "Records why the contact matters to you, so the reason for keeping in touch is not lost.",
+      "Shows when you last spoke, so stale relationships are easy to spot.",
+      "Suggests smart follow-ups, so collected leads are acted on before they go cold.",
+    ],
+    benefits: [
+      "Before a call you get the context on one screen: who the person is, why they matter and how long it has been.",
+      "Suggested follow-ups turn a contact list into a list of next actions.",
+    ],
+    audience: ["Founders", "Business-development teams", "Sales teams"],
+    useCases: [
+      { title: "Preparing to reconnect", description: "Read the AI summary to recall who someone is and when you last spoke before reaching out." },
+    ],
+    relatedFeatures: ["whatsapp-plus-email-outreach", "ai-card-scanning", "tag-first-memory"],
+    faqs: [
+      { question: "What does the relationship summary include?", answer: "Cardizo's AI summarises who the person is, why they matter to you and when you last spoke." },
+    ],
+    sources: [HOME],
+  },
+  {
+    slug: "sync-everywhere",
+    name: "Sync everywhere",
+    summary: "Export to CSV, Excel or VCF, push to Google Contacts, and bulk-import existing sheets.",
+    category: "features",
+    highlight: true,
+    hasPage: true,
+    body: [
+      "Cardizo keeps your contacts portable. You can export them at any time as CSV, Excel (.xlsx) or VCF/vCard files, or push them straight into Google Contacts.",
+      "Contacts you already keep in spreadsheets can be brought in with a bulk import.",
+    ],
+    problem: "Contacts locked inside one app, or spread across old spreadsheets that never get merged.",
+    howItWorks: [
+      "Bulk-import the contact sheets you already keep.",
+      "Add new contacts by scanning cards or entering them manually.",
+      "Export at any time as CSV, Excel or VCF, or push contacts to Google Contacts.",
+    ],
+    capabilities: [
+      "Exports contacts as CSV for use in any spreadsheet or tool that reads CSV.",
+      "Exports contacts as an Excel (.xlsx) workbook.",
+      "Exports contacts as VCF/vCard files that phones and address books can open.",
+      "Pushes contacts straight into Google Contacts.",
+      "Bulk-imports existing spreadsheets, so earlier contact lists sit alongside scanned cards.",
+    ],
+    benefits: [
+      "Your data stays portable — Cardizo describes it as always yours to take elsewhere.",
+      "Starting with Cardizo does not mean abandoning the contact sheets you already have.",
+    ],
+    audience: ["Founders", "Sales teams"],
+    useCases: [
+      { title: "Moving an existing list in", description: "Bulk-import a spreadsheet of past contacts so old and newly scanned cards can be searched together." },
+      { title: "Contacts on your phone", description: "Push scanned contacts to Google Contacts, or export a VCF file, so they are available outside Cardizo." },
+    ],
+    integrations: ["google-contacts"],
+    relatedFeatures: ["ai-card-scanning", "built-for-teams"],
+    faqs: [
+      { question: "Can I export my contacts?", answer: "Yes — to CSV, Excel (.xlsx) or VCF/vCard at any time, or directly to Google Contacts." },
+      { question: "Can I bring in contacts I already have?", answer: "Yes. Cardizo supports bulk import of existing sheets alongside card scanning and manual entry." },
+    ],
+    sources: [HOME],
+  },
+  {
+    slug: "built-for-teams",
+    name: "Built for teams",
+    summary: "Multi-tenant workspaces, roles, shared events and audit logs — from a solo founder to a 50-person BD team.",
+    category: "features",
+    highlight: true,
+    hasPage: true,
+    body: [
+      "Cardizo is multi-tenant from the start. Each organisation works in its own workspace, with roles and granular permissions deciding who can do what.",
+      "Events can be shared across the team, and audit logs record activity. Cardizo describes it as working for anyone from a solo founder to a 50-person business-development team; the Business and Enterprise plans add SSO, and Enterprise adds SCIM provisioning.",
+    ],
+    howItWorks: [
+      "Create an organisation workspace on any plan.",
+      "Invite teammates, up to the plan's user limit, and give each a role.",
+      "Share events so the team tags contacts from the same occasion together.",
+      "Review activity in the audit log on Professional and higher plans.",
+    ],
+    capabilities: [
+      "Gives every organisation its own multi-tenant workspace.",
+      "Assigns roles with granular permissions that control what each teammate can do.",
+      "Shares events across the team, so contacts from one occasion are gathered in one place.",
+      "Keeps audit logs of activity on the Professional, Business and Enterprise plans.",
+      "Adds SSO on the Business and Enterprise plans, and SCIM provisioning on Enterprise.",
+      "Scales user seats by plan: 5 on Free, 20 on Starter, 100 on Professional and unlimited on Business and Enterprise.",
+    ],
+    benefits: [
+      "Contacts gathered by different people end up in one shared, searchable workspace.",
+      "Roles and audit logs let a manager decide and see who touched which records.",
+      "Larger organisations can sign in with SSO and provision users with SCIM.",
+    ],
+    audience: ["Solo founders", "Business-development teams"],
+    useCases: [
+      { title: "A team at a shared event", description: "Several people scan cards at the same expo and tag them to one shared event, so the whole team sees every lead." },
+    ],
+    relatedFeatures: ["tag-first-memory", "sync-everywhere"],
+    faqs: [
+      { question: "How many users can a workspace have?", answer: "Free covers 5 users, Starter 20, Professional 100, and Business and Enterprise are unlimited." },
+      { question: "Does Cardizo support SSO?", answer: "Yes, on the Business and Enterprise plans. Enterprise also adds SCIM provisioning." },
+    ],
+    sources: [HOME, PRICING],
+  },
+  {
+    slug: "api-and-webhooks",
+    name: "API & webhooks",
+    summary: "Cardizo lists API access on the Professional plan and above, and webhooks on the Business and Enterprise plans; no API documentation is published.",
+    category: "features",
+    sources: [PRICING],
+  },
+  {
+    slug: "mobile-app",
+    name: "Mobile app",
+    summary: "Cardizo's pricing lists a mobile app on every paid plan from Starter upwards; the site does not describe its features or app stores.",
+    category: "features",
+    sources: [PRICING],
+  },
+];
 
 export const cardizo: Product = {
   id: "cardizo",
@@ -8,7 +277,7 @@ export const cardizo: Product = {
   shortDescription:
     "Scan business cards with AI and turn them into tagged, searchable contacts you can follow up with on WhatsApp or email.",
   longDescription:
-    "Cardizo reads both sides of a visiting card into structured fields, then lets you tag each contact by event, city, relationship and intent. Search brings back the right people later, and outreach goes out with the context of where you met — for one founder or a whole business-development team.",
+    "Cardizo turns visiting cards into searchable, tagged contacts with AI. It calls itself a relationship operating system rather than a card storage app: the goal is remembering who someone is and following up, not just keeping their details.\n\nYou photograph the front and back of a card and Claude Vision fills in the name, company, phones, emails, address and services, each with a confidence score. Every contact is then tagged by event, city, relationship and intent, so a search like “Investor + Pune + Dubai Expo” brings the right card back even if the name is forgotten.\n\nFrom a contact you can open WhatsApp with a prefilled message or send an AI-drafted email with the card photo attached. AI summaries record who a person is, why they matter and when you last spoke, and contacts export to CSV, Excel, VCF or Google Contacts.\n\nWorkspaces are multi-tenant, with roles, shared events and audit logs, and plans run from a free tier for five users to Enterprise with SSO, SCIM and a dedicated server.",
   tagline: "Never forget who gave you a business card again.",
   category: "sales-marketing",
   subcategory: "contacts-relationships",
@@ -21,46 +290,84 @@ export const cardizo: Product = {
   featured: true,
   websiteUrl: "https://cardizo.com/",
   appUrl: "https://cardizo.com/sign-up",
-  ...featureSet(
-    group(
-      "Features",
-      [
-        ["AI card scanning", "Snap front and back; name, company, phones, emails and address become structured fields."],
-        ["Tag-first memory", "Tag contacts by event, city, relationship and intent, then search across them."],
-        ["WhatsApp + email outreach", "Prefilled WhatsApp messages and AI-drafted emails with the card attached."],
-        ["Relationship intelligence", "AI summaries and smart follow-up suggestions."],
-        ["Sync everywhere", "Export to CSV, Excel or VCF, push to Google Contacts, bulk-import sheets."],
-        ["Built for teams", "Workspaces, roles, shared events and audit logs."],
-      ],
-      { highlight: 6 },
-    ),
-  ),
+  featureCategories,
+  features,
   integrations: ["whatsapp", "google-contacts"],
+  benefits: [
+    { title: "Find people by context", description: "Tags for event, city, relationship and intent let you search for someone by where and why you met. The card turns up even when the name has gone." },
+    { title: "No more retyping cards", description: "Claude Vision reads both sides of a card into editable fields with a confidence score. You check the doubtful fields instead of typing every card." },
+    { title: "Follow-ups with context", description: "WhatsApp messages open prefilled, and emails are AI-drafted with the card photo attached. The recipient is reminded where you met." },
+    { title: "Your data stays portable", description: "Contacts export to CSV, Excel or VCF at any time, or go straight to Google Contacts. Existing sheets can be bulk-imported." },
+    { title: "Grows from one person to a team", description: "The same workspace works for a solo founder or a 50-person business-development team, with roles, shared events and audit logs." },
+  ],
+  howItWorks: [
+    { title: "Scan it", description: "Upload the front, and optionally the back, of a card. Claude Vision turns the details into editable fields with a confidence score." },
+    { title: "Tag it", description: "Tag the contact by event, city, relationship and intent, so a combined search finds it later even without the name." },
+    { title: "Reach out", description: "Follow up with a prefilled WhatsApp message or an AI-written email with the card photo attached." },
+    { title: "Keep it in sync", description: "Export contacts to CSV, Excel or VCF, or push them to Google Contacts, whenever you need them elsewhere." },
+  ],
+  security: [
+    { title: "Roles and granular permissions", description: "Each workspace assigns roles with granular permissions, controlling what each teammate can do." },
+    { title: "Audit logs", description: "The Professional, Business and Enterprise plans keep audit logs of workspace activity." },
+    { title: "Single sign-on and SCIM", description: "SSO is listed on the Business and Enterprise plans; Enterprise also lists SCIM provisioning for managing users." },
+    { title: "Dedicated server", description: "The Enterprise plan lists a dedicated server, along with security reports and compliance." },
+  ],
+  supportTopics: [
+    {
+      slug: "getting-started",
+      name: "Getting started with Cardizo",
+      summary: "How to start using Cardizo, from the free plan to switching on AI card extraction.",
+      body: [
+        "You can start Cardizo for free with no card. You can add contacts by hand immediately. AI extraction from card photos is switched on separately, by connecting your own Anthropic API key.",
+      ],
+      steps: [
+        "Sign up on the Free plan. No card is required.",
+        "Add contacts manually straight away if you like.",
+        "To turn on AI extraction, add your Anthropic API key under Settings, then Integrations.",
+        "Upload the front of a card (and the back if you want). Claude Vision fills in editable fields, each with a confidence score.",
+        "Tag each card by event, city, relationship and intent so you can find it later.",
+      ],
+      keyPoints: [
+        "Paid plans start with a 14-day trial and can be cancelled at any time.",
+        "Existing spreadsheets can be bulk-imported, and contacts can be exported to CSV, Excel or VCF at any time.",
+      ],
+      features: ["ai-card-scanning", "tag-first-memory", "sync-everywhere"],
+      sources: [HOME, PRICING],
+    },
+  ],
   pricing: {
     currency: "INR",
     unit: "month",
-    trial: "14-day Professional trial, no card required",
-    note: "GST applied where applicable. Yearly billing saves about two months.",
-    asOf: "2026-10-07",
-    sourceUrl: "https://cardizo.com/pricing",
+    trial: "14-day trial on paid plans, no card required",
+    note: "GST applied where applicable. Local currency shown at checkout for supported countries. Yearly billing saves about two months.",
+    asOf: "2026-10-08",
+    sourceUrl: PRICING,
     plans: [
-      { name: "Free", price: "₹0", period: "month", description: "For getting started", features: ["5 users", "50 scans / month", "1 GB storage"], cta: { label: "Start free", href: "https://cardizo.com/sign-up" } },
-      { name: "Starter", price: "₹299", period: "month", description: "For small teams", features: ["20 users", "1,000 scans / month", "25 GB storage"], cta: { label: "Start trial", href: "https://cardizo.com/sign-up" } },
-      { name: "Professional", price: "₹999", period: "month", description: "For growing businesses", features: ["100 users", "5,000 scans / month", "250 GB storage"], cta: { label: "Start trial", href: "https://cardizo.com/sign-up" }, recommended: true },
-      { name: "Business", price: "₹2,999", period: "month", description: "For large organizations", features: ["Unlimited users", "Unlimited scans", "Unlimited storage"], cta: { label: "Start trial", href: "https://cardizo.com/sign-up" } },
-      { name: "Enterprise", price: "Custom", description: "Custom pricing", features: ["Contact sales for SSO, white label and dedicated hosting"], cta: { label: "Contact sales", href: "https://cardizo.com/pricing" } },
+      { name: "Free", price: "₹0", period: "month", description: "For getting started — suits an individual trying Cardizo with up to 50 scans a month", features: ["5 users", "50 scans / month", "1 GB storage", "Basic dashboard", "Community support"], cta: { label: "Start free", href: "https://cardizo.com/sign-up" } },
+      { name: "Starter", price: "₹299", period: "month", description: "For small teams of up to 20 people who need the mobile app, analytics and email notifications", features: ["20 users", "1,000 scans / month", "25 GB storage", "Email notifications", "Mobile app", "Analytics", "Priority support"], cta: { label: "Start 14-day trial", href: "https://cardizo.com/sign-up" } },
+      { name: "Professional", price: "₹999", period: "month", description: "For growing businesses that follow up on WhatsApp and email, need API access and want audit logs", features: ["100 users", "5,000 scans / month", "250 GB storage", "WhatsApp and email integration", "API access", "Audit logs", "Automation", "Everything in Starter"], cta: { label: "Start 14-day trial", href: "https://cardizo.com/sign-up" }, recommended: true },
+      { name: "Business", price: "₹2,999", period: "month", description: "For large organisations needing unlimited usage, SSO, white label, a custom domain and webhooks", features: ["Unlimited users, scans and storage", "SSO", "White label", "Custom domain", "Webhooks", "Advanced analytics", "Everything in Professional"], cta: { label: "Choose plan", href: "https://cardizo.com/sign-up" } },
+      { name: "Enterprise", price: "Custom", description: "Custom pricing — contact sales. For organisations that need a dedicated server, SCIM, custom integrations and compliance", features: ["Dedicated server", "Dedicated support and account manager", "SSO and SCIM provisioning", "Custom integrations", "Security reports and compliance", "Everything in Business"], cta: { label: "Contact sales", href: PRICING } },
     ],
   },
   useCases: [
     { title: "Events and expos", description: "Scan the cards you collect at an event and tag them with the event, city and intent, so you can pull up exactly those people later." },
     { title: "Following up after a meeting", description: "Send a prefilled WhatsApp message or an AI-drafted email with the card attached, so the contact knows where you met." },
     { title: "Team business development", description: "Share events and contacts across a workspace, with roles and an audit log." },
+    { title: "Finding a forgotten contact", description: "Search by combined tags, such as a role, city and event, to pull up someone whose name you no longer remember." },
+    { title: "Moving off spreadsheets", description: "Bulk-import the contact sheets you already keep, then export to CSV, Excel, VCF or Google Contacts whenever needed." },
   ],
   faqs: [
-    { question: "Does Cardizo need my own AI key?", answer: "Yes. Card extraction uses your own Anthropic API key, which you add in Cardizo's integration settings." },
-    { question: "Can I take my contacts elsewhere?", answer: "Contacts export to CSV, Excel and VCF, and can be pushed to Google Contacts." },
-    { question: "Is there a free plan?", answer: "Yes. The Free plan includes 5 users and 50 scans a month. Paid plans start with a 14-day Professional trial and no card is required." },
+    { question: "How does the AI card scanning work?", answer: "Upload the front (and optionally the back) of a card. Claude Vision extracts the name, company, phones, emails, address and services into editable fields, with a confidence score." },
+    { question: "Do I need an API key to get started?", answer: "No. You can add contacts manually right away. To enable AI extraction, add your Anthropic API key under Settings → Integrations." },
+    { question: "Can I take my contacts elsewhere?", answer: "Yes. Contacts export to CSV, Excel and VCF at any time, and can be pushed to Google Contacts. Existing sheets can also be bulk-imported." },
+    { question: "Is it built for teams?", answer: "Yes. Cardizo is multi-tenant, with roles, granular permissions, shared events and audit logs. It is pitched for anyone from a solo founder to a 50-person business-development team." },
+    { question: "Is there a free plan?", answer: "Yes. The Free plan includes 5 users, 50 scans a month, 1 GB of storage, a basic dashboard and community support. Paid plans start with a 14-day trial and no card is required." },
+    { question: "What does it cost?", answer: "Free is ₹0, Starter ₹299 a month, Professional ₹999 and Business ₹2,999; Enterprise is custom-priced through sales. Prices are in INR with GST applied where applicable, and yearly billing saves about two months." },
+    { question: "Which plan includes WhatsApp and email follow-ups?", answer: "WhatsApp Integration and Email Integration are listed from the Professional plan upwards. Professional also adds API access, audit logs and automation." },
+    { question: "Can I cancel?", answer: "Yes. Cardizo's pricing page says you can cancel at any time." },
+    { question: "What does Enterprise add?", answer: "Enterprise lists a dedicated server, dedicated support with an account manager, SSO and SCIM provisioning, custom integrations, security reports and compliance, on top of everything in Business." },
   ],
-  sources: ["https://cardizo.com/", "https://cardizo.com/pricing"],
-  lastVerified: "2026-10-07",
+  sources: [HOME, PRICING],
+  lastVerified: "2026-10-08",
 };

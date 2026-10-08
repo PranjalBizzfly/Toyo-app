@@ -1,5 +1,4 @@
 import type { Product } from "@/content/types";
-import { featureSet, group } from "./_helpers";
 
 export const sizoru: Product = {
   id: "sizoru",
@@ -8,7 +7,7 @@ export const sizoru: Product = {
   shortDescription:
     "Market-sizing reports for founders and investors — TAM, SAM and SOM built top-down and bottom-up, with every source cited.",
   longDescription:
-    "Sizoru sizes a market two ways and compares the results: when they agree the number is locked, when they partly agree it becomes a range, and when they don't the report explains why. Reports include bull, base and bear scenarios, India's 1/2/3 segmentation and tier-rated sources, delivered as a print-ready PDF.",
+    "Sizoru produces TAM / SAM / SOM market-sizing reports for founders, consultants and investors. Every market is sized twice, top-down from a population and bottom-up from a single customer, and the two results are compared before any number is published.\n\nA convergence rule decides the outcome: a gap under 15% locks a single TAM, 15–40% gives a cited range, and over 40% ships both numbers with a diagnosis of the assumption that is breaking. Every TAM → SAM → SOM filter is labelled and quantified, and every SOM comes as bull, base and bear scenarios.\n\nFor Indian markets, the India 1/2/3 framework filters the SAM to the segment actually being sold to. Each citation carries a Tier 1, 2 or 3 badge, with syndicated estimates used only for triangulation.\n\nYou brief the engine with seven fields and the pipeline runs in about three minutes, ending in a print-ready, provenance-locked PDF. Sizoru is a product of Stolvix and charges ₹4,999 per report with no subscription.",
   tagline: "A defensible TAM, in three minutes — not three weeks.",
   category: "insights-research",
   secondaryCategories: ["sales-marketing"],
@@ -22,26 +21,453 @@ export const sizoru: Product = {
   websiteUrl: "https://sizoru.com/",
   appUrl: "https://sizoru.com/sign-in?mode=signup",
   publisher: { name: "Stolvix" },
-  ...featureSet(
-    group(
-      "Why it holds up",
-      [
-        ["Dual-method convergence test", "Top-down and bottom-up estimates are compared before a number is locked."],
-        ["Tier-rated source provenance", "Every source is rated and traced."],
-        ["India 1/2/3 framework", "India's market tiers are built into the model."],
-        ["Bull, base and bear scenarios", "Three scenarios in every report."],
-        ["Visible filter chain", "Each assumption in the chain is shown and can be inspected."],
-        ["3 free revisions in 30 days", "Revise the report after delivery."],
-        ["Pay after the preview", "See a preview before paying."],
+  featureCategories: [
+    {
+      slug: "methodology",
+      name: "Methodology",
+      description:
+        "How every Sizoru report is built: two methods, a convergence test, India segmentation, tiered sources, a visible filter chain and scenarios.",
+      body: [
+        "Sizoru's methodology page documents how every report is put together: the two sizing methods it runs, the test that locks the result, the framework it uses for India, and the limitations it states openly.",
+        "Its premise is that a market sized by one method is an opinion, while a market sized by two methods that converge is a defensible thesis.",
       ],
-      { highlight: 4 },
-    ),
-  ),
+    },
+    {
+      slug: "the-report",
+      name: "The report",
+      description: "What you receive and the terms around it.",
+      body: [
+        "Every Sizoru run ends in a print-ready, provenance-locked PDF: a finished analytical document built around one thesis, rather than an editable draft or chat text.",
+        "The report is sold per report with no subscription. You see a preview before paying, and each report includes three free revisions within 30 days.",
+      ],
+    },
+  ],
+  features: [
+    {
+      slug: "dual-method-convergence-test",
+      name: "Dual-method convergence test",
+      summary: "Top-down and bottom-up estimates are run on every report and compared before a number is locked.",
+      category: "methodology",
+      highlight: true,
+      hasPage: true,
+      body: [
+        "Sizoru sizes every market twice. Top-down analysis starts from a population — total spend, total addressable users or total industry revenue — and applies sequential filters down to your segment. Bottom-up analysis starts from a unit — what one customer is worth — and multiplies by the realistically reachable customer count.",
+        "Sizoru describes the two methods as flawed in opposite directions: top-down inherits the assumptions of whoever published the population figure, bottom-up inherits the optimism of whoever sized the unit. Rather than picking a winner, Sizoru compares them and treats the gap between them as information about where the assumptions are weakest.",
+        "A tiered convergence rule then decides what the report delivers: a single locked TAM, a cited range, or both numbers with a diagnosis of the assumption that is breaking.",
+      ],
+      problem:
+        "Most market sizing is a single number asserted with confidence and defended with hand-waving; a figure built with only one method is fragile.",
+      howItWorks: [
+        "Top-down: start from the largest defensible number (industry revenue, population or category spend) and apply sequential filters to reach the addressable market.",
+        "Bottom-up: start from one customer's value (ARPU, retention, lifetime) and multiply by the realistic customer ceiling.",
+        "Compare the two results and measure the gap between them.",
+        "Apply the convergence rule and ship the matching deliverable.",
+      ],
+      capabilities: [
+        "Gap under 15% — Locked: both methods agree and a single TAM is delivered with high confidence.",
+        "Gap of 15–40% — Range: the methods agree on the ballpark and a TAM range is delivered with both endpoints cited.",
+        "Gap over 40% — Diagnostic: both numbers are delivered with a breakdown of which assumption diverges and why.",
+        "Each step of both methods shows its source tier.",
+      ],
+      benefits: [
+        "A converged number gives investors confidence; a flagged divergence with honest reasoning shows the gap wasn't papered over.",
+        "Founders can defend their thesis with both methods visible.",
+      ],
+      relatedFeatures: ["tier-rated-source-provenance", "visible-filter-chain", "india-1-2-3-framework"],
+      sources: ["https://sizoru.com/methodology", "https://sizoru.com/"],
+      faqs: [
+        {
+          question: "What happens if the two methods don't agree?",
+          answer:
+            "If they don't converge within 15%, Sizoru surfaces the divergence and says which assumption is breaking instead of hiding it. Above a 40% gap, the report includes both numbers plus a diagnostic breakdown.",
+        },
+      ],
+    },
+    {
+      slug: "top-down-analysis",
+      name: "Top-down analysis",
+      summary: "Sizing from the universe inward: start from the largest defensible number and apply sequential filters down to your segment.",
+      category: "methodology",
+      hasPage: true,
+      body: [
+        "Top-down is the first of the two methods Sizoru runs on every report. It begins with the largest defensible figure, such as total industry revenue, total addressable population or total category spend, and narrows it with sequential filters until what remains is your addressable market.",
+        "Sizoru notes the method's weakness openly: a top-down number inherits the assumptions of whoever published the population figure. That is why the top-down result is treated as a candidate number and is always compared with a bottom-up estimate.",
+      ],
+      howItWorks: [
+        "Start from a population figure, such as total registered businesses or total category spend.",
+        "Filter to the relevant part of that population, for example digitally active businesses.",
+        "Filter further to your sub-vertical and to those willing to pay.",
+        "Multiply by an ARPU benchmark to reach the top-down TAM.",
+      ],
+      capabilities: [
+        "Each step shows the source tier behind it",
+        "Filters are applied in sequence and visible in the report",
+        "The result is a candidate number that goes into the convergence test",
+      ],
+      relatedFeatures: ["bottom-up-analysis", "dual-method-convergence-test", "visible-filter-chain"],
+      sources: ["https://sizoru.com/methodology"],
+    },
+    {
+      slug: "bottom-up-analysis",
+      name: "Bottom-up analysis",
+      summary: "Sizing from the unit outward: start from what one customer is worth and multiply by the realistically reachable customer count.",
+      category: "methodology",
+      hasPage: true,
+      body: [
+        "Bottom-up is the second method in every Sizoru report. It starts from a single unit, such as annual contract value, transaction frequency or lifetime spend, and multiplies it by the number of customers you can realistically reach.",
+        "Sizoru says this method fails in the opposite direction to top-down: it inherits the optimism of whoever sized the unit. Comparing the two is what exposes where the assumptions are weakest.",
+      ],
+      howItWorks: [
+        "Establish average revenue per customer from comparable companies.",
+        "Apply an annual retention rate from benchmarks.",
+        "Build a realistic five-year customer ceiling.",
+        "Derive average customer lifetime from retention and compute the bottom-up TAM.",
+      ],
+      capabilities: [
+        "Each component carries its source tier",
+        "Uses unit economics such as ARPU, retention and lifetime",
+        "The result is compared with the top-down number in the convergence test",
+      ],
+      relatedFeatures: ["top-down-analysis", "dual-method-convergence-test"],
+      sources: ["https://sizoru.com/methodology"],
+    },
+    {
+      slug: "india-1-2-3-framework",
+      name: "India 1/2/3 framework",
+      summary: "India is segmented into three markets so the SAM reflects who you actually sell to.",
+      category: "methodology",
+      highlight: true,
+      hasPage: true,
+      body: [
+        "Sizoru argues that many reports treat India as one 1.4-billion-consumer block and apply uniform filters, producing a number that is technically defensible but operationally meaningless.",
+        "Every Sizoru report involving Indian geography applies the India 1/2/3 segmentation lens and asks which of the three segments you are actually selling to; the SAM is then filtered to that segment. Sizoru states that this lens changes the SAM by 40–70% in most cases.",
+      ],
+      problem:
+        "Treating India as a single market conflates very different buyers, producing sizes that look impressive in a deck but collapse under investor scrutiny.",
+      capabilities: [
+        "India 1 (~120 million people): tier-1 metro and English-comfortable, with per-capita spend comparable to Mexico or Brazil — home to most premium SaaS, fintech and D2C.",
+        "India 2 (~300 million people): the aspirational, mostly digital-first middle in tier-2/3 cities, vernacular-first — home to most quick-commerce, gaming and EdTech.",
+        "India 3 (~1 billion people): rural and urban informal economy with limited monetisation beyond utility — home to most subsidised and utility-led products.",
+        "Applied on every report involving Indian geography, with the SAM filtered to the chosen segment.",
+      ],
+      relatedFeatures: ["visible-filter-chain", "dual-method-convergence-test"],
+      benefits: [
+        "A SaaS startup selling to India 1 sees a SAM of around 120 million addressable users rather than 1.4 billion.",
+        "The report shows how the SAM splits across the three segments, so an investor can see where the market actually sits.",
+      ],
+      audience: ["Founders selling into India", "VCs & accelerators"],
+      faqs: [
+        { question: "Does every report use India 1/2/3?", answer: "It is applied on every report involving Indian geography. The report asks which of the three segments you sell to and filters the SAM to it." },
+        { question: "How much does it change the result?", answer: "Sizoru states that the segmentation lens changes the SAM by 40–70% in most cases." },
+      ],
+      sources: ["https://sizoru.com/methodology", "https://sizoru.com/"],
+    },
+    {
+      slug: "tier-rated-source-provenance",
+      name: "Tier-rated source provenance",
+      summary: "Every cited source is classified into one of three tiers, badged in the report and weighted accordingly.",
+      category: "methodology",
+      highlight: true,
+      hasPage: true,
+      body: [
+        "Sizoru treats sources as unequal: a government statistic and a syndicated research projection are not interchangeable, even when they appear side by side. Every cited source is classified into one of three tiers, marked with a visible badge in the report and weighted accordingly in the calculations.",
+        "Each figure carries its tier badge in the source footnote, so if a number you plan to put in an investor deck rests on a weaker source, you know before the investor does.",
+      ],
+      problem:
+        "Free AI tools can produce plausible numbers without traceable sources, and reports often mix authoritative and syndicated figures without distinction.",
+      capabilities: [
+        "Tier 1 — Authoritative (e.g. RBI, SEBI, MoSPI, NSO, Census of India, NPCI, regulator filings, World Bank, IMF): used as primary inputs.",
+        "Tier 2 — Reputable (e.g. consulting-firm industry papers, NASSCOM, FICCI/CII white papers, comparable filings, peer-reviewed research): used as supporting inputs with the publisher shown.",
+        "Tier 3 — Caution (syndicated market-research estimates and generic third-party PR): used only to triangulate, never as a sole source, and marked with a caution badge.",
+        "A number sourced only from Tier 3 is flagged as a syndicated estimate rather than a measurement.",
+        "Tier badges appear in every source footnote.",
+      ],
+      relatedFeatures: ["dual-method-convergence-test", "print-ready-pdf-report"],
+      sources: ["https://sizoru.com/methodology", "https://sizoru.com/"],
+    },
+    {
+      slug: "visible-filter-chain",
+      name: "Visible filter chain",
+      summary: "Every TAM → SAM → SOM step is shown, with each filter labelled, quantified and footnoted.",
+      category: "methodology",
+      highlight: true,
+      hasPage: true,
+      body: [
+        "A typical market-sizing slide simply states TAM, SAM and SOM. Sizoru's view is that when the filtering between them is invisible, the numbers are decorative: nobody can see why most of the TAM disappeared or why SOM is the share of SAM it is.",
+        "Every Sizoru report ships the full filter chain from TAM to SAM to SOM — filters such as geography, segment, sub-vertical, channel reachability, pricing fit and team capacity — so readers see the thinking behind the numbers. Sizoru's homepage also lets you toggle sample assumptions to watch the SOM move, using the same logic that ships in the report.",
+      ],
+      problem:
+        "When the filters between TAM, SAM and SOM are hidden, investors stop trusting the numbers and push back dismissively.",
+      capabilities: [
+        "Each filter is labelled.",
+        "Each percentage reduction is shown.",
+        "Each rationale is footnoted.",
+        "Covers both the TAM → SAM and SAM → SOM steps.",
+      ],
+      benefits: [
+        "Investor pushback becomes specific (\"I disagree with Filter 4\") rather than dismissive (\"the numbers seem high\").",
+      ],
+      relatedFeatures: ["india-1-2-3-framework", "bull-base-and-bear-scenarios"],
+      sources: ["https://sizoru.com/methodology", "https://sizoru.com/"],
+    },
+    {
+      slug: "bull-base-and-bear-scenarios",
+      name: "Bull, base and bear scenarios",
+      summary: "Every SOM is delivered as three scenarios, each with its assumption table.",
+      category: "methodology",
+      hasPage: true,
+      body: [
+        "Sizoru delivers every SOM as three scenarios — bull, base and bear — together with the assumption table that produces each one.",
+        "Sizoru's reasoning is that no thesis survives a single number, and that bear-case rigour is an underrated trust signal when pitching.",
+      ],
+      capabilities: [
+        "Base case: the realistic five-year projection.",
+        "Bull case: the upside if execution and market timing both go well.",
+        "Bear case: the outcome if growth assumptions compress by 30–50%.",
+        "An assumption table per scenario, covering variables such as five-year CAGR, CAC growth and net revenue retention.",
+      ],
+      relatedFeatures: ["visible-filter-chain"],
+      problem: "A single SOM figure gives investors nothing to test against, and hides how sensitive the outcome is to growth assumptions.",
+      faqs: [
+        { question: "What does the bear case assume?", answer: "The bear case shows the outcome if growth assumptions compress by 30–50%, with its own assumption table." },
+        { question: "Which scenario is the headline number?", answer: "The base case, which Sizoru defines as the realistic five-year projection." },
+      ],
+      sources: ["https://sizoru.com/methodology", "https://sizoru.com/"],
+    },
+    {
+      slug: "print-ready-pdf-report",
+      name: "Print-ready PDF report",
+      summary: "A finished, provenance-locked PDF that is yours to keep and re-download.",
+      category: "the-report",
+      hasPage: true,
+      body: [
+        "The deliverable is a print-ready, provenance-locked PDF — a finished analytical document rather than an editable draft — built around one thesis defended at every step. It is yours to keep and can be re-downloaded.",
+        "You brief Sizoru with seven fields and its pipeline runs in about three minutes. An investor deck (.pptx) and an editable model (.xlsx) are listed as coming soon.",
+      ],
+      howItWorks: [
+        "Sign up with a six-digit code sent to your email — no password or demo call.",
+        "Brief the engine with seven fields: company, industry, model, geography, customer, stage and description, with Indian defaults pre-filled.",
+        "The pipeline runs six AI-validated steps covering live web research, dual-method maths, source tiering, India 1/2/3 filters and scenario projection.",
+        "Download the PDF.",
+      ],
+      capabilities: [
+        "Executive summary with top-down and bottom-up TAM, convergence gap, five-year SOM and lock status.",
+        "India 1/2/3 SAM breakdown, source provenance listing and scenario pages.",
+        "Footnoted citations carrying tier badges.",
+      ],
+      relatedFeatures: ["dual-method-convergence-test", "tier-rated-source-provenance", "bull-base-and-bear-scenarios"],
+      sources: ["https://sizoru.com/", "https://sizoru.com/methodology"],
+      faqs: [
+        {
+          question: "How is this different from ChatGPT or free AI tools?",
+          answer:
+            "Sizoru enforces dual methodology, tiers every citation by credibility, applies the India 1/2/3 framework and ships a polished PDF report rather than chat text.",
+        },
+      ],
+    },
+    {
+      slug: "3-free-revisions-in-30-days",
+      name: "3 free revisions in 30 days",
+      summary: "If an investor pushes back on a number, Sizoru redoes that section — up to three times within 30 days.",
+      category: "the-report",
+      hasPage: true,
+      body: [
+        "Every Sizoru report comes with three free revisions within 30 days of purchase. The revisions are aimed at the moment a report meets an investor: if a VC questions a number, Sizoru redoes that section.",
+        "Beyond section revisions, Sizoru offers a pass-investor-review promise: if the report fails investor review, it says it will redo the whole report free or refund it.",
+      ],
+      problem: "A one-off report bought before a pitch is of little use if a single challenged assumption can't be reworked afterwards.",
+      capabilities: [
+        "Three free revisions per report, usable within 30 days.",
+        "Section-level redo when an investor pushes back on a specific number.",
+        "A full redo or refund if the report fails investor review.",
+        "Automatic refund if the pipeline fails to produce the report.",
+      ],
+      audience: ["Founders (pre-seed to Series A)", "Consultants & advisors"],
+      relatedFeatures: ["pay-after-the-preview", "visible-filter-chain", "print-ready-pdf-report"],
+      sources: ["https://sizoru.com/"],
+    },
+    {
+      slug: "pay-after-the-preview",
+      name: "Pay after the preview",
+      summary: "See a preview of the report before paying the ₹4,999 per-report price, with an automatic refund if the pipeline fails.",
+      category: "the-report",
+    },
+  ],
+  productSolutions: [
+    {
+      slug: "market-sizing-for-founders",
+      name: "Market sizing for founders raising capital",
+      summary: "A TAM slide that shows its working, for founders from pre-seed to Series A.",
+      problem:
+        "Sizoru says the TAM slide is where most decks die: a bare TAM, SAM and SOM with invisible filters gets polite nods and lost trust from investors.",
+      body: [
+        "Sizoru is built first for founders between pre-seed and Series A. It gives them a report in which both sizing methods, every filter and every source are visible, so the market number can be defended in the room.",
+      ],
+      approach: [
+        "Size the market both top-down and bottom-up, and lock, range or diagnose the result.",
+        "Show every TAM to SAM to SOM filter so pushback becomes specific rather than dismissive.",
+        "Filter Indian markets to the India 1, 2 or 3 segment actually being sold to.",
+        "Badge every source by tier so weak figures are known before an investor finds them.",
+        "Deliver bull, base and bear scenarios, since Sizoru calls bear-case rigour an underrated trust signal.",
+      ],
+      audience: ["Founders (pre-seed to Series A)"],
+      features: ["dual-method-convergence-test", "visible-filter-chain", "india-1-2-3-framework", "tier-rated-source-provenance", "bull-base-and-bear-scenarios"],
+      sources: ["https://sizoru.com/", "https://sizoru.com/methodology"],
+    },
+  ],
+  productComparisons: [
+    {
+      slug: "sizoru-vs-chatgpt-and-free-ai",
+      name: "Sizoru vs ChatGPT and free AI tools",
+      competitor: "ChatGPT / free AI tools",
+      summary: "How Sizoru's 'alternatives' section compares it with sizing a market using a general-purpose AI chat tool.",
+      body: [
+        "Sizoru names free AI tools as one of three ways founders size markets today, and says this approach \"falls apart in the room\". Its argument is that free tools produce plausible-sounding numbers without traceable sources. Sizoru instead enforces dual methodology, gives every citation a credibility tier, and delivers a PDF report rather than chat text.",
+        "The rows below are Sizoru's own comparison as published on its homepage.",
+      ],
+      rows: [
+        { criterion: "Methodology", product: "Dual-method, locked on convergence", competitor: "None (as stated by Sizoru)" },
+        { criterion: "Source provenance", product: "Tier 1/2/3, traced", competitor: "Sizoru says sources can be hallucinated" },
+        { criterion: "India 1/2/3 segmentation", product: "Built in", competitor: "No" },
+        { criterion: "Time to deliver", product: "About 3 minutes", competitor: "About an hour, which Sizoru says then breaks under scrutiny" },
+        { criterion: "Price", product: "₹4,999 per report", competitor: "Free" },
+      ],
+      features: ["dual-method-convergence-test", "tier-rated-source-provenance", "india-1-2-3-framework", "print-ready-pdf-report"],
+      sources: ["https://sizoru.com/"],
+    },
+    {
+      slug: "sizoru-vs-agency-consultants",
+      name: "Sizoru vs agency consultants",
+      competitor: "Agency consultants",
+      summary: "Sizoru's published comparison with hiring a consultant or agency to size a market.",
+      body: [
+        "Sizoru lists agency consultants as an alternative that \"burns runway and trust\". It positions itself as bringing an institutional-grade sizing method, which it describes as typically gated behind expensive consulting engagements, to founders at a per-report price.",
+        "The rows below are Sizoru's own comparison as published on its homepage.",
+      ],
+      rows: [
+        { criterion: "Methodology", product: "Dual-method, locked on convergence", competitor: "Varies" },
+        { criterion: "Source provenance", product: "Tier 1/2/3, traced", competitor: "Inconsistent" },
+        { criterion: "India 1/2/3 segmentation", product: "Built in", competitor: "Maybe" },
+        { criterion: "Time to deliver", product: "About 3 minutes", competitor: "About 3 weeks" },
+        { criterion: "Price", product: "₹4,999 per report", competitor: "₹50K – ₹2L (Sizoru's estimate)" },
+      ],
+      features: ["dual-method-convergence-test", "tier-rated-source-provenance", "india-1-2-3-framework"],
+      sources: ["https://sizoru.com/", "https://sizoru.com/methodology"],
+    },
+    {
+      slug: "sizoru-vs-syndicated-research-reports",
+      name: "Sizoru vs syndicated research reports",
+      competitor: "Mordor Intelligence / IBISWorld",
+      summary: "Sizoru's published comparison with buying a syndicated market-research report.",
+      body: [
+        "Sizoru describes syndicated research publishers such as Mordor Intelligence and IBISWorld as \"thorough, generic, expensive\". It says it offers the same rigour, often more for India because of its India framework, without the annual licences, seat minimums or sales calls of enterprise research.",
+        "Sizoru's methodology places syndicated market-research estimates in its Tier 3 (caution) source tier. They are used only for triangulation and never as a sole source.",
+      ],
+      rows: [
+        { criterion: "Methodology", product: "Dual-method, locked on convergence", competitor: "Generic global" },
+        { criterion: "Source provenance", product: "Tier 1/2/3, traced", competitor: "Yes" },
+        { criterion: "India 1/2/3 segmentation", product: "Built in", competitor: "No" },
+        { criterion: "Time to deliver", product: "About 3 minutes", competitor: "About 5 days" },
+        { criterion: "Price", product: "₹4,999 per report", competitor: "₹3L+ (Sizoru's estimate)" },
+      ],
+      faqs: [
+        {
+          question: "Why is Sizoru so much cheaper than Mordor or IBISWorld?",
+          answer: "Sizoru says it is built for founders rather than procurement teams, so there is no annual licence, no seat minimum and no sales call.",
+        },
+      ],
+      features: ["tier-rated-source-provenance", "india-1-2-3-framework", "dual-method-convergence-test"],
+      sources: ["https://sizoru.com/", "https://sizoru.com/methodology"],
+    },
+  ],
+  productResources: [
+    {
+      slug: "sizoru-methodology",
+      name: "The Sizoru methodology",
+      type: "documentation",
+      summary: "Sizoru's published account of how every report is built, and the limits it acknowledges.",
+      body: [
+        "Sizoru's methodology page documents the Sizoru Market Sizing Framework that Stolvix applies to every report. It works through a B2B SaaS example: a startup selling to Indian SMEs is sized both top-down and bottom-up, and the gap between the two results is then explained.",
+        "The page also has a section on what Sizoru is not. It sets clear limits on what a generated report should be trusted for.",
+      ],
+      keyPoints: [
+        "Two methods: top-down from a population, and bottom-up from a single unit.",
+        "A convergence test that locks the TAM, gives a range, or delivers a diagnostic, depending on the gap.",
+        "India 1/2/3 segmentation for any report involving Indian geography.",
+        "Three tiers of sources, with a visible badge on each citation.",
+        "A visible TAM to SAM to SOM filter chain.",
+        "Bull, base and bear scenarios, each with its assumption table.",
+        "Stated limits: Sizoru does not predict the future, replace primary research, size markets with no comparable, or promise the AI is always right.",
+      ],
+      features: ["dual-method-convergence-test", "india-1-2-3-framework", "tier-rated-source-provenance", "visible-filter-chain", "bull-base-and-bear-scenarios"],
+      sources: ["https://sizoru.com/methodology"],
+    },
+  ],
+  supportTopics: [
+    {
+      slug: "generating-your-first-report",
+      name: "Generating your first report",
+      summary: "The four steps from signing up to downloading a Sizoru report.",
+      body: [
+        "Sizoru has no password and no demo call. You sign in with an emailed code, describe your company, and the pipeline does the rest.",
+      ],
+      steps: [
+        "Sign up with a six-digit code sent to your email.",
+        "Fill in the seven-field brief: company, industry, model, geography, customer, stage and description. Indian defaults are pre-filled.",
+        "Let the pipeline run its six AI-validated steps: live web research, dual-method maths, source tiering, India 1/2/3 filters and scenario projection.",
+        "Download the print-ready PDF. It stays yours and you can download it again.",
+      ],
+      features: ["print-ready-pdf-report"],
+      sources: ["https://sizoru.com/"],
+    },
+    {
+      slug: "revisions-and-refunds",
+      name: "Revisions, redos and refunds",
+      summary: "What Sizoru offers if a report needs changing or doesn't hold up.",
+      body: [
+        "Sizoru charges per report, with no subscription. It backs each report with free revisions and a promise to redo the work if the report doesn't pass investor review.",
+      ],
+      keyPoints: [
+        "Each report includes three free revisions within 30 days.",
+        "If an investor pushes back on a number, Sizoru redoes that section.",
+        "If the report fails investor review, Sizoru says it will redo the whole report free or give a refund.",
+        "If the pipeline fails, you're refunded automatically.",
+        "You see a preview of the report before you pay.",
+      ],
+      features: ["3-free-revisions-in-30-days", "pay-after-the-preview"],
+      sources: ["https://sizoru.com/", "https://sizoru.com/methodology"],
+    },
+    {
+      slug: "what-sizoru-cannot-do",
+      name: "What Sizoru can't do",
+      summary: "The limits Sizoru states for its own reports.",
+      body: [
+        "Sizoru's methodology lists situations where its reports should not be relied on alone. These help you decide whether a report fits what you need.",
+      ],
+      keyPoints: [
+        "It sizes markets as they are and projects under stated assumptions. It does not predict the future.",
+        "It does not replace primary research such as customer surveys.",
+        "It needs at least one comparable industry or defensible analogue, and will say when a market can't be sized.",
+        "Reports are validated against named-source benchmarks and any inconsistencies are surfaced, but the AI is not presented as infallible.",
+        "The report is evidence for your thesis. It is not a substitute for understanding your market.",
+      ],
+      features: ["dual-method-convergence-test"],
+      sources: ["https://sizoru.com/methodology"],
+    },
+  ],
   howItWorks: [
-    { title: "Sign up", description: "Create an account with an emailed code." },
-    { title: "Brief the engine", description: "Answer seven questions about the market." },
-    { title: "Pipeline runs", description: "The sizing runs in a few minutes." },
-    { title: "Download", description: "Get the print-ready PDF report." },
+    { title: "Sign up", description: "Enter your email and sign in with a six-digit code, with no password and no demo call. Sizoru puts this step at about 60 seconds." },
+    { title: "Brief the engine", description: "Fill in seven fields: company, industry, model, geography, customer, stage and description. Indian defaults are pre-filled, and the brief takes about 90 seconds." },
+    { title: "Pipeline runs", description: "Six AI-validated steps run in about three minutes: live web research, dual-method maths, source tiering, India 1/2/3 filters and scenario projection." },
+    { title: "Preview, then pay", description: "You see a preview of the report before paying ₹4,999. If the pipeline fails, the charge is refunded automatically." },
+    { title: "Download", description: "Get the print-ready, provenance-locked PDF. It is yours to keep and can be re-downloaded, with three free revisions available within 30 days." },
+  ],
+  benefits: [
+    { title: "A number that survives investor questions", description: "Two independent methods are compared and the result is locked, ranged or diagnosed. A VC sees either convergence or an honest explanation of the gap, rather than a single asserted figure." },
+    { title: "Every source graded", description: "Each citation carries a Tier 1, 2 or 3 badge, and Tier 3 syndicated estimates are never used as the sole source. You learn that a number is weak before an investor points it out." },
+    { title: "India sized as three markets", description: "The India 1/2/3 framework filters the SAM to metro, tier-2/3 or informal-economy buyers. Sizoru says this changes the SAM by 40–70% in most cases." },
+    { title: "Pushback becomes specific", description: "Every filter between TAM, SAM and SOM is labelled with its percentage and footnoted rationale. Disagreements land on a particular filter instead of \"the numbers seem high\"." },
+    { title: "Minutes and a fixed price", description: "The pipeline runs in about three minutes at ₹4,999 per report. Sizoru contrasts this with roughly three weeks for agency consultants and about five days for syndicated reports." },
   ],
   pricing: {
     currency: "INR",
@@ -53,8 +479,9 @@ export const sizoru: Product = {
       {
         name: "Single report",
         price: "₹4,999",
-        description: "Per report",
-        features: ["Dual-method TAM / SAM / SOM", "India 1/2/3 framework", "Bull / base / bear scenarios", "Tier-rated sources", "Print-ready PDF", "3 free revisions within 30 days"],
+        period: "report",
+        description: "One investor-ready report with no commitment ($59 USD). Suits founders sizing a market for a raise, advisors producing one for a client, and investors sizing markets one at a time.",
+        features: ["Full dual-method TAM / SAM / SOM", "India 1/2/3 framework", "Three scenarios: bull, base and bear", "Tier 1/2/3 source provenance", "Print-ready, provenance-locked PDF", "3 free revisions within 30 days", "Pay after you see the preview", "Automatic refund on pipeline failure"],
         cta: { label: "Generate a report", href: "https://sizoru.com/sign-in?mode=signup" },
         recommended: true,
       },
@@ -62,17 +489,24 @@ export const sizoru: Product = {
   },
   docsUrl: "https://sizoru.com/methodology",
   useCases: [
-    { title: "Founders preparing to raise", description: "Size the market for a pitch with numbers that show their working." },
-    { title: "Consultants and advisors", description: "Produce a cited market-sizing report for a client engagement." },
-    { title: "VCs and accelerators", description: "Size a thesis or a cohort's markets consistently." },
+    { title: "Founders preparing to raise", description: "A pre-seed to Series A founder replaces a bare TAM slide with a report that shows both methods, every filter and three scenarios, so the market number holds up in the pitch." },
+    { title: "Consultants and advisors", description: "Strategy, banking and fundraising advisors generate a cited sizing report in minutes, spending their billable time on insight rather than calculation." },
+    { title: "VCs and accelerators", description: "Investors size markets for a thesis or across a cohort with the same methodology each time; Sizoru frames this as sizing 12 markets a month at ₹4,999 each." },
   ],
   faqs: [
-    { question: "Is Sizoru a subscription?", answer: "No. You pay per report." },
-    { question: "Can I revise a report?", answer: "Each report includes three free revisions within 30 days." },
-    { question: "What format is the report?", answer: "A print-ready PDF. Sizoru lists a PowerPoint deck and an editable spreadsheet model as coming soon." },
+    { question: "How is this different from ChatGPT or free AI tools?", answer: "Free tools can produce plausible numbers without traceable sources. Sizoru enforces dual methodology, tiers every citation by credibility, applies the India 1/2/3 framework and delivers a provenance-locked PDF rather than chat text." },
+    { question: "Why is it so much cheaper than Mordor or IBISWorld?", answer: "Sizoru says it is built for founders rather than procurement teams. There is no annual licence, no seat minimum and no sales call, and it claims the same rigour, often more for India." },
+    { question: "Is Sizoru a subscription?", answer: "No. You pay ₹4,999 ($59) per report, only when you generate one, so there is nothing to cancel. Team and Studio plans are described as returning with the full Sizoru suite." },
+    { question: "Can I revise a report?", answer: "Each report includes three free revisions within 30 days. If an investor pushes back on a number, Sizoru redoes that section." },
+    { question: "What if the report doesn't pass investor review?", answer: "Sizoru says it will redo the whole report free, or refund it. If the pipeline itself fails, the payment is refunded automatically." },
+    { question: "Do I pay before seeing anything?", answer: "No. You see a preview of the report before you pay." },
+    { question: "What format is the report?", answer: "A print-ready, provenance-locked PDF that is yours to keep and re-download. Sizoru lists a PowerPoint investor deck and an editable Excel model as coming soon." },
+    { question: "Do you actually understand my industry?", answer: "Sizoru relies on Tier 1 sources such as RBI, SEBI, MoSPI, NPCI and regulator filings, plus dual-method validation. If the methods don't converge within 15%, the report shows the divergence and names the assumption that is breaking." },
+    { question: "Can Sizoru size any market?", answer: "It needs at least one comparable industry or defensible analogue. For a market with no comparables, Sizoru says it will tell you it can't size it." },
+    { question: "How long does a report take?", answer: "About three minutes for the pipeline, after a sign-up of roughly a minute and a seven-field brief of about 90 seconds." },
   ],
   solutions: ["prepare-for-launch-and-fundraising"],
   industries: ["startups-and-investors"],
   sources: ["https://sizoru.com/", "https://sizoru.com/methodology"],
-  lastVerified: "2026-10-07",
+  lastVerified: "2026-10-08",
 };
