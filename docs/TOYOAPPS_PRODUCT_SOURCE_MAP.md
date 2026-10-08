@@ -17,6 +17,7 @@
 | Zorfly | https://zorfly.com/ | https://zorfly.com/signup | `/`, `/pricing`, `/signup` | `…/zorfly.ts` |
 | ZapBuzzer | https://zapbuzzer.com/ | https://zapbuzzer.com/signup | `/` (hero, how it works, 8 features, scenarios, pricing, app section) | `…/zapbuzzer.ts` |
 | SigChanger | https://sigchanger.com/ | https://sigchanger.com/signup | `/`, `/features` (16 features, 3 groups), `/pricing`, `/about-us` | `…/sigchanger.ts` |
+| ODA7 | https://oda7.com/ | https://oda7.com/sign-up | `/` (title, meta description), `/sign-in` (positioning panel, access model), `/sign-up` (onboarding flow), robots.txt, sitemap.xml (retrieved 8 Oct 2026) | `…/oda7.ts` |
 | Fantom | https://fantomapps.com/ | https://fantomapps.com/register | Public landing-content API [code] (hero, 6 features, messaging tracking, trial FAQ) | `…/fantom.ts` |
 | TrackySuite | https://trackysuite.com/ | https://trackysuite.com/signup | `/` (hero, 10 modules, in-the-box, pricing), `/about` (owner, pipeline, entity types) | `…/trackysuite.ts` |
 | Sizoru | https://sizoru.com/ | https://sizoru.com/sign-in?mode=signup | `/` (hero, why-trust-it, how it works, pricing), `/methodology` | `…/sizoru.ts` |

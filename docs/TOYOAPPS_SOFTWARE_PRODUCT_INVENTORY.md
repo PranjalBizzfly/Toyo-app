@@ -41,9 +41,10 @@
 | 13 | **Cardizo** | cardizo.com | AI business-card scanner and contact relationship memory | Not stated; Enterprise CTA is `sales@bizzfly.com` | Yes | **Include** |
 | 14 | **TaskMagic** | taskmagic.com | No-code app and browser automation | **"TaskMagic, Inc."**, Los Angeles, California | Yes | **Pending verification**: the site names a separate company; kept as a draft record until the business confirms the relationship |
 | 15 | **SigChanger** | sigchanger.com | Gmail signature design and deployment for Google Workspace | Not stated | Yes | **Include** |
+| 16 | **ODA7** (added 8 Oct 2026) | oda7.com | "Sales team OS": lead distribution, integrated dialer, attendance, payroll, incentives and gamification for large outbound sales floors | Not stated | Minimal (home, sign-in, sign-up only) | **Include** |
 
 **Result:**
-- 11 products are publishable now.
+- 12 products are publishable now (ODA7 added 8 Oct 2026).
 - 4 are **pending verification** and held as drafts (not public, not indexed):
   - Fleetras and MeetingMind: public-sale status to confirm.
   - TaskMagic and Tracksuit: relationship to ToyoApps to confirm.
@@ -70,7 +71,7 @@ No product site mentions "ToyoApps" or "Toyo Apps". The relationship between Toy
 
 | Product | Product facts | Relationship to ToyoApps | Public sale | Site status |
 |---|---|---|---|---|
-| Cardizo, GetBenj, Sibu, HRMagix, ZUZU, Zorfly, ZapBuzzer, SigChanger, Fantom, TrackySuite, Sizoru | VERIFIED from official sites (code-only where marked [code]) | **PENDING**: no site mentions ToyoApps | VERIFIED (public sign-up) | Live |
+| Cardizo, GetBenj, Sibu, HRMagix, ZUZU, Zorfly, ZapBuzzer, SigChanger, Fantom, TrackySuite, Sizoru, ODA7 | VERIFIED from official sites (code-only where marked [code]) | **PENDING**: no site mentions ToyoApps | VERIFIED (public sign-up) | Live |
 | Fleetras | Partly verified (login panel, privacy page) | **PENDING** | **PENDING** (login-only, noindex) | Draft |
 | MeetingMind | [code] only | **PENDING** | **PENDING** (login-only, no marketing site) | Draft |
 | TaskMagic | VERIFIED from official site; operator "TaskMagic, Inc." | **PENDING** | VERIFIED (public sign-up) | Draft |
@@ -397,6 +398,36 @@ The site states "TaskMagic, Inc.", California law, Los Angeles. It is an AI no-c
 **Status:** pending verification. It is kept as a draft record with content from its own site. If it turns out to be a marketplace listing rather than a ToyoApps-owned product, it would be modelled with `publisher.firstParty = false`, without restructuring.
 
 ---
+
+### 2.16 ODA7: oda7.com (added 8 October 2026)
+
+**Pages available publicly:** `/`, `/sign-in`, `/sign-up` and `/forgot-password`. These are the only URLs in its sitemap. Every other path (`/pricing`, `/features`, `/about`, `/privacy`, `/terms`, `/blog`, `/docs` …) redirects to sign-in. The robots.txt blocks the app's internal routes.
+
+**VERIFIED:**
+- **Positioning:** title "oda7 — Sales team OS"; homepage text "Sales team OS."
+- **Meta description (the only feature list):** "Lead distribution, auto-dialer, attendance, payroll, incentives and gamification — built for 1000+ agent sales floors."
+- **Sign-in panel:** "One floor, a thousand agents, a hundred products — orchestrated." and "Lead distribution, integrated dialer, attendance, payroll and incentives — built for India's outbound sales engine rooms."
+- **Sign-up flow:**
+  - "Create your tenant, choose a plan, and go live in minutes."
+  - The agency gets an admin account, a subscription and workspace access.
+  - The admin picks a billing plan and pays with Razorpay.
+  - Users register as a company. Google sign-in is offered.
+- **Access model:** "Need access? Ask your workspace admin — they can invite you from Settings → Users."
+
+**Category (proposed):** Sales & Marketing (primary). HR & People (secondary, because attendance and payroll are listed).
+
+**Features (6, names only):** Lead distribution · Integrated dialer (auto-dialer) · Attendance · Payroll · Incentives · Gamification.
+- The site gives no per-feature description.
+- **No feature detail pages or feature-group pages are created.** That would require inventing how each feature works.
+- They are listed on the overview and get pages automatically once ODA7 publishes real detail.
+
+**NOT PUBLICLY AVAILABLE:** pricing and plan names, integrations, documentation, security or compliance information, customer names, screenshots, mobile apps.
+
+**Deliberately excluded:**
+- Sign-in panel statistics ("14.2M calls routed/yr", "38% avg pickup", "₹2.4Cr paid in incentives"). They are unverifiable.
+- App route names in robots.txt (agents, dialer, campaigns, contests, heatmap, …). They are technical paths, not product descriptions.
+
+**Ownership:** not stated. Relationship to ToyoApps is **pending verification**.
 
 ## 3. Cross-product observations
 

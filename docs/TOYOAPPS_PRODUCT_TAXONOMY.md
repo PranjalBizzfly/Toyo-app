@@ -19,7 +19,7 @@
 
 | Order | Slug | Name | Buyer / job | Primary products | Secondary listings |
 |---|---|---|---|---|---|
-| 1 | `sales-marketing` | **Sales & Marketing** | Teams that find customers, plan campaigns and manage relationships and creative assets | Cardizo, GetBenj, Sibu | Sizoru |
+| 1 | `sales-marketing` | **Sales & Marketing** | Teams that find customers, plan campaigns and manage relationships and creative assets | Cardizo, GetBenj, Sibu, ODA7 | Sizoru |
 | 2 | `hr-people` | **HR & People** | HR, people managers and L&D owners running the employee lifecycle | HRMagix, ZUZU, Zorfly | MeetingMind (recruitment module) |
 | 3 | `operations-it` | **Operations & IT** | Office admins, facilities, IT admins and operations managers keeping the business running | ZapBuzzer, SigChanger, Fantom, *Fleetras (draft)* | TrackySuite |
 | 4 | `finance-compliance` | **Finance & Compliance** | Accounting practices and finance teams with statutory obligations | TrackySuite | — |
@@ -80,6 +80,7 @@ Insights & Research is indexed because its listing shows 3 products once seconda
 | Zorfly | hr-people | — | L&D | Teams, managers | Web | Per seat (USD) | Global |
 | ZapBuzzer | operations-it | — | Workplace operations | Offices, facility companies | Web + Android | Per seat (INR) | India |
 | SigChanger | operations-it | — | IT administration | Google Workspace admins, IT, brand | Web | Tiered monthly (USD + INR) | Global |
+| ODA7 | sales-marketing | hr-people | Sales floor operations | Outbound sales agencies, floor managers, agents | Web | Plans chosen at sign-up (not published) | India |
 | Fantom | operations-it | — | Telecom & device mgmt | Businesses with company SIMs | Web + Android | Not published (trial only) | India / UAE |
 | TrackySuite | finance-compliance | operations-it | Practice mgmt & compliance | CA, CS, tax firms | Web | Tiered by clients (INR + GST) | India |
 | Sizoru | insights-research | sales-marketing | Market research | Founders, consultants, VCs | Web | Per report (INR + USD) | India |

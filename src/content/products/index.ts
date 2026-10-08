@@ -4,6 +4,7 @@ import { fleetras, meetingmind } from "./drafts";
 import { fantom } from "./fantom";
 import { getbenj } from "./getbenj";
 import { hrmagix } from "./hrmagix";
+import { oda7 } from "./oda7";
 import { taskmagic, tracksuit } from "./pending";
 import { sibu } from "./sibu";
 import { sigchanger } from "./sigchanger";
@@ -35,6 +36,7 @@ export const products: Product[] = [
   fantom,
   trackysuite,
   sizoru,
+  oda7,
   fleetras,
   meetingmind,
   taskmagic,
