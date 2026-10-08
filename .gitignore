@@ -10,3 +10,4 @@ scripts/.ui-shots/
 
 .vercel
 .env*
+scripts/.ref/

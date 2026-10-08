@@ -1,5 +1,15 @@
 import { getCatalogTree, getComparisons, getFeaturedProducts, getIndustries, getIntegrations, getResources, getSolutions } from "./catalog";
 import { resourceTypes, routes } from "./routes";
+import { monogram, productAccent } from "./tint";
+import type { Product } from "@/content/types";
+
+const productLink = (p: Product): NavLink => ({
+  label: p.name,
+  href: routes.product(p.slug),
+  description: p.shortDescription,
+  accent: productAccent(p),
+  initials: monogram(p.name),
+});
 
 /**
  * Navigation model. Built entirely from content, so a new product, category,
@@ -11,6 +21,9 @@ export interface NavLink {
   label: string;
   href: string;
   description?: string;
+  /** Product links only: brand colour and initials for the mega-menu tile. */
+  accent?: string;
+  initials?: string;
 }
 
 export interface NavGroup {
@@ -29,32 +42,25 @@ export interface NavMenu {
   footerLink: NavLink;
 }
 
-/** Max products listed per category in the mega menu; the rest live on the category page. */
-const PER_CATEGORY = 4;
-
 export function getMainNav(): NavMenu[] {
   const tree = getCatalogTree();
-  const featured = getFeaturedProducts(3);
+  const featured = getFeaturedProducts(6);
 
   return [
     {
       id: "products",
       label: "Products",
       kind: "mega",
-      groups: tree.map(({ category, products }) => ({
-        title: category.name,
-        href: routes.category(category.slug),
-        links: [
-          ...products.slice(0, PER_CATEGORY).map((p) => ({
-            label: p.name,
-            href: routes.product(p.slug),
-            description: p.shortDescription,
-          })),
-          ...(products.length > PER_CATEGORY
-            ? [{ label: `All ${category.name} →`, href: routes.category(category.slug) }]
-            : []),
-        ],
-      })),
+      // First group = featured apps; then every category with all its products.
+      // The menu shows one group at a time (sidebar), so no per-category cap is needed.
+      groups: [
+        ...(featured.length ? [{ title: "Featured Apps", href: routes.products(), links: featured.map(productLink) }] : []),
+        ...tree.map(({ category, products }) => ({
+          title: category.name,
+          href: routes.category(category.slug),
+          links: products.map(productLink),
+        })),
+      ],
       aside: {
         title: featured.length ? "Featured" : "One home for business software",
         text: featured.length

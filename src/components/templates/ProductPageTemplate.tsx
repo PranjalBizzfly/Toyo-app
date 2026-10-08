@@ -43,66 +43,58 @@ export function ProductPageTemplate({ product }: { product: Product }) {
 
   return (
     <>
-      {/* Hero */}
-      <header className="hero" style={{ paddingTop: 40 }}>
-        <div className="container">
-          <Breadcrumbs
-            items={[
-              { name: "Products", href: routes.products() },
-              ...(category ? [{ name: category.name, href: routes.category(category.slug) }] : []),
-              { name: product.name, href: routes.product(product.slug) },
-            ]}
-          />
-        </div>
-        <div className="container hero__grid" style={{ marginTop: 32 }}>
-          <div className="hero__copy">
-            <div className="card__meta">
-              {category && <span className="eyebrow">{category.name}</span>}
-              <StatusBadge status={product.status} pending={product.verification?.relationship === "pending" || product.verification?.publicSale === "pending"} />
-            </div>
-            <h1 className="display" style={{ fontSize: "var(--fs-3xl)" }}>
-              {product.name}
+      {/* Hero: large headline left, get-started card right */}
+      <header className="zp-hero">
+        <div className="container zp-hero__grid">
+          <div className="zp-hero__copy">
+            <Breadcrumbs
+              items={[
+                { name: "Products", href: routes.products() },
+                ...(category ? [{ name: category.name, href: routes.category(category.slug) }] : []),
+                { name: product.name, href: routes.product(product.slug) },
+              ]}
+            />
+            <h1 className="zp-hero__title">
+              <span className="zp-hero__name">
+                {product.name}
+                <StatusBadge status={product.status} pending={product.verification?.relationship === "pending" || product.verification?.publicSale === "pending"} />
+              </span>
+              {product.tagline ?? product.primaryUseCase ?? product.name}
             </h1>
-            <p className="lead">{product.shortDescription}</p>
-            <div className="btn-row">
-              <ButtonLink href={cta.href} arrow>
-                {cta.label}
-              </ButtonLink>
-              {product.pricing ? (
-                <ButtonLink href={routes.productSection(product.slug, "pricing")} variant="secondary">
-                  See pricing
-                </ButtonLink>
-              ) : (
-                secondary && (
-                  <ButtonLink href={secondary.href} variant="secondary">
-                    {secondary.label}
-                  </ButtonLink>
-                )
+            <p className="zp-hero__lead">{product.shortDescription}</p>
+            <ul className="zp-hero__chips" aria-label="Product details">
+              {category && (
+                <li>
+                  <Link href={routes.category(category.slug)}>{category.name}</Link>
+                </li>
               )}
-            </div>
-            {product.platforms?.length ? (
-              <ul className="card__meta" aria-label="Available on">
-                {product.platforms.map((p) => (
-                  <li key={p} className="badge">
-                    {platformLabels[p] ?? p}
-                  </li>
-                ))}
-                {product.market && <li className="badge badge--pine">{product.market}</li>}
-              </ul>
-            ) : null}
+              {(product.platforms ?? []).map((p) => (
+                <li key={p}>{platformLabels[p] ?? p}</li>
+              ))}
+              {product.market && <li>{product.market}</li>}
+            </ul>
           </div>
-          {hero ? (
-            <ScreenshotFrame media={hero} />
-          ) : (
-            <figure className="brand-panel" style={{ ["--accent" as string]: productAccent(product) }}>
-              <span aria-hidden>{monogram(product.name)}</span>
-              {product.tagline && (
-                <figcaption className="brand-panel__quote">
-                  “{product.tagline}”<small>— {product.name}</small>
-                </figcaption>
-              )}
-            </figure>
-          )}
+          <aside className="zp-start" aria-label={`Get started with ${product.name}`}>
+            <h2>Get started with {product.name}</h2>
+            <p>{product.pricing?.trial ?? product.primaryUseCase ?? "Sign up on the product's own website."}</p>
+            <a href={cta.href} rel="noopener" className="zp-start__primary">
+              {cta.label}
+            </a>
+            {product.pricing ? (
+              <Link href={routes.productSection(product.slug, "pricing")} className="zp-start__secondary">
+                See plans and pricing
+              </Link>
+            ) : (
+              secondary && (
+                <a href={secondary.href} rel="noopener" className="zp-start__secondary">
+                  {secondary.label}
+                </a>
+              )
+            )}
+            <p className="zp-start__note">
+              Continues on <strong>{new URL(product.websiteUrl).hostname.replace(/^www\./, "")}</strong>
+            </p>
+          </aside>
         </div>
       </header>
 

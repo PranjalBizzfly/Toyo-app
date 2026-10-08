@@ -1,23 +1,10 @@
 import Link from "next/link";
-import { Suspense } from "react";
-import { EcosystemOrbit } from "@/components/home/EcosystemOrbit";
-import { FeaturedShowcase } from "@/components/home/FeaturedShowcase";
-import { CategoryCard } from "@/components/product/cards";
-import { ProductExplorer } from "@/components/product/ProductExplorer";
+import { ProductLogo } from "@/components/product/cards";
 import { Icon } from "@/components/ui/Icon";
-import { ButtonLink, CtaBand, EmptyState, Section, SectionHeader, Slot } from "@/components/ui/primitives";
-import { publisherSteps, site } from "@/content/site";
-import {
-  getCatalogTree,
-  getCategories,
-  getFeaturedProducts,
-  getIndustries,
-  getProducts,
-  getSolutions,
-  previewMode,
-  productsFor,
-} from "@/lib/catalog";
-import { resourceTypes, routes } from "@/lib/routes";
+import { site } from "@/content/site";
+import type { IconName } from "@/content/types";
+import { getCatalogTree, getFeaturedProducts, getIndustries, getIntegrations, getProducts, getSolutions } from "@/lib/catalog";
+import { routes } from "@/lib/routes";
 import { buildMetadata, jsonLd } from "@/lib/seo";
 import { tintStyle } from "@/lib/tint";
 
@@ -27,296 +14,316 @@ export const metadata = buildMetadata({
   path: "/",
 });
 
-/** How ToyoApps works for a buyer — drawn from the current toyoapps.com messaging. */
-const ecosystemFlow = [
-  { title: "Discover", text: "Browse software organised by business need, not a flat list of apps." },
-  { title: "Compare", text: "Read what each product does, who it's for and how it's priced." },
-  { title: "Start", text: "Sign up on the product itself — most offer a free plan or trial." },
-  { title: "Grow", text: "Add the next product your business needs from the same ecosystem." },
+const values: { icon: IconName; title: string; text: string }[] = [
+  {
+    icon: "grid",
+    title: "Many products, one home",
+    text: "Business software from across the ToyoApps ecosystem in one catalog, organised by the job each product does.",
+  },
+  {
+    icon: "search",
+    title: "Find by what you need",
+    text: "Categories, solutions and industries lead you to the right tool faster than a flat list of apps ever could.",
+  },
+  {
+    icon: "shield",
+    title: "Verified product information",
+    text: "Every feature, plan and price shown here is taken from the product's own official website — nothing invented.",
+  },
+  {
+    icon: "store",
+    title: "Open to software makers",
+    text: "Founders can publish and sell their SaaS on ToyoApps without building a storefront or billing of their own.",
+  },
 ];
 
-const reasons = [
-  { icon: "grid" as const, title: "Many products, one home", text: "Business software from across the ToyoApps ecosystem, organised in one catalog." },
-  { icon: "search" as const, title: "Find by need", text: "Categories, solutions and industries lead you to the right tool faster." },
-  { icon: "store" as const, title: "Open to makers", text: "Software makers can publish and sell on ToyoApps without building a storefront." },
-];
+/** Square, uppercase CTA with a chevron — the site's primary call to action. */
+function SquareButton({ href, children, variant = "primary" }: { href: string; children: React.ReactNode; variant?: "primary" | "outline" | "inverse" }) {
+  return (
+    <Link href={href} className={`zbtn zbtn--${variant}`}>
+      {children}
+      <span aria-hidden>›</span>
+    </Link>
+  );
+}
 
 export default function HomePage() {
-  const categories = getCategories();
   const tree = getCatalogTree();
   const products = getProducts();
-  const featured = getFeaturedProducts(5);
-  const solutions = getSolutions().slice(0, 6);
-  const industries = getIndustries().slice(0, 12);
+  const featured = getFeaturedProducts(6);
+  const solutions = getSolutions();
+  const industries = getIndustries();
+  const integrations = getIntegrations();
+  const publicProducts = products.filter((p) => p.status === "live");
 
   return (
     <>
-      {/* 1. Hero */}
-      <section className="hero" aria-labelledby="hero-title">
-        <div className="container hero__grid">
-          <div className="hero__copy">
-            <p className="eyebrow">The ToyoApps ecosystem</p>
-            <h1 id="hero-title" className="display">
-              The software your business runs on, <em>in one place.</em>
-            </h1>
-            <p className="lead">
-              ToyoApps brings business software together in one ecosystem — organised by what you need to get done,
-              so you can find the right tool and the next one after it.
+      {/* 1. Hero + featured apps */}
+      <section className="z-hero" aria-labelledby="hero-title">
+        <div className="container z-hero__grid">
+          <div className="z-hero__copy">
+            <h1 id="hero-title">The software your business runs on, in one place</h1>
+            <hr className="z-rule" />
+            <p>
+              One home for business software — products organised by what you need to get done, from finding customers and running HR to
+              keeping the office on track.
             </p>
-            <form action={routes.products()} role="search" className="hero__search">
-              <Icon name="search" />
-              <label htmlFor="hero-search" className="sr-only">
-                Search ToyoApps products
-              </label>
-              <input id="hero-search" name="q" type="search" placeholder="What do you need to get done?" />
-              <button type="submit" className="btn btn--primary btn--sm">
-                Search
-              </button>
-            </form>
-            <div className="btn-row">
-              <ButtonLink href={routes.products()} variant="dark" arrow>
-                Explore products
-              </ButtonLink>
-              <ButtonLink href={routes.contact()} variant="secondary">
-                Talk to sales
-              </ButtonLink>
-            </div>
+            <SquareButton href={routes.products()}>Explore all products</SquareButton>
           </div>
-          <EcosystemOrbit categories={categories} />
+          {featured.length > 0 && (
+            <div className="z-featured">
+              <p className="z-kicker">Featured apps</p>
+              <ul className="z-featured__grid">
+                {featured.map((p) => (
+                  <li key={p.slug}>
+                    <Link href={routes.product(p.slug)} className="z-featured__app">
+                      <ProductLogo product={p} />
+                      <span>
+                        <strong>{p.name}</strong>
+                        <small>{p.primaryUseCase ?? p.shortDescription}</small>
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <Link href={routes.products()} className="z-textlink">
+                Explore all products <span aria-hidden>›</span>
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* 2. Product discovery */}
-      <Section tone="surface" labelledBy="explore-title">
-        <SectionHeader
-          id="explore-title"
-          eyebrow="Explore products"
-          title="Find the right tool for the job"
-          lead="Search across every ToyoApps product, or filter by the part of the business you're working on."
-          action={
-            <ButtonLink href={routes.products()} variant="secondary" arrow>
-              View all products
-            </ButtonLink>
-          }
-        />
-        {products.length ? (
-          <Suspense>
-            <ProductExplorer products={products} categories={categories.map(({ slug, name }) => ({ slug, name }))} limit={9} />
-          </Suspense>
-        ) : (
-          <EmptyState title="Our first products are on their way">
-            The ToyoApps catalog is being prepared. Get in touch to hear when products launch.
-          </EmptyState>
-        )}
-      </Section>
-
-      {/* 3. Category explorer */}
-      {tree.length > 0 && (
-        <Section labelledBy="categories-title">
-          <SectionHeader
-            id="categories-title"
-            eyebrow="Browse by category"
-            title="Organised around how businesses work"
-            lead="Every product lives in a category built around a business function, so related tools are always side by side."
-          />
-          <div className="grid" style={{ ["--min" as string]: "260px" }}>
-            {tree.map(({ category, products }) => (
-              <CategoryCard key={category.slug} category={category} products={products} />
-            ))}
-          </div>
-        </Section>
-      )}
-
-      {/* 4. Featured software */}
-      {featured.length > 0 && (
-        <Section tone="surface" labelledBy="featured-title">
-          <SectionHeader id="featured-title" eyebrow="Featured software" title="A closer look" />
-          <FeaturedShowcase products={featured} />
-        </Section>
-      )}
-
-      {/* 5. Ecosystem */}
-      <Section tone="ink" labelledBy="ecosystem-title">
-        <SectionHeader
-          id="ecosystem-title"
-          eyebrow="How the ecosystem works"
-          title="Not a collection of apps. One place to run them."
-          lead="ToyoApps is designed so the next product your business needs is already a step away — same account, same catalog, same way of buying."
-        />
-        <ol className="flow">
-          {ecosystemFlow.map((s, i) => (
-            <li key={s.title} className="flow__step">
-              <span className="flow__num">{String(i + 1).padStart(2, "0")}</span>
-              <h3>{s.title}</h3>
-              <p>{s.text}</p>
-            </li>
-          ))}
-        </ol>
-      </Section>
-
-      {/* 6. Why ToyoApps */}
-      <Section labelledBy="why-title">
-        <SectionHeader id="why-title" eyebrow="Why ToyoApps" title="Built for businesses choosing software" />
-        <div className="grid" style={{ ["--min" as string]: "240px" }}>
-          {reasons.map((r) => (
-            <article key={r.title} className="card">
-              <span className="icon-tile" style={tintStyle(categories[0]?.slug ?? "")}>
-                <Icon name={r.icon} />
+      {/* 2. Two highlight cards on the brand band */}
+      <section className="z-duo" aria-label="Highlights">
+        <div className="container">
+          <div className="z-duo__frame">
+            <article className="z-duo__card z-duo__card--a">
+              <span className="z-duo__tag">Solutions</span>
+              <span className="z-duo__icon" aria-hidden>
+                <Icon name="layers" />
               </span>
-              <h3 className="card__title">{r.title}</h3>
-              <p className="text-muted">{r.text}</p>
+              <h2>Start from the problem, not the product</h2>
+              <p>
+                {solutions.length} solutions that bring together the ToyoApps products for one business need.
+              </p>
+              <Link href={routes.solutions()} className="zpill zpill--a">
+                Explore solutions <span aria-hidden>›</span>
+              </Link>
             </article>
-          ))}
-        </div>
-      </Section>
-
-      {/* 7–8. Solutions & industries */}
-      {(solutions.length > 0 || industries.length > 0) && (
-        <Section tone="surface" labelledBy="solutions-title">
-          <SectionHeader
-            id="solutions-title"
-            eyebrow="Solutions"
-            title="Start from the problem, not the product"
-            action={
-              <ButtonLink href={routes.solutions()} variant="secondary" arrow>
-                All solutions
-              </ButtonLink>
-            }
-          />
-          {solutions.length > 0 && (
-            <div className="grid" style={{ ["--min" as string]: "320px" }}>
-              {solutions.map((s) => (
-                <Link key={s.slug} href={routes.solution(s.slug)} className="card">
-                  <p className="product-card__cat">Problem</p>
-                  <h3 className="card__title">{s.problem}</h3>
-                  <p className="text-muted">{s.approach}</p>
-                  <div className="card__meta">
-                    {productsFor(s.products).map((p) => (
-                      <span key={p.slug} className="badge">
-                        {p.name}
-                      </span>
-                    ))}
-                  </div>
-                </Link>
-              ))}
-            </div>
-          )}
-          {industries.length > 0 && (
-            <>
-              <h3 className="h3" style={{ margin: "48px 0 20px" }}>
-                By industry
-              </h3>
-              <div className="chips">
-                {industries.map((i) => (
-                  <Link key={i.slug} href={routes.industry(i.slug)} className="chip">
-                    {i.name}
-                  </Link>
-                ))}
-              </div>
-            </>
-          )}
-        </Section>
-      )}
-
-      {/* 9. Discovery / recommendation entry point */}
-      <Section labelledBy="finder-title">
-        <div className="finder">
-          <div className="stack">
-            <p className="eyebrow">Not sure where to start?</p>
-            <h2 id="finder-title" className="h2">
-              Which ToyoApps product is right for you?
-            </h2>
-            <p className="lead">Tell us about your business and what you need to solve. We&apos;ll point you to the right products.</p>
-            <ButtonLink href={routes.contact()} arrow>
-              Get a recommendation
-            </ButtonLink>
-          </div>
-          <div className="finder__fields" aria-hidden>
-            {[
-              ["Business type", "Agency, retailer, studio…"],
-              ["Team size", "Just me → 500+"],
-              ["Problem to solve", "Billing, hiring, support…"],
-              ["Must-have capabilities", "Automations, reports…"],
-            ].map(([k, v]) => (
-              <div key={k} className="finder__field">
-                <small>{k}</small>
-                <span>{v}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* 10. Trust — reserved slots, preview only until real proof exists */}
-      {previewMode && (
-        <Section tight labelledBy="trust-title">
-          <h2 id="trust-title" className="sr-only">
-            Customers and trust
-          </h2>
-          <div className="grid" style={{ ["--min" as string]: "220px" }}>
-            <Slot show label="Customer logos" hint="Real, approved logos only" />
-            <Slot show label="Testimonials" hint="Attributed quotes only" />
-            <Slot show label="Adoption numbers & ratings" hint="Verified figures only" />
-            <Slot show label="Security & certifications" hint="Held certifications only" />
-          </div>
-        </Section>
-      )}
-
-      {/* 11. Resources */}
-      <Section tone="surface" labelledBy="resources-title">
-        <SectionHeader
-          id="resources-title"
-          eyebrow="Resources"
-          title="Learn, compare and get more from your software"
-          action={
-            <ButtonLink href={routes.resources()} variant="secondary" arrow>
-              Resource centre
-            </ButtonLink>
-          }
-        />
-        <div className="grid" style={{ ["--min" as string]: "240px" }}>
-          {resourceTypes.map((r) => (
-            <Link key={r.type} href={routes.resourceType(r.type)} className="card">
-              <h3 className="card__title">{r.label}</h3>
-              <p className="text-muted">{r.description}</p>
-              <span className="card__foot">
-                Browse <Icon name="arrow-right" />
+            <article className="z-duo__card z-duo__card--b">
+              <span className="z-duo__tag">For software makers</span>
+              <span className="z-duo__icon" aria-hidden>
+                <Icon name="rocket" />
               </span>
-            </Link>
-          ))}
+              <h2>Publish your SaaS on ToyoApps</h2>
+              <p>List your product, reach customers and get paid — without building a storefront or billing.</p>
+              <Link href={routes.publish()} className="zpill zpill--b">
+                Learn about publishing <span aria-hidden>›</span>
+              </Link>
+            </article>
+          </div>
         </div>
-      </Section>
+      </section>
 
-      {/* Marketplace: publishers (from the current toyoapps.com) */}
-      <Section labelledBy="publish-title">
-        <SectionHeader
-          id="publish-title"
-          eyebrow="For software makers"
-          title="Publish your SaaS on ToyoApps"
-          lead="List your product, reach customers and get paid — without building your own storefront or billing."
-          action={
-            <ButtonLink href={routes.publish()} variant="secondary" arrow>
-              Learn about publishing
-            </ButtonLink>
-          }
-        />
-        <ol className="steps">
-          {publisherSteps.map((s) => (
-            <li key={s.title}>
-              <h3>{s.title}</h3>
-              <p>{s.description}</p>
+      {/* 3. All-in-one catalog band */}
+      <section className="z-suite" aria-labelledby="suite-title">
+        <div className="container z-suite__grid">
+          <div className="z-suite__main">
+            <span className="z-suite__icon" aria-hidden>
+              <Icon name="grid" />
+            </span>
+            <div>
+              <p className="z-suite__kicker">All-in-one catalog</p>
+              <h2 id="suite-title">ToyoApps Catalog</h2>
+              <p className="z-suite__lead">One home for business software</p>
+              <p className="z-suite__body">
+                Browse {publicProducts.length} products across {tree.length} categories, each with its features, plans and the tools it
+                connects to — then sign up on the product itself.
+              </p>
+              <SquareButton href={routes.products()}>Browse the catalog</SquareButton>
+            </div>
+          </div>
+          <ul className="z-suite__side" aria-label="Categories">
+            {tree.map(({ category, products: list }) => (
+              <li key={category.slug}>
+                <Link href={routes.category(category.slug)}>
+                  <span className="icon-tile" style={tintStyle(category.slug)}>
+                    <Icon name={category.icon} />
+                  </span>
+                  <span>
+                    <strong>{category.name}</strong>
+                    <small>
+                      {list.length} {list.length === 1 ? "product" : "products"}
+                    </small>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* 4. Product logo strip */}
+      <section className="z-brands" aria-labelledby="brands-title">
+        <div className="container">
+          <p id="brands-title" className="z-kicker">
+            Our products
+          </p>
+          <ul className="z-brands__row">
+            {publicProducts.map((p) => (
+              <li key={p.slug}>
+                <Link href={routes.product(p.slug)}>
+                  <ProductLogo product={p} />
+                  <span>{p.name}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link href={routes.products()} className="z-textlink">
+            View all products <span aria-hidden>›</span>
+          </Link>
+        </div>
+      </section>
+
+      {/* 5. Industries showcase card */}
+      {industries.length > 0 && (
+        <section className="z-show" aria-labelledby="industries-title">
+          <div className="container">
+            <div className="z-show__card">
+              <div className="z-show__copy">
+                <h2 id="industries-title">Software matched to the way your industry works.</h2>
+                <Link href={routes.industries()} className="zpill zpill--warm">
+                  Explore industries <span aria-hidden>›</span>
+                </Link>
+              </div>
+              <ul className="z-show__tiles">
+                {industries.slice(0, 3).map((i) => (
+                  <li key={i.slug}>
+                    <Link href={routes.industry(i.slug)}>
+                      <Icon name={i.icon ?? "building"} />
+                      <strong>{i.name}</strong>
+                      <span>{i.summary}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 6. Integrations split */}
+      {integrations.length > 0 && (
+        <section className="z-split" aria-labelledby="integrations-title">
+          <div className="container z-split__grid">
+            <div className="z-split__main">
+              <span className="z-split__icon" aria-hidden>
+                <Icon name="code" />
+              </span>
+              <div>
+                <h2 id="integrations-title">Connect with the tools you already use</h2>
+                <p>
+                  {integrations.length} integrations named by the products themselves — storage, messaging, creative tools and Google
+                  Workspace.
+                </p>
+                <SquareButton href={routes.integrations()} variant="outline">
+                  Learn more
+                </SquareButton>
+              </div>
+            </div>
+            <div className="z-split__aside">
+              <ul className="z-split__chips">
+                {integrations.map((i) => (
+                  <li key={i.slug}>
+                    <Link href={`${routes.integrations()}#${i.slug}`}>{i.name}</Link>
+                  </li>
+                ))}
+              </ul>
+              <Link href={routes.integrations()} className="z-textlink">
+                View all integrations <span aria-hidden>›</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 7. Values card over a brand band */}
+      <section className="z-values" aria-labelledby="values-title">
+        <div className="z-values__band" aria-hidden />
+        <div className="container">
+          <div className="z-values__card">
+            <h2 id="values-title">The principles behind ToyoApps</h2>
+            <hr className="z-rule z-rule--center" />
+            <ul className="z-values__grid">
+              {values.map((v) => (
+                <li key={v.title}>
+                  <span className="z-values__icon" aria-hidden>
+                    <Icon name={v.icon} />
+                  </span>
+                  <div>
+                    <h3>{v.title}</h3>
+                    <p>{v.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <div className="z-center">
+              <SquareButton href={routes.company()} variant="outline">
+                Read our story
+              </SquareButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Stats band — real counts from the catalog */}
+      <section className="z-stats" aria-labelledby="stats-title">
+        <div className="container">
+          <h2 id="stats-title">
+            Built for growing businesses.
+            <br />
+            Organised for the way they work.
+          </h2>
+          <hr className="z-rule z-rule--center z-rule--light" />
+          <ul className="z-stats__row">
+            <li>
+              <strong>{publicProducts.length}</strong>
+              <span>Products</span>
             </li>
-          ))}
-        </ol>
-      </Section>
+            <li>
+              <strong>{tree.length}</strong>
+              <span>Categories</span>
+            </li>
+            <li>
+              <strong>{solutions.length}</strong>
+              <span>Solutions</span>
+            </li>
+            <li>
+              <strong>{industries.length}</strong>
+              <span>Industries</span>
+            </li>
+            <li>
+              <strong>{integrations.length}</strong>
+              <span>Integrations</span>
+            </li>
+          </ul>
+          <div className="z-center">
+            <SquareButton href={routes.company()} variant="inverse">
+              More about ToyoApps
+            </SquareButton>
+          </div>
+        </div>
+      </section>
 
-      {/* 12. Final CTA */}
-      <CtaBand
-        title="Find the right software for your business."
-        lead="Explore the ToyoApps catalog, or tell us what you need and we'll help you choose."
-        primary={{ label: "Explore products", href: routes.products() }}
-        secondary={{ label: "Contact sales", href: routes.contact() }}
-      />
+      {/* 9. Final CTA */}
+      <section className="z-cta" aria-labelledby="cta-title">
+        <div className="container">
+          <h2 id="cta-title">Ready to find your next tool?</h2>
+          <p>Let&apos;s get you started.</p>
+          <SquareButton href={routes.products()}>Explore products</SquareButton>
+        </div>
+      </section>
 
       <script
         type="application/ld+json"

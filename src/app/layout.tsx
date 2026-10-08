@@ -7,10 +7,11 @@ import { site } from "@/content/site";
 import { jsonLd } from "@/lib/seo";
 import { themeInitScript } from "@/lib/theme";
 import "./globals.css";
+import "./layout-zoho.css";
 
 // Same typefaces as the original toyoapps.com: Inter for text, Space Grotesk for the wordmark and headings.
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["500", "700"], variable: "--font-space-grotesk", display: "swap" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "700"], variable: "--font-space-grotesk", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

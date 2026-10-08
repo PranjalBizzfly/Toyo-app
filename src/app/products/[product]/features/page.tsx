@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { FeatureCard } from "@/components/product/cards";
-import { PageHero, Section } from "@/components/ui/primitives";
+import { Breadcrumbs, CtaBand } from "@/components/ui/primitives";
+import { getProductCtas } from "@/lib/product-cta";
+import { featureHasPage } from "@/lib/rules";
 import { getCategory, getFeatureGroupsWithPages, getProduct, groupFeatures } from "@/lib/catalog";
 import { getAvailableSections } from "@/lib/product-sections";
 import { routes } from "@/lib/routes";
@@ -31,46 +32,75 @@ export default async function FeaturesPage({ params }: Props) {
   const total = groups.reduce((n, g) => n + g.features.length, 0);
   const category = getCategory(product.category);
 
+  const names = groups.flatMap((g) => g.features.map((f) => f.name));
+  const left = names.filter((_, i) => i % 2 === 0).slice(0, 8);
+  const right = names.filter((_, i) => i % 2 === 1).slice(0, 8);
+  const cta = getProductCtas(product).primary;
+
   return (
     <>
-      <PageHero
-        breadcrumbs={[
-          { name: "Products", href: routes.products() },
-          ...(category ? [{ name: category.name, href: routes.category(category.slug) }] : []),
-          { name: product.name, href: routes.product(product.slug) },
-          { name: "Features", href: routes.productSection(product.slug, "features") },
-        ]}
-        eyebrow={`${product.name} features`}
-        title={`Everything ${product.name} can do`}
-        lead={`${total} ${total === 1 ? "feature" : "features"}${groups.length > 1 ? ` across ${groups.length} areas` : ""}.`}
-      >
-        {groups.length > 1 && (
-          <nav aria-label="Feature areas" className="chips">
-            {groups.map((g) => (
-              <a key={g.group.slug} href={`#${g.group.slug}`} className="chip">
-                {g.group.name} <span>{g.features.length}</span>
-              </a>
-            ))}
-          </nav>
-        )}
-      </PageHero>
-      {groups.map((g, i) => (
-        <Section key={g.group.slug} id={g.group.slug} tight tone={i % 2 ? "surface" : undefined}>
-          <div className="section-header">
-            <div className="section-header__text">
-              <h2 className="h3">
-                {hubs.has(g.group.slug) ? <Link href={routes.featureGroup(product.slug, g.group.slug)}>{g.group.name} →</Link> : g.group.name}
+      <header className="zf-hero">
+        <ul className="zf-hero__pills zf-hero__pills--left" aria-hidden>
+          {left.map((n) => (
+            <li key={n}>{n}</li>
+          ))}
+        </ul>
+        <ul className="zf-hero__pills zf-hero__pills--right" aria-hidden>
+          {right.map((n) => (
+            <li key={n}>{n}</li>
+          ))}
+        </ul>
+        <div className="container zf-hero__copy">
+          <Breadcrumbs
+            items={[
+              { name: "Products", href: routes.products() },
+              ...(category ? [{ name: category.name, href: routes.category(category.slug) }] : []),
+              { name: product.name, href: routes.product(product.slug) },
+              { name: "Features", href: routes.productSection(product.slug, "features") },
+            ]}
+          />
+          <h1>
+            Features that power
+            <strong>{product.name}</strong>
+          </h1>
+          <p>
+            {total} {total === 1 ? "feature" : "features"}
+            {groups.length > 1 ? ` across ${groups.length} areas` : ""}, as described by {product.name}.
+          </p>
+          <a href={cta.href} rel="noopener" className="zp-start__primary zf-hero__cta">
+            {cta.label}
+          </a>
+        </div>
+      </header>
+      {groups.map((g) => (
+        <section key={g.group.slug} id={g.group.slug} className="zf-row">
+          <div className="container zf-row__grid">
+            <div className="zf-row__head">
+              <p className="zf-row__label">
+                {g.features.length} {g.features.length === 1 ? "feature" : "features"}
+              </p>
+              <h2>
+                {hubs.has(g.group.slug) ? <Link href={routes.featureGroup(product.slug, g.group.slug)}>{g.group.name}</Link> : g.group.name}
               </h2>
-              {g.group.description && <p className="text-muted">{g.group.description}</p>}
+              {g.group.description && <p>{g.group.description}</p>}
             </div>
+            <ul className="zf-row__list">
+              {g.features.map((f) => (
+                <li key={f.slug}>
+                  <h3>{featureHasPage(f) ? <Link href={routes.feature(product.slug, f.slug)}>{f.name}</Link> : f.name}</h3>
+                  {f.summary && <p>{f.summary}</p>}
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="grid" style={{ ["--min" as string]: "260px" }}>
-            {g.features.map((f) => (
-              <FeatureCard key={f.slug} feature={f} productSlug={product.slug} />
-            ))}
-          </div>
-        </Section>
+        </section>
       ))}
+      <CtaBand
+        title={`Try ${product.name}`}
+        lead={product.pricing?.trial}
+        primary={cta}
+        secondary={product.pricing ? { label: "See pricing", href: routes.productSection(product.slug, "pricing") } : undefined}
+      />
     </>
   );
 }

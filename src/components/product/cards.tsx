@@ -107,7 +107,7 @@ export function PricingCard({ plan }: { plan: PricingPlan }) {
     <article className={`card pricing-card${plan.recommended ? " pricing-card--recommended" : ""}`}>
       <div className="card__meta">
         <h3 className="card__title">{plan.name}</h3>
-        {plan.recommended && <span className="badge badge--brand">Recommended</span>}
+        {plan.recommended && <span className="badge badge--brand pricing-card__tag">Most popular</span>}
       </div>
       <p className="pricing-card__price">
         {plan.price} {plan.period && <small>/ {plan.period}</small>}

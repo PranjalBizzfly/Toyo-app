@@ -71,9 +71,11 @@ console.log("overflow/header checks done");
   await btn.click();
   await page.waitForFunction(() => window.scrollY === 0, null, { timeout: 5000 });
   console.log("scroll toggle ok (down → bottom, up → top)");
-  // short page: no control
+  // short page: no control (tall viewport so the 404 page doesn't scroll past the threshold)
+  await page.setViewportSize({ width: 1440, height: 2600 });
   await page.goto(base + "/does-not-exist", { waitUntil: "networkidle" });
   if (await page.locator(".scroll-toggle").count()) fail("scroll toggle shown on a short page");
+  await page.setViewportSize({ width: 390, height: 800 });
 
   // 4. Mobile menu: Home present, opens without overflow
   await page.goto(base + "/products", { waitUntil: "networkidle" });
