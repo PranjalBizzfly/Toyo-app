@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+<rect width="100%" height="100%" fill="#e8eef4"/>
+<rect x="1" y="1" width="638" height="358" fill="none" stroke="#b9c7d4" stroke-width="2" stroke-dasharray="10 8"/>
+<path d="M290 166h60v40h-60z" fill="none" stroke="#8aa0b4" stroke-width="3"/><circle cx="306" cy="180" r="5" fill="#8aa0b4"/><path d="M290 202l18-16 12 10 10-8 20 14" fill="none" stroke="#8aa0b4" stroke-width="3"/>
+<text x="50%" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#5b7186">products/zuzu/card.svg · 640×360</text>
+</svg>
