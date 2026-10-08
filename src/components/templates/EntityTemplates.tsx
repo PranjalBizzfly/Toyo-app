@@ -1,31 +1,189 @@
 import Link from "next/link";
-import type { Comparison, Faq, Industry, Integration, Product, Resource, Solution } from "@/content/types";
+import type { Comparison, Faq, IconName, Industry, Integration, Product, Resource, Solution } from "@/content/types";
 import { getCategory, productsFor } from "@/lib/catalog";
 import { routes } from "@/lib/routes";
-import { ProductCard } from "@/components/product/cards";
-import {
-  CheckList,
-  CtaBand,
-  EmptyState,
-  FaqList,
-  PageHero,
-  Section,
-  SectionHeader,
-  type Crumb,
-} from "@/components/ui/primitives";
+import { ProductLogo } from "@/components/product/cards";
+import { Icon } from "@/components/ui/Icon";
+import { ImageSlot } from "@/components/ui/ImageSlot";
+import { Breadcrumbs, FaqList, type Crumb } from "@/components/ui/primitives";
+import "@/app/entity-zoho.css";
 
 /* =====================================================================
-   Templates for cross-product entities. Each detail page links back into
-   the product graph (internal linking), and every hub has an honest empty
-   state until real entries are added to `content/registries.ts`.
+   Templates for cross-product entities, laid out after zoho.com's
+   solution (Zoho One /sales), verticals/vertical (CRM industries),
+   compare detail, integrations and blog pages. Content is ToyoApps' own;
+   every hub keeps an honest empty state until real entries exist.
    ===================================================================== */
 
-interface HubItem {
+export interface HubItem {
   name: string;
   summary: string;
   href: string;
   meta?: string;
+  icon?: IconName;
 }
+
+/* ---------- shared pieces ---------- */
+
+function Hero({
+  crumbs,
+  eyebrow,
+  title,
+  lead,
+  tone = "tint",
+  align = "center",
+  children,
+  visual,
+}: {
+  crumbs: Crumb[];
+  eyebrow?: string;
+  title: React.ReactNode;
+  lead?: string;
+  tone?: "tint" | "plain";
+  align?: "center" | "left";
+  children?: React.ReactNode;
+  visual?: React.ReactNode;
+}) {
+  return (
+    <header className={`ez-hero ez-hero--${tone} ez-hero--${align}`}>
+      <div className="container">
+        <div className="ez-crumbs">
+          <Breadcrumbs items={crumbs} />
+        </div>
+        <div className="ez-hero__copy">
+          {eyebrow && <p className="ez-kicker">{eyebrow}</p>}
+          <h1 className="ez-hero__title">{title}</h1>
+          {lead && <p className="ez-hero__lead">{lead}</p>}
+          {children}
+        </div>
+        {visual && <div className="ez-hero__visual">{visual}</div>}
+      </div>
+    </header>
+  );
+}
+
+function HeroActions() {
+  return (
+    <div className="ez-actions">
+      <Link href={routes.products()} className="ez-btn ez-btn--primary">
+        Explore products
+      </Link>
+      <Link href={routes.contact()} className="ez-link">
+        Contact sales <Icon name="arrow-right" />
+      </Link>
+    </div>
+  );
+}
+
+function Heading({ kicker, title, lead, light }: { kicker?: string; title: string; lead?: string; light?: boolean }) {
+  return (
+    <div className={`ez-heading${light ? " ez-heading--light" : ""}`}>
+      {kicker && (
+        <>
+          <p className="ez-heading__kicker">{kicker}</p>
+          <span className="ez-heading__rule" aria-hidden />
+        </>
+      )}
+      <h2 className="ez-heading__title">{title}</h2>
+      {lead && <p className="ez-heading__lead">{lead}</p>}
+    </div>
+  );
+}
+
+function Closing() {
+  return (
+    <section className="ez-cta">
+      <div className="container ez-cta__inner">
+        <h2 className="ez-cta__title">Find the right software for your business.</h2>
+        <p className="ez-cta__lead">Browse the full ToyoApps catalogue or talk to us about what you need.</p>
+        <div className="ez-actions ez-actions--center">
+          <Link href={routes.products()} className="ez-btn ez-btn--primary">
+            Explore products
+          </Link>
+          <Link href={routes.contact()} className="ez-btn ez-btn--outline">
+            Contact sales
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** Zoho One-style grey product tiles: centred name, short line, text link. */
+function ProductTiles({ products, title, lead }: { products: Product[]; title: string; lead?: string }) {
+  if (!products.length) return null;
+  return (
+    <section className="ez-section">
+      <div className="container">
+        <div className="ez-intro">
+          <h2 className="ez-intro__title">{title}</h2>
+          {lead && <p className="ez-intro__lead">{lead}</p>}
+        </div>
+        <div className={`ez-tiles ez-tiles--${Math.min(products.length, 3)}`}>
+          {products.map((p) => (
+            <Link key={p.slug} href={routes.product(p.slug)} className="ez-tile">
+              <ProductLogo product={p} />
+              <h3 className="ez-tile__title">{p.name}</h3>
+              {getCategory(p.category) && <p className="ez-tile__cat">{getCategory(p.category)?.name}</p>}
+              <p className="ez-tile__text">{p.shortDescription}</p>
+              <span className="ez-link">
+                Learn more <Icon name="arrow-right" />
+              </span>
+              <span className="ez-tile__shot">
+                <ImageSlot src="/images/entity/product-tile.svg" alt={`${p.name} screenshot`} width={400} height={260} />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Faqs({ faqs }: { faqs?: Faq[] }) {
+  if (!faqs?.length) return null;
+  return (
+    <section className="ez-section ez-section--tint">
+      <div className="container ez-narrow">
+        <Heading title="Frequently asked questions" />
+        <FaqList faqs={faqs} />
+      </div>
+    </section>
+  );
+}
+
+function Prose({ body, kicker, title }: { body?: string[]; kicker?: string; title?: string }) {
+  if (!body?.length) return null;
+  return (
+    <section className="ez-section">
+      <div className="container ez-narrow">
+        {title && <Heading kicker={kicker} title={title} />}
+        <div className="ez-prose">
+          {body.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EmptyBlock({ title, text }: { title: string; text: string }) {
+  return (
+    <div className="ez-empty">
+      <span className="ez-empty__icon" aria-hidden>
+        <Icon name="layers" />
+      </span>
+      <h2 className="ez-empty__title">{title}</h2>
+      <p className="ez-empty__text">{text}</p>
+      <Link href={routes.products()} className="ez-btn ez-btn--outline">
+        Explore products
+      </Link>
+    </div>
+  );
+}
+
+/* ---------- hubs (Zoho "verticals" layout) ---------- */
 
 export function HubPageTemplate({
   crumbs,
@@ -33,6 +191,8 @@ export function HubPageTemplate({
   title,
   lead,
   items,
+  listTitle,
+  listLead,
   emptyTitle,
   emptyText,
   children,
@@ -42,235 +202,370 @@ export function HubPageTemplate({
   title: string;
   lead: string;
   items: HubItem[];
+  listTitle?: string;
+  listLead?: string;
   emptyTitle: string;
   emptyText: string;
   children?: React.ReactNode;
 }) {
   return (
     <>
-      <PageHero breadcrumbs={crumbs} eyebrow={eyebrow} title={title} lead={lead} />
+      <Hero crumbs={crumbs} eyebrow={eyebrow} title={title} lead={lead}>
+        <HeroActions />
+      </Hero>
       {children}
-      <Section tight>
-        {items.length ? (
-          <div className="grid">
-            {items.map((i) => (
-              <Link key={i.href} href={i.href} className="card">
-                {i.meta && <p className="product-card__cat">{i.meta}</p>}
-                <h2 className="card__title">{i.name}</h2>
-                <p className="text-muted">{i.summary}</p>
-              </Link>
-            ))}
-          </div>
-        ) : (
-          <EmptyState
-            title={emptyTitle}
-            action={
-              <Link href={routes.products()} className="btn btn--secondary">
-                Explore products
-              </Link>
-            }
-          >
-            {emptyText}
-          </EmptyState>
-        )}
-      </Section>
-      <CtaBand
-        title="Find the right software for your business."
-        primary={{ label: "Explore products", href: routes.products() }}
-        secondary={{ label: "Contact sales", href: routes.contact() }}
-      />
+      <section className="ez-section">
+        <div className="container">
+          {listTitle && (
+            <div className="ez-intro ez-intro--center">
+              <h2 className="ez-intro__title">{listTitle}</h2>
+              {listLead && <p className="ez-intro__lead">{listLead}</p>}
+            </div>
+          )}
+          {items.length ? (
+            <div className="ez-cards">
+              {items.map((i) => (
+                <Link key={i.href} href={i.href} className="ez-card">
+                  <span className="ez-card__band" aria-hidden>
+                    <ImageSlot src="/images/entity/hub-card.svg" alt="" width={370} height={172} />
+                    <span className="ez-card__icon">
+                      <Icon name={i.icon ?? "layers"} />
+                    </span>
+                  </span>
+                  <span className="ez-card__body">
+                    {i.meta && <span className="ez-card__meta">{i.meta}</span>}
+                    <h3 className="ez-card__title">{i.name}</h3>
+                    <p className="ez-card__text">{i.summary}</p>
+                    <span className="ez-link">
+                      Learn more <Icon name="arrow-right" />
+                    </span>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <EmptyBlock title={emptyTitle} text={emptyText} />
+          )}
+        </div>
+      </section>
+      <Closing />
     </>
   );
 }
 
-function RelatedProducts({ products, title }: { products: Product[]; title: string }) {
-  if (!products.length) return null;
-  return (
-    <Section tone="surface">
-      <SectionHeader eyebrow="ToyoApps products" title={title} />
-      <div className="grid" style={{ ["--min" as string]: "300px" }}>
-        {products.map((p) => (
-          <ProductCard key={p.slug} product={p} categoryName={getCategory(p.category)?.name} />
-        ))}
-      </div>
-    </Section>
-  );
-}
+/* ---------- Resources hub (Zoho blog layout) ---------- */
 
-function Body({ body, faqs }: { body?: string[]; faqs?: Faq[] }) {
+export function ResourcesHubTemplate({
+  crumbs,
+  title,
+  lead,
+  items,
+  categories,
+  activeCategory,
+  emptyTitle,
+  emptyText,
+}: {
+  crumbs: Crumb[];
+  title: string;
+  lead: string;
+  items: (HubItem & { date?: string; author?: string })[];
+  categories: { label: string; href: string; description?: string }[];
+  activeCategory?: string;
+  emptyTitle: string;
+  emptyText: string;
+}) {
+  const [first, ...rest] = items;
   return (
     <>
-      {body?.length ? (
-        <Section>
-          <div className="prose">
-            {body.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
+      <Hero crumbs={crumbs} title={title} lead={lead} tone="plain" align="left" />
+      <section className="ez-section ez-section--flush">
+        <div className="container">
+          <p className="ez-label">{activeCategory ? `Latest in ${activeCategory}` : "Featured posts"}</p>
+          {first ? (
+            <>
+              <Link href={first.href} className="ez-post ez-post--lead">
+                <span className="ez-post__media">
+                  <ImageSlot src="/images/entity/resource-featured.svg" alt={first.name} width={845} height={475} />
+                </span>
+                <span className="ez-post__meta">{first.meta}</span>
+                <h2 className="ez-post__title">{first.name}</h2>
+                <p className="ez-post__text">{first.summary}</p>
+                {(first.author || first.date) && (
+                  <span className="ez-post__by">{[first.author && `By ${first.author}`, first.date].filter(Boolean).join(" | ")}</span>
+                )}
+              </Link>
+              {rest.length > 0 && (
+                <div className="ez-posts">
+                  {rest.map((r) => (
+                    <Link key={r.href} href={r.href} className="ez-post">
+                      <span className="ez-post__media">
+                        <ImageSlot src="/images/entity/resource-card.svg" alt={r.name} width={290} height={163} />
+                      </span>
+                      {r.meta && <span className="ez-post__meta">{r.meta}</span>}
+                      <h3 className="ez-post__title">{r.name}</h3>
+                      {(r.author || r.date) && (
+                        <span className="ez-post__by">{[r.author && `By ${r.author}`, r.date].filter(Boolean).join(" | ")}</span>
+                      )}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </>
+          ) : (
+            <EmptyBlock title={emptyTitle} text={emptyText} />
+          )}
+        </div>
+      </section>
+      <section className="ez-section ez-section--tint">
+        <div className="container">
+          <div className="ez-heading">
+            <h2 className="ez-heading__title">Explore categories</h2>
+            <span className="ez-heading__rule ez-heading__rule--below" aria-hidden />
           </div>
-        </Section>
-      ) : null}
-      {faqs?.length ? (
-        <Section>
-          <SectionHeader eyebrow="FAQs" title="Common questions" />
-          <FaqList faqs={faqs} />
-        </Section>
-      ) : null}
+          <ul className="ez-chips">
+            {categories.map((c) => (
+              <li key={c.href}>
+                <Link href={c.href} className="ez-chip" aria-current={c.label === activeCategory ? "page" : undefined}>
+                  <span className="ez-chip__label">{c.label}</span>
+                  {c.description && <span className="ez-chip__desc">{c.description}</span>}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <Closing />
     </>
   );
 }
 
-const closing = (
-  <CtaBand
-    title="Find the right software for your business."
-    primary={{ label: "Explore products", href: routes.products() }}
-    secondary={{ label: "Contact sales", href: routes.contact() }}
-  />
-);
+/* ---------- Solution detail (Zoho One /sales layout) ---------- */
 
 export function SolutionPageTemplate({ solution }: { solution: Solution }) {
+  const products = productsFor(solution.products);
   return (
     <>
-      <PageHero
-        breadcrumbs={[
+      <Hero
+        crumbs={[
           { name: "Solutions", href: routes.solutions() },
           { name: solution.name, href: routes.solution(solution.slug) },
         ]}
         eyebrow="Solution"
         title={solution.name}
         lead={solution.summary}
-      />
-      <Section tone="surface">
-        <div className="split" style={{ alignItems: "start" }}>
-          <div className="stack">
-            <p className="eyebrow">The problem</p>
-            <p className="lead">{solution.problem}</p>
+        align="left"
+        visual={<ImageSlot src="/images/entity/solution-hero.svg" alt={solution.name} width={318} height={440} priority />}
+      >
+        <HeroActions />
+      </Hero>
+      <ProblemApproach problem={solution.problem} approach={solution.approach} />
+      <ProductTiles products={products} title="The products behind it" lead="Each ToyoApps product below covers one part of the job." />
+      {solution.body?.length ? (
+        <section className="ez-section ez-section--tint">
+          <div className="container ez-define">
+            <div className="ez-define__head">
+              <h2 className="ez-intro__title">How it comes together</h2>
+            </div>
+            <ol className="ez-define__list">
+              {solution.body.map((p, i) => (
+                <li key={i}>
+                  {products[i] && <h3 className="ez-define__title">{products[i].name}</h3>}
+                  <p>{p}</p>
+                </li>
+              ))}
+            </ol>
           </div>
-          <div className="stack">
-            <p className="eyebrow">The approach</p>
-            <p className="lead">{solution.approach}</p>
-          </div>
-        </div>
-      </Section>
-      <Body body={solution.body} />
-      <RelatedProducts products={productsFor(solution.products)} title="Recommended products" />
-      <Body faqs={solution.faqs} />
-      {closing}
+        </section>
+      ) : null}
+      <Faqs faqs={solution.faqs} />
+      <Closing />
     </>
   );
 }
 
+function ProblemApproach({ problem, approach, problemTitle = "The problem", approachTitle = "The approach" }: { problem: string; approach: string; problemTitle?: string; approachTitle?: string }) {
+  return (
+    <section className="ez-duo">
+      <div className="container">
+        <div className="ez-duo__frame">
+          <div className="ez-duo__card">
+            <h2 className="ez-duo__title">{problemTitle}</h2>
+            <p>{problem}</p>
+          </div>
+          <div className="ez-duo__card ez-duo__card--dark">
+            <h2 className="ez-duo__title">{approachTitle}</h2>
+            <p>{approach}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- Industry detail (Zoho "vertical" layout) ---------- */
+
 export function IndustryPageTemplate({ industry }: { industry: Industry }) {
+  const products = productsFor(industry.products);
   return (
     <>
-      <PageHero
-        breadcrumbs={[
+      <Hero
+        crumbs={[
           { name: "Industries", href: routes.industries() },
           { name: industry.name, href: routes.industry(industry.slug) },
         ]}
         eyebrow="Industry"
         title={`Software for ${industry.name}`}
         lead={industry.summary}
-      />
+        visual={<ImageSlot src="/images/entity/industry-hero.svg" alt={`Software for ${industry.name}`} width={1200} height={320} priority />}
+      >
+        <HeroActions />
+      </Hero>
       {industry.challenges?.length ? (
-        <Section tone="surface">
-          <SectionHeader eyebrow="Challenges" title={`What ${industry.name} teams deal with`} />
-          <CheckList items={industry.challenges} />
-        </Section>
+        <section className="ez-band">
+          <div className="container">
+            <Heading title={`What ${industry.name} teams deal with`} light />
+            <div className="ez-feats">
+              {industry.challenges.map((c) => (
+                <div key={c} className="ez-feat">
+                  <span className="ez-feat__icon" aria-hidden>
+                    <Icon name={industry.icon ?? "check"} />
+                  </span>
+                  <p className="ez-feat__text">{c}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       ) : null}
-      <Body body={industry.body} />
-      <RelatedProducts products={productsFor(industry.products)} title={`ToyoApps for ${industry.name}`} />
-      <Body faqs={industry.faqs} />
-      {closing}
+      <Prose body={industry.body} kicker={`ToyoApps for ${industry.name}`} title="How ToyoApps helps" />
+      <ProductTiles products={products} title={`Products for ${industry.name}`} />
+      <Faqs faqs={industry.faqs} />
+      <Closing />
     </>
   );
 }
 
+/* ---------- Integration detail ---------- */
+
 export function IntegrationPageTemplate({ integration }: { integration: Integration }) {
   return (
     <>
-      <PageHero
-        breadcrumbs={[
+      <Hero
+        crumbs={[
           { name: "Integrations", href: routes.integrations() },
           { name: integration.name, href: routes.integration(integration.slug) },
         ]}
         eyebrow={integration.vendor ? `Integration · ${integration.vendor}` : "Integration"}
         title={integration.name}
         lead={integration.summary}
-      />
-      <Body body={integration.body} />
-      <RelatedProducts products={productsFor(integration.products)} title="Works with" />
-      <Body faqs={integration.faqs} />
-      {closing}
+        visual={<ImageSlot src="/images/entity/integration-hero.svg" alt={`${integration.name} integration`} width={960} height={360} priority />}
+      >
+        <p className="ez-hero__chip">{integration.category}</p>
+      </Hero>
+      <Prose body={integration.body} kicker="Integration" title={`About the ${integration.name} integration`} />
+      <ProductTiles products={productsFor(integration.products)} title="Works with" />
+      <Faqs faqs={integration.faqs} />
+      <Closing />
     </>
   );
 }
 
+/* ---------- Comparison detail (Zoho compare layout) ---------- */
+
 export function ComparisonPageTemplate({ comparison }: { comparison: Comparison }) {
   return (
     <>
-      <PageHero
-        breadcrumbs={[
+      <Hero
+        crumbs={[
           { name: "Compare", href: routes.compare() },
           { name: comparison.name, href: routes.comparison(comparison.slug) },
         ]}
         eyebrow="Comparison"
         title={comparison.name}
         lead={comparison.summary}
+        tone="plain"
       />
-      <Section tight>
-        <div className="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Criterion</th>
-                {comparison.subjects.map((s) => (
-                  <th key={s} scope="col">
-                    {s}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {comparison.rows.map((r) => (
-                <tr key={r.criterion}>
-                  <th scope="row">{r.criterion}</th>
-                  {r.values.map((v, i) => (
-                    <td key={i}>{v}</td>
+      {comparison.body?.length ? (
+        <section className="ez-band">
+          <div className="container ez-split">
+            <h2 className="ez-split__title">{comparison.subjects.join(" vs ")}</h2>
+            <div className="ez-split__body">
+              {comparison.body.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+      <section className="ez-section">
+        <div className="container">
+          <ImageSlot src={`/images/compare/${comparison.slug}.svg`} alt={comparison.name} width={1200} height={400} className="ez-figure" />
+          <Heading title="Side-by-side comparison" />
+          <div className="ez-table">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Criterion</th>
+                  {comparison.subjects.map((s) => (
+                    <th key={s} scope="col">
+                      {s}
+                    </th>
                   ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {comparison.rows.map((r) => (
+                  <tr key={r.criterion}>
+                    <th scope="row">{r.criterion}</th>
+                    {r.values.map((v, i) => (
+                      <td key={i}>{v}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </Section>
-      <Body body={comparison.body} faqs={comparison.faqs} />
-      <RelatedProducts products={productsFor(comparison.subjects)} title="ToyoApps products in this comparison" />
-      {closing}
+      </section>
+      <ProductTiles products={productsFor(comparison.subjects)} title="ToyoApps products in this comparison" />
+      <Faqs faqs={comparison.faqs} />
+      <Closing />
     </>
   );
 }
 
+/* ---------- Resource article (Zoho blog post layout) ---------- */
+
 export function ResourcePageTemplate({ resource, typeLabel }: { resource: Resource; typeLabel: string }) {
   return (
     <>
-      <PageHero
-        breadcrumbs={[
-          { name: "Resources", href: routes.resources() },
-          { name: typeLabel, href: routes.resourceType(resource.type) },
-          { name: resource.name, href: routes.resource(resource.type, resource.slug) },
-        ]}
-        eyebrow={typeLabel}
-        title={resource.name}
-        lead={resource.summary}
-      >
-        <p className="text-muted" style={{ fontSize: "var(--fs-sm)" }}>
-          <time dateTime={resource.publishedAt}>{new Date(resource.publishedAt).toLocaleDateString("en", { dateStyle: "long" })}</time>
-          {resource.author && ` · ${resource.author}`}
-        </p>
-      </PageHero>
-      <Body body={resource.body} faqs={resource.faqs} />
-      <RelatedProducts products={productsFor(resource.products ?? [])} title="Products in this article" />
-      {closing}
+      <header className="ez-article-head">
+        <div className="container ez-narrow">
+          <div className="ez-crumbs">
+            <Breadcrumbs
+              items={[
+                { name: "Resources", href: routes.resources() },
+                { name: typeLabel, href: routes.resourceType(resource.type) },
+                { name: resource.name, href: routes.resource(resource.type, resource.slug) },
+              ]}
+            />
+          </div>
+          <p className="ez-post__meta">{typeLabel}</p>
+          <h1 className="ez-article-head__title">{resource.name}</h1>
+          <p className="ez-hero__lead">{resource.summary}</p>
+          <p className="ez-post__by">
+            {resource.author && <>By {resource.author} | </>}
+            <time dateTime={resource.publishedAt}>{new Date(resource.publishedAt).toLocaleDateString("en", { dateStyle: "long" })}</time>
+          </p>
+        </div>
+      </header>
+      <div className="container ez-narrow ez-article-cover">
+        <ImageSlot src="/images/entity/resource-cover.svg" alt={resource.name} width={860} height={484} />
+      </div>
+      <Prose body={resource.body} />
+      <ProductTiles products={productsFor(resource.products ?? [])} title="Products in this article" />
+      <Faqs faqs={resource.faqs} />
+      <Closing />
     </>
   );
 }

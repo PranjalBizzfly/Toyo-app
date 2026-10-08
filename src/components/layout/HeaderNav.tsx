@@ -9,7 +9,7 @@ import { ThemeToggle } from "./ThemeToggle";
 
 function SearchForm({ id, className = "header-search" }: { id: string; className?: string }) {
   return (
-    <form action="/products" role="search" className={className}>
+    <form action="/search" role="search" className={className}>
       <Icon name="search" />
       <label htmlFor={id} className="sr-only">
         Search products
@@ -85,7 +85,11 @@ function ProductsPanel({ menu, onNavigate }: { menu: NavMenu; onNavigate: () => 
                   }}
                   onMouseEnter={() => !q && setActiveGroup(i)}
                 >
-                  {g.title}
+                  {g.icon && <Icon name={g.icon} />}
+                  <span className="mm__cat-text">
+                    {g.title}
+                    {g.count && <small>{g.count}</small>}
+                  </span>
                   <span aria-hidden>›</span>
                 </button>
               </li>
@@ -97,7 +101,10 @@ function ProductsPanel({ menu, onNavigate }: { menu: NavMenu; onNavigate: () => 
         </aside>
         <div className="mm__main" role="tabpanel">
           <div className="mm__heading">
-            <h2>{results ? `Results for “${query.trim()}”` : group?.title}</h2>
+            <div>
+              <h2>{results ? `Results for “${query.trim()}”` : group?.title}</h2>
+              {!results && group?.description && <p className="mm__lead">{group.description}</p>}
+            </div>
             {!results && group?.href && (
               <Link href={group.href} onClick={onNavigate}>
                 View category <Icon name="arrow-right" />
@@ -116,22 +123,43 @@ function ProductsPanel({ menu, onNavigate }: { menu: NavMenu; onNavigate: () => 
   );
 }
 
-function SimplePanel({ menu, onNavigate }: { menu: NavMenu; onNavigate: () => void }) {
+/**
+ * Compact dropdown card under its trigger (after zoho.com): plain text links.
+ * One group → a single list (ending with the hub link). Several groups →
+ * columns with small uppercase labels, separated by a thin divider.
+ */
+function DropPanel({ menu, onNavigate }: { menu: NavMenu; onNavigate: () => void }) {
+  const grouped = menu.groups.length > 1;
+  // Skip the hub link when an item already points there (e.g. Company → Contact).
+  const showFoot = !menu.groups.some((g) => g.links.some((l) => l.href === menu.footerLink.href));
   return (
-    <div className="mm mm--simple">
-      <div className="container mega__simple">
-        {menu.groups.flatMap((g) => g.links).map((l) => (
-          <Link key={l.href + l.label} href={l.href} className="mega__link" onClick={onNavigate}>
-            <strong>{l.label}</strong>
-            {l.description && <span>{l.description}</span>}
-          </Link>
-        ))}
-        <Link href={menu.footerLink.href} className="mega__link mega__link--more" onClick={onNavigate}>
-          <strong>
-            {menu.footerLink.label} <Icon name="arrow-right" />
-          </strong>
+    <div className={`drop${grouped ? " drop--cols" : ""}`} data-cols={Math.min(menu.groups.length, 3)}>
+      {menu.groups.map((g) => (
+        <section key={g.title} className="drop__col" aria-label={g.title}>
+          {grouped && <h3 className="drop__label">{g.title}</h3>}
+          <ul>
+            {g.links.map((l) => (
+              <li key={l.href + l.label}>
+                <Link href={l.href} onClick={onNavigate}>
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+            {!grouped && showFoot && (
+              <li className="drop__all">
+                <Link href={menu.footerLink.href} onClick={onNavigate}>
+                  {menu.footerLink.label} <Icon name="arrow-right" />
+                </Link>
+              </li>
+            )}
+          </ul>
+        </section>
+      ))}
+      {grouped && showFoot && (
+        <Link href={menu.footerLink.href} className="drop__foot" onClick={onNavigate}>
+          {menu.footerLink.label} <Icon name="arrow-right" />
         </Link>
-      </div>
+      )}
     </div>
   );
 }
@@ -177,7 +205,7 @@ export function HeaderNav({ menus }: { menus: NavMenu[] }) {
           </Link>
         </div>
         {menus.map((m) => (
-          <div key={m.id} className="primary-nav__item">
+          <div key={m.id} className={`primary-nav__item${m.kind === "mega" ? "" : " primary-nav__item--drop"}`}>
             <button
               type="button"
               className="primary-nav__trigger"
@@ -188,17 +216,22 @@ export function HeaderNav({ menus }: { menus: NavMenu[] }) {
               {m.label}
               <ChevronDown />
             </button>
+            {open === m.id && m.kind !== "mega" && (
+              <div id={`mega-${m.id}`}>
+                <DropPanel menu={m} onNavigate={close} />
+              </div>
+            )}
           </div>
         ))}
-        {active && (
+        {active?.kind === "mega" && (
           <div className="mega" id={`mega-${active.id}`}>
-            {active.kind === "mega" ? <ProductsPanel menu={active} onNavigate={close} /> : <SimplePanel menu={active} onNavigate={close} />}
+            <ProductsPanel menu={active} onNavigate={close} />
           </div>
         )}
       </nav>
 
       <div className="header-actions">
-        <Link href="/products" className="icon-btn icon-btn--plain header-search-link" aria-label="Search products">
+        <Link href="/search" className="icon-btn icon-btn--plain header-search-link" aria-label="Search ToyoApps">
           <Icon name="search" />
         </Link>
         <ThemeToggle />
@@ -235,12 +268,25 @@ export function HeaderNav({ menus }: { menus: NavMenu[] }) {
                 <ChevronDown />
               </summary>
               <div className="mobile-nav__group">
+                {m.intro?.text && <p className="mobile-nav__intro">{m.intro.text}</p>}
                 {m.groups.map((g) => (
                   <div key={g.title}>
-                    {m.kind === "mega" && <h4>{g.title}</h4>}
+                    {m.kind !== "simple" && (
+                      <h4>
+                        {g.href ? (
+                          <Link href={g.href} onClick={close}>
+                            {g.title}
+                          </Link>
+                        ) : (
+                          g.title
+                        )}
+                        {g.count && <small> · {g.count}</small>}
+                      </h4>
+                    )}
                     {g.links.map((l) => (
-                      <Link key={l.href + l.label} href={l.href} onClick={close}>
-                        {l.label}
+                      <Link key={l.href + l.label} href={l.href} onClick={close} className="mobile-nav__link">
+                        <span>{l.label}</span>
+                        {(m.kind === "columns" ? l.meta : l.description) && <small>{m.kind === "columns" ? l.meta : l.description}</small>}
                       </Link>
                     ))}
                   </div>

@@ -1,9 +1,10 @@
-import { CatalogBrowser, type CatalogItem, type CatalogSection } from "@/components/product/CatalogBrowser";
-import type { Product } from "@/content/types";
-import { getCatalogTree, getCategory, getFeaturedProducts, getProducts } from "@/lib/catalog";
+import "../catalog-zoho.css";
+import { CatalogBrowser, type CatalogSection } from "@/components/product/CatalogBrowser";
+import { getCatalogTree, getComparisons, getFeaturedProducts, getIntegrations, getProducts } from "@/lib/catalog";
+import { ImageSlot } from "@/components/ui/ImageSlot";
 import { routes } from "@/lib/routes";
 import { absoluteUrl, buildMetadata, jsonLd } from "@/lib/seo";
-import { monogram, productAccent } from "@/lib/tint";
+import { toCatalogItem } from "./category/catalog-item";
 
 export const metadata = buildMetadata({
   title: "All products",
@@ -11,42 +12,35 @@ export const metadata = buildMetadata({
   path: routes.products(),
 });
 
-const toItem = (p: Product): CatalogItem => ({
-  slug: p.slug,
-  href: routes.product(p.slug),
-  name: p.name,
-  description: p.shortDescription,
-  accent: productAccent(p),
-  initials: monogram(p.name),
-  pending: p.status === "pending",
-  keywords: [p.name, p.shortDescription, p.primaryUseCase, getCategory(p.category)?.name, ...(p.audience ?? []), ...(p.features ?? []).map((f) => f.name)]
-    .join(" ")
-    .toLowerCase(),
-});
-
 export default function ProductsPage() {
   const products = getProducts();
   const featured = getFeaturedProducts(3);
   const sections: CatalogSection[] = [
-    ...(featured.length ? [{ id: "featured", title: "Featured apps", items: featured.map(toItem) }] : []),
+    ...(featured.length ? [{ id: "featured", title: "Featured apps", featured: true, items: featured.map((p) => toCatalogItem(p)) }] : []),
     ...getCatalogTree().map(({ category, products: list }) => ({
       id: category.slug,
       title: category.name,
       tagline: category.tagline,
       href: routes.category(category.slug),
-      items: list.map(toItem),
+      items: list.map((p) => toCatalogItem(p)),
     })),
+  ];
+  const sideLinks = [
+    ...(getIntegrations().length ? [{ label: "Integrations", href: routes.integrations() }] : []),
+    ...(getComparisons().length ? [{ label: "Compare products", href: routes.compare() }] : []),
+    { label: "Search the site", href: "/search" },
   ];
 
   return (
     <>
-      <header className="zband">
+      <header className="zc-hero">
         <div className="container">
           <h1>All the software you need to run your business</h1>
-          <hr className="z-rule z-rule--center z-rule--light" />
+          <hr className="zc-rule" />
+          <ImageSlot src="/images/catalog/products-hero.svg" alt="ToyoApps products for every part of a business" width={960} height={360} priority className="zc-hero__art" />
         </div>
       </header>
-      <CatalogBrowser sections={sections} />
+      <CatalogBrowser sections={sections} sideLinks={sideLinks} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={jsonLd({

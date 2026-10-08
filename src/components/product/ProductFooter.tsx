@@ -1,8 +1,11 @@
 import Link from "next/link";
 import type { Product } from "@/content/types";
-import { getCategory, getRelatedProducts } from "@/lib/catalog";
+import { getCategory } from "@/lib/catalog";
+import { getProductCtas } from "@/lib/product-cta";
+import "@/app/product-zoho.css";
 import { getAvailableSections } from "@/lib/product-sections";
 import { routes, sectionLabels } from "@/lib/routes";
+import { FooterCopyright, FooterLegalLinks } from "@/components/layout/SiteFooter";
 import { ProductLogo } from "./cards";
 
 type FooterLink = { label: string; href: string };
@@ -30,13 +33,13 @@ function Column({ title, links }: { title: string; links: FooterLink[] }) {
 }
 
 /**
- * Product footer — dark band rendered above the global footer on every
- * product page: product links, resources, get-started links and related products.
+ * Product footer — the only footer on every product page (FooterResolver keeps
+ * the global footer off these routes): product links, resources, get-started
+ * links, then the shared legal links and copyright.
  */
 export function ProductFooter({ product }: { product: Product }) {
   const sections = getAvailableSections(product);
   const category = getCategory(product.category);
-  const related = getRelatedProducts(product, 3);
 
   const explore: FooterLink[] = sections
     .filter((s) => s !== "resources" && s !== "support")
@@ -56,36 +59,27 @@ export function ProductFooter({ product }: { product: Product }) {
     { label: "Contact ToyoApps", href: routes.contact() },
   ].filter((l): l is FooterLink => !!l);
 
+  const cta = getProductCtas(product).primary;
+
   return (
-    <aside className="pfoot" aria-label={`${product.name} links`}>
-      <div className="container pfoot__cols">
-        <div className="pfoot__brand">
+    <footer className="pfoot pz-foot" aria-label={`${product.name} footer`}>
+      <div className="container pz-foot__top">
+        <div className="pz-foot__promo">
           <ProductLogo product={product} />
-          <p className="pfoot__name">{product.name}</p>
-          <p className="pfoot__desc">{product.shortDescription}</p>
+          <strong>{product.name}</strong>
+          <p>{product.shortDescription}</p>
+          <a href={cta.href} rel="noopener">
+            {cta.label} <span aria-hidden>→</span>
+          </a>
         </div>
         <Column title={`Explore ${product.name}`} links={explore} />
         <Column title="Resources" links={resources} />
         <Column title="Get started" links={start} />
       </div>
-      {related.length > 0 && (
-        <div className="pfoot__more">
-          <p>More products from ToyoApps</p>
-          <ul>
-            {related.map((p) => (
-              <li key={p.slug}>
-                <Link href={routes.product(p.slug)}>
-                  <ProductLogo product={p} />
-                  <span>
-                    <strong>{p.name}</strong>
-                    <small>{p.primaryUseCase}</small>
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </aside>
+      <div className="container pfoot__legal">
+        <FooterLegalLinks />
+      </div>
+      <FooterCopyright />
+    </footer>
   );
 }

@@ -4,6 +4,8 @@ import { ProductFooter } from "@/components/product/ProductFooter";
 import { ProductNav } from "@/components/product/ProductNav";
 import { getProduct, getProducts } from "@/lib/catalog";
 import { getAvailableSections } from "@/lib/product-sections";
+import { productThemeClass } from "@/lib/product-theme";
+import "@/app/product-themes.css";
 import { getProductCtas } from "@/lib/product-cta";
 import { routes, sectionLabels } from "@/lib/routes";
 
@@ -27,7 +29,7 @@ export default async function ProductLayout({ children, params }: Props) {
   const cta = getProductCtas(product).primary;
 
   return (
-    <>
+    <div className={productThemeClass(product.slug)}>
       <ProductNav
         brand={
           <a href={routes.product(product.slug)} className="product-nav__brand">
@@ -40,6 +42,6 @@ export default async function ProductLayout({ children, params }: Props) {
       />
       {children}
       <ProductFooter product={product} />
-    </>
+    </div>
   );
 }

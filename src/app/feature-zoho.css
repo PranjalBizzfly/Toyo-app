@@ -1,0 +1,249 @@
+/* ==========================================================================
+   Feature pages + product item detail pages — Zoho CRM features / feature
+   category / feature detail / vertical layouts, in ToyoApps colours.
+   Prefix: fz-
+   ========================================================================== */
+
+.fz-crumbs .breadcrumbs ol { gap: 4px 10px; }
+.fz-crumbs .breadcrumbs { font-size: 12px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; }
+.fz-crumbs .breadcrumbs a { color: inherit; opacity: .72; }
+.fz-crumbs .breadcrumbs a:hover { opacity: 1; text-decoration: underline; }
+.fz-crumbs .breadcrumbs [aria-current] { opacity: 1; }
+
+/* ---------- buttons / links ---------- */
+.fz-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 0 26px; border-radius: 4px;
+  background: var(--primary); color: var(--on-primary);
+  font-size: 15px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase;
+  transition: background .2s, transform .2s;
+}
+.fz-btn:hover { background: var(--primary-hover); }
+.fz-btn--light { background: var(--surface); color: var(--primary); }
+.fz-btn--light:hover { background: var(--primary-soft); }
+.fz-more { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 16px; color: var(--primary); }
+.fz-more svg { width: 18px; height: 18px; transition: transform .2s; }
+.fz-more:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- shared section rhythm ---------- */
+.fz-sec { padding-block: clamp(56px, 7vw, 100px); background: var(--surface); }
+.fz-sec--tint { background: var(--bg); }
+.fz-sec--warm { background: linear-gradient(180deg, var(--bg) 0%, var(--surface) 100%); }
+.fz-sec--band { background: var(--primary); color: var(--on-primary); }
+.fz-center { max-width: 960px; margin-inline: auto; text-align: center; }
+.fz-kicker { display: block; margin-bottom: 10px; font-size: 16px; font-weight: 600; color: var(--accent); }
+.fz-sec--band .fz-kicker { color: var(--highlight); }
+.fz-h2 { font-size: clamp(1.9rem, 1.4rem + 2vw, 3rem); font-weight: 500; line-height: 1.12; letter-spacing: -0.025em; color: var(--heading); }
+.fz-sec--band .fz-h2 { color: var(--on-primary); }
+.fz-lead { margin-top: 18px; font-size: clamp(1.02rem, .95rem + .3vw, 1.2rem); line-height: 1.65; color: var(--text); }
+.fz-center .fz-lead { margin-inline: auto; max-width: 62ch; }
+.fz-sec--band .fz-lead { color: var(--on-primary); opacity: .92; }
+.fz-center > .fz-more { margin-top: 18px; }
+
+/* ==========================================================================
+   1. Features hub — group rows
+   ========================================================================== */
+.fz-split { display: grid; gap: 24px 64px; }
+@media (min-width: 960px) { .fz-split { grid-template-columns: 1fr 1fr; align-items: start; } }
+.fz-split .fz-lead { margin-top: 0; }
+.fz-split__copy .fz-more { margin-top: 18px; }
+
+.fz-bandhead { max-width: 900px; }
+.fz-sec--band .fz-more { color: var(--on-primary); }
+
+/* Illustration + link rows (Zoho: art left, link cards right) */
+.fz-media { display: grid; gap: 32px 64px; margin-top: 48px; align-items: center; }
+@media (min-width: 960px) { .fz-media { grid-template-columns: 450px 1fr; } .fz-media--band { grid-template-columns: 360px 1fr; } }
+.fz-art { display: block; width: 100%; height: auto; border-radius: 24px; }
+.fz-art--band { border-radius: 12px; }
+@media (max-width: 959px) { .fz-art { max-width: 360px; margin-inline: auto; } }
+
+/* Zoho "link card" rows: icon square + name + round arrow */
+.fz-links { display: grid; gap: 16px; }
+.fz-link {
+  display: grid; grid-template-columns: 48px 1fr auto; align-items: center; gap: 16px;
+  padding: 10px 16px 10px 10px; border-radius: 4px; background: var(--surface); color: var(--heading);
+  box-shadow: 0 1px 2px rgb(0 0 0 / .08), 0 3px 8px rgb(0 0 0 / .08);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+a.fz-link:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -14px rgb(0 0 0 / .3); }
+.fz-link__name { font-size: 18px; font-weight: 500; line-height: 1.3; }
+.fz-link__sum { display: block; margin-top: 2px; font-size: 14px; line-height: 1.5; color: var(--text-secondary); }
+.fz-link__go { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--contrast); color: var(--on-contrast); }
+.fz-link__go svg { width: 14px; height: 14px; }
+.fz-mono {
+  display: grid; place-items: center; width: 48px; height: 48px; border-radius: 6px;
+  background: var(--primary-soft); color: var(--primary);
+  font-family: var(--font-display); font-size: 20px; font-weight: 700; transition: transform .3s ease;
+}
+a:hover .fz-mono { transform: scale(1.08) rotate(-3deg); }
+.fz-sec--band .fz-link { color: var(--text); }
+
+/* Zoho 5-up tile cards: icon, name, learn more */
+.fz-tiles { display: grid; gap: 24px; margin-top: 48px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.fz-tile {
+  display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 8px; background: var(--surface);
+  border: 1px solid var(--border-soft); box-shadow: 0 2px 6px rgb(0 0 0 / .08); text-align: left; color: var(--heading);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.fz-tiles__item { display: flex; }
+.fz-tiles__item > .fz-tile { flex: 1; }
+a.fz-tile:hover { transform: translateY(-4px); box-shadow: 0 14px 34px -14px rgb(0 0 0 / .25); }
+.fz-tile h3 { font-size: 20px; font-weight: 500; line-height: 1.25; color: var(--heading); }
+.fz-tile p { font-size: 15px; line-height: 1.55; color: var(--text-secondary); }
+.fz-tile .fz-more { margin-top: auto; font-size: 15px; }
+
+/* ==========================================================================
+   2. Coloured hero (feature detail, feature group)
+   ========================================================================== */
+.fz-hero { position: relative; overflow: hidden; padding-block: clamp(36px, 5vw, 56px) clamp(64px, 8vw, 112px); background: var(--primary); color: var(--on-primary); }
+.fz-hero::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(60% 80% at 100% 0%, rgb(255 255 255 / .14), transparent 60%), linear-gradient(180deg, transparent 60%, rgb(0 0 0 / .12));
+}
+.fz-hero > .container { position: relative; z-index: 1; }
+.fz-hero .fz-crumbs { margin-bottom: clamp(40px, 6vw, 72px); }
+.fz-hero h1 { font-size: clamp(2.3rem, 1.5rem + 3.4vw, 4.2rem); font-weight: 600; line-height: 1.08; letter-spacing: -0.03em; color: var(--on-primary); }
+.fz-hero__lead { margin-top: 22px; font-size: clamp(1.05rem, .95rem + .45vw, 1.3rem); line-height: 1.6; opacity: .94; }
+.fz-hero__ctas { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; margin-top: 32px; }
+.fz-hero__ctas .fz-more { color: var(--on-primary); }
+.fz-hero__eyebrow { margin-bottom: 14px; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--highlight); }
+.fz-hero--center .fz-hero__copy { max-width: 980px; margin-inline: auto; text-align: center; }
+.fz-hero--center .fz-hero__lead { max-width: 62ch; margin-inline: auto; }
+.fz-hero--center .fz-hero__ctas { justify-content: center; }
+.fz-hero--left .fz-hero__copy { max-width: 760px; }
+.fz-hero__copy > * { animation: m-rise .7s cubic-bezier(.2,.7,.2,1) both; }
+.fz-hero__copy > :nth-child(2) { animation-delay: 80ms; }
+.fz-hero__copy > :nth-child(3) { animation-delay: 160ms; }
+.fz-hero__copy > :nth-child(n+4) { animation-delay: 240ms; }
+@keyframes m-rise { from { opacity: 0; transform: translateY(18px); } }
+
+/* Tinted showcase panel (Zoho's light-blue frame around screenshots / content) */
+.fz-panel { margin-top: 44px; padding: clamp(18px, 3vw, 32px); border-radius: 12px; background: var(--primary-soft); text-align: left; }
+.fz-panel__inner { padding: clamp(20px, 3vw, 36px); border-radius: 10px; background: var(--surface); box-shadow: 0 1px 3px rgb(0 0 0 / .06); }
+.fz-panel .frame { margin: 0; }
+.fz-panel--shot { max-width: 1040px; margin-inline: auto; }
+.fz-hero + .fz-sec .fz-panel--shot { margin-top: calc(-1 * clamp(56px, 8vw, 100px) - 40px); position: relative; z-index: 2; }
+
+/* Lists inside panels */
+.fz-checks { display: grid; gap: 14px 32px; }
+@media (min-width: 760px) { .fz-checks--2 { grid-template-columns: 1fr 1fr; } }
+.fz-checks li { display: grid; grid-template-columns: 24px 1fr; gap: 12px; font-size: 16px; line-height: 1.6; color: var(--text); }
+.fz-checks svg { width: 22px; height: 22px; margin-top: 2px; padding: 3px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); }
+
+/* Numbered steps, horizontal on desktop */
+/* Feature group: problem line + capability checklist under each feature's summary. */
+.fz-gproblem { max-width: 70ch; margin: 14px auto 0; font-size: 16px; line-height: 1.7; color: var(--text-secondary); }
+.fz-glist { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 10px 28px; max-width: 900px; margin: 24px auto 4px; padding: 0; text-align: left; }
+.fz-glist li { position: relative; padding-left: 28px; font-size: 15.5px; line-height: 1.6; color: var(--text); }
+.fz-glist li::before { content: ""; position: absolute; left: 0; top: .35em; width: 16px; height: 16px; border-radius: 50%; background: var(--accent-soft); box-shadow: inset 0 0 0 5px var(--accent); }
+.fz-steps { list-style: none; padding-left: 0; counter-reset: fzs; display: grid; gap: 20px; margin-top: 44px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); text-align: left; }
+.fz-steps li { counter-increment: fzs; position: relative; padding: 64px 24px 24px; border-radius: 8px; background: var(--surface); border: 1px solid var(--border-soft); box-shadow: 0 2px 6px rgb(0 0 0 / .06); font-size: 16px; line-height: 1.6; color: var(--text); }
+.fz-steps li::before { content: counter(fzs, decimal-leading-zero); position: absolute; top: 20px; left: 24px; font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--primary); }
+.fz-steps li::after { content: ""; position: absolute; top: 34px; left: 64px; right: 24px; height: 1px; background: var(--border); }
+
+/* Tabs (Zoho "Multiple pipelines | Predictions | ...") built from radio inputs: no JS */
+.fz-tabs { margin-top: 40px; text-align: left; }
+.fz-tabs > input { position: absolute; opacity: 0; pointer-events: none; }
+.fz-tabs__bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 8px; border-bottom: 1px solid var(--border); }
+.fz-tabs__bar label { padding: 12px 20px; margin-bottom: -1px; border-bottom: 3px solid transparent; font-size: 18px; color: var(--heading); cursor: pointer; transition: color .2s, border-color .2s; }
+.fz-tabs__bar label:hover { color: var(--primary); }
+.fz-tabs__panel { display: none; padding-top: 36px; animation: m-rise .4s ease both; }
+.fz-tabs > input:nth-of-type(1):checked ~ .fz-tabs__bar label:nth-child(1),
+.fz-tabs > input:nth-of-type(2):checked ~ .fz-tabs__bar label:nth-child(2),
+.fz-tabs > input:nth-of-type(3):checked ~ .fz-tabs__bar label:nth-child(3),
+.fz-tabs > input:nth-of-type(4):checked ~ .fz-tabs__bar label:nth-child(4) { color: var(--primary); border-bottom-color: var(--primary); }
+/* Panels are div 2..5 inside .fz-tabs (div 1 is the tab bar), hence the +1. */
+.fz-tabs > input:nth-of-type(1):checked ~ .fz-tabs__panel:nth-of-type(2),
+.fz-tabs > input:nth-of-type(2):checked ~ .fz-tabs__panel:nth-of-type(3),
+.fz-tabs > input:nth-of-type(3):checked ~ .fz-tabs__panel:nth-of-type(4),
+.fz-tabs > input:nth-of-type(4):checked ~ .fz-tabs__panel:nth-of-type(5) { display: block; }
+.fz-tabs > input:focus-visible ~ .fz-tabs__bar { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 4px; }
+
+/* FAQ */
+.fz-faq { max-width: 880px; margin: 40px auto 0; text-align: left; }
+
+/* Detail facts strip (audience, integrations, source, see also) */
+.fz-facts { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.fz-fact { padding: 24px; border-radius: 8px; background: var(--surface); border: 1px solid var(--border-soft); }
+.fz-fact h2 { margin-bottom: 12px; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); }
+.fz-fact a { color: var(--primary); }
+.fz-fact p { font-size: 15px; line-height: 1.6; color: var(--text-secondary); word-break: break-word; }
+.fz-fact ul.fz-plain { display: grid; gap: 8px; }
+.fz-fact small { color: var(--text-muted); font-size: 12px; }
+
+/* Prev / next group nav */
+.fz-pager { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 48px; }
+.fz-pager a { display: grid; gap: 4px; padding: 16px 22px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--heading); font-weight: 600; transition: border-color .2s; }
+.fz-pager a small { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); }
+.fz-pager a:hover { border-color: var(--primary); color: var(--primary); }
+.fz-pager a:last-child:not(:first-child) { text-align: right; }
+
+/* Group hub: per-feature centred blocks */
+.fz-feat + .fz-feat { border-top: 1px solid var(--border-soft); }
+.fz-feat .fz-h2 { font-size: clamp(1.7rem, 1.3rem + 1.6vw, 2.6rem); }
+
+/* ==========================================================================
+   3. Vertical / item detail pages
+   ========================================================================== */
+.fz-vhero { padding-block: 20px clamp(48px, 6vw, 72px); background: var(--surface); color: var(--text); }
+.fz-vhero .fz-crumbs { margin-bottom: clamp(36px, 5vw, 56px); color: var(--text-secondary); }
+.fz-vhero .fz-crumbs .breadcrumbs [aria-current] { color: var(--heading); }
+.fz-vhero h1 { font-size: clamp(2.2rem, 1.4rem + 3.2vw, 3.9rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; color: var(--heading); }
+.fz-vhero .fz-hero__copy { max-width: 980px; margin-inline: auto; text-align: center; }
+.fz-vhero .fz-hero__lead { max-width: 64ch; margin-inline: auto; opacity: 1; color: var(--text); }
+.fz-vhero .fz-hero__ctas { justify-content: center; }
+.fz-vhero .fz-hero__ctas .fz-more { color: var(--primary); }
+.fz-vhero .fz-hero__eyebrow { color: var(--accent); }
+
+/* White box with two cards straddling white → blue */
+.fz-intro { position: relative; background: linear-gradient(180deg, var(--surface) 0 80px, var(--primary) 80px); padding-bottom: clamp(56px, 7vw, 96px); }
+.fz-intro__box { display: grid; gap: 20px; padding: 20px; border-radius: 6px; background: var(--surface); box-shadow: 0 10px 40px -20px rgb(0 0 0 / .35); }
+@media (min-width: 860px) { .fz-intro__box--2 { grid-template-columns: 1fr 1fr; } }
+.fz-intro__card { padding: clamp(22px, 3vw, 40px); border-radius: 6px; }
+.fz-intro__card h2 { font-size: clamp(1.4rem, 1.2rem + .8vw, 1.9rem); font-weight: 700; line-height: 1.2; color: var(--heading); margin-bottom: 14px; }
+.fz-intro__card p { font-size: 16px; line-height: 1.8; color: var(--text); }
+.fz-intro__card p + p { margin-top: .9em; }
+.fz-intro__card--dark { background: var(--island); }
+.fz-intro__card--dark h2 { color: var(--island-heading); }
+.fz-intro__card--dark p, .fz-intro__card--dark li { color: var(--island-text); }
+.fz-intro__card--dark .fz-checks svg { background: rgb(255 255 255 / .1); color: var(--highlight); }
+.fz-intro__band { margin-top: clamp(56px, 7vw, 88px); }
+
+/* White cards on the blue band ("Why choose …") */
+.fz-why { display: grid; gap: 28px; margin-top: 44px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); text-align: left; }
+.fz-why li { display: grid; align-content: start; gap: 18px; padding: 32px; border-radius: 6px; background: var(--surface); color: var(--heading); font-size: 18px; font-weight: 500; line-height: 1.45; transition: transform .35s ease, box-shadow .35s ease; }
+.fz-why li:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -18px rgb(0 0 0 / .45); }
+.fz-why .fz-dot { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: var(--highlight); color: var(--contrast); }
+.fz-why .fz-dot svg { width: 24px; height: 24px; }
+.fz-sub { display: block; width: 64px; height: 2px; margin: 18px auto 0; background: var(--primary); }
+
+/* Comparison table */
+.fz-table { margin-top: 40px; overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); text-align: left; }
+.fz-table table { width: 100%; min-width: 560px; border-collapse: collapse; }
+.fz-table th, .fz-table td { padding: 16px 20px; border-bottom: 1px solid var(--border-soft); font-size: 15px; line-height: 1.55; vertical-align: top; }
+.fz-table thead th { background: var(--primary-soft); color: var(--heading); font-weight: 700; }
+.fz-table tbody th { font-weight: 600; color: var(--heading); }
+.fz-table tbody tr:last-child > * { border-bottom: 0; }
+.fz-note { margin-top: 14px; font-size: 14px; color: var(--text-muted); }
+
+/* Doc links */
+.fz-doclinks { display: grid; gap: 14px; margin-top: 36px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); text-align: left; }
+
+@media (max-width: 640px) {
+  .fz-tabs__bar { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
+  .fz-tabs__bar label { white-space: nowrap; font-size: 16px; padding: 10px 14px; }
+  .fz-link__name { font-size: 16px; }
+  .fz-why li { padding: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fz-hero__copy > *, .fz-tabs__panel { animation: none; }
+}
+.fz-tabs__single { margin-bottom: 20px; font-size: 20px; font-weight: 600; color: var(--heading); }
+.fz-hero__grid { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 960px) { .fz-hero__grid { grid-template-columns: 1fr 480px; } }
+.fz-hero__art { max-width: 480px; border-radius: 16px; }
+@media (max-width: 959px) { .fz-hero__art { max-width: 320px; } }
+.fz-vhero__art { display: block; width: 100%; max-width: 1200px; height: auto; margin: clamp(32px, 5vw, 56px) auto 0; border-radius: 12px; }
+.fz-hero .breadcrumbs, .fz-hero .breadcrumbs a, .fz-hero .breadcrumbs li { color: var(--on-primary); }
+.fz-hero .breadcrumbs li::before, .fz-hero .breadcrumbs li::after { color: rgb(255 255 255 / .6); }

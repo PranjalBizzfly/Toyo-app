@@ -1,15 +1,38 @@
-import { getCatalogTree, getComparisons, getFeaturedProducts, getIndustries, getIntegrations, getResources, getSolutions } from "./catalog";
+import {
+  getCatalogTree,
+  getComparisons,
+  getFeaturedProducts,
+  getIndustries,
+  getIntegrations,
+  getProduct,
+  getProducts,
+  getResources,
+  getSolutions,
+  integrationHasPage,
+} from "./catalog";
 import { resourceTypes, routes } from "./routes";
 import { monogram, productAccent } from "./tint";
-import type { Product } from "@/content/types";
+import type { IconName, Product } from "@/content/types";
 
 const productLink = (p: Product): NavLink => ({
   label: p.name,
   href: routes.product(p.slug),
-  description: p.shortDescription,
+  description: p.tagline ?? p.shortDescription,
   accent: productAccent(p),
   initials: monogram(p.name),
 });
+
+const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
+
+/** "Uses Cardizo, Sibu +1" — names of the real products an entity links to. */
+function productNames(slugs: string[], verb: string, max = 2): string | undefined {
+  const names = slugs.map((s) => getProduct(s)?.name).filter((n): n is string => !!n);
+  if (!names.length) return undefined;
+  const more = names.length - max;
+  return `${verb} ${names.slice(0, max).join(", ")}${more > 0 ? ` +${more}` : ""}`;
+}
+
+const anchor = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
 /**
  * Navigation model. Built entirely from content, so a new product, category,
@@ -24,20 +47,34 @@ export interface NavLink {
   /** Product links only: brand colour and initials for the mega-menu tile. */
   accent?: string;
   initials?: string;
+  /** Small supporting line, e.g. the products a solution uses. */
+  meta?: string;
+  icon?: IconName;
 }
 
 export interface NavGroup {
   title: string;
   href?: string;
+  /** Short supporting text for the group (category tagline). */
+  description?: string;
+  /** Count line shown next to the group, e.g. "4 products". */
+  count?: string;
+  icon?: IconName;
   links: NavLink[];
 }
 
 export interface NavMenu {
   id: string;
   label: string;
-  /** "mega" = grouped columns + aside; "simple" = flat list of described links. */
-  kind: "mega" | "simple";
+  /**
+   * "mega" = products panel (category sidebar + app tiles);
+   * "simple" = intro column + described cards;
+   * "columns" = intro column + titled groups of links.
+   */
+  kind: "mega" | "simple" | "columns";
   groups: NavGroup[];
+  /** Left-hand intro: what this menu covers, with real counts. */
+  intro?: { title: string; text: string };
   aside?: { title: string; text: string; cta: NavLink };
   footerLink: NavLink;
 }
@@ -54,10 +91,15 @@ export function getMainNav(): NavMenu[] {
       // First group = featured apps; then every category with all its products.
       // The menu shows one group at a time (sidebar), so no per-category cap is needed.
       groups: [
-        ...(featured.length ? [{ title: "Featured Apps", href: routes.products(), links: featured.map(productLink) }] : []),
+        ...(featured.length
+          ? [{ title: "Featured Apps", href: routes.products(), icon: "spark" as IconName, count: plural(featured.length, "app"), description: "A selection from across the catalog.", links: featured.map(productLink) }]
+          : []),
         ...tree.map(({ category, products }) => ({
           title: category.name,
           href: routes.category(category.slug),
+          icon: category.icon,
+          description: category.tagline,
+          count: plural(products.length, "product"),
           links: products.map(productLink),
         })),
       ],
@@ -75,14 +117,15 @@ export function getMainNav(): NavMenu[] {
       id: "company",
       label: "Company",
       kind: "simple",
+      intro: { title: "Company", text: `The team behind ${getProducts().length} business products, and how to reach us.` },
       groups: [
         {
           title: "Company",
           links: [
-            { label: "About ToyoApps", href: routes.company(), description: "Who we are and what we are building." },
-            { label: "Publish your software", href: routes.publish(), description: "List and sell your SaaS on ToyoApps." },
-            { label: "Support", href: routes.support(), description: "Help with ToyoApps and its products." },
-            { label: "Contact", href: routes.contact(), description: "Talk to the ToyoApps team." },
+            { label: "About ToyoApps", href: routes.company(), icon: "building", description: "Who we are and what we are building." },
+            { label: "Publish your software", href: routes.publish(), icon: "store", description: "List and sell your SaaS on ToyoApps." },
+            { label: "Support", href: routes.support(), icon: "headset", description: "Help with ToyoApps and its products." },
+            { label: "Contact", href: routes.contact(), icon: "chat", description: "Talk to the ToyoApps team." },
           ],
         },
       ],
@@ -107,7 +150,19 @@ function optionalMenus(): NavMenu[] {
       id: "solutions",
       label: "Solutions",
       kind: "simple",
-      groups: [{ title: "Solutions", links: solutions.slice(0, 8).map((x) => ({ label: x.name, href: routes.solution(x.slug), description: x.summary })) }],
+      intro: { title: "Solutions", text: `${plural(solutions.length, "business goal")}, each matched to the ToyoApps products that get it done.` },
+      groups: [
+        {
+          title: "Solutions",
+          links: solutions.slice(0, 9).map((x) => ({
+            label: x.name,
+            href: routes.solution(x.slug),
+            description: x.summary,
+            icon: "layers" as IconName,
+            meta: productNames(x.products, "Uses"),
+          })),
+        },
+      ],
       footerLink: { label: "All solutions", href: routes.solutions() },
     });
   if (industries.length)
@@ -115,7 +170,19 @@ function optionalMenus(): NavMenu[] {
       id: "industries",
       label: "Industries",
       kind: "simple",
-      groups: [{ title: "Industries", links: industries.slice(0, 8).map((x) => ({ label: x.name, href: routes.industry(x.slug), description: x.summary })) }],
+      intro: { title: "Industries", text: `ToyoApps products by sector — ${plural(industries.length, "industry").replace(/ys$/, "ies")} with tools picked for how they work.` },
+      groups: [
+        {
+          title: "Industries",
+          links: industries.slice(0, 9).map((x) => ({
+            label: x.name,
+            href: routes.industry(x.slug),
+            description: x.summary,
+            icon: x.icon ?? ("building" as IconName),
+            meta: productNames(x.products, "Products:"),
+          })),
+        },
+      ],
       footerLink: { label: "All industries", href: routes.industries() },
     });
   if (integrations.length) {
@@ -123,20 +190,24 @@ function optionalMenus(): NavMenu[] {
     menus.push({
       id: "integrations",
       label: "Integrations",
-      kind: "simple",
-      groups: [
-        {
-          title: "Integrations",
-          links: categories.map((c) => ({
-            label: c,
-            href: `${routes.integrations()}#${c.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
-            description: integrations
-              .filter((i) => i.category === c)
-              .map((i) => i.name)
-              .join(", "),
+      kind: "columns",
+      intro: {
+        title: "Integrations",
+        text: `${plural(integrations.length, "integration")} across ${plural(categories.length, "category").replace(/ys$/, "ies")}, connecting ToyoApps products to the tools you already use.`,
+      },
+      groups: categories.map((c) => {
+        const list = integrations.filter((i) => i.category === c);
+        return {
+          title: c,
+          href: `${routes.integrations()}#${anchor(c)}`,
+          count: plural(list.length, "integration"),
+          links: list.map((i) => ({
+            label: i.name,
+            href: integrationHasPage(i) ? routes.integration(i.slug) : `${routes.integrations()}#${i.slug}`,
+            meta: productNames(i.products, "Works with"),
           })),
-        },
-      ],
+        };
+      }),
       footerLink: { label: "All integrations", href: routes.integrations() },
     });
   }
@@ -147,10 +218,17 @@ function optionalMenus(): NavMenu[] {
       kind: "simple",
       groups: [
         {
-          title: "Resources",
+          title: "Learn",
           links: resourceTypes
             .filter((r) => getResources(r.type).length)
             .map((r) => ({ label: r.label, href: routes.resourceType(r.type), description: r.description })),
+        },
+        {
+          title: "Support",
+          links: [
+            { label: "Help & support", href: routes.support() },
+            { label: "Contact us", href: routes.contact() },
+          ],
         },
       ],
       footerLink: { label: "Resource centre", href: routes.resources() },

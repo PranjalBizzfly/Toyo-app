@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Motion layer — the animation vocabulary measured on zoho.com (Home, CRM,
+   One, Books, Mail). Pure CSS + one IntersectionObserver (Motion.tsx).
+   Everything switches off under prefers-reduced-motion.
+   ========================================================================== */
+
+:root {
+  /* Zoho Mail's reveal curve: fast start, long soft landing. */
+  --ease-out-expo: cubic-bezier(.22, 1, .36, 1);
+  /* Zoho CRM's reveal curve. */
+  --ease-out-quad: cubic-bezier(.25, .46, .45, .94);
+}
+
+/* 1. Scroll reveal: fade + slide up + un-blur (Zoho "onscroll"/"animated").
+   Only hidden once JS has marked the page ready, so no-JS users see everything. */
+.motion-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(6px);
+  transition: opacity .7s var(--ease-out-expo), transform .9s var(--ease-out-expo), filter .7s var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.motion-ready [data-reveal].is-in { opacity: 1; transform: none; filter: none; }
+
+/* 2. Hero entrance on load (staggered rise), for the home and product heroes. */
+@keyframes m-rise { from { opacity: 0; transform: translateY(24px); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+.h-hero__copy > *, .zp-hero__copy > *, .zp-hero__grid > :not(.zp-hero__copy) {
+  animation: m-rise .9s var(--ease-out-expo) both;
+}
+.h-hero__copy > :nth-child(2), .zp-hero__copy > :nth-child(2) { animation-delay: 80ms; }
+.h-hero__copy > :nth-child(3), .zp-hero__copy > :nth-child(3) { animation-delay: 160ms; }
+.h-hero__copy > :nth-child(4), .zp-hero__copy > :nth-child(4) { animation-delay: 240ms; }
+.h-hero__copy > :nth-child(5), .zp-hero__copy > :nth-child(5) { animation-delay: 320ms; }
+.h-hero__copy > :nth-child(n+6), .zp-hero__copy > :nth-child(n+6), .zp-hero__grid > :not(.zp-hero__copy) { animation-delay: 400ms; }
+
+/* 3. Floating hero illustration (Zoho Mail's float_envelope / float_shield). */
+@keyframes m-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.h-hero__apps li :is(img, svg, .product-logo, [class*="logo"]):first-child {
+  animation: m-float 4.5s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * -0.7s);
+}
+
+/* 4. Pulse dot (Zoho One's "pulse"). */
+@keyframes m-pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--primary) 55%, transparent); } 70%, 100% { box-shadow: 0 0 0 10px transparent; } }
+.pulse-dot { display: inline-block; width: 8px; height: 8px; margin-right: 10px; border-radius: 50%; background: var(--primary); vertical-align: middle; animation: m-pulse 1.6s ease infinite; }
+
+/* 5. Bouncing "scroll down" chevron (Zoho Mail's hero_chevron). */
+@keyframes m-bounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
+.h-hero { position: relative; }
+.scroll-cue { position: absolute; left: 50%; bottom: 18px; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; color: var(--text-secondary); animation: m-bounce 1.2s ease-in-out infinite; }
+.scroll-cue svg { width: 22px; height: 22px; }
+.scroll-cue:hover { color: var(--primary); }
+@media (max-width: 767px) { .scroll-cue { display: none; } }
+
+/* 6. Logo marquee (Zoho's brand-slide / logos_marquee, linear, endless). */
+@keyframes m-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee { position: relative; display: flex; align-items: center; gap: 12px; padding-block: 22px; border-block: 1px solid var(--border); background: var(--surface); }
+.marquee__viewport { flex: 1; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee__track { display: flex; width: max-content; animation: m-marquee 40s linear infinite; }
+.marquee__list { display: flex; gap: 48px; padding-right: 48px; list-style: none; margin: 0; }
+.marquee__list a { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--heading); opacity: .8; transition: opacity .2s; }
+.marquee__list a:hover { opacity: 1; }
+.marquee__list :is(img, svg) { max-height: 28px; width: auto; }
+.marquee:hover .marquee__track, .marquee:focus-within .marquee__track, .marquee[data-paused] .marquee__track { animation-play-state: paused; }
+.marquee__toggle { flex: none; display: grid; place-items: center; width: 32px; height: 32px; margin-right: 16px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg); color: var(--text-secondary); }
+.marquee__toggle svg { width: 14px; height: 14px; }
+
+/* 7. Card hover lift (Zoho's transform + box-shadow 0.35s). */
+html :is(.card, .h-card, .h-need, .h-ind, .mm-app, .zcard, .z-show__tiles a, .h-eco__row) {
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease, background .25s ease;
+}
+html :is(.card, .h-card, .h-need, .h-ind, .mm-app, .zcard, .z-show__tiles a, .h-eco__row):hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px -14px rgb(0 0 0 / .22);
+}
+
+/* 8. Icon zoom on hover (Zoho CRM "zoom-icn"). */
+.icon-tile { transition: transform .3s ease; }
+:is(a, .card, .h-card):hover .icon-tile { transform: scale(1.08) rotate(-3deg); }
+
+/* 9. Arrow nudge on "learn more" links (Zoho's margin-left 0.2s). */
+:is(a, button):hover > svg:last-child:not(:only-child) { transform: translateX(3px); }
+
+/* 10. Button shine sweep (Zoho Mail's background-position 0.65s). */
+:is(.btn, .zbtn, .zpill, .zp-start__primary) { position: relative; overflow: hidden; }
+:is(.btn, .zbtn, .zpill, .zp-start__primary)::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / .28) 50%, transparent 70%);
+  transform: translateX(-120%); transition: transform .65s linear;
+}
+:is(.btn, .zbtn, .zpill, .zp-start__primary):hover::after { transform: translateX(120%); }
+
+/* 11. Smooth accordion open/close (Zoho's max-height 0.4s), modern browsers. */
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }
+  details::details-content { height: 0; overflow: clip; transition: height .4s ease, content-visibility .4s allow-discrete; }
+  details[open]::details-content { height: auto; }
+}
+
+/* 12. Utility entrances for popups/badges (Zoho's zoomIn / bounceIn / shake). */
+@keyframes m-zoom-in { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: none; } }
+@keyframes m-bounce-in { 0% { opacity: 0; transform: scale(.3); } 50% { opacity: 1; transform: scale(1.05); } 70% { transform: scale(.95); } 100% { transform: none; } }
+@keyframes m-shake { 10%, 90% { transform: translateX(-1px); } 20%, 80% { transform: translateX(2px); } 30%, 50%, 70% { transform: translateX(-4px); } 40%, 60% { transform: translateX(4px); } }
+.anim-zoom-in { animation: m-zoom-in .3s ease both; }
+.anim-bounce-in { animation: m-bounce-in .8s ease both; }
+.anim-shake { animation: m-shake .82s cubic-bezier(.36, .07, .19, .97) both; }
+
+/* Image slots (see ImageSlot.tsx): fluid, never overflow, keep their ratio. */
+.image-slot { display: block; width: 100%; max-width: 100%; height: auto; object-fit: cover; }
+
+/* Respect reduced motion: no hiding, no movement. */
+@media (prefers-reduced-motion: reduce) {
+  .motion-ready [data-reveal] { opacity: 1; transform: none; filter: none; }
+  .marquee__track { animation: none; }
+  .marquee__viewport { overflow-x: auto; }
+}

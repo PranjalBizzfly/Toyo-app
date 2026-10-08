@@ -1,13 +1,17 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import { FooterResolver } from "@/components/layout/FooterResolver";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { Motion } from "@/components/layout/Motion";
 import { ScrollToggle } from "@/components/layout/ScrollToggle";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { site } from "@/content/site";
+import { getProducts } from "@/lib/catalog";
 import { jsonLd } from "@/lib/seo";
 import { themeInitScript } from "@/lib/theme";
 import "./globals.css";
 import "./layout-zoho.css";
+import "./motion.css";
 
 // Same typefaces as the original toyoapps.com: Inter for text, Space Grotesk for the wordmark and headings.
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -53,8 +57,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <SiteHeader />
         <main id="main">{children}</main>
-        <SiteFooter />
+        <FooterResolver productSlugs={getProducts().map((p) => p.slug)}>
+          <SiteFooter />
+        </FooterResolver>
         <ScrollToggle />
+        <Motion />
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(organization)} />
       </body>
     </html>

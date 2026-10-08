@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import "@/app/product-zoho.css";
 
 export interface ProductNavItem {
   label: string;
@@ -26,7 +27,7 @@ export function ProductNav({
     i === 0 ? pathname === href : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <nav className="product-nav" aria-label="Product">
+    <nav className="product-nav pz-nav" aria-label="Product">
       <div className="container product-nav__bar">
         {brand}
         <div className="product-nav__links">

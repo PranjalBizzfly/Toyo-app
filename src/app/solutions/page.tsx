@@ -3,7 +3,7 @@ import { getSolutions } from "@/lib/catalog";
 import { routes } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo";
 
-const items = () => getSolutions().map((s) => ({ name: s.name, summary: s.summary, href: routes.solution(s.slug) }));
+const items = () => getSolutions().map((s) => ({ name: s.name, summary: s.summary, href: routes.solution(s.slug), meta: `${s.products.length} products`, icon: "layers" as const }));
 
 export const metadata = buildMetadata({
   title: "Solutions by business need",
@@ -18,8 +18,10 @@ export default function SolutionsPage() {
       crumbs={[{ name: "Solutions", href: routes.solutions() }]}
       eyebrow="Solutions"
       title="Start from the problem, not the product"
-      lead="Each solution maps a real business problem to the approach and ToyoApps products that solve it."
+      lead="Each solution describes a common business problem, the approach that addresses it, and the ToyoApps products that cover each part. The products are independent — adopt one or several."
       items={items()}
+      listTitle="Solutions by business need"
+      listLead="Pick the problem closest to yours to see the approach, what each product contributes, and answers to common questions."
       emptyTitle="Solutions are being written"
       emptyText="We're mapping ToyoApps products to the business problems they solve. In the meantime, browse products by category."
     />

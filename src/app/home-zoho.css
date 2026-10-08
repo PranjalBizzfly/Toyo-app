@@ -1,0 +1,60 @@
+/* Home page — Zoho home composition layer (promos, suite band, brands strip,
+   values card over a photo band, stats artwork). Tokens only. */
+
+/* Hero flows into the promo pair: same tint band, then the promo frame
+   straddles the tint / suite-band boundary like Zoho's promos. */
+.home .h-hero { padding-bottom: 32px; }
+.hz-duo { background: linear-gradient(var(--bg) 0 46%, var(--band-yellow) 46% 100%); padding: 0 0 72px; }
+.hz-duo .z-duo__card h2 { margin: 0; }
+.hz-pill { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 28px; border: 1px solid currentColor; border-radius: 999px; color: var(--primary); font-size: 14px; font-weight: 600; letter-spacing: .03em; text-transform: uppercase; transition: background .2s var(--ease); }
+.z-duo__card--b .hz-pill { color: var(--accent); }
+.hz-pill:hover { background: var(--surface); }
+.hz-pill span { font-size: 1.2em; line-height: 1; }
+
+/* Suite band */
+.hz-suite__logo .product-card__logo { width: 64px; height: 64px; border-radius: 16px; font-size: 1.3rem; }
+.z-suite .z-suite__main > div { display: grid; justify-items: start; }
+.hz-suite__meta { font-size: 15px; margin: -14px 0 24px; opacity: .85; }
+.z-suite__side small { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+@media (max-width: 600px) { .z-suite__main { grid-template-columns: 1fr; } }
+
+/* Brands strip: centred label with short rule, borderless marquee */
+.hz-brands { padding: 90px 0; }
+.hz-label { font-size: 13px !important; font-weight: 500 !important; letter-spacing: .04em !important; text-transform: uppercase; color: var(--text-secondary) !important; }
+.hz-label::after { content: ""; display: block; width: 24px; height: 1px; margin: 14px auto 0; background: var(--primary); }
+.hz-brands .marquee { border: 0; background: transparent; margin: 40px 0 36px; }
+
+/* Values: full-width photo band with a white card overlapping it */
+.hz-values { position: relative; background: var(--bg); padding-bottom: 130px; }
+.hz-values__photo .image-slot { display: block; width: 100%; height: clamp(220px, 32vw, 550px); object-fit: cover; }
+.hz-values__card { position: relative; margin-top: clamp(-320px, -16vw, -120px); max-width: min(1140px, calc(100% - 32px)); background: var(--surface); border-radius: 6px; box-shadow: var(--shadow); padding: clamp(40px, 6vw, 80px) clamp(20px, 5vw, 80px); }
+
+/* Stats: decorative artwork bottom-right, like Zoho's line drawing */
+.hz-stats { position: relative; overflow: hidden; }
+.hz-stats .container { position: relative; }
+
+/* Zoho promo headline scale (26px, coloured) */
+.home .z-duo__card h2 { font-size: clamp(1.4rem, 1.2rem + .6vw, 1.65rem); color: var(--primary); letter-spacing: -0.02em; }
+.home .z-duo__card--b h2 { color: var(--accent); }
+.home .z-duo__card { padding: 44px 32px 36px; }
+
+/* Values inside the card: Zoho 2-column, icon left, large light title */
+.hz-values .h-values { list-style: none; padding: 0; margin: 0 auto; max-width: 980px; gap: 56px 72px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); }
+.hz-values .h-values li { display: grid; grid-template-columns: 48px 1fr; column-gap: 24px; padding: 0; border: 0; }
+.hz-values .h-values__n { display: none; }
+.hz-values .h-values__icon { position: static; grid-row: span 2; color: var(--primary); }
+.hz-values .h-values__icon svg { width: 40px; height: 40px; }
+.hz-values .h-values h3 { margin: 0 0 12px; font-family: var(--font-display); font-weight: 400; font-size: clamp(1.4rem, 1.2rem + .7vw, 1.85rem); line-height: 1.2; }
+.hz-values .h-values p { font-size: 15px; line-height: 1.7; }
+.hz-values .h-center { margin-top: 56px; }
+
+/* Homepage image spaces (ImageSlot) */
+.hi-hero-art { margin-top: clamp(28px, 4vw, 48px); }
+.hi-hero-art .image-slot, .hi-band-art .image-slot { border-radius: 6px; }
+.hi-band-art { margin: 0 auto clamp(28px, 3.5vw, 44px); max-width: 1200px; }
+.hi-spot-art { margin-bottom: 20px; }
+.hi-spot-art .image-slot { border-radius: 6px; box-shadow: var(--shadow); }
+.hi-card-art { margin: -1px -1px 14px; }
+.hi-card-art .image-slot { border-radius: 4px 4px 0 0; }
+.hi-side-art { margin-top: 24px; }
+.hi-side-art .image-slot { border-radius: 6px; }

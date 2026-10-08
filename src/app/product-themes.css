@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Per-product colour combinations (see src/lib/product-theme.ts).
+   Every value comes from the ToyoApps palette in globals.css: Toyo blue,
+   green, yellow and navy, with deeper shades so white text stays AA.
+   The wrapper paints the whole product site (sub-nav → product footer), so
+   each product's pages carry their own page colour, like Zoho's product sites.
+   ========================================================================== */
+
+.pt { display: block; background: var(--bg); }
+
+/* 0 — Toyo Blue · green · yellow (the site default) */
+.pt-0 { --primary: #0f7bbe; --primary-hover: #0b679f; --primary-soft: #e8f4fc; --accent: #5fa32a; --accent-soft: #eef7e6; --highlight: #f5c842; }
+/* 1 — Leaf Green · blue · yellow */
+.pt-1 { --primary: #3f7f1c; --primary-hover: #336817; --primary-soft: #eaf5e1; --accent: #0f7bbe; --accent-soft: #e8f4fc; --highlight: #f5c842; }
+/* 2 — Navy · blue · yellow */
+.pt-2 { --primary: #1a3149; --primary-hover: #0f2235; --primary-soft: #e8eef5; --accent: #0f7bbe; --accent-soft: #e8f4fc; --highlight: #f5c842; }
+/* 3 — Gold · blue · green */
+.pt-3 { --primary: #8a6300; --primary-hover: #6f5000; --primary-soft: #fef6dc; --accent: #0f7bbe; --accent-soft: #e8f4fc; --highlight: #7bc142; }
+/* 4 — Pine · blue · yellow */
+.pt-4 { --primary: #26744c; --primary-hover: #1e5e3d; --primary-soft: #e9f5ee; --accent: #0f7bbe; --accent-soft: #e8f4fc; --highlight: #f5c842; }
+/* 5 — Deep Blue · green · bright green */
+.pt-5 { --primary: #0b5f93; --primary-hover: #094d78; --primary-soft: #e6f3fb; --accent: #5fa32a; --accent-soft: #eef7e6; --highlight: #7bc142; }
+/* 6 — Navy · green · bright green */
+.pt-6 { --primary: #1a3149; --primary-hover: #0f2235; --primary-soft: #e8eef5; --accent: #4f8a22; --accent-soft: #eef7e6; --highlight: #7bc142; }
+/* 7 — Green · navy · deep yellow */
+.pt-7 { --primary: #437a1d; --primary-hover: #366317; --primary-soft: #f3f8e8; --accent: #1a3149; --accent-soft: #e8eef5; --highlight: #e2b11e; }
+
+.pt { --focus: var(--primary); --on-primary: #ffffff; }
+
+/* Page colours, derived from each product's main colour: page background,
+   tinted bands, fills, borders and the dark "island" bands. */
+.pt {
+  --bg: color-mix(in srgb, var(--primary) 7%, #f8fbfd);
+  --pz-tint: color-mix(in srgb, var(--primary) 11%, #ffffff);
+  --fill: color-mix(in srgb, var(--primary) 12%, #ffffff);
+  --border-soft: color-mix(in srgb, var(--primary) 14%, #e7eef4);
+  --border: color-mix(in srgb, var(--primary) 18%, #dbe6ef);
+  --island: color-mix(in srgb, var(--primary) 78%, #0a1a2a);
+  --island-elevated: color-mix(in srgb, var(--primary) 66%, #16304a);
+  --header-bg: color-mix(in srgb, var(--primary) 6%, rgb(255 255 255 / 0.9));
+}
+/* Hero bands get a stronger wash of the product colour. */
+.pt :is(.pz-hero, .pz-sec-hero) { background-color: color-mix(in srgb, var(--primary) 14%, #ffffff); }
+.pt .pz-cta { background-color: color-mix(in srgb, var(--primary) 12%, #ffffff); }
+
+/* The product's own monogram (sub-nav brand and hero card) takes the product colour;
+   other products' logos on the page (related, connections) keep their own. */
+.pt :is(.product-nav__brand, .pz-hero) span.product-card__logo { background: var(--primary) !important; color: var(--on-primary); }
+/* Product footer paints logo tiles white — keep monogram initials visible on it. */
+.pt :is(.pz-foot__promo, .pz-foot__more) span.product-card__logo { color: var(--primary); font-weight: 700; display: grid; place-items: center; }
+:root[data-theme="dark"] .pt :is(.pz-foot__promo, .pz-foot__more) span.product-card__logo { color: #0a1a2a; }
+
+/* Dark theme: lighter tones of the same hues, dark text on top of them. */
+:root[data-theme="dark"] .pt {
+  --bg: color-mix(in srgb, var(--primary) 7%, #07121d);
+  --pz-tint: color-mix(in srgb, var(--primary) 11%, #0c1b2a);
+  --fill: color-mix(in srgb, var(--primary) 14%, #14293e);
+  --border-soft: color-mix(in srgb, var(--primary) 16%, #15283b);
+  --border: color-mix(in srgb, var(--primary) 20%, #1d3550);
+  --island: color-mix(in srgb, var(--primary) 22%, #0b1f33);
+  --island-elevated: color-mix(in srgb, var(--primary) 26%, #13304a);
+  --header-bg: color-mix(in srgb, var(--primary) 8%, rgb(7 18 29 / 0.9));
+}
+:root[data-theme="dark"] .pt :is(.pz-hero, .pz-sec-hero) { background-color: color-mix(in srgb, var(--primary) 14%, #07121d); }
+:root[data-theme="dark"] .pt .pz-cta { background-color: color-mix(in srgb, var(--primary) 12%, #07121d); }
+:root[data-theme="dark"] .pt { --primary-soft: color-mix(in srgb, var(--primary) 16%, transparent); --accent-soft: color-mix(in srgb, var(--accent) 16%, transparent); --on-primary: #0a1a2a; }
+:root[data-theme="dark"] .pt-0 { --primary: #3aaef0; --primary-hover: #66c2f5; --accent: #8fd05a; }
+:root[data-theme="dark"] .pt-1 { --primary: #8fd05a; --primary-hover: #a8de7c; --accent: #3aaef0; }
+:root[data-theme="dark"] .pt-2 { --primary: #b5c4d2; --primary-hover: #cfe0ed; --accent: #3aaef0; }
+:root[data-theme="dark"] .pt-3 { --primary: #f5c842; --primary-hover: #f8d76e; --accent: #3aaef0; }
+:root[data-theme="dark"] .pt-4 { --primary: #6cc79a; --primary-hover: #8fd6b2; --accent: #3aaef0; }
+:root[data-theme="dark"] .pt-5 { --primary: #66c2f5; --primary-hover: #8fd3f8; --accent: #8fd05a; }
+:root[data-theme="dark"] .pt-6 { --primary: #b5c4d2; --primary-hover: #cfe0ed; --accent: #8fd05a; }
+:root[data-theme="dark"] .pt-7 { --primary: #a8de7c; --primary-hover: #c0e8a0; --accent: #f5c842; }

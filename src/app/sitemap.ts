@@ -14,7 +14,7 @@ import {
   getSolutions,
   isIndexable,
 } from "@/lib/catalog";
-import { getAvailableSections } from "@/lib/product-sections";
+import { getAvailableSections, getProductItems, itemSections } from "@/lib/product-sections";
 import { resourceTypes, routes } from "@/lib/routes";
 import { absoluteUrl } from "@/lib/seo";
 
@@ -43,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         .filter(featureHasPage)
         .map((f) => url(routes.feature(p.slug, f.slug), 0.6)),
       ...getFeatureGroupsWithPages(p).map((g) => url(routes.featureGroup(p.slug, g.group.slug), 0.6)),
+      ...itemSections.flatMap((s) => getProductItems(p, s).filter((i) => i.hasPage).map((i) => url(routes.productItem(p.slug, s, i.slug), 0.6))),
     ]),
   ];
 

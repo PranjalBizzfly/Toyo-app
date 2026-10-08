@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { HubPageTemplate } from "@/components/templates/EntityTemplates";
+import { ResourcesHubTemplate } from "@/components/templates/EntityTemplates";
 import { getResources } from "@/lib/catalog";
 import { resourceTypes, routes } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo";
@@ -27,15 +27,23 @@ export default async function ResourceTypePage({ params }: Props) {
   const t = await find(params);
   if (!t) notFound();
   return (
-    <HubPageTemplate
+    <ResourcesHubTemplate
       crumbs={[
         { name: "Resources", href: routes.resources() },
         { name: t.label, href: routes.resourceType(t.type) },
       ]}
-      eyebrow="Resources"
       title={t.label}
       lead={t.description}
-      items={getResources(t.type).map((r) => ({ name: r.name, summary: r.summary, href: routes.resource(r.type, r.slug) }))}
+      activeCategory={t.label}
+      items={getResources(t.type).map((r) => ({
+        name: r.name,
+        summary: r.summary,
+        href: routes.resource(r.type, r.slug),
+        meta: t.label,
+        date: new Date(r.publishedAt).toLocaleDateString("en", { dateStyle: "medium" }),
+        author: r.author,
+      }))}
+      categories={resourceTypes.map((r) => ({ label: r.label, href: routes.resourceType(r.type), description: r.description }))}
       emptyTitle={`No ${t.label.toLowerCase()} yet`}
       emptyText="New content will appear here as it's published."
     />

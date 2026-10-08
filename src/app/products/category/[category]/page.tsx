@@ -1,7 +1,10 @@
+import "../../../catalog-zoho.css";
+import { ImageSlot } from "@/components/ui/ImageSlot";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ProductCard } from "@/components/product/cards";
-import { CtaBand, FaqList, PageHero, Section, SectionHeader } from "@/components/ui/primitives";
+import { CatalogBrowser, type CatalogSection } from "@/components/product/CatalogBrowser";
+import { Breadcrumbs, CtaBand, FaqList, Section, SectionHeader } from "@/components/ui/primitives";
+import { toCatalogItem } from "../catalog-item";
 import {
   getCategories,
   getCategory,
@@ -50,30 +53,41 @@ export default async function CategoryPage({ params }: Props) {
   const industries = getIndustries().filter((i) => touches(i.products));
   const resources = getResources().filter((r) => touches(r.products)).slice(0, 6);
 
+  // Zoho all-products layout, scoped to one category: the sidebar lists every
+  // category (current one marked) and links back to the full catalog.
+  const sideLinks = [
+    { label: "All products", href: routes.products() },
+    ...getCategories()
+      .filter((c) => getProductsByCategory(c.slug).length > 0)
+      .map((c) => ({ label: c.name, href: routes.category(c.slug), active: c.slug === category.slug })),
+  ];
+  const sections: CatalogSection[] = [
+    {
+      id: "products",
+      title: `${category.name} products`,
+      tagline: category.tagline,
+      items: products.map((p) => toCatalogItem(p, p.category === category.slug ? undefined : `Primarily ${getCategory(p.category)?.name ?? ""}`)),
+    },
+  ];
+
   return (
     <>
-      <PageHero
-        breadcrumbs={[
-          { name: "Products", href: routes.products() },
-          { name: category.name, href: routes.category(category.slug) },
-        ]}
-        eyebrow="Category"
-        title={`${category.name} software`}
-        lead={category.description}
-      />
-
-      <Section tight>
-        <SectionHeader title={`${category.name} products`} lead={category.tagline} />
-        <div className="grid" style={{ ["--min" as string]: "300px" }}>
-          {products.map((p) => (
-            <ProductCard
-              key={p.slug}
-              product={p}
-              categoryName={p.category === category.slug ? undefined : `Primarily ${getCategory(p.category)?.name ?? ""}`}
-            />
-          ))}
+      <header className="zc-hero zc-hero--crumbs">
+        <div className="container">
+          <Breadcrumbs
+            items={[
+              { name: "Products", href: routes.products() },
+              { name: category.name, href: routes.category(category.slug) },
+            ]}
+          />
+          <h1>{category.name} software</h1>
+          <hr className="zc-rule" />
+          {category.description && <p className="zc-hero__lead">{category.description}</p>}
+          <ImageSlot src={`/images/categories/${category.slug}.svg`} alt={`${category.name} software`} width={960} height={360} priority className="zc-hero__art" />
         </div>
-      </Section>
+      </header>
+
+      <CatalogBrowser sections={sections} sideLinks={sideLinks} groupLabel="In this category" searchPlaceholder={`Search ${category.name.toLowerCase()} products…`} />
 
       {category.problems?.length ? (
         <Section tone="surface">

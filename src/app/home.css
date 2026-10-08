@@ -1,0 +1,521 @@
+/* =====================================================================
+   Homepage layer. Built only on theme tokens from globals.css /
+   layout-zoho.css so light and dark both work.
+   ===================================================================== */
+.home { overflow-x: clip; }
+.home h2 { font-size: var(--fs-2xl); letter-spacing: -0.02em; color: var(--heading); line-height: 1.15; }
+.home h3 { color: var(--heading); }
+.home .product-card__logo { width: 40px; height: 40px; border-radius: 11px; font-size: .9rem; object-fit: contain; }
+
+.h-sec { padding: clamp(56px, 7vw, 96px) 0; }
+.h-sec--surface { background: var(--surface); border-block: 1px solid var(--border-soft); }
+.h-sec--tint { background: var(--band-yellow); }
+.h-sec--warm { background: var(--band-warm); }
+.h-sec--island { background: var(--island); color: var(--island-text); }
+.h-sec--island h2, .h-sec--island h3 { color: var(--island-heading); }
+.h-sec--island .h-eyebrow { color: var(--highlight); }
+
+.h-head { max-width: 720px; margin-bottom: 36px; }
+.h-head--center { margin-inline: auto; text-align: center; }
+.h-eyebrow { font-size: 13px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; color: var(--primary); margin-bottom: 10px; }
+.h-lead { margin-top: 12px; color: var(--text-muted); font-size: var(--fs-lg); }
+.h-center { text-align: center; margin-top: 32px; }
+.h-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.h-actions--center { justify-content: center; }
+.h-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+.h-tag { display: inline-flex; padding: 2px 10px; border-radius: 999px; background: var(--fill); color: var(--text-secondary); font-size: var(--fs-xs); font-weight: 560; }
+a.h-tag:hover { color: var(--primary); }
+.h-more { display: inline-flex; gap: 6px; color: var(--primary); font-weight: 600; font-size: var(--fs-sm); }
+.h-more span { transition: transform .2s var(--ease); }
+a:hover > .h-more span, .h-more:hover span { transform: translateX(3px); }
+
+/* ---------- 1. Hero ---------- */
+.h-hero { position: relative; padding: clamp(48px, 8vw, 110px) 0 clamp(48px, 6vw, 80px); background: var(--bg); overflow: hidden; }
+.h-hero__grid { position: relative; display: grid; gap: 48px; align-items: center; }
+.h-hero h1 { font-size: var(--fs-3xl); line-height: 1.08; letter-spacing: -0.03em; color: var(--heading); max-width: 16ch; }
+.h-hero__lead { margin: 20px 0 28px; font-size: var(--fs-lg); color: var(--text-secondary); max-width: 56ch; }
+.h-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.h-chips a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: var(--fs-sm); font-weight: 560; transition: border-color .2s var(--ease), transform .2s var(--ease); }
+.h-chips a:hover { border-color: var(--tint-ink, var(--primary)); transform: translateY(-1px); }
+.h-chips svg { width: 16px; height: 16px; color: var(--tint-ink, var(--primary)); }
+:root[data-theme="dark"] .h-chips svg { color: color-mix(in srgb, var(--tint-ink) 45%, #fff); }
+.h-hero__apps { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-lg); }
+.h-hero__apps ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); gap: 10px; }
+.h-hero__apps li { animation: h-rise .6s var(--ease) both; animation-delay: calc(var(--i, 0) * 70ms); }
+.h-hero__apps a { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: var(--radius-sm); transition: background .2s var(--ease); min-width: 0; }
+.h-hero__apps a:hover { background: var(--fill); }
+.h-hero__apps a > span:last-child { display: grid; min-width: 0; }
+.h-hero__apps strong { color: var(--heading); }
+.h-hero__apps small { color: var(--text-muted); font-size: var(--fs-xs); }
+@media (min-width: 960px) { .h-hero__grid { grid-template-columns: 1.15fr 1fr; } }
+
+@keyframes h-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* ---------- 2. Featured ---------- */
+.h-featured { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.h-fcard { height: 100%; display: flex; flex-direction: column; gap: 14px; padding: 24px; border-top: 3px solid var(--primary); transition: transform .2s var(--ease), box-shadow .2s var(--ease); }
+.h-fcard:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.h-fcard__head { display: flex; gap: 14px; align-items: center; }
+.h-fcard__head h3 { font-size: var(--fs-lg); margin-bottom: 4px; }
+.h-fcard > p { color: var(--text-secondary); }
+.h-fcard__cap { display: flex; gap: 10px; align-items: flex-start; padding: 12px; border-radius: var(--radius-sm); background: var(--primary-soft); color: var(--heading); font-weight: 600; font-size: var(--fs-sm); }
+.h-fcard__cap svg { width: 18px; height: 18px; flex: none; color: var(--primary); margin-top: 2px; }
+.h-fcard__cap span { display: grid; }
+.h-fcard__cap small { font-size: var(--fs-xs); font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
+.h-fcard .h-more { margin-top: auto; }
+
+/* ---------- 3. Needs ---------- */
+.h-needs { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); }
+.h-need { height: 100%; display: flex; flex-direction: column; gap: 8px; padding: 22px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); transition: border-color .2s var(--ease), transform .2s var(--ease); }
+.h-need:hover { border-color: var(--tint-ink, var(--primary)); transform: translateY(-2px); }
+.h-need .icon-tile { margin-bottom: 6px; }
+.h-need small { font-size: var(--fs-xs); font-weight: 650; text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted); }
+.h-need strong { color: var(--heading); font-size: var(--fs-lg); line-height: 1.3; }
+.h-need__text { color: var(--text-secondary); font-size: var(--fs-sm); }
+.h-need__meta { margin-top: auto; padding-top: 10px; border-top: 1px dashed var(--border); color: var(--primary); font-size: var(--fs-xs); font-weight: 600; }
+
+/* ---------- 4. Ecosystem ---------- */
+.h-eco { display: grid; gap: 0; border-top: 1px solid var(--border); }
+.h-eco__row { display: grid; gap: 18px; padding: 28px 0; border-bottom: 1px solid var(--border); align-items: center; }
+.h-eco__about { display: flex; gap: 16px; align-items: flex-start; }
+.h-eco__about h3 { font-size: var(--fs-xl); }
+.h-eco__about p { color: var(--text-secondary); font-size: var(--fs-sm); max-width: 60ch; }
+.h-eco__count { font-weight: 650; color: var(--tint-ink, var(--primary)) !important; margin: 2px 0 6px; }
+:root[data-theme="dark"] .h-eco__count { color: color-mix(in srgb, var(--tint-ink) 45%, #fff) !important; }
+.h-eco__apps { display: flex; flex-wrap: wrap; gap: 8px; }
+.h-eco__apps a { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 6px; border-radius: 999px; background: var(--fill); color: var(--heading); font-weight: 560; font-size: var(--fs-sm); }
+.h-eco__apps a:hover { background: var(--primary-soft); }
+.h-eco__apps .product-card__logo { width: 28px; height: 28px; border-radius: 50%; font-size: .7rem; }
+@media (min-width: 1024px) { .h-eco__row { grid-template-columns: 1.4fr 1fr auto; } }
+
+/* ---------- 5. Portfolio ---------- */
+.h-portfolio { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); }
+.h-pcard { height: 100%; display: flex; flex-direction: column; gap: 10px; padding: 18px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg); transition: border-color .2s var(--ease); }
+.h-pcard:hover { border-color: var(--border-hover); }
+.h-pcard__head { display: flex; gap: 12px; align-items: center; }
+.h-pcard__head > span:last-child { display: grid; }
+.h-pcard__head strong { color: var(--heading); }
+.h-pcard__head small { color: var(--text-muted); font-size: var(--fs-xs); }
+.h-pcard__desc { color: var(--text-secondary); font-size: var(--fs-sm); }
+.h-pcard__focus { color: var(--text-muted); font-size: var(--fs-xs); }
+.h-pcard__focus b { color: var(--text-secondary); }
+.h-pcard__foot { margin-top: auto; display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center; }
+.h-pcard__foot .h-more { margin-left: auto; }
+
+/* ---------- 6. Tasks ---------- */
+.h-tasks { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.h-task { padding: 22px; border-radius: var(--radius); background: linear-gradient(160deg, var(--primary-soft), transparent 60%), var(--card); border: 1px solid var(--border); }
+.h-task__by { display: flex; gap: 8px; align-items: center; font-size: var(--fs-xs); font-weight: 650; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
+.h-task__by .product-card__logo { width: 24px; height: 24px; border-radius: 7px; font-size: .6rem; }
+.h-task h3 { margin: 10px 0 12px; font-size: var(--fs-lg); }
+.h-task ul { display: grid; gap: 6px; }
+.h-task li a { display: flex; gap: 8px; align-items: flex-start; color: var(--text); font-size: var(--fs-sm); }
+.h-task li a:hover { color: var(--primary); }
+.h-task svg { width: 16px; height: 16px; flex: none; margin-top: 3px; color: var(--accent); }
+
+/* ---------- 7. Industries ---------- */
+.h-industries { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+.h-ind { display: flex; flex-direction: column; gap: 12px; padding: 26px; }
+.h-ind__icon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: var(--warning-soft); color: var(--warning); }
+.h-ind__icon svg { width: 24px; height: 24px; }
+.h-ind > p { color: var(--text-secondary); }
+.h-ind__list { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.h-ind__list small { width: 100%; font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted); font-weight: 650; }
+.h-ind .h-tag { white-space: normal; }
+.h-ind .h-more { margin-top: auto; }
+
+/* ---------- 8. Roles ---------- */
+.h-roles { display: grid; gap: 0; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); border-left: 1px solid var(--border); border-top: 1px solid var(--border); }
+.h-role { padding: 24px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.h-role h3 { display: flex; gap: 10px; align-items: center; font-size: var(--fs-lg); margin-bottom: 12px; text-transform: capitalize; }
+.h-role h3 svg { width: 20px; height: 20px; color: var(--primary); flex: none; }
+.h-role ul { display: grid; gap: 8px; font-size: var(--fs-sm); }
+.h-role a { color: var(--heading); font-weight: 600; }
+.h-role a.h-role__f { color: var(--text-secondary); font-weight: 400; }
+.h-role a:hover { color: var(--primary); }
+
+/* ---------- 9. Steps ---------- */
+.h-steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); counter-reset: none; }
+.h-steps li { position: relative; padding: 26px 22px; border-radius: var(--radius); background: var(--island-elevated); border: 1px solid var(--island-border); }
+.h-steps__n { position: absolute; top: 18px; right: 20px; font-family: var(--font-display); font-size: 2rem; color: var(--island-border-strong); line-height: 1; }
+.h-steps svg { width: 28px; height: 28px; color: var(--highlight); }
+.h-steps h3 { margin: 14px 0 6px; font-size: var(--fs-lg); }
+.h-steps p { color: var(--island-muted); font-size: var(--fs-sm); }
+
+/* ---------- 10. Depth ---------- */
+.h-depth { display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); }
+.h-depth__col { display: flex; flex-direction: column; gap: 14px; }
+.h-depth__head { display: flex; gap: 12px; align-items: center; padding-bottom: 12px; border-bottom: 2px solid var(--primary); }
+.h-depth__head h3 { font-size: var(--fs-lg); }
+.h-depth ol { display: grid; gap: 4px; }
+.h-depth ol a { display: grid; gap: 2px; padding: 10px 12px; border-radius: var(--radius-sm); transition: background .2s var(--ease); }
+.h-depth ol a:hover { background: var(--fill); }
+.h-depth ol strong { color: var(--heading); font-size: var(--fs-sm); }
+.h-depth ol span { color: var(--text-muted); font-size: var(--fs-xs); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.h-depth .z-textlink { font-size: 13px; margin-top: auto; }
+
+/* ---------- 11. Integrations ---------- */
+.h-split { display: grid; gap: 32px; }
+@media (min-width: 1024px) { .h-split { grid-template-columns: 1fr 2fr; align-items: start; } .h-split__intro { position: sticky; top: calc(var(--header-h) + 24px); } }
+.h-ints { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); }
+.h-int { height: 100%; display: grid; gap: 4px; align-content: start; padding: 16px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg); }
+.h-int:hover { border-color: var(--primary); }
+.h-int strong { color: var(--heading); }
+.h-int small { color: var(--primary); font-size: var(--fs-xs); font-weight: 600; }
+.h-int span { color: var(--text-secondary); font-size: var(--fs-sm); }
+.h-int em { font-style: normal; color: var(--text-muted); font-size: var(--fs-xs); margin-top: 4px; }
+
+/* ---------- 12. Why ---------- */
+.h-why { display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); }
+.h-why li { text-align: center; padding: 8px; }
+.h-why svg { width: 36px; height: 36px; color: var(--primary); margin-inline: auto; }
+.h-why h3 { margin: 14px 0 8px; font-size: var(--fs-lg); }
+.h-why p { color: var(--text-secondary); font-size: var(--fs-sm); }
+
+/* ---------- 13. Spotlight ---------- */
+.h-spot { display: grid; gap: 28px; padding: clamp(24px, 4vw, 48px); border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow); }
+@media (min-width: 960px) { .h-spot { grid-template-columns: 1.1fr 1fr; align-items: center; } }
+.h-spot__main { display: grid; gap: 16px; justify-items: start; }
+.h-spot__main > p { color: var(--text-secondary); }
+.h-spot__brand { display: flex; gap: 14px; align-items: center; }
+.h-spot__brand .product-card__logo { width: 56px; height: 56px; border-radius: 15px; }
+.h-spot__tagline { font-size: var(--fs-lg); color: var(--heading) !important; font-weight: 560; }
+.h-spot__meta { display: flex; flex-wrap: wrap; gap: 12px 32px; font-size: var(--fs-sm); }
+.h-spot__meta dt { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted); font-weight: 650; }
+.h-spot__meta dd { color: var(--heading); }
+.h-spot__meta a { color: var(--primary); }
+.h-spot__caps { display: grid; gap: 8px; }
+.h-spot__caps a { display: flex; gap: 12px; padding: 14px; border-radius: var(--radius-sm); background: var(--fill); }
+.h-spot__caps a:hover { background: var(--primary-soft); }
+.h-spot__caps svg { width: 18px; height: 18px; flex: none; color: var(--accent); margin-top: 3px; }
+.h-spot__caps span { display: grid; gap: 2px; }
+.h-spot__caps strong { color: var(--heading); font-size: var(--fs-sm); }
+.h-spot__caps small { color: var(--text-muted); font-size: var(--fs-xs); }
+
+/* ---------- 14. Resources ---------- */
+.h-res { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.h-res__item { height: 100%; display: grid; gap: 6px; align-content: start; padding: 20px; }
+.h-res__item small { color: var(--primary); font-size: var(--fs-xs); font-weight: 650; text-transform: uppercase; letter-spacing: .06em; }
+.h-res__item strong { color: var(--heading); }
+.h-res__item span { color: var(--text-secondary); font-size: var(--fs-sm); }
+
+/* ---------- 15. Publish ---------- */
+.h-publish { display: grid; gap: 20px; align-items: center; padding: clamp(28px, 5vw, 48px); border-radius: var(--radius-lg); background: var(--band-blue); color: #fff; }
+.h-publish h2 { color: #fff !important; }
+.h-publish p { color: rgb(255 255 255 / .86); }
+.h-publish .h-eyebrow { color: var(--highlight); }
+.h-publish__icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: rgb(255 255 255 / .14); }
+.h-publish__icon svg { width: 30px; height: 30px; }
+.h-publish .zbtn { justify-self: start; }
+@media (min-width: 900px) { .h-publish { grid-template-columns: auto 1fr auto; } }
+
+/* ---------- 16. Values ---------- */
+.h-values { display: grid; gap: 0; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+.h-values li { position: relative; padding: 28px 24px; border-top: 3px solid var(--primary); }
+.h-values li:nth-child(2) { border-color: var(--accent); }
+.h-values li:nth-child(3) { border-color: var(--highlight); }
+.h-values li:nth-child(4) { border-color: var(--heading); }
+.h-values__n { font-family: var(--font-display); font-size: 2.6rem; line-height: 1; color: var(--border-strong); }
+.h-values__icon { position: absolute; top: 30px; right: 24px; color: var(--text-muted); }
+.h-values__icon svg { width: 22px; height: 22px; }
+.h-values h3 { margin: 14px 0 8px; font-size: var(--fs-lg); }
+.h-values p { color: var(--text-secondary); font-size: var(--fs-sm); }
+
+/* ---------- 17. Stats ---------- */
+@media (max-width: 600px) {
+  .h-stats li { flex-basis: 50%; }
+  .h-stats li + li { border-left: 0; }
+}
+
+/* =====================================================================
+   Zoho design language: light (400) display type, centered section
+   heads over a short accent rule, thin 1px borders, 4px radius, no
+   heavy shadows, white / light-grey alternating bands. Tokens only.
+   ===================================================================== */
+.home { --z-radius: 4px; }
+.home .container { max-width: min(var(--container), 1280px); }
+.home h2 { font-weight: 400; letter-spacing: -0.03em; font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.75rem); line-height: 1.2; }
+.home h3 { font-weight: 500; letter-spacing: -0.01em; }
+
+/* Bands: white default, light grey alternates */
+.h-sec { background: var(--surface); padding: clamp(56px, 7vw, 90px) 0; }
+.h-sec--surface, .h-sec--tint, .h-sec--warm { background: var(--bg); border-block: 0; }
+
+/* Section heads: centered, small label, short accent rule */
+.h-head { max-width: 760px; margin: 0 auto 48px; text-align: center; }
+.h-head--left { margin-inline: 0; text-align: left; }
+.h-head--left .h-rule { margin-inline: 0; }
+.h-eyebrow, .h-label { font-size: 13px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 14px; }
+.h-rule { width: 40px; height: 1px; border: 0; margin: 22px auto 0; background: var(--primary); }
+.h-lead { margin-top: 20px; font-size: 1.0625rem; line-height: 1.6; }
+.h-center { margin-top: 40px; }
+
+/* Shared surfaces: square, flat, hairline */
+.h-card, .h-need, .h-pcard, .h-task, .h-int, .h-role, .h-spot, .h-spot__caps a, .h-depth ol a, .h-steps li, .h-publish { border-radius: var(--z-radius); box-shadow: none; }
+.h-tag { border-radius: 3px; }
+.h-fcard, .h-need, .h-ind, .h-res__item { transition: border-color .2s var(--ease); }
+.h-fcard:hover, .h-need:hover { transform: none; box-shadow: none; border-color: var(--primary); }
+
+/* 1. Hero: left headline with rule, right "featured apps" panel */
+.h-hero { padding: clamp(40px, 6vw, 80px) 0 clamp(48px, 6vw, 72px); background: var(--bg); overflow: visible; }
+.h-hero__grid { gap: clamp(32px, 5vw, 72px); }
+.h-hero h1 { font-weight: 400; font-size: clamp(2.1rem, 1.4rem + 2.4vw, 2.85rem); line-height: 1.22; letter-spacing: -0.035em; max-width: 17ch; }
+.h-hero .h-rule { margin: 24px 0 0; background: var(--heading); }
+.h-hero__lead { margin: 28px 0 36px; font-size: clamp(1.05rem, 1rem + .35vw, 1.3rem); line-height: 1.65; color: var(--text); max-width: 40ch; }
+.h-chips { margin-top: 36px; gap: 8px; }
+.h-chips a { border-radius: 3px; background: transparent; padding: 6px 12px; font-size: 13px; }
+.h-chips a:hover { transform: none; }
+.h-hero__apps { background: var(--surface); border: 1px solid var(--border-soft); border-radius: 6px; box-shadow: var(--shadow-sm); padding: 32px clamp(20px, 3vw, 40px) 28px; text-align: center; }
+.h-hero__apps .h-label { margin-bottom: 0; }
+.h-hero__apps .h-label::after { content: ""; display: block; width: 24px; height: 2px; margin: 12px auto 0; background: var(--primary); }
+.h-hero__apps ul { grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 8px 24px; margin: 28px 0 24px; text-align: left; }
+.h-hero__apps a { align-items: flex-start; gap: 14px; padding: 10px 8px; border-radius: var(--z-radius); }
+.h-hero__apps a:hover { background: transparent; }
+.h-hero__apps a:hover strong { color: var(--primary); }
+.h-hero__apps .product-card__logo { width: 36px; height: 36px; border-radius: 8px; flex: none; margin-top: 2px; }
+.h-hero__apps strong { font-family: var(--font-display); font-size: 1.4rem; font-weight: 400; letter-spacing: -0.02em; line-height: 1.2; transition: color .2s var(--ease); }
+.h-hero__apps small { margin-top: 4px; font-size: 13px; line-height: 1.45; color: var(--text-secondary); }
+@media (max-width: 959px) {
+  .h-hero__copy { text-align: center; }
+  .h-hero h1, .h-hero__lead { margin-inline: auto; }
+  .h-hero .h-rule { margin-inline: auto; }
+  .h-hero .h-actions, .h-chips { justify-content: center; }
+}
+
+/* 2. Featured: flat bordered tiles */
+.h-fcard { border-top: 1px solid var(--border); padding: 28px; }
+.h-fcard__head h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; }
+.h-fcard__cap { border-radius: var(--z-radius); background: var(--bg); border-left: 2px solid var(--primary); }
+
+/* 3. Needs */
+.h-need { background: var(--surface); padding: 26px; }
+.h-need strong { font-weight: 500; }
+
+/* 4. Ecosystem: hairline rows */
+.h-eco__about h3 { font-weight: 400; font-family: var(--font-display); font-size: 1.6rem; }
+.h-eco__apps a { border-radius: 3px; background: transparent; border: 1px solid var(--border); }
+.h-eco__apps a:hover { border-color: var(--primary); background: transparent; }
+.h-eco__apps .product-card__logo { border-radius: 6px; }
+
+/* 5. Portfolio: dense "explore all apps" grid — icon, name, one line */
+.h-portfolio { gap: 0; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); border-top: 1px solid var(--border); border-left: 1px solid var(--border); background: var(--surface); }
+.h-pcard { flex-direction: row; align-items: flex-start; gap: 16px; padding: 24px 22px; border: 0; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); border-radius: 0; background: transparent; transition: background .2s var(--ease); }
+.h-pcard:hover { background: var(--primary-soft); }
+.h-pcard > .product-card__logo { width: 36px; height: 36px; border-radius: 8px; flex: none; margin-top: 4px; }
+.h-pcard__body { display: flex; flex-direction: column; gap: 6px; min-width: 0; flex: 1; height: 100%; }
+.h-pcard__head { display: grid; gap: 0; }
+.h-pcard__head strong { font-family: var(--font-display); font-size: 1.4rem; font-weight: 400; letter-spacing: -0.02em; line-height: 1.25; }
+.h-pcard:hover .h-pcard__head strong { color: var(--primary); }
+.h-pcard__head small { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+.h-pcard__desc { line-height: 1.5; }
+
+/* 6. Tasks */
+.h-task { background: var(--surface); }
+.h-task h3 { font-weight: 500; }
+
+/* 7. Industries */
+.h-ind__icon { border-radius: var(--z-radius); }
+.h-ind h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.5rem; }
+
+/* 8. Roles */
+.h-role h3 { font-weight: 500; }
+
+/* 9. Steps on the dark band */
+.h-sec--island .h-eyebrow { color: var(--island-muted); }
+.h-sec--island .h-rule { background: var(--highlight); }
+.h-steps h3 { font-weight: 500; }
+
+/* 10. Depth */
+.h-depth__head { border-bottom-width: 1px; }
+.h-depth__head h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.4rem; }
+
+/* 12. Why: Zoho values — icon left, title, text, two columns */
+.h-why { gap: 40px 64px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); max-width: 1060px; margin-inline: auto; }
+.h-why li { display: grid; grid-template-columns: 44px 1fr; column-gap: 20px; text-align: left; padding: 0; }
+.h-why svg { grid-row: span 2; width: 40px; height: 40px; margin: 4px 0 0; }
+.h-why h3 { margin: 0 0 10px; font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; line-height: 1.25; }
+.h-why p { font-size: .95rem; line-height: 1.65; }
+
+/* 13. Spotlight */
+.h-spot { border-color: var(--border-soft); }
+.h-spot__brand h2 { font-size: clamp(2rem, 1.5rem + 2vw, 3rem); }
+.h-spot__brand .product-card__logo { border-radius: 10px; }
+
+/* 15. Publish */
+.h-publish__icon { border-radius: var(--z-radius); }
+
+/* 16. Values */
+.h-values li { border-top-width: 2px; }
+.h-values h3 { font-weight: 500; }
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .h-hero__apps li { animation: none; }
+  .home * { transition: none !important; }
+}
+
+/* Zoho pass: 2-column featured panel, dense portfolio lines */
+@media (min-width: 520px) { .h-hero__apps ul { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 960px) { .h-hero__grid { grid-template-columns: 1fr minmax(0, 560px); } }
+.h-pcard__desc { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.h-spot__meta dd { margin: 0; }
+
+/* ===== Card alignment pass: consistent grids, rows and bottom-aligned links ===== */
+
+/* Needs: fixed columns (no empty track), rows shared across cards via subgrid */
+.h-needs { grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 640px) { .h-needs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .h-needs { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@supports (grid-template-rows: subgrid) {
+  .h-needs > li { display: grid; grid-row: span 5; grid-template-rows: subgrid; }
+  .h-need { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+}
+.h-need { padding: 24px; }
+.h-need .icon-tile { margin: 0 0 16px; }
+.h-need small { margin-bottom: 6px; line-height: 1.4; }
+.h-need strong { margin-bottom: 10px; line-height: 1.3; text-wrap: balance; }
+.h-need__text { line-height: 1.6; margin-bottom: 16px; }
+.h-need__meta { align-self: end; padding-top: 12px; line-height: 1.6; }
+
+/* Ecosystem rows: fixed column tracks, uniform 2-up product chips, right-aligned link */
+.h-eco__row { padding: 28px 0; }
+.h-eco__about p { line-height: 1.6; margin-top: 6px; }
+.h-eco__apps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; align-content: center; }
+.h-eco__apps a { justify-content: flex-start; min-width: 0; padding: 7px 12px 7px 7px; }
+.h-eco__apps a > :last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (min-width: 1024px) {
+  .h-eco__row { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) 240px; column-gap: 40px; }
+  .h-eco__row > :last-child { justify-self: end; text-align: right; }
+}
+
+/* Portfolio: fixed columns, equal text blocks, footer pinned to the bottom */
+.h-portfolio { grid-template-columns: 1fr; }
+@media (min-width: 640px) { .h-portfolio { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .h-portfolio { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.h-pcard { height: 100%; }
+.h-pcard__body { gap: 0; }
+.h-pcard__head { margin-bottom: 10px; }
+.h-pcard__desc { line-height: 1.55; min-height: calc(1.55em * 3); margin-bottom: 10px; }
+.h-pcard__focus { line-height: 1.5; min-height: calc(1.5em * 2); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 14px; }
+.h-pcard__foot { margin-top: auto; flex-wrap: nowrap; min-height: 28px; }
+
+/* Industries: equal columns, aligned text blocks */
+.h-industries { grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 720px) { .h-industries { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .h-industries { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.h-ind { height: 100%; gap: 0; padding: 24px; }
+.h-ind .hi-card-art { margin: 0 0 20px; }
+.h-ind__icon { margin-bottom: 16px; }
+.h-ind h3 { margin-bottom: 8px; line-height: 1.25; }
+.h-ind > p { line-height: 1.6; min-height: calc(1.6em * 3); margin-bottom: 16px; }
+.h-ind__list { margin-bottom: 14px; }
+.h-ind__list small { margin-bottom: 2px; }
+.h-ind .h-more { margin-top: auto; padding-top: 6px; }
+
+/* Roles: tracks collapse to the number of roles, so no orphan cell */
+.h-roles { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+.h-role { padding: 24px; }
+.h-role h3 { margin-bottom: 14px; }
+.h-role ul { gap: 10px; line-height: 1.5; }
+
+/* Feature depth: equal columns, items with consistent rhythm, footer link aligned */
+.h-depth { grid-template-columns: 1fr; gap: 32px; }
+@media (min-width: 640px) { .h-depth { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .h-depth { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.h-depth__col { height: 100%; gap: 12px; }
+.h-depth ol { gap: 2px; }
+.h-depth ol a { gap: 4px; padding: 10px 8px; }
+.h-depth ol strong { line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.h-depth ol span { line-height: 1.5; }
+.h-depth .z-textlink { margin-top: auto; padding-top: 8px; }
+.h-eco__apps > * { min-width: 0; display: flex; }
+.h-eco__apps a { width: 100%; }
+@media (min-width: 1024px) {
+  .h-eco__row { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) auto; }
+  .h-eco__row > :last-child { white-space: nowrap; min-width: 230px; }
+}
+@media (min-width: 1024px) { .h-eco__row { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 270px; } .h-eco__row > :last-child { min-width: 0; } }
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .h-eco__row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .h-eco__row > :last-child { grid-column: span 2; justify-self: start; text-align: left; }
+}
+@media (max-width: 1199px) { .h-eco__row > :last-child { margin-left: 60px; } }
+
+/* ===== Spacious pass: separate cards, generous padding and gaps ===== */
+/* Portfolio: individual cards instead of a ruled table */
+.h-portfolio { gap: 20px; border: 0; background: none; }
+.h-pcard { padding: 28px 26px; gap: 18px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); }
+.h-pcard:hover { background: var(--card); border-color: var(--primary); box-shadow: 0 6px 24px -12px rgba(15, 40, 70, .18); }
+.h-pcard > .product-card__logo { width: 42px; height: 42px; border-radius: 10px; margin-top: 2px; }
+.h-pcard__head { margin-bottom: 14px; gap: 4px; }
+.h-pcard__head strong { font-size: 1.35rem; }
+.h-pcard__desc { font-size: 0.95rem; line-height: 1.65; min-height: calc(1.65em * 3); margin-bottom: 14px; }
+.h-pcard__focus { font-size: 0.85rem; line-height: 1.6; min-height: calc(1.6em * 2); padding-top: 14px; border-top: 1px dashed var(--border); margin-bottom: 18px; }
+.h-pcard__foot { min-height: 32px; gap: 12px; }
+
+/* Needs */
+.h-needs { gap: 24px; }
+.h-need { padding: 32px 28px; border-radius: 8px; }
+.h-need .icon-tile { margin-bottom: 20px; }
+.h-need small { margin-bottom: 8px; }
+.h-need strong { margin-bottom: 12px; }
+.h-need__text { margin-bottom: 22px; line-height: 1.7; }
+.h-need__meta { padding-top: 16px; }
+
+/* Ecosystem rows */
+.h-eco__row { padding: 40px 0; column-gap: 56px; row-gap: 24px; }
+.h-eco__about { gap: 20px; }
+.h-eco__about p { line-height: 1.7; margin-top: 10px; }
+.h-eco__apps { gap: 12px; }
+.h-eco__apps a { padding: 9px 14px 9px 9px; border-radius: 8px; gap: 10px; }
+
+/* Industries */
+.h-industries { gap: 28px; }
+.h-ind { padding: 30px 28px; border-radius: 8px; }
+.h-ind .hi-card-art { margin-bottom: 24px; }
+.h-ind__icon { margin-bottom: 20px; }
+.h-ind h3 { margin-bottom: 12px; }
+.h-ind > p { line-height: 1.7; margin-bottom: 22px; min-height: calc(1.7em * 3); }
+.h-ind__list { gap: 8px; margin-bottom: 20px; }
+.h-ind__list small { margin-bottom: 4px; }
+
+/* Roles: separate cards */
+.h-roles { gap: 24px; border: 0; }
+.h-role { padding: 30px 28px; border: 1px solid var(--border); border-radius: 8px; background: var(--card); }
+.h-role h3 { margin-bottom: 18px; }
+.h-role ul { gap: 14px; line-height: 1.6; }
+
+/* Feature depth */
+.h-depth { gap: 48px 40px; }
+.h-depth__col { gap: 18px; }
+.h-depth__head { padding-bottom: 16px; }
+.h-depth ol { gap: 6px; }
+.h-depth ol a { padding: 12px 10px; gap: 6px; }
+.h-depth ol span { line-height: 1.6; }
+
+/* Mobile: keep it airy without wasting width */
+@media (max-width: 639px) {
+  .h-needs, .h-portfolio, .h-industries, .h-roles { gap: 16px; }
+  .h-need, .h-pcard, .h-ind, .h-role { padding: 24px 20px; }
+  .h-pcard__desc, .h-pcard__focus, .h-ind > p { min-height: 0; }
+  .h-eco__row { padding: 32px 0; }
+  .h-eco__row > :last-child { margin-left: 0; }
+  .h-depth { gap: 36px; }
+}
+
+/* Portfolio: logo on top so text gets the full card width */
+.h-pcard { flex-direction: column; gap: 0; }
+.h-pcard > .product-card__logo { margin: 0 0 18px; }
+.h-pcard__desc { -webkit-line-clamp: 3; }
+.h-pcard__foot { flex-wrap: wrap; row-gap: 10px; }
+/* Needs: natural flow, product links pinned to the bottom (no forced shared rows) */
+.h-needs > li { display: block; grid-row: auto; }
+.h-need { display: flex; flex-direction: column; grid-row: auto; height: 100%; }
+.h-need__meta { margin-top: auto; }
+
+.h-need__meta { align-self: stretch; text-align: left; }
+/* Solution cards: products and what each does (from product taglines) */
+.h-need__points { margin-top: auto; display: grid; gap: 10px; padding-top: 16px; border-top: 1px dashed var(--border); }
+.h-need__points-label { font-size: 11px; font-weight: 650; text-transform: uppercase; letter-spacing: .06em; color: var(--text-muted); }
+.h-need__point { display: block; font-size: var(--fs-sm); line-height: 1.55; color: var(--text-secondary); padding-left: 12px; border-left: 2px solid var(--primary-soft, var(--border)); }
+.h-need__point b { display: block; color: var(--primary); font-weight: 600; font-size: var(--fs-xs); margin-bottom: 1px; }

@@ -1,16 +1,21 @@
-import Link from "next/link";
-import { HubPageTemplate } from "@/components/templates/EntityTemplates";
-import { Icon } from "@/components/ui/Icon";
-import { Section } from "@/components/ui/primitives";
+import { ResourcesHubTemplate } from "@/components/templates/EntityTemplates";
 import { getResources } from "@/lib/catalog";
 import { resourceTypes, routes } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo";
 
 const label = (t: string) => resourceTypes.find((r) => r.type === t)?.label ?? t;
+const fmt = (d: string) => new Date(d).toLocaleDateString("en", { dateStyle: "medium" });
 const items = () =>
   getResources()
     .slice(0, 12)
-    .map((r) => ({ name: r.name, summary: r.summary, href: routes.resource(r.type, r.slug), meta: label(r.type) }));
+    .map((r) => ({
+      name: r.name,
+      summary: r.summary,
+      href: routes.resource(r.type, r.slug),
+      meta: label(r.type),
+      date: fmt(r.publishedAt),
+      author: r.author,
+    }));
 
 export const metadata = buildMetadata({
   title: "Resource centre",
@@ -21,28 +26,14 @@ export const metadata = buildMetadata({
 
 export default function ResourcesPage() {
   return (
-    <HubPageTemplate
+    <ResourcesHubTemplate
       crumbs={[{ name: "Resources", href: routes.resources() }]}
-      eyebrow="Resources"
       title="Learn, compare and get more from your software"
-      lead="Guides, tutorials, case studies and updates across the ToyoApps ecosystem."
+      lead="Guides, tutorials, case studies, reports and product updates across the ToyoApps ecosystem, organised by type so you can find setup help or background reading quickly."
       items={items()}
+      categories={resourceTypes.map((r) => ({ label: r.label, href: routes.resourceType(r.type), description: r.description }))}
       emptyTitle="First articles coming soon"
-      emptyText="We're preparing guides and tutorials for ToyoApps products."
-    >
-      <Section tight>
-        <div className="grid" style={{ ["--min" as string]: "220px" }}>
-          {resourceTypes.map((r) => (
-            <Link key={r.type} href={routes.resourceType(r.type)} className="card">
-              <h2 className="card__title">{r.label}</h2>
-              <p className="text-muted">{r.description}</p>
-              <span className="card__foot">
-                Browse <Icon name="arrow-right" />
-              </span>
-            </Link>
-          ))}
-        </div>
-      </Section>
-    </HubPageTemplate>
+      emptyText="We're preparing guides and tutorials for ToyoApps products. Until then, each product's own support and feature pages explain how it works."
+    />
   );
 }
