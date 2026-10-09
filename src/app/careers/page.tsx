@@ -11,7 +11,7 @@ import "@/app/company-zoho.css";
 import "@/app/company-pages.css";
 
 export const metadata = buildMetadata({
-  title: "Careers at ToyoApps",
+  title: "Careers",
   description:
     "Open roles at ToyoApps: Sales Executive, Software Developer Coordinator, Email Marketing Executive, Business Development Executive and Prompt Engineer.",
   path: routes.careers(),

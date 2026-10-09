@@ -70,7 +70,7 @@ export function ProductHero({ product, story, highlights, integrations, cta }: P
         </a>
         {product.pricing ? (
           <Link href={routes.productSection(product.slug, "pricing")} className="zs-btn zs-btn--ghost">
-            See plans and pricing
+            Pricing
           </Link>
         ) : (
           <a href={product.websiteUrl} target="_blank" rel="noopener noreferrer" className="zs-btn zs-btn--ghost">

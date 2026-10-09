@@ -2476,8 +2476,8 @@ const productIntegrations: ProductIntegration[] = [
   { slug: "slack", name: "Slack", summary: "Slack works with Sibu out of the box, so activity in the library can send notifications into the channels a team already uses.", registry: "slack", sources: [HOME] },
   { slug: "zapier", name: "Zapier", summary: "Sibu uses Zapier to automate work between the library and other apps, and lists it as one route for connecting Premiere Pro, After Effects and Frame.io.", registry: "zapier", sources: [HOME] },
   { slug: "figma", name: "Figma", summary: "Figma appears on Sibu's integrations list next to the editing tools it connects to; Sibu does not publicly detail how the Figma connection works.", registry: "figma", sources: [HOME] },
-  { slug: "adobe-premiere-pro", name: "Premiere Pro", summary: "Sibu connects to Adobe Premiere Pro through its own extensions and through Zapier, so editors can move library assets into their editing workflow.", registry: "adobe-premiere-pro", sources: [HOME] },
-  { slug: "adobe-after-effects", name: "After Effects", summary: "Adobe After Effects connects to Sibu through Sibu's extensions and Zapier, giving motion designers a route from the library into their projects.", registry: "adobe-after-effects", sources: [HOME] },
+  { slug: "adobe-premiere-pro", name: "Adobe Premiere Pro", summary: "Sibu connects to Adobe Premiere Pro through its own extensions and through Zapier, so editors can move library assets into their editing workflow.", registry: "adobe-premiere-pro", sources: [HOME] },
+  { slug: "adobe-after-effects", name: "Adobe After Effects", summary: "Adobe After Effects connects to Sibu through Sibu's extensions and Zapier, giving motion designers a route from the library into their projects.", registry: "adobe-after-effects", sources: [HOME] },
   { slug: "frame-io", name: "Frame.io", summary: "Frame.io connects to Sibu through Sibu's extensions and Zapier, linking the asset library with an existing Frame.io review workflow.", registry: "frame-io", sources: [HOME] },
 ];
 
@@ -2686,7 +2686,7 @@ export const sibu: Product = {
     plans: [
       { name: "Free", price: "$0", period: "forever", description: "For makers exploring Sibu", features: ["5 GB storage", "3 seats", "10k API calls / month", "Drag & drop upload", "Search & tags"], cta: { label: "Start free", href: "https://getsibu.com/signup" } },
       { name: "Pro", price: "$99", period: "month", description: "For growing creative teams", features: ["500 GB storage", "20 seats", "1M API calls / month", "Google Drive sync", "Threaded comments + mentions", "Saved searches"], cta: { label: "Start trial", href: "https://getsibu.com/signup" }, recommended: true },
-      { name: "Business", price: "$299", period: "month", description: "For studios shipping at scale", features: ["2 TB storage", "100 seats", "5M API calls / month", "SSO & SCIM", "Audit log export", "Priority support"], cta: { label: "Talk to sales", href: "/contact?type=sales&product=sibu#contact-form" } },
+      { name: "Business", price: "$299", period: "month", description: "For studios shipping at scale", features: ["2 TB storage", "100 seats", "5M API calls / month", "SSO & SCIM", "Audit log export", "Priority support"], cta: { label: "Talk to sales", href: "/contact-us?type=sales&product=sibu" } },
     ],
   },
   supportUrl: "https://getsibu.com/contact",

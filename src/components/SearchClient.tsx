@@ -222,7 +222,9 @@ export function SearchClient({ browse }: { browse: SearchBrowse }) {
       e.preventDefault();
       if (showSuggest && active >= 0 && flat[active]) window.location.assign(flat[active].href);
       else submit(input);
-    } else if (e.key === "Escape") {
+    } else if (e.key === "Escape" && showSuggest) {
+      // Close only; the browser would otherwise also clear a search input.
+      e.preventDefault();
       setOpen(false);
       setActive(-1);
     }
@@ -462,11 +464,11 @@ function ResultRow({ entry: m, terms }: { entry: SearchEntry; terms: string[] })
         </h3>
         {meta.length > 0 && <p className="srch-row__meta">{meta.join(" · ")}</p>}
         {m.description && (
-          <p className="srch-row__desc">
+          <p className="srch-row__desc" data-tc-off="">
             <Mark text={m.description} terms={terms} />
           </p>
         )}
-        <p className="srch-row__url">{m.href}</p>
+        <p className="srch-row__url" data-tc-off="">{m.href}</p>
       </div>
     </li>
   );

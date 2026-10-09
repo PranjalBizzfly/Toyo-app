@@ -3,7 +3,7 @@ import { getSiteFaqs } from "@/lib/faqs";
 import "../catalog-zoho.css";
 import "./search.css";
 import { SearchClient, type SearchBrowse } from "@/components/SearchClient";
-import { getCategories, getFeaturedProducts, getIndustries, getIntegrations, getProducts, getProductsByCategory, getSolutions, groupFeatures } from "@/lib/catalog";
+import { getCategories, getFeaturedProducts, getIndustries, getIntegrations, getProducts, getProductsByCategory, getSolutions } from "@/lib/catalog";
 import { routes } from "@/lib/routes";
 import { buildSearchIndex } from "@/lib/search-index";
 import { rank } from "@/lib/search-score";
@@ -21,27 +21,22 @@ export const metadata = {
 };
 
 /**
- * Popular searches: topics taken from the products' feature-group names, kept
- * only when the query returns results from at least two products, ranked by
- * how many products it reaches. Every term is checked against the real index.
+ * Popular searches: the categories' topic tags (subcategory names), or their
+ * parts when the full tag finds nothing. Each term is run against the real
+ * index and kept only when every word matches at least one result.
  */
 function popularSearches(index: ReturnType<typeof buildSearchIndex>): string[] {
-  const topics = new Set<string>();
-  for (const p of getProducts())
-    for (const g of groupFeatures(p))
-      for (const part of g.group.name.split(/\s*(?:&|,|\band\b)\s*/i)) {
-        const t = part.trim();
-        if (t && t.split(/\s+/).length <= 2) topics.add(t.charAt(0).toUpperCase() + t.slice(1).toLowerCase());
-      }
-  return [...topics]
-    .map((t) => {
-      const { results, mode } = rank(index, t);
-      return { t, n: results.length, reach: mode === "all" ? new Set(results.map((r) => r.e.productSlug).filter(Boolean)).size : 0 };
-    })
-    .filter((x) => x.reach >= 2)
-    .sort((a, b) => b.reach - a.reach || b.n - a.n || a.t.localeCompare(b.t))
-    .slice(0, 8)
-    .map((x) => x.t);
+  const works = (t: string) => {
+    const { results, mode } = rank(index, t);
+    return mode === "all" && results.length > 0;
+  };
+  const out: string[] = [];
+  for (const c of getCategories())
+    for (const s of c.subcategories ?? []) {
+      const term = works(s.name) ? s.name : s.name.split(/\s*&\s*/).find((p) => p.split(/\s+/).length <= 2 && works(p));
+      if (term && !out.some((o) => o.toLowerCase() === term.toLowerCase())) out.push(term.charAt(0).toUpperCase() + term.slice(1));
+    }
+  return out.slice(0, 10);
 }
 
 export default function SearchPage() {

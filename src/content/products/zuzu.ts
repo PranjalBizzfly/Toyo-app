@@ -597,7 +597,7 @@ export const zuzu: Product = {
       sources: [HOME, "https://usezuzu.com/apply", "https://usezuzu.com/apply/status"],
     },
   ],
-  solutions: ["manage-people-from-hire-to-growth"],
+  solutions: ["manage-your-people-from-hire-to-growth"],
   sources: [HOME, TRIAL, "https://usezuzu.com/apply", "https://usezuzu.com/apply/status"],
   lastVerified: "2026-10-08",
 };

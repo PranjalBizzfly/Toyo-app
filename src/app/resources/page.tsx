@@ -19,7 +19,7 @@ const items = () =>
     }));
 
 export const metadata = buildMetadata({
-  title: "Resource centre",
+  title: "Resources",
   description: "Guides, tutorials, case studies, reports and product updates from ToyoApps.",
   path: routes.resources(),
   status: getResources().length ? "live" : "draft",

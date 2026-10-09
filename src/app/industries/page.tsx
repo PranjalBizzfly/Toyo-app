@@ -10,7 +10,7 @@ import { routes } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Software by industry",
+  title: "Industries",
   description: "ToyoApps products matched to how your industry works, grouped by sector: creative and media, retail, professional services, operations, healthcare, education and growing businesses.",
   path: routes.industries(),
   status: getIndustryDirectory().guides.length ? "live" : "draft",
@@ -93,7 +93,7 @@ export default function IndustriesPage() {
                     </div>
                     {s.guides.map((g) => (
                       <Link key={g.slug} href={routes.industry(g.slug)} className="dx-group__guide">
-                        Guide: {g.name} →
+                        {g.name} <span aria-hidden>→</span>
                       </Link>
                     ))}
                   </header>

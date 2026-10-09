@@ -115,8 +115,8 @@ export const integrations: Integration[] = [
   },
   { slug: "slack", name: "Slack", vendor: "Salesforce", category: "Messaging", summary: "Listed by Sibu for notifications, so asset-library activity can be announced in Slack.", products: ["sibu"], status: live },
   { slug: "figma", name: "Figma", vendor: "Figma", category: "Creative tools", summary: "Listed among the design tools Sibu's asset library integrates with.", products: ["sibu"], status: live },
-  { slug: "adobe-premiere-pro", name: "Premiere Pro", vendor: "Adobe", category: "Creative tools", summary: "Listed among the video-editing tools Sibu's asset library integrates with.", products: ["sibu"], status: live },
-  { slug: "adobe-after-effects", name: "After Effects", vendor: "Adobe", category: "Creative tools", summary: "Listed among the motion-graphics tools Sibu's asset library integrates with.", products: ["sibu"], status: live },
+  { slug: "adobe-premiere-pro", name: "Adobe Premiere Pro", vendor: "Adobe", category: "Creative tools", summary: "Listed among the video-editing tools Sibu's asset library integrates with.", products: ["sibu"], status: live },
+  { slug: "adobe-after-effects", name: "Adobe After Effects", vendor: "Adobe", category: "Creative tools", summary: "Listed among the motion-graphics tools Sibu's asset library integrates with.", products: ["sibu"], status: live },
   { slug: "frame-io", name: "Frame.io", vendor: "Adobe", category: "Creative tools", summary: "Listed among the video-review tools Sibu's asset library integrates with.", products: ["sibu"], status: live },
   { slug: "zapier", name: "Zapier", vendor: "Zapier", category: "Automation", summary: "Listed by Sibu for automation, so asset-library events can be connected to workflows in other apps.", products: ["sibu"], status: live },
 ];
@@ -160,7 +160,7 @@ export const solutions: Solution[] = [
     status: "live",
   },
   {
-    slug: "manage-people-from-hire-to-growth",
+    slug: "manage-your-people-from-hire-to-growth",
     cardTitle: "Run HR and payroll, see how the workday went and build daily skills",
     cardText:
       "Software for people teams covering the employee lifecycle. HRMagix runs attendance, leave, payroll and reviews for Indian companies, ZUZU shows how the workday went on Windows desktops with AI-written reports, and Zorfly builds communication skills with a five-minute daily mission.",
@@ -201,7 +201,7 @@ export const solutions: Solution[] = [
       "Founders need to show investors a defensible market size and show the market a credible plan, usually without a research team or a marketing team, and on a fundraising timeline.",
     approach:
       "Start with a market-sizing report built two ways with every source cited, then generate a marketing plan from the product itself. Both products deliver their output as a PDF you can share.",
-    products: ["sizoru", "getbenj"],
+    products: ["sizoru", "benj"],
     body: [
       "Sizoru sizes TAM, SAM and SOM top-down and bottom-up, compares the two results, and delivers bull, base and bear scenarios with tier-rated sources in a print-ready PDF, so every number in a pitch deck can be traced.",
       "Benj takes a product description and returns a complete marketing plan as a PDF: buyer persona, best markets, channels, a hyperlocal ad map and a budget split.",
@@ -244,7 +244,7 @@ export const industries: Industry[] = [
     summary:
       "Asset management and marketing planning for video, brand and marketing teams, and for agencies producing plans for client products.",
     challenges: ["Finding the right asset in a growing library", "Reviewing video and creative work in context", "Planning campaigns for clients quickly"],
-    products: ["sibu", "getbenj"],
+    products: ["sibu", "benj"],
     body: [
       "Sibu is a digital asset library for creative teams. It indexes video, images, documents and audio with AI tagging and scene detection, lets people search by meaning rather than file name, and pins comments to the video timeline with approvals before anything ships.",
       "Benj helps agencies produce marketing plans for client products: each report covers buyer persona, best markets, channels, a hyperlocal ad map and a budget split, and an Agency pack provides 20 reports.",
@@ -258,7 +258,7 @@ export const industries: Industry[] = [
     summary:
       "Market sizing with cited sources and AI-built marketing plans for founders preparing to raise and launch, and the investors who assess them.",
     challenges: ["Showing a market size investors will accept", "Planning a launch without a marketing team"],
-    products: ["sizoru", "getbenj"],
+    products: ["sizoru", "benj"],
     body: [
       "Sizoru produces market-sizing reports for founders, consultants and VCs. TAM, SAM and SOM are built top-down and bottom-up, with bull, base and bear scenarios and every number traced to a tier-rated source.",
       "Benj turns a product description into a launch-ready marketing plan for founders building D2C brands, covering who to target, where, through which channels and with what budget split.",

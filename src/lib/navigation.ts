@@ -108,9 +108,9 @@ export function getMainNav(): NavMenu[] {
         text: featured.length
           ? featured.map((p) => p.name).join(", ")
           : "Browse every ToyoApps product, organised by what your business needs.",
-        cta: { label: "View all products", href: routes.products() },
+        cta: { label: "All Products", href: routes.products() },
       },
-      footerLink: { label: "View all products", href: routes.products() },
+      footerLink: { label: "All Products", href: routes.products() },
     },
     ...optionalMenus(),
     {
@@ -123,8 +123,8 @@ export function getMainNav(): NavMenu[] {
           title: "Company",
           links: [
             { label: "About ToyoApps", href: routes.company(), icon: "building", description: "Who we are and what we are building." },
-            { label: "Publish your software", href: routes.publish(), icon: "store", description: "List and sell your SaaS on ToyoApps." },
-            { label: "Vendors", href: routes.vendors(), icon: "box", description: "How the vendor relationship works." },
+            { label: "Publish and Sell Your SaaS", href: routes.publish(), icon: "store", description: "List and sell your SaaS on ToyoApps." },
+            { label: "Become a ToyoApps Vendor", href: routes.vendors(), icon: "box", description: "How the vendor relationship works." },
             { label: "Careers", href: routes.careers(), icon: "briefcase", description: "Open roles at ToyoApps." },
           ],
         },
@@ -132,19 +132,19 @@ export function getMainNav(): NavMenu[] {
           title: "News & media",
           links: [
             { label: "Blog", href: routes.blog(), icon: "layers", description: "Guides and support topics across our products." },
-            { label: "Media", href: routes.media(), icon: "megaphone", description: "Company and product updates." },
-            { label: "Press kit", href: routes.pressKit(), icon: "spark", description: "Logos, colours and boilerplates." },
+            { label: "Media and News", href: routes.media(), icon: "megaphone", description: "Company and product updates." },
+            { label: "Press Kit", href: routes.pressKit(), icon: "spark", description: "Logos, colours and boilerplates." },
           ],
         },
         {
           title: "Support",
           links: [
-            { label: "Help & support", href: routes.support(), icon: "headset", description: "Help with ToyoApps and its products." },
-            { label: "Contact us", href: routes.contactForm(), icon: "chat", description: "Talk to the ToyoApps team." },
+            { label: "Support", href: routes.support(), icon: "headset", description: "Help with ToyoApps and its products." },
+            { label: "Contact Us", href: routes.contactForm(), icon: "chat", description: "Talk to the ToyoApps team." },
           ],
         },
       ],
-      footerLink: { label: "Contact us", href: routes.contactForm() },
+      footerLink: { label: "Contact Us", href: routes.contactForm() },
     },
   ];
 }
@@ -180,13 +180,12 @@ function optionalMenus(): NavMenu[] {
         {
           title: "Explore",
           links: [
-            { label: "All solutions", href: routes.solutions() },
             ...(industries.length ? [{ label: "Industries", href: routes.industries() }] : []),
-            { label: "All products", href: routes.products() },
+            { label: "All Products", href: routes.products() },
           ],
         },
       ],
-      footerLink: { label: "All solutions", href: routes.solutions() },
+      footerLink: { label: "Solutions", href: routes.solutions() },
     });
   if (industries.length)
     menus.push({
@@ -208,13 +207,12 @@ function optionalMenus(): NavMenu[] {
         {
           title: "Explore",
           links: [
-            { label: "All industries", href: routes.industries() },
             ...(solutions.length ? [{ label: "Solutions", href: routes.solutions() }] : []),
-            { label: "All products", href: routes.products() },
+            { label: "All Products", href: routes.products() },
           ],
         },
       ],
-      footerLink: { label: "All industries", href: routes.industries() },
+      footerLink: { label: "Industries", href: routes.industries() },
     });
   if (integrations.length) {
     const categories = [...new Set(integrations.map((i) => i.category))].sort();
@@ -239,7 +237,7 @@ function optionalMenus(): NavMenu[] {
           })),
         };
       }),
-      footerLink: { label: "All integrations", href: routes.integrations() },
+      footerLink: { label: "Integrations", href: routes.integrations() },
     });
   }
   if (resources.length)
@@ -257,12 +255,12 @@ function optionalMenus(): NavMenu[] {
         {
           title: "Support",
           links: [
-            { label: "Help & support", href: routes.support() },
-            { label: "Contact us", href: routes.contactForm() },
+            { label: "Support", href: routes.support() },
+            { label: "Contact Us", href: routes.contactForm() },
           ],
         },
       ],
-      footerLink: { label: "Resource centre", href: routes.resources() },
+      footerLink: { label: "Resources", href: routes.resources() },
     });
   return menus;
 }
@@ -273,14 +271,14 @@ export function getFooterColumns(): NavGroup[] {
     getSolutions().length && { label: "Solutions", href: routes.solutions() },
     getIndustries().length && { label: "Industries", href: routes.industries() },
     getIntegrations().length && { label: "Integrations", href: routes.integrations() },
-    getComparisons().length && { label: "Compare products", href: routes.compare() },
+    getComparisons().length && { label: "Compare Products", href: routes.compare() },
     getResources().length && { label: "Resources", href: routes.resources() },
   ].filter((l): l is NavLink => !!l);
   return [
     {
       title: "Products",
       links: [
-        { label: "All products", href: routes.products() },
+        { label: "All Products", href: routes.products() },
         ...tree.map(({ category }) => ({ label: category.name, href: routes.category(category.slug) })),
       ],
     },
@@ -288,20 +286,20 @@ export function getFooterColumns(): NavGroup[] {
     {
       title: "Company",
       links: [
-        { label: "About", href: routes.company() },
-        { label: "Publish your software", href: routes.publish() },
-        { label: "Vendors", href: routes.vendors() },
+        { label: "About ToyoApps", href: routes.company() },
+        { label: "Publish and Sell Your SaaS", href: routes.publish() },
+        { label: "Become a ToyoApps Vendor", href: routes.vendors() },
         { label: "Careers", href: routes.careers() },
-        { label: "Media", href: routes.media() },
-        { label: "Press kit", href: routes.pressKit() },
+        { label: "Media and News", href: routes.media() },
+        { label: "Press Kit", href: routes.pressKit() },
         { label: "Blog", href: routes.blog() },
       ],
     },
     {
       title: "Support",
       links: [
-        { label: "Help & support", href: routes.support() },
-        { label: "Contact", href: routes.contactForm() },
+        { label: "Support", href: routes.support() },
+        { label: "Contact Us", href: routes.contactForm() },
       ],
     },
   ];

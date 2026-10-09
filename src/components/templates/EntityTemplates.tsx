@@ -559,7 +559,7 @@ export function IndustryPageTemplate({ industry }: { industry: Industry }) {
           { name: industry.name, href: routes.industry(industry.slug) },
         ]}
         eyebrow={sector ? `Industry guide · ${sector.name}` : "Industry guide"}
-        title={`Software for ${industry.name}`}
+        title={industry.name}
         lead={industry.summary}
       >
         <div className="dx-hero__chips" aria-label="Products in this guide">
@@ -732,7 +732,7 @@ export function IntegrationPageTemplate({ integration }: { integration: Integrat
           { name: integration.name, href: routes.integration(integration.slug) },
         ]}
         eyebrow={`Integration · ${integration.category}`}
-        title={`${integration.name} integration`}
+        title={integration.name}
         lead={integration.summary}
       />
 

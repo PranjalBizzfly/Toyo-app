@@ -32,14 +32,14 @@ export function generateStaticParams() {
 }
 
 const copy: Record<SubSection, (name: string) => { title: string; description: string }> = {
-  solutions: (n) => ({ title: `${n} use cases`, description: `Business problems ${n} helps solve.` }),
-  industries: (n) => ({ title: `${n} by industry`, description: `How ${n} fits different industries.` }),
-  integrations: (n) => ({ title: `${n} integrations`, description: `Tools and services that work with ${n}.` }),
-  pricing: (n) => ({ title: `${n} pricing`, description: `Plans and pricing for ${n}.` }),
-  security: (n) => ({ title: `${n} security`, description: `Security and privacy measures ${n} describes on its official site.` }),
-  compare: (n) => ({ title: `Compare ${n}`, description: `How ${n} compares with alternatives.` }),
-  resources: (n) => ({ title: `${n} resources`, description: `Guides, tutorials and articles about ${n}.` }),
-  support: (n) => ({ title: `${n} support`, description: `Help, documentation and answers for ${n}.` }),
+  solutions: (n) => ({ title: `Solutions | ${n}`, description: `Business problems ${n} helps solve.` }),
+  industries: (n) => ({ title: `Industries | ${n}`, description: `How ${n} fits different industries.` }),
+  integrations: (n) => ({ title: `Integrations | ${n}`, description: `Tools and services that work with ${n}.` }),
+  pricing: (n) => ({ title: `Pricing | ${n}`, description: `Plans and pricing for ${n}.` }),
+  security: (n) => ({ title: `Security | ${n}`, description: `Security and privacy measures ${n} describes on its official site.` }),
+  compare: (n) => ({ title: `Compare | ${n}`, description: `How ${n} compares with alternatives.` }),
+  resources: (n) => ({ title: `Resources | ${n}`, description: `Guides, tutorials and articles about ${n}.` }),
+  support: (n) => ({ title: `Support | ${n}`, description: `Help, documentation and answers for ${n}.` }),
 };
 
 async function load(params: Props["params"]) {

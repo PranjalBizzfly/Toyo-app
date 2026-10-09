@@ -15,7 +15,7 @@ const find = async (p: Props["params"]) => {
 
 export async function generateMetadata({ params }: Props) {
   const s = await find(params);
-  return s ? buildMetadata({ ...s, title: `${s.name} integration`, description: s.summary, path: routes.integration(s.slug) }) : {};
+  return s ? buildMetadata({ ...s, title: s.name, description: s.summary, path: routes.integration(s.slug) }) : {};
 }
 
 export default async function IntegrationPage({ params }: Props) {

@@ -2380,7 +2380,7 @@ export const hrmagix: Product = {
         price: "Custom",
         description: "For large organisations.",
         features: ["Everything in Growth", "SSO & advanced security", "Succession & lifecycle", "Dedicated success manager"],
-        cta: { label: "Contact sales", href: "/contact?type=sales&product=hrmagix#contact-form" },
+        cta: { label: "Contact sales", href: "/contact-us?type=sales&product=hrmagix" },
       },
     ],
     asOf: "2026-10-08",
@@ -2401,7 +2401,7 @@ export const hrmagix: Product = {
     { question: "Is HRMagix an applicant tracking system or a global payroll product?", answer: "No. HRMagix starts at the accepted offer, with pre-boarding and onboarding, rather than managing candidates before that. Its payroll is designed around Indian statute, not multi-country payroll." },
     { question: "How long does setup take?", answer: "HRMagix states most Indian organisations complete setup within two to three days. That covers the Excel import templates, policy validation and a dry-run payroll, all included at no separate implementation fee." },
   ],
-  solutions: ["manage-people-from-hire-to-growth"],
+  solutions: ["manage-your-people-from-hire-to-growth"],
   sources: [
     HOME,
     SRC.home,

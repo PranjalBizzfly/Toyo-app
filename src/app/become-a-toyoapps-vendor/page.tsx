@@ -11,7 +11,7 @@ import "@/app/company-zoho.css";
 import "@/app/company-pages.css";
 
 export const metadata = buildMetadata({
-  title: "Become a ToyoApps vendor",
+  title: "Become a ToyoApps Vendor",
   description:
     "How the vendor relationship works on ToyoApps: who can list, how listings go live in the marketplace, the onboarding steps and what to prepare.",
   path: routes.vendors(),

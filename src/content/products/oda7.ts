@@ -2114,7 +2114,7 @@ export const oda7: Product = {
         price: "Custom",
         description: "For platform operators managing organizations, plans and administration.",
         features: ["Organizations and customer accounts", "Plans, subscriptions and invoices", "Audit logs, branding and notifications", "Platform settings and AI features"],
-        cta: { label: "Talk to platform sales", href: "/contact?type=sales&product=oda7#contact-form" },
+        cta: { label: "Talk to platform sales", href: "/contact-us?type=sales&product=oda7" },
       },
     ],
     asOf: "2026-10-08",

@@ -8,10 +8,10 @@ import { getProducts } from "@/lib/catalog";
 import { routes } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo";
 import "@/app/company-zoho.css";
-import "@/app/contact/contact.css";
+import "@/app/contact-us/contact.css";
 
 export const metadata = buildMetadata({
-  title: "Contact us",
+  title: "Contact Us",
   description: "Ask ToyoApps about products, business requirements, sales, support, vendor listings or publishing your software.",
   path: routes.contact(),
 });

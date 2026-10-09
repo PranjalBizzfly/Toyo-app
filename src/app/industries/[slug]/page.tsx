@@ -14,7 +14,7 @@ const find = async (p: Props["params"]) => {
 
 export async function generateMetadata({ params }: Props) {
   const s = await find(params);
-  return s ? buildMetadata({ ...s, title: `Software for ${s.name}`, description: s.summary, path: routes.industry(s.slug) }) : {};
+  return s ? buildMetadata({ ...s, title: s.name, description: s.summary, path: routes.industry(s.slug) }) : {};
 }
 
 export default async function IndustryPage({ params }: Props) {

@@ -11,27 +11,27 @@
 
 /* ---- 1. Balanced rows ---------------------------------------------------- */
 @media (min-width: 720px) {
-  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):is(:has(> :nth-child(3):last-child), :has(> :nth-child(4):last-child), :has(> :nth-child(5):last-child), :has(> :nth-child(6):last-child), :has(> :nth-child(7):last-child), :has(> :nth-child(8):last-child)) {
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes, .dx-grid):is(:has(> :nth-child(3):last-child), :has(> :nth-child(4):last-child), :has(> :nth-child(5):last-child), :has(> :nth-child(6):last-child), :has(> :nth-child(7):last-child), :has(> :nth-child(8):last-child)) {
     display: grid; grid-auto-flow: row; grid-auto-columns: auto; columns: auto;
     --bal: 3; grid-template-columns: repeat(var(--bal), minmax(0, 1fr));
   }
-  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):is(:has(> :nth-child(3):last-child), :has(> :nth-child(4):last-child), :has(> :nth-child(5):last-child), :has(> :nth-child(6):last-child), :has(> :nth-child(7):last-child), :has(> :nth-child(8):last-child)) > * {
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes, .dx-grid):is(:has(> :nth-child(3):last-child), :has(> :nth-child(4):last-child), :has(> :nth-child(5):last-child), :has(> :nth-child(6):last-child), :has(> :nth-child(7):last-child), :has(> :nth-child(8):last-child)) > * {
     grid-column: auto; width: auto; max-width: none; min-width: 0;
   }
   /* 4 and 8 → 2 columns on tablets */
-  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):is(:has(> :nth-child(4):last-child), :has(> :nth-child(8):last-child)) { --bal: 2; }
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes, .dx-grid):is(:has(> :nth-child(4):last-child), :has(> :nth-child(8):last-child)) { --bal: 2; }
   /* 5 → 3 + 2 and 7 → 4 + 3, last row centred */
-  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):is(:has(> :nth-child(5):last-child), :has(> :nth-child(7):last-child)) {
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes, .dx-grid):is(:has(> :nth-child(5):last-child), :has(> :nth-child(7):last-child)) {
     grid-template-columns: repeat(calc(var(--bal) * 2), minmax(0, 1fr));
   }
-  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):is(:has(> :nth-child(5):last-child), :has(> :nth-child(7):last-child)) > * { grid-column: span 2; }
-  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):has(> :nth-child(7):last-child) { --bal: 4; }
-  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):has(> :nth-child(5):last-child) > :nth-child(4),
-  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):has(> :nth-child(7):last-child) > :nth-child(5) { grid-column: 2 / span 2; }
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes, .dx-grid):is(:has(> :nth-child(5):last-child), :has(> :nth-child(7):last-child)) > * { grid-column: span 2; }
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes, .dx-grid):has(> :nth-child(7):last-child) { --bal: 4; }
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes, .dx-grid):has(> :nth-child(5):last-child) > :nth-child(4),
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes, .dx-grid):has(> :nth-child(7):last-child) > :nth-child(5) { grid-column: 2 / span 2; }
 }
 @media (min-width: 1024px) {
   /* Desktop: 4 → one row, 8 → 4 × 2. */
-  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):is(:has(> :nth-child(4):last-child), :has(> :nth-child(8):last-child)) { --bal: 4; }
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes, .dx-grid):is(:has(> :nth-child(4):last-child), :has(> :nth-child(8):last-child)) { --bal: 4; }
   /* Small sets (stats, steps, plans, facts, swatches): 5 or 6 in one row. */
   html body main :is(.h-stats, .cp-swatches, .co-steps, .fz-steps, .h-steps, .fz-facts, .hs-spot__caps):is(:has(> :nth-child(5):last-child), :has(> :nth-child(6):last-child)) { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
   html body main :is(.h-stats, .cp-swatches, .co-steps, .fz-steps, .h-steps, .fz-facts, .hs-spot__caps):is(:has(> :nth-child(5):last-child), :has(> :nth-child(6):last-child)) > * { grid-column: auto; }
@@ -61,8 +61,8 @@ html body main .grid:has(> .product-card) { grid-template-columns: repeat(auto-f
 /* Card titles reserve two lines, so text below a one-line title starts level with
    text below a two-line one; short descriptions reserve their usual line count. */
 html body main :is(.fz-tile > h3, .zs-benefit > h3, .pc__card > h3, .ez-tile__title, .h-ind > h3, .co-col > h3, .cp-card__title, .cp-grid > .cp-card > h3, .zs-dotcard > b, .h-task > h3, .h-why > li > h3, .h-values > li > h3, .zc-card__name, .ez-card__title) { min-height: 2lh; }
-html body main :is(.fz-tile > p) { min-height: 3lh; }
-html body main :is(.pz-plan__desc) { min-height: 2lh; }
+
+
 /* .fz-tiles is a flex row (balanced-grids.css), so subgrid has no parent grid: give each tile its own rows, link pinned to the bottom. */
 html body main .fz-tiles > .fz-tiles__item { align-self: stretch; }
 html body main .fz-tiles > .fz-tiles__item > .fz-tile { grid-template-rows: auto auto auto auto 1fr; height: 100%; }
@@ -74,3 +74,26 @@ html body main .h-int > span { min-height: 2lh; }
 html body main .h-featured > li { display: grid; grid-template-rows: subgrid; grid-row: span 5; }
 html body main .h-featured > li > .h-fcard { grid-row: 1 / -1; display: grid; grid-template-rows: subgrid; height: auto; }
 html body main .h-fcard > .h-more { align-self: end; justify-self: start; }
+
+/* Plans: five plans stay in one row on desktop. (balanced-grids.css means to do this, but its
+   5-item rule with a longer selector list outranks it, giving 3 + 2.) */
+@media (min-width: 1024px) {
+  html body main :is(.pz-plans, .zs-plans):has(> :nth-child(5):last-child):not(.no-a.no-b) { --cols: 5; }
+}
+/* Plans without a billing-period line keep the button level with plans that have one. */
+html body main .pz-plan > .pz-plan__desc { min-height: 3lh; }
+html body main .pz-plan > .pz-plan__price:not(:has(+ .pz-plan__period)) { margin-bottom: 43px; }
+/* Feature tiles: description held to 4 lines so the sub-feature list starts level. */
+html body main .fz-tile > p { min-height: 4lh; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; line-clamp: 4; overflow: hidden; }
+/* Icon + text points (grid parents): title and text share rows via subgrid. */
+html body main :is(.h-why, .h-values) > li { grid-template-rows: subgrid; grid-row: span 2; align-content: start; }
+html body main :is(.h-why > li > svg, .h-values > li > .h-values__icon) { grid-row: 1 / -1; }
+html body main :is(.h-why > li > h3, .h-values > li > h3) { min-height: 0; }
+/* Dot cards: the decorative svg is not a card, so 6 cards make 3 x 2. */
+html body main .zs-dotcards:has(> :nth-child(7):last-child):has(> svg:last-child):not(.no-a.no-b) { --cols: 3; }
+/* Tablets: balanced-grids.css forces two columns below 1024px, which leaves a lone card
+   for 3, 5 and 7 items. Three columns for 3, 5 (3 + 2) and 6; four for 7 (4 + 3). */
+@media (min-width: 720px) and (max-width: 1023px) {
+  html body main :is(.h-industries, .cp-grid, .co-cols, .co-panel, .pc, .pz-related, .zs-bgrid, .zs-usecases, .zs-steps, .zs-plans, .pz-plans, .ez-cards, .fz-tiles, .h-ints, .zs-cards, .zs-dotcards):is(:has(> :nth-child(3):last-child), :has(> :nth-child(5):last-child), :has(> :nth-child(6):last-child)):not(.no-a.no-b) { --cols: 3 !important; }
+  html body main :is(.h-industries, .cp-grid, .co-cols, .co-panel, .pc, .pz-related, .zs-bgrid, .zs-usecases, .zs-steps, .zs-plans, .pz-plans, .ez-cards, .fz-tiles, .h-ints, .zs-cards):has(> :nth-child(7):last-child):not(.no-a.no-b) { --cols: 4 !important; }
+}

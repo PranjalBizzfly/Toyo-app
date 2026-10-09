@@ -29,7 +29,7 @@ export default async function ProductLayout({ children, params }: Props) {
   if (!product) notFound();
 
   const items = getAvailableSections(product).map((s) => ({
-    label: sectionLabels[s],
+    label: s === "overview" ? product.name : sectionLabels[s],
     href: routes.productSection(product.slug, s),
   }));
   const cta = getProductCtas(product).primary;

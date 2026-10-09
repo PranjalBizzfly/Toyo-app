@@ -36,7 +36,7 @@ export function VoiceHero({ product, cta, photos }: { product: Product; cta: { l
             </a>
             {product.pricing && (
               <Link href={routes.productSection(product.slug, "pricing")} className="vh__btn vh__btn--line">
-                See plans and pricing
+                Pricing
               </Link>
             )}
             {product.pricing?.trial && <p className="vh__trial">{product.pricing.trial}</p>}

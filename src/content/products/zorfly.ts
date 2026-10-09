@@ -193,7 +193,7 @@ export const zorfly: Product = {
     plans: [
       { name: "Solo Bee", price: "$0", description: "Free forever, for curious learners who want to try a few sessions. Includes the full curriculum and AI explanations, but not team analytics.", features: ["Full curriculum (8 domains)", "Baseline diagnostic", "AI explanations", "XP, streaks, badges", "Personalized recommendations"], cta: { label: "Start free", href: `${Z}/signup` } },
       { name: "Hive Pro", price: "$9.99", period: "seat / month", description: "Per seat, for teams who care about lasting communication quality. Adds manager analytics, monthly evaluations and workspace roles; starts with a 7-day trial.", features: ["Everything in Solo Bee", "Team analytics + weakness reports", "Monthly domain evaluations", "Per-role question variations", "Up to 500 AI calls per seat per month", "Owner / admin / member roles"], cta: { label: "Start 7-day trial", href: `${Z}/signup` }, recommended: true },
-      { name: "Queen Bee", price: "Custom", description: "Custom pricing for larger organisations and buyers with formal purchasing processes, adding volume seats, security review and SSO on request.", features: ["Everything in Hive Pro", "Volume seat pricing", "Higher AI quotas", "SSO / SAML on request", "Priority support", "Custom DPA / security review"], cta: { label: "Contact sales", href: "/contact?type=sales&product=zorfly#contact-form" } },
+      { name: "Queen Bee", price: "Custom", description: "Custom pricing for larger organisations and buyers with formal purchasing processes, adding volume seats, security review and SSO on request.", features: ["Everything in Hive Pro", "Volume seat pricing", "Higher AI quotas", "SSO / SAML on request", "Priority support", "Custom DPA / security review"], cta: { label: "Contact sales", href: "/contact-us?type=sales&product=zorfly" } },
     ],
   },
   useCases: [
@@ -252,7 +252,7 @@ export const zorfly: Product = {
       sources: [`${Z}/signup`, `${Z}/pricing`, `${Z}/legal/privacy`, `${Z}/legal/terms`],
     },
   ],
-  solutions: ["manage-people-from-hire-to-growth"],
+  solutions: ["manage-your-people-from-hire-to-growth"],
   sources: [`${Z}/`, `${Z}/pricing`, `${Z}/signup`, `${Z}/legal/privacy`, `${Z}/legal/terms`],
   lastVerified: "2026-10-08",
 };

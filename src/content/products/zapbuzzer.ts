@@ -1978,7 +1978,7 @@ export const zapbuzzer: Product = {
     plans: [
       { name: "Free", price: "Free", period: "forever", description: "Try it with one floor", features: ["Up to 10 staff", "1 location", "Mobile + web app", "Email notifications", "Last 30 days history"], cta: { label: "Start free", href: "https://zapbuzzer.com/signup" } },
       { name: "Pro", price: "₹99", period: "seat / month", description: "The whole office", features: ["Unlimited staff", "Multi-location", "Telegram + WhatsApp pings", "SLA + escalation chain", "Full analytics + scorecard", "Audit logs + reports", "Full history"], cta: { label: "Start trial", href: "https://zapbuzzer.com/signup?plan=pro" }, recommended: true },
-      { name: "Enterprise", price: "Custom", description: "For groups & facility companies", features: ["Everything in Pro", "SSO + SAML", "White-label + custom domain", "REST API + webhooks", "Dedicated CSM", "On-prem option"], cta: { label: "Contact sales", href: "/contact?type=sales&product=zapbuzzer#contact-form" } },
+      { name: "Enterprise", price: "Custom", description: "For groups & facility companies", features: ["Everything in Pro", "SSO + SAML", "White-label + custom domain", "REST API + webhooks", "Dedicated CSM", "On-prem option"], cta: { label: "Contact sales", href: "/contact-us?type=sales&product=zapbuzzer" } },
     ],
   },
   useCases: [

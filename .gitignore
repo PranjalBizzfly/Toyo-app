@@ -16,3 +16,4 @@ scripts/_tmp_zoho/
 scripts/.compare/
 scripts/_tmp_space/
 !.env.example
+scripts/_tmp_*/

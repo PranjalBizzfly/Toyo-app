@@ -1,0 +1,315 @@
+/ /products /products/category/sales-marketing /solutions /solutions/run-a-well-organised-office /industries /industries/accounting-tax-practices /integrations /resources /blog /careers /vendors /media /press-kit /publish /company /contact /support /compare /products/sibu /products/sibu/pricing /products/sibu/features /products/sibu/security /products/sibu/features/search-by-anything /products/oda7 /products/oda7/pricing /products/oda7/features /products/oda7/security /products/oda7/features/lead-distribution /products/taskmagic /products/taskmagic/pricing /products/taskmagic/features /products/taskmagic/security /products/taskmagic/features/app-integrations /products/cardizo /products/cardizo/pricing /products/cardizo/features /products/cardizo/security /products/cardizo/features/ai-card-scanning /products/meetingmind /products/meetingmind/pricing /products/meetingmind/features /products/meetingmind/security /products/meetingmind/features/meeting-bot /products/hrmagix /products/hrmagix/pricing /products/hrmagix/features /products/hrmagix/security /products/hrmagix/features/employee-records /products/zapbuzzer /products/zapbuzzer/pricing /products/zapbuzzer/features /products/zapbuzzer/security /products/zapbuzzer/features/one-tap-requests /products/tracksuit /products/tracksuit/pricing /products/tracksuit/features /products/tracksuit/security /products/tracksuit/features/always-on-brand-tracking
+1920 / :: div.hh-strip [2+1] w=400/399 sec=hh
+1920 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1920 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1920 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1920 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1920 / :: ul.z-stats__row.h-stats [5+1] w=167/167 sec=z-stats hz-stats
+1920 / :: ALIGN ul.h-featured card=is-in :: h-fcard__cap(26)
+1920 / :: ALIGN ul.h-ints card=is-in :: small(22) span(22) em(19)
+1920 / :: ALIGN ul.h-why card=is-in :: p(25)
+1920 / :: ALIGN ol.h-values card=is-in :: p(13)
+1920 /industries :: ul.dx-grid.dx-grid--industries [4+2] w=298/298,298 sec=dx-group dx-group--sector
+1920 /industries :: ALIGN div.dx-grid.dx-grid--center card=dx-guide :: dx-guide__points(24)
+1920 /industries/accounting-tax-practices :: ALIGN div.container.dx-overview card=dx-challenges :: dx-kicker(32) dx-head__title(32)
+1920 /integrations :: ul.dx-card__works [2+2] w=93/92,81 STRETCH sec=dx-sec dx-sec--tint
+1920 /integrations :: ul.dx-grid [4+1] w=298/298 sec=dx-group
+1920 /integrations :: ul.dx-grid [4+1] w=298/298 sec=dx-group
+1920 /integrations :: ul.dx-grid [4+1] w=298/298 sec=dx-group
+1920 /integrations :: ul.dx-card__works [2+1] w=73/113 STRETCH sec=dx-group
+1920 /integrations :: ul.dx-card__works [2+2] w=93/92,81 STRETCH sec=dx-group
+1920 /integrations :: ALIGN ul.dx-grid card=dx-card :: dx-card__text(22)
+1920 /integrations :: ALIGN ul.dx-grid card=dx-card :: dx-card__text(22)
+1920 /integrations :: ALIGN ul.dx-grid card=dx-card :: dx-card__foot(36)
+1920 /integrations :: ALIGN ul.dx-grid card=dx-card :: dx-card__text(22)
+1920 /integrations :: ALIGN ul.dx-grid card=dx-card :: dx-card__text(21)
+1920 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1920 /blog :: ALIGN ul.cp-grid card=cp-card :: p(48)
+1920 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1920 /press-kit :: dl.cp-dl [2+2+2+2] w=220/220,600 STRETCH sec=co-band
+1920 /press-kit :: ALIGN ul.cp-grid card=cp-card :: cp-card__meta(26)
+1920 /support :: ALIGN div.co-panel.co-panel--3 card=co-panel__cell :: co-panel__foot(106) co-panel__foot(26)
+1920 /products/sibu :: ALIGN ul.zs-index card=is-in :: span(23)
+1920 /products/sibu/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25) fz-hubcaps(48) fz-hubcaps(70) fz-hubcaps(23)
+1920 /products/sibu/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1920 /products/sibu/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(70)
+1920 /products/sibu/features/search-by-anything :: ul.fz-checks.fz-checks--2 [2+2+1] w=536/536 sec=fz-sec fz-sec--tint
+1920 /products/oda7 :: ul.zs-ribbon__track [5+1] w=300/213 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-1
+1920 /products/oda7 :: li.is-in [2+1] w=120/756 STRETCH sec=zs-band zs-band--plain
+1920 /products/oda7 :: li.is-in [2+1] w=120/756 STRETCH sec=zs-band zs-band--plain
+1920 /products/oda7 :: li.is-in [2+1] w=120/756 STRETCH sec=zs-band zs-band--plain
+1920 /products/oda7 :: li.is-in [2+1] w=120/756 STRETCH sec=zs-band zs-band--plain
+1920 /products/oda7 :: li.is-in [2+1] w=120/756 STRETCH sec=zs-band zs-band--plain
+1920 /products/oda7/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23) fz-hubcaps(47)
+1920 /products/oda7/features/lead-distribution :: ul.fz-checks.fz-checks--2 [2+2+1] w=536/536 sec=fz-sec fz-sec--tint
+1920 /products/oda7/features/lead-distribution :: ul.fz-tiles [3+1] w=295/295 sec=fz-sec
+1920 /products/taskmagic :: ul.zs-ribbon__track [2+1] w=453/501 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-2
+1920 /products/taskmagic :: ul. [4+1] w=184/85 STRETCH sec=zs-band zs-band--tint
+1920 /products/taskmagic/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__price(24) pz-plan__period(24) pz-plan__cta(24) pz-plan__list(24)
+1920 /products/taskmagic/features/app-integrations :: ul.fz-checks.fz-checks--2 [2+2+1] w=536/536 sec=fz-sec fz-sec--tint
+1920 /products/cardizo :: ALIGN ul.zs-plans.zs-plans-2 card=is-in :: span(35) strong(23) small(12)
+1920 /products/cardizo/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__price(24) pz-plan__period(24) pz-plan__cta(24) pz-plan__list(24) pz-plan__cta(43) pz-plan__list(43)
+1920 /products/cardizo/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1920 /products/meetingmind/pricing STATUS 404
+1920 /products/meetingmind/security STATUS 404
+1920 /products/hrmagix/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__cta(43) pz-plan__list(43)
+1920 /products/hrmagix/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1920 /products/zapbuzzer/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__cta(43) pz-plan__list(43)
+1920 /products/zapbuzzer/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(47)
+1920 /products/zapbuzzer/features/one-tap-requests :: ul.fz-checks.fz-checks--2 [2+2+1] w=536/536 sec=fz-sec fz-sec--tint
+1920 /products/tracksuit :: div.zs-dotcards.is-in [4+2] w=295/295,295 sec=zs-band zs-band--dark zs-dotgrid-bg
+1920 /products/tracksuit :: ALIGN div.zs-dotcards.is-in card=zs-dotcard :: span(22)
+1920 /products/tracksuit :: ALIGN ul.zs-index card=is-in :: span(23)
+1920 /products/tracksuit/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1920 /products/tracksuit/security STATUS 404
+1440 / :: div.hh-strip [2+1] w=400/399 sec=hh
+1440 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1440 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1440 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1440 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1440 / :: ul.z-stats__row.h-stats [5+1] w=167/167 sec=z-stats hz-stats
+1440 / :: ALIGN ul.h-featured card=is-in :: h-fcard__cap(26)
+1440 / :: ALIGN ul.h-ints card=is-in :: small(22) span(22) em(19)
+1440 / :: ALIGN ul.h-why card=is-in :: p(25)
+1440 / :: ALIGN ol.h-values card=is-in :: p(13)
+1440 /industries :: ul.dx-grid.dx-grid--industries [4+2] w=298/298,298 sec=dx-group dx-group--sector
+1440 /industries :: ALIGN div.dx-grid.dx-grid--center card=dx-guide :: dx-guide__points(24)
+1440 /industries/accounting-tax-practices :: ALIGN div.container.dx-overview card=dx-challenges :: dx-kicker(32) dx-head__title(32)
+1440 /integrations :: ul.dx-card__works [2+2] w=93/92,81 STRETCH sec=dx-sec dx-sec--tint
+1440 /integrations :: ul.dx-grid [4+1] w=298/298 sec=dx-group
+1440 /integrations :: ul.dx-grid [4+1] w=298/298 sec=dx-group
+1440 /integrations :: ul.dx-grid [4+1] w=298/298 sec=dx-group
+1440 /integrations :: ul.dx-card__works [2+1] w=73/113 STRETCH sec=dx-group
+1440 /integrations :: ul.dx-card__works [2+2] w=93/92,81 STRETCH sec=dx-group
+1440 /integrations :: ALIGN ul.dx-grid card=dx-card :: dx-card__text(22)
+1440 /integrations :: ALIGN ul.dx-grid card=dx-card :: dx-card__text(22)
+1440 /integrations :: ALIGN ul.dx-grid card=dx-card :: dx-card__foot(36)
+1440 /integrations :: ALIGN ul.dx-grid card=dx-card :: dx-card__text(22)
+1440 /integrations :: ALIGN ul.dx-grid card=dx-card :: dx-card__text(21)
+1440 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1440 /blog :: ALIGN ul.cp-grid card=cp-card :: p(48)
+1440 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1440 /press-kit :: dl.cp-dl [2+2+2+2] w=220/220,600 STRETCH sec=co-band
+1440 /press-kit :: ALIGN ul.cp-grid card=cp-card :: cp-card__meta(26)
+1440 /support :: ALIGN div.co-panel.co-panel--3 card=co-panel__cell :: co-panel__foot(106) co-panel__foot(26)
+1440 /products/sibu :: ALIGN ul.zs-index card=is-in :: span(23)
+1440 /products/sibu/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25) fz-hubcaps(48) fz-hubcaps(70) fz-hubcaps(23)
+1440 /products/sibu/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1440 /products/sibu/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(70)
+1440 /products/sibu/features/search-by-anything :: ul.fz-checks.fz-checks--2 [2+2+1] w=536/536 sec=fz-sec fz-sec--tint
+1440 /products/oda7 :: ul.zs-ribbon__track [4+2] w=295/274,210 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-1
+1440 /products/oda7 :: li.is-in [2+1] w=120/756 STRETCH sec=zs-band zs-band--plain
+1440 /products/oda7 :: li.is-in [2+1] w=120/756 STRETCH sec=zs-band zs-band--plain
+1440 /products/oda7 :: li.is-in [2+1] w=120/756 STRETCH sec=zs-band zs-band--plain
+1440 /products/oda7 :: li.is-in [2+1] w=120/756 STRETCH sec=zs-band zs-band--plain
+1440 /products/oda7 :: li.is-in [2+1] w=120/756 STRETCH sec=zs-band zs-band--plain
+1440 /products/oda7/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23) fz-hubcaps(47)
+1440 /products/oda7/features/lead-distribution :: ul.fz-checks.fz-checks--2 [2+2+1] w=536/536 sec=fz-sec fz-sec--tint
+1440 /products/taskmagic :: ul.zs-ribbon__track [2+1] w=453/501 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-2
+1440 /products/taskmagic :: ul. [4+1] w=184/85 STRETCH sec=zs-band zs-band--tint
+1440 /products/taskmagic/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__price(24) pz-plan__period(24) pz-plan__cta(24) pz-plan__list(24)
+1440 /products/taskmagic/features/app-integrations :: ul.fz-checks.fz-checks--2 [2+2+1] w=536/536 sec=fz-sec fz-sec--tint
+1440 /products/cardizo :: ALIGN ul.zs-plans.zs-plans-2 card=is-in :: span(35) strong(23) small(12)
+1440 /products/cardizo/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__price(24) pz-plan__period(24) pz-plan__cta(24) pz-plan__list(24) pz-plan__cta(43) pz-plan__list(43)
+1440 /products/cardizo/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1440 /products/meetingmind/pricing STATUS 404
+1440 /products/meetingmind/security STATUS 404
+1440 /products/hrmagix/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__cta(43) pz-plan__list(43)
+1440 /products/hrmagix/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1440 /products/zapbuzzer/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__cta(43) pz-plan__list(43)
+1440 /products/zapbuzzer/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(47)
+1440 /products/zapbuzzer/features/one-tap-requests :: ul.fz-checks.fz-checks--2 [2+2+1] w=536/536 sec=fz-sec fz-sec--tint
+1440 /products/tracksuit :: div.zs-dotcards.is-in [4+2] w=295/295,295 sec=zs-band zs-band--dark zs-dotgrid-bg
+1440 /products/tracksuit :: ALIGN div.zs-dotcards.is-in card=zs-dotcard :: span(22)
+1440 /products/tracksuit :: ALIGN ul.zs-index card=is-in :: span(23)
+1440 /products/tracksuit/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1440 /products/tracksuit/security STATUS 404
+1024 / :: span.hs__kb [2+2+1] w=175/190 STRETCH sec=hh
+1024 / :: li.is-in [2+1] w=48/353 STRETCH sec=hz-values
+1024 / :: li.is-in [2+1] w=48/353 STRETCH sec=hz-values
+1024 / :: li.is-in [2+1] w=48/353 STRETCH sec=hz-values
+1024 / :: li.is-in [2+1] w=48/353 STRETCH sec=hz-values
+1024 / :: ul.z-stats__row.h-stats [5+1] w=161/161 sec=z-stats hz-stats
+1024 / :: ALIGN div.z-duo__frame card=z-duo__card :: p(29)
+1024 / :: ALIGN ul.h-featured card=is-in :: h-fcard__cap(26)
+1024 / :: ALIGN ul.h-industries card=h-card :: h-more(22)
+1024 / :: ALIGN ul.h-ints card=is-in :: small(22) span(22) span(41) em(19) em(38)
+1024 / :: ALIGN ul.h-why card=is-in :: p(34)
+1024 /industries :: ul.dx-grid.dx-grid--industries [2+1] w=476/476 sec=dx-group dx-group--sector
+1024 /industries :: ul.dx-grid.dx-grid--industries [2+1] w=476/476 sec=dx-group dx-group--sector
+1024 /industries :: ul.dx-grid.dx-grid--industries [2+1] w=476/476 sec=dx-group dx-group--sector
+1024 /industries :: ALIGN div.dx-grid.dx-grid--center card=dx-guide :: dx-guide__text(26) dx-guide__points(26)
+1024 /industries/accounting-tax-practices :: ul.dx-grid.dx-grid--industries [3+1] w=312/312 sec=dx-sec dx-sec--ind
+1024 /industries/accounting-tax-practices :: ALIGN div.container.dx-overview card=dx-challenges :: dx-kicker(31) dx-head__title(31)
+1024 /integrations :: ul.dx-grid.dx-grid--guides.dx-grid--center [3+3+1] w=312/312 sec=dx-sec dx-sec--tint
+1024 /integrations :: ul.dx-card__works [2+2] w=93/92,81 STRETCH sec=dx-sec dx-sec--tint
+1024 /integrations :: ul.dx-grid [2+1] w=476/476 sec=dx-group
+1024 /integrations :: ul.dx-grid [2+2+1] w=476/476 sec=dx-group
+1024 /integrations :: ul.dx-grid [2+2+1] w=476/476 sec=dx-group
+1024 /integrations :: ul.dx-grid [2+2+1] w=476/476 sec=dx-group
+1024 /integrations :: ul.dx-grid [2+1] w=476/476 sec=dx-group
+1024 /integrations :: ul.dx-grid [2+1] w=476/476 sec=dx-group
+1024 /integrations :: ALIGN ul.dx-grid card=dx-card :: dx-card__text(22)
+1024 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1024 /blog :: ALIGN ul.cp-grid card=cp-card :: p(48) p(24)
+1024 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1024 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1024 /careers :: ul.cp-toc [4+1] w=145/152 STRETCH sec=co-band
+1024 /press-kit :: dl.cp-dl [2+2+2+2] w=220/220,600 STRETCH sec=co-band
+1024 /press-kit :: ALIGN ul.cp-grid card=cp-card :: cp-card__meta(26)
+1024 /contact :: ALIGN div.co-panel.co-panel--3 card=co-panel__cell :: co-panel__foot(26)
+1024 /support :: ALIGN div.co-panel.co-panel--3 card=co-panel__cell :: co-panel__foot(53) co-panel__foot(79)
+1024 /products/sibu :: ALIGN ul.zs-index card=is-in :: span(23)
+1024 /products/sibu/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(50) fz-hubcaps(93) fz-hubcaps(47)
+1024 /products/sibu/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1024 /products/sibu/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(93) fz-hubcaps(23)
+1024 /products/sibu/features/search-by-anything :: ul.fz-checks.fz-checks--2 [2+2+1] w=407/407 sec=fz-sec fz-sec--tint
+1024 /products/sibu/features/search-by-anything :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25)
+1024 /products/oda7 :: ul.zs-ribbon__track [3+3] w=268/363,250,191 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-1
+1024 /products/oda7 :: div.zs-tabs__list [5+1] w=149/165 STRETCH sec=zs-band zs-band--dark zs-sig-tabs 
+1024 /products/oda7 :: li.is-in [2+1] w=120/756 STRETCH sec=zs-band zs-band--plain
+1024 /products/oda7 :: li.is-in [2+1] w=120/756 STRETCH sec=zs-band zs-band--plain
+1024 /products/oda7 :: li.is-in [2+1] w=120/756 STRETCH sec=zs-band zs-band--plain
+1024 /products/oda7 :: li.is-in [2+1] w=120/756 STRETCH sec=zs-band zs-band--plain
+1024 /products/oda7 :: li.is-in [2+1] w=120/756 STRETCH sec=zs-band zs-band--plain
+1024 /products/oda7 :: ALIGN ul.zs-index card=is-in :: span(23)
+1024 /products/oda7/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__desc(27) pz-plan__price(27) pz-plan__cta(27) pz-plan__list(33)
+1024 /products/oda7/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1024 /products/oda7/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23) p(25) fz-hubcaps(48) fz-hubcaps(47)
+1024 /products/oda7/features/lead-distribution :: ul.fz-checks.fz-checks--2 [2+2+1] w=407/407 sec=fz-sec fz-sec--tint
+1024 /products/oda7/features/lead-distribution :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25)
+1024 /products/taskmagic :: ul.zs-ribbon__track [2+1] w=453/501 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-2
+1024 /products/taskmagic :: ul. [4+1] w=184/85 STRETCH sec=zs-band zs-band--tint
+1024 /products/taskmagic/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__price(48) pz-plan__period(48) pz-plan__cta(48) pz-plan__list(48)
+1024 /products/taskmagic/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1024 /products/taskmagic/features/app-integrations :: ul.fz-checks.fz-checks--2 [2+2+1] w=407/407 sec=fz-sec fz-sec--tint
+1024 /products/cardizo :: ALIGN ul.zs-plans.zs-plans-2 card=is-in :: span(35) strong(23) small(12)
+1024 /products/cardizo/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__price(24) pz-plan__cta(19) pz-plan__list(19)
+1024 /products/cardizo/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(47)
+1024 /products/meetingmind :: ul.zs-ribbon__track [3+1] w=295/170 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-2
+1024 /products/meetingmind :: ALIGN div.zs-bgrid card=zs-benefit :: p(25)
+1024 /products/meetingmind/pricing STATUS 404
+1024 /products/meetingmind/security STATUS 404
+1024 /products/hrmagix/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__cta(43) pz-plan__list(43)
+1024 /products/hrmagix/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1024 /products/hrmagix/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1024 /products/hrmagix/features/employee-records :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25)
+1024 /products/zapbuzzer/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__cta(43) pz-plan__list(43)
+1024 /products/zapbuzzer/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1024 /products/zapbuzzer/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1024 /products/zapbuzzer/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(70)
+1024 /products/zapbuzzer/features/one-tap-requests :: ul.fz-checks.fz-checks--2 [2+2+1] w=407/407 sec=fz-sec fz-sec--tint
+1024 /products/tracksuit :: div.zs-dotcards.is-in [4+2] w=227/227,227 sec=zs-band zs-band--dark zs-dotgrid-bg
+1024 /products/tracksuit :: ALIGN div.zs-dotcards.is-in card=zs-dotcard :: span(22)
+1024 /products/tracksuit :: ALIGN ul.zs-index card=is-in :: span(23)
+1024 /products/tracksuit/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(70)
+1024 /products/tracksuit/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1024 /products/tracksuit/security STATUS 404
+1024 /products/tracksuit/features/always-on-brand-tracking :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25)
+768 / :: ul.h-industries [2+1] w=346/346 sec=h-sec h-sec--brand
+768 / :: li.is-in [2+1] w=48/619 STRETCH sec=hz-values
+768 / :: li.is-in [2+1] w=48/619 STRETCH sec=hz-values
+768 / :: li.is-in [2+1] w=48/619 STRETCH sec=hz-values
+768 / :: li.is-in [2+1] w=48/619 STRETCH sec=hz-values
+768 / :: ALIGN ul.h-featured card=is-in :: h-fcard__cap(26)
+768 / :: ALIGN ul.h-industries card=h-card :: h-ind__list(27)
+768 /solutions :: div.ez-cards [2+1] w=346/346 sec=ez-section
+768 /industries :: div.dx-grid.dx-grid--center [2+1] w=348/348 sec=dx-sec dx-sec--ind
+768 /industries :: ul.dx-grid.dx-grid--industries [2+1] w=348/348 sec=dx-group dx-group--sector
+768 /industries :: ul.dx-grid.dx-grid--industries [2+1] w=348/348 sec=dx-group dx-group--sector
+768 /industries :: ul.dx-grid.dx-grid--industries [2+1] w=348/348 sec=dx-group dx-group--sector
+768 /integrations :: ul.dx-grid.dx-grid--guides.dx-grid--center [2+2+2+1] w=348/348 sec=dx-sec dx-sec--tint
+768 /integrations :: ul.dx-card__works [2+2] w=93/92,81 STRETCH sec=dx-sec dx-sec--tint
+768 /integrations :: ul.dx-grid [2+1] w=348/348 sec=dx-group
+768 /integrations :: ul.dx-grid [2+2+1] w=348/348 sec=dx-group
+768 /integrations :: ul.dx-grid [2+2+1] w=348/348 sec=dx-group
+768 /integrations :: ul.dx-grid [2+2+1] w=348/348 sec=dx-group
+768 /integrations :: ul.dx-card__works [2+2] w=93/92,81 STRETCH sec=dx-group
+768 /integrations :: ul.dx-grid [2+1] w=348/348 sec=dx-group
+768 /integrations :: ul.dx-grid [2+1] w=348/348 sec=dx-group
+768 /integrations :: ALIGN ul.dx-grid card=dx-card :: dx-card__text(22)
+768 /blog :: ul.cp-grid [2+1] w=350/350 sec=cp-group
+768 /blog :: ul.cp-grid [2+2+2+1] w=350/350 sec=cp-group
+768 /blog :: ul.cp-grid [2+2+1] w=350/350 sec=cp-group
+768 /careers :: ul.co-cols [2+1] w=350/350 sec=co-band
+768 /careers :: ul.cp-grid [2+1] w=350/350 sec=co-band co-band--tint
+768 /careers :: ul.cp-toc [3+2] w=145/268,152 STRETCH sec=co-band
+768 /vendors :: ul.co-cols [2+1] w=350/350 sec=co-band
+768 /vendors :: ul.cp-grid [2+1] w=350/350 sec=co-band co-band--tint
+768 /media :: ul.cp-grid [2+2+1] w=350/350 sec=co-band
+768 /media :: ul.cp-grid [2+2+1] w=350/350 sec=co-band
+768 /media :: ul.cp-grid [2+1] w=350/350 sec=co-band co-band--tint
+768 /press-kit :: dl.cp-dl [2+2+2+2] w=220/220,500 STRETCH sec=co-band
+768 /press-kit :: ul.cp-grid [2+2+1] w=350/350 sec=co-band
+768 /press-kit :: ALIGN ul.cp-grid card=cp-card :: cp-card__meta(53)
+768 /publish :: ul.co-cols [2+1] w=350/350 sec=co-band
+768 /company :: ul.co-cols [2+1] w=350/350 sec=co-band co-band--tint
+768 /contact :: div.co-panel.co-panel--3 [2+1] w=330/330 sec=co-band co-band--tint
+768 /support :: ALIGN div.co-panel.co-panel--3 card=co-panel__cell :: co-panel__foot(26)
+768 /compare :: ALIGN div.zc-panel card=zc-vs :: zc-vs__sep(35) zc-vs__desc(35)
+768 /products/sibu :: ul.zs-ribbon__track [4+1] w=171/159 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-1
+768 /products/sibu :: div.zs-bgrid [2+2+1] w=346/346 sec=zs-band zs-benefits zs-benefits--glass zs-band--dark zs-edge-angle is-in
+768 /products/sibu :: ul.zs-plans.zs-plans-0 [2+1] w=346/346 sec=zs-band zs-band--soft
+768 /products/sibu :: div.pz-related [2+1] w=346/346 sec=zs-band zs-band--tint
+768 /products/sibu :: ALIGN ul.zs-index card=is-in :: span(23)
+768 /products/sibu/pricing :: div.pz-plans [2+1] w=346/346 sec=pz-pricing
+768 /products/sibu/features :: ul.fz-tiles [2+2+1] w=346/346 sec=fz-sec
+768 /products/sibu/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+768 /products/sibu/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23) fz-hubcaps(47)
+768 /products/sibu/features/search-by-anything :: ul.fz-checks.fz-checks--2 [2+2+1] w=294/294 sec=fz-sec fz-sec--tint
+768 /products/oda7 :: ul.zs-ribbon__track [2+2+2] w=252/234,180 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-1
+768 /products/oda7 :: div.zs-bgrid [2+2+1] w=346/346 sec=zs-band zs-benefits zs-benefits--glass zs-band--dark is-in
+768 /products/oda7 :: div.zs-tabs__list [3+3] w=149/167,203,165 STRETCH sec=zs-band zs-band--dark zs-sig-tabs 
+768 /products/oda7 :: li.is-in [2+1] w=120/568 STRETCH sec=zs-band zs-band--plain
+768 /products/oda7 :: li.is-in [2+1] w=120/568 STRETCH sec=zs-band zs-band--plain
+768 /products/oda7 :: li.is-in [2+1] w=120/568 STRETCH sec=zs-band zs-band--plain
+768 /products/oda7 :: li.is-in [2+1] w=120/568 STRETCH sec=zs-band zs-band--plain
+768 /products/oda7 :: li.is-in [2+1] w=120/568 STRETCH sec=zs-band zs-band--plain
+768 /products/oda7 :: div.zs-usecases.zs-uses-2 [2+2+1] w=346/346 sec=zs-band zs-band--dark
+768 /products/oda7 :: ul.zs-plans.zs-plans-0 [2+1] w=346/346 sec=zs-band zs-band--soft
+768 /products/oda7 :: div.pz-related [2+1] w=346/346 sec=zs-band zs-band--tint
+768 /products/oda7 :: ALIGN ul.zs-index card=is-in :: span(23)
+768 /products/oda7/pricing :: div.pz-plans [2+1] w=346/346 sec=pz-pricing
+768 /products/oda7/features :: ul.fz-tiles [2+2+1] w=346/346 sec=fz-sec fz-sec--tint
+768 /products/oda7/features :: ul.fz-tiles [2+2+1] w=346/346 sec=fz-sec
+768 /products/oda7/features/lead-distribution :: ul.fz-checks.fz-checks--2 [2+2+1] w=294/294 sec=fz-sec fz-sec--tint
+768 /products/taskmagic :: div.zs-bgrid [2+2+1] w=346/346 sec=zs-band zs-benefits zs-benefits--black zs-band--dark is-in
+768 /products/taskmagic :: ul. [4+1] w=184/85 STRETCH sec=zs-band zs-band--tint
+768 /products/taskmagic :: div.pz-related [2+1] w=346/346 sec=zs-band zs-band--tint
+768 /products/taskmagic/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__price(24) pz-plan__period(24) pz-plan__cta(24) pz-plan__list(24)
+768 /products/taskmagic/features :: ul.fz-tiles [2+1] w=346/346 sec=fz-sec fz-sec--tint
+768 /products/taskmagic/features/app-integrations :: ul.fz-checks.fz-checks--2 [2+2+1] w=294/294 sec=fz-sec fz-sec--tint
+768 /products/cardizo :: div.zs-bgrid [2+2+1] w=346/346 sec=zs-band zs-benefits zs-benefits--glass zs-band--dark zs-curve is-in
+768 /products/cardizo :: ul.zs-index [2+2+1] w=346/346 sec=zs-band zs-band--tint
+768 /products/cardizo :: div.zs-usecases.zs-uses-1 [2+2+1] w=346/346 sec=zs-band zs-band--plain
+768 /products/cardizo :: ul.zs-plans.zs-plans-2 [2+2+1] w=346/346 sec=zs-band zs-band--soft
+768 /products/cardizo :: div.pz-related [2+1] w=346/346 sec=zs-band zs-band--tint
+768 /products/cardizo :: ALIGN ul.zs-plans.zs-plans-2 card=is-in :: span(35) strong(23) small(12)
+768 /products/cardizo/pricing :: div.pz-plans [2+2+1] w=346/346 sec=pz-pricing
+768 /products/meetingmind :: ul.zs-ribbon__track [2+2] w=295/309,170 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-2
+768 /products/meetingmind :: div.pz-related [2+1] w=346/346 sec=zs-band zs-band--tint
+768 /products/meetingmind/pricing STATUS 404
+768 /products/meetingmind/security STATUS 404
+768 /products/hrmagix :: div.pc [2+1] w=346/346 sec=pc-sec
+768 /products/hrmagix :: div.zs-tabs__list [5+1] w=88/200 STRETCH sec=zs-band zs-band--dark zs-sig-tabs 
+768 /products/hrmagix :: ol.zs-steps.zs-how-0 [2+1] w=346/346 sec=zs-band zs-band--plain
+768 /products/hrmagix :: div.zs-usecases.zs-uses-0 [2+2+1] w=346/346 sec=zs-band zs-band--brand
+768 /products/hrmagix :: ul.zs-plans.zs-plans-2 [2+1] w=346/346 sec=zs-band zs-band--soft
+768 /products/hrmagix :: div.pz-related [2+1] w=346/346 sec=zs-band zs-band--tint
+768 /products/hrmagix :: ALIGN ul.zs-plans.zs-plans-2 card=is-in :: span(35) strong(23) small(12)
+768 /products/hrmagix/pricing :: div.pz-plans [2+1] w=346/346 sec=pz-pricing
+768 /products/hrmagix/features :: ul.fz-tiles [2+2+1] w=346/346 sec=fz-sec
+768 /products/zapbuzzer :: div.zs-bgrid [2+2+1] w=346/346 sec=zs-band zs-benefits zs-benefits--pastel zs-band--plain is-in
+768 /products/zapbuzzer :: ul.zs-plans.zs-plans-2 [2+1] w=346/346 sec=zs-band zs-band--soft
+768 /products/zapbuzzer :: div.pz-related [2+1] w=346/346 sec=zs-band zs-band--tint
+768 /products/zapbuzzer :: ALIGN ul.zs-plans.zs-plans-2 card=is-in :: span(35) strong(23) small(12)
+768 /products/zapbuzzer/pricing :: div.pz-plans [2+1] w=346/346 sec=pz-pricing
+768 /products/zapbuzzer/features :: ul.fz-tiles [2+2+1] w=346/346 sec=fz-sec
+768 /products/zapbuzzer/features :: ul.fz-tiles [2+1] w=346/346 sec=fz-sec fz-sec--tint
+768 /products/zapbuzzer/features/one-tap-requests :: ul.fz-checks.fz-checks--2 [2+2+1] w=294/294 sec=fz-sec fz-sec--tint
+768 /products/tracksuit :: div.zs-bgrid [2+2+1] w=346/346 sec=zs-band zs-benefits zs-benefits--columns zs-band--plain is-in
+768 /products/tracksuit :: div.zs-usecases.zs-uses-3 [2+2+1] w=346/346 sec=zs-band zs-band--soft
+768 /products/tracksuit :: div.pz-related [2+1] w=346/346 sec=zs-band zs-band--tint
+768 /products/tracksuit :: ALIGN ul.zs-index card=is-in :: span(23)
+768 /products/tracksuit/features :: ul.fz-tiles [2+2+1] w=346/346 sec=fz-sec
+768 /products/tracksuit/security STATUS 404

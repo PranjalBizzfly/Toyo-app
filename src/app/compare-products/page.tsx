@@ -9,7 +9,7 @@ import { routes } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Compare products",
+  title: "Compare Products",
   description: "Side-by-side comparisons to help you choose the right ToyoApps product.",
   path: routes.compare(),
   status: getComparisons().length ? "live" : "draft",

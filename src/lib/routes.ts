@@ -19,16 +19,16 @@ export const routes = {
   industry: (slug: string) => `/industries/${slug}`,
   integrations: () => "/integrations",
   integration: (slug: string) => `/integrations/${slug}`,
-  compare: () => "/compare",
-  comparison: (slug: string) => `/compare/${slug}`,
+  compare: () => "/compare-products",
+  comparison: (slug: string) => `/compare-products/${slug}`,
   resources: () => "/resources",
   // The blog hub lives at /blog; /resources/blog permanently redirects there (next.config.ts).
   resourceType: (type: ResourceType) => (type === "blog" ? "/blog" : `/resources/${type}`),
   resource: (type: ResourceType, slug: string) => `/resources/${type}/${slug}`,
-  company: () => "/company",
-  publish: () => "/publish",
+  company: () => "/about-toyoapps",
+  publish: () => "/publish-and-sell-your-saas",
   support: () => "/support",
-  contact: () => "/contact",
+  contact: () => "/contact-us",
   /** The one contact form, with optional preselection (read client-side by ContactForm). */
   contactForm: (opts: { type?: ContactTypeParam; product?: string | string[]; topic?: "vendor" | "careers" | "media"; role?: string } = {}) => {
     const q = new URLSearchParams();
@@ -37,14 +37,14 @@ export const routes = {
     if (opts.topic) q.set("topic", opts.topic);
     if (opts.role) q.set("role", opts.role);
     const qs = q.toString();
-    return `/contact${qs ? `?${qs}` : ""}#contact-form`;
+    return `/contact-us${qs ? `?${qs}` : ""}`;
   },
   careers: () => "/careers",
-  vendors: () => "/vendors",
-  media: () => "/media",
+  vendors: () => "/become-a-toyoapps-vendor",
+  media: () => "/media-and-news",
   pressKit: () => "/press-kit",
   blog: () => "/blog",
-  legal: (doc: "privacy" | "terms" | "cookies") => `/legal/${doc}`,
+  legal: (doc: "privacy" | "terms" | "cookies") => `/legal/${({ privacy: "privacy-policy", terms: "terms-of-service", cookies: "cookie-policy" } as const)[doc]}`,
 };
 
 /** Product sub-pages. Order defines the product secondary navigation. */

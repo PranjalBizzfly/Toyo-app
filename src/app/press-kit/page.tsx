@@ -14,7 +14,7 @@ import "@/app/company-zoho.css";
 import "@/app/company-pages.css";
 
 export const metadata = buildMetadata({
-  title: "Press kit",
+  title: "Press Kit",
   description: "ToyoApps press kit: company overview, brand description, logo files, colour palette and boilerplate descriptions for every product.",
   path: routes.pressKit(),
 });

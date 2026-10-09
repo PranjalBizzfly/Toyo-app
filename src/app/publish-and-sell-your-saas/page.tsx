@@ -9,7 +9,7 @@ import "@/app/company-zoho.css";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 
 export const metadata = buildMetadata({
-  title: "Publish and sell your SaaS",
+  title: "Publish and Sell Your SaaS",
   description: "List your SaaS product on ToyoApps, reach customers and get paid, with subscription and one-time billing handled for you.",
   path: routes.publish(),
 });

@@ -12,9 +12,9 @@ import "@/app/company-zoho.css";
  * until `body` is supplied the page is noindexed and says so plainly.
  */
 const docs: Record<string, { title: string; body?: string[] }> = {
-  privacy: { title: "Privacy policy" },
-  terms: { title: "Terms of service" },
-  cookies: { title: "Cookie policy" },
+  "privacy-policy": { title: "Privacy Policy" },
+  "terms-of-service": { title: "Terms of Service" },
+  "cookie-policy": { title: "Cookie Policy" },
 };
 
 type Props = { params: Promise<{ doc: string }> };
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props) {
   return buildMetadata({
     title: d.title,
     description: `${d.title} for ToyoApps.`,
-    path: routes.legal(slug as "privacy"),
+    path: `/legal/${slug}`,
     status: d.body ? "live" : "draft",
   });
 }

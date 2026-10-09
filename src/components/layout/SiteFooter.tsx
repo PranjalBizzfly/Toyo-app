@@ -52,7 +52,7 @@ export function SiteFooter() {
     getIntegrations().length && { label: "Integrations", href: routes.integrations() },
     getResources().length && { label: "Resources", href: routes.resources() },
     getComparisons().length && { label: "Compare Products", href: routes.compare() },
-    { label: "Help & Support", href: routes.support() },
+    { label: "Support", href: routes.support() },
   ].filter((l): l is FooterLink => !!l);
 
   return (
@@ -80,11 +80,11 @@ export function SiteFooter() {
           <FooterGroup title="Company">
             <LinkList
               links={[
-                { label: "About Us", href: routes.company() },
-                { label: "Publish Your Software", href: routes.publish() },
-                { label: "Vendors", href: routes.vendors() },
+                { label: "About ToyoApps", href: routes.company() },
+                { label: "Publish and Sell Your SaaS", href: routes.publish() },
+                { label: "Become a ToyoApps Vendor", href: routes.vendors() },
                 { label: "Careers", href: routes.careers() },
-                { label: "Media", href: routes.media() },
+                { label: "Media and News", href: routes.media() },
                 { label: "Press Kit", href: routes.pressKit() },
                 { label: "Blog", href: routes.blog() },
                 { label: "Contact Us", href: routes.contactForm() },

@@ -49,7 +49,7 @@ const STORIES: Record<string, ProductStory> = {
   meetingmind: { ref: "Zoho Zia Agents", look: "aurora", hero: "agent", art: "chat", benefits: "glass", spot: "split", signature: "timeline", edge: "round", cta: "glow" },
   fantom: { ref: "Zoho Linkthread", look: "forest", hero: "lime", art: "phone", benefits: "black", spot: "split", signature: "hub", edge: "flat", cta: "band" },
   oda7: { ref: "Zoho Creator Plus", look: "ocean", hero: "radial", art: "phone", benefits: "glass", spot: "tabbar", signature: "tabs", edge: "flat", cta: "glow" },
-  getbenj: { ref: "Zoho Projects Plus", look: "ember", hero: "marquee", art: "chart", benefits: "warm", spot: "split", signature: "timeline", edge: "round", cta: "panel" },
+  benj: { ref: "Zoho Projects Plus", look: "ember", hero: "marquee", art: "chart", benefits: "warm", spot: "split", signature: "timeline", edge: "round", cta: "panel" },
   zapbuzzer: { ref: "Zoho CRM", look: "pastel", hero: "pastel", art: "flow", benefits: "pastel", spot: "split", signature: "orbit", edge: "round", cta: "spin" },
   zorfly: { ref: "Zoho Flow", look: "snow", hero: "flow", art: "chat", benefits: "columns", spot: "split", signature: "dotgrid", edge: "round", cta: "panel" },
   zuzu: { ref: "Zoho CommandCenter", look: "grid", hero: "frame", art: "desktop", benefits: "grid", spot: "split", signature: "tabs", edge: "flat", cta: "band" },

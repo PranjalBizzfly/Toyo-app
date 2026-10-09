@@ -12,7 +12,7 @@ import "@/app/company-zoho.css";
 import "@/app/company-pages.css";
 
 export const metadata = buildMetadata({
-  title: "Media and news",
+  title: "Media and News",
   description: "ToyoApps company and product updates, media contact details, and links to the press kit and blog.",
   path: routes.media(),
 });

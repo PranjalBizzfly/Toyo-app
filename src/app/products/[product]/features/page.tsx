@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props) {
   const product = getProduct((await params).product);
   if (!product) return {};
   return buildMetadata({
-    title: `${product.name} features`,
+    title: `Features | ${product.name}`,
     description: `Every ${product.name} feature, grouped by area. ${product.shortDescription}`,
     path: routes.productSection(product.slug, "features"),
     status: product.status,

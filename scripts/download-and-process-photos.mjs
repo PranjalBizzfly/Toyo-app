@@ -198,14 +198,6 @@ const photoTasks = [
     alt: 'Senior operations leader reviewing performance analytics and statutory compliance audit metrics'
   },
   {
-    key: 'tour',
-    url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&q=85',
-    path: 'public/images/product/tour.webp',
-    width: 1100,
-    height: 560,
-    alt: 'Software power user navigating interactive application workspace and executing multi-step business flows'
-  },
-  {
     key: 'section-card',
     url: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=85',
     path: 'public/images/product/section-card.webp',

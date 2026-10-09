@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: Props) {
   if (!product) return {};
   return buildMetadata({
     ...product,
-    title: product.primaryUseCase ? `${product.name}: ${product.primaryUseCase}` : product.name,
+    title: product.primaryUseCase ? `${product.name} | ${product.primaryUseCase}` : product.name,
     description: product.shortDescription,
     path: routes.product(product.slug),
     ogImage: product.ogImage ?? product.heroImage?.src,

@@ -390,8 +390,8 @@ const features: Feature[] = [
 ];
 
 export const getbenj: Product = {
-  id: "getbenj",
-  slug: "getbenj",
+  id: "benj",
+  slug: "benj",
   name: "Benj",
   shortDescription:
     "Describe a product and get a complete AI-built marketing plan as a PDF: buyer persona, best markets, channels, ad map and budget split.",

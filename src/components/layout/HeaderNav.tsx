@@ -108,7 +108,7 @@ function ProductsPanel({ menu, onNavigate }: { menu: NavMenu; onNavigate: () => 
             </div>
             {!results && group?.href && (
               <Link href={group.href} onClick={onNavigate}>
-                View category <Icon name="arrow-right" />
+                {group.href === "/products" ? "All Products" : group.title} <Icon name="arrow-right" />
               </Link>
             )}
           </div>
@@ -223,7 +223,7 @@ export function HeaderNav({ menus }: { menus: NavMenu[] }) {
         </Link>
         <ThemeToggle />
         <Link href={routes.contactForm()} className="header-signin">
-          Contact
+          Contact Us
         </Link>
         <Link href="/products" className="btn btn--primary btn--sm header-cta">
           Get Started <Icon name="arrow-right" />
@@ -289,7 +289,7 @@ export function HeaderNav({ menus }: { menus: NavMenu[] }) {
               Get Started
             </Link>
             <Link href={routes.contactForm()} className="btn btn--outline btn--square" onClick={close}>
-              Contact
+              Contact Us
             </Link>
           </div>
         </div>

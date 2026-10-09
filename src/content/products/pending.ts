@@ -5060,11 +5060,11 @@ export const tracksuit: Product = {
         period: "year",
         description: "Always-on tracking for one brand, priced per brand per year. Suits consumer brands investing in brand building; multi-brand and multi-market commitments are quoted separately.",
         features: ["Always-on dashboard updated monthly", "Competitor and category data", "Self-serve access for the marketing team", "Dedicated Brand Champion"],
-        cta: { label: "Request a demo", href: "/contact?type=product&product=tracksuit#contact-form" },
+        cta: { label: "Request a demo", href: "/contact-us?type=product&product=tracksuit" },
       },
     ],
   },
-  primaryCta: { label: "Request a demo", href: "/contact?type=product&product=tracksuit#contact-form" },
+  primaryCta: { label: "Request a demo", href: "/contact-us?type=product&product=tracksuit" },
   sources: [
     `${TS}/`,
     `${TS}/product`,

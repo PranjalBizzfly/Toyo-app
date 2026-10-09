@@ -9,7 +9,7 @@ import { absoluteUrl, buildMetadata, jsonLd } from "@/lib/seo";
 import { toCatalogItem } from "./category/catalog-item";
 
 export const metadata = buildMetadata({
-  title: "All products",
+  title: "All Products",
   description: "Browse every ToyoApps product by category, or search by task, capability or business function.",
   path: routes.products(),
 });

@@ -43,19 +43,19 @@ export function ProductFooter({ product }: { product: Product }) {
 
   const explore: FooterLink[] = sections
     .filter((s) => s !== "resources" && s !== "support")
-    .map((s) => ({ label: sectionLabels[s], href: routes.productSection(product.slug, s) }));
+    .map((s) => ({ label: s === "overview" ? product.name : sectionLabels[s], href: routes.productSection(product.slug, s) }));
   const resources: FooterLink[] = [
     product.docsUrl && { label: "Documentation", href: product.docsUrl },
-    sections.includes("resources") && { label: "Guides & articles", href: routes.productSection(product.slug, "resources") },
+    sections.includes("resources") && { label: "Resources", href: routes.productSection(product.slug, "resources") },
     sections.includes("support") && { label: "Support", href: routes.productSection(product.slug, "support") },
     product.faqs?.length && { label: "FAQs", href: `${routes.product(product.slug)}#faq` },
-    category && { label: `All ${category.name}`, href: routes.category(category.slug) },
-    { label: "All ToyoApps products", href: routes.products() },
+    category && { label: category.name, href: routes.category(category.slug) },
+    { label: "All Products", href: routes.products() },
   ].filter((l): l is FooterLink => !!l);
   const start: FooterLink[] = [
     product.appUrl && { label: `Sign up for ${product.name}`, href: product.appUrl },
     { label: `${product.name} website`, href: product.websiteUrl },
-    product.pricing && { label: "Compare plans", href: routes.productSection(product.slug, "pricing") },
+    product.pricing && { label: "Pricing", href: routes.productSection(product.slug, "pricing") },
     { label: `Ask about ${product.name}`, href: routes.contactForm({ type: "product", product: product.slug }) },
   ].filter((l): l is FooterLink => !!l);
 
