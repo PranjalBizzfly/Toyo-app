@@ -1,3 +1,5 @@
+import { PageFaqs } from "@/components/ui/PageFaqs";
+import { getSiteFaqs } from "@/lib/faqs";
 import "../catalog-zoho.css";
 import "./search.css";
 import { SearchClient, type SearchBrowse } from "@/components/SearchClient";
@@ -43,5 +45,10 @@ export default function SearchPage() {
     },
   };
 
-  return <SearchClient browse={browse} />;
+  return (
+    <>
+      <SearchClient browse={browse} />
+      <PageFaqs faqs={getSiteFaqs("search")} />
+    </>
+  );
 }

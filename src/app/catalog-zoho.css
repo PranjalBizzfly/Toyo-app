@@ -2,7 +2,7 @@
    Uses ToyoApps colour tokens only. */
 
 /* ---------- Blue hero + overlapping search (all-products) ---------- */
-.zc-hero { background: var(--band-blue); color: #fff; text-align: center; padding: 72px 0 96px; }
+.zc-hero { background: var(--band-blue); color: #fff; text-align: center; padding: clamp(40px, 5vw, 64px) 0 var(--hero-y-end); }
 .zc-hero h1 { color: #fff; font-size: clamp(2rem, 1.3rem + 2.6vw, 3.15rem); font-weight: 400; line-height: 1.2; letter-spacing: -0.03em; max-width: 20ch; margin: 0 auto; }
 .zc-hero--crumbs { padding-top: 40px; }
 .zc-hero .breadcrumbs { margin-bottom: 28px; }
@@ -18,8 +18,8 @@
 .zc-search__box input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: inherit; font-size: 16px; color: var(--heading); }
 
 /* ---------- Sidebar + main grid ---------- */
-.zc-layout { display: grid; gap: 32px; padding-top: 72px; padding-bottom: 104px; }
-.zc-layout--plain { padding-top: 64px; }
+.zc-layout { display: grid; gap: 32px; padding-top: clamp(40px, 5vw, 56px); padding-bottom: var(--sec-y); }
+.zc-layout--plain { padding-top: clamp(40px, 5vw, 56px); }
 @media (min-width: 1024px) { .zc-layout { grid-template-columns: 300px minmax(0, 1fr); gap: 46px; } }
 .zc-side { display: none; }
 @media (min-width: 1024px) { .zc-side { display: block; position: sticky; top: calc(var(--header-h, 72px) + 24px); align-self: start; max-height: calc(100vh - var(--header-h, 72px) - 48px); overflow: auto; } }
@@ -82,7 +82,7 @@
 .zc-intro__art { max-width: 840px; margin: 40px auto 0; }
 
 /* ---------- Blue band with raised panel (compare) ---------- */
-.zc-band { padding: 96px 0 0; text-align: center; color: #fff; background: linear-gradient(to bottom, var(--band-blue) 0, var(--band-blue) calc(100% - 180px), var(--bg) calc(100% - 180px)); }
+.zc-band { padding: var(--sec-y) 0 0; text-align: center; color: #fff; background: linear-gradient(to bottom, var(--band-blue) 0, var(--band-blue) calc(100% - 180px), var(--bg) calc(100% - 180px)); }
 .zc-band__title { margin: 0; font-size: clamp(1.8rem, 1.3rem + 2vw, 3rem); font-weight: 400; letter-spacing: -0.02em; color: #fff; }
 .zc-band__kicker { margin: 40px 0 34px; font-size: 16px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #9fe3ff; }
 .zc-panel { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); padding: 10px; background: var(--surface); border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,.12); text-align: center; }
@@ -94,7 +94,7 @@
 .zc-vs__sep span { position: relative; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--heading); color: var(--surface); font-size: 12px; font-weight: 700; }
 .zc-vs__desc { font-size: 14px; line-height: 1.6; color: var(--text-secondary); }
 
-.zc-all { padding: 88px 0 96px; background: var(--bg); }
+.zc-all { padding: var(--sec-y) 0; background: var(--bg); }
 .zc-all__title { margin: 0 0 40px; text-align: center; font-size: clamp(1.8rem, 1.3rem + 2vw, 3rem); font-weight: 400; letter-spacing: -0.02em; color: var(--heading); }
 .zc-all__list { max-width: 720px; margin: 0 auto; padding: 0; list-style: none; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; }
 .zc-all__list li + li { border-top: 1px solid var(--border); }
@@ -104,7 +104,7 @@
 .zc-all__list span { font-size: 14px; color: var(--text-secondary); }
 
 /* ---------- Integration hub (integrations) ---------- */
-.zc-hub-sec { padding: 96px 0 72px; text-align: center; background: linear-gradient(to bottom, var(--surface), var(--bg)); }
+.zc-hub-sec { padding: var(--sec-y) 0 clamp(40px, 5vw, 56px); text-align: center; background: linear-gradient(to bottom, var(--surface), var(--bg)); }
 .zc-center-title { margin: 0 auto; max-width: 24ch; font-size: clamp(1.8rem, 1.3rem + 2vw, 3rem); font-weight: 400; letter-spacing: -0.02em; color: var(--heading); }
 .zc-center-lead { max-width: 64ch; margin: 18px auto 0; font-size: 18px; line-height: 1.6; color: var(--text); }
 .zc-hub { position: relative; display: grid; gap: 14px; max-width: 960px; margin: 56px auto 0; }
@@ -133,15 +133,15 @@
 @media (max-width: 819px) { .zc-hub__core { display: none; } }
 
 /* ---------- Search page ---------- */
-.zc-searchpage { background: var(--bg); padding-bottom: 96px; }
+.zc-searchpage { background: var(--bg); padding-bottom: var(--sec-y); }
 .zc-sresults { max-width: 860px; padding-top: 40px; }
 .zc-sresults .zs-results { margin-top: 24px; }
 
 @media (max-width: 600px) {
-  .zc-hero { padding: 48px 0 72px; }
-  .zc-layout { padding-top: 48px; padding-bottom: 72px; }
-  .zc-band { padding-top: 64px; }
-  .zc-all, .zc-hub-sec { padding: 64px 0; }
+  .zc-hero { padding: 40px 0 48px; }
+  .zc-layout { padding-top: 32px; padding-bottom: 48px; }
+  .zc-band { padding-top: 48px; }
+  .zc-all, .zc-hub-sec { padding: 40px 0; }
   .zc-hub__label { width: 92px; }
 }
 .zc-hero .breadcrumbs, .zc-hero .breadcrumbs a { color: rgba(255,255,255,.82); }

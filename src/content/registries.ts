@@ -193,7 +193,7 @@ export const solutions: Solution[] = [
     slug: "prepare-for-launch-and-fundraising",
     cardTitle: "Size your market with cited sources and plan the launch around it",
     cardText:
-      "Software for founders preparing to raise and launch. Sizoru sizes TAM, SAM and SOM top-down and bottom-up with tier-rated sources in a print-ready PDF, and GetBenj turns a product description into a complete marketing plan with personas, channels and a budget split.",
+      "Software for founders preparing to raise and launch. Sizoru sizes TAM, SAM and SOM top-down and bottom-up with tier-rated sources in a print-ready PDF, and Benj turns a product description into a complete marketing plan with personas, channels and a budget split.",
     name: "Prepare for launch and fundraising",
     summary:
       "Size your market with TAM, SAM and SOM traced to rated sources, then turn a product description into a marketing plan with personas, channels and a budget split.",
@@ -204,7 +204,7 @@ export const solutions: Solution[] = [
     products: ["sizoru", "getbenj"],
     body: [
       "Sizoru sizes TAM, SAM and SOM top-down and bottom-up, compares the two results, and delivers bull, base and bear scenarios with tier-rated sources in a print-ready PDF — so every number in a pitch deck can be traced.",
-      "GetBenj takes a product description and returns a complete marketing plan — buyer persona, best markets, channels, a hyperlocal ad map and a budget split — as a PDF.",
+      "Benj takes a product description and returns a complete marketing plan — buyer persona, best markets, channels, a hyperlocal ad map and a budget split — as a PDF.",
     ],
     faqs: [
       {
@@ -247,7 +247,7 @@ export const industries: Industry[] = [
     products: ["sibu", "getbenj"],
     body: [
       "Sibu is a digital asset library for creative teams. It indexes video, images, documents and audio with AI tagging and scene detection, lets people search by meaning rather than file name, and pins comments to the video timeline with approvals before anything ships.",
-      "GetBenj helps agencies produce marketing plans for client products: each report covers buyer persona, best markets, channels, a hyperlocal ad map and a budget split, and an Agency pack provides 20 reports.",
+      "Benj helps agencies produce marketing plans for client products: each report covers buyer persona, best markets, channels, a hyperlocal ad map and a budget split, and an Agency pack provides 20 reports.",
     ],
     status: "live",
   },
@@ -261,7 +261,7 @@ export const industries: Industry[] = [
     products: ["sizoru", "getbenj"],
     body: [
       "Sizoru produces market-sizing reports for founders, consultants and VCs. TAM, SAM and SOM are built top-down and bottom-up, with bull, base and bear scenarios and every number traced to a tier-rated source.",
-      "GetBenj turns a product description into a launch-ready marketing plan for founders building D2C brands, covering who to target, where, through which channels and with what budget split.",
+      "Benj turns a product description into a launch-ready marketing plan for founders building D2C brands, covering who to target, where, through which channels and with what budget split.",
     ],
     status: "live",
   },

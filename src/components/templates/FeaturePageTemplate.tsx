@@ -1,3 +1,6 @@
+import { getFeatureFaqs } from "@/lib/faqs";
+import { Labelled } from "@/components/ui/Labelled";
+import { ProductCta } from "@/components/product/ProductCta";
 import type { ReactElement } from "react";
 import Link from "next/link";
 import type { Feature, Product } from "@/content/types";
@@ -6,10 +9,11 @@ import { featureHasPage } from "@/lib/rules";
 import { getProductCtas } from "@/lib/product-cta";
 import { routes } from "@/lib/routes";
 import { absoluteUrl, jsonLd } from "@/lib/seo";
-import { Breadcrumbs, CtaBand, FaqList, ScreenshotFrame } from "@/components/ui/primitives";
+import { Breadcrumbs, FaqList, ScreenshotFrame } from "@/components/ui/primitives";
 import { Icon } from "@/components/ui/Icon";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import "@/app/feature-zoho.css";
+import "@/app/alt-patterns.css";
 
 function Checks({ items, two }: { items: string[]; two?: boolean }) {
   return (
@@ -17,7 +21,7 @@ function Checks({ items, two }: { items: string[]; two?: boolean }) {
       {items.map((i) => (
         <li key={i}>
           <Icon name="check" />
-          <span>{i}</span>
+          <span><Labelled text={i} /></span>
         </li>
       ))}
     </ul>
@@ -43,7 +47,20 @@ export function FeaturePageTemplate({ product, feature }: { product: Product; fe
 
   const tabs = [
     feature.capabilities?.length ? { id: "caps", label: "Main capabilities", body: <Checks items={feature.capabilities} two /> } : null,
-    feature.benefits?.length ? { id: "benefits", label: "Benefits", body: <Checks items={feature.benefits} two /> } : null,
+    // Benefits use a different representation from capabilities (no second check list on the page).
+    feature.benefits?.length
+      ? {
+          id: "benefits",
+          label: "Benefits",
+          body: (
+            <ul className="fz-alt-quotes">
+              {feature.benefits.map((b) => (
+                <li key={b}><Labelled text={b} /></li>
+              ))}
+            </ul>
+          ),
+        }
+      : null,
     feature.useCases?.length
       ? {
           id: "usecases",
@@ -143,7 +160,7 @@ export function FeaturePageTemplate({ product, feature }: { product: Product; fe
             </div>
             <ol className="fz-steps">
               {feature.howItWorks.map((s, i) => (
-                <li key={i}>{s}</li>
+                <li key={i}><Labelled text={s} /></li>
               ))}
             </ol>
           </div>
@@ -199,16 +216,16 @@ export function FeaturePageTemplate({ product, feature }: { product: Product; fe
         </section>
       )}
 
-      {feature.faqs?.length ? (
+      {getFeatureFaqs(product, feature).length ? (
         <section className={`fz-sec${tone()}`} aria-labelledby="faq">
           <div className="container">
             <div className="fz-center">
               <h2 id="faq" className="fz-h2">
-                {feature.name} FAQs
+                {feature.name}: frequently asked questions
               </h2>
             </div>
             <div className="fz-faq">
-              <FaqList faqs={feature.faqs} />
+              <FaqList faqs={getFeatureFaqs(product, feature)} />
             </div>
           </div>
         </section>
@@ -309,7 +326,7 @@ export function FeaturePageTemplate({ product, feature }: { product: Product; fe
         </section>
       )}
 
-      <CtaBand
+      <ProductCta product={product}
         title={`Try ${feature.name} in ${product.name}`}
         lead={product.pricing?.trial}
         primary={primary}

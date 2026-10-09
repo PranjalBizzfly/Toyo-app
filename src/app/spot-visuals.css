@@ -1,0 +1,41 @@
+/* Spotlight visuals (SpotVisual.tsx): four different representations,
+   one per spotlight row, laid over the row's background art. */
+.sv { position: relative; width: min(100%, 420px); padding: 18px; border-radius: 18px; background: var(--surface); color: var(--text); box-shadow: 0 30px 60px -30px rgb(4 18 31 / .5); transition: transform var(--dur-hover, .2s) ease; }
+.zs-spot:hover .sv { transform: translateY(-6px); }
+.sv__title { margin: 0 0 14px; font-weight: 700; color: var(--heading); }
+
+/* 1. Capability tiles — 2 × 2 grid */
+.sv--tiles ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.sv--tiles li { display: grid; gap: 10px; align-content: start; min-height: 96px; padding: 14px; border-radius: 12px; background: var(--fill, var(--bg)); border: 1px solid var(--border-soft); font-size: 13.5px; line-height: 1.45; color: var(--heading); }
+.sv--tiles svg { width: 24px; height: 24px; padding: 4px; border-radius: 8px; background: var(--primary-soft); fill: none; stroke: var(--primary); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* 2. Flow chips joined by arrows — no numbers */
+.sv--flow ol { display: grid; justify-items: start; gap: 0; }
+.sv--flow li { display: grid; justify-items: start; }
+.sv--flow li span { padding: 10px 14px; border-radius: 999px; background: var(--primary-soft); color: var(--heading); font-size: 13.5px; line-height: 1.4; }
+.sv--flow li:nth-child(2) span { margin-left: 18px; }
+.sv--flow li:nth-child(3) span { margin-left: 36px; }
+.sv--flow li:nth-child(4) span { margin-left: 54px; background: var(--primary); color: var(--on-primary); }
+.sv--flow li i { margin: 2px 0 2px calc(22px + var(--shift, 0px)); font-style: normal; color: var(--primary); }
+.sv--flow li:nth-child(1) i { --shift: 9px; }
+.sv--flow li:nth-child(2) i { --shift: 27px; }
+.sv--flow li:nth-child(3) i { --shift: 45px; }
+
+/* 3. Search panel with dotted results */
+.sv__bar { display: flex; align-items: center; gap: 10px; padding: 12px 14px; margin-bottom: 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--bg); font-weight: 600; color: var(--heading); }
+.sv__bar svg { width: 16px; height: 16px; fill: none; stroke: var(--primary); stroke-width: 1.8; }
+.sv--search li { display: flex; gap: 12px; align-items: flex-start; padding: 12px 6px; font-size: 13.5px; line-height: 1.45; color: var(--heading); }
+.sv--search li + li { border-top: 1px dashed var(--border); }
+.sv--search li i { flex: none; width: 10px; height: 10px; margin-top: 5px; border-radius: 50%; background: var(--primary); }
+.sv--search li[data-tone="1"] i { background: #3fa34d; }
+.sv--search li[data-tone="2"] i { background: #f5a524; }
+
+/* 4. Tag cloud */
+.sv--tags { padding: 22px; }
+.sv__big { margin: 0 0 16px; font-family: var(--font-display); font-size: 24px; line-height: 1.2; color: var(--heading); }
+.sv--tags ul { display: flex; flex-wrap: wrap; gap: 8px; }
+.sv--tags li { padding: 7px 12px; border-radius: 999px; font-size: 13px; background: var(--primary-soft); color: var(--primary); }
+.sv--tags li[data-tone="1"] { background: color-mix(in srgb, #3fa34d 15%, transparent); color: #2f7d3a; }
+.sv--tags li[data-tone="2"] { background: color-mix(in srgb, #9b51e0 15%, transparent); color: #7b3fd6; }
+:root[data-theme="dark"] .sv--tags li[data-tone="1"] { color: #7fd38a; }
+:root[data-theme="dark"] .sv--tags li[data-tone="2"] { color: #c49bf5; }

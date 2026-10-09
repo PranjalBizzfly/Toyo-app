@@ -1,3 +1,5 @@
+import { PageFaqs } from "@/components/ui/PageFaqs";
+import { getSiteFaqs } from "@/lib/faqs";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/primitives";
 import { ImageSlot } from "@/components/ui/ImageSlot";
@@ -70,6 +72,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      <PageFaqs faqs={getSiteFaqs("contact")} />
     </>
   );
 }

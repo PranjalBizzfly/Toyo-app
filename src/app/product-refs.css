@@ -1,0 +1,369 @@
+/* ==========================================================================
+   Product reference variants — one design approach per product, each taken
+   from a different Zoho product site (see src/lib/product-story.ts).
+   Builds on product-story.css; colours come from the look tokens.
+   ========================================================================== */
+
+/* ---------- Shared hero layouts ---------- */
+.zs-hero__grid--split { display: grid; gap: clamp(36px, 5vw, 64px); align-items: center; }
+@media (min-width: 1024px) { .zs-hero__grid--split { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); } }
+.zs-hero__stack { display: grid; gap: clamp(36px, 5vw, 56px); justify-items: center; }
+.zs-hero__stack > * { min-width: 0; width: 100%; }
+.zs-hero--centered .zs-hero__copy { text-align: center; }
+.zs-hero--centered .zs-hero__lead { margin-inline: auto; }
+.zs-hero--centered :is(.zs-hero__actions, .zs-hero__chips, .zs-hero__name, .breadcrumbs ol) { justify-content: center; }
+.zs-hero--centered .zs-hero__title { max-width: 20ch; margin-inline: auto; }
+.zs-hero--centered .zs-hero__visual { max-width: 1040px; margin-inline: auto; }
+.zs-hero > :not(.container) { pointer-events: none; }
+.zs-hero > .container { position: relative; z-index: 1; }
+.zs-hero__meet { display: block; margin-bottom: 8px; font-size: .55em; font-weight: 500; letter-spacing: -0.02em; color: var(--hero-text); }
+.zs--serif :is(.zs-hero__title, .zs-h2, .zs-spot__title, .zs-cta__title, .zs-acc summary) { font-family: Georgia, "Iowan Old Style", "Times New Roman", serif; font-weight: 400; letter-spacing: -0.01em; }
+
+/* 1 Voice — warm split with coloured shapes behind the artwork. */
+.zs-ref--voice .zs-hero { background: radial-gradient(50% 70% at 100% 40%, rgb(245 200 66 / .28), transparent 70%), linear-gradient(180deg, #fff4ea, #fffaf5 70%); }
+:root[data-theme="dark"] .zs-ref--voice .zs-hero { background: radial-gradient(50% 70% at 100% 40%, rgb(245 200 66 / .12), transparent 70%), linear-gradient(180deg, #121722, #0b111b); }
+.zs-shapes { position: absolute; inset: 0; z-index: 0; }
+.zs-shapes i { position: absolute; display: block; }
+.zs-shapes i:nth-child(1) { right: 6%; top: 8%; width: 46%; aspect-ratio: 1; border-radius: 50% 50% 0 0; background: color-mix(in srgb, var(--art-1) 75%, #ffffff); }
+.zs-shapes i:nth-child(2) { left: 6%; bottom: 0; width: 38%; aspect-ratio: 1; border-radius: 50%; background: var(--art-3); }
+.zs-shapes i:nth-child(3) { right: 0; bottom: 14%; width: 18%; aspect-ratio: 1; border-radius: 50%; background: color-mix(in srgb, var(--art-2) 70%, #ffffff); }
+.zs-ref--voice .zs-hero__visual { position: relative; }
+.zs-ref--voice .zs-art { z-index: 1; }
+
+/* 2 Glass — perspective-grid room with a glass frame (Zia Chat). */
+.zs-ref--glass .zs-hero { background: radial-gradient(60% 50% at 50% 30%, rgb(30 156 229 / .35), transparent 70%), linear-gradient(180deg, #0b1830, #070f1e 70%); padding-block: clamp(40px, 6vw, 88px) clamp(80px, 10vw, 140px); }
+.zs-room { position: absolute; left: -20%; right: -20%; bottom: 0; height: 46%; background: linear-gradient(rgb(102 194 245 / .22) 1px, transparent 1px) 0 0 / 100% 48px, linear-gradient(90deg, rgb(102 194 245 / .22) 1px, transparent 1px) 0 0 / 80px 100%; transform: perspective(500px) rotateX(58deg); transform-origin: bottom; -webkit-mask-image: linear-gradient(transparent, #000 70%); mask-image: linear-gradient(transparent, #000 70%); }
+.zs-glassframe { display: grid; gap: 32px; align-items: center; padding: clamp(28px, 4vw, 56px); border-radius: 32px; background: linear-gradient(145deg, rgb(255 255 255 / .1), rgb(255 255 255 / .03)); border: 1px solid rgb(255 255 255 / .18); box-shadow: 0 0 0 10px rgb(255 255 255 / .04), 0 60px 120px -40px rgb(30 156 229 / .45); backdrop-filter: blur(6px); }
+@media (min-width: 1024px) { .zs-glassframe { grid-template-columns: minmax(0, 1fr) minmax(0, .95fr); } }
+
+/* 3 Starfield — outlined name, channel tiles (CPaaS). */
+.zs-outline { display: inline-block; padding: 2px 14px; border: 1.5px solid rgb(255 255 255 / .6); border-radius: 10px; box-shadow: 0 0 24px rgb(30 156 229 / .35); }
+.zs-ref--starfield .zs-hero__title { font-weight: 500; }
+.zs-channels { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); width: 100%; text-align: left; }
+.zs-channel { display: grid; gap: 10px; align-content: start; }
+.zs-channel__kicker { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--art-1); }
+.zs-channel--1 .zs-channel__kicker { color: var(--art-2); } .zs-channel--2 .zs-channel__kicker { color: var(--art-3); } .zs-channel--3 .zs-channel__kicker { color: #f27c7c; }
+.zs-channel__mock { display: grid; place-items: center; height: 170px; border-radius: 18px; border: 1px solid rgb(255 255 255 / .1); background: radial-gradient(70% 70% at 50% 40%, color-mix(in srgb, var(--art-1) 25%, transparent), transparent), #0b1220; }
+.zs-channel--1 .zs-channel__mock { background: radial-gradient(70% 70% at 50% 40%, rgb(245 200 66 / .18), transparent), #0f0e08; }
+.zs-channel--2 .zs-channel__mock { background: radial-gradient(70% 70% at 50% 40%, rgb(123 193 66 / .22), transparent), #08120b; }
+.zs-channel--3 .zs-channel__mock { background: radial-gradient(70% 70% at 50% 40%, rgb(242 124 124 / .2), transparent), #140a0c; }
+.zs-channel b { font-size: 18px; color: #ffffff; }
+.zs-channel > span:last-child { font-size: 14.5px; line-height: 1.55; color: var(--hero-text); }
+.zs-mm { display: flex; align-items: center; gap: 6px; }
+.zs-mm--card { flex-direction: column; align-items: flex-start; width: 70%; padding: 14px; border-radius: 12px; background: color-mix(in srgb, var(--art-1) 70%, #0b1220); color: #ffffff; font-size: 13px; box-shadow: 8px 8px 0 -2px color-mix(in srgb, var(--art-1) 40%, transparent); }
+.zs-mm--card i { width: 18px; height: 18px; border-radius: 50%; background: rgb(255 255 255 / .6); }
+.zs-mm--digits i { display: grid; place-items: center; width: 26px; height: 34px; border-radius: 6px; border: 1px solid rgb(245 200 66 / .5); font-style: normal; font-weight: 700; color: #f5c842; }
+.zs-mm--bubble { position: relative; padding: 14px 18px; border-radius: 14px; border: 1.5px solid rgb(123 193 66 / .7); color: #ffffff; font-size: 13px; max-width: 80%; }
+.zs-mm--bubble i { position: absolute; right: -12px; top: -12px; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: #3f7f1c; color: #fff; font-style: normal; font-size: 13px; }
+.zs-mm--wave { height: 60px; gap: 3px; }
+.zs-mm--wave i { width: 4px; border-radius: 2px; background: #f27c7c; }
+
+/* 4 Touch — dark split + horizontal capability strip (TouchPoint). */
+.zs-strip { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(240px, 1fr); gap: 16px; margin-top: clamp(40px, 5vw, 64px); overflow-x: auto; padding-bottom: 6px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+.zs-strip li { scroll-snap-align: start; display: grid; gap: 8px; padding: 22px; border-left: 2px solid var(--art-1); background: linear-gradient(90deg, rgb(255 255 255 / .06), transparent); }
+.zs-strip b { color: #ffffff; font-size: 17px; }
+.zs-strip span { font-size: 14px; line-height: 1.55; color: var(--hero-text); }
+
+/* 5 Paper — warm earth with a muted horizon (Analytics). */
+.zs-horizon { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 34%; --hz-1: #e2dac6; --hz-2: #d4cbb2; }
+:root[data-theme="dark"] .zs-horizon { --hz-1: #1d1b15; --hz-2: #24211a; }
+.zs-ref--paper .zs-hero__title { color: var(--primary); }
+
+/* 6 Path — warm off-white, dashed route across the hero (Vertical Studio). */
+.zs-flightpath { position: absolute; inset: 0; width: 100%; height: 100%; }
+.zs-flightpath path { fill: none; stroke: color-mix(in srgb, var(--primary) 45%, transparent); stroke-width: 2; }
+.zs-flightpath circle { fill: var(--art-3); stroke: var(--primary); stroke-width: 2; }
+.zs-ref--path .zs-hero__title { font-size: clamp(2.6rem, 1.4rem + 5vw, 5.6rem); }
+
+/* 7 Serif — cream grid, glow blob behind the art (Fortify). */
+.zs-blob { position: absolute; left: 10%; top: 10%; width: 70%; aspect-ratio: 1; border-radius: 42% 58% 60% 40%; background: conic-gradient(from 120deg, color-mix(in srgb, var(--art-1) 55%, transparent), color-mix(in srgb, var(--art-2) 45%, transparent), color-mix(in srgb, var(--art-3) 60%, transparent), color-mix(in srgb, var(--art-1) 55%, transparent)); filter: blur(28px); opacity: .55; }
+.zs-ref--serif .zs-hero__visual { position: relative; }
+
+/* 8 Landscape — illustrated meadow behind a centred headline (Classes). */
+.zs-ref--landscape .zs-hero { min-height: min(92vh, 860px); padding-bottom: clamp(140px, 16vw, 240px); background: none; }
+.zs-landscape { position: absolute; inset: 0; width: 100%; height: 100%; --ls-sky-1: #cfe8f8; --ls-sky-2: #fff6dc; --ls-sun: #ffe08a; --ls-hill-1: #a9d58a; --ls-hill-2: #7bc142; --ls-hill-3: #4f8a22; --ls-f1: #f5c842; --ls-f2: #ffffff; --ls-f3: #1e9ce5; }
+:root[data-theme="dark"] .zs-landscape { --ls-sky-1: #0a1830; --ls-sky-2: #13253c; --ls-sun: #f5e3a3; --ls-hill-1: #1d3a22; --ls-hill-2: #183220; --ls-hill-3: #10251a; --ls-f1: #c9a83a; --ls-f2: #9fb3c6; --ls-f3: #2f78b0; }
+.zs-ref--landscape .zs-hero__copy { padding: clamp(20px, 3vw, 36px); border-radius: 28px; background: color-mix(in srgb, var(--bg) 55%, transparent); backdrop-filter: blur(8px); }
+.zs-hero__visual--float { max-width: 760px !important; }
+
+/* 9 Agent — lit frame with "Meet …" (Zia Agents). */
+.zs-ref--agent .zs-hero { background: #050b16; }
+.zs-litframe { position: relative; display: grid; gap: 32px; align-items: center; padding: clamp(28px, 4vw, 64px); border-radius: 32px; background: linear-gradient(160deg, #0d1c30, #08111f); isolation: isolate; }
+.zs-litframe::before { content: ""; position: absolute; inset: -2px; z-index: -1; border-radius: 34px; background: linear-gradient(120deg, #1e9ce5, transparent 30%, transparent 70%, #7bc142); }
+.zs-litframe::after { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 32px; background: radial-gradient(40% 60% at 0% 50%, rgb(30 156 229 / .3), transparent 70%), radial-gradient(40% 60% at 100% 50%, rgb(123 193 66 / .25), transparent 70%), #08111f; }
+@media (min-width: 1024px) { .zs-litframe { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); } }
+.zs-ref--agent .zs-hero__meet { font-size: .9em; color: #ffffff; }
+
+/* 10 Lime — deep green, lime headline (Linkthread). */
+.zs-ref--lime .zs-hero__title { font-size: clamp(2.6rem, 1.4rem + 5vw, 5.4rem); }
+
+/* 11 Radial — navy glow, "works with" chip row (Creator Plus). */
+.zs-ref--radial .zs-hero { background: radial-gradient(55% 80% at 50% 0%, rgb(30 156 229 / .5), transparent 70%), linear-gradient(180deg, #0a2546, #071a33); }
+.zs-works { text-align: center; }
+.zs-works p { margin-bottom: 18px; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--hero-text); }
+.zs-works ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; }
+.zs-works a { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: rgb(255 255 255 / .82); transition: color var(--dur-ui) ease; }
+.zs-works a:hover { color: #ffffff; }
+
+/* 12 Marquee — centred, dark pill band running across (Projects Plus). */
+.zs-pillband { margin-top: clamp(40px, 5vw, 64px); padding: 14px 0; background: var(--band-dark); overflow: hidden; border-radius: 999px; margin-inline: clamp(12px, 3vw, 48px); }
+.zs-pillband__track { display: flex; gap: 0; width: max-content; animation: m-marquee 42s linear infinite; }
+.zs-pillband li { display: inline-flex; align-items: center; gap: 22px; padding: 0 22px; white-space: nowrap; font-weight: 600; color: #ffffff; }
+.zs-pillband li::after { content: "✦"; color: var(--highlight); }
+.zs-pillband:hover .zs-pillband__track { animation-play-state: paused; }
+
+/* 13 Pastel — mesh gradient, huge blue type (CRM). */
+.zs-ref--pastel .zs-hero__title { font-size: clamp(2.8rem, 1.4rem + 5.4vw, 6rem); font-weight: 600; }
+.zs-ref--pastel .zs-art { border-radius: 32px; background: rgb(255 255 255 / .55); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .8); }
+:root[data-theme="dark"] .zs-ref--pastel .zs-art { background: rgb(255 255 255 / .04); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .08); }
+
+/* 14 Flow — white split + dark statement screen with glowing border (Flow). */
+.zs-screen { position: relative; display: grid; place-items: center; gap: 14px; margin-top: clamp(40px, 5vw, 72px); min-height: clamp(220px, 28vw, 380px); padding: 32px; border-radius: 22px; text-align: center; background: radial-gradient(60% 60% at 50% 50%, rgb(30 156 229 / .2), transparent 70%), #0d1a2e; box-shadow: 0 0 0 3px #1e9ce5, 0 0 0 10px rgb(30 156 229 / .12), 0 40px 80px -40px rgb(13 26 46 / .7); overflow: hidden; }
+.zs-screen__kicker { font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--highlight); }
+.zs-screen__line { max-width: 30ch; font-family: var(--font-display); font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.5rem); line-height: 1.2; color: #ffffff; }
+.zs-screen__spark { position: absolute; width: 10px; height: 10px; background: #66c2f5; clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); }
+.zs-screen__spark--1 { left: 14%; top: 22%; } .zs-screen__spark--2 { right: 12%; bottom: 20%; background: var(--highlight); }
+
+/* 15 Frame — gradient photo frame with journey nodes (CommandCenter). */
+.zs-gframe { position: relative; padding: clamp(18px, 3vw, 36px); border-radius: 26px; background: linear-gradient(120deg, color-mix(in srgb, var(--art-3) 70%, #ffffff), color-mix(in srgb, var(--art-1) 55%, #ffffff) 55%, color-mix(in srgb, var(--art-2) 55%, #ffffff)); }
+:root[data-theme="dark"] .zs-gframe { background: linear-gradient(120deg, #3a2f0e, #0b3a5c 55%, #1d3a12); }
+.zs-gframe__node { position: absolute; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--primary); background: var(--surface); color: var(--primary); font-size: 12.5px; font-weight: 600; box-shadow: 0 10px 24px -14px rgb(15 34 53 / .5); }
+.zs-gframe__node--0 { left: -2%; top: 18%; } .zs-gframe__node--1 { right: -2%; top: 12%; } .zs-gframe__node--2 { left: 2%; bottom: 10%; } .zs-gframe__node--3 { right: 2%; bottom: 16%; }
+@media (max-width: 640px) { .zs-gframe__node { display: none; } }
+
+/* 16 Prompt — big prompt box under a blue headline (Creator). */
+.zs-prompt { width: min(100%, 760px) !important; padding: 22px 24px 16px; border-radius: 20px; background: var(--surface); border: 2px solid color-mix(in srgb, var(--primary) 60%, transparent); box-shadow: 0 0 0 8px color-mix(in srgb, var(--primary) 8%, transparent), 0 30px 60px -40px rgb(21 87 192 / .6); text-align: left; }
+.zs-prompt__text { min-height: 64px; font-size: 16px; color: var(--text-muted); }
+.zs-prompt__text::after { content: ""; display: inline-block; width: 2px; height: 1.1em; margin-left: 3px; vertical-align: -2px; background: var(--primary); animation: m-caret 1.1s steps(2) 6; }
+@keyframes m-caret { 50% { opacity: 0; } }
+.zs-prompt__row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.zs-prompt__row span { padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border); font-size: 13px; color: var(--text-secondary); }
+.zs-prompt__send { display: grid; place-items: center; width: 34px; height: 34px; margin-left: auto; border-radius: 10px; background: #0b1d2e; color: #ffffff; font-style: normal; }
+
+/* ---------- Benefits variants ---------- */
+.zs-bgrid { display: grid; gap: var(--zs-gap); grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+.zs-benefit { display: grid; align-content: start; gap: 12px; padding: 28px 24px 30px; border-radius: 20px; transition: transform var(--dur-hover) ease, box-shadow var(--dur-hover) ease, border-color var(--dur-hover) ease, background var(--dur-hover) ease; }
+.zs-benefit h3 { font-size: 19px; font-weight: 600; line-height: 1.3; color: var(--heading); }
+.zs-benefit p { font-size: 15.5px; line-height: 1.65; color: var(--text-secondary); }
+.zs-benefit__num { font-family: var(--font-display); font-size: 14px; font-weight: 700; letter-spacing: .1em; color: var(--primary); }
+.zs-benefit:hover { transform: translateY(-4px); }
+/* glass (dark) */
+.zs-benefits--glass .zs-benefit { background: linear-gradient(180deg, rgb(255 255 255 / .08), rgb(255 255 255 / .03)); border: 1px solid rgb(255 255 255 / .12); }
+.zs-benefits--glass .zs-benefit:hover { border-color: color-mix(in srgb, var(--art-1) 55%, transparent); }
+.zs-benefits--glass .zs-benefit__num { color: var(--art-1); }
+/* black cards with outline (Linkthread / CPaaS) */
+.zs-benefits--black { background: #04070d !important; }
+.zs-benefits--black .zs-benefit { background: #0b0f17; border: 1px solid rgb(255 255 255 / .16); border-radius: 22px; }
+.zs-benefits--black .zs-benefit:hover { border-color: var(--art-2); }
+.zs-benefits--black .zs-benefit__num { color: var(--art-2); }
+/* photo-style cards: illustrated header strip (Voice) */
+.zs-benefits--photo .zs-benefit { padding-top: 0; overflow: hidden; background: var(--surface); border: 1px solid var(--border); }
+.zs-benefits--photo .zs-benefit::before { content: ""; display: block; height: 120px; margin: 0 -24px 6px; background: radial-gradient(40% 60% at 70% 30%, color-mix(in srgb, var(--art-3) 70%, transparent), transparent 70%), linear-gradient(135deg, color-mix(in srgb, var(--art-1) 35%, var(--surface)), color-mix(in srgb, var(--art-2) 30%, var(--surface))); }
+.zs-benefits--photo .zs-benefit:nth-child(3n+2)::before { background: radial-gradient(40% 60% at 30% 70%, color-mix(in srgb, var(--art-2) 60%, transparent), transparent 70%), linear-gradient(135deg, color-mix(in srgb, var(--art-3) 40%, var(--surface)), color-mix(in srgb, var(--art-1) 25%, var(--surface))); }
+.zs-benefits--photo .zs-benefit:hover { box-shadow: 0 24px 48px -32px rgb(15 34 53 / .4); }
+/* mint carousel-like cards (Vertical Studio) */
+.zs-benefits--mint .zs-bgrid { grid-auto-flow: column; grid-auto-columns: minmax(260px, 1fr); grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+.zs-benefits--mint .zs-benefit { scroll-snap-align: start; min-height: 280px; background: color-mix(in srgb, var(--art-2) 22%, #ffffff); border: 1px solid color-mix(in srgb, var(--art-2) 35%, transparent); }
+:root[data-theme="dark"] .zs-benefits--mint .zs-benefit { background: color-mix(in srgb, var(--art-2) 12%, #0b140f); }
+/* bordered 3x grid (Fortify / Creator security grid) */
+.zs-benefits--grid .zs-bgrid { gap: 0; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
+.zs-benefits--grid .zs-benefit { border-radius: 0; border: 1px solid var(--border-soft); margin: -1px 0 0 -1px; background: var(--surface); }
+.zs-benefits--grid .zs-benefit:hover { transform: none; background: var(--primary-soft); }
+/* warm gradient cards (Projects Plus / Classes) */
+.zs-benefits--warm .zs-benefit { background: linear-gradient(160deg, color-mix(in srgb, var(--art-3) 28%, var(--surface)), var(--surface) 70%); border: 1px solid color-mix(in srgb, var(--art-3) 35%, var(--border)); }
+/* pastel tiles (CRM testimonial row) */
+.zs-benefits--pastel .zs-benefit { background: color-mix(in srgb, var(--art-3) 22%, var(--surface)); }
+.zs-benefits--pastel .zs-benefit:nth-child(3n+2) { background: color-mix(in srgb, var(--art-1) 14%, var(--surface)); }
+.zs-benefits--pastel .zs-benefit:nth-child(3n+3) { background: color-mix(in srgb, var(--art-2) 16%, var(--surface)); }
+/* icon columns with black buttons (Creator) */
+.zs-benefits--columns .zs-bgrid { gap: 0; }
+.zs-benefits--columns .zs-benefit { border-radius: 0; border-left: 1px solid var(--border); padding-block: 8px; }
+.zs-benefits--columns .zs-benefit:hover { transform: none; }
+.zs-benefit__btn { justify-self: start; display: inline-flex; gap: 8px; margin-top: 8px; padding: 10px 16px; border-radius: 6px; background: #0b1d2e; color: #ffffff; font-size: 14px; font-weight: 600; }
+:root[data-theme="dark"] .zs-benefit__btn { background: #f3f8fc; color: #0b1d2e; }
+
+/* ---------- Spotlight variants ---------- */
+/* stack: sticky panels that stack as you scroll (Analytics) */
+.zs-spots--stack .zs-spots__list { gap: 24px; }
+.zs-stack__head { margin-bottom: 16px; }
+.zs-spots--stack .zs-spot { position: sticky; top: calc(var(--header-h) + var(--pnav-h, 68px) + 16px + var(--i) * 14px); padding: clamp(24px, 4vw, 48px); border-radius: 26px; background: var(--surface); border: 1px solid var(--border); box-shadow: 0 -20px 40px -30px rgb(15 34 53 / .35); }
+.zs-spots--stack .zs-spot:nth-child(odd) { background: color-mix(in srgb, var(--art-3) 10%, var(--surface)); }
+.zs-spots--stack .zs-spot--flip .zs-spot__copy { order: 0; }
+.zs-spots--stack .zs-spot__art { min-height: 280px; }
+/* accordion + art (Fortify / Creator) */
+.zs-acc { display: grid; gap: clamp(28px, 5vw, 72px); align-items: start; }
+@media (min-width: 960px) { .zs-acc { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .zs-acc__art { position: sticky; top: calc(var(--header-h) + var(--pnav-h, 68px) + 24px); } }
+.zs-acc__list .zs-h2 { margin-bottom: 24px; }
+.zs-acc__item { border-top: 1px solid var(--border); }
+.zs-acc__item:last-child { border-bottom: 1px solid var(--border); }
+.zs-acc summary { display: grid; gap: 4px; padding: 20px 36px 20px 0; position: relative; cursor: pointer; list-style: none; font-size: clamp(1.15rem, 1rem + .5vw, 1.45rem); font-weight: 500; color: var(--heading); }
+.zs-acc summary::-webkit-details-marker { display: none; }
+.zs-acc summary .zs-kicker { margin: 0; font-size: 11px; }
+.zs-acc summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 24px; font-weight: 300; color: var(--primary); transition: transform var(--dur-hover) ease; }
+.zs-acc details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.zs-acc details[open] { box-shadow: inset 3px 0 0 var(--primary); padding-left: 16px; transition: padding var(--dur-hover) ease; }
+.zs-acc details p { padding-bottom: 14px; line-height: 1.65; color: var(--text-secondary); }
+.zs-acc details .zs-link { margin-bottom: 20px; }
+.zs-acc__art { position: relative; display: grid; place-items: center; min-height: 420px; padding: 32px; border-radius: 28px; overflow: hidden; background: linear-gradient(160deg, var(--band-dark), var(--band-dark-2)); }
+.zs-acc__art .pz-spot__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .3; mix-blend-mode: luminosity; }
+/* code panels on dark (CPaaS) */
+.zs-code { width: 100%; margin: 0; padding: 0 0 18px; border-radius: 18px; background: #070b12; border: 1px solid rgb(255 255 255 / .12); font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 13.5px; line-height: 1.6; color: #c9d6e3; white-space: pre-wrap; overflow: hidden; }
+.zs-code__bar { display: flex; align-items: center; gap: 6px; padding: 12px 16px; margin-bottom: 10px; border-bottom: 1px solid rgb(255 255 255 / .08); color: #7f93a8; font-size: 12px; }
+.zs-code__bar i { width: 9px; height: 9px; border-radius: 50%; background: rgb(255 255 255 / .18); }
+.zs-code code { display: block; padding: 4px 18px; }
+.zs-code em { font-style: normal; color: var(--art-2); margin-right: 8px; }
+.zs-spots--code .zs-spot__art { background: none !important; padding: 0; min-height: 0; }
+.zs-spots--code .zs-spot { padding: clamp(24px, 3vw, 40px); border-radius: 24px; background: rgb(255 255 255 / .03); border: 1px solid rgb(255 255 255 / .08); }
+/* phone rows (TouchPoint) */
+.zs-spots--phone .zs-spot__art { background: radial-gradient(50% 60% at 50% 50%, color-mix(in srgb, var(--art-1) 30%, transparent), transparent 70%), var(--band-dark); min-height: 460px; }
+.zs-phone--spot { position: relative; left: auto; transform: none; width: min(260px, 80%); height: 420px; }
+.zs-phone__title { margin-top: 8px; font-size: 17px; color: var(--win-ink, #0f2235); }
+.zs-phone__row { padding: 12px; border-radius: 12px; background: color-mix(in srgb, var(--art-1) 14%, transparent); font-size: 13px; line-height: 1.45; color: var(--win-ink, #0f2235); }
+:root[data-theme="dark"] .zs-phone--spot { --win: #102236; --win-ink: #f3f8fc; }
+
+/* ---------- Signatures ---------- */
+.zs-band--black { --heading: #ffffff; --text: #dbe6f0; --text-secondary: #b6c7d8; background: #05070b; color: var(--text); }
+.zs-sig-problems .zs-tabs__list button { border-radius: 0; border: 0; border-bottom: 2px solid transparent; }
+.zs-sig-problems .zs-tabs__list button[aria-selected="true"] { background: none; color: #ffffff; border-bottom-color: var(--art-1); }
+.zs-sig-problems .zs-tabs__panel { background: #0d1118; --heading: #ffffff; --text-secondary: #b6c7d8; --border-soft: rgb(255 255 255 / .1); }
+:root:not([data-theme="dark"]) .zs-sig-problems .zs-tabs__panel { --text: #dbe6f0; --text-secondary: #b6c7d8; }
+.zs-orbit { position: relative; width: min(100%, 820px); aspect-ratio: 1.5; margin: clamp(32px, 4vw, 56px) auto 0; }
+.zs-orbit__ring { position: absolute; left: 50%; top: 50%; border: 1.5px solid color-mix(in srgb, var(--primary) 45%, transparent); border-radius: 50%; transform: translate(-50%, -50%) scale(.6); opacity: 0; transition: transform 1.2s var(--ease-out-quad), opacity 1.2s var(--ease-out-quad); }
+.zs-orbit__ring--1 { width: 34%; height: 50%; } .zs-orbit__ring--2 { width: 64%; height: 78%; transition-delay: .15s; } .zs-orbit__ring--3 { width: 94%; height: 104%; transition-delay: .3s; }
+.zs-orbit.is-in .zs-orbit__ring, :not(.motion-ready) .zs-orbit__ring { transform: translate(-50%, -50%); opacity: 1; }
+.zs-orbit__center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: grid; justify-items: center; gap: 6px; padding: 18px 22px; border-radius: 50%; background: var(--surface); box-shadow: 0 0 0 10px color-mix(in srgb, var(--primary) 10%, transparent), 0 20px 40px -20px rgb(15 34 53 / .4); }
+.zs-orbit__center b { color: var(--heading); }
+.zs-orbit__node { position: absolute; transform: translate(-50%, -50%); padding: 8px 14px; border-radius: 999px; background: var(--surface); border: 1px solid color-mix(in srgb, var(--primary) 40%, transparent); color: var(--primary); font-size: 13.5px; font-weight: 600; white-space: nowrap; transition: background var(--dur-ui) ease, color var(--dur-ui) ease; }
+.zs-orbit__node:hover { background: var(--primary); color: var(--on-primary); }
+@media (max-width: 640px) {
+  .zs-orbit { aspect-ratio: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .zs-orbit__ring { display: none; }
+  .zs-orbit__center, .zs-orbit__node { position: static; transform: none; }
+  .zs-orbit__center { flex-basis: 100%; border-radius: 20px; margin-bottom: 8px; }
+}
+.zs-dotgrid-bg { background: radial-gradient(circle at 1px 1px, rgb(255 255 255 / .09) 1px, transparent 0) 0 0 / 28px 28px, linear-gradient(180deg, var(--band-dark), var(--band-dark-2)) !important; }
+.zs-what--center { text-align: center; justify-items: center; grid-template-columns: none !important; }
+.zs-what--center .zs-what__body { margin-inline: auto; text-align: left; }
+.zs-dotcards { position: relative; display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); margin-top: clamp(36px, 4vw, 56px); }
+.zs-dotcards__links { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; }
+.zs-dotcards__links path { fill: none; stroke: rgb(255 255 255 / .2); stroke-width: .3; }
+.zs-dotcard { display: grid; gap: 10px; align-content: start; padding: 28px 24px; border-radius: 20px; background: #101e33; border: 1px solid rgb(255 255 255 / .1); transition: border-color var(--dur-hover) ease, transform var(--dur-hover) ease; }
+.zs-dotcard:hover { transform: translateY(-4px); border-color: var(--art-1); }
+.zs-dotcard__icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, var(--art-1), color-mix(in srgb, var(--art-1) 40%, #0d1a2e)); color: #ffffff; font-family: var(--font-display); font-weight: 700; font-size: 20px; }
+.zs-dotcard:nth-child(3n+2) .zs-dotcard__icon { background: linear-gradient(135deg, var(--art-2), color-mix(in srgb, var(--art-2) 40%, #0d1a2e)); }
+.zs-dotcard:nth-child(3n+3) .zs-dotcard__icon { background: linear-gradient(135deg, var(--art-3), color-mix(in srgb, var(--art-3) 40%, #0d1a2e)); color: #0b1d2e; }
+.zs-dotcard b { font-size: 18px; color: #ffffff; }
+.zs-dotcard span:last-child { font-size: 14.5px; line-height: 1.55; color: #b6c7d8; }
+
+/* ---------- Edges ---------- */
+/* Stepped edge where a LIGHT section meets a dark one (after Zoho Zia Chat):
+   the light colour of the section above extends down as a rounded shoulder on
+   the left, steps up through a soft curve, and casts a blue glow into the dark
+   band. It is drawn (not clipped), in the real colour of the section above, so
+   nothing shows through. Above a dark section there is no shape at all. */
+.zs-edge-angle { position: relative; isolation: isolate; }
+.zs-band--plain + .zs-edge-angle { --edge-from: var(--bg); }
+.zs-band--soft + .zs-edge-angle { --edge-from: var(--band-soft); }
+.zs-band--tint + .zs-edge-angle { --edge-from: var(--pz-tint); }
+:is(.zs-band--plain, .zs-band--soft, .zs-band--tint) + .zs-edge-angle { padding-top: calc(clamp(64px, 8vw, 112px) + clamp(60px, 7vw, 110px)); }
+:is(.zs-band--plain, .zs-band--soft, .zs-band--tint) + .zs-edge-angle::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; z-index: 1; height: clamp(60px, 7vw, 110px); pointer-events: none;
+  background: var(--edge-from);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'><path d='M0 0H1000V24Q1000 40 984 40H500Q478 40 466 56L444 86Q434 100 412 100H44Q0 100 0 62Z'/></svg>") 0 0 / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'><path d='M0 0H1000V24Q1000 40 984 40H500Q478 40 466 56L444 86Q434 100 412 100H44Q0 100 0 62Z'/></svg>") 0 0 / 100% 100% no-repeat;
+}
+/* Blue glow spilling from under the shoulder and the step */
+:is(.zs-band--plain, .zs-band--soft, .zs-band--tint) + .zs-edge-angle::after {
+  content: ""; position: absolute; left: -5%; top: 0; z-index: 0; width: 60%; height: clamp(160px, 18vw, 280px); pointer-events: none;
+  background: radial-gradient(ellipse 60% 55% at 72% 30%, rgb(30 110 230 / .55), transparent 70%), radial-gradient(ellipse 50% 50% at 20% 35%, rgb(30 110 230 / .35), transparent 70%);
+  filter: blur(8px);
+}
+.zs-edge-angle > * { position: relative; z-index: 2; }
+
+/* ---------- CTA variants ---------- */
+.zs-cta--band { background: linear-gradient(135deg, var(--band-brand), var(--band-brand-2)) !important; }
+.zs-cta--band::after { display: none; }
+.zs-cta--panel { background: var(--bg) !important; padding-inline: clamp(12px, 3vw, 40px); }
+.zs-cta--panel::after { display: none; }
+.zs-cta__panel { padding: clamp(48px, 7vw, 96px) clamp(20px, 4vw, 48px); border-radius: 28px; background: radial-gradient(60% 80% at 50% 0%, var(--band-dark-glow), transparent 70%), linear-gradient(160deg, var(--band-brand), var(--band-dark)); }
+.zs-cta--spin { background: var(--hero-bg) !important; --heading: var(--hero-title); }
+.zs-cta--spin .zs-cta__title { font-size: clamp(2.8rem, 1.4rem + 5vw, 6rem); color: var(--hero-title); }
+.zs-cta--spin .zs-cta__lead { color: var(--text-secondary); }
+.zs-cta--spin .zs-btn--ghost { color: var(--heading); }
+.zs-cta--spin::after { display: none; }
+.zs-cta--landscape { min-height: 520px; display: grid; align-items: center; background: linear-gradient(180deg, #cfe8f8, #fff6dc) !important; }
+:root[data-theme="dark"] .zs-cta--landscape { background: linear-gradient(180deg, #0a1830, #13253c) !important; }
+.zs-cta--landscape::after { display: none; }
+.zs-cta__land { position: absolute; left: 0; right: 0; bottom: 0; height: 55%; background:
+  radial-gradient(120% 100% at 20% 100%, #4f8a22 40%, transparent 41%),
+  radial-gradient(120% 90% at 80% 100%, #7bc142 45%, transparent 46%),
+  radial-gradient(160% 80% at 50% 100%, #a9d58a 50%, transparent 51%); }
+:root[data-theme="dark"] .zs-cta__land { filter: brightness(.35) saturate(.8); }
+.zs-cta--landscape .zs-cta__title { color: #0f2235; }
+:root[data-theme="dark"] .zs-cta--landscape .zs-cta__title { color: #ffffff; }
+.zs-cta--landscape .zs-cta__lead { color: #1a3149; }
+:root[data-theme="dark"] .zs-cta--landscape .zs-cta__lead { color: #dbe6f0; }
+.zs-cta--landscape .zs-btn--ghost { color: #0f2235; }
+:root[data-theme="dark"] .zs-cta--landscape .zs-btn--ghost { color: #ffffff; }
+
+/* Dark FAQ band (Zia Chat / CPaaS / Creator). */
+.zs-faqband.zs-band--dark .accordion :is(summary, button) { color: #ffffff; }
+.zs-faqband.zs-band--dark :is(.accordion, details) { border-color: rgb(255 255 255 / .12); }
+.zs-faqband.zs-band--dark :is(p, dd, .faq__a) { color: #b6c7d8; }
+
+.zs-ref--agent .zs-hero__title { font-size: clamp(2rem, 1.3rem + 2.8vw, 3.6rem); }
+
+/* ==========================================================================
+   Inner pages inherit their product's reference: the section / feature /
+   hub / entity heroes and CTAs pick up the same treatment as the overview.
+   (.ref-* is set on the product wrapper by productThemeClass.)
+   ========================================================================== */
+html .pt :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero) { position: relative; isolation: isolate; }
+html .pt :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+/* Glass room (Sibu) */
+html .ref-glass :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { top: 55%; left: -20%; right: -20%; background: linear-gradient(rgb(102 194 245 / .2) 1px, transparent 1px) 0 0 / 100% 40px, linear-gradient(90deg, rgb(102 194 245 / .2) 1px, transparent 1px) 0 0 / 70px 100%; transform: perspective(420px) rotateX(58deg); transform-origin: bottom; -webkit-mask-image: linear-gradient(transparent, #000 70%); mask-image: linear-gradient(transparent, #000 70%); }
+/* Starfield (TaskMagic) */
+html .ref-starfield :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero) { background: var(--hero-bg) !important; }
+/* Meadow strip (TrackySuite) */
+html .ref-landscape :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { top: auto; height: 90px; background: radial-gradient(120% 100% at 20% 100%, #4f8a22 40%, transparent 41%), radial-gradient(120% 90% at 80% 100%, #7bc142 45%, transparent 46%), radial-gradient(160% 80% at 50% 100%, #a9d58a 50%, transparent 51%); opacity: .9; }
+html[data-theme="dark"] .ref-landscape :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { filter: brightness(.35); }
+/* Dashed route (Fleetras) */
+html .ref-path :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 400' preserveAspectRatio='none'%3E%3Cpath d='M-20 360 C 300 380 520 240 760 270 S 1140 180 1460 60' fill='none' stroke='%232f6e17' stroke-opacity='.35' stroke-width='2' stroke-dasharray='6 8'/%3E%3C/svg%3E") center / 100% 100% no-repeat; }
+/* Paper horizon (Sizoru) */
+html .ref-paper :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { top: auto; height: 34%; background: radial-gradient(90% 100% at 30% 100%, #d4cbb2 50%, transparent 51%), radial-gradient(90% 100% at 75% 100%, #e2dac6 55%, transparent 56%); }
+html[data-theme="dark"] .ref-paper :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { opacity: .12; }
+/* Warm shapes (HRMagix) */
+html .ref-voice :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { background: radial-gradient(circle at 92% 30%, color-mix(in srgb, var(--art-3) 70%, transparent) 0 70px, transparent 71px), radial-gradient(circle at 6% 85%, color-mix(in srgb, var(--art-1) 35%, transparent) 0 90px, transparent 91px); }
+/* Lit frame (MeetingMind) */
+html .ref-agent :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { inset: 16px; border-radius: 28px; border: 1.5px solid rgb(102 194 245 / .45); box-shadow: inset 0 0 80px rgb(30 156 229 / .14), 0 0 40px rgb(123 193 66 / .12); }
+/* Grid (ZUZU) and prompt (Tracksuit) */
+html .ref-frame :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { background: linear-gradient(rgb(15 123 190 / .07) 1px, transparent 1px) 0 0 / 40px 40px, linear-gradient(90deg, rgb(15 123 190 / .07) 1px, transparent 1px) 0 0 / 40px 40px; }
+html .ref-flow :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { background: radial-gradient(circle at 1px 1px, rgb(15 111 184 / .14) 1px, transparent 0) 0 0 / 24px 24px; }
+/* Radial glow (ODA7) / marquee warmth (GetBenj) / pastel mesh (ZapBuzzer) / lime (Fantom) */
+html .ref-radial :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { background: radial-gradient(55% 80% at 50% 0%, rgb(30 156 229 / .4), transparent 70%); }
+html .ref-marquee :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { background: radial-gradient(60% 70% at 50% 0%, rgb(245 200 66 / .35), transparent 70%); }
+html .ref-lime :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero) h1 { color: var(--hero-title, #b6e57f); }
+/* Serif type everywhere on SigChanger's site */
+html .ref-serif-type :is(h1, h2, .zs-h2, .pz-h-md, .pz-h-lg, .pz-h-xl, .fz-h2) { font-family: Georgia, "Iowan Old Style", "Times New Roman", serif; font-weight: 400; letter-spacing: -0.01em; }
+/* Feature heroes follow the look instead of one shared navy stage */
+html .pt .fz-hero { background: var(--hero-bg); }
+html .pt .fz-hero :is(h1) { color: var(--hero-title); }
+html .pt .fz-hero :is(.fz-hero__lead, p) { color: var(--hero-text); }
+html .pt .fz-hero :is(.fz-crumbs, .fz-crumbs a) { color: var(--hero-text); }
+html .pt :is(.look-daylight, .look-cream, .look-grid, .look-sunrise, .look-mint, .look-paper, .look-ember, .look-pastel, .look-snow, .look-sky) .fz-hero, html :is(.look-daylight, .look-cream, .look-grid, .look-sunrise, .look-mint, .look-paper, .look-ember, .look-pastel, .look-snow, .look-sky) .fz-hero { --on-primary: #ffffff; }
+html :is(.look-daylight, .look-cream, .look-grid, .look-sunrise, .look-mint, .look-paper, .look-ember, .look-pastel, .look-snow, .look-sky) .fz-hero .fz-more { color: var(--primary); }
+
+@media (prefers-reduced-motion: reduce) {
+  .zs-pillband__track { flex-wrap: wrap; width: auto; animation: none; justify-content: center; }
+  .zs-prompt__text::after { animation: none; }
+  .zs-orbit__ring { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Realistic product shots inside heroes */
+.zs-hero__shot { width: 100%; max-width: 1080px; margin: clamp(32px, 4vw, 52px) auto 0; animation: m-rise 1s .35s var(--ease-seq) both; }
+.zs-hero .dm { width: 100%; }
+.zs-hero__visual > .dm { box-shadow: 0 0 0 8px rgb(255 255 255 / .08), 0 60px 120px -50px rgb(0 0 0 / .6); }
+.zs-phonestage { display: grid; place-items: center; padding: 40px 0; }
+.zs-phonestage .pm { transform: none; }
+.zs-gframe > .dm { box-shadow: 0 30px 60px -30px rgb(4 18 31 / .5); }
+.zs-ref--marquee .zs-hero__shot { margin-bottom: 0; }

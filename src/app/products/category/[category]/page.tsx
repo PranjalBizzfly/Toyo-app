@@ -1,3 +1,4 @@
+import { getCategoryFaqs } from "@/lib/faqs";
 import "../../../catalog-zoho.css";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import Link from "next/link";
@@ -153,10 +154,10 @@ export default async function CategoryPage({ params }: Props) {
         </Section>
       )}
 
-      {category.faqs?.length ? (
+      {getCategoryFaqs(category.slug).length ? (
         <Section>
           <SectionHeader eyebrow="FAQs" title={`${category.name} questions`} />
-          <FaqList faqs={category.faqs} />
+          <FaqList faqs={getCategoryFaqs(category.slug)} />
         </Section>
       ) : null}
 

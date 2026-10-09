@@ -3,13 +3,13 @@
    Colours come only from ToyoApps tokens in globals.css.
    ===================================================================== */
 
-.pz { --pz-tint: color-mix(in srgb, var(--highlight) 9%, var(--bg)); --pz-radius: 30px; }
+.pz { --pz-radius: 30px; }
 .pz-center { text-align: center; }
 .pz-narrow { max-width: 920px; }
 .pz-mt { margin-top: 36px; }
 
 /* ---- Bands: roomy vertical rhythm, tint / white alternation ---- */
-.pz-band { padding-block: clamp(64px, 8vw, 120px); }
+.pz-band { padding-block: var(--sec-y-lg); }
 .pz-band--tint { background: var(--pz-tint); }
 .pz-band--white { background: var(--surface); }
 .pz-band--tint + .pz-band--tint { padding-top: 0; }
@@ -33,7 +33,7 @@
 .pz-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; padding: 0 32px; border-radius: 999px; font-size: 16px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; border: 1px solid transparent; transition: background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease); }
 .pz-btn--solid { background: var(--primary); color: var(--on-primary); }
 .pz-btn--solid:hover { background: var(--primary-hover); transform: translateY(-1px); }
-.pz-btn--line { border-color: var(--primary); color: var(--primary); background: transparent; text-transform: none; font-weight: 600; letter-spacing: 0; }
+.pz-btn--line { border-color: var(--primary); color: var(--primary); background: transparent; text-transform: capitalize; font-weight: 600; letter-spacing: 0; }
 .pz-btn--line:hover { background: var(--primary-soft); }
 .pz-btn--block { width: 100%; }
 .pz-arrow { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 600; font-size: 17px; }
@@ -173,7 +173,7 @@
 .pz-faq .accordion summary, .pz-faq details summary { font-size: clamp(1.1rem, 1rem + .4vw, 1.5rem); font-weight: 400; }
 
 /* ---- Closing CTA ---- */
-.pz-cta { padding-block: clamp(64px, 8vw, 112px); background:
+.pz-cta { padding-block: var(--sec-y-lg); background:
   radial-gradient(50% 120% at 0% 100%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%),
   radial-gradient(50% 120% at 100% 0%, color-mix(in srgb, var(--primary) 22%, transparent), transparent 70%),
   var(--pz-tint, var(--bg)); }
@@ -184,7 +184,7 @@
 /* =====================================================================
    Section pages (/products/<p>/<section>)
    ===================================================================== */
-.pz-sec-hero { position: relative; overflow: hidden; padding: clamp(40px, 6vw, 96px) 0 clamp(56px, 7vw, 110px); text-align: center;
+.pz-sec-hero { position: relative; overflow: hidden; padding: clamp(36px, 5vw, 72px) 0 clamp(48px, 6vw, 80px); text-align: center;
   background:
     linear-gradient(90deg, transparent 0 24%, color-mix(in srgb, var(--surface) 22%, transparent) 24% 31%, transparent 31% 58%, color-mix(in srgb, var(--surface) 18%, transparent) 58% 66%, transparent 66%),
     radial-gradient(60% 90% at 0% 100%, color-mix(in srgb, var(--highlight) 28%, transparent), transparent 70%),
@@ -202,7 +202,7 @@
 .pz-sec-hero .pz-btn { margin-top: 32px; }
 
 /* Pricing: toggle-like bar + 4-up plan cards over the hero edge */
-.pz-pricing { padding-bottom: clamp(56px, 7vw, 96px); background: var(--pz-tint); }
+.pz-pricing { padding-bottom: var(--sec-y); background: var(--pz-tint); }
 .pz-pricing__bar { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; width: fit-content; max-width: 100%; margin: -36px auto 48px; padding: 10px; border-radius: 16px; background: var(--surface); box-shadow: 0 10px 30px -18px rgb(15 34 53 / .35); }
 .pz-pricing__bar span { display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; border-radius: 10px; font-size: 18px; font-weight: 500; color: var(--heading); }
 .pz-pricing__bar span:first-child { background: var(--primary); color: var(--on-primary); }

@@ -1,3 +1,5 @@
+import { PageFaqs } from "@/components/ui/PageFaqs";
+import { getSiteFaqs } from "@/lib/faqs";
 import "../catalog-zoho.css";
 import { CatalogBrowser, type CatalogSection } from "@/components/product/CatalogBrowser";
 import { getCatalogTree, getComparisons, getFeaturedProducts, getIntegrations, getProducts } from "@/lib/catalog";
@@ -49,6 +51,7 @@ export default function ProductsPage() {
           itemListElement: products.map((p, i) => ({ "@type": "ListItem", position: i + 1, url: absoluteUrl(routes.product(p.slug)), name: p.name })),
         })}
       />
+      <PageFaqs faqs={getSiteFaqs("products")} />
     </>
   );
 }

@@ -1,3 +1,5 @@
+import { PageFaqs } from "@/components/ui/PageFaqs";
+import { getSiteFaqs } from "@/lib/faqs";
 import Link from "next/link";
 import { HomeHero } from "@/components/home/HomeHero";
 import { LogoMarquee } from "@/components/home/LogoMarquee";
@@ -407,7 +409,7 @@ export default function HomePage() {
 
       {/* 3. Needs */}
       {needs.length > 0 && (
-        <section className="h-sec h-sec--tint" aria-labelledby="needs-title">
+        <section className="h-sec h-sec--dark st-curve" aria-labelledby="needs-title">
           <div className="container">
             <SectionHead id="needs-title" kicker="Start from the problem" title="What are you looking to solve?" align="center" />
             <ul className="h-needs">
@@ -539,7 +541,7 @@ export default function HomePage() {
 
       {/* 7. Industries */}
       {industries.length > 0 && (
-        <section className="h-sec h-sec--warm" aria-labelledby="industries-title">
+        <section className="h-sec h-sec--brand" aria-labelledby="industries-title">
           <div className="container">
             <SectionHead id="industries-title" kicker="Industries" title="Software matched to the way your industry works" />
             <ul className="h-industries">
@@ -608,7 +610,7 @@ export default function HomePage() {
                       return (
                         <li key={p.slug}>
                           <Link href={routes.product(p.slug)}>{p.name}</Link>
-                          <span aria-hidden> — </span>
+                          {" "}
                           <Link href={featureHref(p, f, hasHub(p))} className="h-role__f">
                             {f.name}
                           </Link>
@@ -633,8 +635,7 @@ export default function HomePage() {
           <ol className="h-steps">
             {steps.map((s, i) => (
               <li key={s.title}>
-                <span className="h-steps__n">{String(i + 1).padStart(2, "0")}</span>
-                <Icon name={s.icon} />
+                <span className="h-steps__n" aria-hidden>{String(i + 1).padStart(2, "0")}</span>
                 <h3>{s.title}</h3>
                 <p>{s.text}</p>
               </li>
@@ -709,7 +710,7 @@ export default function HomePage() {
       )}
 
       {/* 12. Why ToyoApps */}
-      <section className="h-sec" aria-labelledby="why-title">
+      <section className="h-sec h-sec--dark st-curve" aria-labelledby="why-title">
         <div className="container">
           <SectionHead id="why-title" kicker={`Why ${site.name}`} title="One catalog, built around how you look for software" align="center" />
           <div className="hi-band-art">
@@ -760,11 +761,8 @@ export default function HomePage() {
         <div className="container hz-values__card">
           <SectionHead id="values-title" kicker="Principles" title={`The principles behind ${site.name}`} align="center" />
           <ol className="h-values">
-            {values.map((v, i) => (
+            {values.map((v) => (
               <li key={v.title}>
-                <span className="h-values__n" aria-hidden>
-                  {String(i + 1).padStart(2, "0")}
-                </span>
                 <span className="h-values__icon" aria-hidden>
                   <Icon name={v.icon} />
                 </span>
@@ -807,6 +805,7 @@ export default function HomePage() {
       </section>
 
       {/* 18. Final CTA */}
+      <PageFaqs faqs={getSiteFaqs("home")} />
       <section className="z-cta" aria-labelledby="cta-title">
         <div className="container">
           <h2 id="cta-title">Ready to find your next tool?</h2>

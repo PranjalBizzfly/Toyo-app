@@ -7,7 +7,7 @@
 .home h3 { color: var(--heading); }
 .home .product-card__logo { width: 40px; height: 40px; border-radius: 11px; font-size: .9rem; object-fit: contain; }
 
-.h-sec { padding: clamp(56px, 7vw, 96px) 0; }
+.h-sec { padding: var(--sec-y) 0; }
 .h-sec--surface { background: var(--surface); border-block: 1px solid var(--border-soft); }
 .h-sec--tint { background: var(--band-yellow); }
 .h-sec--warm { background: var(--band-warm); }
@@ -135,12 +135,13 @@ a:hover > .h-more span, .h-more:hover span { transform: translateX(3px); }
 .h-role a:hover { color: var(--primary); }
 
 /* ---------- 9. Steps ---------- */
-.h-steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); counter-reset: none; }
+.h-steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); counter-reset: none; list-style: none; padding: 0; margin: 0; }
+.h-steps li { list-style: none; }
+.h-steps li::marker { content: none; }
 .h-steps li { position: relative; padding: 26px 22px; border-radius: var(--radius); background: var(--island-elevated); border: 1px solid var(--island-border); }
-.h-steps__n { position: absolute; top: 18px; right: 20px; font-family: var(--font-display); font-size: 2rem; color: var(--island-border-strong); line-height: 1; }
-.h-steps svg { width: 28px; height: 28px; color: var(--highlight); }
+.h-steps__n { display: block; font-family: var(--font-display); font-size: 28px; font-weight: 700; line-height: 1; color: var(--highlight); }
 .h-steps h3 { margin: 14px 0 6px; font-size: var(--fs-lg); }
-.h-steps p { color: var(--island-muted); font-size: var(--fs-sm); }
+.h-steps p { color: var(--island-muted); font-size: var(--fs-sm); text-transform: none; }
 
 /* ---------- 10. Depth ---------- */
 .h-depth { display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); }
@@ -215,7 +216,6 @@ a:hover > .h-more span, .h-more:hover span { transform: translateX(3px); }
 .h-values li:nth-child(2) { border-color: var(--accent); }
 .h-values li:nth-child(3) { border-color: var(--highlight); }
 .h-values li:nth-child(4) { border-color: var(--heading); }
-.h-values__n { font-family: var(--font-display); font-size: 2.6rem; line-height: 1; color: var(--border-strong); }
 .h-values__icon { position: absolute; top: 30px; right: 24px; color: var(--text-muted); }
 .h-values__icon svg { width: 22px; height: 22px; }
 .h-values h3 { margin: 14px 0 8px; font-size: var(--fs-lg); }
@@ -238,7 +238,7 @@ a:hover > .h-more span, .h-more:hover span { transform: translateX(3px); }
 .home h3 { font-weight: 500; letter-spacing: -0.01em; }
 
 /* Bands: white default, light grey alternates */
-.h-sec { background: var(--surface); padding: clamp(56px, 7vw, 90px) 0; }
+.h-sec { background: var(--surface); padding: var(--sec-y) 0; }
 .h-sec--surface, .h-sec--tint, .h-sec--warm { background: var(--bg); border-block: 0; }
 
 /* Section heads: centered, small label, short accent rule */

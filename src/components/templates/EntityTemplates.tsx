@@ -1,3 +1,6 @@
+import { getComparisonFaqs, getIndustryFaqs, getIntegrationFaqs, getResourceFaqs, getSolutionFaqs } from "@/lib/faqs";
+import { Labelled } from "@/components/ui/Labelled";
+import { poolImage } from "@/lib/pool-image";
 import Link from "next/link";
 import type { Comparison, Faq, Feature, IconName, Industry, Integration, Product, Resource, Solution } from "@/content/types";
 import { getCategory, getFeatures, productsFor } from "@/lib/catalog";
@@ -162,8 +165,8 @@ function FeatureList({ product, features }: { product: Product; features: Featur
       {features.map((f) => (
         <li key={f.slug}>
           {featureHasPage(f) ? <Link href={routes.feature(product.slug, f.slug)}>{f.name}</Link> : <strong>{f.name}</strong>}
-          <span> — {f.summary}</span>
-          {f.capabilities?.[0] && <small className="ez-fit__cap">{f.capabilities[0]}</small>}
+          <span className="ez-fit__sum">{f.summary}</span>
+          {f.capabilities?.[0] && <small className="ez-fit__cap"><Labelled text={f.capabilities[0]} /></small>}
         </li>
       ))}
     </ul>
@@ -193,7 +196,7 @@ function ProductFit({ title, lead, entries }: { title: string; lead?: string; en
                   {entry.points.slice(0, 4).map((t) => (
                     <li key={t}>
                       <Icon name="check" />
-                      <span>{t}</span>
+                      <span><Labelled text={t} /></span>
                     </li>
                   ))}
                 </ul>
@@ -316,7 +319,9 @@ export function HubPageTemplate({
   emptyTitle,
   emptyText,
   children,
+  faqs,
 }: {
+  faqs?: Faq[];
   crumbs: Crumb[];
   eyebrow: string;
   title: string;
@@ -360,7 +365,7 @@ export function HubPageTemplate({
                     {i.points?.length ? (
                       <ul className="ez-card__points">
                         {i.points.map((t) => (
-                          <li key={t}>{t}</li>
+                          <li key={t}><Labelled text={t} /></li>
                         ))}
                       </ul>
                     ) : null}
@@ -376,6 +381,7 @@ export function HubPageTemplate({
           )}
         </div>
       </section>
+      <Faqs faqs={faqs} />
       <Closing />
     </>
   );
@@ -392,7 +398,9 @@ export function ResourcesHubTemplate({
   activeCategory,
   emptyTitle,
   emptyText,
+  faqs,
 }: {
+  faqs?: Faq[];
   crumbs: Crumb[];
   title: string;
   lead: string;
@@ -462,6 +470,7 @@ export function ResourcesHubTemplate({
           </ul>
         </div>
       </section>
+      <Faqs faqs={faqs} />
       <Closing />
     </>
   );
@@ -482,7 +491,7 @@ export function SolutionPageTemplate({ solution }: { solution: Solution }) {
         title={solution.name}
         lead={solution.summary}
         align="left"
-        visual={<ImageSlot src="/images/entity/solution-hero.webp" alt={solution.name} width={318} height={440} priority />}
+        visual={<ImageSlot src={poolImage(solution.slug)} alt="" width={1600} height={900} priority />}
       >
         <HeroActions />
       </Hero>
@@ -506,7 +515,7 @@ export function SolutionPageTemplate({ solution }: { solution: Solution }) {
           </div>
         </section>
       ) : null}
-      <Faqs faqs={solution.faqs} />
+      <Faqs faqs={getSolutionFaqs(solution.slug)} />
       <Closing />
     </>
   );
@@ -545,7 +554,7 @@ export function IndustryPageTemplate({ industry }: { industry: Industry }) {
         eyebrow="Industry"
         title={`Software for ${industry.name}`}
         lead={industry.summary}
-        visual={<ImageSlot src="/images/entity/industry-hero.webp" alt={`Software for ${industry.name}`} width={1200} height={320} priority />}
+        visual={<ImageSlot src={poolImage(industry.slug)} alt="" width={1600} height={900} priority />}
       >
         <HeroActions />
       </Hero>
@@ -569,7 +578,7 @@ export function IndustryPageTemplate({ industry }: { industry: Industry }) {
       <Prose body={industry.body} kicker={`ToyoApps for ${industry.name}`} title="How ToyoApps helps" />
       <ProductTiles products={products} title={`Products for ${industry.name}`} />
       <ProductFit title={`How each product serves ${industry.name}`} lead="Drawn from each product's own published pages." entries={industryFit(industry, products)} />
-      <Faqs faqs={industry.faqs} />
+      <Faqs faqs={getIndustryFaqs(industry.slug)} />
       <Closing />
     </>
   );
@@ -588,14 +597,14 @@ export function IntegrationPageTemplate({ integration }: { integration: Integrat
         eyebrow={integration.vendor ? `Integration · ${integration.vendor}` : "Integration"}
         title={integration.name}
         lead={integration.summary}
-        visual={<ImageSlot src="/images/entity/integration-hero.webp" alt={`${integration.name} integration`} width={960} height={360} priority />}
+        visual={<ImageSlot src={poolImage(integration.slug)} alt="" width={1600} height={900} priority />}
       >
         <p className="ez-hero__chip">{integration.category}</p>
       </Hero>
       <Prose body={integration.body} kicker="Integration" title={`About the ${integration.name} integration`} />
       <ProductTiles products={productsFor(integration.products)} title="Works with" />
       <ProductFit title={`${integration.name} in each product`} lead="What each product says about this connection." entries={integrationFit(integration, productsFor(integration.products))} />
-      <Faqs faqs={integration.faqs} />
+      <Faqs faqs={getIntegrationFaqs(integration.slug)} />
       <Closing />
     </>
   );
@@ -659,7 +668,7 @@ export function ComparisonPageTemplate({ comparison }: { comparison: Comparison 
         </div>
       </section>
       <ProductTiles products={productsFor(comparison.subjects)} title="ToyoApps products in this comparison" />
-      <Faqs faqs={comparison.faqs} />
+      <Faqs faqs={getComparisonFaqs(comparison.slug)} />
       <Closing />
     </>
   );
@@ -691,11 +700,11 @@ export function ResourcePageTemplate({ resource, typeLabel }: { resource: Resour
         </div>
       </header>
       <div className="container ez-narrow ez-article-cover">
-        <ImageSlot src="/images/entity/resource-cover.webp" alt={resource.name} width={860} height={484} />
+        <ImageSlot src={poolImage(resource.slug)} alt="" width={860} height={484} />
       </div>
       <Prose body={resource.body} />
       <ProductTiles products={productsFor(resource.products ?? [])} title="Products in this article" />
-      <Faqs faqs={resource.faqs} />
+      <Faqs faqs={getResourceFaqs(resource.slug)} />
       <Closing />
     </>
   );

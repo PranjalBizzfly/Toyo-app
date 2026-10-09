@@ -1,3 +1,5 @@
+import { Labelled } from "@/components/ui/Labelled";
+import { ProductCta } from "@/components/product/ProductCta";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs, FaqList } from "@/components/ui/primitives";
@@ -5,6 +7,7 @@ import { ImageSlot } from "@/components/ui/ImageSlot";
 import "@/app/product-zoho.css";
 import { getCategory, getProduct, getProducts, integrationHasPage } from "@/lib/catalog";
 import { getProductCtas } from "@/lib/product-cta";
+import { getProductSectionFaqs } from "@/lib/faqs";
 import { getAvailableSections, getProductItems, getProductSectionData, itemSections, type ItemSection } from "@/lib/product-sections";
 import { routes, sectionLabels, type ProductSection } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo";
@@ -110,8 +113,9 @@ export default async function ProductSectionPage({ params }: Props) {
     ...globalLinks,
   ];
   const topic = sectionFaqTopics[section];
-  const sectionFaqs =
+  const ownSectionFaqs =
     section === "support" ? product.faqs ?? [] : topic ? (product.faqs ?? []).filter((f) => topic.test(`${f.question} ${f.answer}`)) : [];
+  const sectionFaqs = getProductSectionFaqs(product, section, ownSectionFaqs);
 
   const cta = getProductCtas(product).primary;
   const pricing = section === "pricing" ? product.pricing : undefined;
@@ -167,7 +171,7 @@ export default async function ProductSectionPage({ params }: Props) {
                   </a>
                   <ul className="pz-plan__list">
                     {p.features.map((x) => (
-                      <li key={x}>{x}</li>
+                      <li key={x}><Labelled text={x} /></li>
                     ))}
                   </ul>
                 </article>
@@ -311,26 +315,14 @@ export default async function ProductSectionPage({ params }: Props) {
         <section className="pz-band pz-band--white pz-faq" aria-labelledby="pz-sec-faq">
           <div className="container pz-faq__inner">
             <h2 id="pz-sec-faq" className="pz-h-faq">
-              {section === "pricing" ? "Pricing questions" : section === "security" ? "Security & data questions" : `${product.name} FAQs`}
+              {section === "pricing" ? "Pricing questions" : section === "security" ? "Security & data questions" : `${sectionLabels[section as ProductSection] ?? product.name} questions`}
             </h2>
             <FaqList faqs={sectionFaqs} />
           </div>
         </section>
       )}
 
-      <section className="pz-cta">
-        <div className="container pz-center">
-          <h2 className="pz-cta__title">Questions about {product.name}?</h2>
-          <div className="pz-cta__row">
-            <a href={cta.href} rel="noopener" className="pz-btn pz-btn--solid">
-              {cta.label}
-            </a>
-            <Link href={routes.product(product.slug)} className="pz-btn pz-btn--line">
-              {product.name} overview
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ProductCta product={product} title={`Questions about ${product.name}?`} primary={cta} secondary={{ label: `${product.name} overview`, href: routes.product(product.slug) }} />
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import { PageFaqs } from "@/components/ui/PageFaqs";
+import { getSiteFaqs } from "@/lib/faqs";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/ui/primitives";
@@ -66,6 +68,7 @@ export default async function LegalPage({ params }: Props) {
           {d.body ? d.body.map((p, i) => <p key={i}>{p}</p>) : <p>This policy is being finalised and will be published here.</p>}
         </article>
       </div>
+      <PageFaqs faqs={getSiteFaqs("legal")} />
     </div>
   );
 }

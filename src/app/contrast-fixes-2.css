@@ -1,0 +1,47 @@
+/* Contrast fixes, pass 3 (scripts/compare/contrast-audit.mjs). Loaded after contrast-fixes.css. */
+
+/* Product footer: always a dark band (some product themes resolved it to white), tinted with the product colour */
+html body .pfoot.pz-foot { background: color-mix(in srgb, var(--primary) 16%, #0b141f) !important; color: #e3e9ef; }
+html body .pz-foot :is(.pfoot__col a, .pfoot__col li, p, span:not(.product-card__logo)) { color: #dfe7ef; }
+html body .pz-foot .pfoot__legal .site-footer__legal a { color: #dfe7ef; }
+
+/* Product footer promo card */
+html body .pz-foot__promo { background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 55%, #0b141f), color-mix(in srgb, var(--primary) 35%, #0b141f)) !important; }
+
+/* Search chips and brand badges */
+html body .srch-card__type { filter: none; background: color-mix(in srgb, var(--primary) 12%, #fff); color: #0a4f7e; }
+:root[data-theme="dark"] body .srch-card__type { background: rgb(108 196 245 / .14); color: #a9dcf8; }
+:root[data-theme="dark"] body .badge--brand { color: #a9dcf8; background: rgb(108 196 245 / .14); }
+
+/* Breadcrumb separators inherit the breadcrumb colour */
+html body .breadcrumbs small, html body .is-in > small { color: inherit !important; opacity: .8; }
+:root[data-theme="dark"] body .pt a:not([class]) { color: #9fd6f7; }
+
+/* Feature-page blue hero / bands: eyebrow, kicker, "All" link */
+html body .fz-hero :is(.fz-hero__eyebrow, .fz-kicker, .fz-more) { color: #ffffff !important; }
+html body :is(.fz-sec--band, .fz-split) .fz-kicker { color: #ffffff !important; }
+
+/* Section-page hero eyebrow: light heroes use the primary, dark heroes the yellow */
+html body .pz-sec-hero__eyebrow { color: var(--primary) !important; }
+html body :is(.ref-glass, .ref-starfield, .ref-prompt) .pz-sec-hero__eyebrow { color: #ffe08a !important; }
+
+/* Home small items */
+:root[data-theme="dark"] body .hh__highlight-text small { color: #a9bccd !important; }
+html body .h-eco__count { color: #3f7f1c !important; }
+:root[data-theme="dark"] body .h-eco__count { color: #d7e4f1 !important; }
+
+/* HRMagix use-case band, TrackySuite pricing band */
+html body .zs-band--brand .zs-usecase { background: color-mix(in srgb, var(--primary) 70%, #000) !important; }
+html body .pr-price { background-color: #2f6e17 !important; }
+html body .pr-eyebrow--light { color: #ffe08a !important; }
+
+/* Catalog "Explore" button in dark mode */
+:root[data-theme="dark"] body .zc-card__btn { background: #0b6aa6 !important; color: #ffffff !important; }
+
+/* Carousel arrows, walkthrough lines, recipe tabs */
+html body .rk-car__nav button { color: #2b3a4d; }
+:root[data-theme="dark"] body .rk-car__nav button { color: #e2ebf5; }
+html body .rk-screen__line { color: #2b3a4d; }
+:root[data-theme="dark"] body .rk-screen__line { color: #d6e2ef; }
+:root[data-theme="dark"] body .rk-tabs__tab { color: #e2ebf5 !important; }
+:root[data-theme="dark"] body .rk-tabs--pill .rk-tabs__tab[aria-selected="true"] { color: #ffffff !important; }

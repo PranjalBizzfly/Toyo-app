@@ -1,0 +1,125 @@
+/* =====================================================================
+   Contrast fixes (WCAG 2.2 AA) found by scripts/compare/contrast-audit.mjs.
+   Loaded last. Each rule fixes a measured failure; tokens are fixed in
+   globals.css where the cause was shared.
+   ===================================================================== */
+
+/* Company / catalog heroes: breadcrumbs on the dark hero in both themes */
+html .co-hero :is(.breadcrumbs, .breadcrumbs a, .breadcrumbs li) { color: rgb(255 255 255 / .86) !important; }
+html .co-hero .breadcrumbs [aria-current] { color: #ffffff !important; }
+
+/* Dark island CTA band: heading must stay light in light mode too */
+html .cta-band :is(h2, .h2) { color: var(--island-heading) !important; }
+
+/* Home: step numbers and ecosystem counts */
+:root[data-theme="dark"] body .h-eco__count { color: #d7e4f1 !important; }
+html .hh-strip__stat-content small { color: #5d7187 !important; }
+:root[data-theme="dark"] body .hh-strip__stat-content small { color: #a9bccd !important; }
+html .hh-strip__eyebrow { color: #5d7187 !important; }
+
+/* Features hub links: dark text in dark mode */
+:root[data-theme="dark"] body .fz-link__name { color: var(--heading, #f3f8fc); }
+
+/* Product footer promo card: text on a product-colour gradient */
+html .pz-foot__promo { background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 78%, #000), color-mix(in srgb, var(--primary) 60%, #000)) !important; }
+html .pz-foot__promo :is(strong, p) { color: #ffffff !important; }
+
+/* HRMagix use-case brand band and "explore more" pill */
+html .zs-band--brand .zs-usecase { background: color-mix(in srgb, var(--primary) 82%, #000) !important; }
+html .zs-band--brand .zs-usecase :is(h3, p) { color: #ffffff !important; }
+html .pc__btn { color: #0b6aa6; border-color: #0b6aa6; }
+:root[data-theme="dark"] body .pc__btn { color: #6cc4f5; border-color: #6cc4f5; }
+
+/* Brand-coloured chips / avatars / icon tiles with white text: deepen the fill */
+html :is(.rr-cap i, .rr-agent__ava, .hs__card-in i, .rr-phone__logo, .h-steps .is-in > span) { background-color: color-mix(in srgb, currentColor 0%, transparent); }
+html .rr-cap i { filter: brightness(.78) saturate(1.1); }
+html .rr-agent__ava { filter: brightness(.72) saturate(1.1); }
+html .hs__card-in i { filter: brightness(.82); }
+html .rr-cap i, html .rr-agent__ava, html .hs__card-in i { text-shadow: 0 1px 1px rgb(0 0 0 / .25); }
+
+/* Recipe buttons, tags and tabs: deepen the product accent behind white text */
+html .rr-btn--solid { background: color-mix(in srgb, var(--rr-a) 74%, #000) !important; }
+html .rk-tabs--pill .rk-tabs__tab[aria-selected="true"] { background: color-mix(in srgb, var(--rr-a) 72%, #000); border-color: transparent; }
+html .rr-tag { color: color-mix(in srgb, var(--rr-a) 70%, #000); }
+:root[data-theme="dark"] body .rr-tag { color: color-mix(in srgb, var(--rr-a) 45%, #fff); background: color-mix(in srgb, var(--rr-a) 22%, transparent); }
+html .rr-more { color: color-mix(in srgb, var(--rr-a) 70%, #000); }
+:root[data-theme="dark"] body .rr-more { color: color-mix(in srgb, var(--rr-a) 45%, #fff); }
+:root[data-theme="dark"] body .rr-wcard__n { color: color-mix(in srgb, var(--rr-a) 45%, #fff); }
+:root[data-theme="dark"] body .rr-ticks a { color: var(--rr-ink); }
+
+/* Walkthrough panel and chart captions */
+html .rk-screen figcaption, html .rr-chartpanel figcaption { color: #5d7187; }
+:root[data-theme="dark"] :is(.rk-screen figcaption, .rr-chartpanel figcaption) { color: #a9bccd; }
+html .rk-screen__line { color: var(--rr-ink); }
+
+/* Animations: keep text readable during entrance — move, never fade text to 0 */
+
+
+/* Carousel arrows: disabled state still legible, glyph strong */
+html .rk-car__nav button { color: var(--rr-ink); }
+html .rk-car__nav button:disabled { opacity: .55; }
+
+/* Dark FAQ bands: every text token light (accordion body used a light-theme token) */
+html :is(.rr-faq--dark, .zs-band--dark, .zs-faqband.zs-band--dark, [data-faq="dark"] .pz-faq) { --text-muted: #b8c7d8; --text-secondary: #c6d4e3; }
+html :is(.rr-faq--dark, .zs-band--dark, [data-faq="dark"] .pz-faq) :is(.accordion__body, .accordion__body *) { color: #c6d4e3 !important; }
+
+
+/* Skip link: only visible on focus, high contrast when shown */
+html .skip-link { background: #0b1d2e; color: #ffffff; }
+html .skip-link:not(:focus) { clip-path: inset(50%); }
+
+/* Keyboard focus visible everywhere */
+:where(a, button, [role="tab"], summary, input, select, textarea):focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+/* Product themes: secondary link colour needs a dark-mode value */
+:root[data-theme="dark"] body .pt { --accent: #6cc4f5; }
+:root[data-theme="dark"] body .pt a:not([class]) { color: #6cc4f5; }
+
+/* Entity page breadcrumbs */
+html .ez-crumbs .breadcrumbs a { color: var(--text-secondary) !important; }
+
+/* Product sub-navigation: follows the site theme, not the product's hero palette */
+html body .product-nav.pz-nav { background: rgb(255 255 255 / .94); }
+html body .pz-nav :is(.product-nav__brand, .product-nav__links a) { color: #0b1d2e; }
+html body .pz-nav .product-nav__links a[aria-current="page"] { color: #0b1d2e; border-bottom-color: #0b1d2e; }
+html body .pz-nav .product-nav__links a:hover { color: var(--primary); }
+:root[data-theme="dark"] body .product-nav.pz-nav { background: rgb(7 18 29 / .94); }
+:root[data-theme="dark"] body .pz-nav :is(.product-nav__brand, .product-nav__links a) { color: #e8f0f8; }
+:root[data-theme="dark"] body .pz-nav .product-nav__links a[aria-current="page"] { color: #ffffff; border-bottom-color: #ffffff; }
+:root[data-theme="dark"] body .pz-nav .product-nav__links a:hover { color: #8fd0f7; }
+
+/* Product footer promo: CTA button text dark on the yellow pill */
+html body .pz-foot__promo > a { color: #0b1d2e !important; }
+
+/* Recipe tags / numbers / links in dark mode (fallback when color-mix with the accent resolves too dark) */
+:root[data-theme="dark"] body :is(.rr-tag, .rr-more, .rr-wcard__n) { color: #cfe3f7 !important; }
+
+/* Search result type chips, catalog counts, vendor labels */
+html body .srch-card__type { filter: saturate(1.1) brightness(.82); }
+html body :is(.zc-side__count, .zc-card__vendor) { color: var(--text-secondary); }
+:root[data-theme="dark"] body .zc-card__vendor { color: #b4c4d4; }
+html body .badge--brand { color: #0a5d92; }
+
+/* Text eyebrows / kickers sitting on dark or brand-coloured bands */
+html body :is(.fz-hero, .pz-sec-hero, .h-sec--brand, .h-sec--island, .zc-band, .ez-band, .pr-price, .zs-band--brand, .zs-cta) :is(.fz-hero__eyebrow, .pz-sec-hero__eyebrow, .h-eyebrow, .eyebrow, .zc-band__kicker, .pr-eyebrow, .zs-kicker, .fz-kicker) { color: #ffe08a !important; }
+html body :is(.fz-hero, .zs-cta, .zs-band--brand) :is(.zs-cta__lead, .fz-more, .z-textlink) { color: #ffffff !important; }
+html body :is(.h-sec--island, .h-sec--brand, .h-sec--dark) :is(.zbtn--outline, .z-textlink) { color: #ffffff !important; border-color: rgb(255 255 255 / .8) !important; }
+html body :is(.h-sec--island, .h-sec--brand, .h-sec--dark) :is(h2, h3) { color: #ffffff; }
+
+/* TrackySuite pricing band (green) and practice labels */
+html body .pr-price :is(.pr-price__note, em, .pr-price__link) { color: #ffffff !important; }
+html body .pr-price { --pr-green: #2f6e17; }
+html body :is(.pr-plans small, .pr-help li span, .is-in > small) { color: #555c63 !important; }
+
+/* Category flag on bright green */
+html body .zc-card__flag { background: #2f6e17 !important; color: #ffffff !important; }
+
+/* Product tab labels drawn in the raw accent */
+html body .rk-tabs--line .rk-tabs__tab[aria-selected="true"], html body .rk-tabs__tab { color: color-mix(in srgb, var(--rr-ink) 80%, var(--rr-a)); }
+:root[data-theme="dark"] body .rk-tabs__tab { color: #e2ebf5; }
+
+/* Home: hero eyebrow / buttons / small text */
+html body .hh__eyebrow { color: #0a5bd6 !important; }
+html body .hh-btn--solid { background: linear-gradient(90deg, #1278b5, #4b8a1f) !important; }
+html body .hh-btn--line { color: #0b6aa6 !important; border-color: #0b6aa6 !important; }
+html body :is(.hh__highlight-text small, .hh-strip__more-btn) { color: #4c5e72 !important; }

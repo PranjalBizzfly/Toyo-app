@@ -1,3 +1,5 @@
+import { PageFaqs } from "@/components/ui/PageFaqs";
+import { getSiteFaqs } from "@/lib/faqs";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/primitives";
 import { publisherSteps } from "@/content/site";
@@ -72,6 +74,7 @@ export default function PublishPage() {
           <ImageSlot src="/images/company/publish-steps.webp" alt="From listing to growth on ToyoApps" width={1200} height={360} className="co-band__art" />
         </div>
       </section>
+      <PageFaqs faqs={getSiteFaqs("publish")} />
 
       <section className="co-cta">
         <div className="co-wrap">

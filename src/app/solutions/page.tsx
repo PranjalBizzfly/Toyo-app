@@ -1,3 +1,4 @@
+import { getSiteFaqs } from "@/lib/faqs";
 import { HubPageTemplate } from "@/components/templates/EntityTemplates";
 import { getSolutions, productsFor } from "@/lib/catalog";
 import { routes } from "@/lib/routes";
@@ -15,6 +16,7 @@ export const metadata = buildMetadata({
 export default function SolutionsPage() {
   return (
     <HubPageTemplate
+      faqs={getSiteFaqs("solutions")}
       crumbs={[{ name: "Solutions", href: routes.solutions() }]}
       eyebrow="Solutions"
       title="Start from the problem, not the product"

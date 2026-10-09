@@ -8,9 +8,9 @@
 .co-hero {
   background: var(--primary);
   color: var(--on-primary);
-  padding-block: 88px 96px;
+  padding-block: clamp(48px, 6vw, 72px) var(--hero-y-end);
 }
-.co-hero--overlap { padding-bottom: 200px; }
+.co-hero--overlap { padding-bottom: 176px; }
 .co-hero--center { text-align: center; }
 .co-hero .breadcrumbs { margin-bottom: 28px; }
 .co-hero .breadcrumbs, .co-hero .breadcrumbs a, .co-hero .breadcrumbs li { color: color-mix(in srgb, var(--on-primary) 82%, transparent); }
@@ -31,7 +31,7 @@
 .co-hero__lead { font-size: 1.375rem; margin: 14px 0 0; color: color-mix(in srgb, var(--on-primary) 92%, transparent); }
 
 /* ---------- Centred statement (about "craft" band) ---------- */
-.co-statement { padding-block: 120px; background: var(--surface); text-align: center; }
+.co-statement { padding-block: var(--sec-y-lg); background: var(--surface); text-align: center; }
 .co-statement p { font-size: 1.375rem; line-height: 1.75; color: var(--text); max-width: 880px; margin: 0 auto; }
 .co-statement__big {
   display: block;
@@ -44,7 +44,7 @@
 }
 
 /* ---------- Generic bands ---------- */
-.co-band { padding-block: 100px; background: var(--surface); }
+.co-band { padding-block: var(--sec-y); background: var(--surface); }
 .co-band--tint { background: var(--bg); }
 .co-band__head { text-align: center; max-width: 760px; margin: 0 auto 56px; }
 .co-eyebrow { font-size: .8125rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
@@ -61,7 +61,7 @@
 .co-col__num { display: block; font-size: 2.75rem; font-weight: 300; line-height: 1; color: var(--text-faint); margin-bottom: 18px; }
 
 /* ---------- Overlapping white panel (contact) ---------- */
-.co-overlap { background: var(--bg); padding-bottom: 100px; }
+.co-overlap { background: var(--bg); padding-bottom: var(--sec-y); }
 .co-panel {
   position: relative;
   margin-top: -140px;
@@ -148,7 +148,7 @@ a.co-panel__cell:hover { border-color: var(--border-hover); box-shadow: 0 8px 24
 .co-steps p { font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin: 0; }
 
 /* Closing CTA band (Zoho dark band, centred) */
-.co-cta { background: var(--island); color: #fff; text-align: center; padding-block: 88px; }
+.co-cta { background: var(--island); color: #fff; text-align: center; padding-block: var(--sec-y-lg); }
 .co-cta h2 { font-size: clamp(1.75rem, 3.2vw, 2.5rem); font-weight: 400; margin: 0 0 12px; color: #fff; }
 .co-cta p { font-size: 1.125rem; color: rgb(255 255 255 / .8); margin: 0 0 32px; }
 .co-cta .co-btns { justify-content: center; }
@@ -196,9 +196,9 @@ a.co-panel__cell:hover { border-color: var(--border-hover); box-shadow: 0 8px 24
   .lg__nav { position: static; }
 }
 @media (max-width: 600px) {
-  .co-hero { padding-block: 56px 64px; }
-  .co-hero--overlap { padding-bottom: 160px; }
-  .co-statement, .co-band { padding-block: 64px; }
+  .co-hero { padding-block: 40px 48px; }
+  .co-hero--overlap { padding-bottom: 152px; }
+  .co-statement, .co-band { padding-block: var(--sec-y); }
   .co-statement p, .co-hero__lead { font-size: 1.125rem; }
   .co-panel__cell { padding: 40px 22px 28px; }
   .lg__summary { padding: 40px 20px; }

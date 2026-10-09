@@ -1,3 +1,5 @@
+import { PageFaqs } from "@/components/ui/PageFaqs";
+import { getSiteFaqs } from "@/lib/faqs";
 import "../catalog-zoho.css";
 import Link from "next/link";
 import { ImageSlot } from "@/components/ui/ImageSlot";
@@ -91,6 +93,7 @@ export default function ComparePage() {
           </ul>
         </div>
       </section>
+      <PageFaqs faqs={getSiteFaqs("compare")} />
 
       <CtaBand
         title="Find the right software for your business."

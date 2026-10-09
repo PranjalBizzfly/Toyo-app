@@ -9,9 +9,18 @@ import { site } from "@/content/site";
 import { getProducts } from "@/lib/catalog";
 import { jsonLd } from "@/lib/seo";
 import { themeInitScript } from "@/lib/theme";
+import { titleCaseScript } from "@/lib/title-case";
 import "./globals.css";
 import "./layout-zoho.css";
 import "./motion.css";
+import "./title-case.css";
+import "./contrast-fixes.css";
+import "./contrast-fixes-2.css";
+import "./story-inner.css";
+import "./mocks.css";
+import "./branch-timeline.css";
+import "./polish.css";
+import "./headings.css";
 
 // Same typefaces as the original toyoapps.com: Inter for text, Space Grotesk for the wordmark and headings.
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -60,6 +69,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <FooterResolver productSlugs={getProducts().map((p) => p.slug)}>
           <SiteFooter />
         </FooterResolver>
+        {/* Marks 100+ word paragraphs so they stay in sentence case (see title-case.css). */}
+        <script dangerouslySetInnerHTML={{ __html: titleCaseScript }} />
         <ScrollToggle />
         <Motion />
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(organization)} />

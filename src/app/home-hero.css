@@ -112,13 +112,15 @@
   color: #f1f7fd;
 }
 
+/* Same colours as the logo wordmark: "Toyo" blue flowing into "Apps" green. */
 .hh__title-blue {
-  color: #0066FF !important;
   display: inline-block;
-}
-
-:root[data-theme="dark"] .hh__title-blue {
-  color: #38bdf8 !important;
+  background: linear-gradient(90deg, var(--brand, #1e9ce5) 0%, var(--brand, #1e9ce5) 35%, var(--green, #7bc142) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: .06em;
 }
 
 /* Lead text */
@@ -156,37 +158,42 @@
   transition: all 0.2s ease;
 }
 
+/* Hero buttons in the logo colours: blue flowing into green, like the wordmark */
 .hh-btn--solid {
-  background: #0066FF;
+  background: linear-gradient(90deg, var(--brand, #1e9ce5), var(--green, #7bc142));
   color: #ffffff;
-  border: 1px solid #0066FF;
-  box-shadow: 0 6px 18px -4px rgba(0, 102, 255, 0.4);
+  border: 0;
+  box-shadow: 0 8px 22px -8px rgba(30, 156, 229, 0.6);
 }
 
 .hh-btn--solid:hover {
-  background: #0052cc;
+  background: linear-gradient(90deg, #1688c9, #67ad34);
   transform: translateY(-1px);
 }
 
 .hh-btn--line {
   background: #ffffff;
-  color: #0066FF;
-  border: 1.5px solid #0066FF;
+  color: var(--brand, #1e9ce5);
+  border: 1.5px solid var(--brand, #1e9ce5);
 }
 
 .hh-btn--line:hover {
-  background: #f0f7ff;
+  background: rgba(123, 193, 66, 0.12);
+  border-color: var(--green, #7bc142);
+  color: #4f8f22;
   transform: translateY(-1px);
 }
 
 :root[data-theme="dark"] .hh-btn--line {
   background: rgba(10, 24, 40, 0.7);
-  color: #38bdf8;
-  border-color: #38bdf8;
+  color: #5bb8ee;
+  border-color: #5bb8ee;
 }
 
 :root[data-theme="dark"] .hh-btn--line:hover {
-  background: rgba(56, 189, 248, 0.15);
+  background: rgba(123, 193, 66, 0.12);
+  border-color: #9fdc6e;
+  color: #9fdc6e;
 }
 
 .hh-btn__arrow {

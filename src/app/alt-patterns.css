@@ -1,0 +1,48 @@
+/* Alternate representations, used when a page would otherwise repeat a
+   pattern: tiles instead of a second check list, an arrow flow instead of a
+   second numbered list, and a two-column "statement" list. Theme tokens only. */
+
+/* Tiles with an accent mark (2nd list on a page) */
+.fz-alt-tiles { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); max-width: 1080px; margin: 0 auto; }
+.fz-alt-tiles li { position: relative; padding: 22px 20px 20px 24px; border-radius: 14px; background: var(--surface); border: 1px solid var(--border); font-size: 15.5px; line-height: 1.55; color: var(--heading); box-shadow: 0 14px 30px -24px rgb(15 34 53 / .35); }
+.fz-alt-tiles__mark { position: absolute; left: 0; top: 18px; bottom: 18px; width: 4px; border-radius: 0 4px 4px 0; background: var(--primary); }
+.fz-alt-tiles li[data-tone="1"] .fz-alt-tiles__mark { background: #3fa34d; }
+.fz-alt-tiles li[data-tone="2"] .fz-alt-tiles__mark { background: #9b51e0; }
+
+/* Arrow flow (2nd numbered list on a page) */
+.fz-alt-flow { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 6px; max-width: 1080px; margin: 0 auto; }
+.fz-alt-flow li { display: flex; align-items: center; gap: 6px; }
+.fz-alt-flow span { max-width: 260px; padding: 12px 18px; border-radius: 999px; background: var(--primary-soft); color: var(--heading); font-size: 14.5px; line-height: 1.45; text-align: center; }
+.fz-alt-flow li:last-child span { background: var(--primary); color: var(--on-primary); }
+.fz-alt-flow i { font-style: normal; font-size: 18px; color: var(--primary); }
+@media (max-width: 640px) {
+  .fz-alt-flow { flex-direction: column; }
+  .fz-alt-flow li { flex-direction: column; }
+  .fz-alt-flow i { transform: rotate(90deg); }
+}
+
+/* Two-column statements with a large quote mark (3rd list on a page) */
+.fz-alt-quotes { display: grid; gap: 0 40px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); max-width: 1000px; margin: 0 auto; }
+.fz-alt-quotes li { position: relative; padding: 18px 0 18px 44px; border-bottom: 1px solid var(--border-soft); font-size: 16px; line-height: 1.6; color: var(--heading); }
+/* Product overview: ecosystem as a divided list (the page already has a card grid) */
+.zs-eco-list { max-width: 960px; margin: 32px auto 0; border-top: 1px solid var(--border); }
+.zs-eco-list li { border-bottom: 1px solid var(--border); }
+.zs-eco-list a { display: grid; grid-template-columns: auto minmax(120px, 180px) 1fr auto; align-items: center; gap: 18px; padding: 18px 8px; color: var(--text); transition: background .2s ease; }
+.zs-eco-list a:hover { background: var(--primary-soft); }
+.zs-eco-list strong { color: var(--heading); font-size: 17px; }
+.zs-eco-list span { font-size: 15px; line-height: 1.5; color: var(--text-secondary); }
+.zs-eco-list i { font-style: normal; color: var(--primary); }
+.zs-eco-list .product-card__logo { width: 40px; height: 40px; }
+@media (max-width: 640px) { .zs-eco-list a { grid-template-columns: auto 1fr auto; } .zs-eco-list span { grid-column: 2 / 4; grid-row: 2; } }
+
+/* Product overview: "Everything you need" as a two-column index */
+.zs-index { display: grid; gap: 0 48px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); max-width: 1120px; margin: 32px auto 0; }
+.zs-index li { border-top: 1px solid var(--border); }
+.zs-index a, .zs-index div { display: grid; grid-template-columns: minmax(140px, 200px) 1fr auto; gap: 16px; align-items: baseline; padding: 16px 4px; color: var(--text); }
+.zs-index a:hover strong { color: var(--primary); }
+.zs-index strong { color: var(--heading); font-size: 16px; }
+.zs-index span { font-size: 14.5px; line-height: 1.55; color: var(--text-secondary); }
+.zs-index i { font-style: normal; color: var(--primary); }
+@media (max-width: 560px) { .zs-index a, .zs-index div { grid-template-columns: 1fr auto; } .zs-index span { grid-column: 1 / -1; } }
+
+.fz-alt-quotes li::before { content: "“"; position: absolute; left: 0; top: 4px; font-family: var(--font-display); font-size: 44px; line-height: 1; color: var(--primary); opacity: .6; }

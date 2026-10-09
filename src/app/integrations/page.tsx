@@ -1,3 +1,5 @@
+import { PageFaqs } from "@/components/ui/PageFaqs";
+import { getSiteFaqs } from "@/lib/faqs";
 import "../catalog-zoho.css";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import Link from "next/link";
@@ -148,6 +150,7 @@ export default function IntegrationsPage() {
           </div>
         </>
       )}
+      <PageFaqs faqs={getSiteFaqs("integrations")} />
 
       <CtaBand
         title="Find the right software for your business."

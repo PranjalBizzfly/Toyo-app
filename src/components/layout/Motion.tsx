@@ -15,14 +15,18 @@ const REVEAL_SELECTOR = [
   "main section .accordion",
 ].join(",");
 
+/** Containers that get .is-in so their drawn lines / connector flows start. */
+const STAGE_SELECTOR = "[data-stage], [data-draw]";
+
 /** Stagger siblings by this much, capped so long grids don't wait forever. */
-const STAGGER_MS = 70;
-const MAX_STAGGER = 6;
+const STAGGER_MS = 80;
+const MAX_STAGGER = 5;
 
 /**
  * Tags below-the-fold content with data-reveal and adds .is-in once it scrolls
- * into view. Content already on screen is left alone (the hero has its own
- * CSS entrance), so nothing flashes on load, and without JS nothing is hidden.
+ * into view (once — entrances never replay). Content already on screen is left
+ * alone (heroes have their own CSS entrance), so nothing flashes on load, and
+ * without JS nothing is hidden.
  */
 export function Motion() {
   const pathname = usePathname();
@@ -45,9 +49,14 @@ export function Motion() {
 
     const frame = requestAnimationFrame(() => {
       const fold = window.innerHeight;
+      // Explicitly authored reveals (data-reveal="left" etc.) and stages.
+      for (const el of document.querySelectorAll<HTMLElement>("main [data-reveal], main " + STAGE_SELECTOR.split(", ").join(", main "))) {
+        if (el.getBoundingClientRect().top < fold) el.classList.add("is-in");
+        else io.observe(el);
+      }
       for (const el of document.querySelectorAll<HTMLElement>(REVEAL_SELECTOR)) {
-        // Skip nested matches (a card inside a revealing list item) and anything in the hero.
-        if (el.closest("[data-reveal]") || el.closest(".h-hero, .zp-hero, [data-no-reveal]")) continue;
+        // Skip nested matches and anything in a hero.
+        if (el.hasAttribute("data-reveal") || el.closest("[data-reveal]") || el.closest(".h-hero, .zp-hero, .zs-hero, [data-no-reveal]")) continue;
         if (el.getBoundingClientRect().top < fold) continue;
         const parent = el.parentElement;
         const index = parent ? [...parent.children].indexOf(el) : 0;

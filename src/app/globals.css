@@ -4,6 +4,10 @@
    ===================================================================== */
 
 :root {
+  /* Shared vertical section rhythm (one place to tune spacing site-wide) */
+  --sec-y: clamp(40px, 4.5vw, 64px);
+  --sec-y-lg: clamp(48px, 6vw, 80px);
+  --hero-y-end: clamp(40px, 5vw, 72px);
   /* Ink & paper — from the original toyoapps.com (--text #0f2235, --bg-1 #f6fafd, --border #e1ecf4) */
   --ink-950: #0a1a2a;
   --ink-900: #0f2235;
@@ -27,11 +31,11 @@
      Built on the Toyo Apps palette: navy ink, blue #1E9CE5 / #0F7BBE,
      green #7BC142, yellow #F5C842. Components use only these tokens. */
   color-scheme: light;
-  --primary: #0f7bbe;            /* deep Toyo blue — AA with white text */
-  --primary-hover: #0b679f;
+  --primary: #0b6aa6;            /* deep Toyo blue — AA as text on light surfaces and with white text */
+  --primary-hover: #09588a;
   --primary-soft: #e8f4fc;
   --on-primary: #ffffff;
-  --accent: #5fa32a;             /* Toyo green */
+  --accent: #3f7f1c;             /* Toyo green, AA as text on light surfaces */
   --accent-soft: #eef7e6;
   --highlight: #f5c842;          /* Toyo yellow */
   --bg: #f4f8fb;                 /* cool off-white, not stark */
@@ -47,11 +51,11 @@
   --text: #0f2235;
   --text-secondary: #3a516a;
   --text-muted: #5d7187;
-  --text-faint: #8ea0b2;
+  --text-faint: #627689;          /* AA (4.5:1) on white and on --bg */
   --contrast: #0f2235;           /* inverted chip / dark button */
   --contrast-hover: #1a3149;
   --on-contrast: #ffffff;
-  --success: #3f7f1c;
+  --success: #346a16;
   --success-soft: #eaf5e1;
   --warning: #8a6300;
   --warning-soft: #fef6dc;
@@ -187,8 +191,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 /* ---------- Layout primitives ---------- */
 .container { width: 100%; max-width: calc(var(--container) + var(--gutter) * 2); margin: 0 auto; padding: 0 var(--gutter); }
-.section { padding: clamp(56px, 8vw, 112px) 0; }
-.section--tight { padding: clamp(40px, 5vw, 64px) 0; }
+.section { padding: var(--sec-y) 0; }
+.section--tight { padding: clamp(32px, 4vw, 48px) 0; }
 .section--surface { background: var(--surface); border-block: 1px solid var(--border-soft); }
 .section--ink { background: var(--island); color: var(--island-text); }
 .section--ink .text-muted { color: var(--island-muted); }
@@ -350,7 +354,7 @@ a.card:hover, .card--link:hover { border-color: var(--border-strong); box-shadow
 .breadcrumbs [aria-current] { color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 40ch; }
 
 /* ---------- Page hero (inner pages) ---------- */
-.page-hero { padding: clamp(36px, 5vw, 64px) 0 clamp(40px, 6vw, 72px); border-bottom: 1px solid var(--border-soft); }
+.page-hero { padding: clamp(32px, 4vw, 56px) 0 var(--hero-y-end); border-bottom: 1px solid var(--border-soft); }
 .page-hero > .container > * + * { margin-top: 18px; }
 .page-hero h1 { font-size: var(--fs-3xl); letter-spacing: -0.03em; max-width: 22ch; }
 
@@ -399,7 +403,7 @@ a.card:hover, .card--link:hover { border-color: var(--border-strong); box-shadow
 .explorer__count { font-size: var(--fs-sm); color: var(--text-muted); }
 
 /* ---------- Home: hero ---------- */
-.hero { position: relative; padding: clamp(48px, 7vw, 96px) 0 clamp(56px, 8vw, 112px); overflow: hidden; }
+.hero { position: relative; padding: clamp(40px, 5vw, 72px) 0 var(--hero-y-end); overflow: hidden; }
 .hero__grid { display: grid; gap: clamp(40px, 6vw, 72px); align-items: center; }
 @media (min-width: 1024px) { .hero__grid { grid-template-columns: 1.05fr 1fr; } }
 .hero__copy > * + * { margin-top: 22px; }
@@ -566,3 +570,41 @@ a.primary-nav__trigger[aria-current="page"] { background: var(--primary-soft); c
 :root[data-theme="dark"] .eco__core { box-shadow: 0 10px 34px rgb(58 174 240 / 0.18); }
 :root[data-theme="dark"] .logo__mark { filter: drop-shadow(0 4px 14px rgb(58 174 240 / 0.18)); }
 :root[data-theme="dark"] .badge--pine { color: var(--accent); }
+
+/* Adjacent sections on the same background: don't stack two full paddings;
+   meet at a container-width hairline instead (tokens only, both themes). */
+:root { --sec-seam: clamp(28px, 3.5vw, 44px); }
+:is(
+  .z-brands + .h-sec:not([class*="h-sec--"]),
+  .h-sec:not([class*="h-sec--"]) + .h-sec:not([class*="h-sec--"]),
+  .fz-sec:not([class*="fz-sec--"]) + .fz-sec:not([class*="fz-sec--"]),
+  .fz-sec--tint + .fz-sec--tint,
+  .co-band:not(.co-band--tint) + .co-band:not(.co-band--tint),
+  .co-band--tint + .co-band--tint,
+  .co-statement + .co-band:not(.co-band--tint),
+  .ez-section:not(.ez-section--tint) + .ez-section:not(.ez-section--tint),
+  .ez-section--tint + .ez-section--tint,
+  .section:not([class*="section--"]) + .section:not([class*="section--"]),
+  .section--surface + .section--surface
+) {
+  padding-top: var(--sec-seam);
+  border-top: 0;
+  background-image: linear-gradient(var(--border), var(--border));
+  background-size: min(var(--container), 100% - var(--gutter) * 2) 1px;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+:is(
+  .z-brands:has(+ .h-sec:not([class*="h-sec--"])),
+  .h-sec:not([class*="h-sec--"]):has(+ .h-sec:not([class*="h-sec--"])),
+  .fz-sec:not([class*="fz-sec--"]):has(+ .fz-sec:not([class*="fz-sec--"])),
+  .fz-sec--tint:has(+ .fz-sec--tint),
+  .co-band:not(.co-band--tint):has(+ .co-band:not(.co-band--tint)),
+  .co-band--tint:has(+ .co-band--tint),
+  .co-statement:has(+ .co-band:not(.co-band--tint)),
+  .ez-section:not(.ez-section--tint):has(+ .ez-section:not(.ez-section--tint)),
+  .ez-section--tint:has(+ .ez-section--tint),
+  .section:not([class*="section--"]):has(+ .section:not([class*="section--"])),
+  .section--surface:has(+ .section--surface)
+) { padding-bottom: var(--sec-seam); }

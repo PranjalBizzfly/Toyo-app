@@ -1,3 +1,4 @@
+import { Labelled } from "@/components/ui/Labelled";
 import Link from "next/link";
 import type { ContentStatus, Cta, Faq, MediaAsset } from "@/content/types";
 import { jsonLd } from "@/lib/seo";
@@ -278,7 +279,7 @@ export function CheckList({ items }: { items: string[] }) {
       {items.map((i) => (
         <li key={i}>
           <Icon name="check" />
-          <span>{i}</span>
+          <span><Labelled text={i} /></span>
         </li>
       ))}
     </ul>

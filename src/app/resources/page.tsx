@@ -1,3 +1,4 @@
+import { getSiteFaqs } from "@/lib/faqs";
 import { ResourcesHubTemplate } from "@/components/templates/EntityTemplates";
 import { getResources } from "@/lib/catalog";
 import { resourceTypes, routes } from "@/lib/routes";
@@ -27,6 +28,7 @@ export const metadata = buildMetadata({
 export default function ResourcesPage() {
   return (
     <ResourcesHubTemplate
+      faqs={getSiteFaqs("resources")}
       crumbs={[{ name: "Resources", href: routes.resources() }]}
       title="Learn, compare and get more from your software"
       lead="Guides, tutorials, case studies, reports and product updates across the ToyoApps ecosystem, organised by type so you can find setup help or background reading quickly."

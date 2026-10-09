@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Section-heading hierarchy (site-wide, loaded last).
+   eyebrow  → bold accent pill (14px / 800 / tracked), colour from its context
+   heading  → heavy display type, full-contrast heading colour
+   subtitle → lead text below stays regular weight
+   Small UI labels (menus, chips, footer, search suggestions) are untouched.
+   ========================================================================== */
+
+/* 1 · Section eyebrows: unmistakable label pill introducing the section. */
+html main :is(
+  .eyebrow, .co-eyebrow, .zs-kicker, .fz-kicker, .pr-eyebrow, .zc-kicker, .zc-band__kicker,
+  .z-suite__kicker, .ez-kicker, .ez-heading__kicker, .h-eyebrow,
+  .srch-hero__kicker, .pz-sec-hero__eyebrow, .fz-hero__eyebrow, .co-hero__label, .z-duo__tag
+) {
+  font-size: clamp(14px, 12.5px + .3vw, 16px) !important;
+  font-weight: 800 !important;
+  line-height: 1.2;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  display: block;
+  margin-bottom: 14px;
+}
+/* Centred eyebrows need a centred block wrapper behaviour. */
+html main :is(.zs-center, .pr-center, [style*="center"], .section-header--center, .text-center) > :is(.eyebrow, .zs-kicker, .pr-eyebrow, .fz-kicker),
+html main :is(.zs-kicker.zs-center, .pr-eyebrow:not(.pr-eyebrow--left)) { text-align: center; }
+/* Neutral-grey eyebrows read weak: lift them to the brand accent on light sections. */
+html main .eyebrow { color: var(--primary); }
+html[data-theme="dark"] main .eyebrow { color: #66c2f5; }
+:is(.zs-band--dark, .zs-band--black, .zc-black, .h-sec--dark, .h-sec--brand, .zs-band--brand, .zs-cta, .ez-band, .pr-price) .eyebrow { color: #8cc8ff !important; }
+
+/* 2 · Section headings: heavy, high contrast. */
+html main section :is(h2.h2, .section-header h2, .zs-h2, .pr-h2, .zc-display, .pz-h-sm, .pz-h-md, .pz-h-lg, .pz-h-xl, .pz-h-faq, .fz-h2, .ez-heading h2, .co-h2, .bt__title, .zc-rail__head h2, .h-sec h2, .zs-spot__title, .zs-cta__title, .pr-cta h2, .zc-cta__title) {
+  font-weight: 700 !important;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+html main section :is(h2.h2, .section-header h2, .zs-h2, .pr-h2, .zc-display, .pz-h-md, .pz-h-lg, .fz-h2, .ez-heading h2, .co-h2, .h-sec h2) {
+  font-size: clamp(1.9rem, 1.25rem + 2.1vw, 3rem);
+  line-height: 1.12;
+}
+/* Light sections: full ink; dark sections keep white (set by their own rules). */
+html:not([data-theme="dark"]) main section:not(:is(.zs-band--dark, .zs-band--black, .zc-black, .h-sec--dark, .h-sec--brand, .zs-band--brand, .ez-band, .pr-price, .pr-cta, .zs-cta, .z-cta, .ez-cta, .pz-cta, .fz-cta, .bt)) :is(h2.h2, .section-header h2, .zs-h2, .pr-h2, .zc-display, .fz-h2, .ez-heading h2, .co-h2) { color: #0b1626; }
+
+/* 3 · "Built for …" audience heading was a small grey label — make it a real heading. */
+html main .zs-audience .zs-eyebrow { display: block; margin: 0 auto; max-width: 26ch; font-family: var(--font-display); font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.3rem) !important; font-weight: 700 !important; letter-spacing: -0.02em !important; text-transform: none !important; color: var(--heading) !important; }
+
+/* 4 · Subtitles under headings: readable, clearly secondary. */
+html main section :is(.section-header .lead, .zs-sub, .zc-sub, .pz-sub) { font-size: clamp(1.02rem, .97rem + .3vw, 1.2rem); font-weight: 400; color: var(--text-secondary); }
+
+/* 5 · Accent rule under centred headings (the short bar) — slightly stronger. */
+html main .section-header [class*="rule"], html main .h-sec .section-header::after { height: 3px !important; border-radius: 3px; }
+
+/* Catch-all: every h2 in page content is a section heading on this site. */
+html main h2:not(.zs-eyebrow):not(.hh-strip__title) { font-weight: 700 !important; }
+html main h2 strong { font-weight: 800; }
+
+/* Label contrast: deep brand blue on light sections, bright sky on dark. */
+html main :is(.eyebrow, .co-eyebrow, .zs-kicker, .fz-kicker, .pr-eyebrow, .zc-kicker, .zc-band__kicker, .z-suite__kicker, .ez-kicker, .ez-heading__kicker, .h-eyebrow, .srch-hero__kicker, .pz-sec-hero__eyebrow, .fz-hero__eyebrow, .co-hero__label, .z-duo__tag) { color: #0b5f93 !important; }
+html[data-theme="dark"] main :is(.eyebrow, .co-eyebrow, .zs-kicker, .fz-kicker, .pr-eyebrow, .zc-kicker, .zc-band__kicker, .z-suite__kicker, .ez-kicker, .ez-heading__kicker, .h-eyebrow, .srch-hero__kicker, .pz-sec-hero__eyebrow, .fz-hero__eyebrow, .co-hero__label, .z-duo__tag),
+html main :is(.zs-band--dark, .zs-band--black, .zc-black, .h-sec--dark, .h-sec--brand, .h-sec--island, .zs-band--brand, .zs-cta, .ez-band, .ez-cta, .pz-cta, .fz-cta, .z-cta, .pr-price, .pr-cta, .co-hero, .zc-hero, .srch-hero, .fz-hero, .zs-hero--dark, .zs-dotgrid-bg) :is(.eyebrow, .co-eyebrow, .zs-kicker, .fz-kicker, .pr-eyebrow, .zc-kicker, .zc-band__kicker, .z-suite__kicker, .ez-kicker, .ez-heading__kicker, .h-eyebrow, .srch-hero__kicker, .pz-sec-hero__eyebrow, .fz-hero__eyebrow, .co-hero__label, .z-duo__tag) { color: #8cd0ff !important; }
+
+/* Homepage stat strip title: compact, two clean lines, never clipped. */
+html main .hh .hh-strip__title { max-width: 320px; font-size: clamp(16px, 1.25vw, 19px) !important; font-weight: 600 !important; line-height: 1.3; letter-spacing: -0.01em; overflow: visible; }

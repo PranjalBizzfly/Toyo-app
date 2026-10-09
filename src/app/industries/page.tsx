@@ -1,3 +1,4 @@
+import { getSiteFaqs } from "@/lib/faqs";
 import { HubPageTemplate } from "@/components/templates/EntityTemplates";
 import { getIndustries, productsFor } from "@/lib/catalog";
 import { routes } from "@/lib/routes";
@@ -22,6 +23,7 @@ export const metadata = buildMetadata({
 export default function IndustriesPage() {
   return (
     <HubPageTemplate
+      faqs={getSiteFaqs("industries")}
       crumbs={[{ name: "Industries", href: routes.industries() }]}
       eyebrow="Industries"
       title="Software matched to how your industry works"

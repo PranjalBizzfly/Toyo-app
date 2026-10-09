@@ -1,7 +1,11 @@
+import { PageFaqs } from "@/components/ui/PageFaqs";
+import { getFeaturesHubFaqs } from "@/lib/faqs";
+import { Labelled } from "@/components/ui/Labelled";
+import { ProductCta } from "@/components/product/ProductCta";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Feature } from "@/content/types";
-import { Breadcrumbs, CtaBand } from "@/components/ui/primitives";
+import { Breadcrumbs } from "@/components/ui/primitives";
 import { Icon } from "@/components/ui/Icon";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import { getProductCtas } from "@/lib/product-cta";
@@ -41,7 +45,7 @@ function LinkRow({ f, productSlug }: { f: Feature; productSlug: string }) {
       <span>
         <span className="fz-link__name">{f.name}</span>
         {f.summary && <span className="fz-link__sum">{f.summary}</span>}
-        {f.capabilities?.[0] && <span className="fz-hubcap">{f.capabilities[0]}</span>}
+        {f.capabilities?.[0] && <span className="fz-hubcap"><Labelled text={f.capabilities[0]} /></span>}
       </span>
       {has ? (
         <span className="fz-link__go" aria-hidden>
@@ -76,7 +80,7 @@ function Tile({ f, productSlug }: { f: Feature; productSlug: string }) {
       {f.capabilities?.length ? (
         <ul className="fz-hubcaps">
           {f.capabilities.slice(0, 2).map((c) => (
-            <li key={c}>{c}</li>
+            <li key={c}><Labelled text={c} /></li>
           ))}
         </ul>
       ) : null}
@@ -117,12 +121,12 @@ export default async function FeaturesPage({ params }: Props) {
       <header className="zf-hero">
         <ul className="zf-hero__pills zf-hero__pills--left" aria-hidden>
           {left.map((n) => (
-            <li key={n}>{n}</li>
+            <li key={n}><Labelled text={n} /></li>
           ))}
         </ul>
         <ul className="zf-hero__pills zf-hero__pills--right" aria-hidden>
           {right.map((n) => (
-            <li key={n}>{n}</li>
+            <li key={n}><Labelled text={n} /></li>
           ))}
         </ul>
         <div className="container zf-hero__copy">
@@ -211,7 +215,8 @@ export default async function FeaturesPage({ params }: Props) {
           </section>
         );
       })}
-      <CtaBand
+      <PageFaqs faqs={getFeaturesHubFaqs(product)} />
+      <ProductCta product={product}
         title={`Try ${product.name}`}
         lead={product.pricing?.trial}
         primary={cta}

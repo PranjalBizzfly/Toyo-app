@@ -1,3 +1,5 @@
+import { getProductFaqs } from "@/lib/faqs";
+import { Labelled } from "@/components/ui/Labelled";
 import Link from "next/link";
 import type { Product } from "@/content/types";
 import {
@@ -11,262 +13,546 @@ import {
 } from "@/lib/catalog";
 import { getProductCtas, platformLabels } from "@/lib/product-cta";
 import { getAvailableSections, getProductSectionData, OVERVIEW_FEATURE_LIMIT } from "@/lib/product-sections";
+import { getProductStory, getStoryPatterns } from "@/lib/product-story";
 import { routes } from "@/lib/routes";
 import { absoluteUrl, jsonLd } from "@/lib/seo";
 import { ProductCard, ProductLogo } from "@/components/product/cards";
-import { Breadcrumbs, FaqList, Slot, StatusBadge } from "@/components/ui/primitives";
+import { ProductHero } from "@/components/product/ProductHero";
+import { BranchTimeline } from "@/components/product/BranchTimeline";
+import { PastelCards, VoiceHero } from "@/components/product/VoiceParts";
+import "@/app/voice.css";
+import { SpotTabbar, StoryTabs, type StoryTab } from "@/components/product/StoryTabs";
+import { FaqList, Slot } from "@/components/ui/primitives";
 import { ImageSlot } from "@/components/ui/ImageSlot";
+import { SpotVisual } from "@/components/product/SpotVisual";
 import "@/app/product-zoho.css";
+import "@/app/product-story.css";
+import "@/app/product-refs.css";
+import "@/app/alt-patterns.css";
 
-/** One shared artwork slot per spotlight position (swap the files for real art). */
 const SPOT_ART = [
-  <ImageSlot key="1" src="/images/product/spotlight-1.webp" alt="Interactive records and data management console with search and batch actions" width={580} height={520} className="pz-spot__img" />,
-  <ImageSlot key="2" src="/images/product/spotlight-2.webp" alt="Automated workflow pipeline and visual trigger execution canvas" width={580} height={520} className="pz-spot__img" />,
-  <ImageSlot key="3" src="/images/product/spotlight-3.webp" alt="Operational efficiency analytics and statutory compliance audit dashboard" width={580} height={520} className="pz-spot__img" />,
+  <ImageSlot key="1" src="/images/product/spotlight-1.webp" alt="" width={580} height={520} className="pz-spot__img" />,
+  <ImageSlot key="2" src="/images/product/spotlight-2.webp" alt="" width={580} height={520} className="pz-spot__img" />,
+  <ImageSlot key="3" src="/images/product/spotlight-3.webp" alt="" width={580} height={520} className="pz-spot__img" />,
 ];
 
-/** Highlighted features shown on the overview before linking to the full hub. */
-const OVERVIEW_FEATURES = OVERVIEW_FEATURE_LIMIT;
-/** How many highlights get the large alternating "spotlight" treatment. */
 const SPOTLIGHTS = 3;
 
 /**
- * ProductPageTemplate — the overview page for any product, laid out like a
- * Zoho product home: gradient hero with a get-started card, "built for" pill
- * row, centred section headings, large alternating spotlight cards, tinted
- * card grids, a "take a tour" band, FAQ and a closing CTA band.
- * Every section is optional and renders only when the product has data for it.
+ * ProductPageTemplate — the overview page for any product. Each product's
+ * story (src/lib/product-story.ts) takes its design approach from a different
+ * Zoho product site: hero composition, palette, benefits style, spotlight
+ * layout, signature section, band edges and CTA all vary. Every section renders
+ * only when the product has data for it; no content is invented.
  */
 export function ProductPageTemplate({ product }: { product: Product }) {
+  const story = getProductStory(product.slug);
+  const P = getStoryPatterns(product.slug);
   const category = getCategory(product.category);
   const data = getProductSectionData(product);
   const groups = groupFeatures(product);
   const highlights = (data.features.some((f) => f.highlight) ? data.features.filter((f) => f.highlight) : data.features).slice(
     0,
-    OVERVIEW_FEATURES,
+    OVERVIEW_FEATURE_LIMIT,
   );
-  const spotlights = highlights.slice(0, SPOTLIGHTS);
-  const moreHighlights = highlights.slice(SPOTLIGHTS);
+  const spotlights = highlights.slice(0, story.spot === "stack" || story.spot === "accordion" ? 5 : SPOTLIGHTS);
+  const moreHighlights = highlights.slice(spotlights.length);
   const related = getRelatedProducts(product);
   const shots = product.screenshots ?? [];
   const tourShot = product.heroImage ?? shots[0];
   const { primary: cta } = getProductCtas(product);
-  const connections = getConnections(product);
+  const connections = dedupe(getConnections(product));
   const hasFeaturesHub = getAvailableSections(product).includes("features");
   const host = new URL(product.websiteUrl).hostname.replace(/^www\./, "");
+  const featuresHref = routes.productSection(product.slug, "features");
+  const groupOf = (slug: string) => groups.find((g) => g.features.some((f) => f.slug === slug))?.group.name ?? "Feature";
+
+  const integrationNames = data.integrations.map((i) => ({
+    name: i.name,
+    href: integrationHasPage(i) ? routes.integration(i.slug) : `${routes.integrations()}#${i.slug}`,
+  }));
+
+  const tabs: StoryTab[] = groups
+    .filter((g) => g.features.length)
+    .slice(0, 6)
+    .map((g) => ({
+      id: g.group.slug,
+      label: g.group.name,
+      intro: g.group.description,
+      href: hasFeaturesHub ? `${featuresHref}#${g.group.slug}` : undefined,
+      items: g.features.slice(0, 6).map((f) => ({
+        title: f.name,
+        text: f.summary,
+        href: featureHasPage(f) ? routes.feature(product.slug, f.slug) : undefined,
+      })),
+    }));
+  // Problems-style tabs (Zoho Classes): one tab per use case.
+  const problemTabs: StoryTab[] = (product.useCases ?? []).slice(0, 5).map((u, i) => ({
+    id: `uc-${i}`,
+    label: u.title,
+    intro: u.description,
+    items: highlights.slice(i, i + 2).map((f) => ({
+      title: f.name,
+      text: f.summary,
+      href: featureHasPage(f) ? routes.feature(product.slug, f.slug) : undefined,
+    })),
+  }));
+  const nodes = hubNodes(connections, integrationNames);
+
+  const can = {
+    tabs: tabs.length >= 2,
+    hub: nodes.length >= 3,
+    orbit: nodes.length >= 3 || groups.length >= 3,
+    timeline: (product.howItWorks?.length ?? 0) >= 2,
+    problems: problemTabs.length >= 2,
+    dotgrid: groups.length >= 2 || nodes.length >= 3,
+  };
+  const order = [story.signature, "timeline", "tabs", "hub"] as const;
+  const signature = order.find((s) => can[s]) ?? null;
 
   const linkCols = [
     { key: "solutions", title: "Solutions", items: data.solutions.map((s) => ({ name: s.name, href: routes.solution(s.slug) })) },
     { key: "industries", title: "Industries", items: data.industries.map((i) => ({ name: i.name, href: routes.industry(i.slug) })) },
-    {
-      key: "integrations",
-      title: "Integrations",
-      items: data.integrations.map((i) => ({
-        name: i.name,
-        href: integrationHasPage(i) ? routes.integration(i.slug) : `${routes.integrations()}#${i.slug}`,
-      })),
-    },
+    { key: "integrations", title: "Integrations", items: integrationNames },
   ].filter((c) => c.items.length);
 
-  return (
-    <div className="pz">
-      {/* Hero: very large headline left, get-started card right, gradient band with rounded base */}
-      <header className="pz-hero" data-no-reveal>
-        <div className="container pz-hero__grid">
-          <div className="pz-hero__copy">
-            <Breadcrumbs
-              items={[
-                { name: "Products", href: routes.products() },
-                ...(category ? [{ name: category.name, href: routes.category(category.slug) }] : []),
-                { name: product.name, href: routes.product(product.slug) },
-              ]}
-            />
-            <p className="pz-hero__name">
-              {product.name}
-              <StatusBadge
-                status={product.status}
-                pending={product.verification?.relationship === "pending" || product.verification?.publicSale === "pending"}
-              />
-            </p>
-            <h1 className="pz-hero__title">{product.tagline ?? product.primaryUseCase ?? product.name}</h1>
-            <p className="pz-hero__lead">{product.shortDescription}</p>
-            <ul className="pz-hero__chips" aria-label="Product details">
-              {category && (
-                <li>
-                  <Link href={routes.category(category.slug)}>{category.name}</Link>
-                </li>
-              )}
-              {(product.platforms ?? []).map((p) => (
-                <li key={p}>{platformLabels[p] ?? p}</li>
-              ))}
-              {product.market && <li>{product.market}</li>}
-            </ul>
-          </div>
-          <aside className="pz-start" aria-label={`Get started with ${product.name}`}>
-            <span className="pz-start__logo">
-              <ProductLogo product={product} />
-            </span>
-            <h2>Get started with {product.name}</h2>
-            <p>{product.pricing?.trial ?? product.primaryUseCase ?? "Sign up on the product's own website."}</p>
-            <a href={cta.href} rel="noopener" className="pz-btn pz-btn--solid pz-btn--block">
-              {cta.label}
-            </a>
-            {product.pricing && (
-              <Link href={routes.productSection(product.slug, "pricing")} className="pz-btn pz-btn--line pz-btn--block">
-                See plans and pricing
-              </Link>
-            )}
-            <a href={product.websiteUrl} target="_blank" rel="noopener noreferrer" className="pz-start__original">
-              View Original Product <span aria-hidden="true">↗</span>
-            </a>
-            <p className="pz-start__note">
-              Continues on <strong>{host}</strong>
-            </p>
-          </aside>
-        </div>
-      </header>
+  const edge = story.edge === "angle" ? "zs-edge-angle" : story.edge === "round" ? "zs-curve" : "";
 
-      {/* Built for — centred heading over a row of soft pills (Zoho's "trusted by" strip) */}
+  return (
+    <div className={`pz zs zs--${story.look} zs-ref--${story.hero}${story.serif ? " zs--serif" : ""}`} data-ref={story.ref}>
+      {story.recipe === "voice" ? (
+        <>
+          <VoiceHero product={product} cta={cta} photos={[`/images/products/${product.slug}/hero-a.webp`, `/images/products/${product.slug}/hero-b.webp`]} />
+          {groups.length >= 3 && (
+            <section className="pc-sec" aria-labelledby="pc-title">
+              <div className="container">
+                <h2 id="pc-title" className="zs-h2 zs-center">
+                  Everything HR, built around one employee record
+                </h2>
+                <PastelCards
+                  cards={groups.slice(0, 3).map((g, i) => ({
+                    title: g.group.name,
+                    text: g.group.description ?? g.features.slice(0, 3).map((f) => f.name).join(", "),
+                    image: `/images/products/${product.slug}/${["card-team", "card-recognition", "card-payroll"][i]}.webp`,
+                    href: `${featuresHref}#${g.group.slug}`,
+                    label: ["Explore more", "See how it works", "Learn more"][i],
+                  }))}
+                />
+              </div>
+            </section>
+          )}
+          {groups.length >= 3 && (
+            <BranchTimeline
+              id="bt-platform"
+              title={`${product.name}'s connected`}
+              accent="HR Platform"
+              items={groups.map((g) => ({
+                title: g.group.name,
+                text: g.group.description ?? g.features.slice(0, 4).map((f) => f.name).join(", "),
+                href: `${featuresHref}#${g.group.slug}`,
+                linkLabel: `Explore ${g.features.length} features`,
+              }))}
+            />
+          )}
+        </>
+      ) : (
+        <ProductHero product={product} story={story} highlights={highlights} integrations={integrationNames} cta={cta} />
+      )}
+
+      {/* Built for */}
       {product.audience?.length ? (
-        <section className="pz-band pz-band--tint pz-trust" aria-labelledby="pz-audience">
+        <section className={`zs-band zs-band--plain zs-audience zs-aud-${P.audience}`} aria-labelledby="zs-audience">
           <div className="container">
-            <h2 id="pz-audience" className="pz-h-sm pz-center">
+            <h2 id="zs-audience" className="zs-eyebrow zs-center">
               Built for {product.audience.length > 2 ? "teams like yours" : product.audience.join(" and ")}
             </h2>
-            <ul className="pz-pills">
+          </div>
+          <div className={`zs-ribbon${product.audience.length > 3 ? " zs-ribbon--loop" : ""}`}>
+            <ul className="zs-ribbon__track">
               {product.audience.map((a) => (
-                <li key={a}>{a}</li>
+                <li key={a}><Labelled text={a} /></li>
               ))}
+              {product.audience.length > 3 &&
+                product.audience.map((a) => (
+                  <li key={`${a}-2`} aria-hidden="true">
+                    {a}
+                  </li>
+                ))}
             </ul>
           </div>
         </section>
       ) : null}
 
-      {/* What is it — big centred statement */}
+      {/* What is it */}
       {product.longDescription && (
-        <section className="pz-band pz-band--tint" aria-labelledby="pz-what">
-          <div className="container pz-narrow pz-center">
-            <h2 id="pz-what" className="pz-h-xl">
-              What is {product.name}?
-            </h2>
-            {product.longDescription
-              .split(/\n\s*\n/)
-              .filter(Boolean)
-              .map((para, i) => (
-                <p key={i} className={i === 0 ? "pz-lead" : "pz-lead-more"}>
-                  {para.trim()}
-                </p>
-              ))}
-          </div>
-        </section>
-      )}
-
-      {/* Benefits — tinted rounded cards, four across */}
-      {product.benefits?.length ? (
-        <section className="pz-band pz-band--tint" aria-labelledby="pz-benefits">
-          <div className="container">
-            <h2 id="pz-benefits" className="pz-h-md pz-center">
-              Why teams choose {product.name}
-            </h2>
-            <div className="pz-quotes">
-              {product.benefits.map((b) => (
-                <article key={b.title} className="pz-quote">
-                  <h3>{b.title}</h3>
-                  <p>{b.description}</p>
-                </article>
-              ))}
+        <section className={`zs-band ${story.signature === "dotgrid" ? "zs-band--dark zs-dotgrid-bg" : "zs-band--plain"}`} aria-labelledby="zs-what">
+          <div className={`container zs-what-${P.what} ${story.signature === "dotgrid" ? "zs-what zs-what--center" : "zs-what"}`}>
+            <div>
+              <p className="zs-kicker">Overview</p>
+              <h2 id="zs-what" className="zs-h2">
+                What is {product.name}?
+              </h2>
+            </div>
+            <div className="zs-what__body">
+              {product.longDescription
+                .split(/\n\s*\n/)
+                .filter(Boolean)
+                .map((para, i) => (
+                  <p key={i} className={i === 0 ? "zs-lead" : undefined}>
+                    {para.trim()}
+                  </p>
+                ))}
             </div>
           </div>
         </section>
+      )}
+
+      {/* Benefits — style per reference */}
+      {product.benefits?.length ? (
+        <section
+          className={`zs-band zs-benefits zs-benefits--${story.benefits} ${["glass", "black"].includes(story.benefits) ? `zs-band--dark ${edge}` : story.benefits === "mint" ? "zs-band--soft" : "zs-band--plain"}`}
+          aria-labelledby="zs-benefits"
+          data-stage
+        >
+          <div className="container">
+            <p className="zs-kicker zs-center">Why {product.name}</p>
+            <h2 id="zs-benefits" className="zs-h2 zs-center">
+              Why teams choose {product.name}
+            </h2>
+            <div className="zs-bgrid">
+              {product.benefits.map((b, i) => (
+                <article key={b.title} className="zs-benefit">
+                  <span className="zs-benefit__num">{String(i + 1).padStart(2, "0")}</span>
+                  <h3>{b.title}</h3>
+                  <p>{b.description}</p>
+                  {story.benefits === "columns" && hasFeaturesHub && (
+                    <Link href={featuresHref} className="zs-benefit__btn">
+                      Explore <span aria-hidden>→</span>
+                    </Link>
+                  )}
+                </article>
+              ))}
+            </div>
+            {story.benefits === "columns" && story.signature === "dotgrid" ? null : null}
+          </div>
+        </section>
       ) : null}
 
-      {/* Feature spotlights — large split cards, alternating sides */}
+      {/* Feature spotlights — layout per reference */}
       {spotlights.length > 0 && (
-        <section className="pz-band pz-band--tint pz-spot-wrap" aria-label="Core features">
-          <div className="container pz-spots">
-            {spotlights.map((f, i) => (
-              <article key={f.slug} className={`pz-spot${i % 2 ? " pz-spot--flip" : ""}`}>
-                <div className="pz-spot__copy">
-                  <h2 className="pz-spot__title">{f.name}</h2>
-                  <p className="pz-spot__text">{f.summary}</p>
-                  {featureHasPage(f) ? (
-                    <Link href={routes.feature(product.slug, f.slug)} className="pz-arrow">
-                      Discover {f.name} <span aria-hidden>→</span>
-                    </Link>
-                  ) : hasFeaturesHub ? (
-                    <Link href={routes.productSection(product.slug, "features")} className="pz-arrow">
-                      Explore all features <span aria-hidden>→</span>
-                    </Link>
-                  ) : null}
+        <section
+          className={`zs-band zs-spots zs-spots--${story.spot} ${story.spot === "code" ? "zs-band--dark" : "zs-band--plain"}`}
+          aria-label="Core features"
+        >
+          {story.spot === "tabbar" && spotlights.length > 1 && (
+            <SpotTabbar items={spotlights.map((f) => ({ id: `spot-${f.slug}`, label: f.name }))} />
+          )}
+          {story.spot === "accordion" ? (
+            <div className="container zs-acc">
+              <div className="zs-acc__list">
+                <p className="zs-kicker">Capabilities</p>
+                <h2 className="zs-h2">What you can do with {product.name}</h2>
+                {spotlights.map((f, i) => (
+                  <details key={f.slug} className="zs-acc__item" open={i === 0} name={`acc-${product.slug}`}>
+                    <summary>
+                      <span className="zs-kicker">{groupOf(f.slug)}</span>
+                      {f.name}
+                    </summary>
+                    <p>{f.summary}</p>
+                    {featureHasPage(f) && (
+                      <Link href={routes.feature(product.slug, f.slug)} className="zs-link">
+                        Discover {f.name} <span aria-hidden>→</span>
+                      </Link>
+                    )}
+                  </details>
+                ))}
+              </div>
+              <div className="zs-acc__art" data-reveal="right">
+                {SPOT_ART[0]}
+                <SpotVisual feature={spotlights[0]} variant={0} />
+              </div>
+            </div>
+          ) : (
+            <div className="container zs-spots__list">
+              {story.spot === "stack" && (
+                <div className="zs-stack__head">
+                  <p className="zs-kicker zs-center">Capabilities</p>
+                  <h2 className="zs-h2 zs-center">From first question to finished answer</h2>
                 </div>
-                <div className={`pz-spot__art pz-spot__art--${i % 3}`}>
-                  {shots[i + 1] ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img className="pz-spot__shot" src={shots[i + 1].src} alt={shots[i + 1].alt} loading="lazy" />
-                  ) : f.capabilities?.length ? (
-                    <>
-                    {SPOT_ART[i % 3]}
-                    <ul className="pz-spot__panel">
-                      <li className="pz-spot__panel-head">{f.name}</li>
-                      {f.capabilities.slice(0, 5).map((c) => (
-                        <li key={c}>{c}</li>
-                      ))}
-                    </ul>
-                    </>
-                  ) : (
-                    SPOT_ART[i % 3]
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
+              )}
+              {spotlights.map((f, i) => (
+                <article
+                  key={f.slug}
+                  id={`spot-${f.slug}`}
+                  className={`zs-spot${i % 2 ? " zs-spot--flip" : ""}`}
+                  style={story.spot === "stack" ? ({ "--i": i } as React.CSSProperties) : undefined}
+                >
+                  <div className="zs-spot__copy" data-reveal={story.spot === "stack" ? undefined : i % 2 ? "right" : "left"}>
+                    <p className="zs-kicker">{groupOf(f.slug)}</p>
+                    <h2 className="zs-spot__title">{f.name}</h2>
+                    <p className="zs-spot__text">{f.summary}</p>
+                    {/* One check list per page: on the row whose visual shows a flow (variant 1), or the
+                        first row when the visual is a screenshot / code / phone. Other rows' visuals
+                        already list the capabilities. */}
+                    {f.capabilities?.length &&
+                    (story.spot === "code" || story.spot === "phone" || shots[i + 1] ? i === 0 : i % 4 === 1) ? (
+                      <ul className="zs-checks">
+                        {f.capabilities.slice(0, 4).map((c) => (
+                          <li key={c}><Labelled text={c} /></li>
+                        ))}
+                      </ul>
+                    ) : null}
+                    {featureHasPage(f) ? (
+                      <Link href={routes.feature(product.slug, f.slug)} className="zs-link">
+                        Discover {f.name} <span aria-hidden>→</span>
+                      </Link>
+                    ) : hasFeaturesHub ? (
+                      <Link href={featuresHref} className="zs-link">
+                        Explore all features <span aria-hidden>→</span>
+                      </Link>
+                    ) : null}
+                  </div>
+                  <div
+                    className={`zs-spot__art zs-spot__art--${i % 3}`}
+                    data-reveal={story.spot === "stack" ? undefined : i % 2 ? "left" : "right"}
+                  >
+                    {story.spot === "code" ? (
+                      <pre className="zs-code" aria-label={`${f.name} steps`}>
+                        <span className="zs-code__bar">
+                          <i />
+                          <i />
+                          <i />
+                          {product.slug}/{f.slug}
+                        </span>
+                        {(f.howItWorks ?? f.capabilities ?? [f.summary]).slice(0, 5).map((c, k) => (
+                          <code key={c}>
+                            <em>{String(k + 1).padStart(2, "0")}</em> {c}
+                          </code>
+                        ))}
+                      </pre>
+                    ) : story.spot === "phone" ? (
+                      <div className="zs-phone zs-phone--spot">
+                        <div className="zs-phone__notch" />
+                        <b className="zs-phone__title">{f.name}</b>
+                        {(f.capabilities ?? f.howItWorks ?? []).slice(0, 3).map((c) => (
+                          <span key={c} className="zs-phone__row">
+                            {c}
+                          </span>
+                        ))}
+                      </div>
+                    ) : shots[i + 1] ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img className="zs-spot__shot" src={shots[i + 1].src} alt={shots[i + 1].alt} loading="lazy" />
+                    ) : (
+                      <>
+                        {SPOT_ART[i % 3]}
+                        {/* A different representation per row; numbered steps stay in "How it works" */}
+                        <SpotVisual feature={f} variant={i} />
+                      </>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
         </section>
       )}
 
-      {/* Remaining highlights + feature areas — "everything you need" */}
-      {(moreHighlights.length > 0 || (hasFeaturesHub && groups.length > 1)) && (
-        <section className="pz-band pz-band--tint" aria-labelledby="pz-everything">
+      {/* Signature section */}
+      {signature === "tabs" && (
+        <section className={`zs-band zs-band--dark zs-sig-tabs ${edge}`} aria-labelledby="zs-sig">
           <div className="container">
-            <h2 id="pz-everything" className="pz-h-lg pz-center">
-              Everything you need, in one {product.name}
+            <p className="zs-kicker zs-center">Inside {product.name}</p>
+            <h2 id="zs-sig" className="zs-h2 zs-center">
+              One product, {groups.length} connected areas
             </h2>
-            {data.features.length > highlights.length && (
-              <p className="pz-sub pz-center">
-                {data.features.length} capabilities across {groups.length} areas.
-              </p>
-            )}
-            {moreHighlights.length > 0 && (
-              <div className="pz-cards pz-cards--3">
-                {moreHighlights.map((f) => {
-                  const body = (
-                    <>
-                      <span className="pz-card__icon" aria-hidden>
-                        {f.name.charAt(0)}
-                      </span>
-                      <h3>{f.name}</h3>
-                      <p>{f.summary}</p>
-                    </>
-                  );
-                  return featureHasPage(f) ? (
-                    <Link key={f.slug} href={routes.feature(product.slug, f.slug)} className="pz-card pz-card--link">
-                      {body}
-                      <span className="pz-arrow">
-                        Learn more <span aria-hidden>→</span>
-                      </span>
+            <StoryTabs tabs={tabs} />
+          </div>
+        </section>
+      )}
+      {signature === "problems" && (
+        <section className="zs-band zs-band--black zs-sig-problems" aria-labelledby="zs-sig">
+          <div className="container">
+            <h2 id="zs-sig" className="zs-h2 zs-center">
+              {problemTabs.length} problems {product.name} solves
+            </h2>
+            <p className="zs-sub zs-center">{product.primaryUseCase ?? product.shortDescription}</p>
+            <StoryTabs tabs={problemTabs} />
+          </div>
+        </section>
+      )}
+      {(signature === "hub" || signature === "orbit") && (
+        <section className={`zs-band ${signature === "orbit" ? "zs-band--soft" : `zs-band--dark ${edge}`}`} aria-labelledby="zs-sig">
+          <div className="container">
+            <p className="zs-kicker zs-center">{signature === "orbit" ? "Everything in one view" : "Connected by design"}</p>
+            <h2 id="zs-sig" className="zs-h2 zs-center">
+              {signature === "orbit" ? `Everything around ${product.name}, in one place` : `${product.name} works with the tools around it`}
+            </h2>
+            {signature === "orbit" ? (
+              <div className="zs-orbit" data-stage>
+                <span className="zs-orbit__ring zs-orbit__ring--1" aria-hidden="true" />
+                <span className="zs-orbit__ring zs-orbit__ring--2" aria-hidden="true" />
+                <span className="zs-orbit__ring zs-orbit__ring--3" aria-hidden="true" />
+                <div className="zs-orbit__center">
+                  <ProductLogo product={product} />
+                  <b>{product.name}</b>
+                </div>
+                {(nodes.length >= 3 ? nodes : groups.map((g) => ({ name: g.group.name, href: `${featuresHref}#${g.group.slug}`, logo: undefined }))).slice(0, 8).map((n, i, all) => {
+                  const a = (i / all.length) * Math.PI * 2 - Math.PI / 2;
+                  const r = i % 2 ? 46 : 32;
+                  return (
+                    <Link key={`${n.href}-${i}`} href={n.href} className="zs-orbit__node" style={{ left: `${50 + Math.cos(a) * r}%`, top: `${50 + Math.sin(a) * r}%` }}>
+                      {n.name}
                     </Link>
-                  ) : (
-                    <article key={f.slug} className="pz-card">
-                      {body}
-                    </article>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="zs-hub" data-stage>
+                <svg className="zs-hub__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                  {nodes.map((_, i, all) => {
+                    const a = (i / all.length) * Math.PI * 2 - Math.PI / 2;
+                    return <line key={i} className="flow-line" x1="50" y1="50" x2={50 + Math.cos(a) * 40} y2={50 + Math.sin(a) * 40} />;
+                  })}
+                </svg>
+                <div className="zs-hub__center">
+                  <ProductLogo product={product} />
+                  <b>{product.name}</b>
+                </div>
+                {nodes.map((n, i, all) => {
+                  const a = (i / all.length) * Math.PI * 2 - Math.PI / 2;
+                  return (
+                    <Link key={n.href} href={n.href} className="zs-hub__node" style={{ left: `${50 + Math.cos(a) * 40}%`, top: `${50 + Math.sin(a) * 40}%` }}>
+                      {n.logo ? <ProductLogo product={n.logo} /> : <i className="zs-dot" />}
+                      {n.name}
+                    </Link>
                   );
                 })}
               </div>
             )}
+            {signature === "hub" && connections.length > 0 && (
+              <ul className="zs-hub__list">
+                {connections.map((c) => (
+                  <li key={c.product.slug}>
+                    <b>{c.product.name}</b> {c.description}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </section>
+      )}
+      {signature === "dotgrid" && (
+        <section className="zs-band zs-band--dark zs-dotgrid-bg" aria-labelledby="zs-sig">
+          <div className="container">
+            <p className="zs-kicker zs-center">Connected areas</p>
+            <h2 id="zs-sig" className="zs-h2 zs-center">
+              Built around how your team works
+            </h2>
+            <div className="zs-dotcards" data-stage>
+              {(groups.length >= 2
+                ? groups.slice(0, 6).map((g) => ({ title: g.group.name, text: g.group.description ?? g.features.slice(0, 3).map((f) => f.name).join(" · "), href: `${featuresHref}#${g.group.slug}` }))
+                : nodes.map((n) => ({ title: n.name, text: "", href: n.href }))
+              ).map((c, i) => (
+                <Link key={`${c.href}-${i}`} href={c.href} className="zs-dotcard" style={{ "--i": i } as React.CSSProperties}>
+                  <span className="zs-dotcard__icon" aria-hidden="true">
+                    {c.title.charAt(0)}
+                  </span>
+                  <b>{c.title}</b>
+                  {c.text && <span>{c.text}</span>}
+                </Link>
+              ))}
+              <svg className="zs-dotcards__links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <path className="flow-line" d="M16 50 H84" />
+              </svg>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* How it works */}
+      {product.howItWorks?.length && signature === "timeline" ? (
+        <BranchTimeline
+          id="zs-how"
+          title={`Getting started with`}
+          accent={product.name}
+          items={product.howItWorks.map((s, i) => ({ title: `${i + 1}. ${s.title}`, text: s.description }))}
+        />
+      ) : product.howItWorks?.length ? (
+        <section className={`zs-band ${signature === "timeline" ? "zs-band--soft" : "zs-band--plain"}`} aria-labelledby="zs-how">
+          <div className="container">
+            <p className="zs-kicker zs-center">How it works</p>
+            <h2 id="zs-how" className="zs-h2 zs-center">
+              Getting started with {product.name}
+            </h2>
+            {signature === "timeline" ? (
+              <ol className="zs-timeline" data-stage>
+                <span className="zs-timeline__line" data-draw aria-hidden="true" />
+                {product.howItWorks.map((s, i) => (
+                  <li key={s.title} className={i % 2 ? "is-right" : undefined}>
+                    <span className="zs-timeline__node" aria-hidden="true">
+                      {i + 1}
+                    </span>
+                    <div className="zs-timeline__card">
+                      <h3>{s.title}</h3>
+                      <p>{s.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <ol className={`zs-steps zs-how-${P.how}`}>
+                {product.howItWorks.map((s, i) => (
+                  <li key={s.title}>
+                    <span>{String(i + 1).padStart(2, "0")}</span>
+                    <h3>{s.title}</h3>
+                    <p>{s.description}</p>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </div>
+        </section>
+      ) : null}
+
+      {/* Everything you need */}
+      {(moreHighlights.length > 0 || (hasFeaturesHub && groups.length > 1)) && (
+        <section className="zs-band zs-band--tint" aria-labelledby="zs-everything">
+          <div className="container">
+            <h2 id="zs-everything" className="zs-h2 zs-center">
+              Everything you need, in one {product.name}
+            </h2>
+            {data.features.length > highlights.length && (
+              <p className="zs-sub zs-center">
+                {data.features.length} capabilities across {groups.length} areas.
+              </p>
+            )}
+            {moreHighlights.length > 0 && (
+              /* An index of names and summaries — the benefits above already use a card grid */
+              <ul className="zs-index">
+                {moreHighlights.map((f) => (
+                  <li key={f.slug}>
+                    {featureHasPage(f) ? (
+                      <Link href={routes.feature(product.slug, f.slug)}>
+                        <strong>{f.name}</strong>
+                        <span>{f.summary}</span>
+                        <i aria-hidden>→</i>
+                      </Link>
+                    ) : (
+                      <div>
+                        <strong>{f.name}</strong>
+                        <span>{f.summary}</span>
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
             {hasFeaturesHub && groups.length > 1 && (
-              <ul className="pz-pills pz-pills--links">
+              <ul className="zs-pills">
                 {groups.map((g) => (
                   <li key={g.group.slug}>
-                    <Link href={`${routes.productSection(product.slug, "features")}#${g.group.slug}`}>
+                    <Link href={`${featuresHref}#${g.group.slug}`}>
                       {g.group.name} <span>{g.features.length}</span>
                     </Link>
                   </li>
@@ -274,8 +560,8 @@ export function ProductPageTemplate({ product }: { product: Product }) {
               </ul>
             )}
             {hasFeaturesHub && (
-              <p className="pz-center pz-mt">
-                <Link href={routes.productSection(product.slug, "features")} className="pz-btn pz-btn--line">
+              <p className="zs-center zs-mt">
+                <Link href={featuresHref} className="zs-btn zs-btn--outline">
                   All features
                 </Link>
               </p>
@@ -284,35 +570,17 @@ export function ProductPageTemplate({ product }: { product: Product }) {
         </section>
       )}
 
-      {/* How it works — numbered steps */}
-      {product.howItWorks?.length ? (
-        <section className="pz-band pz-band--white" aria-labelledby="pz-how">
+      {/* Use cases — brand band (skipped when they already power the problems tabs) */}
+      {product.useCases?.length && signature !== "problems" ? (
+        <section className={`zs-band ${["zs-band--brand", "zs-band--plain", "zs-band--dark", "zs-band--soft", "zs-band--tint"][P.uses]}`} aria-labelledby="zs-uses">
           <div className="container">
-            <h2 id="pz-how" className="pz-h-md pz-center">
-              Getting started with {product.name}
-            </h2>
-            <ol className="pz-steps">
-              {product.howItWorks.map((s) => (
-                <li key={s.title}>
-                  <h3>{s.title}</h3>
-                  <p>{s.description}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-      ) : null}
-
-      {/* Use cases — white cards on tint */}
-      {product.useCases?.length ? (
-        <section className="pz-band pz-band--tint" aria-labelledby="pz-uses">
-          <div className="container">
-            <h2 id="pz-uses" className="pz-h-md pz-center">
+            <p className="zs-kicker">Use cases</p>
+            <h2 id="zs-uses" className="zs-h2">
               Where teams use {product.name}
             </h2>
-            <div className="pz-cards pz-cards--4">
+            <div className={`zs-usecases zs-uses-${P.uses}`}>
               {product.useCases.map((u) => (
-                <article key={u.title} className="pz-card">
+                <article key={u.title} className="zs-usecase">
                   <h3>{u.title}</h3>
                   <p>{u.description}</p>
                 </article>
@@ -322,58 +590,58 @@ export function ProductPageTemplate({ product }: { product: Product }) {
         </section>
       ) : null}
 
-      {/* Screenshots — "take a tour" band with very large headline */}
-      {(
-        <section className="pz-band pz-band--tint pz-tour-wrap" aria-labelledby="pz-tour">
-          <div className="pz-tour">
-            <div className="container pz-center">
-              <h2 id="pz-tour" className="pz-tour__title">
-                See {product.name} in action
-              </h2>
-              <a href={product.websiteUrl} target="_blank" rel="noopener noreferrer" className="pz-btn pz-btn--solid">
-                Visit {host} <span aria-hidden>↗</span>
-              </a>
-              <figure className="pz-tour__frame">
-                {tourShot ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={tourShot.src} alt={tourShot.alt} loading="lazy" />
-                ) : (
-                  <ImageSlot src="/images/product/tour.webp" alt={`${product.name} interactive application console and live workflow interface`} width={1100} height={560} />
-                )}
-              </figure>
-              {tourShot && shots.length > 1 && (
-                <div className="pz-tour__thumbs">
-                  {shots
-                    .filter((s) => s.src !== tourShot.src)
-                    .map((s) => (
-                      <figure key={s.src}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={s.src} alt={s.alt} loading="lazy" />
-                        {s.caption && <figcaption>{s.caption}</figcaption>}
-                      </figure>
-                    ))}
-                </div>
-              )}
+      {/* Tour */}
+      <section className={`zs-band ${P.tour === 2 ? "zs-band--dark" : P.tour === 1 ? "zs-band--soft" : "zs-band--plain"} zs-tour-${P.tour}`} aria-labelledby="zs-tour">
+        <div className="container zs-center">
+          <h2 id="zs-tour" className="zs-h2">
+            See {product.name} in action
+          </h2>
+          <p className="zs-mt-sm">
+            <a href={product.websiteUrl} target="_blank" rel="noopener noreferrer" className="zs-btn zs-btn--solid">
+              Visit {host} <span aria-hidden>↗</span>
+            </a>
+          </p>
+          <figure className="zs-tour" data-reveal="scale">
+            {tourShot ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={tourShot.src} alt={tourShot.alt} loading="lazy" />
+            ) : (
+              <ImageSlot src="/images/product/tour.webp" alt={`${product.name} application interface`} width={1100} height={560} />
+            )}
+          </figure>
+          {tourShot && shots.length > 1 && (
+            <div className="pz-tour__thumbs">
+              {shots
+                .filter((s) => s.src !== tourShot.src)
+                .map((s) => (
+                  <figure key={s.src}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={s.src} alt={s.alt} loading="lazy" />
+                    {s.caption && <figcaption>{s.caption}</figcaption>}
+                  </figure>
+                ))}
             </div>
-          </div>
-        </section>
-      )}
+          )}
+        </div>
+      </section>
 
-      {/* Solutions / industries / integrations — logo-style pill rows */}
+      {/* Where it fits */}
       {linkCols.length > 0 && (
-        <section className="pz-band pz-band--white" aria-labelledby="pz-fits">
+        <section className="zs-band zs-band--tint" aria-labelledby="zs-fits">
           <div className="container">
-            <h2 id="pz-fits" className="pz-h-md pz-center">
+            <h2 id="zs-fits" className="zs-h2 zs-center">
               Where {product.name} fits
             </h2>
-            <div className="pz-fits">
+            <div className={`zs-fits zs-fits-${P.fits}`}>
               {linkCols.map((col) => (
-                <div key={col.key} className="pz-fits__col">
+                <div key={col.key} className="zs-fits__col">
                   <h3>{col.title}</h3>
-                  <ul className="pz-tiles">
+                  <ul>
                     {col.items.map((i) => (
                       <li key={i.href}>
-                        <Link href={i.href}>{i.name}</Link>
+                        <Link href={i.href}>
+                          {i.name} <span aria-hidden>→</span>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -384,37 +652,39 @@ export function ProductPageTemplate({ product }: { product: Product }) {
         </section>
       )}
 
-      {/* Connections with other ToyoApps products (stated by the products) */}
-      {connections.length > 0 && (
-        <section className="pz-band pz-band--tint" aria-labelledby="pz-eco">
+      {/* Ecosystem (when not already the signature) */}
+      {signature !== "hub" && connections.length > 0 && (
+        <section className="zs-band zs-band--plain" aria-labelledby="zs-eco">
           <div className="container">
-            <h2 id="pz-eco" className="pz-h-md pz-center">
+            <h2 id="zs-eco" className="zs-h2 zs-center">
               {product.name} and other ToyoApps products
             </h2>
-            <div className="pz-cards pz-cards--3">
+            {/* A divided list, not a second card grid on the page */}
+            <ul className="zs-eco-list">
               {connections.map((c) => (
-                <Link key={c.product.slug} href={routes.product(c.product.slug)} className="pz-card pz-card--link pz-card--row">
-                  <ProductLogo product={c.product} />
-                  <span>
-                    <h3>{c.product.name}</h3>
-                    <p>{c.description}</p>
-                  </span>
-                </Link>
+                <li key={c.product.slug}>
+                  <Link href={routes.product(c.product.slug)}>
+                    <ProductLogo product={c.product} />
+                    <strong>{c.product.name}</strong>
+                    <span>{c.description}</span>
+                    <i aria-hidden>→</i>
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </section>
       )}
 
-      {/* Pricing summary — plan strip; the full plans live on the pricing page */}
+      {/* Pricing summary */}
       {product.pricing?.plans.length ? (
-        <section className="pz-band pz-band--white" aria-labelledby="pz-price">
+        <section className="zs-band zs-band--soft" aria-labelledby="zs-price">
           <div className="container">
-            <h2 id="pz-price" className="pz-h-md pz-center">
+            <h2 id="zs-price" className="zs-h2 zs-center">
               {product.name} plans
             </h2>
-            {product.pricing.trial && <p className="pz-sub pz-center">{product.pricing.trial}</p>}
-            <ul className="pz-planstrip">
+            {product.pricing.trial && <p className="zs-sub zs-center">{product.pricing.trial}</p>}
+            <ul className={`zs-plans zs-plans-${P.plans}`}>
               {product.pricing.plans.map((p) => (
                 <li key={p.name} className={p.recommended ? "is-recommended" : undefined}>
                   {p.recommended && <em>Most popular</em>}
@@ -424,8 +694,8 @@ export function ProductPageTemplate({ product }: { product: Product }) {
                 </li>
               ))}
             </ul>
-            <p className="pz-center pz-mt">
-              <Link href={routes.productSection(product.slug, "pricing")} className="pz-arrow">
+            <p className="zs-center zs-mt">
+              <Link href={routes.productSection(product.slug, "pricing")} className="zs-link">
                 Compare plans <span aria-hidden>→</span>
               </Link>
             </p>
@@ -433,20 +703,19 @@ export function ProductPageTemplate({ product }: { product: Product }) {
         </section>
       ) : null}
 
-      {/* Customer proof — reserved, preview only */}
       {previewMode && (
-        <section className="pz-band pz-band--white">
+        <section className="zs-band zs-band--plain">
           <div className="container">
             <Slot show label={`${product.name} customer proof`} hint="Testimonials, case studies and ratings — verified only" />
           </div>
         </section>
       )}
 
-      {/* Related products */}
+      {/* Related */}
       {related.length > 0 && (
-        <section className="pz-band pz-band--tint" aria-labelledby="pz-related">
+        <section className="zs-band zs-band--tint" aria-labelledby="zs-related">
           <div className="container">
-            <h2 id="pz-related" className="pz-h-md pz-center">
+            <h2 id="zs-related" className="zs-h2 zs-center">
               Related ToyoApps products
             </h2>
             <div className="pz-related">
@@ -455,8 +724,8 @@ export function ProductPageTemplate({ product }: { product: Product }) {
               ))}
             </div>
             {category && (
-              <p className="pz-center pz-mt">
-                <Link href={routes.category(category.slug)} className="pz-arrow">
+              <p className="zs-center zs-mt">
+                <Link href={routes.category(category.slug)} className="zs-link">
                   More in {category.name} <span aria-hidden>→</span>
                 </Link>
               </p>
@@ -465,30 +734,34 @@ export function ProductPageTemplate({ product }: { product: Product }) {
         </section>
       )}
 
-      {/* FAQs — left-aligned heading, open list */}
-      {product.faqs?.length ? (
-        <section className="pz-band pz-band--white pz-faq" id="faq" aria-labelledby="pz-faq">
-          <div className="container pz-faq__inner">
-            <h2 id="pz-faq" className="pz-h-faq">
-              Frequently Asked Questions
-            </h2>
-            <FaqList faqs={product.faqs} />
+      {/* FAQ */}
+      {getProductFaqs(product).length ? (
+        <section className={`zs-band ${["starfield", "prompt"].includes(story.hero) ? "zs-band--dark zs-edge-angle" : "zs-band--plain"} zs-faqband`} id="faq" aria-labelledby="zs-faq">
+          <div className={`container zs-faq zs-faq-${P.faq}`}>
+            <div>
+              <p className="zs-kicker">FAQ</p>
+              <h2 id="zs-faq" className="zs-h2">
+                Frequently asked questions
+              </h2>
+            </div>
+            <FaqList faqs={getProductFaqs(product)} />
           </div>
         </section>
       ) : null}
 
-      {/* Closing CTA band */}
-      <section className="pz-cta" aria-labelledby="pz-cta">
-        <div className="container pz-center">
-          <h2 id="pz-cta" className="pz-cta__title">
-            Get started with {product.name}
+      {/* Closing CTA — style per reference */}
+      <section className={`zs-cta zs-cta--${story.cta} ${story.cta === "panel" ? "" : edge}`} aria-labelledby="zs-cta">
+        {story.cta === "landscape" && <span className="zs-cta__land" aria-hidden="true" />}
+        <div className={`container zs-center${story.cta === "panel" ? " zs-cta__panel" : ""}`}>
+          <h2 id="zs-cta" className="zs-cta__title">
+            {story.cta === "spin" ? `Take ${product.name} for a spin` : `Get started with ${product.name}`}
           </h2>
-          {product.pricing?.trial && <p className="pz-cta__lead">{product.pricing.trial}</p>}
-          <div className="pz-cta__row">
-            <a href={cta.href} rel="noopener" className="pz-btn pz-btn--solid">
-              {cta.label}
+          {product.pricing?.trial && <p className="zs-cta__lead">{product.pricing.trial}</p>}
+          <div className="zs-hero__actions zs-hero__actions--center">
+            <a href={cta.href} rel="noopener" className="zs-btn zs-btn--solid">
+              {cta.label} <span aria-hidden>→</span>
             </a>
-            <Link href={routes.products()} className="pz-btn pz-btn--line">
+            <Link href={routes.products()} className="zs-btn zs-btn--ghost">
               Explore all products
             </Link>
           </div>
@@ -511,4 +784,20 @@ export function ProductPageTemplate({ product }: { product: Product }) {
       />
     </div>
   );
+}
+
+function dedupe(list: { product: Product; description: string }[]) {
+  const seen = new Set<string>();
+  return list.filter((c) => (seen.has(c.product.slug) ? false : (seen.add(c.product.slug), true)));
+}
+
+/** Up to 8 nodes: ToyoApps products first, then integrations (unique hrefs). */
+function hubNodes(connections: { product: Product }[], integrations: { name: string; href: string }[]) {
+  const seen = new Set<string>();
+  return [
+    ...connections.map((c) => ({ name: c.product.name, href: routes.product(c.product.slug), logo: c.product as Product | undefined })),
+    ...integrations.map((i) => ({ ...i, logo: undefined as Product | undefined })),
+  ]
+    .filter((n) => (seen.has(n.href) ? false : (seen.add(n.href), true)))
+    .slice(0, 8);
 }

@@ -1,0 +1,70 @@
+/* =====================================================================
+   Product-wide section transitions. The product layout sets
+   data-edge="angle|round|flat" from the product's story, so the transition
+   used on the overview page is applied on every inner page too (features,
+   feature groups, solutions, resources, support, pricing …) wherever a light
+   section is followed by a dark one.
+   ===================================================================== */
+
+/* Colour of the light section the shape is drawn in */
+[data-edge] :is(.pz-band--white, .pz-index, .fz-sec:not(.fz-sec--tint, .fz-sec--warm, .fz-sec--band)) + * { --edge-from: var(--surface); }
+[data-edge] :is(.zs-band--plain, .fz-sec--tint, .fz-sec--warm) + * { --edge-from: var(--bg); }
+[data-edge] .fz-pager + * { --edge-from: var(--surface); }
+[data-edge] .zs-band--soft + * { --edge-from: var(--band-soft); }
+[data-edge] :is(.zs-band--tint, .pz-band--tint) + * { --edge-from: var(--pz-tint); }
+
+/* ---------- angle: rounded stepped shoulder + blue glow (Zia Chat) ---------- */
+[data-edge="angle"] :is(:is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)), :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)) + .fz-pager)
+  + :is(.zs-band--dark, .zs-band--black, .fz-sec--band, .zs-cta--glow, .zs-cta--spin) {
+  position: relative; isolation: isolate;
+  padding-top: calc(var(--sec-y) + clamp(48px, 5vw, 80px));
+}
+[data-edge="angle"] :is(:is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)), :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)) + .fz-pager)
+  + :is(.zs-band--dark, .zs-band--black, .fz-sec--band, .zs-cta--glow, .zs-cta--spin)::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; z-index: 1; height: clamp(48px, 5vw, 80px); pointer-events: none;
+  background: var(--edge-from, var(--surface));
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'><path d='M0 0H1000V24Q1000 40 984 40H500Q478 40 466 56L444 86Q434 100 412 100H44Q0 100 0 62Z'/></svg>") 0 0 / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'><path d='M0 0H1000V24Q1000 40 984 40H500Q478 40 466 56L444 86Q434 100 412 100H44Q0 100 0 62Z'/></svg>") 0 0 / 100% 100% no-repeat;
+}
+[data-edge="angle"] :is(:is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)), :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)) + .fz-pager)
+  + :is(.zs-band--dark, .zs-band--black, .fz-sec--band, .zs-cta--glow, .zs-cta--spin)::after {
+  content: ""; position: absolute; left: -5%; top: 0; z-index: 0; width: 60%; height: clamp(160px, 18vw, 280px); pointer-events: none;
+  background: radial-gradient(ellipse 60% 55% at 72% 30%, rgb(30 110 230 / .55), transparent 70%), radial-gradient(ellipse 50% 50% at 20% 35%, rgb(30 110 230 / .35), transparent 70%);
+  filter: blur(8px);
+}
+[data-edge="angle"] :is(:is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)), :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)) + .fz-pager)
+  + :is(.zs-band--dark, .zs-band--black, .fz-sec--band, .zs-cta--glow, .zs-cta--spin) > * { position: relative; z-index: 2; }
+
+/* ---------- Dark FAQ on inner pages when the overview's FAQ is dark ---------- */
+[data-faq="dark"] :is(.pz-faq, .fz-sec:has(> .container #faq), .fz-sec:has(#faq)) {
+  --heading: #ffffff; --text: #dbe6f0; --text-secondary: #b6c7d8; --text-muted: #9fb3c6; --border: rgb(255 255 255 / .14);
+  color: var(--text);
+  background: radial-gradient(50% 60% at 50% 0%, var(--band-dark-glow), transparent 70%), linear-gradient(180deg, var(--band-dark), var(--band-dark-2));
+}
+[data-faq="dark"] :is(.pz-faq, .fz-sec:has(#faq)) :is(h2, h3, summary) { color: #ffffff; }
+
+/* The angle step also leads into these dark FAQ bands */
+[data-edge="angle"][data-faq="dark"] :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .pz-pricing, .fz-sec:not(.fz-sec--band, :has(#faq)))
+  + :is(.pz-faq, .fz-sec:has(#faq)) {
+  position: relative; isolation: isolate;
+  padding-top: calc(var(--sec-y) + clamp(48px, 5vw, 80px));
+}
+[data-edge="angle"][data-faq="dark"] :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .pz-pricing, .fz-sec:not(.fz-sec--band, :has(#faq)))
+  + :is(.pz-faq, .fz-sec:has(#faq))::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; z-index: 1; height: clamp(48px, 5vw, 80px); pointer-events: none;
+  background: var(--edge-from, var(--surface));
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'><path d='M0 0H1000V24Q1000 40 984 40H500Q478 40 466 56L444 86Q434 100 412 100H44Q0 100 0 62Z'/></svg>") 0 0 / 100% 100% no-repeat;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'><path d='M0 0H1000V24Q1000 40 984 40H500Q478 40 466 56L444 86Q434 100 412 100H44Q0 100 0 62Z'/></svg>") 0 0 / 100% 100% no-repeat;
+}
+[data-edge="angle"][data-faq="dark"] :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .pz-pricing, .fz-sec:not(.fz-sec--band, :has(#faq)))
+  + :is(.pz-faq, .fz-sec:has(#faq)) > * { position: relative; z-index: 2; }
+[data-edge] .pz-pricing + * { --edge-from: var(--surface); }
+
+/* ---------- round: curved top corners lifting over the light section ---------- */
+[data-edge="round"] :is(:is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)), :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)) + .fz-pager)
+  + :is(.zs-band--dark, .zs-band--black, .fz-sec--band, .zs-cta--glow, .zs-cta--spin) {
+  position: relative; z-index: 1;
+  border-top-left-radius: clamp(28px, 6vw, 80px); border-top-right-radius: clamp(28px, 6vw, 80px);
+  margin-top: clamp(-40px, -3vw, -24px);
+  box-shadow: 0 -24px 60px -30px var(--band-dark-glow, rgb(30 110 230 / .35));
+}

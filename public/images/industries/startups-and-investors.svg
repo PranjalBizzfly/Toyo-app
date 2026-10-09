@@ -8,7 +8,7 @@
         <circle cx="80" cy="48" r="5" fill="#10B981"/>
         <text x="105" y="52" fill="#6EE7B7" font-size="12" font-family="system-ui, sans-serif" font-weight="600">Startups &amp; Investors · TAM / SAM / SOM Research &amp; Go-to-Market</text>
         <rect x="475" y="38" width="125" height="22" rx="11" fill="#10B981" fill-opacity="0.2"/>
-        <text x="537" y="53" fill="#10B981" font-size="10" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">Sizoru + GetBenj</text>
+        <text x="537" y="53" fill="#10B981" font-size="10" font-family="system-ui, sans-serif" font-weight="600" text-anchor="middle">Sizoru + Benj</text>
 
         <!-- Left: TAM / SAM / SOM Sizing -->
         <g transform="translate(44, 74)">
@@ -45,7 +45,7 @@
 
           <g transform="translate(16, 40)">
             <rect width="208" height="60" rx="6" fill="#1C1033" stroke="#A855F7" stroke-width="1"/>
-            <text x="10" y="18" fill="#D8B4FE" font-size="10" font-weight="bold" font-family="system-ui">GetBenj GTM Report</text>
+            <text x="10" y="18" fill="#D8B4FE" font-size="10" font-weight="bold" font-family="system-ui">Benj GTM Report</text>
             <text x="10" y="34" fill="#FFFFFF" font-size="10" font-family="system-ui">Target: US &amp; EU Series A ICP</text>
             <text x="10" y="48" fill="#10B981" font-size="9" font-family="system-ui">Channel: LinkedIn + Intent Search</text>
           </g>

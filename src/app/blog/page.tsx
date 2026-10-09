@@ -1,3 +1,5 @@
+import { PageFaqs } from "@/components/ui/PageFaqs";
+import { getSiteFaqs } from "@/lib/faqs";
 import Link from "next/link";
 import { BlogHubFilter } from "@/components/company/BlogHubFilter";
 import { Breadcrumbs } from "@/components/ui/primitives";
@@ -80,7 +82,7 @@ export default function BlogPage() {
                   .filter((t) => t.type !== "blog")
                   .map((t) => (
                     <li key={t.type}>
-                      <strong>{t.label}</strong> — {t.description}
+                      <strong>{t.label}</strong> <span className="blog-topic__desc">{t.description}</span>
                     </li>
                   ))}
               </ul>
@@ -113,6 +115,7 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+      <PageFaqs faqs={getSiteFaqs("blog")} />
     </>
   );
 }

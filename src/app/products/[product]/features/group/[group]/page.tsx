@@ -1,6 +1,10 @@
+import { PageFaqs } from "@/components/ui/PageFaqs";
+import { getFeatureGroupFaqs } from "@/lib/faqs";
+import { Labelled } from "@/components/ui/Labelled";
+import { ProductCta } from "@/components/product/ProductCta";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Breadcrumbs, CtaBand } from "@/components/ui/primitives";
+import { Breadcrumbs } from "@/components/ui/primitives";
 import { Icon } from "@/components/ui/Icon";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import { getCategory, getFeatureGroupsWithPages, getProduct, getProducts, isIndexable } from "@/lib/catalog";
@@ -110,7 +114,7 @@ export default async function FeatureGroupPage({ params }: Props) {
               {f.capabilities?.length ? (
                 <ul className="fz-glist" aria-label={`${f.name} capabilities`}>
                   {f.capabilities.slice(0, 4).map((c) => (
-                    <li key={c}>{c}</li>
+                    <li key={c}><Labelled text={c} /></li>
                   ))}
                 </ul>
               ) : null}
@@ -144,7 +148,8 @@ export default async function FeatureGroupPage({ params }: Props) {
           )}
         </nav>
       )}
-      <CtaBand title={`Try ${product.name}`} primary={cta} />
+      <PageFaqs faqs={getFeatureGroupFaqs(product, group.slug)} />
+      <ProductCta product={product} title={`Try ${product.name}`} primary={cta} />
     </>
   );
 }

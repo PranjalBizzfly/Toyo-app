@@ -1,3 +1,4 @@
+import { getResourceTypeFaqs } from "@/lib/faqs";
 import { notFound } from "next/navigation";
 import { ResourcesHubTemplate } from "@/components/templates/EntityTemplates";
 import { getResources } from "@/lib/catalog";
@@ -28,6 +29,7 @@ export default async function ResourceTypePage({ params }: Props) {
   if (!t) notFound();
   return (
     <ResourcesHubTemplate
+      faqs={getResourceTypeFaqs(t.type, t.label)}
       crumbs={[
         { name: "Resources", href: routes.resources() },
         { name: t.label, href: routes.resourceType(t.type) },

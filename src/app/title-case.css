@@ -1,0 +1,15 @@
+/* =====================================================================
+   Site-wide Title Case. Every word's first letter is capitalised on
+   display; the rest of each word is left as written, so acronyms (GST,
+   AI, TDS) and mixed-case brand names keep their inner capitals.
+   Paragraphs of 100+ words are marked data-long by title-case.ts and
+   stay in sentence case. Code, form fields, URLs and emails are exempt.
+   ===================================================================== */
+body, button, :is(h1, h2, h3, h4, h5, h6, p, li, a, label, summary, small, strong, span, td, th, dt, dd, figcaption) { text-transform: capitalize; }
+[data-long],
+[data-long] * ,
+[data-tc-off],
+[data-tc-off] *,
+:is(code, pre, kbd, samp, input, textarea, select, option),
+:is(code, pre, kbd, samp) * { text-transform: none; }
+/* Elements already styled UPPERCASE keep that (e.g. kickers, eyebrows). */

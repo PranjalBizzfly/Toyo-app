@@ -1,3 +1,5 @@
+import { getSiteFaqs } from "@/lib/faqs";
+import { Labelled } from "@/components/ui/Labelled";
 import Link from "next/link";
 import { Breadcrumbs, FaqList } from "@/components/ui/primitives";
 import { ImageSlot } from "@/components/ui/ImageSlot";
@@ -126,7 +128,7 @@ export default function VendorsPage() {
           </div>
           <ul className="cp-list">
             {requirements.map((r) => (
-              <li key={r}>{r}</li>
+              <li key={r}><Labelled text={r} /></li>
             ))}
           </ul>
         </div>
@@ -154,7 +156,7 @@ export default function VendorsPage() {
             <p className="co-eyebrow">FAQ</p>
             <h2 className="co-h2">Vendor questions</h2>
           </div>
-          <FaqList faqs={faqs} />
+          <FaqList faqs={getSiteFaqs("vendors", faqs)} />
         </div>
       </section>
 

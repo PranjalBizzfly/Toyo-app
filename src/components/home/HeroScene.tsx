@@ -24,7 +24,7 @@ const SCREEN = {
   growth: { label: "Business Growth", delta: "32%" },
   popular: [
     { slug: "cardizo", name: "Cardizo", letter: "C", color: "#1a73e8" },
-    { slug: "getbenj", name: "GetBenj", letter: "G", color: "#3fa34d" },
+    { slug: "getbenj", name: "Benj", letter: "B", color: "#3fa34d" },
     { slug: "oda7", name: "ODA7", letter: "O", color: "#8e44e6" },
     { slug: "trackysuite", name: "TrackySuite", letter: "T", color: "#1e8ff0" },
     { slug: "sibu", name: "Sibu", letter: "S", color: "#a24ee6" },

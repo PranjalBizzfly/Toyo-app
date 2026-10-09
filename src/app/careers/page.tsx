@@ -1,3 +1,5 @@
+import { getSiteFaqs } from "@/lib/faqs";
+import { Labelled } from "@/components/ui/Labelled";
 import Link from "next/link";
 import { Breadcrumbs, FaqList } from "@/components/ui/primitives";
 import { ImageSlot } from "@/components/ui/ImageSlot";
@@ -129,7 +131,7 @@ export default function CareersPage() {
                 <h4>What the role involves</h4>
                 <ul className="cp-list">
                   {j.focus.map((f) => (
-                    <li key={f}>{f}</li>
+                    <li key={f}><Labelled text={f} /></li>
                   ))}
                 </ul>
                 <p className="cp-note">General role description. Full responsibilities and requirements are shared during the application process.</p>
@@ -167,7 +169,7 @@ export default function CareersPage() {
             <p className="co-eyebrow">FAQ</p>
             <h2 className="co-h2">Questions from candidates</h2>
           </div>
-          <FaqList faqs={faqs} />
+          <FaqList faqs={getSiteFaqs("careers", faqs)} />
         </div>
       </section>
 

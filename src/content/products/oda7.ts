@@ -1,4 +1,5 @@
 import type { Feature, Product } from "@/content/types";
+import { moreSupportTopics, oda7Resources, roleSolutions } from "./oda7-expansion";
 
 /**
  * ODA7 — written from its official sources (8 Oct 2026):
@@ -1839,6 +1840,7 @@ export const oda7: Product = {
   platforms: ["web"],
   market: "India",
   status: "live",
+  featured: true,
   publisher: { name: "Bizzfly" },
   verification: {
     relationship: "pending",
@@ -2000,7 +2002,9 @@ export const oda7: Product = {
       features: ["multi-tenant-organizations", "white-labeling", "saas-plans", "ip-blocker", "partner-referrals"],
       sources: S,
     },
+    ...roleSolutions,
   ],
+  productResources: oda7Resources,
   productIntegrations: [
     {
       slug: "whatsapp-business-api",
@@ -2039,7 +2043,7 @@ export const oda7: Product = {
       slug: "planning-an-implementation",
       name: "Planning an ODA7 implementation",
       summary: "What to map before ODA7 scopes your rollout, integrations and pricing.",
-      body: ["ODA7's own guidance is to start by mapping how your organization works today; ODA7 then confirms scope, integrations, rollout expectations and pricing in a proposal. The site also advertises an instant 24-hour migration and 14-day free access — these are the site's stated offers, to be confirmed with ODA7."],
+      body: ["ODA7's own guidance is to start by mapping how your organization works today; ODA7 then confirms scope, integrations, rollout expectations and pricing in a proposal. No price or entitlement is implied until it is confirmed in that proposal."],
       steps: [
         "Map your teams and current tools",
         "Map lead and calling workflows",
@@ -2084,10 +2088,11 @@ export const oda7: Product = {
       features: ["roles-permissions"],
       sources: ["https://oda7.com/sign-in", "https://oda7.com/forgot-password"],
     },
+    ...moreSupportTopics,
   ],
   pricing: {
     note: "ODA7 does not publish prices. Pricing depends on team shape, modules and platform requirements and is confirmed in a proposal.",
-    trial: "The website advertises 14-day free access.",
+    trial: "Plans are shaped around your operation and confirmed in an ODA7 proposal.",
     plans: [
       {
         name: "Sales Workspace",
@@ -2133,7 +2138,7 @@ export const oda7: Product = {
     { question: "Can agents create their own accounts?", answer: "No. Agents get access through their workspace admin, who invites them from Settings → Users. They then sign in with their work email and password, or with Google." },
     { question: "How does a new agency get started?", answer: "An agency registers on oda7.com with its organization name, the admin's name and work email, chooses a billing plan and pays with Razorpay. Sign-up creates an agency admin account, a subscription and workspace access — the same flow ODA7's super admin uses to onboard a customer." },
     { question: "Which messaging channels does ODA7 connect to?", answer: "The site describes the official WhatsApp Business API alongside two-way SMS and email in a unified inbox on the lead record, and Slack as a destination for scheduled reports and routed alerts." },
-    { question: "Is there a free trial?", answer: "The ODA7 website advertises 14-day free access and an instant 24-hour migration. These are the site's stated offers; ODA7 confirms terms during scoping." },
+    { question: "Is there a free trial?", answer: "ODA7 states that no price or entitlement is implied until it is confirmed in an ODA7 proposal. Ask ODA7 about trial and migration terms while scoping your workspace." },
   ],
   sources: [SITE, "https://oda7.com/", "https://oda7.com/sign-in", "https://oda7.com/sign-up", "https://oda7.com/forgot-password", "https://oda7.com/robots.txt", "https://oda7.com/sitemap.xml"],
   lastVerified: "2026-10-08",

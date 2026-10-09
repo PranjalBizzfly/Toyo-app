@@ -18,7 +18,7 @@ export const categories: Category[] = [
     name: "Sales & Marketing",
     tagline: "Capture contacts, run sales floors, plan campaigns and organise creative assets",
     description:
-      "Software for the teams that find customers and grow the brand. Cardizo turns scanned business cards into searchable contacts, ODA7 runs sales floors from lead to commission payout, GetBenj builds a marketing plan from a product description, and Sibu keeps a creative team's video, image and audio assets indexed and reviewable.",
+      "Software for the teams that find customers and grow the brand. Cardizo turns scanned business cards into searchable contacts, ODA7 runs sales floors from lead to commission payout, Benj builds a marketing plan from a product description, and Sibu keeps a creative team's video, image and audio assets indexed and reviewable.",
     icon: "megaphone",
     order: 10,
     status: "live",
@@ -36,7 +36,7 @@ export const categories: Category[] = [
       {
         title: "No plan before spending on marketing",
         description:
-          "Starting from a product description, GetBenj returns a buyer persona, best markets, channels, a hyperlocal ad map and a budget split as a PDF.",
+          "Starting from a product description, Benj returns a buyer persona, best markets, channels, a hyperlocal ad map and a budget split as a PDF.",
       },
       {
         title: "Creative assets nobody can find",
@@ -131,7 +131,7 @@ export const categories: Category[] = [
     name: "Insights & Research",
     tagline: "Market sizing, marketing plans and activity reports you can defend",
     description:
-      "Software that turns raw information into reports you can act on. Sizoru sizes TAM, SAM and SOM top-down and bottom-up with tier-rated sources, GetBenj produces a marketing plan from a product description, and ZUZU turns desktop activity into AI-written daily reports.",
+      "Software that turns raw information into reports you can act on. Sizoru sizes TAM, SAM and SOM top-down and bottom-up with tier-rated sources, Benj produces a marketing plan from a product description, and ZUZU turns desktop activity into AI-written daily reports.",
     icon: "chart",
     order: 50,
     status: "live",

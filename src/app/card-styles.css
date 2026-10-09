@@ -1,0 +1,46 @@
+/* =====================================================================
+   Product card style on every page of the product. The product layout sets
+   data-cards from the overview's benefit-card style, so feature tiles,
+   section cards and detail tiles on inner pages share the overview's look.
+   ===================================================================== */
+[data-cards] :is(.fz-tile, .pz-vcard, .pz-card, .fz-alt-tiles li) { transition: border-color .2s ease, background .2s ease, transform .2s ease; }
+
+/* glass — translucent, tinted edge (Sibu, Cardizo, MeetingMind, ODA7) */
+[data-cards="glass"] :is(.fz-tile, .pz-vcard, .pz-card, .fz-alt-tiles li) {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--art-1, var(--primary)) 7%, var(--surface)), var(--surface));
+  border: 1px solid color-mix(in srgb, var(--art-1, var(--primary)) 22%, var(--border)); border-radius: 18px;
+  box-shadow: 0 18px 40px -30px color-mix(in srgb, var(--art-1, var(--primary)) 60%, transparent);
+}
+[data-cards="glass"] :is(.fz-tile, .pz-vcard, .pz-card):hover { border-color: color-mix(in srgb, var(--art-1, var(--primary)) 55%, transparent); }
+
+/* black — solid near-black cards (TaskMagic, Fantom) */
+[data-cards="black"] :is(.fz-tile, .pz-vcard, .pz-card, .fz-alt-tiles li) {
+  --heading: #ffffff; --text: #dbe6f0; --text-secondary: #b6c7d8;
+  background: #0b0f17; color: var(--text); border: 1px solid rgb(255 255 255 / .14); border-radius: 22px;
+}
+[data-cards="black"] :is(.fz-tile, .pz-vcard, .pz-card, .fz-alt-tiles li) :is(h2, h3, h4, strong) { color: #ffffff; }
+[data-cards="black"] :is(.fz-tile, .pz-vcard, .pz-card):hover { border-color: var(--art-2, var(--primary)); }
+
+/* photo — coloured image band on top (HRMagix) */
+[data-cards="photo"] :is(.fz-tile, .pz-card) { overflow: hidden; border: 1px solid var(--border); }
+[data-cards="photo"] .fz-tile::before { content: ""; display: block; height: 64px; margin: -24px -24px 16px; background: radial-gradient(40% 60% at 70% 30%, color-mix(in srgb, var(--art-3, var(--primary)) 70%, transparent), transparent 70%), linear-gradient(135deg, color-mix(in srgb, var(--art-1, var(--primary)) 40%, var(--surface)), color-mix(in srgb, var(--art-2, var(--primary)) 30%, var(--surface))); }
+
+/* mint — tinted green surfaces (Fleetras) */
+[data-cards="mint"] :is(.fz-tile, .pz-vcard, .pz-card, .fz-alt-tiles li) { background: color-mix(in srgb, var(--art-2, #3fa34d) 16%, var(--surface)); border: 1px solid color-mix(in srgb, var(--art-2, #3fa34d) 30%, transparent); }
+
+/* grid — square cells sharing borders (SigChanger, ZUZU) */
+[data-cards="grid"] :is(.fz-tile, .pz-vcard, .pz-card, .fz-alt-tiles li) { border-radius: 0; box-shadow: none; border: 1px solid var(--border-soft); background: var(--surface); }
+[data-cards="grid"] :is(.fz-tile, .pz-vcard, .pz-card):hover { background: var(--primary-soft); transform: none; }
+
+/* warm — warm gradient wash (Sizoru, TrackySuite, Benj) */
+[data-cards="warm"] :is(.fz-tile, .pz-vcard, .pz-card, .fz-alt-tiles li) { background: linear-gradient(160deg, color-mix(in srgb, var(--art-3, #f5a524) 22%, var(--surface)), var(--surface) 70%); border: 1px solid color-mix(in srgb, var(--art-3, #f5a524) 32%, var(--border)); }
+
+/* pastel — alternating soft colours (ZapBuzzer) */
+[data-cards="pastel"] :is(.fz-tile, .pz-vcard, .pz-card) { border: 0; }
+[data-cards="pastel"] :is(.fz-tiles__item, .pz-vcard, .pz-card):nth-child(3n+1) :is(.fz-tile), [data-cards="pastel"] :is(.pz-vcard, .pz-card):nth-child(3n+1) { background: color-mix(in srgb, var(--art-3, #f5a524) 20%, var(--surface)); }
+[data-cards="pastel"] .fz-tiles__item:nth-child(3n+2) .fz-tile, [data-cards="pastel"] :is(.pz-vcard, .pz-card):nth-child(3n+2) { background: color-mix(in srgb, var(--art-1, var(--primary)) 13%, var(--surface)); }
+[data-cards="pastel"] .fz-tiles__item:nth-child(3n+3) .fz-tile, [data-cards="pastel"] :is(.pz-vcard, .pz-card):nth-child(3n+3) { background: color-mix(in srgb, var(--art-2, #3fa34d) 15%, var(--surface)); }
+
+/* columns — open columns divided by a rule (Zorfly, Tracksuit) */
+[data-cards="columns"] :is(.fz-tile, .pz-card) { border: 0; border-left: 1px solid var(--border); border-radius: 0; background: transparent; box-shadow: none; }
+[data-cards="columns"] :is(.fz-tile, .pz-card):hover { transform: none; border-left-color: var(--primary); }

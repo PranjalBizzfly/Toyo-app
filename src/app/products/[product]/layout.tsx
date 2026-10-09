@@ -6,6 +6,12 @@ import { getProduct, getProducts } from "@/lib/catalog";
 import { getAvailableSections } from "@/lib/product-sections";
 import { productThemeClass } from "@/lib/product-theme";
 import "@/app/product-themes.css";
+import "@/app/product-story.css";
+import "@/app/product-refs.css";
+import "@/app/product-patterns.css";
+import "@/app/edge-transitions.css";
+import "@/app/card-styles.css";
+import { getProductStory } from "@/lib/product-story";
 import { getProductCtas } from "@/lib/product-cta";
 import { routes, sectionLabels } from "@/lib/routes";
 
@@ -29,7 +35,7 @@ export default async function ProductLayout({ children, params }: Props) {
   const cta = getProductCtas(product).primary;
 
   return (
-    <div className={productThemeClass(product.slug)}>
+    <div className={productThemeClass(product.slug)} data-edge={getProductStory(product.slug).edge} data-cards={getProductStory(product.slug).benefits} data-faq={["glass", "starfield", "prompt"].includes(getProductStory(product.slug).hero) ? "dark" : "light"}>
       <ProductNav
         brand={
           <a href={routes.product(product.slug)} className="product-nav__brand">

@@ -6,9 +6,9 @@ const featureCategories: FeatureCategory[] = [
   {
     slug: "capabilities",
     name: "Capabilities",
-    description: "The sections GetBenj generates for every marketing plan.",
+    description: "The sections Benj generates for every marketing plan.",
     body: [
-      "GetBenj turns a few details about a product into a complete, ready-to-launch marketing plan — “a whole marketing team, in one plan”. Every plan is grounded in real-world data: live OpenStreetMap venues and real ads and media collected from across the web.",
+      "Benj turns a few details about a product into a complete, ready-to-launch marketing plan — “a whole marketing team, in one plan”. Every plan is grounded in real-world data: live OpenStreetMap venues and real ads and media collected from across the web.",
       "The plan comes back in the formats teams already use: a clean PDF, creatives ready to paste, and a report to share with a team or client.",
     ],
   },
@@ -28,7 +28,7 @@ const features: Feature[] = [
     summary: "Detects who is most likely to buy your product — from just your product details.",
     highlight: true,
     body: [
-      "GetBenj works out who buys your product most, using only the product details you enter. The result is a sharp, product-specific ideal customer profile (ICP), so you start from a defined buyer instead of a blank form.",
+      "Benj works out who buys your product most, using only the product details you enter. The result is a sharp, product-specific ideal customer profile (ICP), so you start from a defined buyer instead of a blank form.",
       "The persona covers the buyer's demographics, their pain points and the channels that reach them, and it feeds the rest of the plan.",
     ],
     capabilities: [
@@ -41,7 +41,7 @@ const features: Feature[] = [
     problem: "Starting a launch plan from a blank persona template, with no clear idea of who buys the product.",
     howItWorks: [
       "Enter the product name, category, a one-line pitch and what makes it different.",
-      "GetBenj infers who is most likely to buy it.",
+      "Benj infers who is most likely to buy it.",
       "It sets out that buyer's age, gender, income, pain points and channels.",
       "The persona feeds the market, technique, creative and budget sections of the plan."
     ],
@@ -57,7 +57,7 @@ const features: Feature[] = [
     faqs: [
       {
         "question": "What do I need to enter for the persona?",
-        "answer": "Only your product details: its name, category, a one-line pitch and what makes it different. GetBenj infers the buyer from those."
+        "answer": "Only your product details: its name, category, a one-line pitch and what makes it different. Benj infers the buyer from those."
       },
       {
         "question": "What does the persona include?",
@@ -72,7 +72,7 @@ const features: Feature[] = [
     summary: "Finds the country and top regions to win first — India Tier 1, 2 and 3 or global.",
     highlight: true,
     body: [
-      "GetBenj chooses the country and the top regions where your product should launch first — across India's Tier 1, 2 and 3 markets or globally — and passes them straight into the hyperlocal plan.",
+      "Benj chooses the country and the top regions where your product should launch first — across India's Tier 1, 2 and 3 markets or globally — and passes them straight into the hyperlocal plan.",
       "Your goal, budget and tone are also set by the AI from the product, and every one of these inputs can be edited.",
     ],
     capabilities: [
@@ -84,7 +84,7 @@ const features: Feature[] = [
     ],
     problem: "Spreading a launch budget across every region at once instead of winning a few markets first.",
     howItWorks: [
-      "GetBenj reads the product details and the inferred buyer.",
+      "Benj reads the product details and the inferred buyer.",
       "It picks the country and ranks the top regions to target first.",
       "It proposes a goal, budget and tone for the plan.",
       "You review and edit any of these inputs before the plan is generated."
@@ -100,7 +100,7 @@ const features: Feature[] = [
     ],
     faqs: [
       {
-        "question": "Does GetBenj only plan for India?",
+        "question": "Does Benj only plan for India?",
         "answer": "No. It is built for India and covers Tier 1, 2 and 3 markets, but it can also recommend markets globally."
       },
       {
@@ -116,7 +116,7 @@ const features: Feature[] = [
     summary: "Marketing techniques chosen and ranked by profitability for your product, price and margins.",
     highlight: true,
     body: [
-      "GetBenj picks marketing techniques the way a senior strategist would: ranked by how profitable they are likely to be for your exact product, its price and its margins.",
+      "Benj picks marketing techniques the way a senior strategist would: ranked by how profitable they are likely to be for your exact product, its price and its margins.",
       "The reasoning behind each technique is shown, so the plan is a strategist's logic rather than a generic checklist or random picks.",
     ],
     capabilities: [
@@ -127,7 +127,7 @@ const features: Feature[] = [
     ],
     problem: "Generic marketing checklists, or picks made at random, that ignore what a product costs and earns.",
     howItWorks: [
-      "GetBenj takes the product, its price and its margins into account.",
+      "Benj takes the product, its price and its margins into account.",
       "It selects candidate marketing techniques.",
       "It ranks them by profitability for that product.",
       "Each technique is shown with the reasoning behind its rank."
@@ -144,7 +144,7 @@ const features: Feature[] = [
     faqs: [
       {
         "question": "How are techniques ranked?",
-        "answer": "By profitability for your exact product, price and margins. GetBenj shows the reasoning for each technique so the ranking is not a black box."
+        "answer": "By profitability for your exact product, price and margins. Benj shows the reasoning for each technique so the ranking is not a black box."
       }
     ],
     relatedFeatures: ["exact-budget-split", "ai-buyer-persona"],
@@ -155,7 +155,7 @@ const features: Feature[] = [
     summary: "Drills down from state to city, locality and venue — and the ad type that pays back most there.",
     highlight: true,
     body: [
-      "Where most tools stop at “run some Instagram ads”, GetBenj drills down through country, state, city and locality to individual venues, and recommends the type of ad that pays back most at each one.",
+      "Where most tools stop at “run some Instagram ads”, Benj drills down through country, state, city and locality to individual venues, and recommends the type of ad that pays back most at each one.",
       "At a bus stand that might be an audio announcement and a hoarding; at a mall, pamphlets and a free-sample stall. Every locality is checked against live OpenStreetMap data, so the plan points at real places rather than guesses.",
     ],
     problem: "Generic advice such as “run some Instagram ads” that never says where, or with which ad.",
@@ -189,7 +189,7 @@ const features: Feature[] = [
     ],
     faqs: [
       {
-        "question": "How does GetBenj know the venues are real?",
+        "question": "How does Benj know the venues are real?",
         "answer": "Every locality in the map is verified against live OpenStreetMap data."
       },
       {
@@ -204,7 +204,7 @@ const features: Feature[] = [
     name: "Real Past Ads",
     summary: "Actual ads that worked for your product, competitors and category — each with a takeaway and source link.",
     body: [
-      "GetBenj shows real advertisements that have already worked for your product, your competitors and your category. They are collected live from the web rather than generated.",
+      "Benj shows real advertisements that have already worked for your product, your competitors and your category. They are collected live from the web rather than generated.",
       "Each ad comes with a one-line takeaway and a link to the original, so you can learn from what already converts.",
     ],
     problem: "Generic AI suggestions that are not grounded in ads that actually ran.",
@@ -215,7 +215,7 @@ const features: Feature[] = [
       "Links to the original of every ad so you can check it yourself."
     ],
     howItWorks: [
-      "GetBenj looks at your product, its competitors and its category.",
+      "Benj looks at your product, its competitors and its category.",
       "It scrapes ads that have run for them from across the web.",
       "Each ad is listed with a one-line takeaway and a link to the original."
     ],
@@ -231,7 +231,7 @@ const features: Feature[] = [
     faqs: [
       {
         "question": "Are the past ads generated by AI?",
-        "answer": "No. GetBenj says they are real ads scraped live from the web, each with a link to the original."
+        "answer": "No. Benj says they are real ads scraped live from the web, each with a link to the original."
       }
     ],
     relatedFeatures: ["ready-to-use-creatives", "real-media-outlets"],
@@ -241,7 +241,7 @@ const features: Feature[] = [
     name: "Real Media Outlets",
     summary: "The specific TV channels, podcasts, radio stations and YouTube channels your buyers consume.",
     body: [
-      "Instead of advice like “try podcasts”, GetBenj names the specific outlets your buyers actually follow — TV channels, podcasts, radio stations and YouTube channels.",
+      "Instead of advice like “try podcasts”, Benj names the specific outlets your buyers actually follow — TV channels, podcasts, radio stations and YouTube channels.",
       "Every outlet is named and comes with a link you can use to verify it.",
     ],
     problem: "Vague channel advice that never says which podcast or which channel.",
@@ -253,7 +253,7 @@ const features: Feature[] = [
       "Bases the list on the buyer persona built for the product."
     ],
     howItWorks: [
-      "GetBenj takes the buyer persona for your product.",
+      "Benj takes the buyer persona for your product.",
       "It identifies the TV, podcast, radio and YouTube outlets that buyer consumes.",
       "Each outlet is listed by name with a link to verify it."
     ],
@@ -316,7 +316,7 @@ const features: Feature[] = [
     name: "Exact Budget Split",
     summary: "Your budget allocated across channels in rupees, with the reasoning behind it.",
     body: [
-      "GetBenj divides your budget across channels in rupees and explains why, so you spend against a plan grounded in what works for your category instead of guessing percentages.",
+      "Benj divides your budget across channels in rupees and explains why, so you spend against a plan grounded in what works for your category instead of guessing percentages.",
     ],
     capabilities: [
       "Allocates your budget across the plan's channels.",
@@ -327,7 +327,7 @@ const features: Feature[] = [
     problem: "Guessing what percentage of a launch budget each channel should get.",
     howItWorks: [
       "The brief sets a budget, which you can edit.",
-      "GetBenj divides it across channels using the profit-ranked techniques.",
+      "Benj divides it across channels using the profit-ranked techniques.",
       "Each line is shown in rupees with its reasoning."
     ],
     benefits: [
@@ -342,7 +342,7 @@ const features: Feature[] = [
     faqs: [
       {
         "question": "Is the budget in rupees?",
-        "answer": "Yes. GetBenj allocates the budget across channels in rupees, with the reasoning for each allocation."
+        "answer": "Yes. Benj allocates the budget across channels in rupees, with the reasoning for each allocation."
       }
     ],
     relatedFeatures: ["profit-ranked-techniques", "best-market-detection"],
@@ -352,7 +352,7 @@ const features: Feature[] = [
     name: "Clean PDF Report",
     summary: "Every plan exports to a polished, share-ready PDF your team or client can act on.",
     body: [
-      "Every GetBenj plan exports in one click to a polished PDF that is ready to share with a team or a client.",
+      "Every Benj plan exports in one click to a polished PDF that is ready to share with a team or a client.",
       "The document brings the whole plan together — persona, channels, media outlets, the geographic ad map, creatives and budget — so it can be acted on the same day.",
     ],
     capabilities: [
@@ -392,11 +392,11 @@ const features: Feature[] = [
 export const getbenj: Product = {
   id: "getbenj",
   slug: "getbenj",
-  name: "GetBenj",
+  name: "Benj",
   shortDescription:
     "Describe a product and get a complete AI-built marketing plan as a PDF — buyer persona, best markets, channels, ad map and budget split.",
   longDescription:
-    "GetBenj turns a short product description into a complete AI marketing plan in about 60 seconds. It is built for Indian D2C brands and the agencies that serve them, from a founder's first launch to an agency's hundredth.\n\nYou type only the product name, category, a one-line pitch and what makes it different. GetBenj infers the buyer persona, the best country and regions, the goal, budget and tone, and profit-ranked techniques — every one of them editable.\n\nThe plan is grounded in real data: localities and venues are checked against live OpenStreetMap data, and past ads and media outlets are scraped from the web with links to the originals. It also includes ready-to-paste creatives and a budget split in rupees.\n\nEverything exports as a share-ready PDF. Pricing is per report or by pack, with no subscription and no credit card needed to start.",
+    "Benj turns a short product description into a complete AI marketing plan in about 60 seconds. It is built for Indian D2C brands and the agencies that serve them, from a founder's first launch to an agency's hundredth.\n\nYou type only the product name, category, a one-line pitch and what makes it different. Benj infers the buyer persona, the best country and regions, the goal, budget and tone, and profit-ranked techniques — every one of them editable.\n\nThe plan is grounded in real data: localities and venues are checked against live OpenStreetMap data, and past ads and media outlets are scraped from the web with links to the originals. It also includes ready-to-paste creatives and a budget split in rupees.\n\nEverything exports as a share-ready PDF. Pricing is per report or by pack, with no subscription and no credit card needed to start.",
   tagline: "One product in. A complete plan out.",
   category: "sales-marketing",
   secondaryCategories: ["insights-research"],
@@ -409,7 +409,7 @@ export const getbenj: Product = {
   verification: { relationship: "pending", publicSale: "confirmed" },
   websiteUrl: "https://getbenj.com/",
   appUrl: "https://getbenj.com/signup",
-  publisher: { name: "GetBenj Inc." },
+  publisher: { name: "Benj Inc." },
   featureCategories,
   features,
   benefits: [
@@ -431,12 +431,12 @@ export const getbenj: Product = {
       name: "Launch plans for D2C products",
       summary: "Go from a product description to a full launch plan covering buyer, markets, channels, ads and budget.",
       body: [
-        "GetBenj is aimed at Indian D2C brands, from a founder's first launch onwards. Instead of hiring a marketing team or starting from a blank brief, a founder enters a few product details and receives a complete plan in about a minute.",
+        "Benj is aimed at Indian D2C brands, from a founder's first launch onwards. Instead of hiring a marketing team or starting from a blank brief, a founder enters a few product details and receives a complete plan in about a minute.",
         "The plan is grounded in real-world data: venues checked against live OpenStreetMap data, and past ads and media outlets collected from the web.",
       ],
       workflow: [
         "Enter the product name, category, a one-line pitch and what makes it different.",
-        "GetBenj infers the likely buyer and the best country and regions to launch in first.",
+        "Benj infers the likely buyer and the best country and regions to launch in first.",
         "It builds an editable brief with goal, budget, tone and profit-ranked techniques.",
         "It generates creatives, media outlets, a hyperlocal ad map and past ads, exported as a PDF.",
       ],
@@ -454,7 +454,7 @@ export const getbenj: Product = {
       name: "Client plans for marketing agencies",
       summary: "Agencies produce share-ready marketing plans for clients, with packs sized for repeated use.",
       body: [
-        "GetBenj positions itself for agencies as well as founders, from a first launch up to an agency's hundredth. Each plan exports as a PDF that can be shared with a client, and creatives come ready to paste into campaigns.",
+        "Benj positions itself for agencies as well as founders, from a first launch up to an agency's hundredth. Each plan exports as a PDF that can be shared with a client, and creatives come ready to paste into campaigns.",
       ],
       benefits: [
         "The Agency pack covers 20 reports and includes all Pro features",
@@ -471,15 +471,15 @@ export const getbenj: Product = {
   supportTopics: [
     {
       slug: "getting-started",
-      name: "Getting started with GetBenj",
-      summary: "How to create your first GetBenj plan, from signing up to exporting the PDF.",
+      name: "Getting started with Benj",
+      summary: "How to create your first Benj plan, from signing up to exporting the PDF.",
       body: [
         "You can start free with no credit card, and you pay per report or buy a pack rather than subscribing. The only typing you do is describing your product; the rest of the brief is generated and can be edited.",
       ],
       steps: [
         "Sign up. No credit card is needed.",
         "Add your product: name, category, a one-line pitch and what makes it different.",
-        "Review the buyer persona GetBenj infers from the product.",
+        "Review the buyer persona Benj infers from the product.",
         "Check and edit the generated brief: market and regions, budget, tone and techniques.",
         "Generate the plan and export it as a PDF.",
       ],
@@ -506,15 +506,15 @@ export const getbenj: Product = {
     { title: "Choosing media to buy", description: "Get a named list of TV channels, podcasts, radio stations and YouTube channels your buyers follow, each with a verify link." },
   ],
   faqs: [
-    { question: "Is GetBenj a subscription?", answer: "No. You pay per report or buy a pack of 5 or 20 reports, and no credit card is needed to get started." },
+    { question: "Is Benj a subscription?", answer: "No. You pay per report or buy a pack of 5 or 20 reports, and no credit card is needed to get started." },
     { question: "What does a plan include?", answer: "A buyer persona, best markets, profit-ranked techniques, a hyperlocal ad map, real past ads, media outlets, creatives and a budget split, exported as a PDF." },
     { question: "Which channels does it plan for?", answer: "Google, Instagram, WhatsApp, Facebook, YouTube and LinkedIn." },
-    { question: "How long does a plan take?", answer: "GetBenj says it goes from a product to a full plan in about 60 seconds." },
+    { question: "How long does a plan take?", answer: "Benj says it goes from a product to a full plan in about 60 seconds." },
     { question: "What do I need to type?", answer: "Only the product name, category, a one-line pitch and what makes it different. The buyer, markets, budget, tone and techniques are then generated, and you can edit all of them." },
     { question: "How much does it cost?", answer: "Lite is ₹499 (USD $6) for one report, Pro ₹1,999 (USD $24) for five reports, and Agency ₹5,999 (USD $72) for 20 reports. Pro saves 20% and Agency 40% against single reports." },
     { question: "What do Pro and Agency add?", answer: "Pro adds priority generation and section regenerate on top of PDF export. Agency includes all Pro features plus a team company and email support." },
     { question: "Where does the data come from?", answer: "Localities and venues are verified against live OpenStreetMap data, and past ads and media outlets are scraped from the web, each with a link to the original." },
-    { question: "Is it only for India?", answer: "GetBenj is built for Indian D2C brands and plans for India's Tier 1, 2 and 3 markets, but Best-Market Detection can also recommend markets globally." },
+    { question: "Is it only for India?", answer: "Benj is built for Indian D2C brands and plans for India's Tier 1, 2 and 3 markets, but Best-Market Detection can also recommend markets globally." },
   ],
   solutions: ["prepare-for-launch-and-fundraising"],
   industries: ["startups-and-investors", "media-creative-agencies"],

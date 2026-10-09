@@ -1,3 +1,5 @@
+import { PageFaqs } from "@/components/ui/PageFaqs";
+import { getSiteFaqs } from "@/lib/faqs";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/primitives";
 import { getProducts } from "@/lib/catalog";
@@ -42,6 +44,7 @@ export default function SupportPage() {
           </div>
         </section>
       )}
+      <PageFaqs faqs={getSiteFaqs("support")} />
       <section className="co-cta">
         <div className="co-wrap">
           <h2>Still need help?</h2>

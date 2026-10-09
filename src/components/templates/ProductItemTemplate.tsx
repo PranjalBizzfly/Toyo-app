@@ -1,3 +1,6 @@
+import { getProductItemFaqs } from "@/lib/faqs";
+import { Labelled } from "@/components/ui/Labelled";
+import { ProductCta } from "@/components/product/ProductCta";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import type { Faq, Feature, Product } from "@/content/types";
@@ -7,10 +10,11 @@ import { getProductCtas } from "@/lib/product-cta";
 import { getProductItems, itemSections, type ItemSection, type ProductItem } from "@/lib/product-sections";
 import { routes, sectionLabels } from "@/lib/routes";
 import { absoluteUrl, jsonLd } from "@/lib/seo";
-import { Breadcrumbs, CtaBand, FaqList } from "@/components/ui/primitives";
+import { Breadcrumbs, FaqList } from "@/components/ui/primitives";
 import { Icon } from "@/components/ui/Icon";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import "@/app/feature-zoho.css";
+import "@/app/alt-patterns.css";
 
 type Kind = "text" | "list" | "steps" | "cards";
 /** Section headings per field, by item type. Fields not listed are not rendered. */
@@ -58,7 +62,7 @@ function Checks({ items, two }: { items: string[]; two?: boolean }) {
       {items.map((i) => (
         <li key={i}>
           <Icon name="check" />
-          <span>{i}</span>
+          <span><Labelled text={i} /></span>
         </li>
       ))}
     </ul>
@@ -100,6 +104,7 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
   const relatedFaqs = (product.faqs ?? [])
     .filter((f) => !ownQs.has(f.question) && f.question.toLowerCase().split(/[^a-z0-9]+/).some((w) => words.has(w)))
     .slice(0, 4);
+  const pageFaqs = getProductItemFaqs(product, section, { ...(e as unknown as Record<string, unknown>), name: item.name, summary: item.summary, faqs: [...(e.faqs ?? []), ...relatedFaqs] });
   const about = product.longDescription?.split(/\n\s*\n/)[0];
   const registry = e.registry ? getIntegrations().find((i) => i.slug === e.registry) : undefined;
   const siblings = getProductItems(product, section).filter((i) => i.hasPage && i.slug !== item.slug).slice(0, 6);
@@ -219,24 +224,48 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
         </section>
       )}
 
-      {rest.map(({ key, title: t, kind, v }) => (
+      {rest.map(({ key, title: t, kind, v }, idx) => {
+        // A page never shows the same representation twice: the 2nd list (the
+        // "why" band counts as the 1st) becomes tiles, the 2nd steps a flow.
+        const nth = rest.slice(0, idx).filter((r) => r.kind === kind).length + (kind === "list" && why ? 1 : 0);
+        return (
         <Centered key={key} id={`s-${key}`} heading={t(product.name)}>
           {kind === "text" && (
             <div className="fz-center">
               <p className="fz-lead">{v as string}</p>
             </div>
           )}
-          {kind === "list" && (
+          {kind === "list" && nth === 0 && (
             <div className="fz-panel">
               <div className="fz-panel__inner">
                 <Checks items={v as string[]} two />
               </div>
             </div>
           )}
-          {kind === "steps" && (
+          {kind === "list" && nth > 0 && (
+            <ul className="fz-alt-tiles">
+              {(v as string[]).map((s, i) => (
+                <li key={s} data-tone={i % 3}>
+                  <span className="fz-alt-tiles__mark" aria-hidden />
+                  {s}
+                </li>
+              ))}
+            </ul>
+          )}
+          {kind === "steps" && nth === 0 && (
             <ol className="fz-steps">
               {(v as string[]).map((s, i) => (
-                <li key={i}>{s}</li>
+                <li key={i}><Labelled text={s} /></li>
+              ))}
+            </ol>
+          )}
+          {kind === "steps" && nth > 0 && (
+            <ol className="fz-alt-flow">
+              {(v as string[]).map((s, i, arr) => (
+                <li key={i}>
+                  <span><Labelled text={s} /></span>
+                  {i < arr.length - 1 && <i aria-hidden>→</i>}
+                </li>
               ))}
             </ol>
           )}
@@ -253,7 +282,8 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
             </ul>
           )}
         </Centered>
-      ))}
+        );
+      })}
 
       {e.rows?.length ? (
         <Centered id="table" heading="Side by side">
@@ -296,7 +326,7 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
                     {f.capabilities?.length ? (
                       <ul className="fz-hubcaps">
                         {f.capabilities.slice(0, 2).map((c) => (
-                          <li key={c}>{c}</li>
+                          <li key={c}><Labelled text={c} /></li>
                         ))}
                       </ul>
                     ) : null}
@@ -311,7 +341,7 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
                     {f.capabilities?.length ? (
                       <ul className="fz-hubcaps">
                         {f.capabilities.slice(0, 2).map((c) => (
-                          <li key={c}>{c}</li>
+                          <li key={c}><Labelled text={c} /></li>
                         ))}
                       </ul>
                     ) : null}
@@ -343,10 +373,10 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
         </Centered>
       ) : null}
 
-      {e.faqs?.length || relatedFaqs.length ? (
-        <Centered id="faq" heading={e.faqs?.length ? "Frequently asked questions" : `Related ${product.name} questions`}>
+      {pageFaqs.length ? (
+        <Centered id="faq" heading="Frequently asked questions">
           <div className="fz-faq">
-            <FaqList faqs={[...(e.faqs ?? []), ...relatedFaqs]} />
+            <FaqList faqs={pageFaqs} />
           </div>
         </Centered>
       ) : null}
@@ -438,7 +468,7 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
         </Centered>
       )}
 
-      <CtaBand title={`Get started with ${product.name}`} lead={product.pricing?.trial} primary={primary} secondary={{ label: `${product.name} overview`, href: routes.product(product.slug) }} />
+      <ProductCta product={product} title={`Get started with ${product.name}`} lead={product.pricing?.trial} primary={primary} secondary={{ label: `${product.name} overview`, href: routes.product(product.slug) }} />
 
       <script
         type="application/ld+json"

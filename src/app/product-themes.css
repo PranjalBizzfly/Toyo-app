@@ -1,74 +1,234 @@
 /* ==========================================================================
-   Per-product colour combinations (see src/lib/product-theme.ts).
-   Every value comes from the ToyoApps palette in globals.css: Toyo blue,
-   green, yellow and navy, with deeper shades so white text stays AA.
-   The wrapper paints the whole product site (sub-nav → product footer), so
-   each product's pages carry their own page colour, like Zoho's product sites.
+   Product looks (see src/lib/product-story.ts). Every value is built from the
+   ToyoApps logo palette — blue #1E9CE5 / #0F7BBE, green #7BC142 / #5FA32A,
+   yellow #F5C842, navy #0F2235 — with deeper/lighter steps for contrast.
+   The page itself stays neutral (no whole-page tint, so no olive/sand
+   surfaces); colour lives in the hero, the dark/brand bands and accents.
+   Light and dark modes are designed separately, not inverted.
    ========================================================================== */
 
-.pt { display: block; background: var(--bg); }
-
-/* 0 — Toyo Blue · green · yellow (the site default) */
-.pt-0 { --primary: #0f7bbe; --primary-hover: #0b679f; --primary-soft: #e8f4fc; --accent: #5fa32a; --accent-soft: #eef7e6; --highlight: #f5c842; }
-/* 1 — Leaf Green · blue · yellow */
-.pt-1 { --primary: #3f7f1c; --primary-hover: #336817; --primary-soft: #eaf5e1; --accent: #0f7bbe; --accent-soft: #e8f4fc; --highlight: #f5c842; }
-/* 2 — Navy · blue · yellow */
-.pt-2 { --primary: #1a3149; --primary-hover: #0f2235; --primary-soft: #e8eef5; --accent: #0f7bbe; --accent-soft: #e8f4fc; --highlight: #f5c842; }
-/* 3 — Gold · blue · green */
-.pt-3 { --primary: #8a6300; --primary-hover: #6f5000; --primary-soft: #fef6dc; --accent: #0f7bbe; --accent-soft: #e8f4fc; --highlight: #7bc142; }
-/* 4 — Pine · blue · yellow */
-.pt-4 { --primary: #26744c; --primary-hover: #1e5e3d; --primary-soft: #e9f5ee; --accent: #0f7bbe; --accent-soft: #e8f4fc; --highlight: #f5c842; }
-/* 5 — Deep Blue · green · bright green */
-.pt-5 { --primary: #0b5f93; --primary-hover: #094d78; --primary-soft: #e6f3fb; --accent: #5fa32a; --accent-soft: #eef7e6; --highlight: #7bc142; }
-/* 6 — Navy · green · bright green */
-.pt-6 { --primary: #1a3149; --primary-hover: #0f2235; --primary-soft: #e8eef5; --accent: #4f8a22; --accent-soft: #eef7e6; --highlight: #7bc142; }
-/* 7 — Green · navy · deep yellow */
-.pt-7 { --primary: #437a1d; --primary-hover: #366317; --primary-soft: #f3f8e8; --accent: #1a3149; --accent-soft: #e8eef5; --highlight: #e2b11e; }
-
-.pt { --focus: var(--primary); --on-primary: #ffffff; }
-
-/* Page colours, derived from each product's main colour: page background,
-   tinted bands, fills, borders and the dark "island" bands. */
 .pt {
-  --bg: color-mix(in srgb, var(--primary) 7%, #f8fbfd);
-  --pz-tint: color-mix(in srgb, var(--primary) 11%, #ffffff);
-  --fill: color-mix(in srgb, var(--primary) 12%, #ffffff);
-  --border-soft: color-mix(in srgb, var(--primary) 14%, #e7eef4);
-  --border: color-mix(in srgb, var(--primary) 18%, #dbe6ef);
-  --island: color-mix(in srgb, var(--primary) 78%, #0a1a2a);
-  --island-elevated: color-mix(in srgb, var(--primary) 66%, #16304a);
-  --header-bg: color-mix(in srgb, var(--primary) 6%, rgb(255 255 255 / 0.9));
+  display: block;
+  background: var(--bg);
+  --focus: var(--primary);
+  --on-primary: #ffffff;
+  /* Neutral, cool page tint for alternate bands (never mixed with yellow). */
+  --pz-tint: #f3f7fb;
+  /* Defaults; each look overrides. */
+  --hero-bg: linear-gradient(180deg, #f4f9fe, #ffffff);
+  --hero-heading: var(--heading);
+  --hero-title: var(--primary);
+  --hero-text: var(--text-secondary);
+  --hero-chip-bg: rgb(255 255 255 / .8);
+  --band-dark: #0f2235;
+  --band-dark-2: #16304a;
+  --band-dark-glow: rgb(30 156 229 / .35);
+  --band-brand: #0f7bbe;
+  --band-brand-2: #0b5f93;
+  --band-soft: #eef6fd;
+  --art-1: #1e9ce5;
+  --art-2: #7bc142;
+  --art-3: #f5c842;
 }
-/* Hero bands get a stronger wash of the product colour. */
-.pt :is(.pz-hero, .pz-sec-hero) { background-color: color-mix(in srgb, var(--primary) 14%, #ffffff); }
-.pt .pz-cta { background-color: color-mix(in srgb, var(--primary) 12%, #ffffff); }
 
-/* The product's own monogram (sub-nav brand and hero card) takes the product colour;
-   other products' logos on the page (related, connections) keep their own. */
-.pt :is(.product-nav__brand, .pz-hero) span.product-card__logo { background: var(--primary) !important; color: var(--on-primary); }
-/* Product footer paints logo tiles white — keep monogram initials visible on it. */
+/* Midnight — navy stage with a blue radial glow (dark hero). */
+.look-midnight {
+  --primary: #0b6aa6; --primary-hover: #09588a; --primary-soft: #e8f4fc; --accent: #5fa32a; --accent-soft: #eef7e6; --highlight: #f5c842;
+  --hero-bg: radial-gradient(60% 70% at 50% 0%, rgb(30 156 229 / .35), transparent 70%), radial-gradient(40% 50% at 90% 90%, rgb(123 193 66 / .14), transparent 70%), #07121f;
+  --hero-heading: #ffffff; --hero-title: #ffffff; --hero-text: #b9cadb; --hero-chip-bg: rgb(255 255 255 / .08);
+  --band-dark: #07121f; --band-dark-2: #0e2034; --band-dark-glow: rgb(30 156 229 / .4);
+  --band-brand: #0f6fb0; --band-brand-2: #0a4f83; --band-soft: #eef6fd;
+}
+/* Aurora — navy with green + blue light (dark hero). */
+.look-aurora {
+  --primary: #0b6fae; --primary-hover: #095b8f; --primary-soft: #e6f2fb; --accent: #4f8a22; --accent-soft: #eef7e6; --highlight: #f5c842;
+  --hero-bg: radial-gradient(50% 60% at 15% 20%, rgb(123 193 66 / .28), transparent 70%), radial-gradient(55% 65% at 85% 30%, rgb(30 156 229 / .34), transparent 70%), linear-gradient(180deg, #081a2a, #0b2033);
+  --hero-heading: #ffffff; --hero-title: #c8f09e; --hero-text: #bdd0e0; --hero-chip-bg: rgb(255 255 255 / .08);
+  --band-dark: #0a1d2e; --band-dark-2: #12304a; --band-dark-glow: rgb(123 193 66 / .3);
+  --band-brand: #2f6e17; --band-brand-2: #24560f; --band-soft: #f1f8ea;
+  --art-1: #7bc142; --art-2: #1e9ce5;
+}
+/* Forest — deep Toyo green with lime headline (dark hero), pale-yellow soft bands. */
+.look-forest {
+  --primary: #3f7f1c; --primary-hover: #336817; --primary-soft: #eaf5e1; --accent: #0b6aa6; --accent-soft: #e8f4fc; --highlight: #f5c842;
+  --hero-bg: radial-gradient(60% 80% at 85% 20%, rgb(123 193 66 / .35), transparent 70%), linear-gradient(160deg, #10301d, #0b2416);
+  --hero-heading: #ffffff; --hero-title: #b6e57f; --hero-text: #cfe3cf; --hero-chip-bg: rgb(255 255 255 / .1);
+  --band-dark: #0b2416; --band-dark-2: #143a24; --band-dark-glow: rgb(123 193 66 / .32);
+  --band-brand: #2f6e17; --band-brand-2: #24560f; --band-soft: #fff8dc;
+  --art-1: #7bc142; --art-2: #f5c842; --art-3: #1e9ce5;
+}
+/* Ocean — saturated Toyo blue hero (dark hero). */
+.look-ocean {
+  --primary: #0b5f93; --primary-hover: #094d78; --primary-soft: #e6f3fb; --accent: #4f8a22; --accent-soft: #eef7e6; --highlight: #f5c842;
+  --hero-bg: radial-gradient(50% 70% at 90% 10%, rgb(245 200 66 / .25), transparent 70%), linear-gradient(150deg, #1381c6, #0a4f83 70%);
+  --hero-heading: #ffffff; --hero-title: #ffffff; --hero-text: #d9ecf8; --hero-chip-bg: rgb(255 255 255 / .14);
+  --band-dark: #0a2740; --band-dark-2: #103a5c; --band-dark-glow: rgb(30 156 229 / .4);
+  --band-brand: #0f7bbe; --band-brand-2: #0b5f93; --band-soft: #eef6fd;
+}
+/* Daylight — airy sky gradient with warm yellow light and cut-out shapes (light hero). */
+.look-daylight {
+  --primary: #0b6aa6; --primary-hover: #09588a; --primary-soft: #e8f4fc; --accent: #5fa32a; --accent-soft: #eef7e6; --highlight: #f5c842;
+  --hero-bg: radial-gradient(45% 60% at 95% 30%, rgb(245 200 66 / .32), transparent 70%), radial-gradient(50% 60% at 0% 100%, rgb(30 156 229 / .16), transparent 70%), linear-gradient(180deg, #f2f8fe, #fffdf6);
+  --hero-title: #0b1d2e;
+  --band-dark: #0f2235; --band-dark-2: #16304a;
+  --band-brand: #0f7bbe; --band-brand-2: #0b5f93; --band-soft: #fff9e6;
+}
+/* Cream — warm paper with a fine grid; navy type, yellow accents (light hero). */
+.look-cream {
+  --primary: #0f6fa8; --primary-hover: #0b5a8a; --primary-soft: #e8f3fa; --accent: #4f8a22; --accent-soft: #eef7e6; --highlight: #e2b11e;
+  --hero-bg: linear-gradient(rgb(15 34 53 / .045) 1px, transparent 1px) 0 0 / 32px 32px, linear-gradient(90deg, rgb(15 34 53 / .045) 1px, transparent 1px) 0 0 / 32px 32px, #fbf8f0;
+  --hero-title: #0f2235;
+  --pz-tint: #f7f4ec;
+  --band-dark: #0f2235; --band-dark-2: #1a3149;
+  --band-brand: #8a2f1b; --band-brand-2: #6e2414; --band-soft: #f7f1e1;
+  --art-1: #e2b11e; --art-2: #0f7bbe; --art-3: #7bc142;
+}
+/* Grid — crisp white with a faint grid and gradient photo frames (light hero). */
+.look-grid {
+  --primary: #0b6aa6; --primary-hover: #09588a; --primary-soft: #e8f4fc; --accent: #5fa32a; --accent-soft: #eef7e6; --highlight: #f5c842;
+  --hero-bg: linear-gradient(rgb(15 123 190 / .06) 1px, transparent 1px) 0 0 / 40px 40px, linear-gradient(90deg, rgb(15 123 190 / .06) 1px, transparent 1px) 0 0 / 40px 40px, #ffffff;
+  --hero-title: #0b1d2e;
+  --band-dark: #0b2a4a; --band-dark-2: #123b63; --band-dark-glow: rgb(30 156 229 / .45);
+  --band-brand: #0f7bbe; --band-brand-2: #0b5f93; --band-soft: #f1f7fc;
+}
+/* Sunrise — soft yellow-to-white with green accents (light hero). */
+.look-sunrise {
+  --primary: #3f7f1c; --primary-hover: #336817; --primary-soft: #eaf5e1; --accent: #0b6aa6; --accent-soft: #e8f4fc; --highlight: #f5c842;
+  --hero-bg: radial-gradient(60% 70% at 80% 0%, rgb(245 200 66 / .45), transparent 70%), radial-gradient(40% 50% at 0% 90%, rgb(123 193 66 / .22), transparent 70%), linear-gradient(180deg, #fff8df, #ffffff);
+  --hero-title: #0f2235;
+  --band-dark: #10301d; --band-dark-2: #183f27; --band-dark-glow: rgb(123 193 66 / .3);
+  --band-brand: #3f7f1c; --band-brand-2: #2f6214; --band-soft: #fff8df;
+  --art-1: #7bc142; --art-2: #f5c842; --art-3: #1e9ce5;
+}
+
+/* Void — near-black starfield, blue + yellow sparks (dark hero). */
+.look-void {
+  --primary: #0b6fe0; --primary-hover: #095bb8; --primary-soft: #e7f0fc; --accent: #4f8a22; --accent-soft: #eef7e6; --highlight: #f5c842;
+  --hero-bg: radial-gradient(1px 1px at 12% 22%, #fff8, transparent 60%), radial-gradient(1px 1px at 72% 14%, #fff6, transparent 60%), radial-gradient(1.5px 1.5px at 38% 68%, #fff7, transparent 60%), radial-gradient(1px 1px at 88% 58%, #fff5, transparent 60%), radial-gradient(1px 1px at 22% 84%, #fff5, transparent 60%), radial-gradient(1px 1px at 58% 38%, #fff4, transparent 60%), radial-gradient(60% 50% at 50% 100%, rgb(30 156 229 / .18), transparent 70%), #04070d;
+  --hero-heading: #ffffff; --hero-title: #ffffff; --hero-text: #aab8c8; --hero-chip-bg: rgb(255 255 255 / .06);
+  --band-dark: #04070d; --band-dark-2: #0a1220; --band-dark-glow: rgb(30 156 229 / .25);
+  --band-brand: #0b5fc4; --band-brand-2: #083f86; --band-soft: #f2f6fb;
+  --art-1: #1e9ce5; --art-2: #f5c842; --art-3: #7bc142;
+}
+/* Ink — charcoal navy with green signal (dark hero). */
+.look-ink {
+  --primary: #3f7f1c; --primary-hover: #336817; --primary-soft: #eaf5e1; --accent: #0b6aa6; --accent-soft: #e8f4fc; --highlight: #f5c842;
+  --hero-bg: radial-gradient(45% 60% at 80% 40%, rgb(123 193 66 / .18), transparent 70%), linear-gradient(180deg, #0c1622, #111d2b);
+  --hero-heading: #ffffff; --hero-title: #ffffff; --hero-text: #b3c2d1; --hero-chip-bg: rgb(255 255 255 / .07);
+  --band-dark: #0c1622; --band-dark-2: #15243a; --band-dark-glow: rgb(123 193 66 / .22);
+  --band-brand: #1559a8; --band-brand-2: #0e3f7a; --band-soft: #f1f6f9;
+  --art-1: #7bc142; --art-2: #1e9ce5;
+}
+/* Mint — warm off-white hero, deep green bands, mint cards (light hero). */
+.look-mint {
+  --primary: #2f6e17; --primary-hover: #24560f; --primary-soft: #e6f4dc; --accent: #0b6aa6; --accent-soft: #e8f4fc; --highlight: #f5c842;
+  --hero-bg: radial-gradient(40% 60% at 85% 70%, rgb(123 193 66 / .16), transparent 70%), #f8f6ef;
+  --hero-title: #0f2235;
+  --pz-tint: #f4f7ef;
+  --band-dark: #0f3320; --band-dark-2: #154229; --band-dark-glow: rgb(123 193 66 / .3);
+  --band-brand: #2f6e17; --band-brand-2: #24560f; --band-soft: #ecf7e2;
+  --art-1: #3f7f1c; --art-2: #1e9ce5; --art-3: #f5c842;
+}
+/* Paper — warm earth paper with muted horizon (light hero). */
+.look-paper {
+  --primary: #0b5f93; --primary-hover: #094d78; --primary-soft: #e6f3fb; --accent: #4f8a22; --accent-soft: #eef7e6; --highlight: #e2b11e;
+  --hero-bg: linear-gradient(180deg, #f6f1e7 0%, #efe8d8 100%);
+  --hero-title: #0f2235;
+  --pz-tint: #f6f2ea;
+  --band-dark: #2a3523; --band-dark-2: #36432c; --band-dark-glow: rgb(226 177 30 / .2);
+  --band-brand: #0b5f93; --band-brand-2: #094d78; --band-soft: #f3eee2;
+  --art-1: #0f7bbe; --art-2: #7bc142; --art-3: #e2b11e;
+}
+/* Ember — warm gold with deep navy panels (light hero). */
+.look-ember {
+  --primary: #8a5a00; --primary-hover: #6f4800; --primary-soft: #fdf1d6; --accent: #0b6aa6; --accent-soft: #e8f4fc; --highlight: #f5c842;
+  --hero-bg: radial-gradient(60% 70% at 50% 0%, rgb(245 200 66 / .4), transparent 70%), linear-gradient(180deg, #fff6df, #fffaf0);
+  --hero-title: #0f2235;
+  --pz-tint: #fbf6ea;
+  --band-dark: #1d1606; --band-dark-2: #2d220b; --band-dark-glow: rgb(245 200 66 / .28);
+  --band-brand: #8a5a00; --band-brand-2: #6a4400; --band-soft: #fff4d9;
+  --art-1: #e2b11e; --art-2: #0f7bbe; --art-3: #7bc142;
+}
+/* Pastel — soft sky / yellow / mint mesh, big blue type (light hero). */
+.look-pastel {
+  --primary: #0b6fae; --primary-hover: #095b8f; --primary-soft: #e6f2fb; --accent: #4f8a22; --accent-soft: #eef7e6; --highlight: #f5c842;
+  --hero-bg: radial-gradient(45% 55% at 0% 0%, rgb(30 156 229 / .22), transparent 70%), radial-gradient(40% 55% at 100% 20%, rgb(245 200 66 / .3), transparent 70%), radial-gradient(50% 60% at 60% 100%, rgb(123 193 66 / .2), transparent 70%), #fbfcfe;
+  --hero-title: #0b6fae;
+  --pz-tint: #fbf8f1;
+  --band-dark: #0f2235; --band-dark-2: #16304a;
+  --band-brand: #0b6fae; --band-brand-2: #0a4f83; --band-soft: #fff6e0;
+}
+/* Snow — clean white hero, deep navy bands with icon grid (light hero). */
+.look-snow {
+  --primary: #0f6fb8; --primary-hover: #0b5a96; --primary-soft: #e7f2fb; --accent: #4f8a22; --accent-soft: #eef7e6; --highlight: #f5c842;
+  --hero-bg: #ffffff;
+  --hero-title: #0b1d2e;
+  --band-dark: #0d1a2e; --band-dark-2: #13233c; --band-dark-glow: rgb(30 156 229 / .3);
+  --band-brand: #0f6fb8; --band-brand-2: #0b5a96; --band-soft: #f3f7fc;
+}
+/* Sky — pale blue-to-blush gradient, blue headline (light hero). */
+.look-sky {
+  --primary: #1557c0; --primary-hover: #11479e; --primary-soft: #e9f0fc; --accent: #4f8a22; --accent-soft: #eef7e6; --highlight: #f5c842;
+  --hero-bg: radial-gradient(50% 70% at 20% 30%, rgb(30 156 229 / .14), transparent 70%), radial-gradient(50% 70% at 85% 40%, rgb(245 200 66 / .18), transparent 70%), #f7f9fd;
+  --hero-title: #1557c0;
+  --band-dark: #070d18; --band-dark-2: #0d1626;
+  --band-brand: #1557c0; --band-brand-2: #0c3a8c; --band-soft: #f1f5fd;
+}
+
+/* Product monogram takes the product colour in its own nav/hero. */
+.pt :is(.product-nav__brand, .zs-hero) span.product-card__logo { background: var(--primary) !important; color: var(--on-primary); }
 .pt :is(.pz-foot__promo, .pz-foot__more) span.product-card__logo { color: var(--primary); font-weight: 700; display: grid; place-items: center; }
 :root[data-theme="dark"] .pt :is(.pz-foot__promo, .pz-foot__more) span.product-card__logo { color: #0a1a2a; }
 
-/* Dark theme: lighter tones of the same hues, dark text on top of them. */
+/* ---------------- Dark theme ----------------
+   Brighter primaries for contrast, layered navy surfaces, and each look keeps
+   its own hue in the hero and bands (green stays green, cream becomes warm ink). */
 :root[data-theme="dark"] .pt {
-  --bg: color-mix(in srgb, var(--primary) 7%, #07121d);
-  --pz-tint: color-mix(in srgb, var(--primary) 11%, #0c1b2a);
-  --fill: color-mix(in srgb, var(--primary) 14%, #14293e);
-  --border-soft: color-mix(in srgb, var(--primary) 16%, #15283b);
-  --border: color-mix(in srgb, var(--primary) 20%, #1d3550);
-  --island: color-mix(in srgb, var(--primary) 22%, #0b1f33);
-  --island-elevated: color-mix(in srgb, var(--primary) 26%, #13304a);
-  --header-bg: color-mix(in srgb, var(--primary) 8%, rgb(7 18 29 / 0.9));
+  --pz-tint: #0b1826;
+  --on-primary: #04121f;
+  --primary-soft: color-mix(in srgb, var(--primary) 16%, transparent);
+  --accent-soft: color-mix(in srgb, var(--accent) 16%, transparent);
+  --hero-heading: #ffffff; --hero-text: #b9cadb; --hero-chip-bg: rgb(255 255 255 / .08);
+  --band-soft: #0d1d2e;
 }
-:root[data-theme="dark"] .pt :is(.pz-hero, .pz-sec-hero) { background-color: color-mix(in srgb, var(--primary) 14%, #07121d); }
-:root[data-theme="dark"] .pt .pz-cta { background-color: color-mix(in srgb, var(--primary) 12%, #07121d); }
-:root[data-theme="dark"] .pt { --primary-soft: color-mix(in srgb, var(--primary) 16%, transparent); --accent-soft: color-mix(in srgb, var(--accent) 16%, transparent); --on-primary: #0a1a2a; }
-:root[data-theme="dark"] .pt-0 { --primary: #3aaef0; --primary-hover: #66c2f5; --accent: #8fd05a; }
-:root[data-theme="dark"] .pt-1 { --primary: #8fd05a; --primary-hover: #a8de7c; --accent: #3aaef0; }
-:root[data-theme="dark"] .pt-2 { --primary: #b5c4d2; --primary-hover: #cfe0ed; --accent: #3aaef0; }
-:root[data-theme="dark"] .pt-3 { --primary: #f5c842; --primary-hover: #f8d76e; --accent: #3aaef0; }
-:root[data-theme="dark"] .pt-4 { --primary: #6cc79a; --primary-hover: #8fd6b2; --accent: #3aaef0; }
-:root[data-theme="dark"] .pt-5 { --primary: #66c2f5; --primary-hover: #8fd3f8; --accent: #8fd05a; }
-:root[data-theme="dark"] .pt-6 { --primary: #b5c4d2; --primary-hover: #cfe0ed; --accent: #8fd05a; }
-:root[data-theme="dark"] .pt-7 { --primary: #a8de7c; --primary-hover: #c0e8a0; --accent: #f5c842; }
+:root[data-theme="dark"] :is(.look-midnight, .look-ocean, .look-daylight, .look-grid, .look-void, .look-paper, .look-pastel, .look-snow, .look-sky) { --primary: #3aaef0; --primary-hover: #66c2f5; --accent: #8fd05a; }
+:root[data-theme="dark"] :is(.look-aurora) { --primary: #5cbcf3; --primary-hover: #84cdf6; --accent: #8fd05a; }
+:root[data-theme="dark"] :is(.look-forest, .look-sunrise, .look-ink, .look-mint) { --primary: #8fd05a; --primary-hover: #a8de7c; --accent: #3aaef0; }
+:root[data-theme="dark"] .look-cream { --primary: #f5c842; --primary-hover: #f8d76e; --accent: #8fd05a; --pz-tint: #12141a; }
+:root[data-theme="dark"] .look-daylight {
+  --hero-bg: radial-gradient(45% 60% at 95% 30%, rgb(245 200 66 / .14), transparent 70%), radial-gradient(50% 60% at 0% 100%, rgb(30 156 229 / .2), transparent 70%), linear-gradient(180deg, #0a1a2b, #07121d);
+  --hero-title: #ffffff; --band-dark: #050d16;
+}
+:root[data-theme="dark"] .look-cream {
+  --hero-bg: linear-gradient(rgb(255 255 255 / .035) 1px, transparent 1px) 0 0 / 32px 32px, linear-gradient(90deg, rgb(255 255 255 / .035) 1px, transparent 1px) 0 0 / 32px 32px, #15140f;
+  --hero-title: #f8e7b0; --band-dark: #0c0b08; --band-dark-2: #1c1a14; --band-soft: #17150f;
+}
+:root[data-theme="dark"] .look-grid {
+  --hero-bg: linear-gradient(rgb(58 174 240 / .07) 1px, transparent 1px) 0 0 / 40px 40px, linear-gradient(90deg, rgb(58 174 240 / .07) 1px, transparent 1px) 0 0 / 40px 40px, #07121d;
+  --hero-title: #ffffff; --band-dark: #061a2e;
+}
+:root[data-theme="dark"] .look-sunrise {
+  --hero-bg: radial-gradient(60% 70% at 80% 0%, rgb(245 200 66 / .16), transparent 70%), radial-gradient(40% 50% at 0% 90%, rgb(123 193 66 / .16), transparent 70%), linear-gradient(180deg, #0f1a10, #08120c);
+  --hero-title: #f5df8f; --band-dark: #061009; --band-soft: #0f170f;
+}
+:root[data-theme="dark"] .look-midnight { --band-dark: #040b14; }
+:root[data-theme="dark"] .look-ocean { --hero-bg: radial-gradient(50% 70% at 90% 10%, rgb(245 200 66 / .14), transparent 70%), linear-gradient(150deg, #0c5f97, #062f52 70%); }
+
+/* Product sites (as on zoho.com product pages): the global header scrolls away and
+   only the slim product header stays pinned. Offsets inside .pt drop the global header. */
+body:has(.pt) .site-header { position: relative; }
+.pt { --header-h: 0px; --pnav-h: 68px; }
+
+/* Dark theme for the newer looks: each keeps its hue as a deep tone. */
+:root[data-theme="dark"] .look-ember { --primary: #f5c842; --primary-hover: #f8d76e; --accent: #3aaef0; --pz-tint: #121009;
+  --hero-bg: radial-gradient(60% 70% at 50% 0%, rgb(245 200 66 / .16), transparent 70%), linear-gradient(180deg, #17120a, #0d0b07); --hero-title: #f8dc85; --band-soft: #15110a; }
+:root[data-theme="dark"] .look-mint { --pz-tint: #0c1610;
+  --hero-bg: radial-gradient(40% 60% at 85% 70%, rgb(123 193 66 / .14), transparent 70%), #0b140f; --hero-title: #c8f09e; --band-soft: #0f1c14; }
+:root[data-theme="dark"] .look-paper { --pz-tint: #12110d;
+  --hero-bg: linear-gradient(180deg, #16140f, #0f0e0b); --hero-title: #f3e3bd; --band-soft: #15130e; --band-dark: #10150c; }
+:root[data-theme="dark"] .look-pastel {
+  --hero-bg: radial-gradient(45% 55% at 0% 0%, rgb(30 156 229 / .2), transparent 70%), radial-gradient(40% 55% at 100% 20%, rgb(245 200 66 / .1), transparent 70%), radial-gradient(50% 60% at 60% 100%, rgb(123 193 66 / .12), transparent 70%), #07121d; --hero-title: #66c2f5; }
+:root[data-theme="dark"] .look-snow { --hero-bg: #07121d; --hero-title: #ffffff; --band-dark: #040b14; }
+:root[data-theme="dark"] .look-sky {
+  --hero-bg: radial-gradient(50% 70% at 20% 30%, rgb(30 156 229 / .18), transparent 70%), radial-gradient(50% 70% at 85% 40%, rgb(245 200 66 / .07), transparent 70%), #07101c; --hero-title: #8cc8ff; }
+.pt .product-nav { top: 0; transition: box-shadow var(--dur-hover) ease; }

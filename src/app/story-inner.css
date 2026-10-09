@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Inner-page story layer — brings every template family onto the same visual
+   system as the product overviews: look-driven heroes, layered dark/brand
+   bands (no flat saturated slabs), glow CTAs with a curved edge.
+   Families: fz (feature), pz-sec (product section), ez (entity: solution,
+   industry, integration, resource), co (company), zc (catalog).
+   Loaded globally after the family stylesheets.
+   ========================================================================== */
+
+:root {
+  --st-dark: radial-gradient(55% 70% at 50% 0%, rgb(30 156 229 / .32), transparent 70%), radial-gradient(40% 50% at 95% 100%, rgb(123 193 66 / .12), transparent 70%), linear-gradient(180deg, #07121f, #0e2034);
+  --st-brand: radial-gradient(60% 80% at 100% 0%, rgb(255 255 255 / .14), transparent 60%), linear-gradient(135deg, #0f7bbe, #0a4f83);
+  --st-grid: linear-gradient(rgb(15 123 190 / .06) 1px, transparent 1px) 0 0 / 40px 40px, linear-gradient(90deg, rgb(15 123 190 / .06) 1px, transparent 1px) 0 0 / 40px 40px, radial-gradient(50% 70% at 90% 10%, rgb(245 200 66 / .18), transparent 70%), #ffffff;
+  --st-curve: clamp(28px, 6vw, 80px);
+}
+:root[data-theme="dark"] {
+  --st-dark: radial-gradient(55% 70% at 50% 0%, rgb(30 156 229 / .26), transparent 70%), linear-gradient(180deg, #040b14, #0a1827);
+  --st-brand: radial-gradient(60% 80% at 100% 0%, rgb(255 255 255 / .08), transparent 60%), linear-gradient(135deg, #0b5f93, #073a62);
+  --st-grid: linear-gradient(rgb(58 174 240 / .07) 1px, transparent 1px) 0 0 / 40px 40px, linear-gradient(90deg, rgb(58 174 240 / .07) 1px, transparent 1px) 0 0 / 40px 40px, radial-gradient(50% 70% at 90% 10%, rgb(245 200 66 / .08), transparent 70%), #07121d;
+}
+/* Inside a product site, bands take the product's look. */
+.pt {
+  --st-dark: radial-gradient(55% 70% at 50% 0%, var(--band-dark-glow), transparent 70%), linear-gradient(180deg, var(--band-dark), var(--band-dark-2));
+  --st-brand: radial-gradient(60% 80% at 100% 0%, rgb(255 255 255 / .14), transparent 60%), linear-gradient(135deg, var(--band-brand), var(--band-brand-2));
+}
+
+html {
+/* ---- Feature pages: dark glow stage hero (white type stays legible) ---- */
+.fz-hero { background: var(--st-dark); --on-primary: #ffffff; }
+.fz-hero h1 { color: #ffffff; }
+.fz-hero :is(.fz-hero__lead, p) { color: #c7d6e4; }
+.fz-hero .fz-hero__eyebrow { color: var(--highlight); }
+.fz-hero .fz-crumbs, .fz-hero .fz-crumbs a { color: #a9bccd; }
+.fz-hero :is(.btn--primary, .zbtn, .fz-btn):not(.fz-btn--link) { background: var(--primary); color: #ffffff; }
+&[data-theme="dark"] .fz-hero :is(.btn--primary, .zbtn, .fz-btn):not(.fz-btn--link) { color: #04121f; }
+.fz-sec--band { background: var(--st-brand); color: #ffffff; --on-primary: #ffffff; }
+.fz-sec--band .fz-link { color: #0f2235; }
+
+/* ---- Product section pages + product-scoped entity pages: product look hero ---- */
+.pt :is(.pz-sec-hero, .ez-hero, .zf-hero, .fz-vhero) {
+  background: var(--hero-bg);
+  --heading: var(--hero-heading);
+  --text-secondary: var(--hero-text);
+  --text-muted: var(--hero-text);
+}
+.pt :is(.pz-sec-hero, .ez-hero, .zf-hero, .fz-vhero) h1 { color: var(--hero-title); }
+.pt :is(.pz-sec-hero, .ez-hero, .zf-hero, .fz-vhero) :is(.breadcrumbs, .breadcrumbs a, .breadcrumbs li) { color: var(--hero-text); }
+& .look-midnight :is(.pz-sec-hero, .ez-hero, .zf-hero, .fz-vhero), .look-forest :is(.pz-sec-hero, .ez-hero, .zf-hero, .fz-vhero), .look-ocean :is(.pz-sec-hero, .ez-hero, .zf-hero, .fz-vhero), .look-aurora :is(.pz-sec-hero, .ez-hero, .zf-hero, .fz-vhero), .look-void :is(.pz-sec-hero, .ez-hero, .zf-hero, .fz-vhero), .look-ink :is(.pz-sec-hero, .ez-hero, .zf-hero, .fz-vhero) { color: var(--hero-text); }
+& :is(.look-midnight, .look-forest, .look-ocean, .look-aurora, .look-void, .look-ink) :is(.pz-sec-hero, .ez-hero, .zf-hero, .fz-vhero) :is(.pz-btn--line, .ez-btn--outline) { border-color: #ffffff; color: #ffffff; }
+
+/* ---- Global entity pages (solutions / industries / integrations / resources) ---- */
+.ez-hero { background: var(--st-grid); }
+.ez-band { background: var(--st-dark); color: #dbe6f0; }
+
+/* ---- Company + catalog heroes: navy glow stage instead of a flat blue slab ---- */
+.co-hero, .zc-hero { background: var(--st-dark) !important; --on-primary: #ffffff; }
+.co-hero :is(h1, .co-hero__title) { color: #ffffff; }
+.co-hero :is(.co-hero__lead, .co-hero__label) { color: #c7d6e4; }
+.zc-hero h1 { color: #ffffff; }
+
+/* ---- CTAs: glow band with a curved top edge ---- */
+.ez-cta, .pz-cta, .fz-cta {
+  position: relative; overflow: hidden;
+  background: var(--st-dark) !important; color: #dbe6f0;
+  border-top-left-radius: var(--st-curve); border-top-right-radius: var(--st-curve);
+}
+.ez-cta::after, .pz-cta::after, .fz-cta::after { content: ""; position: absolute; left: 50%; bottom: -45%; width: 80%; height: 80%; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, rgb(123 193 66 / .2), transparent); pointer-events: none; }
+& :is(.ez-cta, .pz-cta, .fz-cta) > * { position: relative; z-index: 1; }
+& :is(.pz-cta, .fz-cta) :is(h2, .pz-cta__title) { color: #ffffff; }
+& :is(.pz-cta, .fz-cta) :is(p, .pz-cta__lead) { color: #b6c7d8; }
+.pz-cta .pz-btn--line { border-color: #ffffff; color: #ffffff; }
+
+.pt :is(.pz-sec-hero, .ez-hero, .zf-hero, .fz-vhero) :is(p, .pz-sec-hero__lead) { color: var(--hero-text); }
+.pt :is(.pz-sec-hero, .ez-hero, .zf-hero, .fz-vhero) :is(h1 strong, h1 span, h1 em) { color: var(--hero-title); }
+/* ---- Product footer: layered product-dark instead of flat grey ---- */
+.pfoot.pz-foot { background: var(--st-dark); }
+
+/* ---- Homepage rhythm: dark / brand bands; cards inside keep light surfaces ---- */
+.h-sec--dark, .h-sec--brand, .z-cta {
+  --heading: #ffffff; --text: #dbe6f0; --text-secondary: #b6c7d8; --text-muted: #a3b6c8;
+  color: var(--text);
+}
+.h-sec--dark, .z-cta { background: var(--st-dark) !important; }
+.h-sec--brand { background: var(--st-brand) !important; }
+:is(.h-sec--dark, .h-sec--brand) :is(.card, .h-card, .h-need, .h-ind, .zcard, article, li > a) {
+  --heading: #0b1d2e; --text: #0f2235; --text-secondary: #3a516a; --text-muted: #5d7187;
+}
+&[data-theme="dark"] :is(.h-sec--dark, .h-sec--brand) :is(.card, .h-card, .h-need, .h-ind, .zcard, article, li > a) {
+  --heading: #f3f8fc; --text: #dfe8f1; --text-secondary: #b4c4d4; --text-muted: #8da1b5;
+}
+.st-curve { border-top-left-radius: var(--st-curve); border-top-right-radius: var(--st-curve); }
+.z-cta { position: relative; overflow: hidden; border-top-left-radius: var(--st-curve); border-top-right-radius: var(--st-curve); padding-block: var(--sec-y-lg); }
+.z-cta h2 { color: #ffffff; }
+
+/* Features hub: floating feature pills read as glass on dark looks. */
+& :is(.look-midnight, .look-forest, .look-ocean, .look-aurora, .look-void, .look-ink) .zf-hero__pills li { background: rgb(255 255 255 / .08); border: 1px solid rgb(255 255 255 / .14); color: var(--hero-text); box-shadow: none; }
+&[data-theme="dark"] .pt .zf-hero__pills li { background: rgb(255 255 255 / .06); color: var(--hero-text); }
+
+/* ---- Alternate band tint stays neutral (no yellow/olive mixes) ---- */
+.pt .pz-band--tint, .pt .fz-sec--tint { background: var(--pz-tint); }
+}

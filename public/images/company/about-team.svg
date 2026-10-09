@@ -32,7 +32,7 @@
             <line x1="16" y1="64" x2="214" y2="64" stroke="#1E3766" stroke-width="1"/>
             <text x="16" y="88" fill="#E2E8F0" font-size="11" font-family="system-ui">● Cardizo (AI Card Scan)</text>
             <text x="16" y="112" fill="#E2E8F0" font-size="11" font-family="system-ui">● ODA7 (Sales Dialer)</text>
-            <text x="16" y="136" fill="#E2E8F0" font-size="11" font-family="system-ui">● GetBenj (Marketing Plan)</text>
+            <text x="16" y="136" fill="#E2E8F0" font-size="11" font-family="system-ui">● Benj (Marketing Plan)</text>
             <text x="16" y="160" fill="#E2E8F0" font-size="11" font-family="system-ui">● Sibu (Video DAM)</text>
           </g>
 
@@ -87,7 +87,7 @@
             <text x="64" y="48" fill="#6EE7B7" font-size="11" font-family="system-ui">3 Active Tools</text>
             <line x1="16" y1="64" x2="216" y2="64" stroke="#1E3766" stroke-width="1"/>
             <text x="16" y="88" fill="#E2E8F0" font-size="11" font-family="system-ui">● Sizoru (TAM/SAM/SOM)</text>
-            <text x="16" y="112" fill="#E2E8F0" font-size="11" font-family="system-ui">● GetBenj (Strategy PDF)</text>
+            <text x="16" y="112" fill="#E2E8F0" font-size="11" font-family="system-ui">● Benj (Strategy PDF)</text>
             <text x="16" y="136" fill="#E2E8F0" font-size="11" font-family="system-ui">● ZUZU (Activity Reports)</text>
             <text x="16" y="160" fill="#38BDF8" font-size="11" font-family="system-ui">Tier-1 Verified Sources</text>
           </g>
