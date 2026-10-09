@@ -28,7 +28,7 @@ function LinkList({ links }: { links: FooterLink[] }) {
 }
 
 const legal: FooterLink[] = [
-  { label: "Contact Us", href: routes.contact() },
+  { label: "Contact Us", href: routes.contactForm() },
   { label: "Privacy Policy", href: routes.legal("privacy") },
   { label: "Terms of Service", href: routes.legal("terms") },
   { label: "Cookie Policy", href: routes.legal("cookies") },
@@ -87,7 +87,7 @@ export function SiteFooter() {
                 { label: "Media", href: routes.media() },
                 { label: "Press Kit", href: routes.pressKit() },
                 { label: "Blog", href: routes.blog() },
-                { label: "Contact Us", href: routes.contact() },
+                { label: "Contact Us", href: routes.contactForm() },
               ]}
             />
           </FooterGroup>
@@ -110,7 +110,7 @@ export function SiteFooter() {
             <Link href={routes.support()} className="sfoot__more">
               Support <Icon name="arrow-right" />
             </Link>
-            <Link href={routes.contact()} className="sfoot__more">
+            <Link href={routes.contactForm({ type: "sales" })} className="sfoot__more">
               Talk to Us <Icon name="arrow-right" />
             </Link>
           </div>
@@ -125,7 +125,7 @@ export function SiteFooter() {
                   <SocialIcon name={s.label} />
                 </a>
               ) : (
-                <span title={`${s.label} — coming soon`}>
+                <span title={`${s.label}: coming soon`}>
                   <SocialIcon name={s.label} />
                   <span className="sr-only">{s.label} (coming soon)</span>
                 </span>

@@ -180,6 +180,8 @@
 .zs-benefits--columns .zs-benefit { border-radius: 0; border-left: 1px solid var(--border); padding-block: 8px; }
 .zs-benefits--columns .zs-benefit:hover { transform: none; }
 .zs-benefit__btn { justify-self: start; display: inline-flex; gap: 8px; margin-top: 8px; padding: 10px 16px; border-radius: 6px; background: #0b1d2e; color: #ffffff; font-size: 14px; font-weight: 600; }
+.zs-benefit:has(> .zs-benefit__btn) { display: flex; flex-direction: column; }
+.zs-benefit > .zs-benefit__btn { align-self: flex-start; margin-top: auto; }
 :root[data-theme="dark"] .zs-benefit__btn { background: #f3f8fc; color: #0b1d2e; }
 
 /* ---------- Spotlight variants ---------- */
@@ -265,7 +267,7 @@
 .zs-band--plain + .zs-edge-angle { --edge-from: var(--bg); }
 .zs-band--soft + .zs-edge-angle { --edge-from: var(--band-soft); }
 .zs-band--tint + .zs-edge-angle { --edge-from: var(--pz-tint); }
-:is(.zs-band--plain, .zs-band--soft, .zs-band--tint) + .zs-edge-angle { padding-top: calc(clamp(64px, 8vw, 112px) + clamp(60px, 7vw, 110px)); }
+:is(.zs-band--plain, .zs-band--soft, .zs-band--tint) + .zs-edge-angle { padding-top: calc(var(--sec-y-lg) + clamp(60px, 7vw, 110px)); }
 :is(.zs-band--plain, .zs-band--soft, .zs-band--tint) + .zs-edge-angle::before {
   content: ""; position: absolute; left: 0; right: 0; top: 0; z-index: 1; height: clamp(60px, 7vw, 110px); pointer-events: none;
   background: var(--edge-from);
@@ -283,9 +285,10 @@
 /* ---------- CTA variants ---------- */
 .zs-cta--band { background: linear-gradient(135deg, var(--band-brand), var(--band-brand-2)) !important; }
 .zs-cta--band::after { display: none; }
-.zs-cta--panel { background: var(--bg) !important; padding-inline: clamp(12px, 3vw, 40px); }
+.zs-cta--panel { background: var(--bg) !important; padding-inline: clamp(12px, 3vw, 40px); padding-block: var(--sec-y); }
 .zs-cta--panel::after { display: none; }
-.zs-cta__panel { padding: clamp(48px, 7vw, 96px) clamp(20px, 4vw, 48px); border-radius: 28px; background: radial-gradient(60% 80% at 50% 0%, var(--band-dark-glow), transparent 70%), linear-gradient(160deg, var(--band-brand), var(--band-dark)); }
+.zs-band + .zs-cta--panel { padding-top: 0; }
+.zs-cta__panel { padding: clamp(40px, 5vw, 72px) clamp(20px, 4vw, 48px); border-radius: 28px; background: radial-gradient(60% 80% at 50% 0%, var(--band-dark-glow), transparent 70%), linear-gradient(160deg, var(--band-brand), var(--band-dark)); }
 .zs-cta--spin { background: var(--hero-bg) !important; --heading: var(--hero-title); }
 .zs-cta--spin .zs-cta__title { font-size: clamp(2.8rem, 1.4rem + 5vw, 6rem); color: var(--hero-title); }
 .zs-cta--spin .zs-cta__lead { color: var(--text-secondary); }

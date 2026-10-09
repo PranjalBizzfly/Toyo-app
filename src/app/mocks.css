@@ -58,7 +58,9 @@
 @media (max-width: 700px) { .dm__body { grid-template-columns: 1fr; } .dm__nav { display: none; } .dm__panes { grid-template-columns: 1fr; } .dm__pane--cal { display: none; } }
 
 /* ---- Phone mock ---- */
-.pm { position: relative; width: 240px; padding: 34px 14px 16px; border-radius: 36px; background: var(--surface); color: var(--heading); font-size: 12px;
+/* Own palette (like .dm), so a dark band's inherited --heading/--text tokens can't turn the screen text white. */
+.pm { --pm-bg: #ffffff; --pm-ink: #0f2235; --pm-mute: #6b7f94; --pm-line: #e6edf3;
+  position: relative; width: 240px; padding: 34px 14px 16px; border-radius: 36px; background: var(--pm-bg); color: var(--pm-ink); font-size: 12px;
   box-shadow: 0 0 0 9px #0f1720, 0 50px 90px -40px rgb(4 18 31 / .6); display: grid; gap: 10px; text-align: left; }
 .pm__notch { position: absolute; top: 9px; left: 50%; width: 76px; height: 18px; margin-left: -38px; border-radius: 12px; background: #0f1720; }
 .pm__time { position: absolute; top: 10px; left: 22px; font-weight: 700; font-size: 11px; }
@@ -70,3 +72,9 @@
 .pm__stats b { font-size: 18px; color: var(--primary); } .pm__stats small { font-size: 10px; color: var(--text-muted); }
 .pm__item { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 12px; border: 1px solid var(--border); }
 .pm__item > span:last-child { display: grid; min-width: 0; } .pm__item b { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+:root[data-theme="dark"] .pm { --pm-bg: #0e1d2e; --pm-ink: #e8f0f7; --pm-mute: #8da1b5; --pm-line: #1d3249; }
+html body .pm :is(b, p, span, small) { color: inherit; }
+html body .pm__hero b, html body .pm__item b { color: var(--pm-ink) !important; }
+html body .pm__hero small, html body .pm__item small, html body .pm__stats small { color: var(--pm-mute) !important; }
+html body .pm__stats b { color: var(--primary) !important; }
+.pm__stats span, .pm__item { border-color: var(--pm-line); }

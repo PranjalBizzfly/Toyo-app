@@ -23,7 +23,8 @@
 
 /* photo — coloured image band on top (HRMagix) */
 [data-cards="photo"] :is(.fz-tile, .pz-card) { overflow: hidden; border: 1px solid var(--border); }
-[data-cards="photo"] .fz-tile::before { content: ""; display: block; height: 64px; margin: -24px -24px 16px; background: radial-gradient(40% 60% at 70% 30%, color-mix(in srgb, var(--art-3, var(--primary)) 70%, transparent), transparent 70%), linear-gradient(135deg, color-mix(in srgb, var(--art-1, var(--primary)) 40%, var(--surface)), color-mix(in srgb, var(--art-2, var(--primary)) 30%, var(--surface))); }
+[data-cards="photo"] .fz-tile { position: relative; padding-top: 80px; }
+[data-cards="photo"] .fz-tile::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 64px; background: radial-gradient(40% 60% at 70% 30%, color-mix(in srgb, var(--art-3, var(--primary)) 70%, transparent), transparent 70%), linear-gradient(135deg, color-mix(in srgb, var(--art-1, var(--primary)) 40%, var(--surface)), color-mix(in srgb, var(--art-2, var(--primary)) 30%, var(--surface))); }
 
 /* mint — tinted green surfaces (Fleetras) */
 [data-cards="mint"] :is(.fz-tile, .pz-vcard, .pz-card, .fz-alt-tiles li) { background: color-mix(in srgb, var(--art-2, #3fa34d) 16%, var(--surface)); border: 1px solid color-mix(in srgb, var(--art-2, #3fa34d) 30%, transparent); }

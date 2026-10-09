@@ -40,7 +40,7 @@ const titleFor = (section: ItemSection, name: string, product: string, competito
       ? `${product} for ${name}`
       : section === "integrations"
         ? `${product} + ${name} integration`
-        : `${name} — ${product}`;
+        : `${name} | ${product}`;
 
 export async function generateMetadata({ params }: Props) {
   const r = await load(params);

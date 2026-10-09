@@ -81,6 +81,9 @@ a:hover .fz-mono { transform: scale(1.08) rotate(-3deg); }
 
 /* Zoho 5-up tile cards: icon, name, learn more */
 .fz-tiles { display: grid; gap: 24px; margin-top: 48px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+/* Short lists (1-4 tiles) would leave empty auto-fill tracks on the right; size the tracks to the items and centre them under the centred head. */
+.fz-tiles:not(:has(> :nth-child(5))) { grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 290px)); justify-content: center; }
+@media (max-width: 599px) { .fz-tiles:not(:has(> :nth-child(5))) { grid-template-columns: 1fr; } }
 .fz-tile {
   display: flex; flex-direction: column; gap: 14px; padding: 24px; border-radius: 8px; background: var(--surface);
   border: 1px solid var(--border-soft); box-shadow: 0 2px 6px rgb(0 0 0 / .08); text-align: left; color: var(--heading);
@@ -164,7 +167,7 @@ a.fz-tile:hover { transform: translateY(-4px); box-shadow: 0 14px 34px -14px rgb
 .fz-faq { max-width: 880px; margin: 40px auto 0; text-align: left; }
 
 /* Detail facts strip (audience, integrations, source, see also) */
-.fz-facts { display: grid; gap: 20px; align-items: start; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.fz-facts { display: grid; gap: 20px; align-items: stretch; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .fz-fact { padding: 24px; border-radius: 8px; background: var(--surface); border: 1px solid var(--border-soft); }
 .fz-fact h2 { margin-bottom: 12px; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); }
 .fz-fact a { color: var(--primary); }

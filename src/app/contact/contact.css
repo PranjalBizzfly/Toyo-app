@@ -1,0 +1,55 @@
+/* Contact form. Colours come from globals.css tokens only, so light and dark both work. */
+.cf-section { scroll-margin-top: 80px; }
+.cf-title { font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 500; color: var(--heading); margin: 0; }
+.cf-lead { color: var(--text-secondary); font-size: 1.0625rem; line-height: 1.65; margin: 10px 0 28px; }
+.cf { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: clamp(18px, 4vw, 36px); }
+.cf-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; }
+.cf-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; margin: 0; padding: 0; border: 0; }
+.cf-field--full { grid-column: 1 / -1; }
+.cf-field > label, .cf-chips legend { font-weight: 600; font-size: .9375rem; color: var(--heading); padding: 0; }
+.cf-req { color: var(--error); }
+.cf-opt { font-weight: 400; color: var(--text-muted); }
+.cf input:not([type="checkbox"]), .cf select, .cf textarea {
+  width: 100%; min-height: 44px; padding: 10px 12px; font: inherit; font-size: 1rem;
+  color: var(--text); background: var(--surface); border: 1px solid var(--border-strong); border-radius: 8px;
+}
+.cf textarea { resize: vertical; min-height: 140px; }
+.cf input:focus-visible, .cf select:focus-visible, .cf textarea:focus-visible, .cf-chip input:focus-visible + span, .cf-check input:focus-visible {
+  outline: 2px solid var(--focus); outline-offset: 2px;
+}
+.cf [aria-invalid="true"] { border-color: var(--error); }
+.cf-phone { display: flex; gap: 8px; }
+.cf-phone select { flex: 0 0 96px; width: 96px; }
+.cf-hint { font-size: .875rem; color: var(--text-muted); margin: 0; }
+.cf-error { font-size: .875rem; color: var(--error); margin: 0; font-weight: 500; }
+.cf-chips__list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.cf-chip { position: relative; cursor: pointer; }
+.cf-chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.cf-chip span {
+  display: inline-flex; align-items: center; min-height: 36px; padding: 6px 14px; border-radius: 999px;
+  border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); font-size: .9375rem;
+}
+.cf-chip:hover span { border-color: var(--border-hover); }
+.cf-chip input:checked + span { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+.cf-chip input:checked + span::before { content: "\2713"; margin-right: 6px; }
+.cf-check { display: flex; gap: 10px; align-items: flex-start; font-size: .9375rem; color: var(--text); line-height: 1.5; cursor: pointer; }
+.cf-check input { width: 20px; height: 20px; margin: 2px 0 0; flex: none; accent-color: var(--primary); }
+.cf-check a { color: var(--primary); text-decoration: underline; }
+.cf-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.cf-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.cf-status { padding: 14px 16px; border-radius: 8px; margin-bottom: 20px; font-weight: 500; outline: none; }
+.cf-status--success { background: var(--success-soft); color: var(--success); border: 1px solid var(--success); }
+.cf-status--error { background: var(--error-soft); color: var(--error); border: 1px solid var(--error); }
+.cf > .cf-hint { margin-top: 20px; }
+.cf-submit { margin-top: 16px; display: inline-flex; align-items: center; gap: 10px; border: 0; cursor: pointer; font: inherit; }
+.cf-submit:disabled { opacity: .7; cursor: progress; }
+.cf-spinner { width: 16px; height: 16px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: cf-spin .8s linear infinite; }
+@keyframes cf-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .cf-spinner { animation-duration: 2.4s; } }
+@media (max-width: 640px) { .cf-grid { grid-template-columns: 1fr; } }
+
+/* Centred hero: lead and rule centred under the title. */
+html main .co-hero--center :is(.co-wrap, .co-hero__title, .co-hero__lead) { text-align: center; }
+html main .co-hero--center .co-hero__lead { margin-inline: auto !important; max-width: 62ch; }
+html main .co-hero--center .co-hero__rule { margin-inline: auto; }
+html main .co-hero--center .breadcrumbs ol { justify-content: center; }

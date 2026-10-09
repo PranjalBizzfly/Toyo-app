@@ -20,7 +20,7 @@ export default function SolutionsPage() {
       crumbs={[{ name: "Solutions", href: routes.solutions() }]}
       eyebrow="Solutions"
       title="Start from the problem, not the product"
-      lead="Each solution describes a common business problem, the approach that addresses it, and the ToyoApps products that cover each part. The products are independent — adopt one or several."
+      lead="Each solution describes a common business problem, the approach that addresses it, and the ToyoApps products that cover each part. The products are independent, so adopt one or several."
       items={items()}
       listTitle="Solutions by business need"
       listLead="Pick the problem closest to yours to see the approach, what each product contributes, and answers to common questions."

@@ -98,7 +98,7 @@ export default function ComparePage() {
       <CtaBand
         title="Find the right software for your business."
         primary={{ label: "Explore products", href: routes.products() }}
-        secondary={{ label: "Contact sales", href: routes.contact() }}
+        secondary={{ label: "Contact sales", href: routes.contactForm({ type: "sales" }) }}
       />
     </>
   );

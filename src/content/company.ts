@@ -35,7 +35,7 @@ export const jobs: Job[] = [
     title: "Software Developer Coordinator",
     team: "Product & engineering",
     overview:
-      "A Software Developer Coordinator keeps development work organised across several products — tracking priorities, coordinating developers and making sure what ships matches what each product needs.",
+      "A Software Developer Coordinator keeps development work organised across several products, tracking priorities, coordinating developers and making sure what ships matches what each product needs.",
     focus: [
       "Coordinating development work across more than one product",
       "Keeping priorities, progress and hand-offs visible to the team",
@@ -59,7 +59,7 @@ export const jobs: Job[] = [
     title: "Business Development Executive",
     team: "Business development",
     overview:
-      "A Business Development Executive builds new relationships for ToyoApps — with businesses that buy software and with software makers who may want to publish their products on the marketplace.",
+      "A Business Development Executive builds new relationships for ToyoApps, with businesses that buy software and with software makers who may want to publish their products on the marketplace.",
     focus: [
       "Identifying and reaching out to potential partners and customers",
       "Introducing software makers to publishing on ToyoApps",

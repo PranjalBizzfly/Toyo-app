@@ -134,7 +134,6 @@ export default async function ProductSectionPage({ params }: Props) {
               { name: sectionLabels[section], href: routes.productSection(product.slug, section) },
             ]}
           />
-          <p className="pz-sec-hero__eyebrow">{product.name}</p>
           <h1>{c.title}</h1>
           <p className="pz-sec-hero__lead">{section === "pricing" ? product.pricing?.note ?? c.description : c.description}</p>
           {pricing?.trial && (

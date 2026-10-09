@@ -120,7 +120,7 @@ export const categories: Category[] = [
     name: "Finance & Compliance",
     tagline: "Every client's statutory deadlines, filings and documents in one system",
     description:
-      "Software for accounting practices that carry statutory obligations for many clients. TrackySuite, built for Indian CA, CS and tax firms, places each client's GST, income-tax, TDS, ROC/MCA and labour deadlines automatically and runs filings through a prepare–review–file pipeline.",
+      "Software for accounting practices that carry statutory obligations for many clients. TrackySuite, built for Indian CA, CS and tax firms, places each client's GST, income-tax, TDS, ROC/MCA and labour deadlines automatically and runs filings through a prepare, review and file pipeline.",
     icon: "wallet",
     order: 40,
     status: "live",

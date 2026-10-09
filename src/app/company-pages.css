@@ -58,6 +58,9 @@
 
 /* Logo tiles */
 .cp-logos { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 24px; }
+/* Few logos: no empty trailing tracks, keep the row centred. */
+.cp-logos:not(:has(> :nth-child(5))) { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 340px)); justify-content: center; }
+@media (max-width: 599px) { .cp-logos:not(:has(> :nth-child(5))) { grid-template-columns: 1fr; } }
 .cp-logo { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); }
 .cp-logo__stage { display: grid; place-items: center; padding: 32px; min-height: 200px; }
 .cp-logo__stage--light { background: #ffffff; }
@@ -66,6 +69,9 @@
 .cp-logo__body { padding: 18px 20px; border-top: 1px solid var(--border); }
 .cp-logo__body h3 { font-size: 1rem; font-weight: 600; color: var(--heading); margin: 0 0 6px; }
 .cp-logo__body p { font-size: .9375rem; color: var(--text-secondary); margin: 0 0 12px; line-height: 1.6; }
+.cp-logo { display: flex; flex-direction: column; }
+.cp-logo__body { flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
+.cp-logo__body .co-link { margin-top: auto; }
 
 /* Boilerplate quote */
 .cp-quote { border-left: 4px solid var(--primary); background: var(--surface); padding: 24px 28px; border-radius: 0 10px 10px 0; font-size: 1.125rem; line-height: 1.75; color: var(--text); margin: 0 0 24px; }

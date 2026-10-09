@@ -10,12 +10,12 @@ import "@/app/company-zoho.css";
 
 export const metadata = buildMetadata({
   title: "About ToyoApps",
-  description: "ToyoApps is building one home for business software — where businesses discover and buy SaaS, and makers publish and sell it.",
+  description: "ToyoApps is building one home for business software, where businesses discover and buy SaaS, and makers publish and sell it.",
   path: routes.company(),
 });
 
 const pillars = [
-  { title: "Discover", text: "Products are grouped by business function — sales and marketing, HR, operations and IT, finance and compliance, insights and research — so you start from the job, not the vendor." },
+  { title: "Discover", text: "Products are grouped by business function (sales and marketing, HR, operations and IT, finance and compliance, insights and research), so you start from the job, not the vendor." },
   { title: "Buy", text: "Each product has its own pages for features, pricing and support, so you can compare plans and buy the software you choose through one account." },
   { title: "Publish", text: "Software makers publish their products, reach customers and get paid without building their own storefront or billing." },
 ];
@@ -41,7 +41,7 @@ export default function CompanyPage() {
 
       <ImageSlot
         src="/images/company/about-team.webp"
-        alt="ToyoApps platform architecture, verified catalog registry and SaaS ecosystem infrastructure"
+        alt="How ToyoApps connects its catalog and SaaS products"
         width={1440}
         height={720}
         className="co-img co-img--full"
@@ -71,7 +71,7 @@ export default function CompanyPage() {
           <h2>Talk to the ToyoApps team</h2>
           <p>Whether you&apos;re comparing products for your team or want to list and sell your own SaaS on ToyoApps, tell us what you need and we&apos;ll point you to the right place.</p>
           <div className="co-btns">
-            <Link className="co-btn" href={routes.contact()}>Contact us</Link>
+            <Link className="co-btn" href={routes.contactForm()}>Contact us</Link>
             <Link className="co-btn co-btn--ghost" href={routes.products()}>Explore products</Link>
           </div>
         </div>

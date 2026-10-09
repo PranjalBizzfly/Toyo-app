@@ -14,20 +14,20 @@ html body .srch-card__type { filter: none; background: color-mix(in srgb, var(--
 :root[data-theme="dark"] body .badge--brand { color: #a9dcf8; background: rgb(108 196 245 / .14); }
 
 /* Breadcrumb separators inherit the breadcrumb colour */
-html body .breadcrumbs small, html body .is-in > small { color: inherit !important; opacity: .8; }
+html body .breadcrumbs small, html body .is-in > small { color: inherit !important; }
 :root[data-theme="dark"] body .pt a:not([class]) { color: #9fd6f7; }
 
 /* Feature-page blue hero / bands: eyebrow, kicker, "All" link */
 html body .fz-hero :is(.fz-hero__eyebrow, .fz-kicker, .fz-more) { color: #ffffff !important; }
-html body :is(.fz-sec--band, .fz-split) .fz-kicker { color: #ffffff !important; }
+html body .fz-sec--band .fz-kicker { color: #ffffff !important; }
 
 /* Section-page hero eyebrow: light heroes use the primary, dark heroes the yellow */
-html body .pz-sec-hero__eyebrow { color: var(--primary) !important; }
-html body :is(.ref-glass, .ref-starfield, .ref-prompt) .pz-sec-hero__eyebrow { color: #ffe08a !important; }
+/* Hero eyebrows follow the hero text colour, so they read on light and dark heroes alike */
+html body :is(.pz-sec-hero__eyebrow, .fz-hero__eyebrow, .fz-hero__ctas .fz-more) { color: inherit !important; opacity: .92; }
 
 /* Home small items */
 :root[data-theme="dark"] body .hh__highlight-text small { color: #a9bccd !important; }
-html body .h-eco__count { color: #3f7f1c !important; }
+html body .h-eco__count { color: #2f6e17 !important; }
 :root[data-theme="dark"] body .h-eco__count { color: #d7e4f1 !important; }
 
 /* HRMagix use-case band, TrackySuite pricing band */
@@ -45,3 +45,20 @@ html body .rk-screen__line { color: #2b3a4d; }
 :root[data-theme="dark"] body .rk-screen__line { color: #d6e2ef; }
 :root[data-theme="dark"] body .rk-tabs__tab { color: #e2ebf5 !important; }
 :root[data-theme="dark"] body .rk-tabs--pill .rk-tabs__tab[aria-selected="true"] { color: #ffffff !important; }
+
+/* Breadcrumbs on coloured heroes, and price "/month" suffixes */
+html body .breadcrumbs a { color: inherit; opacity: .9; }
+html body :is(.is-recommended > small, .pz-price small, .zs-plan small) { color: var(--text-secondary) !important; }
+:root[data-theme="dark"] body :is(.is-in > small, .is-recommended > small) { color: #b4c4d4 !important; }
+
+/* Numbered benefit badges and step numbers */
+html body .zs-benefit__num { color: color-mix(in srgb, var(--primary) 70%, #000); }
+:root[data-theme="dark"] body .zs-benefit__num, html body :is(.zs-band--dark, .zs-band--black) .zs-benefit__num { color: #8fcdf3; }
+
+/* Phone mock-ups: a light screen with dark text */
+html body .zs-phone { background: #ffffff; }
+html body .zs-phone :is(.zs-phone__row, .zs-phone__title) { color: #0f2235; }
+
+/* Brand bands: kicker and pill text */
+html body :is(.zs-band--brand, .zs-band--dark) .zs-kicker { color: #ffe08a !important; }
+html body .zs-pillband__track li { color: var(--heading); }

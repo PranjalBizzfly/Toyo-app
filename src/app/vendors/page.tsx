@@ -24,21 +24,21 @@ const who = [
 ];
 
 const how = [
-  { title: "You own the product", text: "As a vendor you build and run your software. ToyoApps hosts the listing — pricing, demo, screenshots and docs — so there's no storefront to build." },
-  { title: "ToyoApps runs the marketplace", text: "Your product appears in the marketplace and search, where businesses browse a curated catalog by business function." },
+  { title: "You own the product", text: "As a vendor you build and run your software. ToyoApps hosts the listing (pricing, demo, screenshots and docs), so there's no storefront to build." },
+  { title: "ToyoApps runs the marketplace", text: "Your product appears in the marketplace and search, where businesses browse the catalog by business function." },
   { title: "Billing is handled", text: "Subscriptions and one-time sales are billed through ToyoApps, with payouts to you." },
 ];
 
 const requirements = [
   "A working SaaS product that businesses can buy and use",
-  "Pricing for your plans — subscription, one-time, or both",
+  "Pricing for your plans: subscription, one-time, or both",
   "A demo link and screenshots of the product",
   "Product documentation buyers can read before and after purchase",
   "A clear description of what the product does and who it's for",
 ];
 
 const faqs = [
-  { question: "What's the difference between Vendors and Publish?", answer: "The Publish page explains the product side — how to list and sell your SaaS on ToyoApps. This page covers the vendor relationship: who vendors are, what each side does and how onboarding works." },
+  { question: "What's the difference between Vendors and Publish?", answer: "The Publish page explains the product side: how to list and sell your SaaS on ToyoApps. This page covers the vendor relationship: who vendors are, what each side does and how onboarding works." },
   { question: "Do I need to build a storefront or payment system?", answer: "No. Your listing hosts pricing, demo, screenshots and docs, and subscriptions and one-time sales are billed through ToyoApps." },
   { question: "Where will my product appear?", answer: "In the ToyoApps marketplace and search, where buyers browse software organised by business function." },
   { question: "Where can I find commercial terms?", answer: "Commercial terms aren't published on this page. Contact the ToyoApps team to discuss your product and the details of listing it." },
@@ -58,7 +58,7 @@ export default function VendorsPage() {
             ToyoApps is the marketplace where founders and teams launch SaaS products, reach customers and earn from every sale. Here&apos;s how the vendor relationship works.
           </p>
           <div className="co-btns co-btns--hero">
-            <Link className="co-btn co-btn--invert" href={`${routes.contact()}?topic=vendor`}>Make a vendor enquiry</Link>
+            <Link className="co-btn co-btn--invert" href={routes.contactForm({ type: "vendor" })}>Make a vendor enquiry</Link>
           </div>
           <ImageSlot src="/images/company/vendors-hero.webp" alt="A vendor's SaaS product listed in the ToyoApps marketplace" width={1200} height={420} priority className="co-hero__art" />
         </div>
@@ -88,7 +88,7 @@ export default function VendorsPage() {
             <p className="co-eyebrow">How it works</p>
             <h2 className="co-h2">What each side does</h2>
             <p>
-              Buyers find products by business function — today that means {tree.map((t) => t.category.name).join(", ")}.
+              Buyers find products by business function. Today that means {tree.map((t) => t.category.name).join(", ")}.
             </p>
           </div>
           <ul className="cp-grid">
@@ -139,13 +139,13 @@ export default function VendorsPage() {
           <div>
             <p className="co-eyebrow">Publishing a product?</p>
             <h2>Looking for how to list your SaaS?</h2>
-            <p>The Publish page walks through listing and selling a product on ToyoApps — what a listing includes and how sales and payouts work.</p>
+            <p>The Publish page walks through listing and selling a product on ToyoApps: what a listing includes and how sales and payouts work.</p>
             <Link className="co-btn" href={routes.publish()}>Publish your software <span aria-hidden="true">›</span></Link>
           </div>
           <div className="cp-card">
             <h3>Vendors vs. Publish</h3>
-            <p><strong>Vendors</strong> (this page): the relationship — who vendors are, who does what, onboarding and what to prepare.</p>
-            <p><strong>Publish</strong>: the product listing — how to put your SaaS in front of buyers and sell it.</p>
+            <p><strong>Vendors</strong> (this page): the relationship, covering who vendors are, who does what, onboarding and what to prepare.</p>
+            <p><strong>Publish</strong>: the product listing, covering how to put your SaaS in front of buyers and sell it.</p>
           </div>
         </div>
       </section>
@@ -165,7 +165,7 @@ export default function VendorsPage() {
           <h2>Talk to us about becoming a vendor</h2>
           <p>Tell us what your product does, who it&apos;s for and how you price it.</p>
           <div className="co-btns">
-            <Link className="co-btn" href={`${routes.contact()}?topic=vendor`}>Make a vendor enquiry</Link>
+            <Link className="co-btn" href={routes.contactForm({ type: "vendor" })}>Make a vendor enquiry</Link>
             <Link className="co-btn co-btn--ghost" href={routes.publish()}>Publish your software</Link>
           </div>
         </div>

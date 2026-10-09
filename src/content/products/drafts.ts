@@ -14,8 +14,8 @@ export const fleetras: Product = {
   shortDescription: "Fleet dispatch and trip-cost tracking for city fleet operations, with costs worked out per kilometre.",
   longDescription:
     "Fleetras covers a ride from booking to cost: the office dispatches a driver and vehicle, the driver runs the trip from a phone, and the trip is costed with a cost per kilometre the moment it is finished.\n\n" +
-    "Drivers record kilometres, fuel, Salik, parking, fines and other expenses with receipt photos. Managers handle expense claims, manual kilometres, edits and cancellations in one approvals queue, and every correction stays on the trip record with the time and the person who made it.\n\n" +
-    "GPS trackers in the vehicles feed live position, mileage and alerts into each trip through the TrackSolid Pro platform, so trips can be checked against what the vehicle actually did. Reports break cost down by vehicle, driver and passenger and export to Excel or a print-ready report.\n\n" +
+    "Drivers record kilometres, fuel, Salik (Dubai road tolls), parking, fines and other expenses with receipt photos. Managers handle expense claims, manual kilometres, edits and cancellations in one approvals queue, and every correction stays on the trip record with the time and the person who made it.\n\n" +
+    "GPS trackers in the vehicles send live position, mileage and alerts into each trip through the TrackSolid Pro platform, so trips can be checked against what the vehicle actually did. Reports break cost down by vehicle, driver and passenger and export to Excel or a print-ready report.\n\n" +
     "It runs in a desktop browser for the office and installs to the home screen on iPhone and Android for drivers. There is no public sign-up: an administrator creates every account.",
   tagline: "Every trip. Every dirham. Fully accounted.",
   category: "operations-it",
@@ -41,8 +41,8 @@ export const fleetras: Product = {
   ],
   benefits: [
     { title: "A cost on every trip", description: "Each trip gets an itemised cost and a cost per kilometre as soon as it is finished. Month-end figures come from the system instead of spreadsheets passed between the office, managers and drivers." },
-    { title: "Formulas the accounts team already uses", description: "Fleetras applies the same formulas as a trip-wise vehicle cost workbook. Fuel recorded at the pump takes priority over the mileage estimate, and implausible kilometres are flagged for review." },
-    { title: "Trips checked against the vehicle", description: "GPS tracker data is attached to the trip record, and the tracker fills in distance when no odometer reading is given. Playback shows the route, stops and idle time for any day." },
+    { title: "Formulas the accounts team already uses", description: "Fleetras applies the same formulas as a trip-wise vehicle cost workbook. Fuel recorded at the pump takes priority over the mileage estimate, and kilometre figures that look wrong are flagged for review." },
+    { title: "Trips checked against the vehicle", description: "GPS tracker data is attached to the trip record, and the tracker fills in distance when no odometer reading is given. A replay shows the route, stops and idle time for any day." },
     { title: "A clear trail for financial records", description: "Every step from assigned to completed is recorded with a timestamp and the person who did it. Every change goes to an audit log, and every sign-in is recorded with device and address." },
     { title: "Each role sees only its own work", description: "Four roles, from Super Admin to Driver, are enforced on every action. Drivers are kept out of office data and see only their own trips, odometer readings and passengers." },
   ],
@@ -54,18 +54,18 @@ export const fleetras: Product = {
   ],
   security: [
     { title: "Role-based permissions", description: "Permissions are checked on the server for every action, not just when a page loads. Trying to reach data or functions beyond your role is a breach of the terms." },
-    { title: "Driver isolation", description: "Drivers cannot view office data. They see only their own trips, odometer readings and passengers." },
+    { title: "Drivers kept separate", description: "Drivers cannot view office data. They see only their own trips, odometer readings and passengers." },
     { title: "Audit and sign-in logs", description: "Every change is written to an audit log so records can be traced. Every sign-in attempt is recorded with date, time, IP address, device and browser." },
-    { title: "Session expiry", description: "The only cookie is a strictly necessary, encrypted, HTTP-only session cookie. Sessions expire after eight hours or at sign-out, and stale sessions are cleared automatically." },
+    { title: "Session expiry", description: "The only cookie is an essential, encrypted sign-in cookie that web pages' scripts cannot read (HTTP-only). Sessions expire after eight hours or at sign-out, and old sessions are cleared automatically." },
     { title: "Password rules", description: "Passwords need upper case, lower case and a number, and resets go by email link. Passwords are hashed with a one-way algorithm and never stored in readable form." },
-    { title: "Private receipts", description: "Uploaded receipts and photos are stored outside the public web root. They are served only to signed-in users." },
+    { title: "Private receipts", description: "Uploaded receipts and photos are stored away from the public part of the website. They are shown only to signed-in users." },
     { title: "No data sales or ad tracking", description: "Fleetras states it does not sell personal data or share it with advertisers, and it uses no advertising or third-party analytics cookies." },
   ],
   faqs: [
     { question: "Who is Fleetras built for?", answer: "Fleet and transport offices running city fleets, described on the site as Dubai city operations. The office, transport managers and drivers all work in the same system, each with their own role." },
     { question: "How do I get an account?", answer: "There is no public sign-up. An administrator at your company creates each account, and you sign in with your work email. Companies that want to start using Fleetras are asked to get in touch to set up their company." },
     { question: "Does it need a separate app for drivers?", answer: "No store download is needed. Fleetras works in the browser on desktop and installs to the home screen on iPhone and Android, so drivers use their own phone." },
-    { question: "How is the cost of a trip calculated?", answer: "Fuel cost is total km divided by the vehicle's mileage, multiplied by the fuel rate; fuel recorded at the pump overrides that estimate, and electric vehicles carry no fuel cost. Fuel, Salik, parking, fines and other expenses make the vehicle total, allocations are added to give the total cost, and dividing by total km gives the cost per km." },
+    { question: "How is the cost of a trip calculated?", answer: "Fuel cost is total km divided by the vehicle's mileage, multiplied by the fuel rate; fuel recorded at the pump overrides that estimate, and electric vehicles carry no fuel cost. Fuel, Salik, parking, fines and other expenses make the vehicle total, a share of fixed vehicle costs (allocations) is added to give the total cost, and dividing by total km gives the cost per km." },
     { question: "Is the driver's phone tracked all the time?", answer: "No. Personal devices are not tracked in the background. The driver app shares its GPS position only at the moments a driver taps start, pause, resume or end; continuous tracking comes from GPS units in company vehicles while they are in use." },
     { question: "What happens when a driver's figures are wrong?", answer: "The driver or office raises a request for an expense, manual kilometres, an edit or a cancellation, and it waits in one approvals queue. A manager approves, requests a correction or rejects it, the change is recorded on the trip, and the driver is told." },
     { question: "Can we bring in existing trips or take data out?", answer: "Yes. Trips can be imported from Excel, and reports can be filtered and exported to Excel or opened as a print-ready report." },
@@ -80,8 +80,8 @@ export const fleetras: Product = {
         "Fleetras is one system for the office, the manager and the driver, covering everything between the booking and the invoice. Each trip moves through assign, drive, submit and finish, and every step is recorded with a timestamp and the person who did it.",
       ],
     },
-    { slug: "costing", name: "Costing", description: "The per-trip cost engine: fuel from mileage and pump rate, itemised expenses, vehicle allocations and a cost per kilometre." },
-    { slug: "fleet", name: "Fleet and tracking", description: "The registry of vehicles, drivers and passengers, live GPS from vehicle trackers, and the alerts they raise." },
+    { slug: "costing", name: "Costing", description: "How each trip is costed: fuel from mileage and pump rate, itemised expenses, a share of fixed vehicle costs and a cost per kilometre." },
+    { slug: "fleet", name: "Fleet and tracking", description: "The records of vehicles, drivers and passengers, live GPS from vehicle trackers, and the alerts they send." },
     { slug: "admin", name: "Reporting and administration", description: "Monthly reports and Excel exports, plus the four roles that decide what each person can see and do." },
   ],
   features: [
@@ -110,7 +110,7 @@ export const fleetras: Product = {
       ],
       benefits: [
         "Dispatchers see whether each assignment has been accepted without chasing drivers.",
-        "The trip history answers who did what and when without reconstructing it later.",
+        "The trip history shows who did what and when, without piecing it together later.",
       ],
       audience: ["Transport managers", "Dispatchers"],
       faqs: [
@@ -201,7 +201,7 @@ export const fleetras: Product = {
       category: "costing",
       body: [
         "Fleetras applies the same formulas as a trip-wise vehicle cost workbook the moment the driver finishes a trip. Fuel recorded at the pump takes priority over the estimate, and electric vehicles carry no fuel cost.",
-        "Vehicle allocations for maintenance, insurance, registration and depreciation can be added, each company has a base currency, and implausible kilometres are flagged automatically for review.",
+        "A share of each vehicle's maintenance, insurance, registration and depreciation costs (allocations) can be added, each company has a base currency, and kilometre figures that look wrong are flagged automatically for review.",
       ],
       problem: "Working out what each trip really cost usually means rebuilding a workbook by hand at month end from fuel slips, toll records and parking receipts.",
       howItWorks: [
@@ -216,7 +216,7 @@ export const fleetras: Product = {
         "Electric vehicles carry no fuel cost in the calculation.",
         "Vehicle allocations for maintenance, insurance, registration and depreciation can be added to the total.",
         "Each company works in its own base currency.",
-        "Implausible kilometres are flagged automatically for review.",
+        "Kilometre figures that look wrong are flagged automatically for review.",
       ],
       benefits: [
         "The accounts team gets the same numbers its workbook would produce, without the manual work.",
@@ -235,10 +235,10 @@ export const fleetras: Product = {
     {
       slug: "live-vehicle-tracking",
       name: "Live vehicle tracking",
-      summary: "GPS trackers feed position, mileage and alerts into each trip through the TrackSolid Pro platform.",
+      summary: "GPS trackers send position, mileage and alerts into each trip through the TrackSolid Pro platform.",
       category: "fleet",
       body: [
-        "GPS trackers in each vehicle feed positions, mileage and alerts into the trip record through the TrackSolid Pro platform, so every trip can be checked against what the vehicle actually did.",
+        "GPS trackers in each vehicle send positions, mileage and alerts into the trip record through the TrackSolid Pro platform, so every trip can be checked against what the vehicle actually did.",
         "The odometer reading at the end of a trip sets the distance, and the tracker fills it in when no reading is given.",
       ],
       problem: "Without tracker data, the distance on a trip is whatever was written down, and there is no way to check it against the vehicle's actual route.",
@@ -252,8 +252,8 @@ export const fleetras: Product = {
         "A live map shows each vehicle's position, speed, heading and ignition state, refreshed from its GPS unit.",
         "Distance is filled in from the tracker when the driver gives no odometer reading.",
         "Trip playback shows route history for any day with start and end points, stops and idle time.",
-        "Overspeed, harsh braking, SOS and offline alerts land in the notification feed.",
-        "Geofence entry and exit alerts land in the same feed.",
+        "Speeding, harsh braking, SOS and offline alerts appear in the notification feed.",
+        "Alerts when a vehicle enters or leaves a marked area (geofence) appear in the same feed.",
       ],
       benefits: [
         "Submitted distances can be checked against what the vehicle actually did.",
@@ -261,7 +261,7 @@ export const fleetras: Product = {
       ],
       audience: ["Transport managers", "Fleet managers"],
       faqs: [
-        { question: "Which tracking platform does Fleetras use?", answer: "Vehicle GPS data comes through the TrackSolid Pro platform, a third-party telematics provider that processes device data on Fleetras' instructions." },
+        { question: "Which tracking platform does Fleetras use?", answer: "Vehicle GPS data comes through the TrackSolid Pro platform, an outside vehicle-tracking provider that handles device data on Fleetras' instructions." },
         { question: "Is tracking always accurate?", answer: "Not guaranteed. Tracking depends on devices, mobile networks and satellite coverage, so positions may not be continuous or complete at every moment." },
       ],
       relatedFeatures: ["dispatch-and-live-trips", "cost-per-kilometre", "notifications-and-alerts"],
@@ -275,7 +275,7 @@ export const fleetras: Product = {
       summary: "Vehicles, drivers and passengers with insurance, registration, licence and service expiries.",
       category: "fleet",
       body: [
-        "The registry holds vehicles, drivers and passengers, including insurance, registration, licence and service expiry dates.",
+        "The fleet registry holds vehicles, drivers and passengers, including insurance, registration, licence and service expiry dates.",
         "Retired vehicles and inactive drivers keep their history. Deleting a record is permanent, and Fleetras shows what will be removed with it before you confirm.",
       ],
       problem: "Vehicle documents, driver licences and passenger details tend to live in separate files, so expiry dates are easy to miss.",
@@ -283,7 +283,7 @@ export const fleetras: Product = {
         "Add vehicles, drivers and passengers to the registry.",
         "Record insurance, registration, licence and service expiry dates on each record.",
         "Retire vehicles or mark drivers inactive while keeping their trip history.",
-        "Before a permanent delete, review the dependent records that would be removed with it.",
+        "Before a permanent delete, review the linked records that would be removed with it.",
       ],
       capabilities: [
         "Vehicles, drivers and passengers are each kept as their own records.",
@@ -330,14 +330,14 @@ export const fleetras: Product = {
     {
       slug: "roles-and-permissions",
       name: "Four roles",
-      summary: "Super Admin, Admin, Transport Manager and Driver — each sees only what their job needs.",
+      summary: "Super Admin, Admin, Transport Manager and Driver: each sees only what their job needs.",
       category: "admin",
       body: [
         "Fleetras has four roles, and each person sees what their job needs and nothing more. Permissions are enforced on every action.",
         "Administrators create every account and can deactivate one at any time.",
       ],
       capabilities: [
-        "Super Admin: runs the platform — companies, integrations, email and platform logs — and never sees fleet data",
+        "Super Admin: runs the platform (companies, integrations, email and platform logs) and never sees fleet data",
         "Admin: runs the company profile, users, integrations, costs and every log",
         "Transport Manager: dispatches, tracks vehicles, decides approval requests and manages drivers and guests",
         "Driver: sees only their own trips, odometer readings and passengers",
@@ -362,13 +362,13 @@ export const fleetras: Product = {
       howItWorks: [
         "A trip is assigned, an approval is decided or a figure is corrected.",
         "The affected person is notified in the app and by email.",
-        "Vehicle GPS units raise driving and geofence alerts into the same feed.",
+        "Vehicle GPS units send driving and geofence (marked-area) alerts into the same feed.",
       ],
       capabilities: [
         "Assignment notices to drivers on the spot",
         "Approval and correction notices, in the app and by email",
-        "Overspeed, harsh braking, SOS and offline alerts",
-        "Geofence entry and exit alerts",
+        "Speeding, harsh braking, SOS and offline alerts",
+        "Alerts when a vehicle enters or leaves a geofence (a marked area)",
       ],
       audience: ["Drivers", "Transport managers"],
       relatedFeatures: ["dispatch-and-live-trips", "finished-by-the-driver", "live-vehicle-tracking"],
@@ -382,7 +382,7 @@ export const fleetras: Product = {
       name: "Clean trip costs at month end",
       summary: "Replace spreadsheets passed around at month end with trips that are costed, reviewed and traceable as they happen.",
       problem:
-        "Fleetras is built for city fleets that need clean numbers at month end, without spreadsheets passed around between the office, managers and drivers — and it treats trip costs as financial records that need a clear trail.",
+        "Fleetras is built for city fleets that need clean numbers at month end, without spreadsheets passed around between the office, managers and drivers, and it treats trip costs as financial records that need a clear trail.",
       body: [
         "Instead of collecting fuel slips and toll records after the fact, each trip is costed when the driver finishes it, and any later correction goes through a manager and stays on the record.",
       ],
@@ -405,17 +405,17 @@ export const fleetras: Product = {
     {
       slug: "tracksolid-pro",
       name: "TrackSolid Pro GPS tracking",
-      summary: "Vehicle GPS trackers feed position, mileage and alerts into Fleetras trips through the TrackSolid Pro platform.",
-      connects: "Fleetras connects the GPS trackers installed in company vehicles to its trip records through the TrackSolid Pro telematics platform.",
+      summary: "Vehicle GPS trackers send position, mileage and alerts into Fleetras trips through the TrackSolid Pro platform.",
+      connects: "Fleetras connects the GPS trackers installed in company vehicles to its trip records through the TrackSolid Pro vehicle-tracking platform.",
       body: [
-        "The tracker data lets every trip be checked against what the vehicle actually did. The telematics provider processes device data on Fleetras' instructions and under its own security commitments.",
+        "The tracker data lets every trip be checked against what the vehicle actually did. The tracking provider handles device data on Fleetras' instructions and under its own security commitments.",
       ],
       workflow: [
         "GPS units in company vehicles report position, speed, heading, ignition state, mileage and alerts",
         "TrackSolid Pro passes the data to Fleetras, where it is attached to the trip record",
         "Distance is filled from the tracker when the driver gives no odometer reading",
         "Route history can be played back for any day, with stops and idle time",
-        "Overspeed, harsh braking, SOS, offline and geofence alerts appear in the notification feed",
+        "Speeding, harsh braking, SOS, offline and geofence (marked-area) alerts appear in the notification feed",
       ],
       faqs: [
         { question: "Who must tell drivers about tracking?", answer: "Your company is responsible for informing drivers that vehicles are tracked and for using the data only for operational, safety and cost-control purposes." },
@@ -460,7 +460,7 @@ export const fleetras: Product = {
       slug: "vehicle-tracking-and-privacy",
       name: "Vehicle tracking and driver privacy",
       summary: "What vehicle trackers and the driver app record, when location is captured, and who is responsible for telling drivers about it.",
-      body: ["Tracking covers company vehicles while in use. Data comes from GPS units through a third-party telematics provider and is treated as part of the trip record."],
+      body: ["Tracking covers company vehicles while in use. Data comes from GPS units through an outside vehicle-tracking provider and is treated as part of the trip record."],
       keyPoints: [
         "Vehicle units report position, speed, heading, ignition, mileage and alerts",
         "Phones share location only when a driver taps start, pause, resume or end",
@@ -475,10 +475,10 @@ export const fleetras: Product = {
       slug: "data-retention-and-rights",
       name: "Data retention and your rights",
       summary: "How long trip and account records are kept, what deleting a record removes, and how to make a data request under UAE law.",
-      body: ["Trip, expense and cost records are financial records, normally kept at least five years after the financial year they relate to. Your company is usually the controller of your data."],
+      body: ["Trip, expense and cost records are financial records, normally kept at least five years after the financial year they relate to. Your company is usually the one responsible for your data (the data controller)."],
       keyPoints: [
         "Deleting a vehicle or driver also deletes its trips, and a warning is shown first",
-        "Access, correction, deletion, objection and portability rights apply under UAE Federal Decree-Law No. 45 of 2021",
+        "Rights to access, correct, delete, object to and take your data elsewhere apply under UAE Federal Decree-Law No. 45 of 2021",
         "Raise requests with your company administrator first",
         "Data is mainly stored and processed in or from the UAE",
         "No advertising or third-party analytics cookies; data is not sold",
@@ -497,11 +497,11 @@ export const meetingmind: Product = {
   id: "meetingmind",
   slug: "meetingmind",
   name: "MeetingMind",
-  shortDescription: "AI meeting analysis — summaries, action items and decisions, with an assistant you can ask about past meetings.",
+  shortDescription: "AI meeting analysis: summaries, action items and decisions, with an assistant you can ask about past meetings.",
   longDescription:
     "MeetingMind is an AI notetaker for teams that run on meetings. It sends a bot to your Google Meet calls, transcribes them, writes a summary with the decisions made, and assigns action items with owners and due dates.\n\n" +
-    "Transcripts are speaker-labelled, timestamped and kept in the language the meeting was held in, and they can be searched, exported and shared. A grounded assistant answers questions across every past meeting and cites the meeting each answer came from.\n\n" +
-    "Owners, managers and members share one workspace whose view adapts to each role. On the Premium plan, four domain modules — AI Project Manager, Client Intelligence, Sales Intelligence and Recruitment Analyzer — turn recurring meetings into role-specific insight.",
+    "Transcripts show who said what and when, stay in the language the meeting was held in, and can be searched, exported and shared. An assistant answers questions using only your past meetings and names the meeting each answer came from.\n\n" +
+    "Owners, managers and members share one workspace, and each person's view changes with their role. On the Premium plan, four specialist modules (AI Project Manager, Client Intelligence, Sales Intelligence and Recruitment Analyzer) turn recurring meetings into insights for specific jobs.",
   tagline: "Your meetings, turned into decisions and done tasks.",
   category: "insights-research",
   secondaryCategories: ["hr-people"],
@@ -526,28 +526,28 @@ export const meetingmind: Product = {
   ],
   benefits: [
     { title: "Nothing said out loud gets lost", description: "Every captured meeting gets a full transcript and a summary with the key decisions. What was agreed is written down without anyone taking notes by hand." },
-    { title: "Action items that reach the right person", description: "Tasks are extracted with an owner and a due date and land in each teammate's list. Nobody has to chase follow-ups after the call." },
+    { title: "Action items that reach the right person", description: "Tasks are picked out with an owner and a due date and added to each teammate's list. Nobody has to chase follow-ups after the call." },
     { title: "Answers from past meetings, with a source", description: "The assistant answers questions across every past meeting and cites where the answer came from, so a claim can be checked against the original meeting." },
     { title: "No installs for the team", description: "The bot joins a Google Meet from a pasted link, so participants do not need to install anything for a meeting to be captured." },
   ],
   useCases: [
     { title: "Recurring project meetings", description: "On Premium, AI Project Manager turns recurring project meetings into live status, risks and blockers without anyone updating a tracker." },
-    { title: "Client account history", description: "On Premium, Client Intelligence keeps a running history of client conversations, with commitments, sentiment and open threads in one place." },
-    { title: "Sales calls", description: "On Premium, Sales Intelligence pulls deal signals, objections and next steps from sales calls." },
-    { title: "Hiring conversations", description: "On Premium, Recruitment Analyzer produces structured interview reports and candidate comparisons from hiring conversations." },
+    { title: "Client account history", description: "On Premium, Client Intelligence keeps a running history of client conversations, with promises made, the client's mood and open issues in one place." },
+    { title: "Sales calls", description: "On Premium, Sales Intelligence picks out buying signals, objections and next steps from sales calls." },
+    { title: "Hiring conversations", description: "On Premium, Recruitment Analyzer produces organised interview reports and candidate comparisons from hiring conversations." },
   ],
   faqs: [
     { question: "Which meeting platforms does MeetingMind work with?", answer: "The site states it works with Google Meet: you paste a Google Meet link and the bot joins. No other conferencing platform is named." },
     { question: "Does everyone in the meeting need to install something?", answer: "No. Capture is done by a bot that joins the call, so the rest of the team installs nothing. The site also lists a browser extension for capturing from any tab." },
-    { question: "What do I get after a meeting?", answer: "A speaker-labelled, timestamped transcript, a summary with the key decisions, and action items with owners and due dates, all shown on your dashboard." },
-    { question: "How does the assistant answer questions?", answer: "It searches across every past meeting in the workspace and cites the meeting its answer came from. The plans describe it as a RAG assistant." },
+    { question: "What do I get after a meeting?", answer: "A transcript showing who spoke and when, a summary with the key decisions, and action items with owners and due dates, all shown on your dashboard." },
+    { question: "How does the assistant answer questions?", answer: "It searches across every past meeting in the workspace and cites the meeting its answer came from. The plans describe it as a RAG assistant, meaning it looks up your own meeting records before answering." },
     { question: "Are transcripts available in other languages?", answer: "Transcripts are produced in the meeting's own language. Multi-language support is listed as a Pro plan feature." },
-    { question: "What are the Premium modules?", answer: "AI Project Manager, Client Intelligence, Sales Intelligence and Recruitment Analyzer. They apply the meeting analysis to specific kinds of recurring meetings and are included on the Premium plan." },
+    { question: "What are the Premium modules?", answer: "AI Project Manager, Client Intelligence, Sales Intelligence and Recruitment Analyzer. They use the meeting analysis for specific kinds of recurring meetings and are included on the Premium plan." },
     { question: "Is there a free option?", answer: "The site lists a Free plan for individuals with a limited number of meeting analyses a month, and says no credit card is required to start. Exact plan prices are set by the MeetingMind operator, so check the site for current terms." },
   ],
   featureCategories: [
     { slug: "features", name: "Features", description: "The core notetaker: the meeting bot, transcripts, AI summaries, assigned action items and an assistant that answers across past meetings." },
-    { slug: "premium", name: "Premium domain intelligence", description: "AI teammates for recurring meetings, on the Premium plan: project status, client history, sales signals and interview reports." },
+    { slug: "premium", name: "Premium specialist modules", description: "AI helpers for recurring meetings, on the Premium plan: project status, client history, sales signals and interview reports." },
   ],
   features: [
     {
@@ -556,7 +556,7 @@ export const meetingmind: Product = {
       summary: "A bot joins any Google Meet you send it to and captures the audio, so the meeting can be transcribed and analysed.",
       category: "features",
       body: [
-        "MeetingMind captures meetings by sending a bot to the call. You paste a Google Meet link, the bot joins, and it records the audio so the meeting can be transcribed and analysed — with nothing for the rest of the team to install.",
+        "MeetingMind captures meetings by sending a bot to the call. You paste a Google Meet link, the bot joins, and it records the audio so the meeting can be transcribed and analysed, with nothing for the rest of the team to install.",
       ],
       problem: "Someone in every meeting usually ends up taking notes instead of taking part, and what they miss is lost.",
       howItWorks: [
@@ -582,17 +582,17 @@ export const meetingmind: Product = {
     {
       slug: "meeting-summaries",
       name: "AI summaries and decisions",
-      summary: "Every analysed meeting becomes a clean summary with the key decisions surfaced automatically and shown on your dashboard.",
+      summary: "Every analysed meeting becomes a clear summary, with the key decisions picked out automatically and shown on your dashboard.",
       category: "features",
       body: [
-        "After each captured meeting, MeetingMind writes a clean summary and pulls out the key decisions automatically, so what was agreed out loud is written down.",
+        "After each captured meeting, MeetingMind writes a clear summary and picks out the key decisions automatically, so what was agreed out loud is written down.",
         "Summaries, action items and decisions are included on every plan; the Pro plan adds multi-language support and follow-ups.",
       ],
       problem: "Decisions made in a meeting are easy to forget or remember differently when nobody writes them down.",
       howItWorks: [
         "The bot captures the meeting and a transcript is produced.",
         "MeetingMind writes a summary of the meeting.",
-        "Key decisions are surfaced alongside the summary.",
+        "Key decisions are listed alongside the summary.",
         "The summary, decisions and action items appear on your dashboard.",
       ],
       capabilities: [
@@ -609,19 +609,19 @@ export const meetingmind: Product = {
     {
       slug: "projects-tasks",
       name: "Assigned action items",
-      summary: "Tasks agreed in a meeting are extracted with owners and due dates and flow into each teammate's task list.",
+      summary: "Tasks agreed in a meeting are picked out with owners and due dates and added to each teammate's task list.",
       category: "features",
       body: [
-        "MeetingMind extracts the tasks agreed in a meeting, gives each one an owner and a due date, and sends it to that teammate's task list — so nobody has to chase action items after the call.",
+        "MeetingMind picks out the tasks agreed in a meeting, gives each one an owner and a due date, and sends it to that teammate's task list, so nobody has to chase action items after the call.",
       ],
       problem: "Action items agreed on a call often have no clear owner or deadline, so they slip until someone chases them.",
       howItWorks: [
         "The meeting is captured and analysed.",
-        "Tasks agreed in the conversation are extracted.",
+        "Tasks agreed in the conversation are picked out.",
         "Each task gets an owner and a due date.",
-        "Tasks flow into each teammate's list on their dashboard.",
+        "Tasks are added to each teammate's list on their dashboard.",
       ],
-      capabilities: ["Tasks extracted from the meeting", "Owner assigned to each task", "Due dates on tasks", "Tasks flow into each teammate's list"],
+      capabilities: ["Tasks picked out from the meeting", "Owner assigned to each task", "Due dates on tasks", "Tasks added to each teammate's list"],
       relatedFeatures: ["meeting-summaries", "team-workspace"],
       sources: [`${MM}/`],
       highlight: true,
@@ -630,11 +630,11 @@ export const meetingmind: Product = {
     {
       slug: "meeting-assistant",
       name: "Ask your meetings",
-      summary: "A grounded assistant answers questions across every past meeting in the workspace and cites the meeting it drew from.",
+      summary: "An assistant answers questions using every past meeting in the workspace and names the meeting each answer came from.",
       category: "features",
       body: [
-        "The assistant lets anyone in the workspace ask a question — for example, what was decided on a topic — and get an answer drawn from every past meeting.",
-        "MeetingMind describes it as grounded: answers cite the meeting they came from. The plans call it a RAG assistant, and it is included on the Free plan.",
+        "The assistant lets anyone in the workspace ask a question (for example, what was decided on a topic) and get an answer drawn from every past meeting.",
+        "MeetingMind describes it as grounded, meaning answers are based on your meetings and cite the meeting they came from. The plans call it a RAG assistant (one that looks up your records before answering), and it is included on the Free plan.",
       ],
       problem: "Finding what was said in an old meeting usually means asking around or rewatching recordings.",
       howItWorks: [
@@ -651,7 +651,7 @@ export const meetingmind: Product = {
     {
       slug: "transcripts",
       name: "Searchable transcripts",
-      summary: "Speaker-labelled, timestamped transcripts in the meeting's language that can be searched, exported and shared.",
+      summary: "Transcripts showing who spoke and when, in the meeting's language, that can be searched, exported and shared.",
       category: "features",
       body: [
         "Every captured meeting gets a full transcript, labelled by speaker and timestamped, in the language the meeting was held in.",
@@ -662,14 +662,14 @@ export const meetingmind: Product = {
       sources: [`${MM}/`],
       hasPage: true,
     },
-    { slug: "team-workspace", name: "Team workspace", summary: "Owners, managers and members share one company workspace, and the view each person sees adapts to their role.", category: "features", sources: [`${MM}/`], hasPage: false },
+    { slug: "team-workspace", name: "Team workspace", summary: "Owners, managers and members share one company workspace, and what each person sees changes with their role.", category: "features", sources: [`${MM}/`], hasPage: false },
     { slug: "speaker-analytics", name: "Speaker analytics", summary: "Shows who spoke in a meeting and for how long, alongside the speaker-labelled transcript.", category: "features", sources: [`${MM}/`], hasPage: false },
     { slug: "browser-extension", name: "Browser extension", summary: "Listed on the site as a browser extension that captures meetings from any browser tab; no download link is published.", category: "features", sources: [`${MM}/`], hasPage: false },
     { slug: "calendar-sync", name: "Upcoming meetings", summary: "Upcoming meetings are synced from your calendar; the site does not say which calendar services are supported.", category: "features", sources: [`${MM}/`], hasPage: false },
     { slug: "ai-project-manager", name: "AI Project Manager", summary: "A Premium module that turns recurring project meetings into live status, risks and blockers without anyone updating a tracker.", category: "premium", sources: [`${MM}/`], hasPage: false },
-    { slug: "client-intelligence", name: "Client Intelligence", summary: "A Premium module that keeps a running history of every client conversation, with commitments, sentiment and open threads in one place.", category: "premium", sources: [`${MM}/`], hasPage: false },
-    { slug: "sales-intelligence", name: "Sales Intelligence", summary: "A Premium module that pulls deal signals, objections and next steps straight from sales calls to keep the pipeline honest.", category: "premium", sources: [`${MM}/`], hasPage: false },
-    { slug: "recruitment-analyzer", name: "Recruitment Analyzer", summary: "A Premium module that generates structured interview reports and candidate comparisons from hiring conversations.", category: "premium", sources: [`${MM}/`], hasPage: false },
+    { slug: "client-intelligence", name: "Client Intelligence", summary: "A Premium module that keeps a running history of every client conversation, with promises made, the client's mood and open issues in one place.", category: "premium", sources: [`${MM}/`], hasPage: false },
+    { slug: "sales-intelligence", name: "Sales Intelligence", summary: "A Premium module that picks out buying signals, objections and next steps from sales calls, so your sales pipeline stays realistic.", category: "premium", sources: [`${MM}/`], hasPage: false },
+    { slug: "recruitment-analyzer", name: "Recruitment Analyzer", summary: "A Premium module that creates organised interview reports and candidate comparisons from hiring conversations.", category: "premium", sources: [`${MM}/`], hasPage: false },
   ],
   // Pricing deliberately omitted: the site says prices are "set by your MeetingMind operator" (template-like),
   // alongside placeholder testimonials. Open decision in docs/verification/README.md; add once confirmed.

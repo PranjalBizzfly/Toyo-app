@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props) {
   if (!product || !feature) return {};
   return buildMetadata({
     ...feature,
-    title: `${feature.name} — ${product.name}`,
+    title: `${feature.name} | ${product.name}`,
     description: feature.summary,
     path: routes.feature(product.slug, feature.slug),
     // Noindex if either the product or the feature isn't published.

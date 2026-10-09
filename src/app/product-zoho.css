@@ -9,7 +9,7 @@
 .pz-mt { margin-top: 36px; }
 
 /* ---- Bands: roomy vertical rhythm, tint / white alternation ---- */
-.pz-band { padding-block: var(--sec-y-lg); }
+.pz-band { padding-block: var(--sec-y); }
 .pz-band--tint { background: var(--pz-tint); }
 .pz-band--white { background: var(--surface); }
 .pz-band--tint + .pz-band--tint { padding-top: 0; }

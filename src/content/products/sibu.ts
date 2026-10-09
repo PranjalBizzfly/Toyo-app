@@ -31,16 +31,16 @@ const featureCategories: FeatureCategory[] = [
     name: "Search & Discovery",
     description: "Find assets by filename, metadata, extracted text, tags, comments or a plain-language description.",
     body: [
-      "Sibu treats finding an asset again as the core job of a creative library. Search reaches filenames, recorded metadata, text pulled out of files by OCR, AI-generated tags, comments and semantic information, so a file can be found by whatever someone happens to remember about it rather than by where it was saved.",
-      "The area covers several connected steps: a search or description casts the net, filters narrow the results by category, format, source, resolution or date, previews confirm the right file, and saved searches turn recurring requests into links colleagues can reuse. Indexing on arrival is what prepares each new asset for all of this.",
+      "For Sibu, the main job of a creative library is helping you find files again. Search reaches filenames, recorded metadata, text pulled out of files by OCR, AI-generated tags, comments and semantic information, so you can find a file by whatever you remember about it, not by where it was saved.",
+      "It works in a few connected steps: a search or description brings up candidates, filters narrow the results by category, format, source, resolution or date, previews confirm the right file, and saved searches turn recurring requests into links colleagues can reuse. Each new file is indexed (prepared for search) as it arrives, which makes all of this possible.",
     ],
   },
   {
     slug: "ai",
     name: "AI",
-    description: "Tagging, vision analysis, classification and duplicate detection — suggestions your team reviews, approves or overrides.",
+    description: "Tagging, vision analysis, classification and duplicate detection: suggestions your team reviews, approves or overrides.",
     body: [
-      "Sibu aims its AI at practical library problems — discovery, organisation, tagging, OCR, duplicate detection and media analysis — rather than adding AI features without a workflow purpose. AI runs as part of processing after upload, so it works as a layer across the library instead of a separate tool files have to be taken to.",
+      "Sibu uses AI for practical library jobs (finding, organising, tagging, OCR (reading text in images), spotting duplicates and analysing media), not for AI's own sake. It runs automatically after upload, across the whole library, so you never have to take files to a separate tool.",
       "The approach is that AI recommends and people decide. Suggested tags can carry confidence information, authorised users approve them in bulk or override them, and review and approval of the work itself stay with people.",
     ],
   },
@@ -49,7 +49,7 @@ const featureCategories: FeatureCategory[] = [
     name: "Collaboration",
     description: "Comments, threads, timeline notes, mentions and approvals attached to the asset itself.",
     body: [
-      "Sibu puts collaboration inside the asset library so that teams can discuss files without moving the conversation into disconnected tools. Feedback stays attached to the work it concerns instead of being scattered across email, chat and project-management systems.",
+      "Sibu builds collaboration into the asset library, so teams can discuss files without moving to other tools. Feedback stays attached to the work it concerns instead of being scattered across email, chat and project-management systems.",
       "Comments carry the conversation and approvals record the decision: teammates comment on assets, organise discussion into threads, pin notes to points on a video timeline, mention the colleague who can answer, and move work through an approval workflow with its own status history.",
     ],
   },
@@ -59,7 +59,7 @@ const featureCategories: FeatureCategory[] = [
     description: "Versions, statuses, lifecycle, governance and the audit trail kept together in one asset record.",
     body: [
       "Sibu lets teams replace an asset in place while keeping its previous versions, which removes the need for filenames such as \"Final\", \"Final-V2\" and \"Final-Final\". Each piece of work stays one asset, with its earlier rounds held inside the record.",
-      "Around versioning sit the rest of an asset's working life: statuses that separate drafts from approved content, approved-only views, expiry information, archiving and deletion, ownership, governance over who may upload, edit, approve and download, and an audit trail of important actions.",
+      "Alongside versions, Sibu covers the rest of an asset's working life: statuses that separate drafts from approved content, approved-only views, expiry information, archiving and deletion, ownership, rules on who may upload, edit, approve and download, and an audit trail of important actions.",
     ],
   },
   {
@@ -68,7 +68,7 @@ const featureCategories: FeatureCategory[] = [
     description: "Bring content in from connected storage and direct uploads, then process it for search.",
     body: [
       "This area covers how assets get into Sibu and what happens to them on arrival: direct uploads and connected storage sources, watch folders that are scanned continuously, upload handling for large transfers, and processing that turns each file into a searchable asset with previews.",
-      "Sibu's position is that a creative library cannot simply be a large shared drive: it also needs structure people can navigate, access controls that hold as content grows, and processing that makes each file findable.",
+      "Sibu's view is that a creative library is more than a big shared drive: it also needs a structure people can find their way around, access controls that keep working as content grows, and processing that makes each file findable.",
     ],
   },
   {
@@ -86,7 +86,7 @@ const featureCategories: FeatureCategory[] = [
     description: "Visibility into uploads, storage, contributors, tags and activity across the library.",
     body: [
       "Sibu's analytics answer practical questions about a library: which assets are used and which sit idle, how much space each category takes, who contributes, which tags people search for and which folders receive attention.",
-      "Daily, weekly and monthly views show activity over different spans, and library health views point maintenance at growth, duplicates and inactive content — so decisions about what to archive, reorganise or retag rest on evidence rather than impressions.",
+      "Daily, weekly and monthly views show activity over different spans, and library health views point maintenance at growth, duplicates and inactive content, so decisions about what to archive, reorganise or retag rest on evidence rather than impressions.",
     ],
   },
   {
@@ -94,8 +94,8 @@ const featureCategories: FeatureCategory[] = [
     name: "Developers",
     description: "An API-first library with a REST API, webhooks and developer tooling.",
     body: [
-      "Sibu provides a developer-oriented foundation for organisations that want digital asset management inside the software they already run. It is built API-first, so developers reach the same platform capabilities the Sibu interface relies on.",
-      "The foundation combines a REST API, webhook events and developer tooling: files can be sent in, assets searched and their metadata read from other software, collaboration events followed, and custom applications built around the asset infrastructure — all through authenticated access.",
+      "Sibu gives developers what they need to bring digital asset management (DAM) into the software their organisation already uses. It is built API-first, so developers can use the same features the Sibu interface itself uses.",
+      "It includes a REST API, webhook events (automatic notifications to other systems) and developer tools: files can be sent in, assets searched and their metadata read from other software, collaboration events followed, and custom applications built on top of the asset library, all through secure, signed-in access.",
     ],
   },
   {
@@ -112,8 +112,8 @@ const featureCategories: FeatureCategory[] = [
     name: "Security",
     description: "Encryption, authentication, access control, tenant isolation and audit logging built into the architecture.",
     body: [
-      "Sibu builds security into its architecture through encryption, authentication, access control, tenant isolation and audit logging. Treating them as separate elements makes it easier to see what each one guards and where they depend on one another.",
-      "Creative libraries hold material whose value depends on who sees it and when — unannounced campaigns, licensed footage, a client's product before launch — so Sibu's controls focus on audience and timing as well as keeping files safe.",
+      "Sibu builds security in from the ground up: encryption, sign-in checks, access control, keeping each client's data separate (tenant isolation) and audit logging. Looking at each one separately makes it easier to see what it protects and how they work together.",
+      "Creative libraries hold material whose value depends on who sees it and when: unannounced campaigns, licensed footage, a client's product before launch. That is why Sibu's controls focus on audience and timing as well as keeping files safe.",
     ],
   },
 ];
@@ -128,7 +128,7 @@ const features: Feature[] = [
     highlight: true,
     hasPage: true,
     body: [
-      "Sibu makes creative assets searchable through filenames, metadata, text extracted by OCR, AI-generated tags, comments and semantic information. A file can therefore be found by what it shows, the words inside it, who made it or what a reviewer once said about it — not only by its name and folder.",
+      "Sibu makes creative assets searchable through filenames, metadata, text extracted by OCR, AI-generated tags, comments and semantic information. A file can therefore be found by what it shows, the words inside it, who made it or what a reviewer once said about it, not only by its name and folder.",
       "On getsibu.com the same search is described as covering EXIF data, OCR text, duration, format, uploader and tags, alongside plain-English queries, with saved searches that can be shared as a URL.",
     ],
     problem: "Folder knowledge lives in people's heads: structures reflect whoever set them up, colleagues move on and one file can belong in several places, so teams lose time guessing filenames and digging through shared drives.",
@@ -162,10 +162,10 @@ const features: Feature[] = [
     category: "search-discovery",
     hasPage: true,
     body: [
-      "Sibu's semantic search interprets meaning rather than relying only on exact words, so people can search the way they remember an asset — \"warm urban evening footage\", \"a hand pouring coffee in soft morning light\" — without knowing its filename.",
+      "Sibu's semantic search interprets meaning rather than relying only on exact words, so people can search the way they remember an asset, \"warm urban evening footage\", \"a hand pouring coffee in soft morning light\", without knowing its filename.",
       "Results draw on the semantic and visual information available about each asset, including objects, visual mood and colour identified by AI analysis. A description can mention both what an image shows and how it should feel.",
     ],
-    problem: "Creative work usually starts with a picture in someone's mind, not a filename, and names and folders only record how a file was saved — not what it looks like.",
+    problem: "Creative work usually starts with a picture in someone's mind, not a filename, and names and folders only record how a file was saved, not what it looks like.",
     howItWorks: [
       "Describe the asset in plain language.",
       "Sibu matches the meaning of the request against semantic and visual information about the library.",
@@ -231,7 +231,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Sibu provides filters for category, format, source, resolution and date. Combined, they narrow a large library stage by stage until only assets that genuinely fit remain.",
-      "Search is good at finding candidates and less good at judging fit. Whether a file is a photograph, large enough for print or recent are facts about the file, and filters are the direct way to apply them — paired with keywords or a plain-language description.",
+      "Search is good at finding candidates and less good at judging fit. Whether a file is a photograph, large enough for print or recent are facts about the file, and filters are the direct way to apply them, paired with keywords or a plain-language description.",
     ],
     howItWorks: [
       "Start from a keyword, a description or the whole library.",
@@ -269,7 +269,7 @@ const features: Feature[] = [
       "Begin with keywords or a description that captures the recurring request.",
       "Add the filters that make the set dependable, such as category, format or a date range.",
       "Save the search.",
-      "Share its URL wherever the request usually begins — a brief, a project plan or a bookmark.",
+      "Share its URL wherever the request usually begins: a brief, a project plan or a bookmark.",
     ],
     capabilities: [
       "Saved searches",
@@ -295,7 +295,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "In Sibu, metadata such as EXIF, XMP, file paths, creators and custom keywords can become part of an asset's record. Holding that information with the asset preserves its context and gives search more to work with.",
-      "Users can search available metadata alongside tags and extracted content, which helps when a filename or folder gives nothing away — an old path that names a client and year, or a photographer's credit carried over from a retired system.",
+      "Users can search available metadata alongside tags and extracted content, which helps when a filename or folder gives nothing away: an old path that names a client and year, or a photographer's credit carried over from a retired system.",
     ],
     problem: "A file's context is usually scattered: the camera wrote some of it, the design application added more, the folder implied a client and a year, and the person who made it knows the rest. Copy the file elsewhere and much of that is lost.",
     howItWorks: [
@@ -320,12 +320,12 @@ const features: Feature[] = [
   {
     slug: "creative-asset-indexing",
     name: "Creative asset indexing",
-    summary: "Assets are processed and indexed on arrival — metadata, extracted text and AI signals — so search is fast.",
+    summary: "Assets are processed and indexed on arrival (metadata, extracted text and AI signals), so search is fast.",
     category: "search-discovery",
     hasPage: true,
     body: [
-      "As assets enter Sibu, the platform processes the metadata available for each one and prepares it for search and organisation. The result is an indexed representation of the library that supports faster discovery.",
-      "AI media indexing widens what that index holds: recorded fields such as EXIF, XMP, paths and creators; words extracted by OCR; and visual signals such as objects, mood and colour from supported media. Indexing runs in the background, without anyone starting it by hand.",
+      "As assets enter Sibu, the platform processes the metadata available for each one and prepares it for search and organisation. The result is a search index of the library, so files are found faster.",
+      "AI adds more to that index: recorded fields such as EXIF, XMP, paths and creators; words extracted by OCR; and visual signals such as objects, mood and colour from supported media. Indexing runs in the background, without anyone starting it by hand.",
     ],
     howItWorks: [
       "Files pass through processing stages such as metadata extraction, thumbnail generation and AI-related processing.",
@@ -401,7 +401,7 @@ const features: Feature[] = [
       "Suggestions for imported archives as well as new uploads",
     ],
     faqs: [
-      { question: "Who can approve or override AI-suggested tags?", answer: "Authorised users — the people your organisation allows to manage tags — so the AI does not have the final word on how assets are described." },
+      { question: "Who can approve or override AI-suggested tags?", answer: "Authorised users (the people your organisation allows to manage tags), so the AI does not have the final word on how assets are described." },
       { question: "Will files imported from existing storage receive suggestions?", answer: "They can. Sibu processes imported media in the background, so nobody has to run AI processing on imported files by hand." },
     ],
     relatedFeatures: ["ai-tag-review", "ai-object-detection", "ai-asset-classification", "search-by-anything"],
@@ -415,7 +415,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "AI-generated tags in Sibu can carry confidence information that shows how strongly the system associates a tag with an asset. Reviewers can confirm strong associations quickly and slow down where suggestions are uncertain.",
-      "Teams can approve suggested tags in bulk, which keeps human review practical at volume, and AI recommendations are never permanent: authorised users can override any tag whenever it does not match the team's intended tag structure — for example after a product line is renamed.",
+      "Teams can approve suggested tags in bulk, which keeps human review practical at volume, and AI recommendations are never permanent: authorised users can override any tag whenever it does not match the team's intended tag structure, for example after a product line is renamed.",
     ],
     problem: "Without a confidence signal every suggestion looks equally authoritative, and if every suggestion needs its own decision, human review cannot keep pace with a shoot of hundreds of frames or a migrated archive.",
     howItWorks: [
@@ -445,7 +445,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Sibu can identify objects that appear in supported media and attach confidence information to each one. The resulting tags then contribute to asset search and discovery.",
-      "Object detection answers a constant question about a file — what is in it? — which is often exactly what a filename leaves out. Because detection is a judgement rather than a lookup, people can still correct it.",
+      "Object detection answers a constant question about a file (what is in it?), which is often exactly what a filename leaves out. Because detection is a judgement rather than a lookup, people can still correct it.",
     ],
     howItWorks: [
       "Supported media is analysed during processing.",
@@ -469,12 +469,12 @@ const features: Feature[] = [
   {
     slug: "ai-mood-detection",
     name: "AI mood detection",
-    summary: "Sibu's vision tagging labels the visual mood of an image or clip, so a team can search for material by feel — for example warm or candid — rather than by filename.",
+    summary: "Sibu's vision tagging labels the visual mood of an image or clip, so a team can search for material by feel, for example warm or candid, rather than by filename.",
     category: "ai",
     hasPage: true,
     body: [
       "AI analysis in Sibu can identify the visual mood characteristics of creative material and turn them into information people can search. Teams can look for assets by the feeling they intend, not only by subject.",
-      "Mood is how creative people talk about imagery — optimistic, quiet, energetic, intimate — and two photographs of the same product can suit entirely different campaigns. Mood information gives a search a way to tell them apart.",
+      "Mood is how creative people talk about imagery (optimistic, quiet, energetic, intimate), and two photographs of the same product can suit entirely different campaigns. Mood information gives a search a way to tell them apart.",
     ],
     howItWorks: [
       "Read the brief for the words that say how the work should feel.",
@@ -553,9 +553,9 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Duplicate detection in Sibu uses exact hashing and perceptual hashing together. Between them they identify files that are identical and copies that look the same, even when a copy has been renamed or re-encoded since the original.",
-      "Finding copies supports duplicate asset management: deciding which matches are unnecessary, which are deliverables a channel needs, and clearing the rest, which can help optimise storage and shorten search results.",
+      "Once copies are found, the team decides which are unnecessary and which are versions a channel actually needs, then clears the rest, which can save storage and shorten search results.",
     ],
-    problem: "Duplicates rarely announce themselves: photos are re-exported for the web, files re-encoded for another channel, folders copied to new drives and renamed — and each copy then gathers its own keywords and comments.",
+    problem: "Duplicates rarely announce themselves: photos are re-exported for the web, files re-encoded for another channel, folders copied to new drives and renamed, and each copy then gathers its own keywords and comments.",
     howItWorks: [
       "An exact hash is calculated from every byte of a file to catch identical copies.",
       "A perceptual hash compares how files look to catch visually equivalent copies.",
@@ -566,7 +566,7 @@ const features: Feature[] = [
       "Exact hashing for identical files",
       "Perceptual hashing for visually equivalent copies",
       "Catches renamed and re-encoded copies",
-      "Supports storage optimisation",
+      "Helps save storage space",
     ],
     faqs: [
       { question: "Can it spot a copy saved under a different name?", answer: "Yes. Renaming does not change a file's content, so exact hashing identifies it; edited or re-encoded copies are a question for the perceptual comparison." },
@@ -716,7 +716,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Video comments in Sibu can be attached to specific points on the timeline, giving editors and reviewers a precise location for each piece of feedback. Because the comment belongs to the asset, it stays with the video rather than in an email or chat channel.",
-      "Frame-accurate review is the working habit built on this: anchoring every remark about timing — where a cut lands, when a title appears, how long a product shot holds — to the moment it concerns, so everyone is talking about the same instant of the same cut.",
+      "Frame-accurate review builds on this: anchoring every remark about timing (where a cut lands, when a title appears, how long a product shot holds) to the moment it concerns, so everyone is talking about the same instant of the same cut.",
     ],
     problem: "Written feedback on video is hard to act on: phrases such as \"near the end\" are read differently by each person, and typed timecodes can be mistyped or never reach the editor.",
     howItWorks: [
@@ -746,10 +746,10 @@ const features: Feature[] = [
     category: "collaboration",
     hasPage: true,
     body: [
-      "Mentions in Sibu bring a particular colleague into the discussion on a particular asset — usually the person who can answer the question that piece of work has raised.",
+      "Mentions in Sibu bring a particular colleague into the discussion on a particular asset, usually the person who can answer the question that piece of work has raised.",
       "Folder-aware autocomplete helps ensure that the people you mention have appropriate visibility of the asset. Mentioning someone is not the same as sharing: access is still decided by permissions.",
     ],
-    problem: "Discussions stall for want of one person more often than for want of ideas — whether a claim is still accurate, whether a track has been cleared.",
+    problem: "Discussions stall for want of one person more often than for want of ideas: whether a claim is still accurate, whether a track has been cleared.",
     capabilities: [
       "Mentions within asset discussions",
       "Folder-aware autocomplete",
@@ -805,7 +805,7 @@ const features: Feature[] = [
       "Approval history in Sibu records review activity on an asset. It supports accountability for creative decisions and reduces confusion around which version was accepted.",
       "Its scope is narrower than the asset audit trail: it keeps to review and the decision that ended it. Together with file version history, it helps a team identify what was accepted and return to it.",
     ],
-    problem: "Doubt about the accepted version tends to surface late — a printer receives a file that differs from the remembered proof, or an account lead is sure a different cut was agreed.",
+    problem: "Doubt about the accepted version tends to surface late: a printer receives a file that differs from the remembered proof, or an account lead is sure a different cut was agreed.",
     capabilities: [
       "Record of review activity per asset",
       "Evidence of which version was accepted",
@@ -833,7 +833,7 @@ const features: Feature[] = [
       "Sibu lets a team replace an asset in place while its previous versions are kept. The work stays a single item in the library, with the files it replaced held in its version history rather than sitting in the folder next to it.",
       "That ends the need for names like \"Final-V2\": colleagues who open the asset get the current file, and the earlier rounds remain available to consult or restore. getsibu.com notes that comments stay attached when a file is replaced.",
     ],
-    problem: "In a folder, the only way to keep an earlier file while adding a new one is to save a second copy beside it, and the only way to tell them apart is the name — so reviewers can end up approving an outdated file.",
+    problem: "In a folder, the only way to keep an earlier file while adding a new one is to save a second copy beside it, and the only way to tell them apart is the name, so reviewers can end up approving an outdated file.",
     howItWorks: [
       "A draft enters the library under a plain, descriptive name.",
       "Notes on it stay connected to the asset.",
@@ -861,7 +861,7 @@ const features: Feature[] = [
     category: "versioning-asset-management",
     hasPage: true,
     body: [
-      "Sibu lets a team restore an older version of an asset when it needs to return to a previous creative state — for example when a client decides the previous direction was stronger.",
+      "Sibu lets a team restore an older version of an asset when it needs to return to a previous creative state, for example when a client decides the previous direction was stronger.",
       "The same history supports recovery: versioning and backups can help when content has been replaced or removed by accident, such as an editor uploading last week's export over this week's.",
     ],
     problem: "Without earlier versions, going back means rebuilding: reopening source files, guessing at settings and hoping the result matches.",
@@ -891,7 +891,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Each asset in Sibu has an activity record that can include views, downloads, edits and approvals. getsibu.com describes this as the asset's activity tab, filterable by person.",
-      "Where versions record how the file changed, activity shows what people did with it — whether it was taken up, passed over or kept being changed. Asset history gives users a record of relevant changes and interactions.",
+      "Where versions record how the file changed, activity shows what people did with it: whether it was taken up, passed over or kept being changed. Asset history gives users a record of relevant changes and interactions.",
     ],
     capabilities: [
       "Views, downloads, edits and approvals per asset",
@@ -916,7 +916,7 @@ const features: Feature[] = [
       "Asset statuses in Sibu help teams tell drafts apart from approved content and from the other workflow states an asset passes through. A status turns guesswork based on filenames and folders into information attached to the asset.",
       "Review status reduces this to the question most people ask: does anything about this asset still need attention, or has it completed the approval process? The reasons sit in the comments; the status says where things stand.",
     ],
-    problem: "A draft and an approved file often look almost the same, and without a status people infer sign-off from where a file sits or what it is called — letting drafts slip into use.",
+    problem: "A draft and an approved file often look almost the same, and without a status people infer sign-off from where a file sits or what it is called, letting drafts slip into use.",
     capabilities: [
       "Draft, awaiting review, approved and requires-changes states",
       "Review status at a glance",
@@ -938,7 +938,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Sibu lets teams create approved-only views, so users can reach content that has completed the required review process without picking through drafts.",
-      "Many people who rely on a creative library never make anything for it — sales teams, regional marketers, communications colleagues — and they need a logo or product shot they can use straight away. Content reaches the approved side through the creative approval workflow.",
+      "Many people who rely on a creative library never make anything for it (sales teams, regional marketers, communications colleagues), and they need a logo or product shot they can use straight away. Content reaches the approved side through the creative approval workflow.",
     ],
     howItWorks: [
       "New work enters the library for review.",
@@ -966,8 +966,8 @@ const features: Feature[] = [
     category: "versioning-asset-management",
     hasPage: true,
     body: [
-      "Sibu can support the lifecycle of a creative asset across its whole span: initial upload, review, approval and reuse, and finally deletion. The stages can include ingestion, metadata processing, AI tagging, review, approval, distribution and archival.",
-      "Managing the lifecycle means governing the transitions between stages. Deletion sits at the very end and is carried out by authorised users according to organisational policies and permissions; much finished work is better archived.",
+      "Sibu can support a creative asset through its whole life: upload, review, approval, reuse and finally deletion. Along the way it can be brought in, have its metadata processed, get AI tags, be reviewed, approved, shared and archived.",
+      "Managing the lifecycle means controlling how an asset moves from one stage to the next. Deletion sits at the very end and is carried out by authorised users according to organisational policies and permissions; much finished work is better archived.",
     ],
     problem: "Left unmanaged, lifecycle stages blur: drafts get reused because they were easy to find, approved work goes unused because nobody knew it existed, and files that should have been retired stay in circulation.",
     howItWorks: [
@@ -1023,11 +1023,11 @@ const features: Feature[] = [
       "Expiry information on an asset in Sibu helps teams identify content that should no longer be used once a specified period has passed.",
       "Creative content often carries an invisible use-by date: a stock licence for a fixed term, a model release covering one campaign, a banner quoting an offer that ends. Recording the end of the term with the asset puts that knowledge where people choose content.",
     ],
-    problem: "Usage terms are agreed once, often outside the creative team, and forgotten long before they run out — leading to licence breaches or customers shown offers that no longer stand.",
+    problem: "Usage terms are agreed once, often outside the creative team, and forgotten long before they run out, leading to licence breaches or customers shown offers that no longer stand.",
     capabilities: [
       "Expiry information recorded on assets",
       "Identification of content past its use period",
-      "Supports brand teams' controlled source of truth",
+      "Gives brand teams one controlled, trusted home for their assets",
       "Readable by connected systems via the API where supported",
     ],
     useCases: [
@@ -1065,11 +1065,11 @@ const features: Feature[] = [
   {
     slug: "asset-audit-trail",
     name: "Asset audit trail",
-    summary: "An audit trail on each creative file shows the important actions taken on it — uploads, edits, approvals, downloads and deletions — and who performed them.",
+    summary: "An audit trail on each creative file shows the important actions taken on it (uploads, edits, approvals, downloads and deletions) and who performed them.",
     category: "versioning-asset-management",
     hasPage: true,
     body: [
-      "The asset audit trail in Sibu provides visibility into important actions performed on creative files. It matters on the day something goes wrong or is questioned — an unapproved version reaches a client or a key file goes missing.",
+      "The asset audit trail in Sibu provides visibility into important actions performed on creative files. It matters on the day something goes wrong or is questioned: an unapproved version reaches a client or a key file goes missing.",
       "The trail is about the files themselves; the platform's audit logs are the wider record, covering permissions, comments, asset changes and other events.",
     ],
     capabilities: [
@@ -1091,8 +1091,8 @@ const features: Feature[] = [
     category: "versioning-asset-management",
     hasPage: true,
     body: [
-      "Governance in Sibu defines who can upload, edit, approve, download and manage assets. These actions carry very different risks, which is why treating them as one question of access rarely works.",
-      "Governing actions on assets is one layer of a wider structure: enterprise asset governance combines roles, permissions, audit logs, authentication and organisational policies, and data governance adds rules on retention and usage.",
+      "Governance settings in Sibu decide who can upload, edit, approve, download and manage assets. These actions carry very different risks, so treating them all as one simple access setting rarely works.",
+      "Controlling what people can do with assets is one part of a bigger picture: enterprise governance combines roles, permissions, audit logs, sign-in and company policies, and data governance adds rules on how long data is kept and how it is used.",
     ],
     capabilities: [
       "Separate rights for upload, edit, approve, download and manage",
@@ -1114,7 +1114,7 @@ const features: Feature[] = [
     category: "versioning-asset-management",
     hasPage: true,
     body: [
-      "Brand teams can use structured tags in Sibu to identify assets that comply with specific organisational requirements — the current logo, approved colours, legal wording for a regulated market.",
+      "Brand teams can use structured tags in Sibu to identify assets that comply with specific organisational requirements: the current logo, approved colours, legal wording for a regulated market.",
       "Because guardrail tags belong to the same structured tag system as descriptive tags, they can be arranged hierarchically, for example a region above each market's narrower requirements. They work alongside brand approval rather than replacing it.",
     ],
     capabilities: [
@@ -1145,13 +1145,13 @@ const features: Feature[] = [
   {
     slug: "auto-ingest-from-anywhere",
     name: "Automated ingestion & watch folders",
-    summary: "Bring files in from connected storage, a NAS or drag and drop — watch folders keep being scanned.",
+    summary: "Bring files in from connected storage, a NAS or drag and drop; watch folders keep being scanned.",
     category: "storage-ingestion",
     highlight: true,
     hasPage: true,
     body: [
-      "Sibu supports asset ingestion from connected storage sources as well as direct uploads. getsibu.com describes connecting Google Drive with OAuth, pointing at a local NAS, or dragging and dropping files in.",
-      "Watch folders are scanned continuously, so content newly saved to a monitored location can enter the Sibu workflow automatically — even overnight or at a weekend. Drag and drop stays the simple route for individual files and small batches.",
+      "Sibu can bring in assets from connected storage as well as direct uploads. getsibu.com describes connecting Google Drive with OAuth, pointing at a local NAS, or dragging and dropping files in.",
+      "Watch folders are scanned continuously, so content newly saved to a monitored location can enter the Sibu workflow automatically, even overnight or at a weekend. Drag and drop stays the simple route for individual files and small batches.",
     ],
     problem: "When every arrival waits for someone to carry it in and describe it, the library trails behind what the team produces.",
     howItWorks: [
@@ -1182,7 +1182,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Sibu's upload workflows are designed for heavy creative media. Chunked uploads send a large file as a series of smaller parts, and resumable transfers let an interrupted upload carry on once the connection returns instead of starting again.",
-      "Parallel upload workflows improve the efficiency of batch ingestion, and upload progress indicators show how many files are being processed. getsibu.com describes real-time per-file progress with parallel uploads.",
+      "Parallel uploads make large batches faster, and progress indicators show how many files are being processed. getsibu.com describes real-time per-file progress with parallel uploads.",
     ],
     problem: "On an unreliable connection a failed transfer of a long cut or camera originals can cost the whole upload, so teams hold heavy material back or courier drives instead.",
     capabilities: [
@@ -1202,7 +1202,7 @@ const features: Feature[] = [
   {
     slug: "media-processing-status",
     name: "Asset processing & processing status",
-    summary: "See whether each asset is queued, processing or ready — uploaded is not the same as searchable.",
+    summary: "See whether each asset is queued, processing or ready. Uploaded is not the same as searchable.",
     category: "storage-ingestion",
     hasPage: true,
     body: [
@@ -1230,12 +1230,12 @@ const features: Feature[] = [
   {
     slug: "streaming-previews",
     name: "Thumbnails & streaming previews",
-    summary: "Judge images by thumbnail and watch large media by streaming preview — no full download needed.",
+    summary: "Judge images by thumbnail and watch large media by streaming preview, with no full download needed.",
     category: "storage-ingestion",
     hasPage: true,
     body: [
       "Sibu generates thumbnails during processing, giving fast visual previews without downloading the original file. A generated thumbnail is an additional small image; the original remains the asset people edit and deliver.",
-      "Streaming previews let people inspect large media while it is still arriving, so a long recording can be checked without waiting for a complete download — and a note can be left at the exact moment on the timeline.",
+      "Streaming previews let people inspect large media while it is still arriving, so a long recording can be checked without waiting for a complete download, and a note can be left at the exact moment on the timeline.",
     ],
     capabilities: [
       "Generated thumbnails for fast visual previews",
@@ -1281,7 +1281,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Sibu controls access through permission hierarchies that combine broad organisational roles with more detailed folder-level controls. Role-based access limits what users can do according to their responsibilities; folder-level permissions decide which areas of the library each account can reach.",
-      "Where a role does not fit one person's work, individual permissions give targeted access — useful for freelancers and outside contributors — and department access lets departments reach only the libraries relevant to them. getsibu.com describes Owner, Admin, Manager and User roles in an Organisation workspace, with an Org Admin granting folders to managers who assign work to their team.",
+      "Where a role does not fit one person's work, individual permissions give targeted access (useful for freelancers and outside contributors), and department access lets departments reach only the libraries relevant to them. getsibu.com describes Owner, Admin, Manager and User roles in an Organisation workspace, with an Org Admin granting folders to managers who assign work to their team.",
     ],
     howItWorks: [
       "Decide what each role broadly needs.",
@@ -1314,7 +1314,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Default-deny folder access means new content in Sibu is not automatically exposed to every user: a new folder can remain private until someone grants access to it. getsibu.com adds that managers only see the folders an Org Admin has handed them.",
-      "A closed default turns the risk of forgetting to restrict into the risk of forgetting to share — a failure that announces itself, because someone asks for access, rather than one that silently exposes a draft campaign.",
+      "A closed default turns the risk of forgetting to restrict into the risk of forgetting to share: a failure that announces itself, because someone asks for access, rather than one that silently exposes a draft campaign.",
     ],
     howItWorks: [
       "A new folder is created and starts private.",
@@ -1342,7 +1342,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Sibu's multi-tenant design is intended for agencies and other organisations that need isolated client environments. Its architecture is built around tenant-scoped data access, and each client environment can remain logically isolated so one client's assets are not mixed into another's library.",
-      "Agencies can manage multiple client libraries from one platform while maintaining separation between tenants, and run client review — inspecting, discussing and approving work — inside each client's own environment. getsibu.com describes tenant scope composed server-side on every query, per-tenant encryption keys and audit logging of cross-tenant access attempts.",
+      "Agencies can manage multiple client libraries from one platform while maintaining separation between tenants, and run client review (inspecting, discussing and approving work) inside each client's own environment. getsibu.com describes tenant scope composed server-side on every query, per-tenant encryption keys and audit logging of cross-tenant access attempts.",
     ],
     problem: "One studio may produce work for competing brands in the same month with the same people moving between accounts; one file saved in the wrong place can put unreleased work in front of the wrong client.",
     howItWorks: [
@@ -1374,7 +1374,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Within Sibu's multi-tenant design, client environments can have their own storage allocation and asset boundaries, and per-client authentication options support organisations that need separate access controls for different customers. getsibu.com lists per-client SSO, storage quotas and AI keys.",
-      "Client-specific AI key management lets an agency serve a client whose policy governs how AI may be used on its content, and white-label asset management is an approach agencies can use for client-facing asset management experiences.",
+      "Client-specific AI key management lets an agency serve a client whose policy governs how AI may be used on its content, and white-labelling (using the agency's or client's own branding) lets agencies offer clients a branded asset library.",
     ],
     capabilities: [
       "Per-client storage allocation and asset boundaries",
@@ -1401,7 +1401,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Sibu's dashboards give visibility into uploads, storage, contributors, tags and activity across the library. Daily views show short-term uploads, comments and storage activity, weekly views give a broader picture of growth and usage, and monthly views help identify longer-term trends.",
-      "Upload analytics show how much new content is entering the library over time, and executive views give leaders a higher-level picture of adoption, growth, reuse and governance.",
+      "Upload analytics show how much new content is entering the library over time, and executive views give leaders a big-picture view of adoption, growth, reuse and governance.",
     ],
     capabilities: [
       "Daily, weekly and monthly library analytics",
@@ -1572,7 +1572,7 @@ const features: Feature[] = [
     ],
     faqs: [
       { question: "Does Sibu have an API?", answer: "Yes. Sibu is positioned as an API-first DAM and provides REST API capabilities, webhooks and developer tooling." },
-      { question: "Where does the API sit in Sibu's architecture?", answer: "It is one layer of a layered architecture made up of clients, edge services, APIs, search infrastructure and storage." },
+      { question: "Where does the API sit in Sibu's architecture?", answer: "It is one layer in Sibu's design, which is made up of apps, edge services, APIs, search systems and storage." },
     ],
     relatedFeatures: ["webhooks", "sdks", "api-authentication", "custom-asset-applications"],
     sources: [HOME, PRICING, `${V}/developers`, dev("api"), dev("rest-api"), faq("does-sibu-have-an-api"), `${V}/architecture/api-scalability`, `${V}/architecture/stateless-api-architecture`],
@@ -1612,7 +1612,7 @@ const features: Feature[] = [
     category: "developers",
     hasPage: true,
     body: [
-      "The asset upload API allows external applications — a render queue, a studio capture station, a supplier delivery portal — to send files into the Sibu environment without anyone uploading them by hand.",
+      "The asset upload API allows external applications (a render queue, a studio capture station, a supplier delivery portal) to send files into the Sibu environment without anyone uploading them by hand.",
       "Sending is only the start: after upload, assets move through processing, so an integration should treat a successful send and a searchable asset as two separate milestones. getsibu.com describes upload via the API with bearer-token authentication and a tenant header.",
     ],
     howItWorks: [
@@ -1664,13 +1664,13 @@ const features: Feature[] = [
     category: "developers",
     hasPage: true,
     body: [
-      "The Sibu API can expose asset information so external systems — a catalogue, a website, a records system — can draw on details the library already keeps instead of maintaining their own copies.",
+      "The Sibu API can expose asset information so external systems (a catalogue, a website, a records system) can draw on details the library already keeps instead of maintaining their own copies.",
       "Which details a particular integration can read is confirmed in the API documentation; the library record can include fields such as EXIF and XMP metadata and file paths carried across from earlier storage.",
     ],
     capabilities: [
       "Programmatic access to asset metadata",
       "Recorded fields such as EXIF, XMP and file paths",
-      "One source of truth for connected systems",
+      "One trusted record for connected systems",
       "Pairs with upload and search APIs",
     ],
     useCases: [
@@ -1712,7 +1712,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Approval events from Sibu can be incorporated into external production and workflow systems, so a decision recorded against an asset shapes what happens in the systems that schedule, deliver and publish work.",
-      "Comment-related events can likewise support custom collaboration workflows — for example opening a task on a production board when a reviewer comments — while the discussion itself stays attached to the asset.",
+      "Comment-related events can likewise support custom collaboration workflows, for example opening a task on a production board when a reviewer comments, while the discussion itself stays attached to the asset.",
     ],
     howItWorks: [
       "An approval or comment is recorded on an asset in Sibu.",
@@ -1763,11 +1763,11 @@ const features: Feature[] = [
   {
     slug: "custom-asset-applications",
     name: "Custom asset applications",
-    summary: "Because the Sibu interface is just one client of its API, teams can build their own asset tools and client-facing experiences on the same infrastructure.",
+    summary: "Because the Sibu interface is just one client of its API, teams can build their own asset tools and client-facing apps on the same platform.",
     category: "developers",
     hasPage: true,
     body: [
-      "The Sibu API allows organisations to build custom applications around the Sibu asset infrastructure — a tool designed for one department or process that relies on the library beneath it instead of rebuilding storage and search.",
+      "With the Sibu API, organisations can build their own applications on top of Sibu, for example a tool for one department or process that uses the Sibu library underneath instead of rebuilding storage and search.",
       "Experiences can be as small as a single task or as large as a whole tool. Agencies can use the same API-first approach for client-facing, white-label asset experiences, while the Sibu interface remains the shared workspace for teams.",
     ],
     howItWorks: [
@@ -1777,7 +1777,7 @@ const features: Feature[] = [
       "Treat tenant separation as a core requirement for multi-client tools.",
     ],
     capabilities: [
-      "Custom applications on the asset infrastructure",
+      "Custom applications built on Sibu",
       "Purpose-built experiences for narrower audiences",
       "White-label, client-facing experiences",
       "Requests for integrations Sibu does not yet support",
@@ -1826,7 +1826,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Bulk import moves an existing collection into Sibu without uploading each file by hand. getsibu.com describes connecting Google Drive, Dropbox or S3 once while Sibu indexes the library in the background, with no downtime on the tools being left.",
-      "The migration workflow is designed so existing storage stays in use while Sibu indexes content, and imported files go through the same processing as new uploads — including AI tag suggestions.",
+      "The migration workflow is designed so existing storage stays in use while Sibu indexes content, and imported files go through the same processing as new uploads, including AI tag suggestions.",
     ],
     howItWorks: [
       "Connect the existing storage source once.",
@@ -1842,7 +1842,7 @@ const features: Feature[] = [
     ],
     faqs: [
       { question: "Can the team keep using its current storage during migration?", answer: "Yes. The workflow is designed so existing storage stays in use while Sibu indexes content in the background." },
-      { question: "What should be avoided in the old storage during migration?", answer: "Reorganising it — renaming top-level folders or moving branches while collections are being indexed leaves the plan describing a structure that no longer exists." },
+      { question: "What should be avoided in the old storage during migration?", answer: "Reorganising it: renaming top-level folders or moving branches while collections are being indexed leaves the plan describing a structure that no longer exists." },
     ],
     integrations: ["google-drive", "dropbox", "aws-s3"],
     relatedFeatures: ["metadata-preserved", "folder-mapping", "migration-verification", "duplicate-detection"],
@@ -2015,7 +2015,7 @@ const features: Feature[] = [
     category: "security",
     hasPage: true,
     body: [
-      "Role-based access control in Sibu limits what users can perform according to their responsibilities — the key question being not only what they can see but what they can change, remove, download or sign off.",
+      "Role-based access control in Sibu limits what users can perform according to their responsibilities, the key question being not only what they can see but what they can change, remove, download or sign off.",
       "Tenant isolation is the element concerned with the boundary between whole organisations: Sibu's architecture is designed around tenant-scoped data access, and getsibu.com describes tenant scope composed server-side on every query with per-tenant encryption keys.",
     ],
     capabilities: [
@@ -2113,7 +2113,7 @@ const productSolutions: ProductSolution[] = [
     name: "Sibu for marketing teams",
     summary: "A central library for campaign assets, with approved content kept separate from drafts.",
     body: [
-      "Marketing teams use Sibu as one source of truth per campaign: product imagery, video and presentations stored and searched together, with folder permissions per market and approval workflows before anything is distributed.",
+      "Marketing teams use Sibu as one trusted home per campaign: product imagery, video and presentations stored and searched together, with folder permissions per market and approval workflows before anything is distributed.",
       "Approved-only views and review status reduce the time spent hunting for approved material, and marketing asset analytics show campaign content usage.",
     ],
     approach: [
@@ -2135,7 +2135,7 @@ const productSolutions: ProductSolution[] = [
     name: "Sibu for brand teams",
     summary: "Approved-only views, expiry information, guardrail tags and an audit of who did what.",
     body: [
-      "Brand teams use Sibu to keep a controlled source of truth for logos, lockups, brand photography, templates and guidelines that other people reuse — organising approved assets, applying brand-specific tags and managing expiry information.",
+      "Brand teams use Sibu to keep one controlled, trusted home for logos, lockups, brand photography, templates and guidelines that other people reuse, organising approved assets, applying brand-specific tags and managing expiry information.",
       "Drafts can stay inside the brand team behind folder permissions and private-by-default folders, while colleagues ask questions on the asset itself through mentions.",
     ],
     problem: "Approval only governs what enters the approved set; without retirement, superseded logos and lapsed photography sit beside current work in the same searches.",
@@ -2155,7 +2155,7 @@ const productSolutions: ProductSolution[] = [
     name: "Sibu for enterprise marketing",
     summary: "Enterprise marketing teams combine asset governance, department-level folder access and analytics in one library, keeping launch material private until it is deliberately shared.",
     body: [
-      "Enterprise marketing teams use Sibu to combine asset governance, permissions and analytics across departments, projects and folders — replacing informal trust between a few colleagues with arrangements that hold when many teams share one library.",
+      "Enterprise marketing teams use Sibu to combine asset governance, permissions and analytics across departments, projects and folders, replacing informal trust between a few colleagues with clear rules that still work when many teams share one library.",
       "Department access limits each department to relevant libraries, new folders can stay private until access is granted, and asset management metrics give leaders a view of activity, storage and collaboration.",
     ],
     problem: "When each marketing team keeps its own library, shared material is copied into each one and nobody can say across the organisation what exists, what is approved or what is used.",
@@ -2193,7 +2193,7 @@ const productSolutions: ProductSolution[] = [
     name: "Sibu for freelancers",
     summary: "Organise a personal creative library and find reusable assets from past jobs.",
     body: [
-      "Freelancers can use Sibu to organise a personal creative library — delivered work, source files and experiments described by what they contain — and locate reusable assets when a similar brief arrives.",
+      "Freelancers can use Sibu to organise a personal creative library (delivered work, source files and experiments described by what they contain) and locate reusable assets when a similar brief arrives.",
       "Drag-and-drop upload suits work that arrives a few files at a time, and search reaches metadata, AI tags and extracted text, with format and date filters to narrow results. The Free plan is aimed at makers exploring Sibu.",
     ],
     approach: [
@@ -2275,7 +2275,7 @@ const productIndustries: ProductIndustry[] = [
     name: "E-commerce brands",
     summary: "Tag large product shoots, approve imagery before listings and keep each product's current files in one place.",
     body: [
-      "E-commerce brands use Sibu to organise large product shoots — including near-identical colourway sets — and give listing teams one place to find each product's current, approved files.",
+      "E-commerce brands use Sibu to organise large product shoots, including near-identical colourway sets, and give listing teams one place to find each product's current, approved files.",
     ],
     challenges: [
       "Colourways multiply near-identical image sets that must never be swapped.",
@@ -2464,7 +2464,7 @@ const productIntegrations: ProductIntegration[] = [
       "Organisations can request integrations for tools that are not already part of Sibu's supported integration ecosystem, or build connections themselves through the developer API.",
     ],
     workflow: [
-      "Describe what the tool must do with the library — send files, find assets, read information or follow activity.",
+      "Describe what the tool must do with the library: send files, find assets, read information or follow activity.",
       "Request the integration where building in-house is not wanted.",
       "Or use the developer API and webhooks to build it.",
       "Build the smallest piece that removes the worst manual step while a request is open.",
@@ -2493,9 +2493,9 @@ const productResources: ProductResource[] = [
     ],
     keyPoints: [
       "AI makes visual and textual content discoverable without every field entered by hand.",
-      "The files least likely to be described are bulk arrivals — whole shoots, imported archives, scanned paperwork.",
+      "The files least likely to be described are bulk arrivals: whole shoots, imported archives, scanned paperwork.",
       "Judgement is redistributed, not removed: people still check suggestions against the organisation's vocabulary.",
-      "AI cannot know what is not in the file — licences, embargoes, clients or approval.",
+      "AI cannot know what is not in the file: licences, embargoes, clients or approval.",
     ],
     features: ["ai-assisted-tagging", "ai-tag-review", "ocr-extraction", "semantic-search"],
     sources: [res("how-ai-changes-digital-asset-management")],
@@ -2510,7 +2510,7 @@ const productResources: ProductResource[] = [
       "Cloud storage keeps files available; DAM adds metadata, organisation, search, versions, approvals and permissions.",
       "Descriptions let someone who did not make a file find, judge and use it.",
       "Some DAMs store masters themselves; others build records around files in existing storage.",
-      "Sibu provides one central location for assets from connected drives, local infrastructure and uploads.",
+      "Sibu gives you one central place for assets from connected drives, your own local storage and uploads.",
     ],
     sources: [res("what-is-digital-asset-management")],
   },
@@ -2609,7 +2609,7 @@ const supportTopics: ProductSupportTopic[] = [
   {
     slug: "connecting-other-tools",
     name: "Connecting Sibu to other tools",
-    summary: "Connected storage brings files in, the API lets other software work with the library, webhooks trigger work elsewhere and migration moves a library once — here is when to use each.",
+    summary: "Connected storage brings files in, the API lets other software work with the library, webhooks trigger work elsewhere and migration moves a library once. Here is when to use each.",
     body: ["Sibu's integration routes differ mainly in direction and duration: connected storage and uploads bring files in, the API lets other software work with the library, webhooks start work elsewhere, and a migration moves a library once."],
     keyPoints: [
       "Connected storage sources and direct uploads bring files in.",
@@ -2628,7 +2628,7 @@ export const sibu: Product = {
   slug: "sibu",
   name: "Sibu",
   shortDescription:
-    "An AI-aware digital asset library for creative teams — every video, image, document and audio file indexed, searchable and reviewable in one place.",
+    "An AI-aware digital asset library for creative teams: every video, image, document and audio file indexed, searchable and reviewable in one place.",
   longDescription:
     "Sibu is a digital asset management platform for storing, organising, searching and collaborating around videos, images, documents and audio. It positions itself as an operating system for a creative library rather than generic file storage.\n\nFiles arrive from Google Drive, a local NAS, watch folders or drag-and-drop. On the way in Sibu extracts metadata, builds thumbnails, runs OCR on documents and proposes AI tags for objects, scenes, mood, colours and faces, which people accept or override.\n\nSearch blends full-text, OCR, tags and embeddings, so a file can be found by its name, the words inside it or a plain-English description. Around each asset, teams leave frame-accurate comments, request approvals, stack versions and see a full activity history.\n\nAccess is default-deny and folder-scoped, every organisation is isolated as its own tenant, and the whole product is exposed through a documented REST API with SDKs and webhooks.",
   tagline: "The operating system for your creative library",
@@ -2654,7 +2654,7 @@ export const sibu: Product = {
     { title: "Connect", description: "Sign in to Google Drive with OAuth, point at a NAS, set up watch folders or drag and drop." },
     { title: "Ingest", description: "Sibu scans files, extracts metadata, generates thumbnails, OCRs documents and suggests tags." },
     { title: "Organise", description: "Review AI suggestions, structure tags and folders, and set folder-level permissions." },
-    { title: "Collaborate", description: "Search, comment, mention and approve — and share saved views with one URL." },
+    { title: "Collaborate", description: "Search, comment, mention and approve, and share saved views with one URL." },
   ],
   security: [
     { title: "Encryption", description: "Secrets such as OAuth credentials, SMTP passwords and API tokens are kept in encrypted secret storage (AES-256-GCM with rotating IVs); storage uses a per-tenant prefix with AES-256." },
@@ -2662,7 +2662,7 @@ export const sibu: Product = {
     { title: "Audit logs", description: "A historical record of important actions, including permission changes, comments, asset changes, logins and AI generations." },
     { title: "Multi-factor authentication", description: "MFA adds another layer of account protection and can be enforced per organisation." },
     { title: "SSO and SCIM", description: "SAML 2.0 and OIDC single sign-on on Business and above; getsibu.com's FAQ lists SCIM 2.0 user provisioning on Enterprise. Forced MFA is enforced per organisation on the server." },
-    { title: "Data residency", description: "The storage region — US, EU, India or AP-Southeast — is chosen when a workspace is created. Storage is encrypted at rest and in transit, and Sibu states it never trains on customer data." },
+    { title: "Data residency", description: "The storage region (US, EU, India or AP-Southeast) is chosen when a workspace is created. Storage is encrypted at rest and in transit, and Sibu states it never trains on customer data." },
     { title: "Default-deny access", description: "New folders are private until access is explicitly granted." },
     { title: "Backups", description: "Daily snapshots with point-in-time restore to 7 days, and cross-region replication on Business plans and above." },
     { title: "GDPR and DPA", description: "EU-region storage, a right-to-erasure cascade, and a signed data-processing addendum on every paid plan." },
@@ -2686,20 +2686,20 @@ export const sibu: Product = {
     plans: [
       { name: "Free", price: "$0", period: "forever", description: "For makers exploring Sibu", features: ["5 GB storage", "3 seats", "10k API calls / month", "Drag & drop upload", "Search & tags"], cta: { label: "Start free", href: "https://getsibu.com/signup" } },
       { name: "Pro", price: "$99", period: "month", description: "For growing creative teams", features: ["500 GB storage", "20 seats", "1M API calls / month", "Google Drive sync", "Threaded comments + mentions", "Saved searches"], cta: { label: "Start trial", href: "https://getsibu.com/signup" }, recommended: true },
-      { name: "Business", price: "$299", period: "month", description: "For studios shipping at scale", features: ["2 TB storage", "100 seats", "5M API calls / month", "SSO & SCIM", "Audit log export", "Priority support"], cta: { label: "Talk to sales", href: "https://getsibu.com/contact" } },
+      { name: "Business", price: "$299", period: "month", description: "For studios shipping at scale", features: ["2 TB storage", "100 seats", "5M API calls / month", "SSO & SCIM", "Audit log export", "Priority support"], cta: { label: "Talk to sales", href: "/contact?type=sales&product=sibu#contact-form" } },
     ],
   },
   supportUrl: "https://getsibu.com/contact",
   useCases: [
     { title: "Video teams", description: "Find any clip with AI tagging of objects and scenes, review with frame-accurate comments, and keep version stacks." },
-    { title: "Marketing teams", description: "One source of truth per campaign, with folder permissions per market, approval workflows and usage analytics." },
+    { title: "Marketing teams", description: "One trusted home per campaign, with folder permissions per market, approval workflows and usage analytics." },
     { title: "Agencies", description: "Run many clients in one platform, each tenanted separately with its own SSO, storage quota and AI keys." },
     { title: "Brand teams", description: "Approved-only library views, expiry dates on assets, and an audit of who exported what." },
   ],
   faqs: [
     { question: "What is Sibu?", answer: "An AI-aware digital asset management platform for storing, organising, searching and collaborating around videos, images, documents and audio. It ingests files from drives, a NAS or uploads, tags them with reviewable AI suggestions and makes them searchable by content. Teams then comment, approve and version assets in the same place." },
-    { question: "Who is Sibu for?", answer: "Production teams, marketing teams, agencies, brand teams, creative studios and other organisations managing large creative libraries — and freelancers organising a personal library." },
-    { question: "Can I switch plans later?", answer: "Yes — you can upgrade or downgrade at any time and Sibu prorates the difference automatically. Moving up raises your storage, seat and API-call limits straight away." },
+    { question: "Who is Sibu for?", answer: "Production teams, marketing teams, agencies, brand teams, creative studios and other organisations managing large creative libraries, and freelancers organising a personal library." },
+    { question: "Can I switch plans later?", answer: "Yes, you can upgrade or downgrade at any time and Sibu prorates the difference automatically. Moving up raises your storage, seat and API-call limits straight away." },
     { question: "Is there a free trial on paid plans?", answer: "Pro includes a 3-day trial with no credit card required. You can also start on the Free plan, which has 5 GB of storage, 3 seats and 10k API calls a month, and does not expire." },
     { question: "What happens if I exceed my storage quota?", answer: "New uploads pause until you free up space or move to a larger plan. Everything already in the library stays accessible in the meantime, so work on existing assets is not interrupted." },
     { question: "Is my data isolated from other tenants?", answer: "Yes. Every organisation has scoped queries and per-tenant encryption keys, and audit logs record cross-tenant access attempts." },
@@ -2708,7 +2708,7 @@ export const sibu: Product = {
     { question: "What are the upload limits?", answer: "Each file can be up to 10 GB by default, configurable in Settings → Storage. Uploads are chunked and resume after interruptions, and there is no monthly upload cap." },
     { question: "How does billing work?", answer: "Plans are billed monthly or annually through Stripe and can be cancelled at any time. After cancellation your data stays read-only for 30 days, and invoices and DPAs are available on every plan." },
     { question: "Where is my data stored?", answer: "You pick the US, EU, India or AP-Southeast region when creating the workspace. Data is encrypted at rest and in transit, and Sibu says it never trains on customer data." },
-    { question: "Can I self-host Sibu?", answer: "Business and Enterprise plans include a self-host option. Sibu ships a Docker Compose bundle (API, MongoDB, Redis and a worker) plus the OpenAPI spec — the same code it runs in its cloud." },
+    { question: "Can I self-host Sibu?", answer: "Business and Enterprise plans include a self-host option. Sibu ships a Docker Compose bundle (API, MongoDB, Redis and a worker) plus the OpenAPI spec: the same code it runs in its cloud." },
     { question: "Does Sibu work with Slack, Premiere Pro or Frame.io?", answer: "Slack and webhooks work out of the box. Premiere Pro, After Effects and Frame.io connect through Sibu's extensions and Zapier, and anything else can be built on webhooks and the REST API." },
     { question: "What's the difference between Individual and Organisation?", answer: "Individual is one private workspace with no roles. Organisation adds Owner, Admin, Manager and User roles, team management, folder permissions and approval workflows." },
   ],

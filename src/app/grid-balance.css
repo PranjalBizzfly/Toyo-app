@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Balanced card grids and row-aligned card contents.
+   1. Card groups of 3–8 never end in a lone or stretched card: small sets sit
+      in one row, larger ones use a column count that divides evenly, and an
+      uneven last row (5 → 3+2, 7 → 4+3) is centred with equal card widths
+      (a doubled track grid, each card spanning two tracks).
+   2. Cards in a row share one row structure (CSS subgrid), so titles,
+      descriptions, "Best for" boxes, tag stacks and footers line up.
+   Phones (< 720px) keep their existing layouts.
+   ========================================================================== */
+
+/* ---- 1. Balanced rows ---------------------------------------------------- */
+@media (min-width: 720px) {
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):is(:has(> :nth-child(3):last-child), :has(> :nth-child(4):last-child), :has(> :nth-child(5):last-child), :has(> :nth-child(6):last-child), :has(> :nth-child(7):last-child), :has(> :nth-child(8):last-child)) {
+    display: grid; grid-auto-flow: row; grid-auto-columns: auto; columns: auto;
+    --bal: 3; grid-template-columns: repeat(var(--bal), minmax(0, 1fr));
+  }
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):is(:has(> :nth-child(3):last-child), :has(> :nth-child(4):last-child), :has(> :nth-child(5):last-child), :has(> :nth-child(6):last-child), :has(> :nth-child(7):last-child), :has(> :nth-child(8):last-child)) > * {
+    grid-column: auto; width: auto; max-width: none; min-width: 0;
+  }
+  /* 4 and 8 → 2 columns on tablets */
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):is(:has(> :nth-child(4):last-child), :has(> :nth-child(8):last-child)) { --bal: 2; }
+  /* 5 → 3 + 2 and 7 → 4 + 3, last row centred */
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):is(:has(> :nth-child(5):last-child), :has(> :nth-child(7):last-child)) {
+    grid-template-columns: repeat(calc(var(--bal) * 2), minmax(0, 1fr));
+  }
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):is(:has(> :nth-child(5):last-child), :has(> :nth-child(7):last-child)) > * { grid-column: span 2; }
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):has(> :nth-child(7):last-child) { --bal: 4; }
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):has(> :nth-child(5):last-child) > :nth-child(4),
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):has(> :nth-child(7):last-child) > :nth-child(5) { grid-column: 2 / span 2; }
+}
+@media (min-width: 1024px) {
+  /* Desktop: 4 → one row, 8 → 4 × 2. */
+  html body main :is(.h-roles, .h-stats, .hs-spot__caps, .h-steps, .h-why, .zc-grid, .ez-tiles, .ez-feats, .co-steps, .cp-logos, .cp-swatches, .zc-panel, .zs-tabs__items, .fz-steps, .fz-facts, .fz-alt-quotes):is(:has(> :nth-child(4):last-child), :has(> :nth-child(8):last-child)) { --bal: 4; }
+  /* Small sets (stats, steps, plans, facts, swatches): 5 or 6 in one row. */
+  html body main :is(.h-stats, .cp-swatches, .co-steps, .fz-steps, .h-steps, .fz-facts, .hs-spot__caps):is(:has(> :nth-child(5):last-child), :has(> :nth-child(6):last-child)) { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
+  html body main :is(.h-stats, .cp-swatches, .co-steps, .fz-steps, .h-steps, .fz-facts, .hs-spot__caps):is(:has(> :nth-child(5):last-child), :has(> :nth-child(6):last-child)) > * { grid-column: auto; }
+}
+
+/* ---- 2. Equal-height cards and row-aligned card contents ----------------- */
+/* Every card in a row is as tall as the row; the card's own footer link sits at the bottom.
+   (Containers balanced as wrapping flex rows in balanced-grids.css included.) */
+html body main :is(.h-industries, .h-ints, .h-tasks, .h-res, .h-why, .h-featured, .cp-grid, .co-cols, .pz-related, .pz-plans, .fz-tiles, .zs-bgrid, .zs-usecases, .zs-dotcards, .ez-cards, .ez-tiles, .ez-feats, .zc-grid, .pc, section div.grid, .grid:has(> .product-card)) { align-items: stretch; }
+html body main :is(.h-industries, .h-ints, .h-tasks, .h-res, .cp-grid, .co-cols, .pz-related, .pz-plans, .fz-tiles, .zs-bgrid, .zs-usecases, .zs-dotcards, .ez-cards, .ez-tiles, .zc-grid, .pc, section div.grid, .grid:has(> .product-card)) > * { height: auto; align-self: stretch; }
+html body main :is(.h-ints, .h-res, .fz-tiles, .h-featured) > li > :only-child { height: 100%; }
+html body main .h-industries > .h-ind { display: flex; flex-direction: column; }
+html body main .h-industries > .h-ind > .h-more { margin-top: auto; }
+
+/* Product cards: description held to 4 lines and "Best for" to at least 2, so the
+   "Best for" box, the tag stack and the footer start at the same height across a row. */
+html body main .product-card > p.text-muted { min-height: 4lh; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; line-clamp: 4; overflow: hidden; }
+html body main .product-card > .product-card__usecase { min-height: calc(2lh + 22px); }
+html body main .product-card > .card__foot { margin-top: auto; }
+/* The product grid centres instead of leaving empty auto-fill tracks. */
+html body main .grid:has(> .product-card) { grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min, 280px)), 1fr)); }
+
+/* Feature tags: one pill per line, each only as wide as its text. */
+.product-card__caps { display: flex; flex-direction: column; flex-wrap: nowrap; align-items: flex-start; gap: 6px; }
+.product-card__caps .badge { max-width: 100%; white-space: normal; }
+
+/* Card titles reserve two lines, so text below a one-line title starts level with
+   text below a two-line one; short descriptions reserve their usual line count. */
+html body main :is(.fz-tile > h3, .zs-benefit > h3, .pc__card > h3, .ez-tile__title, .h-ind > h3, .co-col > h3, .cp-card__title, .cp-grid > .cp-card > h3, .zs-dotcard > b, .h-task > h3, .h-why > li > h3, .h-values > li > h3, .zc-card__name, .ez-card__title) { min-height: 2lh; }
+html body main :is(.fz-tile > p) { min-height: 3lh; }
+html body main :is(.pz-plan__desc) { min-height: 2lh; }
+/* .fz-tiles is a flex row (balanced-grids.css), so subgrid has no parent grid: give each tile its own rows, link pinned to the bottom. */
+html body main .fz-tiles > .fz-tiles__item { align-self: stretch; }
+html body main .fz-tiles > .fz-tiles__item > .fz-tile { grid-template-rows: auto auto auto auto 1fr; height: 100%; }
+html body main :is(.fz-tile > .fz-more, .pc__card > .pc__btn, .ez-tile > .ez-link, .cp-card__meta, .cp-card__foot, .h-int > em) { margin-top: auto; }
+html body main .h-int { display: flex; flex-direction: column; }
+html body main .h-int > span { min-height: 2lh; }
+
+/* Homepage featured products (grid parent): parts share rows via subgrid. */
+html body main .h-featured > li { display: grid; grid-template-rows: subgrid; grid-row: span 5; }
+html body main .h-featured > li > .h-fcard { grid-row: 1 / -1; display: grid; grid-template-rows: subgrid; height: auto; }
+html body main .h-fcard > .h-more { align-self: end; justify-self: start; }

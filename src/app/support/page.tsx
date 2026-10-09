@@ -32,7 +32,7 @@ export default function SupportPage() {
         <section className="co-overlap">
           <div className="co-wrap">
             <div className="co-panel co-panel--3">
-              {withSupport.map((p) => (
+              {withSupport.filter((p, i, a) => a.findIndex((x) => x.slug === p.slug) === i).map((p) => (
                 <Link key={p.slug} href={routes.productSection(p.slug, "support")} className="co-panel__cell">
                   <span className="co-panel__icon" aria-hidden="true">{p.name.charAt(0)}</span>
                   <h2>{p.name} support</h2>
@@ -48,8 +48,8 @@ export default function SupportPage() {
       <section className="co-cta">
         <div className="co-wrap">
           <h2>Still need help?</h2>
-          <p>If your question isn't answered on a product's support page — or it's about buying, billing or publishing on ToyoApps — contact the team.</p>
-          <div className="co-btns"><Link className="co-btn" href={routes.contact()}>Contact us</Link></div>
+          <p>If your question isn't answered on a product's support page, or it's about buying, billing or publishing on ToyoApps, contact the team.</p>
+          <div className="co-btns"><Link className="co-btn" href={routes.contactForm({ type: "support" })}>Contact us</Link></div>
         </div>
       </section>
     </>

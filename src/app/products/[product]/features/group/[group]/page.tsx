@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props) {
   if (!r) return {};
   const { group } = r.groups[r.index];
   return buildMetadata({
-    title: `${group.name} — ${r.product.name}`,
+    title: `${group.name} | ${r.product.name}`,
     description: group.description ?? group.body![0],
     path: routes.featureGroup(r.product.slug, group.slug),
     status: isIndexable(r.product.status) ? "live" : r.product.status,

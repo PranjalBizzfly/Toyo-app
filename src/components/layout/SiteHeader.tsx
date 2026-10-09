@@ -8,7 +8,7 @@ export function SiteHeader() {
     <>
       {previewMode && (
         <div className="preview-bar" role="note">
-          Preview mode — draft content is visible here and hidden in production.
+          Preview mode: draft content is visible here and hidden in production.
         </div>
       )}
       <header className="site-header">

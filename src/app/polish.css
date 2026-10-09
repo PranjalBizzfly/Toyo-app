@@ -68,7 +68,7 @@ html main :is(.ez-card, .zc-card, .co-card, .card, [class*="-card"]):is(a):hover
 .h-role li .h-role__f { margin-left: 6px; }
 
 /* Standard page FAQ section (PageFaqs.tsx). */
-.page-faq { padding-block: clamp(64px, 8vw, 110px); background: var(--surface); border-top: 1px solid var(--border-soft); }
+.page-faq { padding-block: var(--sec-y); background: var(--surface); border-top: 1px solid var(--border-soft); }
 :root[data-theme="dark"] .page-faq { background: #08131f; border-color: #16283c; }
 .page-faq__inner { display: grid; gap: 28px; }
 @media (min-width: 960px) { .page-faq__inner { grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: 72px; } .page-faq__head { position: sticky; top: calc(var(--header-h) + 32px); align-self: start; } }

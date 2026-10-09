@@ -37,6 +37,7 @@ const SPOT_ART = [
 ];
 
 const SPOTLIGHTS = 3;
+const MORE_FEATURES = 9;
 
 /**
  * ProductPageTemplate — the overview page for any product. Each product's
@@ -56,7 +57,16 @@ export function ProductPageTemplate({ product }: { product: Product }) {
     OVERVIEW_FEATURE_LIMIT,
   );
   const spotlights = highlights.slice(0, story.spot === "stack" || story.spot === "accordion" ? 5 : SPOTLIGHTS);
+  // Remaining highlights first, then one feature per area (round-robin) so the index reaches MORE_FEATURES
   const moreHighlights = highlights.slice(spotlights.length);
+  for (let round = 0; moreHighlights.length < MORE_FEATURES; round++) {
+    const picks = groups.map((g) => g.features[round]).filter((f): f is NonNullable<typeof f> => !!f);
+    if (!picks.length) break;
+    for (const f of picks) {
+      if (moreHighlights.length >= MORE_FEATURES) break;
+      if (![...spotlights, ...moreHighlights].some((x) => x.slug === f.slug)) moreHighlights.push(f);
+    }
+  }
   const related = getRelatedProducts(product);
   const shots = product.screenshots ?? [];
   const tourShot = product.heroImage ?? shots[0];
@@ -524,7 +534,7 @@ export function ProductPageTemplate({ product }: { product: Product }) {
             </h2>
             {data.features.length > highlights.length && (
               <p className="zs-sub zs-center">
-                {data.features.length} capabilities across {groups.length} areas.
+                {data.features.length} capabilities across {groups.length} {groups.length === 1 ? "area" : "areas"}.
               </p>
             )}
             {moreHighlights.length > 0 && (
@@ -534,12 +544,14 @@ export function ProductPageTemplate({ product }: { product: Product }) {
                   <li key={f.slug}>
                     {featureHasPage(f) ? (
                       <Link href={routes.feature(product.slug, f.slug)}>
+                        <span className="zs-index__icon" aria-hidden>{f.name.charAt(0)}</span>
                         <strong>{f.name}</strong>
                         <span>{f.summary}</span>
                         <i aria-hidden>→</i>
                       </Link>
                     ) : (
                       <div>
+                        <span className="zs-index__icon" aria-hidden>{f.name.charAt(0)}</span>
                         <strong>{f.name}</strong>
                         <span>{f.summary}</span>
                       </div>
@@ -706,7 +718,7 @@ export function ProductPageTemplate({ product }: { product: Product }) {
       {previewMode && (
         <section className="zs-band zs-band--plain">
           <div className="container">
-            <Slot show label={`${product.name} customer proof`} hint="Testimonials, case studies and ratings — verified only" />
+            <Slot show label={`${product.name} customer proof`} hint="Testimonials, case studies and ratings (verified only)" />
           </div>
         </section>
       )}

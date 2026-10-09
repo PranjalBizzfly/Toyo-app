@@ -50,7 +50,7 @@
 }
 /* Forest — deep Toyo green with lime headline (dark hero), pale-yellow soft bands. */
 .look-forest {
-  --primary: #3f7f1c; --primary-hover: #336817; --primary-soft: #eaf5e1; --accent: #0b6aa6; --accent-soft: #e8f4fc; --highlight: #f5c842;
+  --primary: #2f6e17; --primary-hover: #24560f; --primary-soft: #eaf5e1; --accent: #0b6aa6; --accent-soft: #e8f4fc; --highlight: #f5c842;
   --hero-bg: radial-gradient(60% 80% at 85% 20%, rgb(123 193 66 / .35), transparent 70%), linear-gradient(160deg, #10301d, #0b2416);
   --hero-heading: #ffffff; --hero-title: #b6e57f; --hero-text: #cfe3cf; --hero-chip-bg: rgb(255 255 255 / .1);
   --band-dark: #0b2416; --band-dark-2: #143a24; --band-dark-glow: rgb(123 193 66 / .32);
@@ -93,7 +93,7 @@
 }
 /* Sunrise — soft yellow-to-white with green accents (light hero). */
 .look-sunrise {
-  --primary: #3f7f1c; --primary-hover: #336817; --primary-soft: #eaf5e1; --accent: #0b6aa6; --accent-soft: #e8f4fc; --highlight: #f5c842;
+  --primary: #2f6e17; --primary-hover: #24560f; --primary-soft: #eaf5e1; --accent: #0b6aa6; --accent-soft: #e8f4fc; --highlight: #f5c842;
   --hero-bg: radial-gradient(60% 70% at 80% 0%, rgb(245 200 66 / .45), transparent 70%), radial-gradient(40% 50% at 0% 90%, rgb(123 193 66 / .22), transparent 70%), linear-gradient(180deg, #fff8df, #ffffff);
   --hero-title: #0f2235;
   --band-dark: #10301d; --band-dark-2: #183f27; --band-dark-glow: rgb(123 193 66 / .3);
@@ -103,7 +103,7 @@
 
 /* Void — near-black starfield, blue + yellow sparks (dark hero). */
 .look-void {
-  --primary: #0b6fe0; --primary-hover: #095bb8; --primary-soft: #e7f0fc; --accent: #4f8a22; --accent-soft: #eef7e6; --highlight: #f5c842;
+  --primary: #0a5cc0; --primary-hover: #084c9f; --primary-soft: #e7f0fc; --accent: #4f8a22; --accent-soft: #eef7e6; --highlight: #f5c842;
   --hero-bg: radial-gradient(1px 1px at 12% 22%, #fff8, transparent 60%), radial-gradient(1px 1px at 72% 14%, #fff6, transparent 60%), radial-gradient(1.5px 1.5px at 38% 68%, #fff7, transparent 60%), radial-gradient(1px 1px at 88% 58%, #fff5, transparent 60%), radial-gradient(1px 1px at 22% 84%, #fff5, transparent 60%), radial-gradient(1px 1px at 58% 38%, #fff4, transparent 60%), radial-gradient(60% 50% at 50% 100%, rgb(30 156 229 / .18), transparent 70%), #04070d;
   --hero-heading: #ffffff; --hero-title: #ffffff; --hero-text: #aab8c8; --hero-chip-bg: rgb(255 255 255 / .06);
   --band-dark: #04070d; --band-dark-2: #0a1220; --band-dark-glow: rgb(30 156 229 / .25);
@@ -112,7 +112,7 @@
 }
 /* Ink — charcoal navy with green signal (dark hero). */
 .look-ink {
-  --primary: #3f7f1c; --primary-hover: #336817; --primary-soft: #eaf5e1; --accent: #0b6aa6; --accent-soft: #e8f4fc; --highlight: #f5c842;
+  --primary: #2f6e17; --primary-hover: #24560f; --primary-soft: #eaf5e1; --accent: #0b6aa6; --accent-soft: #e8f4fc; --highlight: #f5c842;
   --hero-bg: radial-gradient(45% 60% at 80% 40%, rgb(123 193 66 / .18), transparent 70%), linear-gradient(180deg, #0c1622, #111d2b);
   --hero-heading: #ffffff; --hero-title: #ffffff; --hero-text: #b3c2d1; --hero-chip-bg: rgb(255 255 255 / .07);
   --band-dark: #0c1622; --band-dark-2: #15243a; --band-dark-glow: rgb(123 193 66 / .22);

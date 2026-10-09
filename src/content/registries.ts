@@ -96,7 +96,7 @@ export const integrations: Integration[] = [
     status: live,
     body: [
       "Cardizo: from a scanned contact, one click opens WhatsApp with a custom prefilled message. WhatsApp and email integrations are included from the Professional plan.",
-      "ZapBuzzer: on the Pro plan, the responsible team is alerted on WhatsApp at the same time as the app and email, repeating until someone accepts. The request itself — owner, timer, escalation and rating — stays in ZapBuzzer, not in a group chat.",
+      "ZapBuzzer: on the Pro plan, the responsible team is alerted on WhatsApp at the same time as the app and email, repeating until someone accepts. The request itself (owner, timer, escalation and rating) stays in ZapBuzzer, not in a group chat.",
       "Fantom: for businesses that use company numbers on WhatsApp, Fantom shows which managed SIMs have WhatsApp active and when each was last active, alerts on status changes and supports bulk status updates.",
     ],
   },
@@ -109,7 +109,7 @@ export const integrations: Integration[] = [
     products: ["zapbuzzer", "fantom"],
     status: live,
     body: [
-      "ZapBuzzer: on Pro, request alerts reach the team on Telegram alongside the app and email. Telegram is a delivery channel only — the request is routed, accepted, timed, escalated and rated in ZapBuzzer. The workspace admin connects Telegram during setup.",
+      "ZapBuzzer: on Pro, request alerts reach the team on Telegram alongside the app and email. Telegram is a delivery channel only; the request is routed, accepted, timed, escalated and rated in ZapBuzzer. The workspace admin connects Telegram during setup.",
       "Fantom: tracks whether Telegram is activated on each managed SIM and its last active time, with bulk status updates, so Telegram use across company numbers is visible in one dashboard.",
     ],
   },
@@ -138,10 +138,10 @@ export const solutions: Solution[] = [
     problem:
       "Day-to-day office operations run on phone calls, chat groups and spreadsheets: requests get chased or asked twice, email signatures drift off-brand as people edit their own, and nobody is sure which company numbers are recharged or still active.",
     approach:
-      "Give each recurring operational job a system of its own — a request flow with owners, timers and escalation; signatures designed once and deployed centrally; and a single dashboard for company SIMs. Each product works on its own; they are not connected to each other.",
+      "Give each recurring operational job a system of its own: a request flow with owners, timers and escalation; signatures designed once and deployed centrally; and a single dashboard for company SIMs. Each product works on its own; they are not connected to each other.",
     products: ["zapbuzzer", "sigchanger", "fantom"],
     body: [
-      "ZapBuzzer turns internal requests — pantry, print, IT, facilities and reception — into one tap. The whole responsible team is notified at once on the app and email (plus Telegram and WhatsApp on Pro), the first person to accept owns the request, and missed requests escalate along an SLA chain.",
+      "ZapBuzzer turns internal requests (pantry, print, IT, facilities and reception) into one tap. The whole responsible team is notified at once on the app and email (plus Telegram and WhatsApp on Pro), the first person to accept owns the request, and missed requests escalate along an SLA chain.",
       "SigChanger connects to Google Workspace so admins design Gmail signatures once in a drag-and-drop builder and deploy them to every mailbox. Directory changes reach signatures within minutes, and rollouts can be scheduled for campaigns and compliance changes.",
       "Fantom keeps company SIM cards, recharges and call logs in one cloud dashboard. An Android app syncs call logs, alerts flag recharge due dates and inactive SIMs, and WhatsApp and Telegram status is tracked across numbers.",
     ],
@@ -180,7 +180,7 @@ export const solutions: Solution[] = [
     faqs: [
       {
         question: "Is payroll in HRMagix built for India?",
-        answer: "Yes. HRMagix handles payroll with Indian statutory components — PF, ESI, PT and TDS.",
+        answer: "Yes. HRMagix handles payroll with Indian statutory components: PF, ESI, PT and TDS.",
       },
       {
         question: "Which platforms does ZUZU track?",
@@ -198,13 +198,13 @@ export const solutions: Solution[] = [
     summary:
       "Size your market with TAM, SAM and SOM traced to rated sources, then turn a product description into a marketing plan with personas, channels and a budget split.",
     problem:
-      "Founders need to show investors a defensible market size and show the market a credible plan — usually without a research team or a marketing team, and on a fundraising timeline.",
+      "Founders need to show investors a defensible market size and show the market a credible plan, usually without a research team or a marketing team, and on a fundraising timeline.",
     approach:
       "Start with a market-sizing report built two ways with every source cited, then generate a marketing plan from the product itself. Both products deliver their output as a PDF you can share.",
     products: ["sizoru", "getbenj"],
     body: [
-      "Sizoru sizes TAM, SAM and SOM top-down and bottom-up, compares the two results, and delivers bull, base and bear scenarios with tier-rated sources in a print-ready PDF — so every number in a pitch deck can be traced.",
-      "Benj takes a product description and returns a complete marketing plan — buyer persona, best markets, channels, a hyperlocal ad map and a budget split — as a PDF.",
+      "Sizoru sizes TAM, SAM and SOM top-down and bottom-up, compares the two results, and delivers bull, base and bear scenarios with tier-rated sources in a print-ready PDF, so every number in a pitch deck can be traced.",
+      "Benj takes a product description and returns a complete marketing plan as a PDF: buyer persona, best markets, channels, a hyperlocal ad map and a budget split.",
     ],
     faqs: [
       {
@@ -233,7 +233,7 @@ export const industries: Industry[] = [
     products: ["trackysuite"],
     body: [
       "For a practice, a missed deadline costs the client a penalty and the firm its reputation. TrackySuite is built for Indian CA, CS and tax firms: it places each client's GST, income-tax, TDS, ROC/MCA and labour deadlines automatically, so the calendar is built from client data rather than typed in by hand.",
-      "Every filing runs through a prepare–review–file pipeline, so work is checked before submission, and clients get a portal to upload documents and check the status of their work instead of calling the office.",
+      "Every filing runs through a prepare, review and file pipeline, so work is checked before submission, and clients get a portal to upload documents and check the status of their work instead of calling the office.",
     ],
     status: "live",
   },

@@ -475,7 +475,7 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
         dangerouslySetInnerHTML={jsonLd({
           "@context": "https://schema.org",
           "@type": "WebPage",
-          name: `${item.name} — ${product.name}`,
+          name: `${item.name} | ${product.name}`,
           description: item.summary,
           url: absoluteUrl(routes.productItem(product.slug, section, item.slug)),
           about: { "@type": "SoftwareApplication", name: product.name, url: absoluteUrl(routes.product(product.slug)) },

@@ -6,6 +6,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { NavLink, NavMenu } from "@/lib/navigation";
 import { ChevronDown, Icon } from "@/components/ui/Icon";
 import { ThemeToggle } from "./ThemeToggle";
+import { routes } from "@/lib/routes";
 
 function SearchForm({ id, className = "header-search", placeholder = "I'm looking for…" }: { id: string; className?: string; placeholder?: string }) {
   return (
@@ -221,7 +222,7 @@ export function HeaderNav({ menus }: { menus: NavMenu[] }) {
           <Icon name="search" />
         </Link>
         <ThemeToggle />
-        <Link href="/contact" className="header-signin">
+        <Link href={routes.contactForm()} className="header-signin">
           Contact
         </Link>
         <Link href="/products" className="btn btn--primary btn--sm header-cta">
@@ -287,7 +288,7 @@ export function HeaderNav({ menus }: { menus: NavMenu[] }) {
             <Link href="/products" className="btn btn--primary btn--square" onClick={close}>
               Get Started
             </Link>
-            <Link href="/contact" className="btn btn--outline btn--square" onClick={close}>
+            <Link href={routes.contactForm()} className="btn btn--outline btn--square" onClick={close}>
               Contact
             </Link>
           </div>

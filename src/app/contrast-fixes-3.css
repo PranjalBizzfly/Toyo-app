@@ -1,0 +1,36 @@
+/* Contrast fixes, pass 4 (scripts/compare/contrast-audit.mjs). */
+
+/* Breadcrumbs on the blue feature-page hero */
+html body .fz-hero .breadcrumbs :is(a, li, span) { color: #ffffff !important; opacity: .92; }
+
+/* Search: "Solution" / "Industry" chips use the green tone */
+:root:not([data-theme="dark"]) body .srch-card:is([data-type="Solution"], [data-type="Industry"]) .srch-card__type { color: #1f5a27 !important; }
+:root:not([data-theme="dark"]) body .srch-card[data-type="FAQ"] .srch-card__type { color: #7a4a10 !important; }
+
+/* Links inside dark product bands */
+html body :is(.zs-band--dark, .zs-band--black) .zs-spot__copy a { color: #8fcdf3 !important; }
+
+/* Any FAQ accordion inside a dark band: light body text */
+html body :is(.zs-band--dark, .zs-band--black, .rr-faq--dark, .h-sec--dark, .h-sec--island) .accordion__body { color: #c6d4e3 !important; }
+
+/* Green chips with light text: deepen the fill */
+html body .hs__card-in i { filter: brightness(.74) !important; }
+
+/* Kicker on the light-grey FAQ panel (SigChanger) and on brand bands */
+html body .zs-faqband:not(.zs-band--dark) .zs-kicker { color: #084c7a; }
+html body .zs-band--brand .zs-kicker { color: #ffe08a !important; }
+
+/* Home: island band heading, outline button, eyebrows */
+html body .h-sec--island :is(h2, .h-head h2) { color: #ffffff !important; }
+html body .h-sec--island .zbtn--outline { color: #ffffff !important; border-color: rgb(255 255 255 / .85) !important; }
+html body :is(.h-sec--brand, .h-sec--island) .h-eyebrow { color: #ffe08a !important; }
+html body .zc-band .eyebrow, html body [class*="band"] > .container > p.eyebrow { color: inherit; opacity: .9; }
+
+/* Feature-page split lead and centred heading on the light-blue band in dark mode */
+:root[data-theme="dark"] body .fz-sec--band :is(.fz-h2, .fz-lead) { color: #ffffff; }
+:root[data-theme="dark"] body .fz-sec--band { background-color: #0b5f93; }
+
+/* Feature-page split band lead and centred heading on the blue band */
+html body .fz-sec--band .fz-split__copy .fz-lead { color: #ffffff; }
+:root[data-theme="dark"] body .fz-center .fz-h2 { color: var(--heading); }
+html body .hs__card-in i { filter: brightness(.66) !important; }

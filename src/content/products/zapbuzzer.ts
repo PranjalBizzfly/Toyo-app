@@ -21,9 +21,9 @@ const featureCategories: FeatureCategory[] = [
   {
     slug: "requests",
     name: "Requests & catalogue",
-    description: "How employees ask for things: a catalogue of tiles, one tap, and a managed record behind every ask.",
+    description: "How employees ask for things: a catalogue of tiles, one tap, and a proper record behind every request.",
     body: [
-      "ZapBuzzer describes itself as an internal-request CRM for offices. Its starting point is the requester: instead of a phone call, a corridor shout or a message in a busy group, an employee taps a tile from the office catalogue, picks where it should go, adds an optional note and taps Buzz.",
+      "ZapBuzzer describes itself as an internal-request CRM for offices: a system that records and tracks every request staff make. Its starting point is the requester: instead of a phone call, a corridor shout or a message in a busy group, an employee taps a tile from the office catalogue, picks where it should go, adds an optional note and taps Buzz.",
       "Because every request comes from a catalogue item, it is specific, it knows which team should receive it, and it becomes a record with a time stamp, a destination and later an owner, timer and rating.",
     ],
   },
@@ -142,7 +142,7 @@ const features: Feature[] = [
   {
     slug: "request-catalog",
     name: "Request catalogue",
-    summary: "Your office's own menu of tiles — each one specific, owned by a team and one tap away.",
+    summary: "Your office's own menu of tiles, each one specific, owned by a team and one tap away.",
     category: "requests",
     hasPage: true,
     body: [
@@ -224,7 +224,7 @@ const features: Feature[] = [
     ],
     capabilities: [
       "Routing set up once from catalogue categories, with no rules or code",
-      "Everyone eligible notified at once rather than round-robin",
+      "Everyone on the team notified at once, not one person at a time",
       "Destination shown to staff so they know where to go",
       "Requests organised by location on Pro",
       "Escalation chain on Pro when a request is not handled in time",
@@ -257,9 +257,9 @@ const features: Feature[] = [
     ],
     capabilities: [
       "Broadcast to a team rather than one person",
-      "Ownership locked to the first accept, preventing duplicate ownership",
+      "The request locks to the first person who accepts, so it never has two owners",
       "Owner, ETA and status visible to the requester",
-      "Accepting does not stop the SLA clock, which is about delivery",
+      "Accepting does not stop the deadline clock; it runs until delivery",
       "Accept times and ratings feed analytics and scorecards",
     ],
     faqs: [
@@ -271,7 +271,7 @@ const features: Feature[] = [
   {
     slug: "request-assignment",
     name: "Request assignment",
-    summary: "Every request ends up with exactly one named owner — no dispatcher needed.",
+    summary: "Every request ends up with exactly one named owner, with no dispatcher needed.",
     category: "routing",
     hasPage: true,
     body: [
@@ -300,13 +300,13 @@ const features: Feature[] = [
   {
     slug: "multi-channel",
     name: "Multi-channel notifications",
-    summary: "App, email, Telegram and WhatsApp at the same time — repeating until someone accepts.",
+    summary: "App, email, Telegram and WhatsApp at the same time, repeating until someone accepts.",
     category: "routing",
     highlight: true,
     hasPage: true,
     body: [
       "When a request goes out, ZapBuzzer notifies the responsible team on every channel it uses at once rather than one after another. The app and email are on every plan; Pro adds Telegram and WhatsApp. Each notification carries the item, note and destination, and it repeats until someone accepts.",
-      "ZapBuzzer contrasts this with ladder-style alerting that tries one channel and waits before the next: sending to all channels together means the fastest channel for each person wins, and the first accept ends the noise for everyone. Teams can lean on the channels they actually check, but the request still goes to the whole team and still repeats until accepted.",
+      "Some alert systems try one channel and wait before trying the next. Sending to all channels together means each person sees it wherever they look first, and the first accept stops the alerts for everyone. Teams can rely on the channels they actually check, but the request still goes to the whole team and still repeats until accepted.",
     ],
     howItWorks: [
       "A request is raised and routed to a team.",
@@ -330,7 +330,7 @@ const features: Feature[] = [
   {
     slug: "request-tracking",
     name: "Request tracking",
-    summary: "Know where every request is without asking — from buzz to rating.",
+    summary: "Know where every request is without asking, from buzz to rating.",
     category: "tracking",
     hasPage: true,
     body: [
@@ -362,7 +362,7 @@ const features: Feature[] = [
   {
     slug: "real-time-updates",
     name: "Real-time updates",
-    summary: "Every change — new request, accept, ETA, delivery, overdue — reaches the right people as it happens.",
+    summary: "Every change (new request, accept, ETA, delivery, overdue) reaches the right people as it happens.",
     category: "tracking",
     hasPage: true,
     body: [
@@ -380,7 +380,7 @@ const features: Feature[] = [
       "Updates on the app and email, plus Telegram and WhatsApp on Pro",
       "Mobile app rings on a locked or silenced phone",
       "Repeating notifications so one missed alert cannot strand a request",
-      "Server-side workspace keeps web and mobile in sync",
+      "Workspace stored on the server keeps web and mobile in sync",
     ],
     faqs: [
       { question: "Do I need to keep the app open to get updates?", answer: "No. The mobile app still rings when the phone is locked or silenced, notifications also go out on the channels your plan supports, and opening the app shows the latest state." },
@@ -391,7 +391,7 @@ const features: Feature[] = [
   {
     slug: "request-status",
     name: "Request status lifecycle",
-    summary: "Requested, accepted, started, delivered, rated — one meaning per status, set by one action.",
+    summary: "Requested, accepted, started, delivered, rated: one meaning per status, set by one action.",
     category: "tracking",
     hasPage: true,
     body: [
@@ -403,7 +403,7 @@ const features: Feature[] = [
       "Accepted: the first free staff member taps Accept and owns it.",
       "Started: the owner begins and gives an ETA.",
       "Delivered: the owner marks it done, optionally with a photo.",
-      "Rated: the requester gives 1–5 stars, closing the request.",
+      "Rated: the requester gives 1 to 5 stars, closing the request.",
     ],
     capabilities: [
       "Same order every time, so timestamps are comparable",
@@ -478,7 +478,7 @@ const features: Feature[] = [
     category: "tracking",
     hasPage: true,
     body: [
-      "A request is finished only when the requester has what they asked for. In ZapBuzzer delivery is an explicit step: the owner taps Delivered and can attach a photo — the prints on the table, the parcel at reception, the meeting room set up. The timer stops and the request is recorded as on time or late.",
+      "A request is finished only when the requester has what they asked for. In ZapBuzzer delivery is an explicit step: the owner taps Delivered and can attach a photo: the prints on the table, the parcel at reception, the meeting room set up. The timer stops and the request is recorded as on time or late.",
       "The requester sees a delivered card with the owner, the time and any photo, followed by a rating prompt. For courier and mailroom work the logged delivery doubles as an audit record.",
     ],
     problem:
@@ -512,11 +512,11 @@ const features: Feature[] = [
     highlight: true,
     hasPage: true,
     body: [
-      "Every ZapBuzzer request carries an SLA — a time limit for getting it done — and the clock runs from the tap, not from acceptance, so a request nobody accepts still burns its time. If it is not delivered in time, it escalates automatically to a manager rather than staying with whoever last saw it.",
+      "Every ZapBuzzer request carries an SLA (a time limit for getting it done), and the clock runs from the tap, not from acceptance, so a request nobody accepts still burns its time. If it is not delivered in time, it escalates automatically to a manager rather than staying with whoever last saw it.",
       "ZapBuzzer recommends deadlines per item rather than one office-wide number, starting generous and tightening with data. A deadline belongs to the request, so it keeps running if work is handed over. On Pro, an escalation chain can move a stuck request further up.",
     ],
     problem:
-      "Requests nobody follows up on — ZapBuzzer's example is facilities tickets that “rot in someone's DMs” until someone senior complains.",
+      "Requests nobody follows up on: ZapBuzzer's example is facilities tickets that “rot in someone's DMs” until someone senior complains.",
     howItWorks: [
       "A request is buzzed and its deadline starts.",
       "The countdown is visible to staff and managers.",
@@ -528,7 +528,7 @@ const features: Feature[] = [
       "A deadline on every request",
       "Deadlines set per kind of request",
       "Automatic escalation of overdue requests",
-      "Breach detection and overdue views",
+      "Missed deadlines flagged, with overdue views",
       "SLA timers with an escalation chain on Pro",
     ],
     useCases: [
@@ -544,7 +544,7 @@ const features: Feature[] = [
     category: "sla",
     hasPage: true,
     body: [
-      "An escalation chain is a list of people who are alerted one after another if a request runs late — for example a supervisor, then an admin head. ZapBuzzer escalates on the clock instead of waiting for an employee to get fed up and call someone, so managers only hear about the requests that are actually late.",
+      "An escalation chain is a list of people who are alerted one after another if a request runs late, for example a supervisor, then an admin head. ZapBuzzer escalates on the clock instead of waiting for an employee to get fed up and call someone, so managers only hear about the requests that are actually late.",
       "ZapBuzzer advises keeping chains short (usually two or three levels), not putting very senior people first, and reviewing escalations regularly: an item that escalates often usually needs a different deadline, staffing or supply location rather than more escalation.",
     ],
     howItWorks: [
@@ -571,7 +571,7 @@ const features: Feature[] = [
   {
     slug: "request-ratings",
     name: "Request ratings",
-    summary: "Requesters rate each delivery 1–5 stars, credited to the person who did the work.",
+    summary: "Requesters rate each delivery 1 to 5 stars, credited to the person who did the work.",
     category: "analytics",
     hasPage: true,
     body: [
@@ -580,7 +580,7 @@ const features: Feature[] = [
     ],
     howItWorks: [
       "A request is marked delivered.",
-      "The requester gets a prompt to rate it 1–5 stars.",
+      "The requester gets a prompt to rate it 1 to 5 stars.",
       "The rating is attached to the owner.",
       "Ratings roll up into the staff scorecard.",
     ],
@@ -609,7 +609,7 @@ const features: Feature[] = [
     ],
     howItWorks: [
       "Requests are timed and rated as they are handled.",
-      "Analytics aggregate volume, timings and ratings by team, item, person and location.",
+      "Analytics add up volume, timings and ratings by team, item, person and location.",
       "Scorecards summarise each staff member's work.",
       "Managers review trends and adjust staffing, stock or deadlines.",
     ],
@@ -627,11 +627,11 @@ const features: Feature[] = [
   {
     slug: "request-history",
     name: "Request history",
-    summary: "Who asked for what, who handled it and how long it took — 30 days on Free, full history on Pro.",
+    summary: "Who asked for what, who handled it and how long it took: 30 days on Free, full history on Pro.",
     category: "analytics",
     hasPage: true,
     body: [
-      "Every ZapBuzzer request leaves a record: who buzzed it, what for, where, who accepted, when it was delivered and how it was rated. Request history turns that into a log you can look back on — per person for employees, per team for staff and office-wide for admins and owners, depending on role.",
+      "Every ZapBuzzer request leaves a record: who buzzed it, what for, where, who accepted, when it was delivered and how it was rated. Request history turns that into a log you can look back on: per person for employees, per team for staff and office-wide for admins and owners, depending on role.",
       "History settles questions that are really about memory: whether a print job went out, how often a room's projector has failed, whether a courier pickup was logged. On Free it covers the last 30 days; Pro keeps full history with audit logs and reports.",
     ],
     howItWorks: [
@@ -661,10 +661,10 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Reports turn thousands of small requests into answers: which team is fastest, how often deadlines are missed, when the office buzzes most and what lunches cost this month. Because every request is categorised, owned, timed and rated, reports can slice by team, category, person, location and time.",
-      "ZapBuzzer suggests reviewing weekly in the first month and then picking a few numbers — such as accept time, on-time delivery and average rating — for a monthly review. Reports and full analytics are part of Pro; Enterprise adds the API and webhooks for your own reporting.",
+      "ZapBuzzer suggests reviewing weekly in the first month and then picking a few numbers, such as accept time, on-time delivery and average rating, for a monthly review. Reports and full analytics are part of Pro; Enterprise adds the API and webhooks for your own reporting.",
     ],
     howItWorks: [
-      "Requests accumulate with their timings and ratings.",
+      "Requests build up with their timings and ratings.",
       "Reports summarise volume, timing, deadlines, ratings and spend.",
       "Readers check the numbers relevant to their role.",
       "The underlying request records explain why a number moved.",
@@ -703,12 +703,12 @@ const features: Feature[] = [
   {
     slug: "admin-dashboard",
     name: "Admin dashboard",
-    summary: "A live list of every request — who asked, who accepted, how long it has waited.",
+    summary: "A live list of every request: who asked, who accepted, how long it has waited.",
     category: "administration",
     hasPage: true,
     body: [
       "The admin dashboard replaces running the office from memory and phone calls. Every request shows up with its category, destination, current state, owner and timer, so the people running the office see the whole day at a glance instead of reconstructing it afterwards.",
-      "It is also where admins set the office up. Role-specific views sit alongside it: managers see overdue requests, escalations and team queues; owners see KPI tiles, busiest hours and the spend view; staff see their queue; employees see the request grid and their own status.",
+      "It is also where admins set the office up. Role-specific views sit alongside it: managers see overdue requests, escalations and team queues; owners see tiles with key numbers, busiest hours and the spend view; staff see their queue; employees see the request grid and their own status.",
     ],
     howItWorks: [
       "Requests appear on the live queue as they are buzzed.",
@@ -721,7 +721,7 @@ const features: Feature[] = [
       "Current state and owner with name and photo",
       "Time elapsed against the deadline",
       "Manager view of escalations and team queues",
-      "Owner view of KPIs, busiest hours and spend",
+      "Owner view of key numbers, busiest hours and spend",
     ],
     relatedFeatures: ["request-management", "roles-and-audit-log", "spend-visibility"],
     sources: [s("/administration"), s("/administration/owner-dashboard"), s("/administration/manager-dashboard"), s("/administration/employee-dashboard")],
@@ -729,7 +729,7 @@ const features: Feature[] = [
   {
     slug: "team-management",
     name: "Team management",
-    summary: "Group staff into pantry, print, IT, facilities and reception teams — the routing table for every request.",
+    summary: "Group staff into pantry, print, IT, facilities and reception teams: the routing table for every request.",
     category: "administration",
     hasPage: true,
     body: [
@@ -744,7 +744,7 @@ const features: Feature[] = [
     ],
     capabilities: [
       "Teams for pantry, print, IT, facilities, reception and security",
-      "Requests fan out to every team member",
+      "Requests go to every team member",
       "Staff in several teams",
       "Contractor and in-house staff in one queue",
       "Unlimited staff on Pro (up to 10 on Free)",
@@ -755,12 +755,12 @@ const features: Feature[] = [
   {
     slug: "roles-and-audit-log",
     name: "Roles & audit log",
-    summary: "Each role — owner, manager, staff, employee — gets its own permissions, every action is written to an audit log, and only the owner can see what requests cost.",
+    summary: "Each role (owner, manager, staff, employee) gets its own permissions, every action is written to an audit log, and only the owner can see what requests cost.",
     category: "administration",
     hasPage: true,
     body: [
       "Access in ZapBuzzer is controlled by role. A common starting point: employees buzz, track and rate; staff also accept and deliver; managers receive escalations and see team reports; owners control workspace, billing, roles and spend. Changing what a role can do changes it for everyone in that role.",
-      "Every action is written to an audit log — who buzzed, who accepted, who escalated, who changed a role or setting — so disputes are settled by the record. Audit logs and reports are on Pro and carry into Enterprise.",
+      "Every action is written to an audit log (who buzzed, who accepted, who escalated, who changed a role or setting), so disputes are settled by the record. Audit logs and reports are on Pro and carry into Enterprise.",
     ],
     howItWorks: [
       "Assign each person a role: requester, staff, manager or owner.",
@@ -769,7 +769,7 @@ const features: Feature[] = [
       "Open the log to trace a request or a configuration change.",
     ],
     capabilities: [
-      "Granular permissions per role",
+      "Detailed permissions for each role",
       "Audit log of every action, including role and settings changes",
       "Spend view restricted to the owner",
       "Audit logs and reports on Pro",
@@ -783,7 +783,7 @@ const features: Feature[] = [
   {
     slug: "spend-visibility",
     name: "Spend visibility",
-    summary: "The owner sees what requests such as a team lunch cost — and nobody else does.",
+    summary: "The owner sees what requests such as a team lunch cost, and nobody else does.",
     category: "administration",
     hasPage: true,
     body: [
@@ -813,18 +813,18 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Multi-location starts on Pro. Each office, floor or building can be set up as a location so that a request routes to the team at the right site, and analytics compare locations on equal terms.",
-      "ZapBuzzer notes what breaks when a second office is added without it: each site invents its own WhatsApp group and rules, head office cannot compare sites, and requests go to the wrong pantry. Enterprise adds SSO, white-label, API access, on-prem and a dedicated CSM for larger groups.",
+      "ZapBuzzer notes what breaks when a second office is added without it: each site invents its own WhatsApp group and rules, head office cannot compare sites, and requests go to the wrong pantry. For larger groups, Enterprise adds SSO (single sign-on), white-label branding, API access, an on-prem option to run it on your own servers and a dedicated customer success manager (CSM).",
     ],
     howItWorks: [
       "Add each office or building as a location.",
-      "Scope staff and admins to their location.",
+      "Limit staff and admins to their own location.",
       "Requests route to the team at the requester's site.",
       "Compare locations in analytics.",
     ],
     capabilities: [
       "Multiple locations in one workspace (Pro)",
       "Same tap-to-request flow at every location",
-      "Staff and admins scoped per location",
+      "Staff and admins limited to their own location",
       "Side-by-side location analytics",
     ],
     relatedFeatures: ["team-management", "analytics-plus-scorecard"],
@@ -861,7 +861,7 @@ const features: Feature[] = [
     faqs: [
       {
         question: "Why do I see “App not installed” when updating?",
-        answer: "If your phone has a build from before 11 August 2026, uninstall it first and then install the new version — the older build was signed differently. Your account and workspace are stored on the server, so signing in again restores them.",
+        answer: "If your phone has a build from before 11 August 2026, uninstall it first and then install the new version; the older build was signed differently. Your account and workspace are stored on the server, so signing in again restores them.",
       },
     ],
     sources: [s("/mobile-app"), s("/mobile-app/android-app"), s("/notifications/mobile-push-notifications"), HOME],
@@ -871,7 +871,7 @@ const features: Feature[] = [
   {
     slug: "pantry-catalogue",
     name: "Pantry catalogue",
-    summary: "Coffee, tea, juice, snacks and dry fruits — your usual order is one tap away.",
+    summary: "Coffee, tea, juice, snacks and dry fruits: your usual order is one tap away.",
     category: "pantry",
     highlight: true,
     hasPage: true,
@@ -901,7 +901,7 @@ const features: Feature[] = [
   {
     slug: "lunch-requests",
     name: "Lunch requests",
-    summary: "A team lunch as one request with notes, an owner and a deadline — and a cost the owner can see.",
+    summary: "A team lunch as one request with notes, an owner and a deadline, and a cost the owner can see.",
     category: "pantry",
     hasPage: true,
     body: [
@@ -945,7 +945,7 @@ const features: Feature[] = [
     ],
     capabilities: [
       "Requests from reception, HR or any host",
-      "Parallel handling by different pantry staff",
+      "Different pantry staff can handle requests at the same time",
       "Overdue requests escalate to a manager",
       "Record of how events and visits were served",
     ],
@@ -966,7 +966,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "A ZapBuzzer print request asks for everything up front: the file, the number of copies, colour or black-and-white, the destination and a note for finishing such as stapling or double-sided. The print team sees a complete job card and can start the moment it accepts.",
-      "The PDF is attached to the request itself, so the version you send is the version that gets printed — no scrolling a group chat for “the latest” deck. Prints are delivered to the desk, cabin or meeting room on the request.",
+      "The PDF is attached to the request itself, so the version you send is the version that gets printed, with no scrolling a group chat for “the latest” deck. Prints are delivered to the desk, cabin or meeting room on the request.",
     ],
     problem:
       "ZapBuzzer names print jobs “lost in a WhatsApp group” as one of the frustrations it was built to fix: files dropped into a chat with “24 copies please”, no colour setting, no destination, and old versions printed by mistake.",
@@ -1081,8 +1081,8 @@ const features: Feature[] = [
     category: "it-support",
     hasPage: true,
     body: [
-      "Projector problems appear at the worst moment and the fix is usually simple — input source, a loose cable, resolution. What takes time is finding someone from IT who is free. With ZapBuzzer the presenter taps Projector help, picks the room and adds a note such as “No signal, MacBook USB-C”; every technician is pinged and the closest accepts.",
-      "Requests are logged against the room, so a projector that needs help every week shows up clearly in history — usually the evidence needed to repair the unit or relabel the inputs.",
+      "Projector problems appear at the worst moment and the fix is usually simple: input source, a loose cable, resolution. What takes time is finding someone from IT who is free. With ZapBuzzer the presenter taps Projector help, picks the room and adds a note such as “No signal, MacBook USB-C”; every technician is pinged and the closest accepts.",
+      "Requests are logged against the room, so a projector that needs help every week shows up clearly in history, usually the evidence needed to repair the unit or relabel the inputs.",
     ],
     howItWorks: [
       "Tap IT, then Projector help, and choose the room.",
@@ -1095,7 +1095,7 @@ const features: Feature[] = [
       "Exact room on every request",
       "Notes so the technician brings the right adapter",
       "Repeating notifications until accepted",
-      "Tight SLA with escalation to the IT lead on Pro",
+      "Short deadline, with escalation to the IT lead on Pro",
       "Per-room request history",
     ],
     relatedFeatures: ["hdmi-requests", "meeting-room-it-support"],
@@ -1104,12 +1104,12 @@ const features: Feature[] = [
   {
     slug: "hdmi-requests",
     name: "HDMI & adapter requests",
-    summary: "The most common two-minute IT ask, made one tap — with the laptop port in the note.",
+    summary: "The most common two-minute IT ask, made one tap, with the laptop port in the note.",
     category: "it-support",
     hasPage: true,
     body: [
       "HDMI cables and adapters walk out of meeting rooms every week, and new laptops often have only USB-C. Because the ask is so predictable, ZapBuzzer suggests making cable and adapter types catalogue items, so the employee does not have to explain and IT knows exactly what to grab.",
-      "The request goes to the room, the first technician to accept walks over, and the request is counted against the room — showing which rooms lose cables most.",
+      "The request goes to the room, the first technician to accept walks over, and the request is counted against the room, showing which rooms lose cables most.",
     ],
     howItWorks: [
       "Pick the cable or adapter item and choose the room, noting the laptop port.",
@@ -1132,11 +1132,11 @@ const features: Feature[] = [
   {
     slug: "meeting-room-it-support",
     name: "Meeting-room IT support",
-    summary: "Displays, video-call kits and cables fixed while the meeting waits — logged room by room.",
+    summary: "Displays, video-call kits and cables fixed while the meeting waits, logged room by room.",
     category: "it-support",
     hasPage: true,
     body: [
-      "When a meeting room's display, camera or speakerphone fails, a whole room — and maybe a client on a call — is waiting. ZapBuzzer treats meeting rooms as destinations, so IT walks straight there, and every request is logged against the room to show which spaces need attention.",
+      "When a meeting room's display, camera or speakerphone fails, a whole room (and maybe a client on a call) is waiting. ZapBuzzer treats meeting rooms as destinations, so IT walks straight there, and every request is logged against the room to show which spaces need attention.",
       "Meeting rooms need both IT and facilities; from the same app, a display issue routes to IT and an AC complaint to facilities, so employees do not need to know who handles what. Requests can also be raised ahead of time, such as a display check before an important meeting.",
     ],
     howItWorks: [
@@ -1215,7 +1215,7 @@ const features: Feature[] = [
   {
     slug: "ac-requests",
     name: "AC requests",
-    summary: "“Too cold in Room A” becomes a timed request with an owner — and a manager hears if it isn't fixed.",
+    summary: "“Too cold in Room A” becomes a timed request with an owner, and a manager hears if it isn't fixed.",
     category: "facilities",
     hasPage: true,
     body: [
@@ -1231,7 +1231,7 @@ const features: Feature[] = [
     capabilities: [
       "Separate items for too cold, too hot, not working and leaking",
       "Room on every complaint",
-      "Short SLA with escalation on Pro",
+      "Short deadline, with escalation on Pro",
       "History and analytics per room",
     ],
     faqs: [
@@ -1243,16 +1243,16 @@ const features: Feature[] = [
   {
     slug: "conference-room-issues",
     name: "Conference-room issues",
-    summary: "Meeting-room asks — clearing up, extra chairs, a light out or the AC too cold — go straight to facilities, so rooms are ready before and between meetings.",
+    summary: "Meeting-room asks (clearing up, extra chairs, a light out or the AC too cold) go straight to facilities, so rooms are ready before and between meetings.",
     category: "facilities",
     hasPage: true,
     body: [
-      "Clients judge a meeting by the room. ZapBuzzer handles the facilities side of the room — clearing and wiping, extra chairs, lights, temperature — while displays and cables route separately to IT. Requests can be raised before a meeting with a note on timing.",
+      "Clients judge a meeting by the room. ZapBuzzer handles the facilities side of the room (clearing and wiping, extra chairs, lights, temperature), while displays and cables route separately to IT. Requests can be raised before a meeting with a note on timing.",
       "ZapBuzzer suggests a reset request between back-to-back meetings and a monthly look at each room's request history. It is clear that it is not a room booking system: it makes sure the room you booked is ready and working.",
     ],
     howItWorks: [
       "Pick a room item such as Clear room or Extra chairs.",
-      "The right team — housekeeping, maintenance or facilities — is pinged.",
+      "The right team (housekeeping, maintenance or facilities) is pinged.",
       "The requester sees accepted, started with ETA and delivered.",
       "Room history shows recurring problems.",
     ],
@@ -1276,7 +1276,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "ZapBuzzer is for reactive maintenance: things employees notice and report, such as a dripping tap, a door that won't latch or a flickering light. First-accept-wins gives each repair an owner; delivery confirmation with an optional photo shows it is done.",
-      "It is not a planned-maintenance scheduler or a CAFM system and does not track maintenance contracts. Its history does show which fixtures keep failing, giving facilities managers a short list worth a proper fix and evidence to take to a landlord or vendor.",
+      "It is not a planned-maintenance scheduler or a CAFM system (facilities management software) and does not track maintenance contracts. Its history does show which fixtures keep failing, giving facilities managers a short list worth a proper fix and evidence to take to a landlord or vendor.",
     ],
     howItWorks: [
       "Tap the maintenance item and describe the fault and location.",
@@ -1330,8 +1330,8 @@ const features: Feature[] = [
     category: "courier-and-reception",
     hasPage: true,
     body: [
-      "Courier pickup is a job with a real person waiting at the gate. ZapBuzzer treats it like any other buzz — sent to the whole mailroom team at once and repeated until accepted — and gives reception a name and an ETA to pass on instead of “someone will come”.",
-      "The request stays open, with its timer running, until the parcel is handed over and marked delivered, so the second gap — between signing and reaching the recipient — is closed too. Every step is audit-logged.",
+      "Courier pickup is a job with a real person waiting at the gate. ZapBuzzer treats it like any other buzz, sent to the whole mailroom team at once and repeated until accepted, and gives reception a name and an ETA to pass on instead of “someone will come”.",
+      "The request stays open, with its timer running, until the parcel is handed over and marked delivered, so the second gap, between signing and reaching the recipient, is closed too. Every step is audit-logged.",
     ],
     howItWorks: [
       "Reception taps Courier Pickup and notes the courier, package count, gate and recipient.",
@@ -1347,7 +1347,7 @@ const features: Feature[] = [
       "Delivery photo and audit trail of the handoff",
     ],
     faqs: [
-      { question: "Does ZapBuzzer connect to courier companies' tracking systems?", answer: "No. It tracks the internal side — who requested, accepted, started and handed over. Staff can add the courier name or reference number in the note." },
+      { question: "Does ZapBuzzer connect to courier companies' tracking systems?", answer: "No. It tracks the internal side: who requested, accepted, started and handed over. Staff can add the courier name or reference number in the note." },
     ],
     relatedFeatures: ["outgoing-dispatch", "internal-deliveries", "roles-and-audit-log"],
     sources: [s("/solutions/courier-and-reception/courier-pickup"), s("/solutions/courier-and-reception/incoming-courier-workflow"), HOME],
@@ -1381,11 +1381,11 @@ const features: Feature[] = [
   {
     slug: "internal-deliveries",
     name: "Internal deliveries",
-    summary: "The last fifty metres — from reception or the mailroom to a desk or cabin — with an owner and a photo.",
+    summary: "The last fifty metres, from reception or the mailroom to a desk or cabin, with an owner and a photo.",
     category: "courier-and-reception",
     hasPage: true,
     body: [
-      "A courier's tracking ends when reception signs. Getting the parcel to the person who needs it — a new joiner's laptop, a cheque for accounts, samples for sales — is an internal job nobody tracks. A delivery request gives that leg an owner, an ETA and a delivered status.",
+      "A courier's tracking ends when reception signs. Getting the parcel to the person who needs it (a new joiner's laptop, a cheque for accounts, samples for sales) is an internal job nobody tracks. A delivery request gives that leg an owner, an ETA and a delivered status.",
       "For valuable or confidential items ZapBuzzer suggests writing “hand over in person” in the note and treating delivered as a handover, so the audit trail shows exactly who carried it and when.",
     ],
     howItWorks: [
@@ -1411,7 +1411,7 @@ const features: Feature[] = [
     category: "courier-and-reception",
     hasPage: true,
     body: [
-      "Receptionists spend much of the day passing messages along. With ZapBuzzer the front desk raises a request to the right team — mailroom, pantry, IT, facilities or security — and goes back to the next visitor, watching the status instead of chasing it.",
+      "Receptionists spend much of the day passing messages along. With ZapBuzzer the front desk raises a request to the right team (mailroom, pantry, IT, facilities or security) and goes back to the next visitor, watching the status instead of chasing it.",
       "A shared view of open requests also helps shift handovers: the afternoon receptionist sees what is still with the mailroom or facilities instead of relying on a sticky note. ZapBuzzer notes it is not a visitor management system.",
     ],
     howItWorks: [
@@ -1440,8 +1440,8 @@ const productSolutions: ProductSolution[] = [
     name: "Pantry management",
     summary: "Every coffee, tea, snack and lunch order as a tracked request owned by whoever is free first.",
     body: [
-      "Pantry requests are small, frequent and time-sensitive — exactly the combination that breaks phone calls, intercoms and WhatsApp groups. ZapBuzzer turns each order into a request: employees tap their usual item, choose a destination and add a note; the whole pantry team is pinged; the first person free accepts and owns it.",
-      "Every pantry request is timed, rated and counted, so the owner and office manager finally see the pantry in numbers — including the cost of orders such as a team lunch, which only the owner can see.",
+      "Pantry requests are small, frequent and time-sensitive: exactly the combination that breaks phone calls, intercoms and WhatsApp groups. ZapBuzzer turns each order into a request: employees tap their usual item, choose a destination and add a note; the whole pantry team is pinged; the first person free accepts and owns it.",
+      "Every pantry request is timed, rated and counted, so the owner and office manager finally see the pantry in numbers, including the cost of orders such as a team lunch, which only the owner can see.",
     ],
     problem:
       "Someone shouts or posts in the pantry group and nobody knows who took it; one coffee takes three calls; lunch orders get buried under replies; nobody knows how long anything took or what the pantry costs.",
@@ -1449,7 +1449,7 @@ const productSolutions: ProductSolution[] = [
       "Catalogue items with destinations make each order complete the first time",
       "The whole pantry team is pinged and the first to accept owns it",
       "The requester sees the staffer's name, photo and ETA",
-      "Every order carries an SLA and escalates when it slips",
+      "Every order has a deadline and escalates when it runs late",
       "Ratings credit staff; the owner sees spend",
     ],
     workflow: [
@@ -1498,7 +1498,7 @@ const productSolutions: ProductSolution[] = [
   {
     slug: "it-support",
     name: "IT support for quick office fixes",
-    summary: "Projectors, cables, spares and logins — one tap pings the whole IT desk and the first free technician owns it.",
+    summary: "Projectors, cables, spares and logins: one tap pings the whole IT desk and the first free technician owns it.",
     body: [
       "ZapBuzzer separates two kinds of IT work: the long-running kind (laptop setup, network changes, investigations) and the five-minute kind (a projector that won't show a laptop, an adapter before a client call, a frozen room display). It is designed for the second kind and says plainly that it is not a full IT service management system.",
       "Many teams run both side by side: ZapBuzzer catches the corridor requests that would never become a formal ticket, gives each one a named technician, an ETA and a timer, and builds data on response times and problem rooms.",
@@ -1528,10 +1528,10 @@ const productSolutions: ProductSolution[] = [
   {
     slug: "facilities",
     name: "Facilities requests",
-    summary: "AC, lights, leaks, cleaning and furniture — reported in one tap, owned, timed and escalated when late.",
+    summary: "AC, lights, leaks, cleaning and furniture, reported in one tap, owned, timed and escalated when late.",
     body: [
-      "Facilities requests have a habit of rotting: a complaint is passed by word of mouth, nobody knows who picked it up, and there is no clock saying it is late. ZapBuzzer gives employees one tap to report an issue with its room, pings the facilities team at once, and makes sure each job has an owner, a deadline and a record.",
-      "Routing sends each issue to the right group — housekeeping, maintenance, electrical or admin — including outsourced staff, and on Pro overdue jobs climb an escalation chain. ZapBuzzer is clear that it is not a CAFM system for leases, planned maintenance or asset registers.",
+      "Facilities requests are easily forgotten: a complaint is passed by word of mouth, nobody knows who picked it up, and there is no clock saying it is late. ZapBuzzer gives employees one tap to report an issue with its room, pings the facilities team at once, and makes sure each job has an owner, a deadline and a record.",
+      "Routing sends each issue to the right group (housekeeping, maintenance, electrical or admin), including outsourced staff, and on Pro overdue jobs climb an escalation chain. ZapBuzzer is clear that it is not a CAFM system (full facilities management software) for leases, planned maintenance or asset registers.",
     ],
     problem:
       "Complaints arrive by phone, chat and corridor, the facilities team never sees the whole list, employees report the same issue several times, and nobody notices when a job has sat for hours.",
@@ -1552,7 +1552,7 @@ const productSolutions: ProductSolution[] = [
     audience: ["Facilities managers and admin heads", "Housekeeping and maintenance staff", "Employees reporting issues", "Facility service providers"],
     features: ["ac-requests", "conference-room-issues", "maintenance-requests", "office-equipment-requests", "escalation-chains"],
     faqs: [
-      { question: "Is ZapBuzzer a CAFM or full facilities management system?", answer: "No. It handles the reactive, everyday requests employees raise and makes sure each is owned and finished on time; it does not manage leases, planned maintenance schedules or asset registers." },
+      { question: "Is ZapBuzzer a CAFM (facilities management software) or full facilities system?", answer: "No. It handles the reactive, everyday requests employees raise and makes sure each is owned and finished on time; it does not manage leases, planned maintenance schedules or asset registers." },
     ],
     sources: [s("/solutions/facilities"), s("/solutions/facilities/facilities-requests"), s("/solutions/facilities/facilities-routing"), s("/use-cases/facilities-manager")],
   },
@@ -1587,7 +1587,7 @@ const productSolutions: ProductSolution[] = [
   {
     slug: "facility-companies-and-groups",
     name: "Facility companies & multi-office groups",
-    summary: "Run request handling across many sites — or for client offices under your own brand — on Enterprise.",
+    summary: "Run request handling across many sites, or for client offices under your own brand, on Enterprise.",
     body: [
       "ZapBuzzer's Enterprise plan is aimed at two kinds of organisation: groups with many offices that need single sign-on, central control and data flowing into other systems, and facility management companies that provide pantry, housekeeping or front-desk services to client offices and want to offer request handling under their own name.",
       "Enterprise includes everything in Pro plus SSO and SAML, white-label with a custom domain, a REST API and webhooks, a dedicated customer success manager and an on-prem option. ZapBuzzer says single offices and companies with a few floors are usually covered by Pro.",
@@ -1602,7 +1602,7 @@ const productSolutions: ProductSolution[] = [
       "API and webhooks to feed client reports and internal trackers",
     ],
     workflow: [
-      "Scoping call covering sites, teams, identity, branding and integrations.",
+      "An initial call to agree sites, teams, sign-in, branding and integrations.",
       "Pilot one site with its catalogue and teams.",
       "Set up SSO, white-label and custom domain as agreed.",
       "Roll out further locations with the CSM's help.",
@@ -1618,7 +1618,7 @@ const productSolutions: ProductSolution[] = [
   {
     slug: "leaders-and-founders",
     name: "For CEOs and founders",
-    summary: "Tap once from the boss cabin and get back to the meeting — and stop being the router for every small request.",
+    summary: "Tap once from the boss cabin and get back to the meeting, and stop being the router for every small request.",
     body: [
       "A leader's day is back-to-back meetings, and every small request that needs a phone call breaks one of them. ZapBuzzer lets a CEO tap Coffee, pick the boss cabin and get back to the conversation, while the owner view shows how well the office serves everyone else.",
       "For founders of growing companies, ZapBuzzer offers a proper internal-request system without hiring an admin team to run it: each catalogue item goes to the team that handles it, so staff stop DMing the founder because nobody else is clearly responsible.",
@@ -1640,7 +1640,7 @@ const productSolutions: ProductSolution[] = [
     name: "For office managers & admin teams",
     summary: "Stop relaying every request yourself: decide how requests flow and watch the numbers.",
     body: [
-      "Everyone asks the office manager — coffee, a missing cable, a courier at the gate, a cold room — and the relaying, remembering and chasing eat the day. With ZapBuzzer, catalogue items route straight to pantry, print, IT or facilities, notifications repeat until someone accepts, and overdue requests escalate to a manager.",
+      "Everyone asks the office manager (coffee, a missing cable, a courier at the gate, a cold room), and the relaying, remembering and chasing eat the day. With ZapBuzzer, catalogue items route straight to pantry, print, IT or facilities, notifications repeat until someone accepts, and overdue requests escalate to a manager.",
       "For admin teams handling a hundred small jobs a day, the problem is ownership rather than volume. A shared queue with first-accept-wins means whoever taps Accept owns the job, and ratings and scorecards give fair, factual staff data.",
     ],
     problem:
@@ -1681,7 +1681,7 @@ const productIntegrations: ProductIntegration[] = [
   {
     slug: "telegram",
     name: "Telegram",
-    summary: "On Pro, request alerts reach the team on Telegram alongside the app and email — the request itself stays in ZapBuzzer.",
+    summary: "On Pro, request alerts reach the team on Telegram alongside the app and email; the request itself stays in ZapBuzzer.",
     registry: "telegram",
     connects:
       "ZapBuzzer uses Telegram as a delivery channel, not as the system. The request is raised, routed, accepted, timed, escalated and rated in ZapBuzzer; Telegram is where the team sees the alert, at the same moment as the app and email.",
@@ -1732,9 +1732,9 @@ const productIntegrations: ProductIntegration[] = [
     name: "REST API",
     summary: "Enterprise: let your own systems pull request data for reports, dashboards and warehouses.",
     connects:
-      "The REST API is the “pull” side of ZapBuzzer's Enterprise integration: your system asks for request records — what was asked, where, by whom, who accepted, how long each step took and how it was rated — when it needs them.",
+      "The REST API is the “pull” side of ZapBuzzer's Enterprise integration: your system asks for request records (what was asked, where, by whom, who accepted, how long each step took and how it was rated) when it needs them.",
     body: [
-      "ZapBuzzer positions the API for questions that live outside the app: pantry spend by department for finance, client-ready reports for facility contracts, or long-term history in a data warehouse. Endpoints, fields, authentication and limits are documented for Enterprise customers during onboarding and deliberately not published publicly.",
+      "ZapBuzzer offers the API for questions that live outside the app: pantry spend by department for finance, client-ready reports for facility contracts, or long-term history in a data warehouse. Endpoints, fields, authentication and limits are shared with Enterprise customers during onboarding and are not published.",
     ],
     workflow: [
       "Remember where the last sync stopped.",
@@ -1746,7 +1746,7 @@ const productIntegrations: ProductIntegration[] = [
     setup: [
       "Contact ZapBuzzer and agree the Enterprise plan.",
       "Receive access and documentation from your CSM.",
-      "Give each integration its own credentials with least privilege.",
+      "Give each integration its own login details, with only the access it needs.",
       "Pilot against one office before rolling out.",
     ],
     features: ["request-reports", "request-history"],
@@ -1757,9 +1757,9 @@ const productIntegrations: ProductIntegration[] = [
     name: "Webhooks",
     summary: "Enterprise: ZapBuzzer pushes request moments such as delivered or escalated to your systems as they happen.",
     connects:
-      "A webhook is an automatic message ZapBuzzer sends to an address you provide when a request reaches a moment you care about, so other tools can react without polling. Webhooks are for software; people are still notified on the app, Telegram, WhatsApp and email.",
+      "A webhook is an automatic message ZapBuzzer sends to an address you provide when a request reaches a moment you care about, so other tools can react without having to keep checking for changes. Webhooks are for software; people are still notified on the app, Telegram, WhatsApp and email.",
     body: [
-      "Natural moments to subscribe to follow the request lifecycle: created, accepted, started, delivered, rated and escalated. ZapBuzzer says escalation is usually the first one teams use, carrying SLA breaches into a supervisor's own tracker. The exact event catalogue, verification and retry rules are shared during Enterprise onboarding.",
+      "The obvious moments to subscribe to follow a request's stages: created, accepted, started, delivered, rated and escalated. ZapBuzzer says escalation is usually the first one teams use, carrying SLA breaches into a supervisor's own tracker. The exact event catalogue, verification and retry rules are shared during Enterprise onboarding.",
     ],
     workflow: [
       "New request created: show it on an operations screen.",
@@ -1842,7 +1842,7 @@ const supportTopics: ProductSupportTopic[] = [
   {
     slug: "install-android-app",
     name: "Install or update the Android app",
-    summary: "Download the APK, allow the install, sign in and grant notifications — and what to do about “App not installed”.",
+    summary: "Download the APK, allow the install, sign in and grant notifications, and what to do about “App not installed”.",
     body: [
       "The ZapBuzzer Android app is distributed as an APK from the ZapBuzzer website rather than an app store, so Android asks you to allow the install. Your account and workspace live on the server, so reinstalling or changing phones loses nothing.",
     ],
@@ -1924,9 +1924,9 @@ export const zapbuzzer: Product = {
   slug: "zapbuzzer",
   name: "ZapBuzzer",
   shortDescription:
-    "One-tap internal requests for offices — coffee, prints, IT help, facilities and courier pickups routed to the right team, with SLAs and escalation.",
+    "One-tap internal requests for offices: coffee, prints, IT help, facilities and courier pickups routed to the right team, with deadlines and escalation.",
   longDescription:
-    "ZapBuzzer, often just called Buzzer, is an internal-request CRM for offices. It started in a Pune office tired of phone tag — three calls for one coffee, print jobs lost in a WhatsApp group and IT asks dying in someone's DMs.\n\nEmployees tap what they need from the office catalogue — coffee, prints, IT help, a facilities fix or a courier pickup — and choose where it should go. The right service team is pinged on the app and by email, plus Telegram and WhatsApp on Pro, and the alerts repeat until someone accepts.\n\nThe first person to tap Accept owns the request. The requester sees their name, photo and ETA, the owner marks it started and delivered (optionally with a photo), and the requester rates the work from one to five stars.\n\nEvery request has a deadline; overdue ones escalate to a manager. Requests add up to history, staff scorecards and analytics, and the owner alone sees what orders cost.",
+    "ZapBuzzer, often just called Buzzer, is an internal-request CRM for offices: a system for tracking the everyday requests staff make. It started in a Pune office tired of phone tag: three calls for one coffee, print jobs lost in a WhatsApp group and IT asks dying in someone's DMs.\n\nEmployees tap what they need from the office catalogue (coffee, prints, IT help, a facilities fix or a courier pickup) and choose where it should go. The right service team is pinged on the app and by email, plus Telegram and WhatsApp on Pro, and the alerts repeat until someone accepts.\n\nThe first person to tap Accept owns the request. The requester sees their name, photo and ETA, the owner marks it started and delivered (optionally with a photo), and the requester rates the work from one to five stars.\n\nEvery request has a deadline; overdue ones escalate to a manager. Requests add up to history, staff scorecards and analytics, and the owner alone sees what orders cost.",
   tagline: "Press a button. Staff knows.",
   category: "operations-it",
   subcategory: "workplace-operations",
@@ -1945,14 +1945,14 @@ export const zapbuzzer: Product = {
   supportTopics,
   howItWorks: [
     { title: "Tap what you need", description: "Pick coffee, prints, IT help or anything else in your catalogue, add a note and destination, and tap Buzz." },
-    { title: "Right team gets pinged", description: "The category decides the team, and everyone on it is notified at once on the app and email — plus Telegram and WhatsApp on Pro — until someone accepts." },
+    { title: "Right team gets pinged", description: "The category decides the team, and everyone on it is notified at once on the app and email, plus Telegram and WhatsApp on Pro, until someone accepts." },
     { title: "First to accept owns it", description: "Whoever is free taps Accept; you see their name, photo and ETA." },
     { title: "Delivered, timed and rated", description: "The owner marks it delivered, optionally with a photo; you rate it, and overdue requests escalate to a manager." },
   ],
   benefits: [
     { title: "No more chase calls", description: "Requesters see the status, the named owner and an ETA on their own screen instead of phoning the pantry or IT desk to ask. ZapBuzzer reports that its pilot offices cut phone calls by 87% in their first month." },
     { title: "Clear ownership", description: "Each request goes to the whole team, and the first person to tap Accept owns it. That ends the \"I thought you'd do it\" gap, and the requester knows exactly who is coming." },
-    { title: "Nothing rots unseen", description: "Every request carries a deadline and a running timer. On Pro, a request that runs late moves up an escalation chain to a manager, so it cannot sit forgotten in someone's messages." },
+    { title: "Nothing gets forgotten", description: "Every request carries a deadline and a running timer. On Pro, a request that runs late moves up an escalation chain to a manager, so it cannot sit forgotten in someone's messages." },
     { title: "Fair credit for staff", description: "Requesters rate each delivery, and the rating counts towards that staff member's scorecard of speed and quality. Managers see who is fastest and best rated, so good work by pantry, print and facilities staff is visible." },
     { title: "One flow for every service team", description: "Pantry, print room, IT desk, facilities and the mailroom all use the same catalogue, routing and timers. Owners get one view of office operations, including busiest hours and what orders cost." },
   ],
@@ -1960,7 +1960,7 @@ export const zapbuzzer: Product = {
     { title: "Encrypted connections", description: "Data is transmitted over HTTPS/TLS." },
     { title: "Hashed passwords", description: "Passwords are stored only as salted hashes." },
     { title: "Secure token storage", description: "Authentication tokens on your device are held in the platform's encrypted secure storage." },
-    { title: "Role permissions and audit log", description: "Granular permissions per role, with every action recorded in an audit log." },
+    { title: "Role permissions and audit log", description: "Detailed permissions for each role, with every action recorded in an audit log." },
     { title: "Owner-only spend", description: "Request costs are visible to the owner and not to everyone in the office." },
     { title: "Server-side accounts", description: "Accounts and workspaces live on the server, so a lost handset does not mean lost history." },
     { title: "SSO and on-prem on Enterprise", description: "Enterprise adds sign-in through your identity provider and an option to run ZapBuzzer on your own servers. ZapBuzzer does not list security certifications." },
@@ -1978,7 +1978,7 @@ export const zapbuzzer: Product = {
     plans: [
       { name: "Free", price: "Free", period: "forever", description: "Try it with one floor", features: ["Up to 10 staff", "1 location", "Mobile + web app", "Email notifications", "Last 30 days history"], cta: { label: "Start free", href: "https://zapbuzzer.com/signup" } },
       { name: "Pro", price: "₹99", period: "seat / month", description: "The whole office", features: ["Unlimited staff", "Multi-location", "Telegram + WhatsApp pings", "SLA + escalation chain", "Full analytics + scorecard", "Audit logs + reports", "Full history"], cta: { label: "Start trial", href: "https://zapbuzzer.com/signup?plan=pro" }, recommended: true },
-      { name: "Enterprise", price: "Custom", description: "For groups & facility companies", features: ["Everything in Pro", "SSO + SAML", "White-label + custom domain", "REST API + webhooks", "Dedicated CSM", "On-prem option"], cta: { label: "Contact sales", href: "mailto:hello@zapbuzzer.com" } },
+      { name: "Enterprise", price: "Custom", description: "For groups & facility companies", features: ["Everything in Pro", "SSO + SAML", "White-label + custom domain", "REST API + webhooks", "Dedicated CSM", "On-prem option"], cta: { label: "Contact sales", href: "/contact?type=sales&product=zapbuzzer#contact-form" } },
     ],
   },
   useCases: [
@@ -1990,9 +1990,9 @@ export const zapbuzzer: Product = {
   faqs: [
     { question: "Is ZapBuzzer a helpdesk or a chat bot?", answer: "Neither. ZapBuzzer calls itself an internal-request CRM: requests have states, owners and timers, and add up to history and analytics. It is built for fast physical office services rather than long-running tickets." },
     { question: "Is there a mobile app?", answer: "Yes, an Android app is included on every plan. Alerts ring through even when the phone is on silent or locked, and staff can accept, start and deliver requests from it. Accounts and workspaces live on the server, so reinstalling or changing phones does not lose history." },
-    { question: "How are support teams notified?", answer: "Through the app and email on every plan, and on Pro also through Telegram and WhatsApp — all at once, repeating until someone accepts." },
-    { question: "Which features are in the Free plan?", answer: "The core flow — one-tap requests, routing, first-accept-wins, the mobile and web apps and email notifications — for up to 10 staff in one location with 30 days of history." },
-    { question: "Is there a free trial?", answer: "Yes — 14 days of Pro features, with no credit card and no setup call. ZapBuzzer says an office can be up and running in an afternoon, and there are no setup fees after the trial." },
+    { question: "How are support teams notified?", answer: "Through the app and email on every plan, and on Pro also through Telegram and WhatsApp, all at once, repeating until someone accepts." },
+    { question: "Which features are in the Free plan?", answer: "The core flow (one-tap requests, routing, first-accept-wins, the mobile and web apps and email notifications) for up to 10 staff in one location with 30 days of history." },
+    { question: "Is there a free trial?", answer: "Yes: 14 days of Pro features, with no credit card and no setup call. ZapBuzzer says an office can be up and running in an afternoon, and there are no setup fees after the trial." },
     { question: "Does ZapBuzzer connect to Slack, Microsoft Teams or HR systems?", answer: "Its ready-made connections are its notification channels: the app, Telegram, WhatsApp and email. Other systems can be connected through the Enterprise REST API and webhooks." },
     { question: "What happens after someone taps Buzz?", answer: "The request moves through five states: Buzzed, Accepted, Started, Delivered and Rated. The first staff member to accept becomes the owner, shares an ETA when they start, and can attach a photo on delivery before the requester rates it from one to five stars." },
     { question: "How is ZapBuzzer priced?", answer: "Per seat, billed monthly, with no setup fees and cancellation at any time. Free covers up to 10 staff in one location; Pro is ₹99 per seat per month; Enterprise is priced on request. Prices are also offered in USD, EUR and GBP." },

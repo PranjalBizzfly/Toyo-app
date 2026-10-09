@@ -1,5 +1,7 @@
 import type { ResourceType } from "@/content/types";
 
+export type ContactTypeParam = "product" | "sales" | "support" | "vendor" | "publish" | "general" | "other";
+
 /** Every internal URL is built here so the URL scheme can change in one place. */
 export const routes = {
   home: () => "/",
@@ -27,6 +29,16 @@ export const routes = {
   publish: () => "/publish",
   support: () => "/support",
   contact: () => "/contact",
+  /** The one contact form, with optional preselection (read client-side by ContactForm). */
+  contactForm: (opts: { type?: ContactTypeParam; product?: string | string[]; topic?: "vendor" | "careers" | "media"; role?: string } = {}) => {
+    const q = new URLSearchParams();
+    if (opts.type) q.set("type", opts.type);
+    for (const p of ([] as string[]).concat(opts.product ?? [])) q.append("product", p);
+    if (opts.topic) q.set("topic", opts.topic);
+    if (opts.role) q.set("role", opts.role);
+    const qs = q.toString();
+    return `/contact${qs ? `?${qs}` : ""}#contact-form`;
+  },
   careers: () => "/careers",
   vendors: () => "/vendors",
   media: () => "/media",

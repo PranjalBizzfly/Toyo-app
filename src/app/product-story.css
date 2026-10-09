@@ -33,11 +33,14 @@
 .zs-link:hover span, a:hover > .zs-link span { transform: translateX(4px); }
 
 /* ---- Bands ---- */
-.zs-band { position: relative; padding-block: clamp(64px, 8vw, 112px); }
+.zs-band { position: relative; padding-block: var(--sec-y); }
+/* Two different-colour bands meeting: trim each side of the seam so they don't stack into a ~160px gap. */
+.zs-band + .zs-band { padding-top: clamp(32px, 3.5vw, 48px); }
+.zs-band:has(+ .zs-band) { padding-bottom: clamp(32px, 3.5vw, 48px); }
 .zs-band--plain { background: var(--bg); }
 .zs-band--tint { background: var(--pz-tint); }
 .zs-band--soft { background: var(--band-soft); }
-.zs-band--plain + .zs-band--plain { padding-top: 0; }
+.zs-band--plain + .zs-band--plain, .zs-band--soft + .zs-band--soft, .zs-band--tint + .zs-band--tint { padding-top: 0; }
 .zs-band--dark, .zs-cta {
   --heading: #ffffff; --text: #dbe6f0; --text-secondary: #b6c7d8; --text-muted: #9fb3c6;
   color: var(--text);
@@ -54,7 +57,7 @@
 .zs-curve { border-top-left-radius: clamp(28px, 6vw, 80px); border-top-right-radius: clamp(28px, 6vw, 80px); margin-top: clamp(-40px, -3vw, -24px); box-shadow: 0 -24px 60px -30px var(--band-dark-glow); z-index: 1; }
 
 /* ---- Hero ---- */
-.zs-hero { position: relative; overflow: hidden; padding: clamp(28px, 5vw, 72px) 0 clamp(64px, 8vw, 120px); background: var(--hero-bg); }
+.zs-hero { position: relative; overflow: hidden; padding: clamp(28px, 5vw, 64px) 0 var(--sec-y-lg); background: var(--hero-bg); }
 .zs-hero--dark { --heading: var(--hero-heading); --text-secondary: var(--hero-text); --text-muted: var(--hero-text); color: var(--hero-text); }
 :root[data-theme="dark"] .zs-hero { --heading: var(--hero-heading); --text-secondary: var(--hero-text); --text-muted: var(--hero-text); }
 .zs-hero__grid { display: grid; gap: clamp(36px, 5vw, 64px); align-items: center; }
@@ -218,7 +221,7 @@
 .zs-glass p { font-size: 15.5px; line-height: 1.65; color: var(--text-secondary); }
 
 /* ---- Spotlights ---- */
-.zs-spots__list { display: grid; gap: clamp(56px, 8vw, 120px); }
+.zs-spots__list { display: grid; gap: clamp(40px, 5vw, 72px); }
 .zs-spot { display: grid; gap: clamp(28px, 4vw, 64px); align-items: center; scroll-margin-top: calc(var(--header-h) + 120px); }
 @media (min-width: 960px) {
   .zs-spot { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
@@ -264,6 +267,7 @@
 .zs-tabs__head h3 { font-family: var(--font-display); font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.25rem); font-weight: 500; letter-spacing: -0.02em; color: var(--heading); }
 .zs-tabs__head p { margin: 12px 0 18px; line-height: 1.65; color: var(--text-secondary); }
 :root:not([data-theme="dark"]) .zs-tabs__panel { --text: #0f2235; --text-secondary: #3a516a; }
+.zs-tabs__panel[hidden] { display: none; }
 .zs-tabs__items { display: grid; gap: 4px 28px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
 .zs-tabs__items li { display: grid; gap: 4px; padding: 14px 0 14px 30px; border-bottom: 1px solid var(--border-soft); position: relative; }
 .zs-tabs__items li::before { content: ""; position: absolute; left: 0; top: 18px; width: 18px; height: 18px; border-radius: 50%; background: var(--accent-soft); box-shadow: inset 0 0 0 5px var(--accent); }
@@ -363,7 +367,7 @@ a.zs-card:hover { border-color: color-mix(in srgb, var(--primary) 45%, var(--bor
 @media (min-width: 960px) { .zs-faq { grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 72px; } .zs-faq > div:first-child { position: sticky; top: calc(var(--header-h) + 80px); align-self: start; } }
 
 /* ---- CTA ---- */
-.zs-cta { position: relative; padding-block: var(--sec-y-lg); overflow: hidden; }
+.zs-cta { position: relative; padding-block: var(--sec-y); overflow: hidden; }
 .zs-cta::after { content: ""; position: absolute; left: 50%; bottom: -40%; width: 80%; height: 80%; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, color-mix(in srgb, var(--art-2) 25%, transparent), transparent); pointer-events: none; }
 .zs-cta .container { position: relative; z-index: 1; }
 .zs-cta__title { font-family: var(--font-display); font-size: clamp(2.2rem, 1.4rem + 3vw, 4rem); font-weight: 500; line-height: 1.06; letter-spacing: -0.035em; color: #ffffff; text-wrap: balance; }
@@ -384,6 +388,8 @@ a.zs-card:hover { border-color: color-mix(in srgb, var(--primary) 45%, var(--bor
 
 /* List resets for authored ordered lists. */
 .zs-timeline, .zs-steps, .zs-stage, .zs-ribbon__track, .zs-checks, .zs-tabs__items, .zs-hub__list, .zs-plans, .zs-fits ul, .zs-pills, .zs-hero__chips { list-style: none; margin-left: 0; padding-inline-start: 0; }
+/* The reset above zeroes margin-left, which cancelled the margin-inline:auto centring of these capped-width lists. */
+.zs-timeline, .zs-hub__list, .zs-plans { margin-inline: auto; }
 .zs-timeline { padding-left: 56px; }
 @media (min-width: 960px) { .zs-timeline { padding-left: 0; } }
 .zs-float--a { top: -2%; }
@@ -391,3 +397,10 @@ a.zs-card:hover { border-color: color-mix(in srgb, var(--primary) 45%, var(--bor
 /* Related-product cards: capability badges wrap instead of overflowing on phones. */
 .product-card__caps { display: flex; flex-wrap: wrap; min-width: 0; }
 .product-card__caps .badge { max-width: 100%; white-space: normal; }
+
+/* Plans: all plans in one row on desktop, whatever the count (no 4 + 1 orphan). */
+@media (min-width: 1024px) {
+  .zs-plans:not(.zs-plans-1) { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
+  .zs-plans:not(.zs-plans-1):has(> li:nth-child(5)) { max-width: 1200px; }
+  .zs-plans:not(.zs-plans-1):has(> li:nth-child(5)) strong { font-size: 30px; }
+}

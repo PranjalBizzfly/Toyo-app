@@ -41,7 +41,7 @@ export default function MediaPage() {
           <div className="co-band__head">
             <p className="co-eyebrow">Latest announcements</p>
             <h2 className="co-h2">Company and product updates</h2>
-            <p>The products currently in the ToyoApps catalog — {total} in all, across {tree.length} business areas. Each links to its product page.</p>
+            <p>The products currently in the ToyoApps catalog: {total} in all, across {tree.length} business areas. Each links to its product page.</p>
           </div>
           {tree.map(({ category, products }) => (
             <div key={category.slug} className="cp-group">
@@ -78,11 +78,7 @@ export default function MediaPage() {
             <p className="co-eyebrow">Media contact</p>
             <h2>Talk to the ToyoApps team</h2>
             <p>For interviews, company information or product questions, contact the team and mention that your enquiry is from the media.</p>
-            {site.contactEmail ? (
-              <a className="co-btn" href={`mailto:${site.contactEmail}?subject=${encodeURIComponent("Media enquiry")}`}>{site.contactEmail}</a>
-            ) : (
-              <Link className="co-btn" href={`${routes.contact()}?topic=media`}>Media enquiry</Link>
-            )}
+            <Link className="co-btn" href={routes.contactForm({ topic: "media" })}>Media enquiry</Link>
           </div>
           <ul className="cp-grid">
             <li className="cp-card">
@@ -110,7 +106,7 @@ export default function MediaPage() {
           <p>Start with the press kit, then get in touch with any questions.</p>
           <div className="co-btns">
             <Link className="co-btn" href={routes.pressKit()}>Press kit</Link>
-            <Link className="co-btn co-btn--ghost" href={`${routes.contact()}?topic=media`}>Contact us</Link>
+            <Link className="co-btn co-btn--ghost" href={routes.contactForm({ topic: "media" })}>Contact us</Link>
           </div>
         </div>
       </section>

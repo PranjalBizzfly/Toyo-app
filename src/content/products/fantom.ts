@@ -10,9 +10,9 @@ export const fantom: Product = {
   slug: "fantom",
   name: "Fantom",
   shortDescription:
-    "Manage every company SIM card in one place — recharges, call logs and messaging-app status for the whole inventory.",
+    "Manage every company SIM card in one place: recharges, call logs and messaging-app status for the whole inventory.",
   longDescription:
-    "Fantom is a cloud platform for businesses that issue SIM cards to staff. Its site brands it SIM Manager. It brings the whole SIM inventory, recharges, call logs and messaging-app status into one dashboard.\n\nEach SIM is recorded with its operator, circle, status and assignee. Fantom reminds you before recharges expire, keeps the recharge history with analytics, and alerts you about due dates, inactive SIMs and subscription expiry by email or SMS.\n\nAn Android app installed on company phones syncs call logs automatically after OTP verification, and the dashboard analyses call patterns, durations and contact frequency. Fantom also shows which SIMs have WhatsApp or Telegram active and when they were last used.\n\nAdmins manage everything while users sync call logs, under role-based access control with JWT authentication and encrypted data. Every plan starts with a 14-day free trial and no credit card.",
+    "Fantom is a cloud platform for businesses that issue SIM cards to staff. Its site brands it SIM Manager. It brings the whole SIM inventory, recharges, call logs and messaging-app status into one dashboard.\n\nEach SIM is recorded with its operator, circle (telecom service region), status and assignee. Fantom reminds you before recharges expire, keeps the recharge history with analytics, and alerts you about due dates, inactive SIMs and subscription expiry by email or SMS.\n\nAn Android app installed on company phones syncs call logs automatically once the number is verified with a one-time password (OTP), and the dashboard analyses call patterns, durations and contact frequency. Fantom also shows which SIMs have WhatsApp or Telegram active and when they were last used.\n\nAdmins manage everything while users sync call logs, with access set by role, secure JWT sign-in and encrypted data. Every plan starts with a 14-day free trial and no credit card.",
   tagline: "Manage All Your SIM Cards in One Place",
   category: "operations-it",
   subcategory: "telecom-devices",
@@ -28,7 +28,7 @@ export const fantom: Product = {
   // stated detail; plan-table items (WiFi Monitor, SMS Logs, CCTV, Call Automation)
   // are named without any description and get no page.
   featureCategories: [
-    { slug: "features", name: "Features", description: "Features designed to simplify SIM management for businesses of all sizes." },
+    { slug: "features", name: "Features", description: "Tools that make managing SIM cards easier for businesses of any size." },
     { slug: "messaging-apps", name: "Messaging apps", description: "Monitor WhatsApp and Telegram status for your managed SIMs." },
   ],
   features: [
@@ -38,7 +38,7 @@ export const fantom: Product = {
       summary: "All your SIM cards in one place, with operators, circles, status and assignments tracked.",
       category: "features",
       body: [
-        "Fantom keeps a company's whole SIM inventory in one cloud dashboard. Each SIM carries its operator, circle, status and the person it is assigned to.",
+        "Fantom keeps a company's whole SIM inventory in one cloud dashboard. Each SIM carries its operator, circle (the telecom service region), status and the person it is assigned to.",
         "SIMs can be imported or added by hand when you set up, and each plan sets how many SIMs the account can manage.",
       ],
       howItWorks: [
@@ -57,7 +57,7 @@ export const fantom: Product = {
       problem: "Company SIMs tracked in scattered spreadsheets, with no clear view of which number is with whom or on which operator.",
     benefits: [
       "Anyone with access can see every company number and its holder in one place.",
-      "Status tracking feeds the inactive-SIM alerts, so dormant numbers are noticed."
+      "Status tracking drives the inactive-SIM alerts, so unused numbers get noticed."
     ],
     audience: [
       "Operations managers",
@@ -91,7 +91,7 @@ export const fantom: Product = {
       "Sends reminders before a SIM's recharge expires.",
       "Keeps the full recharge history for each SIM.",
       "Adds detailed analytics on top of the recharge history.",
-      "Raises automated alerts for recharge due dates through Smart Notifications."
+      "Sends automatic alerts for recharge due dates through Smart Notifications."
     ],
       problem: "Company numbers lapsing because nobody noticed a recharge was due.",
     howItWorks: [
@@ -112,7 +112,7 @@ export const fantom: Product = {
     faqs: [
       {
         "question": "Will Fantom remind me before a recharge runs out?",
-        "answer": "Yes. Fantom sends reminders before expiry and automated alerts for recharge due dates."
+        "answer": "Yes. Fantom sends reminders before expiry and automatic alerts for recharge due dates."
       }
     ],
     relatedFeatures: ["smart-notifications", "sim-management"],
@@ -132,7 +132,7 @@ export const fantom: Product = {
       howItWorks: [
       "Add the SIMs you manage.",
       "Install the Android app on the company phones.",
-      "Verify the number with an OTP and grant call log permission.",
+      "Verify the number with an OTP (one-time password) and allow access to call logs.",
       "The app syncs call logs to the dashboard automatically.",
       "Review call patterns, durations and contact frequency from the dashboard."
     ],
@@ -156,7 +156,7 @@ export const fantom: Product = {
     faqs: [
       {
         "question": "How does call log sync work?",
-        "answer": "Install Fantom's Android app on the phone, verify the number by OTP and grant call log permission. The app then syncs call logs from that device to your dashboard automatically."
+        "answer": "Install Fantom's Android app on the phone, verify the number with a one-time password (OTP) and allow access to call logs. The app then syncs call logs from that device to your dashboard automatically."
       },
       {
         "question": "Is there an iPhone app?",
@@ -171,10 +171,10 @@ export const fantom: Product = {
     {
       slug: "smart-notifications",
       name: "Smart Notifications",
-      summary: "Automated alerts for recharge due dates, inactive SIMs and subscription expiry.",
+      summary: "Automatic alerts for recharge due dates, inactive SIMs and subscription expiry.",
       category: "features",
       body: [
-        "Fantom sends automated alerts so the team hears about problems before they cause a lapse: recharges coming due, SIMs that have gone inactive and subscriptions that are about to expire.",
+        "Fantom sends automatic alerts so the team hears about problems before a number lapses: recharges coming due, SIMs that have gone inactive and subscriptions that are about to expire.",
         "Fantom's plans list both email and SMS notifications.",
       ],
       capabilities: [
@@ -186,11 +186,11 @@ export const fantom: Product = {
     ],
       howItWorks: [
       "Fantom watches recharge dates, SIM activity and subscription expiry.",
-      "When one needs attention, it raises an automated alert.",
+      "When one needs attention, it sends an automatic alert.",
       "The alert reaches the team by email or SMS."
     ],
     benefits: [
-      "Problems surface before a number lapses or a subscription runs out.",
+      "Problems show up before a number lapses or a subscription runs out.",
       "Nobody has to check the dashboard daily to catch due dates."
     ],
     audience: [
@@ -225,7 +225,7 @@ export const fantom: Product = {
       capabilities: [
       "Gives admins control of everything in the dashboard.",
       "Lets users sync call logs from their phones through the mobile app.",
-      "Applies role-based access control to what each person can do.",
+      "Controls what each person can do based on their role.",
       "Sets the number of users an account can have by plan."
     ],
       howItWorks: [
@@ -257,18 +257,18 @@ export const fantom: Product = {
     {
       slug: "secure-and-reliable",
       name: "Secure & Reliable",
-      summary: "JWT authentication, industry-standard encryption, role-based access control and cloud storage with regular backups.",
+      summary: "Secure JWT sign-in, industry-standard encryption, access set by role and cloud storage with regular backups.",
       category: "features",
       highlight: true,
       hasPage: true,
       body: [
-        "Fantom describes its security as enterprise-grade. Sign-in uses JWT authentication, data is encrypted with industry-standard encryption, and role-based access control limits what each person can do.",
-        "Data is stored in the cloud with regular backups, and the site states 256-bit SSL.",
+        "Fantom describes its security as enterprise-grade. Sign-in uses JWT authentication (secure login tokens), data is protected with industry-standard encryption, and each person's role limits what they can do.",
+        "Data is stored in the cloud with regular backups, and the site states 256-bit SSL (an encrypted connection between your browser and the site).",
       ],
       capabilities: [
         "Authenticates access with JWT (JSON Web Tokens).",
         "Encrypts data using industry-standard encryption.",
-        "Applies role-based access control, separating admins from users.",
+        "Uses role-based access, keeping admins and users separate.",
         "Stores data in the cloud with regular backups.",
         "Serves the site over 256-bit SSL.",
       ],
@@ -282,7 +282,7 @@ export const fantom: Product = {
     {
       slug: "whatsapp-status-tracking",
       name: "WhatsApp status tracking",
-      summary: "See which SIMs have WhatsApp active, their last active time, with alerts on status changes and bulk status updates.",
+      summary: "See which SIMs have WhatsApp active and when they were last used, with alerts when status changes and bulk status updates.",
       category: "messaging-apps",
       body: [
         "For businesses that use company numbers on WhatsApp, Fantom shows which managed SIMs have WhatsApp active and when each was last active, and alerts you when that status changes.",
@@ -322,7 +322,7 @@ export const fantom: Product = {
     {
       slug: "telegram-status-tracking",
       name: "Telegram status tracking",
-      summary: "Telegram activation status and last active time across all SIMs, with bulk status updates.",
+      summary: "See whether Telegram is active on each SIM and when it was last used, with bulk status updates.",
       category: "messaging-apps",
       body: [
         "Fantom tracks whether Telegram is activated on each managed SIM and keeps track of messaging activity, so Telegram use across company numbers can be seen in one place.",
@@ -368,7 +368,7 @@ export const fantom: Product = {
   howItWorks: [
     { title: "Sign up", description: "Create your company account and start the 14-day free trial, with no credit card required." },
     { title: "Add SIMs", description: "Import your SIM cards or add them manually, with operator, circle and assignee." },
-    { title: "Install app", description: "Install the Android app on company phones, verify each number by OTP and grant call log permission." },
+    { title: "Install app", description: "Install the Android app on company phones, verify each number with a one-time password (OTP) and allow access to call logs." },
     { title: "Track & manage", description: "Follow recharges, call logs and WhatsApp and Telegram status from the dashboard, with alerts by email or SMS." },
   ],
   integrations: ["whatsapp", "telegram"],
@@ -380,7 +380,7 @@ export const fantom: Product = {
   ],
   faqs: [
     { question: "What is Fantom?", answer: "Fantom (branded SIM Manager on its site) is a cloud platform for businesses to manage their SIM cards. It tracks recharges, syncs call logs and monitors WhatsApp and Telegram status in one place." },
-    { question: "How are call logs collected?", answer: "Through Fantom's Android app. You install it on the company phone, verify the number by OTP and grant call log permission. Call logs then sync to the dashboard automatically." },
+    { question: "How are call logs collected?", answer: "Through Fantom's Android app. You install it on the company phone, verify the number with a one-time password (OTP) and allow access to call logs. Call logs then sync to the dashboard automatically." },
     { question: "Is my data secure?", answer: "Fantom states that it uses industry-standard encryption, JWT authentication and role-based access control. Data is stored in the cloud with regular backups." },
     { question: "Can I track WhatsApp and Telegram status?", answer: "Yes. Fantom shows which SIMs have WhatsApp or Telegram active and their last active time, supports bulk status updates, and alerts you when WhatsApp status changes." },
     { question: "Is there a free trial?", answer: "Yes. Every plan comes with a 14-day free trial, and no credit card is required to start." },

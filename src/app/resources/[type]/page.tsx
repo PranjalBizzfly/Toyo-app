@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props) {
   const t = await find(params);
   if (!t) return {};
   return buildMetadata({
-    title: `${t.label} — ToyoApps resources`,
+    title: `${t.label} | ToyoApps resources`,
     description: t.description,
     path: routes.resourceType(t.type),
     status: getResources(t.type).length ? "live" : "draft",

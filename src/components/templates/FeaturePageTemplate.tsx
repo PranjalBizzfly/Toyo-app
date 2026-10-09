@@ -338,7 +338,7 @@ export function FeaturePageTemplate({ product, feature }: { product: Product; fe
         dangerouslySetInnerHTML={jsonLd({
           "@context": "https://schema.org",
           "@type": "WebPage",
-          name: `${feature.name} — ${product.name}`,
+          name: `${feature.name} | ${product.name}`,
           description: feature.summary,
           url: absoluteUrl(routes.feature(product.slug, feature.slug)),
           about: { "@type": "SoftwareApplication", name: product.name, url: absoluteUrl(routes.product(product.slug)) },

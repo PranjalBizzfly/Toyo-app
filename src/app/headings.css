@@ -61,3 +61,6 @@ html main :is(.zs-band--dark, .zs-band--black, .zc-black, .h-sec--dark, .h-sec--
 
 /* Homepage stat strip title: compact, two clean lines, never clipped. */
 html main .hh .hh-strip__title { max-width: 320px; font-size: clamp(16px, 1.25vw, 19px) !important; font-weight: 600 !important; line-height: 1.3; letter-spacing: -0.01em; overflow: visible; }
+
+/* Hero eyebrows follow their hero alignment (centred heroes → centred label). */
+html main :is(.pz-sec-hero, .fz-hero--center, .zf-hero) :is(.pz-sec-hero__eyebrow, .fz-hero__eyebrow, .eyebrow) { text-align: center; margin-inline: auto; }

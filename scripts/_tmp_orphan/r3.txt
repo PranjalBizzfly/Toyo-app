@@ -1,0 +1,756 @@
+/ /products /products/category/sales-marketing /solutions /solutions/run-a-well-organised-office /industries /industries/accounting-tax-practices /integrations /resources /blog /careers /vendors /media /press-kit /publish /company /contact /support /compare /products/sibu /products/sibu/pricing /products/sibu/features /products/sibu/security /products/sibu/features/search-by-anything /products/oda7 /products/oda7/pricing /products/oda7/features /products/oda7/security /products/oda7/features/lead-distribution /products/taskmagic /products/taskmagic/pricing /products/taskmagic/features /products/taskmagic/security /products/taskmagic/features/app-integrations /products/cardizo /products/cardizo/pricing /products/cardizo/features /products/cardizo/security /products/cardizo/features/ai-card-scanning /products/meetingmind /products/meetingmind/pricing /products/meetingmind/features /products/meetingmind/security /products/meetingmind/features/meeting-bot /products/hrmagix /products/hrmagix/pricing /products/hrmagix/features /products/hrmagix/security /products/hrmagix/features/employee-records /products/zapbuzzer /products/zapbuzzer/pricing /products/zapbuzzer/features /products/zapbuzzer/security /products/zapbuzzer/features/one-tap-requests /products/tracksuit /products/tracksuit/pricing /products/tracksuit/features /products/tracksuit/security /products/tracksuit/features/always-on-brand-tracking
+1920 / :: div.hh-strip [2+1] w=400/399 sec=hh
+1920 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1920 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1920 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1920 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1920 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1920 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1920 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1920 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1920 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1920 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1920 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1920 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1920 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1920 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1920 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1920 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1920 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1920 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1920 / :: ALIGN ul.h-industries card=h-card :: h-more(104)
+1920 /integrations :: div.zc-hub [2+1] w=406/64 STRETCH sec=zc-hub-sec
+1920 /integrations :: span.zc-hub__apps [3+1] w=70/13 STRETCH sec=zc-hub-sec
+1920 /integrations :: span.zc-hub__apps [3+1] w=46/13 STRETCH sec=zc-hub-sec
+1920 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1920 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1920 /blog :: ALIGN ul.cp-grid card=cp-card :: p(71) p(24)
+1920 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1920 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1920 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1920 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1920 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24) p(48)
+1920 /careers :: ALIGN ul.co-cols card=co-col :: p(25)
+1920 /media :: ALIGN ul.cp-grid card=cp-card :: cp-card__foot(26)
+1920 /press-kit :: dl.cp-dl [2+2+2+2] w=220/220,600 STRETCH sec=co-band
+1920 /press-kit :: ALIGN ul.cp-grid card=cp-card :: cp-card__meta(26)
+1920 /products/sibu :: ALIGN ul.zs-index card=is-in :: span(23)
+1920 /products/sibu :: ALIGN div.pz-related card=card :: product-card__usecase(26)
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: div.fz-tile [3+1] w=48/245 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: div.fz-tile [3+1] w=48/245 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: div.fz-tile [3+1] w=48/245 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/sibu/features :: div.fz-tile [3+1] w=48/350 STRETCH sec=fz-sec
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: div.fz-tile [3+1] w=48/245 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features :: div.fz-tile [3+1] w=48/245 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/sibu/features/search-by-anything :: ul.fz-checks.fz-checks--2 [2+2+1] w=536/536 sec=fz-sec fz-sec--tint
+1920 /products/sibu/features/search-by-anything :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/sibu/features/search-by-anything :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/sibu/features/search-by-anything :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/sibu/features/search-by-anything :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/oda7 :: ul.zs-ribbon__track [3+3] w=467/638,434,329 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-1
+1920 /products/oda7 :: li.is-in [2+1] w=120/156 STRETCH sec=zs-band zs-band--plain
+1920 /products/oda7 :: li.is-in [2+1] w=120/156 STRETCH sec=zs-band zs-band--plain
+1920 /products/oda7 :: li.is-in [2+1] w=120/156 STRETCH sec=zs-band zs-band--plain
+1920 /products/oda7 :: li.is-in [2+1] w=120/156 STRETCH sec=zs-band zs-band--plain
+1920 /products/oda7 :: li.is-in [2+1] w=120/156 STRETCH sec=zs-band zs-band--plain
+1920 /products/oda7 :: ALIGN div.zs-bgrid card=zs-benefit :: p(25)
+1920 /products/oda7 :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(26)
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/oda7/features/lead-distribution :: ul.fz-checks.fz-checks--2 [2+2+1] w=536/536 sec=fz-sec fz-sec--tint
+1920 /products/oda7/features/lead-distribution :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/oda7/features/lead-distribution :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/oda7/features/lead-distribution :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/oda7/features/lead-distribution :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/taskmagic :: ul.zs-ribbon__track [2+1] w=453/501 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-2
+1920 /products/taskmagic :: ul. [4+1] w=184/85 STRETCH sec=zs-band zs-band--tint
+1920 /products/taskmagic :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(26)
+1920 /products/taskmagic/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__price(24) pz-plan__period(24) pz-plan__cta(24) pz-plan__list(24)
+1920 /products/taskmagic/features/app-integrations :: ul.fz-alt-quotes [2+1] w=480/480 sec=fz-sec fz-sec--tint
+1920 /products/cardizo :: ALIGN ul.zs-plans.zs-plans-2 card=is-in :: span(35) strong(23) small(12)
+1920 /products/cardizo :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(26)
+1920 /products/cardizo/pricing :: div.pz-plans [4+1] w=295/295 sec=pz-pricing
+1920 /products/cardizo/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__price(24) pz-plan__period(24) pz-plan__cta(24) pz-plan__list(24)
+1920 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/cardizo/features/ai-card-scanning :: ul.fz-alt-quotes [2+1] w=480/480 sec=fz-sec fz-sec--tint
+1920 /products/meetingmind :: ALIGN div.zs-bgrid card=zs-benefit :: p(25)
+1920 /products/meetingmind/pricing STATUS 404
+1920 /products/meetingmind/security STATUS 404
+1920 /products/hrmagix :: ALIGN div.zs-bgrid card=zs-benefit :: p(25)
+1920 /products/hrmagix/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__cta(24) pz-plan__list(24)
+1920 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/zapbuzzer :: ALIGN ol.zs-steps.zs-how-3 card=is-in :: p(20)
+1920 /products/zapbuzzer :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(26)
+1920 /products/zapbuzzer/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__cta(24) pz-plan__list(24)
+1920 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/zapbuzzer/features :: div.fz-tile [3+1] w=48/352 STRETCH sec=fz-sec
+1920 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/zapbuzzer/features/one-tap-requests :: ul.fz-checks.fz-checks--2 [2+2+1] w=536/536 sec=fz-sec fz-sec--tint
+1920 /products/zapbuzzer/features/one-tap-requests :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/zapbuzzer/features/one-tap-requests :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/zapbuzzer/features/one-tap-requests :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/zapbuzzer/features/one-tap-requests :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/tracksuit :: div.zs-dotcards.is-in [4+2] w=295/295,295 sec=zs-band zs-band--dark zs-dotgrid-bg
+1920 /products/tracksuit :: ALIGN div.zs-dotcards.is-in card=zs-dotcard :: span(29)
+1920 /products/tracksuit :: ALIGN ul.zs-index card=is-in :: span(23)
+1920 /products/tracksuit :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(26)
+1920 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1920 /products/tracksuit/security STATUS 404
+1920 /products/tracksuit/features/always-on-brand-tracking :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/tracksuit/features/always-on-brand-tracking :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/tracksuit/features/always-on-brand-tracking :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1920 /products/tracksuit/features/always-on-brand-tracking :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 / :: div.hh-strip [2+1] w=400/399 sec=hh
+1440 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1440 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1440 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1440 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1440 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1440 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1440 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1440 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1440 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1440 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1440 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1440 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1440 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1440 / :: a.h-int [3+1] w=143/143 sec=h-sec h-sec--surface
+1440 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1440 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1440 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1440 / :: li.is-in [2+1] w=48/382 STRETCH sec=hz-values
+1440 / :: ALIGN ul.h-industries card=h-card :: h-more(104)
+1440 /integrations :: div.zc-hub [2+1] w=406/64 STRETCH sec=zc-hub-sec
+1440 /integrations :: span.zc-hub__apps [3+1] w=70/13 STRETCH sec=zc-hub-sec
+1440 /integrations :: span.zc-hub__apps [3+1] w=46/13 STRETCH sec=zc-hub-sec
+1440 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1440 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1440 /blog :: ALIGN ul.cp-grid card=cp-card :: p(71) p(24)
+1440 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1440 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1440 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1440 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1440 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24) p(48)
+1440 /careers :: ALIGN ul.co-cols card=co-col :: p(25)
+1440 /media :: ALIGN ul.cp-grid card=cp-card :: cp-card__foot(26)
+1440 /press-kit :: dl.cp-dl [2+2+2+2] w=220/220,600 STRETCH sec=co-band
+1440 /press-kit :: ALIGN ul.cp-grid card=cp-card :: cp-card__meta(26)
+1440 /products/sibu :: ALIGN ul.zs-index card=is-in :: span(23)
+1440 /products/sibu :: ALIGN div.pz-related card=card :: product-card__usecase(26)
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: div.fz-tile [3+1] w=48/245 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: div.fz-tile [3+1] w=48/245 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: div.fz-tile [3+1] w=48/245 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/sibu/features :: div.fz-tile [3+1] w=48/350 STRETCH sec=fz-sec
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: div.fz-tile [3+1] w=48/245 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features :: div.fz-tile [3+1] w=48/245 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/sibu/features/search-by-anything :: ul.fz-checks.fz-checks--2 [2+2+1] w=536/536 sec=fz-sec fz-sec--tint
+1440 /products/sibu/features/search-by-anything :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/sibu/features/search-by-anything :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/sibu/features/search-by-anything :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/sibu/features/search-by-anything :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/oda7 :: ul.zs-ribbon__track [2+2+2] w=467/434,329 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-1
+1440 /products/oda7 :: li.is-in [2+1] w=120/156 STRETCH sec=zs-band zs-band--plain
+1440 /products/oda7 :: li.is-in [2+1] w=120/156 STRETCH sec=zs-band zs-band--plain
+1440 /products/oda7 :: li.is-in [2+1] w=120/156 STRETCH sec=zs-band zs-band--plain
+1440 /products/oda7 :: li.is-in [2+1] w=120/156 STRETCH sec=zs-band zs-band--plain
+1440 /products/oda7 :: li.is-in [2+1] w=120/156 STRETCH sec=zs-band zs-band--plain
+1440 /products/oda7 :: ALIGN div.zs-bgrid card=zs-benefit :: p(25)
+1440 /products/oda7 :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(26)
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/oda7/features/lead-distribution :: ul.fz-checks.fz-checks--2 [2+2+1] w=536/536 sec=fz-sec fz-sec--tint
+1440 /products/oda7/features/lead-distribution :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/oda7/features/lead-distribution :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/oda7/features/lead-distribution :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/oda7/features/lead-distribution :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/taskmagic :: ul.zs-ribbon__track [2+1] w=453/501 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-2
+1440 /products/taskmagic :: ul. [4+1] w=184/85 STRETCH sec=zs-band zs-band--tint
+1440 /products/taskmagic :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(26)
+1440 /products/taskmagic/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__price(24) pz-plan__period(24) pz-plan__cta(24) pz-plan__list(24)
+1440 /products/taskmagic/features/app-integrations :: ul.fz-alt-quotes [2+1] w=480/480 sec=fz-sec fz-sec--tint
+1440 /products/cardizo :: ALIGN ul.zs-plans.zs-plans-2 card=is-in :: span(35) strong(23) small(12)
+1440 /products/cardizo :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(26)
+1440 /products/cardizo/pricing :: div.pz-plans [4+1] w=295/295 sec=pz-pricing
+1440 /products/cardizo/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__price(24) pz-plan__period(24) pz-plan__cta(24) pz-plan__list(24)
+1440 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/cardizo/features/ai-card-scanning :: ul.fz-alt-quotes [2+1] w=480/480 sec=fz-sec fz-sec--tint
+1440 /products/meetingmind :: ALIGN div.zs-bgrid card=zs-benefit :: p(25)
+1440 /products/meetingmind/pricing STATUS 404
+1440 /products/meetingmind/security STATUS 404
+1440 /products/hrmagix :: ALIGN div.zs-bgrid card=zs-benefit :: p(25)
+1440 /products/hrmagix/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__cta(24) pz-plan__list(24)
+1440 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/zapbuzzer :: ALIGN ol.zs-steps.zs-how-3 card=is-in :: p(20)
+1440 /products/zapbuzzer :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(26)
+1440 /products/zapbuzzer/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__cta(24) pz-plan__list(24)
+1440 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/zapbuzzer/features :: div.fz-tile [3+1] w=48/352 STRETCH sec=fz-sec
+1440 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/zapbuzzer/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/zapbuzzer/features/one-tap-requests :: ul.fz-checks.fz-checks--2 [2+2+1] w=536/536 sec=fz-sec fz-sec--tint
+1440 /products/zapbuzzer/features/one-tap-requests :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/zapbuzzer/features/one-tap-requests :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/zapbuzzer/features/one-tap-requests :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/zapbuzzer/features/one-tap-requests :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/tracksuit :: div.zs-dotcards.is-in [4+2] w=295/295,295 sec=zs-band zs-band--dark zs-dotgrid-bg
+1440 /products/tracksuit :: ALIGN div.zs-dotcards.is-in card=zs-dotcard :: span(29)
+1440 /products/tracksuit :: ALIGN ul.zs-index card=is-in :: span(23)
+1440 /products/tracksuit :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(26)
+1440 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/tracksuit/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1440 /products/tracksuit/security STATUS 404
+1440 /products/tracksuit/features/always-on-brand-tracking :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/tracksuit/features/always-on-brand-tracking :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/tracksuit/features/always-on-brand-tracking :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1440 /products/tracksuit/features/always-on-brand-tracking :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1024 / :: span.hs__kb [2+2+1] w=175/190 STRETCH sec=hh
+1024 / :: a.h-int [3+1] w=107/107 sec=h-sec h-sec--surface
+1024 / :: a.h-int [3+1] w=107/107 sec=h-sec h-sec--surface
+1024 / :: a.h-int [3+1] w=107/107 sec=h-sec h-sec--surface
+1024 / :: a.h-int [3+1] w=107/107 sec=h-sec h-sec--surface
+1024 / :: a.h-int [3+1] w=107/107 sec=h-sec h-sec--surface
+1024 / :: a.h-int [3+1] w=107/107 sec=h-sec h-sec--surface
+1024 / :: a.h-int [3+1] w=107/107 sec=h-sec h-sec--surface
+1024 / :: a.h-int [3+1] w=107/107 sec=h-sec h-sec--surface
+1024 / :: a.h-int [3+1] w=107/107 sec=h-sec h-sec--surface
+1024 / :: a.h-int [3+1] w=107/107 sec=h-sec h-sec--surface
+1024 / :: a.h-int [3+1] w=107/107 sec=h-sec h-sec--surface
+1024 / :: a.h-int [3+1] w=107/107 sec=h-sec h-sec--surface
+1024 / :: a.h-int [3+1] w=107/107 sec=h-sec h-sec--surface
+1024 / :: a.h-int [3+1] w=107/107 sec=h-sec h-sec--surface
+1024 / :: li.is-in [2+1] w=48/353 STRETCH sec=hz-values
+1024 / :: li.is-in [2+1] w=48/353 STRETCH sec=hz-values
+1024 / :: li.is-in [2+1] w=48/353 STRETCH sec=hz-values
+1024 / :: li.is-in [2+1] w=48/353 STRETCH sec=hz-values
+1024 / :: ALIGN div.z-duo__frame card=z-duo__card :: p(29)
+1024 / :: ALIGN ul.h-tasks card=h-task :: ul(20)
+1024 / :: ALIGN ul.h-industries card=h-card :: p(30) h-ind__list(30) h-more(104)
+1024 / :: ALIGN ul.h-res card=is-in :: span(26)
+1024 /products/category/sales-marketing :: div.grid [3+1] w=309/309 sec=section section--surface
+1024 /solutions/run-a-well-organised-office :: ALIGN div.ez-tiles.ez-tiles--3 card=ez-tile :: ez-link(27) ez-tile__shot(27)
+1024 /integrations :: div.zc-hub [2+1] w=406/64 STRETCH sec=zc-hub-sec
+1024 /integrations :: span.zc-hub__apps [3+1] w=70/13 STRETCH sec=zc-hub-sec
+1024 /integrations :: span.zc-hub__apps [3+1] w=46/13 STRETCH sec=zc-hub-sec
+1024 /integrations :: ALIGN div.zc-grid card=zc-card :: zc-card__desc(26)
+1024 /integrations :: ALIGN div.zc-grid card=zc-card :: zc-card__chips(40)
+1024 /integrations :: ALIGN div.zc-grid card=zc-card :: zc-card__name(19) zc-card__desc(26)
+1024 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1024 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1024 /blog :: ALIGN ul.cp-grid card=cp-card :: p(71) p(48) p(24)
+1024 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1024 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1024 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1024 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1024 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+1024 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24) p(48)
+1024 /careers :: ul.cp-toc [4+1] w=145/152 STRETCH sec=co-band
+1024 /media :: ALIGN ul.cp-grid card=cp-card :: p(26) cp-card__foot(79)
+1024 /press-kit :: dl.cp-dl [2+2+2+2] w=220/220,600 STRETCH sec=co-band
+1024 /press-kit :: ALIGN ul.cp-grid card=cp-card :: p(26) cp-card__meta(53)
+1024 /products/sibu :: ul.zs-ribbon__track [4+1] w=272/251 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-1
+1024 /products/sibu :: ALIGN div.zs-bgrid card=zs-benefit :: p(25)
+1024 /products/sibu :: ALIGN ul.zs-index card=is-in :: span(23)
+1024 /products/sibu :: ALIGN div.pz-related card=card :: card__foot(38)
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: div.fz-tile [3+1] w=48/177 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: div.fz-tile [3+1] w=48/177 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: div.fz-tile [3+1] w=48/177 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/sibu/features :: div.fz-tile [3+1] w=48/259 STRETCH sec=fz-sec
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: div.fz-tile [3+1] w=48/177 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features :: div.fz-tile [3+1] w=48/177 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/sibu/features/search-by-anything :: ul.fz-checks.fz-checks--2 [2+2+1] w=407/407 sec=fz-sec fz-sec--tint
+1024 /products/sibu/features/search-by-anything :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/sibu/features/search-by-anything :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/sibu/features/search-by-anything :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/sibu/features/search-by-anything :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/oda7 :: ul.zs-ribbon__track [2+1+2+1] w=405/286 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-1
+1024 /products/oda7 :: div.zs-tabs__list [5+1] w=149/165 STRETCH sec=zs-band zs-band--dark zs-sig-tabs 
+1024 /products/oda7 :: li.is-in [2+1] w=120/156 STRETCH sec=zs-band zs-band--plain
+1024 /products/oda7 :: li.is-in [2+1] w=120/156 STRETCH sec=zs-band zs-band--plain
+1024 /products/oda7 :: li.is-in [2+1] w=120/156 STRETCH sec=zs-band zs-band--plain
+1024 /products/oda7 :: li.is-in [2+1] w=120/156 STRETCH sec=zs-band zs-band--plain
+1024 /products/oda7 :: li.is-in [2+1] w=120/156 STRETCH sec=zs-band zs-band--plain
+1024 /products/oda7 :: ALIGN div.zs-bgrid card=zs-benefit :: p(25)
+1024 /products/oda7 :: ALIGN ul.zs-index card=is-in :: span(23)
+1024 /products/oda7/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__desc(27) pz-plan__price(27) pz-plan__cta(27) pz-plan__list(27)
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/oda7/features/lead-distribution :: ul.fz-checks.fz-checks--2 [2+2+1] w=407/407 sec=fz-sec fz-sec--tint
+1024 /products/oda7/features/lead-distribution :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/oda7/features/lead-distribution :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/oda7/features/lead-distribution :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/oda7/features/lead-distribution :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/taskmagic :: ul.zs-ribbon__track [2+1] w=453/501 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-2
+1024 /products/taskmagic :: ul. [4+1] w=184/85 STRETCH sec=zs-band zs-band--tint
+1024 /products/taskmagic :: ALIGN div.zs-bgrid card=zs-benefit :: p(25)
+1024 /products/taskmagic :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(26)
+1024 /products/taskmagic/pricing :: div.pz-plans [3+1] w=309/309 sec=pz-pricing
+1024 /products/taskmagic/features/app-integrations :: ul.fz-alt-quotes [2+1] w=464/464 sec=fz-sec fz-sec--tint
+1024 /products/cardizo :: ALIGN div.zs-bgrid card=zs-benefit :: p(25)
+1024 /products/cardizo :: ALIGN ul.zs-plans.zs-plans-2 card=is-in :: span(35) strong(23) small(12)
+1024 /products/cardizo :: ALIGN div.pz-related card=card :: card__foot(38)
+1024 /products/cardizo/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__price(24) pz-plan__period(24) pz-plan__cta(24) pz-plan__list(24) pz-plan__cta(30) pz-plan__list(30)
+1024 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/cardizo/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/cardizo/features/ai-card-scanning :: ul.fz-alt-quotes [2+1] w=464/464 sec=fz-sec fz-sec--tint
+1024 /products/meetingmind :: ul.zs-ribbon__track [3+1] w=295/170 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-2
+1024 /products/meetingmind :: ALIGN div.zs-bgrid card=zs-benefit :: p(25)
+1024 /products/meetingmind/pricing STATUS 404
+1024 /products/meetingmind/security STATUS 404
+1024 /products/hrmagix :: ALIGN div.pc card=pc__card :: pc__btn(29)
+1024 /products/hrmagix :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(64)
+1024 /products/hrmagix/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__cta(24) pz-plan__list(24)
+1024 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+1024 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+1024 /products/zapbuzzer :: ALIGN div.zs-bgrid card=zs-benefit :: p(25)
+1024 /products/zapbuzzer :: ALIGN ol.zs-steps.zs-how-3 card=is-in :: p(20)
+1024 /products/zapbuzzer :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(26)
+1024 /products/zapbuzzer/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__cta(53) pz-plan__list(53)
+1024 /products/zapbuzzer/features :: ul.fz-tiles [3+1] w=290/290 sec=fz-sec fz-sec--tint
+1024 /products/zapbuzzer/features :: ul.fz-tiles [4+1] w=224/224 sec=fz-sec
+1024 /products/zapbuzzer/features :: ul.fz-tiles [3+1] w=290/290 sec=fz-sec
+1024 /products/zapbuzzer/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1024 /products/zapbuzzer/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1024 /products/zapbuzzer/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1024 /products/zapbuzzer/features/one-tap-requests :: ol.fz-steps [4+1] w=237/237 sec=fz-sec
+1024 /products/zapbuzzer/features/one-tap-requests :: ul.fz-checks.fz-checks--2 [2+2+1] w=407/407 sec=fz-sec fz-sec--tint
+1024 /products/zapbuzzer/features/one-tap-requests :: ul.fz-tiles [3+1] w=290/290 sec=fz-sec
+1024 /products/tracksuit :: div.zs-dotcards.is-in [4+2] w=227/227,227 sec=zs-band zs-band--dark zs-dotgrid-bg
+1024 /products/tracksuit :: ALIGN ul.zs-index card=is-in :: span(23)
+1024 /products/tracksuit :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(26)
+1024 /products/tracksuit/features :: ul.fz-tiles [3+1] w=290/290 sec=fz-sec fz-sec--tint
+1024 /products/tracksuit/features :: ul.fz-tiles [4+1] w=224/224 sec=fz-sec
+1024 /products/tracksuit/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+1024 /products/tracksuit/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25) fz-hubcaps(95)
+1024 /products/tracksuit/security STATUS 404
+1024 /products/tracksuit/features/always-on-brand-tracking :: ul.fz-tiles [3+1] w=290/290 sec=fz-sec
+768 / :: ul.h-industries [2+1] w=346/346 sec=h-sec h-sec--brand
+768 / :: a.h-int [3+1] w=312/312 sec=h-sec h-sec--surface
+768 / :: a.h-int [3+1] w=312/312 sec=h-sec h-sec--surface
+768 / :: a.h-int [3+1] w=312/312 sec=h-sec h-sec--surface
+768 / :: a.h-int [3+1] w=312/312 sec=h-sec h-sec--surface
+768 / :: a.h-int [3+1] w=312/312 sec=h-sec h-sec--surface
+768 / :: a.h-int [3+1] w=312/312 sec=h-sec h-sec--surface
+768 / :: a.h-int [3+1] w=312/312 sec=h-sec h-sec--surface
+768 / :: a.h-int [3+1] w=312/312 sec=h-sec h-sec--surface
+768 / :: a.h-int [3+1] w=312/312 sec=h-sec h-sec--surface
+768 / :: a.h-int [3+1] w=312/312 sec=h-sec h-sec--surface
+768 / :: a.h-int [3+1] w=312/312 sec=h-sec h-sec--surface
+768 / :: a.h-int [3+1] w=312/312 sec=h-sec h-sec--surface
+768 / :: a.h-int [3+1] w=312/312 sec=h-sec h-sec--surface
+768 / :: a.h-int [3+1] w=312/312 sec=h-sec h-sec--surface
+768 / :: li.is-in [2+1] w=48/619 STRETCH sec=hz-values
+768 / :: li.is-in [2+1] w=48/619 STRETCH sec=hz-values
+768 / :: li.is-in [2+1] w=48/619 STRETCH sec=hz-values
+768 / :: li.is-in [2+1] w=48/619 STRETCH sec=hz-values
+768 / :: ALIGN ul.h-industries card=h-card :: h-ind__list(27) h-more(76)
+768 /solutions :: div.ez-cards [2+1] w=364/364 sec=ez-section
+768 /solutions/run-a-well-organised-office :: ALIGN div.ez-tiles.ez-tiles--3 card=ez-tile :: ez-tile__cat(31) ez-tile__text(31) ez-link(31) ez-tile__shot(31)
+768 /industries :: div.ez-cards [2+1] w=364/364 sec=ez-section
+768 /industries/accounting-tax-practices :: div.ez-feats [2+1] w=366/366 sec=ez-band
+768 /integrations :: span.zc-hub__apps [3+1] w=62/13 STRETCH sec=zc-hub-sec
+768 /integrations :: span.zc-hub__apps [3+1] w=41/13 STRETCH sec=zc-hub-sec
+768 /integrations :: div.zc-grid [2+1] w=369/369 sec=zc-section
+768 /blog :: ul.cp-grid [2+1] w=340/340 sec=cp-group
+768 /blog :: ul.cp-grid [2+2+2+1] w=340/340 sec=cp-group
+768 /blog :: ul.cp-grid [2+2+1] w=340/340 sec=cp-group
+768 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+768 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+768 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+768 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+768 /blog :: ALIGN ul.cp-grid card=cp-card :: p(24)
+768 /careers :: ul.cp-grid [2+1] w=340/340 sec=co-band co-band--tint
+768 /careers :: ul.cp-toc [3+2] w=127/234,134 STRETCH sec=co-band
+768 /vendors :: ul.cp-grid [2+1] w=340/340 sec=co-band co-band--tint
+768 /media :: ul.cp-grid [2+2+1] w=340/340 sec=co-band
+768 /media :: ul.cp-grid [2+2+1] w=340/340 sec=co-band
+768 /media :: ul.cp-grid [2+1] w=340/340 sec=co-band co-band--tint
+768 /press-kit :: dl.cp-dl [2+2+2+2] w=220/220,484 STRETCH sec=co-band
+768 /press-kit :: div.cp-logos [2+1] w=340/340 sec=co-band co-band--tint
+768 /compare :: div.zc-panel [2+1] w=361/361 sec=zc-band
+768 /products/sibu :: ul.zs-ribbon__track [3+2] w=198/149,185 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-1
+768 /products/sibu :: div.zs-bgrid [2+2+1] w=368/368 sec=zs-band zs-benefits zs-benefits--glass zs-band--dark zs-edge-angle is-in
+768 /products/sibu :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/sibu :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/sibu :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/sibu :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/sibu :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/sibu :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/sibu :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/sibu :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/sibu :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/sibu :: div.pz-related [2+1] w=366/366 sec=zs-band zs-band--tint
+768 /products/sibu :: ul.product-card__caps [2+1] w=115/167 STRETCH sec=zs-band zs-band--tint
+768 /products/sibu :: ul.product-card__caps [2+1] w=109/180 STRETCH sec=zs-band zs-band--tint
+768 /products/sibu/pricing :: div.pz-plans [2+1] w=366/366 sec=pz-pricing
+768 /products/sibu/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(75) fz-hubcaps(75) p(25) fz-hubcaps(95) fz-hubcaps(47)
+768 /products/sibu/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23) p(25) fz-hubcaps(45)
+768 /products/sibu/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25) fz-hubcaps(72) fz-hubcaps(70) fz-hubcaps(25)
+768 /products/sibu/features/search-by-anything :: ol.fz-steps [3+1] w=237/237 sec=fz-sec
+768 /products/sibu/features/search-by-anything :: ul.fz-checks.fz-checks--2 [2+2+1] w=294/294 sec=fz-sec fz-sec--tint
+768 /products/sibu/features/search-by-anything :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25)
+768 /products/oda7 :: ul.zs-ribbon__track [2+1+2+1] w=303/210 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-1
+768 /products/oda7 :: div.zs-bgrid [2+2+1] w=368/368 sec=zs-band zs-benefits zs-benefits--glass zs-band--dark is-in
+768 /products/oda7 :: div.zs-tabs__list [4+2] w=136/190,153 STRETCH sec=zs-band zs-band--dark zs-sig-tabs 
+768 /products/oda7 :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/oda7 :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/oda7 :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/oda7 :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/oda7 :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/oda7 :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/oda7 :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/oda7 :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/oda7 :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/oda7 :: div.pz-related [2+1] w=366/366 sec=zs-band zs-band--tint
+768 /products/oda7 :: ul.product-card__caps [2+1] w=115/167 STRETCH sec=zs-band zs-band--tint
+768 /products/oda7 :: ul.product-card__caps [2+1] w=109/180 STRETCH sec=zs-band zs-band--tint
+768 /products/oda7 :: ul.product-card__caps [2+1] w=134/105 STRETCH sec=zs-band zs-band--tint
+768 /products/oda7 :: ALIGN div.zs-bgrid card=zs-benefit :: p(25)
+768 /products/oda7/pricing :: div.pz-plans [2+1] w=366/366 sec=pz-pricing
+768 /products/oda7/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+768 /products/oda7/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23) p(25)
+768 /products/oda7/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25) fz-hubcaps(25) fz-hubcaps(48) fz-hubcaps(23)
+768 /products/oda7/features/lead-distribution :: ol.fz-steps [3+1] w=237/237 sec=fz-sec
+768 /products/oda7/features/lead-distribution :: ul.fz-checks.fz-checks--2 [2+2+1] w=294/294 sec=fz-sec fz-sec--tint
+768 /products/oda7/features/lead-distribution :: div.container.fz-facts [2+1] w=366/366 sec=fz-sec fz-sec--tint
+768 /products/oda7/features/lead-distribution :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25)
+768 /products/taskmagic :: ul.zs-ribbon__track [2+1] w=391/439 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-2
+768 /products/taskmagic :: div.zs-bgrid [2+2+1] w=368/368 sec=zs-band zs-benefits zs-benefits--black zs-band--dark is-in
+768 /products/taskmagic :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/taskmagic :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/taskmagic :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/taskmagic :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/taskmagic :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/taskmagic :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/taskmagic :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/taskmagic :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/taskmagic :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/taskmagic :: div.pz-related [2+1] w=366/366 sec=zs-band zs-band--tint
+768 /products/taskmagic :: ul.product-card__caps [2+1] w=116/121 sec=zs-band zs-band--tint
+768 /products/taskmagic :: ul.product-card__caps [2+1] w=158/150 STRETCH sec=zs-band zs-band--tint
+768 /products/taskmagic :: ALIGN div.pz-related card=card :: product-card__usecase(18) product-card__caps(18)
+768 /products/taskmagic/features :: ul.fz-tiles [2+1] w=290/290 sec=fz-sec fz-sec--tint
+768 /products/taskmagic/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25) fz-hubcaps(25)
+768 /products/taskmagic/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25) fz-hubcaps(25) fz-hubcaps(70) fz-hubcaps(72)
+768 /products/taskmagic/features/app-integrations :: ol.fz-steps [3+1] w=237/237 sec=fz-sec
+768 /products/taskmagic/features/app-integrations :: ul.fz-checks.fz-checks--2 [2+2+1] w=294/294 sec=fz-sec fz-sec--tint
+768 /products/taskmagic/features/app-integrations :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25)
+768 /products/cardizo :: div.zs-bgrid [2+2+1] w=368/368 sec=zs-band zs-benefits zs-benefits--glass zs-band--dark zs-curve is-in
+768 /products/cardizo :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/cardizo :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/cardizo :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/cardizo :: div.pz-related [2+1] w=366/366 sec=zs-band zs-band--tint
+768 /products/cardizo :: ul.product-card__caps [2+1] w=115/167 STRETCH sec=zs-band zs-band--tint
+768 /products/cardizo :: ul.product-card__caps [2+1] w=134/105 STRETCH sec=zs-band zs-band--tint
+768 /products/cardizo :: ALIGN ul.zs-plans.zs-plans-2 card=is-in :: span(31) strong(21) small(10)
+768 /products/cardizo :: ALIGN div.pz-related card=card :: product-card__caps(18) card__foot(36)
+768 /products/cardizo/pricing :: div.pz-plans [2+2+1] w=366/366 sec=pz-pricing
+768 /products/cardizo/pricing :: ALIGN div.pz-plans card=pz-plan :: pz-plan__price(17) pz-plan__period(17) pz-plan__cta(17) pz-plan__list(17)
+768 /products/cardizo/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25) fz-hubcaps(72) fz-hubcaps(47)
+768 /products/cardizo/features/ai-card-scanning :: div.container.fz-facts [2+1] w=366/366 sec=fz-sec fz-sec--tint
+768 /products/meetingmind :: ul.zs-ribbon__track [3+1] w=256/155 STRETCH sec=zs-band zs-band--plain zs-audience zs-aud-2
+768 /products/meetingmind :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/meetingmind :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/meetingmind :: div.pz-related [2+1] w=366/366 sec=zs-band zs-band--tint
+768 /products/meetingmind :: ul.product-card__caps [2+1] w=167/112 STRETCH sec=zs-band zs-band--tint
+768 /products/meetingmind :: ul.product-card__caps [2+1] w=115/167 STRETCH sec=zs-band zs-band--tint
+768 /products/meetingmind :: ALIGN div.zs-bgrid card=zs-benefit :: p(25)
+768 /products/meetingmind :: ALIGN div.pz-related card=card :: card__foot(18)
+768 /products/meetingmind/pricing STATUS 404
+768 /products/meetingmind/security STATUS 404
+768 /products/meetingmind/features/meeting-bot :: ol.fz-steps [3+1] w=237/237 sec=fz-sec
+768 /products/hrmagix :: div.pc [2+1] w=346/346 sec=pc-sec
+768 /products/hrmagix :: div.zs-tabs__list [5+1] w=88/200 STRETCH sec=zs-band zs-band--dark zs-sig-tabs 
+768 /products/hrmagix :: ol.zs-steps.zs-how-0 [2+1] w=346/346 sec=zs-band zs-band--plain
+768 /products/hrmagix :: div.zs-usecases.zs-uses-0 [2+2+1] w=346/346 sec=zs-band zs-band--brand
+768 /products/hrmagix :: ul.zs-plans.zs-plans-2 [2+1] w=346/346 sec=zs-band zs-band--soft
+768 /products/hrmagix :: div.pz-related [2+1] w=346/346 sec=zs-band zs-band--tint
+768 /products/hrmagix :: ALIGN ul.zs-plans.zs-plans-2 card=is-in :: span(35) strong(23) small(12)
+768 /products/hrmagix :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(26)
+768 /products/hrmagix/pricing :: div.pz-plans [2+1] w=346/346 sec=pz-pricing
+768 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+768 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+768 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+768 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+768 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+768 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+768 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+768 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec fz-sec--tint
+768 /products/hrmagix/features :: ul.fz-tiles [2+2+1] w=346/346 sec=fz-sec
+768 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+768 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+768 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+768 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+768 /products/hrmagix/features :: a.fz-tile [3+1+1] w=48/107 STRETCH sec=fz-sec
+768 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+768 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+768 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+768 /products/hrmagix/features/employee-records :: a.fz-tile [3+1] w=48/107 STRETCH sec=fz-sec
+768 /products/zapbuzzer :: div.zs-bgrid [2+2+1] w=346/346 sec=zs-band zs-benefits zs-benefits--pastel zs-band--plain is-in
+768 /products/zapbuzzer :: ul.zs-plans.zs-plans-2 [2+1] w=346/346 sec=zs-band zs-band--soft
+768 /products/zapbuzzer :: div.pz-related [2+1] w=346/346 sec=zs-band zs-band--tint
+768 /products/zapbuzzer :: ALIGN ul.zs-plans.zs-plans-2 card=is-in :: span(35) strong(23) small(12)
+768 /products/zapbuzzer :: ALIGN div.pz-related card=card :: product-card__usecase(26) product-card__caps(26) card__foot(26)
+768 /products/zapbuzzer/pricing :: div.pz-plans [2+1] w=366/366 sec=pz-pricing
+768 /products/zapbuzzer/features :: ul.fz-tiles [2+1] w=290/290 sec=fz-sec fz-sec--tint
+768 /products/zapbuzzer/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25)
+768 /products/zapbuzzer/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+768 /products/zapbuzzer/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: fz-hubcaps(23)
+768 /products/zapbuzzer/features/one-tap-requests :: ul.fz-checks.fz-checks--2 [2+2+1] w=294/294 sec=fz-sec fz-sec--tint
+768 /products/zapbuzzer/features/one-tap-requests :: div.container.fz-facts [2+1] w=366/366 sec=fz-sec fz-sec--tint
+768 /products/tracksuit :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/tracksuit :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/tracksuit :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/tracksuit :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/tracksuit :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/tracksuit :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/tracksuit :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/tracksuit :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/tracksuit :: a. [3+1] w=200/200 sec=zs-band zs-band--tint
+768 /products/tracksuit :: div.zs-usecases.zs-uses-3 [2+2+1] w=368/368 sec=zs-band zs-band--soft
+768 /products/tracksuit :: div.pz-related [2+1] w=366/366 sec=zs-band zs-band--tint
+768 /products/tracksuit :: ul.product-card__caps [2+1] w=78/141 STRETCH sec=zs-band zs-band--tint
+768 /products/tracksuit :: ul.product-card__caps [2+1] w=115/167 STRETCH sec=zs-band zs-band--tint
+768 /products/tracksuit :: ALIGN div.pz-related card=card :: card__foot(18)
+768 /products/tracksuit/features :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25) fz-hubcaps(95) fz-hubcaps(23)
+768 /products/tracksuit/security STATUS 404
+768 /products/tracksuit/features/always-on-brand-tracking :: ol.fz-steps [3+1] w=237/237 sec=fz-sec
+768 /products/tracksuit/features/always-on-brand-tracking :: div.container.fz-facts [2+1] w=366/366 sec=fz-sec fz-sec--tint
+768 /products/tracksuit/features/always-on-brand-tracking :: ALIGN ul.fz-tiles card=fz-tiles__item :: p(25)

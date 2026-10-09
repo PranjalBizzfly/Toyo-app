@@ -64,7 +64,7 @@ export default function PressKitPage() {
             <p className="co-eyebrow">Brand description</p>
             <h2>How to describe ToyoApps</h2>
             <p>
-              ToyoApps is a SaaS marketplace: the place where founders and teams launch their SaaS products, reach paying customers and earn from every sale — without building a storefront, billing system or distribution channel from scratch.
+              ToyoApps is a SaaS marketplace: the place where founders and teams launch their SaaS products, reach paying customers and earn from every sale, without building a storefront, billing system or distribution channel from scratch.
             </p>
             <p>
               For businesses, ToyoApps is one home for business software. Products are organised by business function, so buyers start from the job they need done, compare plans and buy through one account.
@@ -103,7 +103,7 @@ export default function PressKitPage() {
             <div className="cp-logo">
               <div className="cp-logo__stage cp-logo__stage--light"><LogoMark className="cp-logo__svg" /></div>
               <div className="cp-logo__body">
-                <h3>Logo mark — light background</h3>
+                <h3>Logo mark on a light background</h3>
                 <p>Vector SVG, scales to any size.</p>
                 <a className="co-link" href="/press/toyoapps-logo.svg" download>Download SVG ›</a>
               </div>
@@ -111,7 +111,7 @@ export default function PressKitPage() {
             <div className="cp-logo">
               <div className="cp-logo__stage cp-logo__stage--dark"><LogoMark className="cp-logo__svg" /></div>
               <div className="cp-logo__body">
-                <h3>Logo mark — dark background</h3>
+                <h3>Logo mark on a dark background</h3>
                 <p>The same file works on dark backgrounds thanks to its white outline.</p>
                 <a className="co-link" href="/press/toyoapps-logo.svg" download>Download SVG ›</a>
               </div>
@@ -189,7 +189,7 @@ export default function PressKitPage() {
               : "For interviews, quotes or anything not covered here, contact the ToyoApps team and mention your enquiry is from the media."}
           </p>
           <div className="co-btns">
-            <Link className="co-btn" href={`${routes.contact()}?topic=media`}>Contact the team</Link>
+            <Link className="co-btn" href={routes.contactForm({ topic: "media" })}>Contact the team</Link>
             <Link className="co-btn co-btn--ghost" href={routes.media()}>Media page</Link>
           </div>
         </div>

@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Contrast layer (loaded last). Fixes found by scripts/contrast-audit.mjs —
+   see docs/TOYOAPPS_CONTRAST_AUDIT.md. Targets WCAG 2.2 AA:
+   4.5:1 normal text, 3:1 large text. Colours come from theme tokens; the
+   only new values are per-hero text tokens so text follows its own hero.
+   ========================================================================== */
+
+/* 1 · Product heroes: text follows the hero, not the page.
+   Light-hero looks (light theme only) → dark ink; dark-hero looks and every
+   hero in dark theme → light ink. */
+.pt {
+  --hero-ink: #0b1d2e;      /* headings, eyebrows, current crumb, inline links */
+  --hero-ink-2: #2b4157;    /* lead text, crumbs — ≥ 7:1 on cream/white/sky */
+}
+.pt:is(.look-midnight, .look-forest, .look-ocean, .look-aurora, .look-void, .look-ink),
+:root[data-theme="dark"] .pt {
+  --hero-ink: #ffffff;
+  --hero-ink-2: #e2ecf5;    /* ≥ 4.6:1 even on the bright ocean-blue hero */
+}
+html body main .pt :is(.zs-hero, .fz-hero, .zf-hero, .pz-sec-hero, .ez-hero, .fz-vhero) :is(
+  .eyebrow, .zs-kicker, .fz-kicker, .fz-hero__eyebrow, .pz-sec-hero__eyebrow, .zc-kicker, .ez-kicker, .ez-heading__kicker,
+  .fz-more, .zs-hero__trial, .breadcrumbs [aria-current], .fz-crumbs [aria-current]
+) { color: var(--hero-ink) !important; }
+html body main .pt :is(.zs-hero, .fz-hero, .zf-hero, .pz-sec-hero, .ez-hero, .fz-vhero) :is(
+  .breadcrumbs, .breadcrumbs a, .breadcrumbs li, .fz-crumbs, .fz-crumbs a, .fz-crumbs li
+) { color: var(--hero-ink-2) !important; opacity: 1; }
+html body main .pt :is(.fz-hero, .pz-sec-hero) :is(.fz-hero__lead, .pz-sec-hero__lead) { color: var(--hero-ink-2) !important; }
+
+/* 2 · Breadcrumbs elsewhere: full-strength secondary text, no fading. */
+html main .breadcrumbs :is(a, li) { opacity: 1; }
+html:not([data-theme="dark"]) main :is(.ez-hero, .zf-hero, .page-faq, .co-band) .breadcrumbs :is(a, li) { color: #2b4157; }
+
+/* 3 · Light CTA variants (big "spin" CTA sits on a light hero wash). */
+html:not([data-theme="dark"]) .zs-cta--spin :is(.zs-cta__lead, p) { color: #2b4157 !important; }
+html[data-theme="dark"] .zs-cta--spin :is(.zs-cta__lead, p) { color: #d6e2ee !important; }
+
+/* 4 · Feature tiles that stay dark in light theme: link colour for dark surfaces. */
+html:not([data-theme="dark"]) .fz-tile .fz-more { color: #8fd05a; }
+
+/* 5 · Section kickers outside dark bands use readable brand blue. */
+html body main .fz-sec:not(.fz-sec--band) .fz-kicker { color: #0b5f93 !important; }
+html[data-theme="dark"] body main .fz-sec:not(.fz-sec--band) .fz-kicker { color: #8cd0ff !important; }
+
+/* 6 · Homepage "How ToyoApps works" island lost its dark band (white text on white). */
+html main .h-sec--island { background: var(--st-dark) !important; --heading: #ffffff; --text: #dbe6f0; --text-secondary: #c3d2e0; --text-muted: #a9bccd; color: #dbe6f0; }
+html main .h-sec--island :is(h2, h3) { color: #ffffff !important; }
+
+/* 7 · Dark bands of every family: headings white, eyebrows/kickers light, body light.
+   (Overrides the light-section heading ink from headings.css, which can't see band colour.) */
+html body main :is(.fz-sec--band, .z-stats, .zc-band, .zc-hero, .page-hero, .zband, .srch-hero, .co-hero, .h-sec--island, .h-sec--dark, .h-sec--brand, .zs-band--dark, .zs-band--brand, .zs-band--black, .ez-band, .zc-black) :is(h2, .fz-h2, .zs-h2, .h2):not(:is(li, article, [class*="card"], [class*="tile"]) *) { color: #ffffff !important; }
+html body main :is(.fz-sec--band, .z-stats, .zc-band, .zc-hero, .page-hero, .zband, .srch-hero, .co-hero, .h-sec--island, .h-sec--dark, .h-sec--brand, .zs-band--dark, .zs-band--brand, .zs-band--black, .ez-band, .zc-black) :is(.eyebrow, .h-eyebrow, .fz-kicker, .zs-kicker, .zc-kicker, .ez-kicker, .co-eyebrow, .co-hero__label, .srch-hero__kicker) { color: #ffffff !important; opacity: 1; }
+html body main :is(.fz-sec--band, .z-stats, .zc-band, .h-sec--island, .zs-band--brand) :is(p, .h-lead, .fz-lead):not(:is(li, article, [class*="card"], [class*="tile"]) *) { color: #ffffff; }
+html body main :is(.z-stats, .zc-band, .page-hero, .zband, .h-sec--brand, .h-sec--dark, .h-sec--island) .zbtn:not(.zbtn--primary):not([class*="solid"]) { color: #ffffff; border-color: #ffffff; }
+
+/* 8 · Tiles / cards whose surface varies: links take the card's own text colour. */
+html main .fz-tile .fz-more, html main .pz-vcard .pz-arrow { color: inherit !important; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+/* 9 · Status tags on bright fills (dark theme) need dark text. */
+html[data-theme="dark"] main .co-tag { color: #04121f !important; }
+
+/* 10 · GetBenj pill band and dark plan strip. */
+html main .zs-pillband li { color: #ffffff !important; }
+html main .zs-plans-2 li :is(span, small) { color: #c3d2e0 !important; }
+html main .zs-plans-2 li strong { color: #ffffff !important; }
+
+/* 11 · Homepage hero + strip, dark theme. */
+html[data-theme="dark"] .hh :is(.hh__eyebrow) { color: #8cd0ff !important; }
+html[data-theme="dark"] .hh .hh-btn:not(.hh-btn--primary) { color: #8cd0ff; border-color: #8cd0ff; }
+html[data-theme="dark"] .hh :is(.hh-strip__eyebrow, .hh-strip__more-btn) { color: #a9bccd !important; }
+html:not([data-theme="dark"]) main .h-head .h-lead { color: #3a516a; }
+
+/* 12 · Active top-nav item in dark theme. */
+html[data-theme="dark"] .primary-nav__trigger[aria-current], html[data-theme="dark"] .primary-nav__item a[aria-current] { color: #66b2ff !important; }
+
+/* Homepage hero ghost button in dark theme sits on a light-blue wash: use white. */
+html[data-theme="dark"] .hh .hh__ctas a.hh-btn { color: #ffffff !important; }
+
+/* 13 · Cards inside dark/brand bands keep card ink (contrast-fixes.css whitens every band h3). */
+html body main :is(.h-sec--island, .h-sec--brand, .h-sec--dark) :is(.h-card, .card, [class*="-card"]):not(:is(ol, .h-why) > li) :is(h3, h4) { color: #0b1d2e !important; }
+html[data-theme="dark"] body main :is(.h-sec--island, .h-sec--brand, .h-sec--dark) :is(.h-card, .card, [class*="-card"]):not(:is(ol, .h-why) > li) :is(h3, h4) { color: #f3f8fc !important; }
+/* 14 · Small links on pale tints: deeper brand blue. */
+html:not([data-theme="dark"]) main .fz-center .fz-more { color: #0b5f93 !important; }
+html body main :is(.h-sec--brand, .h-sec--dark, .h-sec--island, .z-cta) .h-actions a.zbtn:not(.zbtn--primary) { color: #ffffff !important; border-color: #ffffff !important; }
+/* 15 · Decorative step numerals: raise from 35% to legible strength (large text ≥ 3:1). */
+html main .zs-how-2 li > span { color: color-mix(in srgb, var(--primary) 75%, transparent) !important; }
+/* 16 · Hero chips on the green Fantom hero (and any dark-look hero): white text. */
+html main .pt:is(.look-forest, .look-ocean, .look-aurora, .look-midnight, .look-void, .look-ink) .zs-hero__chips :is(li, a), html[data-theme="dark"] main .zs-hero__chips :is(li, a) { color: #ffffff !important; }
+/* 17 · Spotlight visual list: deeper green on pale green. */
+html:not([data-theme="dark"]) main .sv li { color: #1f5a28; }

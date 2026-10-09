@@ -1,0 +1,82 @@
+/* =====================================================================
+   Text structure: consistent hierarchy, rhythm and card anatomy across
+   every page. Loaded last. Does not centre or restyle sections; it only
+   fixes how text sits inside the layouts that already exist.
+   ===================================================================== */
+
+/* ---------- 1. Headings and paragraphs ---------- */
+/* Headings break into balanced lines (no single stranded word). */
+html body main :is(h1, h2, h3, h4) { text-wrap: balance; }
+/* Body text avoids one-word last lines and keeps a readable rhythm. */
+html body main :is(p, li, dd, figcaption, blockquote) { text-wrap: pretty; }
+html body main p { line-height: 1.6; }
+html body main :is(h1, h2) { line-height: 1.12; }
+html body main :is(h3, h4) { line-height: 1.3; }
+
+/* Long free-standing paragraphs keep a readable measure (~70 characters).
+   Card and column text is already constrained by its container. */
+html body main :is(section, header) > .container > p,
+html body main :is([class*="__lead"], [class*="-lead"], .lead, [class*="__sub"], [class*="-sub"]) { max-width: 70ch; }
+html body main :is([class*="center"], [style*="center"]) > :is(p, [class*="lead"], [class*="sub"]) { margin-inline: auto; }
+
+/* ---------- 2. Card anatomy ----------
+   Content stacks from the top; the closing meta / link line is pinned to the
+   card's bottom edge, so footers line up across every card in a row. */
+html body main :is(.h-int, .zs-card, .pz-card, .pz-vcard, .h-role, .h-pcard, .cp-card, .h-fcard, .h-card,
+  .zc-card, .ez-card, .ez-tile, .zs-tile, .fz-tile, .rr-cap, .rr-eco__card, .rr-learn__item, .rr-mod,
+  .rr-agent, .rr-slide, .rr-dcard, .rr-wcard, .srch-card, .co-panel__cell, .zs-dotcard, .zs-benefit) {
+  display: flex !important;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+}
+/* Exceptions: horizontal "row" cards keep their row layout. */
+html body main :is(.zs-card--row, .pz-card--row, .rr-cap) { flex-direction: row; align-items: flex-start; }
+html body main .rr-cap { flex-wrap: wrap; }
+
+/* Consistent spacing between title, label and description. */
+html body main :is(.h-int, .zs-card, .pz-card, .pz-vcard, .zc-card, .ez-card, .ez-tile, .fz-tile, .h-pcard, .h-role, .cp-card) > * + * { margin-top: 6px; }
+html body main :is(.h-int, .zs-card, .pz-card, .zc-card, .ez-card, .fz-tile) > :is(h3, strong):first-of-type + :is(small, span, p) { margin-top: 4px; }
+
+/* The last meta line / link sits at the bottom, separated by a hairline. */
+html body main .h-int > em,
+html body main :is(.zs-card, .pz-card, .pz-vcard, .ez-card, .ez-tile, .fz-tile, .zc-card, .h-pcard, .h-fcard, .cp-card, .h-role, .rr-eco__card, .rr-mod, .zs-dotcard)
+  > :last-child:is(a, em, small, footer, [class*="link"], [class*="more"], [class*="meta"], [class*="foot"], [class*="cta"], [class*="btn"]) {
+  margin-top: auto !important;
+}
+html body main .h-int > em { display: block; padding-top: 12px; border-top: 1px solid var(--border-soft, rgb(15 34 53 / .08)); width: 100%; }
+html body main .h-int > span { flex: 0 0 auto; }
+
+/* The home integrations cards: label rhythm. */
+html body main .h-int { gap: 0; padding: 20px; }
+html body main .h-int > strong { font-size: 17px; line-height: 1.3; }
+html body main .h-int > small { margin-top: 4px; letter-spacing: .01em; }
+html body main .h-int > span { margin: 10px 0 16px; line-height: 1.6; }
+
+/* ---------- 3. Lists inside cards line up with the card text ---------- */
+html body main :is(.zs-card, .pz-card, .ez-card, .fz-tile, .zc-card, .cp-card) :is(ul, ol):not([class]) { padding-left: 1.1em; }
+
+/* ---------- 4. Phones: tighter, still structured ---------- */
+@media (max-width: 640px) {
+  html body main :is(h1) { line-height: 1.1; }
+  html body main .h-int { padding: 18px; }
+}
+
+/* Pricing plans and dot-grid cards: closing button / link pinned to the bottom */
+html body main :is(.pz-plan, .zs-plan, .zs-dotcard) { display: flex !important; flex-direction: column; height: 100%; }
+html body main :is(.pz-plan, .zs-plan) > :last-child:is(a, button, [class*="btn"], [class*="cta"]),
+html body main .zs-dotcard > :last-child { margin-top: auto !important; }
+html body main .pz-plans { align-items: stretch !important; }
+
+/* Phones: one integration card per row (two columns left ~170px cards with cramped text) */
+@media (max-width: 520px) { html body main .h-ints { grid-template-columns: minmax(0, 1fr) !important; } }
+
+/* Overview lead paragraph: a lead, not a headline (it holds 40 to 55 words). Slightly larger than body text, same reading rhythm. */
+html body main .zs-what__body .zs-lead { font-size: clamp(18px, 1rem + .35vw, 21px) !important; line-height: 1.6 !important; font-weight: 500 !important; letter-spacing: 0 !important; max-width: 62ch; }
+html body main .zs-what__body .zs-lead + * { margin-top: 18px; }
+
+/* Audience list above the overview: readable label size */
+html body main .zs-aud-1 .zs-ribbon li { font-size: clamp(17px, .9rem + .5vw, 22px) !important; }
+
+/* Paragraph rhythm: consecutive paragraphs are separated by a consistent gap */
+html body main :is(p + p) { margin-top: .85em; }

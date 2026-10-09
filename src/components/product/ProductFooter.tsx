@@ -56,7 +56,7 @@ export function ProductFooter({ product }: { product: Product }) {
     product.appUrl && { label: `Sign up for ${product.name}`, href: product.appUrl },
     { label: `${product.name} website`, href: product.websiteUrl },
     product.pricing && { label: "Compare plans", href: routes.productSection(product.slug, "pricing") },
-    { label: "Contact ToyoApps", href: routes.contact() },
+    { label: `Ask about ${product.name}`, href: routes.contactForm({ type: "product", product: product.slug }) },
   ].filter((l): l is FooterLink => !!l);
 
   const cta = getProductCtas(product).primary;

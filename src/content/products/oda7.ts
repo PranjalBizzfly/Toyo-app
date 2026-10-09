@@ -52,32 +52,32 @@ const DEEP: Record<string, Partial<Feature>> = {
   // ── Sales Execution ──────────────────────────────────────────────
   "lead-distribution": {
     capabilities: [
-      "Every incoming prospect is tagged with its source UTMs, so the rep can see which form, ad or webhook produced the lead.",
+      "Every new prospect is tagged with its UTM source (campaign tracking tags), so the rep can see which form, ad or webhook brought the lead in.",
       "Duplicate rules run at intake, so an existing prospect is not handed to a second rep as a new lead.",
-      "The queue is ranked algorithmically by deal score and timezone rather than by arrival order or rep preference.",
+      "The queue is ranked automatically by deal score and timezone, not by arrival order or rep preference.",
       "Each lead in My Queue has a visible owner, which makes it clear who is responsible for the next action.",
       "A one-click auto-prioritize action re-sorts the queue so the highest-intent prospect sits at the top.",
     ],
     benefits: [
       "Reps no longer cherry-pick the leads they like; the ranking decides the order of work.",
       "High-intent prospects reach a rep quickly instead of waiting in a shared list.",
-      "Managers can see queue ownership, which removes ambiguity about who should follow up.",
+      "Managers can see who owns each lead, so there is no confusion about who should follow up.",
     ],
     useCases: [
       { title: "Inbound form leads", description: "A prospect submits a web form; ODA7 tags the source, checks duplicates and places the lead in an SDR's queue ordered by score and timezone." },
-      { title: "Ad-driven campaigns", description: "Leads arriving from Facebook Ads are ingested into the same pipeline, so paid leads are prioritized alongside every other source." },
+      { title: "Ad-driven campaigns", description: "Leads from Facebook Ads go into the same pipeline, so paid leads are prioritized alongside every other source." },
     ],
     faqs: [
       q("Where do leads in My Queue come from?", "The site names web forms, Facebook Ads and inbound webhooks as sources. Each prospect is tagged with its source UTMs as it enters the qualification and assignment pipeline."),
-      q("How is the queue ordered?", "By an algorithmic ranking based on deal score and timezone. Predictive lead scoring supplies the score, and reps can re-run prioritization with one click."),
+      q("How is the queue ordered?", "By an automatic ranking based on deal score and timezone. Predictive lead scoring supplies the score, and reps can re-sort the queue with one click."),
       q("Can reps choose which leads to work?", "The queue is designed to prevent cherry-picking: reps work their ranked queue from the top rather than choosing from a shared list."),
     ],
   },
   "integrated-dialer": {
     capabilities: [
-      "Calls are placed from a WebRTC softphone inside the browser, so reps don't need a separate desk phone or dialer application.",
-      "ODA7 provisions local presence numbers that match the prospect's area code, which the site presents as a way to build rapport and lift connect rates.",
-      "Lead context, the call controls and the script appear in one calling view, so reps don't rebuild context across tabs.",
+      "Calls are made from a WebRTC softphone (a phone that runs in the browser), so reps don't need a separate desk phone or dialer app.",
+      "ODA7 provides local numbers that match the prospect's area code, which the site presents as a way to build trust and get more calls answered.",
+      "Lead details, the call controls and the script appear in one calling view, so reps don't hunt across tabs.",
       "The next action is visible after each call, keeping the rep moving through the queue.",
       "When a machine answers, a pre-recorded voicemail can be dropped with a single click.",
     ],
@@ -89,7 +89,7 @@ const DEEP: Record<string, Partial<Feature>> = {
     ],
     faqs: [
       q("Do reps need special hardware to call?", "The dialer is a WebRTC softphone that runs in the browser. ODA7 says exact telephony requirements should be confirmed with them during scoping."),
-      q("What is local presence calling?", "ODA7 provisions localized numbers that match the prospect's area code, so the call shows a local caller ID rather than an unfamiliar long-distance number."),
+      q("What is local presence calling?", "ODA7 provides local numbers that match the prospect's area code, so the call shows a local caller ID rather than an unfamiliar long-distance number."),
     ],
   },
   "dynamic-sales-scripts": {
@@ -113,31 +113,31 @@ const DEEP: Record<string, Partial<Feature>> = {
     ],
     faqs: [
       q("Who are dynamic scripts designed for?", "ODA7 positions them for guiding junior reps and SDRs through qualification, objection handling and compliance disclosures during live calls."),
-      q("How do scripts relate to the objection buster?", "Scripts provide the planned talk track; the real-time objection AI listens to the call and surfaces a battlecard when a specific objection is detected."),
+      q("How do scripts relate to the objection buster?", "Scripts give the planned talk track; the live objection AI listens to the call and shows a battlecard (a ready-made answer card) when it hears a specific objection."),
     ],
   },
   "automated-sequences": {
     capabilities: [
-      "SMS steps send text follow-ups from the business number as part of the cadence.",
+      "SMS steps send text follow-ups from the business number as part of the follow-up schedule.",
       "WhatsApp steps send approved WhatsApp messages through the official Business API.",
       "Automated voicemail steps leave a pre-recorded message without the rep dialing manually.",
       "Email steps send follow-up emails, with opens and clicks tracked on the lead.",
-      "Steps are combined into multi-touch cadences per lead, so follow-up continues without a rep tracking it by hand.",
+      "Steps are combined into a multi-step follow-up schedule for each lead, so follow-up continues without a rep tracking it by hand.",
     ],
     howItWorks: [
-      "Define a cadence that mixes SMS, WhatsApp, voicemail and email steps",
+      "Set up a follow-up schedule that mixes SMS, WhatsApp, voicemail and email steps",
       "Enroll a lead in the sequence after first contact",
       "ODA7 runs each step on schedule",
       "Replies land in the unified inbox on the lead record",
     ],
     benefits: [
       "Follow-up no longer depends on a rep remembering to send the next message.",
-      "Each lead gets a consistent, multi-channel cadence.",
+      "Each lead gets consistent follow-up across several channels.",
       "Every touch is logged on the lead rather than on a rep's personal device.",
     ],
     audience: ["SDRs", "Sales managers"],
     faqs: [
-      q("Which channels can a sequence use?", "The site lists SMS, WhatsApp, automated voicemail and email steps, which can be mixed in one cadence."),
+      q("Which channels can a sequence use?", "The site lists SMS, WhatsApp, automated voicemail and email steps, which can be mixed in one sequence."),
       q("Can AI suggest sequence steps?", "ODA7's AI sales recommendations include suggestions for the next sequence step, shown inside the workflow; ODA7 confirms AI availability during scoping."),
     ],
   },
@@ -163,7 +163,7 @@ const DEEP: Record<string, Partial<Feature>> = {
     audience: ["Sales reps", "SDRs", "Sales managers"],
     faqs: [
       q("Which channels appear in the unified inbox?", "SMS, WhatsApp and email. ODA7 brings them into one conversation timeline attached to the lead record."),
-      q("Why does ODA7 centralize messaging?", "The site describes WhatsApp and calling outreach as often manual, unrecorded and disconnected from the CRM, with conversations scattered across devices; the inbox keeps it on the lead."),
+      q("Why does ODA7 keep all messages in one place?", "The site describes WhatsApp and calling outreach as often manual, unrecorded and disconnected from the CRM, with conversations scattered across devices; the inbox keeps it on the lead."),
     ],
   },
   "quotes-and-proposals": {
@@ -196,8 +196,8 @@ const DEEP: Record<string, Partial<Feature>> = {
   },
   "lead-management": {
     capabilities: [
-      "Multi-dimensional filters let reps and managers slice leads by several attributes at once.",
-      "Custom fields hold enrichment data specific to the business.",
+      "Filters let reps and managers sort leads by several details at once.",
+      "Custom fields hold extra lead details specific to the business.",
       "Pipeline and lifecycle stages can be configured to match how the team sells.",
       "Bulk actions and bulk tagging update many leads in one step.",
       "Each lead shows its source, qualification context and owner before the next action begins.",
@@ -244,7 +244,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       "Pricing tiers are defined per product.",
       "Recurring billing plans can be represented for subscription products.",
       "Configurable bundles group products into packages.",
-      "The catalog feeds CPQ quotes and proposals directly.",
+      "The catalog feeds CPQ (configure, price, quote) quotes and proposals directly.",
     ],
     benefits: [
       "Prices on quotes come from one maintained source.",
@@ -270,7 +270,7 @@ const DEEP: Record<string, Partial<Feature>> = {
     ],
     audience: ["Account executives", "B2B sales teams"],
     faqs: [
-      q("Can ODA7 model parent and subsidiary companies?", "Yes. The site describes parent–subsidiary mapping under a parent enterprise account."),
+      q("Can ODA7 model parent and subsidiary companies?", "Yes. The site describes parent-subsidiary mapping under a parent enterprise account."),
       q("What does the company view add over leads?", "It groups contacts, decision-makers and buying committees under one account, with org charts for decision-makers."),
     ],
   },
@@ -279,7 +279,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       "Booking links let prospects choose a meeting time themselves.",
       "Bookings sync with Google Calendar.",
       "Bookings sync with Outlook.",
-      "Automatic reminders are sent before meetings, including SMS and WhatsApp reminder cadences.",
+      "Automatic reminders are sent before meetings, including SMS and WhatsApp reminders.",
     ],
     howItWorks: [
       "The rep shares a booking link with the prospect",
@@ -294,20 +294,20 @@ const DEEP: Record<string, Partial<Feature>> = {
     audience: ["Sales reps", "Account executives"],
     faqs: [
       q("Which calendars does ODA7 sync with?", "The site names Google Calendar and Outlook."),
-      q("How are meeting reminders sent?", "Automatically, including SMS and WhatsApp reminder cadences before the meeting."),
+      q("How are meeting reminders sent?", "Automatically, including SMS and WhatsApp reminders before the meeting."),
     ],
   },
   "sales-dashboard": {
     capabilities: [
       "Shows the number of calls each rep has made.",
-      "Shows the rep's pickup ratio — how many dials were answered.",
+      "Shows the rep's pickup ratio: how many dials were answered.",
       "Tracks conversions credited to the rep.",
       "Displays live commission earnings as deals close.",
       "Gives an overview of the active queue and the live dialer next to personal performance.",
     ],
     benefits: [
       "Reps see their own performance and earnings without asking a manager.",
-      "Queue and dialer status sit beside the numbers, so the dashboard is a working start point.",
+      "Queue and dialer status sit beside the numbers, so reps can start their work from the dashboard.",
     ],
     faqs: [
       q("Is the sales dashboard personal?", "Yes. It is each rep's own command center covering calls, pickup ratio, conversions and commission earnings."),
@@ -343,7 +343,7 @@ const DEEP: Record<string, Partial<Feature>> = {
   "two-way-sms": {
     capabilities: [
       "ODA7 provides dedicated local business phone numbers for texting prospects.",
-      "Conversations are bidirectional: prospects can reply and reps answer from ODA7.",
+      "Conversations are two-way: prospects can reply and reps answer from ODA7.",
       "Keyword triggers can react to specific words in incoming messages.",
       "Messages can include media.",
     ],
@@ -409,14 +409,14 @@ const DEEP: Record<string, Partial<Feature>> = {
   "explain-my-numbers": {
     capabilities: [
       "Leaders ask questions about sales data in plain English instead of building reports.",
-      "ODA7 returns a synthesized explanation rather than a raw table.",
-      "Answers draw on data already connected in the workspace — calls, leads and performance.",
+      "ODA7 gives a written explanation rather than a raw table.",
+      "Answers draw on data already connected in the workspace: calls, leads and performance.",
       "It sits within Revenue Insights next to dashboards and heatmaps.",
     ],
     howItWorks: [
       "Type a question, for example why conversions dipped in a region",
       "ODA7 analyzes the connected workspace data",
-      "A synthesized explanation is shown",
+      "A plain-language explanation is shown",
     ],
     benefits: ["Leaders get answers without waiting for an analyst.", "Questions are answered from the same data the floor generates."],
     faqs: [
@@ -445,16 +445,16 @@ const DEEP: Record<string, Partial<Feature>> = {
   },
   "predictive-lead-scoring": {
     capabilities: [
-      "Each inbound prospect gets a score on a 1–100 scale.",
-      "Firmographic signals about the company feed the score.",
-      "Behavioural signals feed the score.",
-      "Intent signals feed the score.",
+      "Each inbound prospect gets a score on a 1 to 100 scale.",
+      "Company details (firmographics, such as size and industry) feed the score.",
+      "How the prospect behaves (behavioural signals) feeds the score.",
+      "Signs of buying interest (intent signals) feed the score.",
       "Scores drive the ranking of each rep's My Queue.",
     ],
     howItWorks: [
       "A prospect enters ODA7",
       "Machine-learning models assess firmographic, behavioural and intent signals",
-      "A 1–100 score is assigned",
+      "A 1 to 100 score is assigned",
       "The score ranks the lead in My Queue",
     ],
     benefits: ["High-intent prospects reach reps first.", "Ranking replaces rep guesswork about which lead to call."],
@@ -468,7 +468,7 @@ const DEEP: Record<string, Partial<Feature>> = {
     capabilities: [
       "After each call, ODA7 lists the action items that came up.",
       "Summaries include sentiment context from the conversation.",
-      "Themes the prospect raised are surfaced for review.",
+      "Topics the prospect raised are pulled out for review.",
       "Summaries can update the deal stage.",
     ],
     howItWorks: ["The call ends", "The recording and transcript are analyzed", "A summary of actions, sentiment and themes is shown", "The deal stage can be updated from it"],
@@ -486,7 +486,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       "Suggests the next step in a sequence.",
       "Recommendations are made per prospect and shown inside the workflow.",
     ],
-    benefits: ["Reps get a next-best action without leaving the lead.", "Follow-up timing is informed by data rather than habit."],
+    benefits: ["Reps get a suggested next step without leaving the lead.", "Follow-up timing is informed by data rather than habit."],
     audience: ["Sales reps", "SDRs"],
     faqs: [
       q("Where do recommendations appear?", "Inside the workflow, on the prospect being worked."),
@@ -495,16 +495,16 @@ const DEEP: Record<string, Partial<Feature>> = {
   },
   "insight-alerts": {
     capabilities: [
-      "ODA7 watches activity for anomalies continuously.",
+      "ODA7 keeps watching activity for anything unusual.",
       "Alerts flag reps at risk of burnout.",
-      "Alerts flag deals whose velocity is slowing.",
-      "Alerts flag objection topics that are surging across calls.",
+      "Alerts flag deals that are slowing down.",
+      "Alerts flag objection topics that are coming up more often across calls.",
     ],
-    howItWorks: ["Activity data is monitored", "An anomaly is detected", "An alert is routed to managers", "Managers act during the shift"],
-    benefits: ["Managers learn about problems while they can still act.", "Coaching can target the objection topics currently rising."],
+    howItWorks: ["Activity is watched", "Something unusual is spotted", "An alert is routed to managers", "Managers act during the shift"],
+    benefits: ["Managers learn about problems while they can still act.", "Coaching can focus on the objection topics that are rising right now."],
     audience: ["Sales managers", "Floor supervisors"],
     faqs: [
-      q("What kinds of alerts does ODA7 raise?", "The site names rep burnout risk, slowing deal velocity and surging objection topics."),
+      q("What kinds of alerts does ODA7 raise?", "The site names rep burnout risk, deals slowing down and fast-rising objection topics."),
       q("How are alerts delivered?", "Notification routing rules can send critical alerts to Slack, SMS, WhatsApp or browser push."),
     ],
   },
@@ -549,7 +549,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       "Active dials are visible per agent.",
     ],
     howItWorks: ["Open the status grid", "Pick an agent who is on a call", "Listen silently", "Whisper coaching or barge in"],
-    benefits: ["Coaching happens during the call, not afterwards.", "Supervisors see idle and wrap-up time as it happens."],
+    benefits: ["Coaching happens during the call, not afterwards.", "Supervisors see idle and wrap-up (after-call work) time as it happens."],
     faqs: [
       q("Can the customer hear whisper coaching?", "No. Whisper coaching goes only into the rep's headset."),
       q("Which agent states are shown?", "On Call, Idle, In Wrap-up and Available."),
@@ -564,7 +564,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       "Each team or pod can have dedicated queue routing, quota pacing and leaderboards.",
       "Agent profiles hold calling skill rules.",
     ],
-    benefits: ["The org chart drives routing, access and competition.", "Agencies can separate client pods cleanly."],
+    benefits: ["The org chart decides routing, access and contests.", "Agencies can keep each client's team (pod) cleanly separate."],
     audience: ["Sales operations", "Sales managers", "Admins"],
     faqs: [
       q("How can teams be structured?", "As squads, territories, vertical pods or regional divisions, grouped into departments."),
@@ -576,14 +576,14 @@ const DEEP: Record<string, Partial<Feature>> = {
       "New agents follow a standardized onboarding path.",
       "Script certifications confirm agents know the talk tracks.",
       "Mock calls are scored before agents go live.",
-      "Access is provisioned automatically as onboarding progresses.",
+      "Access is granted automatically as onboarding progresses.",
     ],
     howItWorks: ["A new agent is added", "They start the standard onboarding path", "They complete script certifications and scored mock calls", "Access is provisioned automatically"],
     benefits: ["Every new agent is onboarded the same way.", "Access isn't granted before training is done."],
     audience: ["Sales managers", "HR and operations teams", "New agents"],
     faqs: [
       q("What does onboarding include?", "Standardized paths with script certifications and scored mock calls."),
-      q("How is access handled?", "ODA7 provisions access automatically as the agent progresses through onboarding."),
+      q("How is access handled?", "ODA7 grants access automatically as the agent moves through onboarding."),
     ],
   },
   "attendance": {
@@ -622,11 +622,11 @@ const DEEP: Record<string, Partial<Feature>> = {
       "Benchmarks team pickup ratios in real time.",
       "Tracks talk time and wrap-up time.",
       "Compares conversions against benchmarks.",
-      "Shows deal-stage velocity and pacing.",
+      "Shows how fast deals move between stages, and pacing.",
     ],
     benefits: ["Managers can coach while the day is still running.", "Underperforming metrics are visible before the weekly report."],
     faqs: [
-      q("What does the scorecard measure?", "Pickup ratios, talk and wrap-up times, conversions and deal-stage velocity."),
+      q("What does the scorecard measure?", "Pickup ratios, talk and wrap-up times, conversions and how fast deals move between stages."),
       q("Is it real-time?", "Yes, the site presents it as a live, team-level performance view."),
     ],
   },
@@ -642,7 +642,7 @@ const DEEP: Record<string, Partial<Feature>> = {
     ],
     benefits: [
       "Reps see earnings as they close, not at month end.",
-      "Commission uses the same deal data sales sees, which removes reconciliation disputes.",
+      "Commission uses the same deal data sales sees, so there are fewer disputes over the numbers.",
     ],
     audience: ["Sales reps", "Sales managers", "Finance and payroll teams"],
     faqs: [
@@ -687,7 +687,7 @@ const DEEP: Record<string, Partial<Feature>> = {
   "incentives": {
     capabilities: [
       "Managers can run weekend flash bonuses.",
-      "Product-specific SPIFFs reward selling particular products.",
+      "Product-specific SPIFFs (short-term sales bonuses) reward selling particular products.",
       "Quota multipliers boost pay for exceeding targets.",
       "Each incentive has custom start and end triggers.",
       "Bonuses are tied to real-time floor performance.",
@@ -781,7 +781,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       "Pickup ratios are plotted hour by hour.",
       "Heatmaps break down by timezone and geographic zone.",
       "Carrier-level views show differences between carriers.",
-      "Optimal dial windows stand out visually.",
+      "The best times to call stand out clearly.",
       "Heatmaps inform shift staffing decisions.",
     ],
     benefits: ["Teams dial when prospects are most likely to answer.", "Supervisors staff shifts around real pickup patterns."],
@@ -793,11 +793,11 @@ const DEEP: Record<string, Partial<Feature>> = {
   },
   "executive-dashboard": {
     capabilities: [
-      "Tracks pipeline velocity across the business.",
+      "Tracks how fast deals move through the pipeline across the business.",
       "Shows customer acquisition cost (CAC).",
       "Shows customer lifetime value (LTV).",
       "Tracks cohort retention.",
-      "Includes ARR and MRR modelling in the master BI view.",
+      "Includes ARR and MRR (annual and monthly recurring revenue) modelling in the main reporting view.",
     ],
     benefits: ["Leadership sees revenue health in one view.", "Metrics come from the same data as the floor."],
     faqs: [
@@ -817,7 +817,7 @@ const DEEP: Record<string, Partial<Feature>> = {
     audience: ["Sales operations", "Sales managers", "Floor supervisors"],
     faqs: [
       q("How can conversion be sliced?", "By carrier, dialer pool, area code, lead source, rep and queue."),
-      q("What is carrier route health?", "A view of connection metrics per carrier route, used to spot routing problems."),
+      q("What is carrier route health?", "A view of how well calls connect on each carrier route, used to spot routing problems."),
     ],
   },
   "scheduled-bi-reports": {
@@ -828,7 +828,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       "Reports are delivered to executive inboxes.",
       "Reports are delivered to Slack channels.",
     ],
-    benefits: ["Summaries arrive without someone building them.", "Leaders get numbers where they already read."],
+    benefits: ["Summaries arrive without someone building them.", "Leaders get the numbers where they already look."],
     audience: ["Executives", "Sales leaders"],
     faqs: [
       q("How often can reports be sent?", "Daily or weekly."),
@@ -914,7 +914,7 @@ const DEEP: Record<string, Partial<Feature>> = {
   },
   "data-sync": {
     capabilities: [
-      "Recurring background ETL jobs export ODA7 data.",
+      "Scheduled background jobs (ETL: extract, transform, load) export ODA7 data.",
       "Data can sync to Snowflake.",
       "Data can sync to BigQuery.",
       "Data can sync to Amazon S3.",
@@ -995,7 +995,7 @@ const DEEP: Record<string, Partial<Feature>> = {
     benefits: ["Operators see the health of the platform business.", "Usage and revenue are in one view."],
     audience: ["Platform operators"],
     faqs: [
-      q("What does platform revenue telemetry show?", "ARR, MRR, churn, expansion revenue, tenant lifetime value, subscription velocity and usage."),
+      q("What does the platform revenue view show?", "ARR, MRR, churn, expansion revenue, tenant lifetime value, subscription velocity and usage."),
       q("Is this visible to tenants?", "It is part of the Super Admin experience for platform operators."),
     ],
   },
@@ -1020,7 +1020,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       "Vector embeddings are managed here.",
       "Telephony and SIP gateways are configured here.",
     ],
-    benefits: ["Infrastructure behind tenants is managed in one area."],
+    benefits: ["The technical setup behind customer workspaces is managed in one area."],
     audience: ["Platform operators"],
     faqs: [
       q("What does the data platform area cover?", "Global data streams, multi-region database clusters, vector embeddings and telephony (SIP) gateways."),
@@ -1077,15 +1077,15 @@ const sales = mk(
     [
       "lead-distribution",
       "Lead ingestion & priority queue (My Queue)",
-      "Incoming leads are tagged, de-duplicated and ranked into each rep's prioritized queue.",
+      "New leads are tagged, checked for duplicates and ranked into each rep's priority queue.",
       [
-        "My Queue is ODA7's prioritized lead queue. Prospects arriving from web forms, Facebook Ads and inbound webhooks enter an automated qualification and assignment pipeline instead of a shared list reps pick from.",
-        "Each new prospect is tagged with its source UTMs, checked against duplicate rules and placed into an SDR queue ordered by deal score and timezone, so the rep's next lead is always visible and owned.",
+        "My Queue is ODA7's priority lead queue. Prospects from web forms, Facebook Ads and inbound webhooks are qualified and assigned automatically, instead of landing in a shared list reps pick from.",
+        "Each new prospect is tagged with its UTM source (campaign tracking tags), checked for duplicates and placed into an SDR's queue ordered by deal score and timezone, so the rep's next lead is always clear and has an owner.",
       ],
       [
-        "Source UTM tagging on every incoming prospect",
-        "Duplicate-rule checks at intake",
-        "Algorithmic ranking by deal score and timezone",
+        "UTM source tagging on every new prospect",
+        "Duplicate checks as leads arrive",
+        "Automatic ranking by deal score and timezone",
         "Visible queue ownership per rep",
         "One-click auto-prioritization of the queue",
       ],
@@ -1097,7 +1097,7 @@ const sales = mk(
           "The lead is scored and placed in the right SDR queue",
           "The rep works the queue top-down from My Queue",
         ],
-        benefits: ["Stops reps cherry-picking leads", "Keeps speed-to-lead tight on high-intent prospects"],
+        benefits: ["Stops reps cherry-picking leads", "Gets reps to high-intent prospects quickly"],
         audience: ["SDRs", "Inside sales reps"],
         relatedFeatures: ["predictive-lead-scoring", "integrated-dialer", "lead-management"],
       },
@@ -1107,8 +1107,8 @@ const sales = mk(
       "Integrated dialer & local presence calling",
       "An in-browser WebRTC softphone with local presence caller ID, built into the lead workspace.",
       [
-        "ODA7's dialer is an integrated calling workspace: the rep sees lead context, call controls and the next action in the same view as the lead, rather than in a separate dialer tool.",
-        "Calls run through a WebRTC softphone in the browser. ODA7 provisions localized numbers that match the prospect's area code (local presence) to build rapport and improve connect rates, and a pre-recorded voicemail can be dropped in one click.",
+        "ODA7's dialer is built into the workspace: the rep sees lead details, call controls and the next action in the same view as the lead, not in a separate dialer tool.",
+        "Calls run through a WebRTC softphone in the browser. ODA7 provides local numbers that match the prospect's area code (local presence) to build trust and get more calls answered, and a pre-recorded voicemail can be dropped in one click.",
       ],
       [
         "In-browser WebRTC softphone",
@@ -1129,7 +1129,7 @@ const sales = mk(
       "Interactive call scripts that branch on the customer's answers and suggest prompts in real time.",
       [
         "ODA7 scripts are interactive talk tracks that branch according to how the customer responds. They are designed to guide junior reps through qualification, objection handling and compliance disclosures while the call is live.",
-        "Scripts sit in the active call view, and the site connects them to ODA7's real-time objection battlecards so reps get counter-arguments at the moment an objection comes up.",
+        "Scripts sit in the active call view, and the site connects them to ODA7's live objection battlecards, so reps get a response the moment an objection comes up.",
       ],
       [
         "Branching talk tracks driven by customer responses",
@@ -1143,12 +1143,12 @@ const sales = mk(
     [
       "automated-sequences",
       "Automated sequences",
-      "Omnichannel follow-up cadences mixing SMS, WhatsApp, voicemail and email steps.",
+      "Follow-up schedules that mix SMS, WhatsApp, voicemail and email steps.",
       [
-        "Sequences automate follow-up after the first contact. A cadence can combine SMS, WhatsApp messages, automated voicemails and email steps so follow-up keeps running without reps tracking it by hand.",
+        "Sequences automate follow-up after the first contact. A sequence can combine SMS, WhatsApp messages, automated voicemails and email steps, so follow-up keeps running without reps tracking it by hand.",
         "ODA7 positions sequences against the problem of high-intent leads going cold through inconsistent manual follow-up.",
       ],
-      ["SMS steps", "WhatsApp steps", "Automated voicemail steps", "Email steps", "Multi-touch cadences per lead"],
+      ["SMS steps", "WhatsApp steps", "Automated voicemail steps", "Email steps", "Multi-step follow-up for each lead"],
       {
         problem: "The site describes high-intent leads going cold because manual follow-up is inconsistent.",
         integrations: ["whatsapp"],
@@ -1158,10 +1158,10 @@ const sales = mk(
     [
       "unified-inbox",
       "Unified inbox",
-      "Two-way SMS, WhatsApp and email conversations consolidated on the lead profile.",
+      "Two-way SMS, WhatsApp and email conversations in one place on the lead profile.",
       [
         "The unified inbox brings SMS, WhatsApp and email threads into one conversation timeline attached to the lead record, so context is no longer stuck on reps' personal devices.",
-        "Reps can send approved WhatsApp templates, see when messages are read and reply from the same place, and the centralized timeline gives a complete record of communication with each lead.",
+        "Reps can send approved WhatsApp templates, see when messages are read and reply from the same place, and the shared timeline gives a complete record of every conversation with each lead.",
       ],
       ["Two-way SMS on the lead profile", "Two-way WhatsApp conversations", "Email threads in the same timeline", "Approved WhatsApp templates", "Read tracking"],
       {
@@ -1184,12 +1184,12 @@ const sales = mk(
     [
       "lead-management",
       "Lead management & tagging",
-      "Lead records with multi-dimensional filters, custom fields, pipeline stages and bulk actions.",
+      "Lead records with flexible filters, custom fields, pipeline stages and bulk actions.",
       [
-        "Leads in ODA7 are managed with multi-dimensional filtering, custom fields for enrichment and configurable pipeline or lifecycle stages.",
+        "Leads in ODA7 are managed with flexible filters, custom fields for extra details and pipeline or lifecycle stages you can set up yourself.",
         "Bulk actions and tags let teams act on many leads at once, and the site describes the lead's source, qualification context and owner as visible before the next action begins.",
       ],
-      ["Multi-dimensional filtering", "Custom field enrichment", "Custom pipeline and lifecycle stages", "Bulk actions and bulk tagging", "Visible source, qualification and ownership"],
+      ["Filtering by several details at once", "Custom fields for extra details", "Custom pipeline and lifecycle stages", "Bulk actions and bulk tagging", "Visible source, qualification and ownership"],
       { relatedFeatures: ["lead-distribution", "company-hierarchy"] },
     ],
     [
@@ -1206,12 +1206,12 @@ const sales = mk(
     [
       "product-catalog",
       "Product catalog",
-      "Product SKUs, pricing tiers and recurring billing plans embedded in the agent workspace.",
+      "Product SKUs, pricing tiers and recurring billing plans inside the agent workspace.",
       [
         "The product catalog puts the products a floor sells inside the agent workspace: SKUs, pricing tiers and recurring billing plans, plus configurable bundles.",
         "Quotes draw on the catalog, which the site presents as the way to keep pricing on proposals consistent.",
       ],
-      ["Product SKUs", "Pricing tiers", "Recurring billing plans", "Configurable bundles", "Feeds CPQ quotes"],
+      ["Product SKUs", "Pricing tiers", "Recurring billing plans", "Configurable bundles", "Feeds CPQ (configure, price, quote) quotes"],
       { relatedFeatures: ["quotes-and-proposals"] },
     ],
     [
@@ -1219,10 +1219,10 @@ const sales = mk(
       "Companies & account hierarchy",
       "Map contacts, decision-makers and buying committees under parent accounts.",
       [
-        "Companies in ODA7 hold the B2B account view. Multiple contacts, decision-makers and buying committees can be mapped under a parent enterprise account.",
-        "Parent–subsidiary mapping and decision-maker org charts keep larger deals organized around the account rather than individual leads.",
+        "Companies in ODA7 give you the B2B account view. Several contacts, decision-makers and buying committees can be grouped under a parent company account.",
+        "Parent-subsidiary mapping and decision-maker org charts keep larger deals organized around the account rather than individual leads.",
       ],
-      ["Multiple contacts per account", "Decision-maker and buying-committee mapping", "Parent–subsidiary account structure", "Decision-maker org charts"],
+      ["Multiple contacts per account", "Decision-maker and buying-committee mapping", "Parent-subsidiary account structure", "Decision-maker org charts"],
       { relatedFeatures: ["lead-management", "quotes-and-proposals"] },
     ],
     [
@@ -1231,7 +1231,7 @@ const sales = mk(
       "Meeting booking links synced with Google Calendar and Outlook, with automatic reminders.",
       [
         "ODA7 includes a calendar and booking links so prospects can schedule meetings themselves. Bookings sync with Google Calendar and Outlook.",
-        "Automatic reminders follow up before the meeting, including SMS and WhatsApp reminder cadences.",
+        "Automatic reminders follow up before the meeting, including SMS and WhatsApp reminders.",
       ],
       ["Self-serve booking links", "Google Calendar sync", "Outlook sync", "Automatic SMS and WhatsApp reminders"],
       { relatedFeatures: ["automated-sequences"] },
@@ -1258,7 +1258,7 @@ const omni = mk("omnichannel-communication", [
     "Verified broadcasts, automated reminders and interactive buttons sent from the lead record.",
     [
       "ODA7 connects to the official WhatsApp Business API (Meta). From the lead record, reps can send verified broadcast campaigns, automated reminders and messages with interactive buttons.",
-      "Approved templates are used for outreach, read status is tracked, and the conversation lands in the lead's unified timeline — for example sending a WhatsApp summary after a call and advancing the deal.",
+      "Approved templates are used for outreach, read status is tracked, and the conversation lands in the lead's unified timeline, for example sending a WhatsApp summary after a call and advancing the deal.",
     ],
     ["Verified broadcast campaigns", "Automated reminders", "Interactive message buttons", "Approved message templates", "Read tracking"],
     { integrations: ["whatsapp"], relatedFeatures: ["unified-inbox", "automated-sequences", "template-studio"] },
@@ -1271,18 +1271,18 @@ const omni = mk("omnichannel-communication", [
       "ODA7 provides dedicated local business phone numbers for two-way SMS chat with prospects.",
       "Messaging supports keyword triggers and media, and SMS threads appear in the lead's unified inbox.",
     ],
-    ["Dedicated local business numbers", "Bidirectional SMS chat", "Keyword triggers", "Media support"],
+    ["Dedicated local business numbers", "Two-way SMS chat", "Keyword triggers", "Media support"],
     { relatedFeatures: ["unified-inbox", "automated-sequences"] },
   ],
   [
     "email-tracking",
     "Email tracking & threading",
-    "Two-way email sync with open and click tracking, attachment telemetry and bounce handling.",
+    "Two-way email sync with open and click tracking, attachment-view tracking and bounce handling.",
     [
       "Email is synced both ways in ODA7, so threads live on the lead alongside calls and messages.",
       "Opens and clicks are tracked, attachment viewing is reported, and bounces are handled.",
     ],
-    ["Two-way email sync", "Open and click tracking", "Attachment viewing telemetry", "Bounce handling", "Thread history"],
+    ["Two-way email sync", "Open and click tracking", "Attachment-view tracking", "Bounce handling", "Thread history"],
     { relatedFeatures: ["unified-inbox", "automated-sequences"] },
   ],
   [
@@ -1313,25 +1313,25 @@ const ai = mk("ai-intelligence", [
   [
     "explain-my-numbers",
     "Explain My Numbers",
-    "Ask sales questions in plain English and get a synthesized answer from your data.",
+    "Ask sales questions in plain English and get a clear answer from your data.",
     [
-      "Explain My Numbers is ODA7's natural-language BI. Leaders type a question — the site's example is why conversions dipped in a region — and get a synthesized explanation from the workspace data.",
+      "Explain My Numbers lets leaders ask about their business data in everyday language. They type a question (the site's example is why conversions dipped in a region) and get an explanation drawn from the workspace data.",
       "The site presents it as AI-assisted analysis inside the workflow and notes that availability and data requirements are confirmed during scoping.",
     ],
-    ["Plain-English questions about sales data", "Synthesized analytical answers", "Works on connected workspace data", "Part of revenue insights"],
+    ["Plain-English questions about sales data", "Clear written answers", "Works on connected workspace data", "Part of revenue insights"],
     { audience: ["Sales leaders", "Executives"], relatedFeatures: ["executive-dashboard", "conversion-telemetry"] },
   ],
   [
     "objection-buster",
     "Real-time objection buster",
-    "Live speech analysis that surfaces battlecards when price or competitor objections come up.",
+    "Listens to live calls and shows battlecards when price or competitor objections come up.",
     [
       "ODA7's in-call AI listens to the live conversation. When the prospect raises a pricing, timing, competitor or security objection, it detects the objection and shows a suggested talk track or battlecard on the rep's active call view.",
-      "After the call, the outcome is written back to the CRM — the site shows the deal stage, a calendar invite and a WhatsApp follow-up being updated automatically.",
+      "After the call, the outcome is written back to the CRM; the site shows the deal stage, a calendar invite and a WhatsApp follow-up being updated automatically.",
     ],
     ["Live speech listening during calls", "Objection detection (price, timing, competitor, security)", "Battlecards on the active call view", "Automatic CRM notes after the call"],
     {
-      howItWorks: ["Customer audio is ingested", "The objection is detected", "A prescriptive talk track is shown", "The CRM is updated without manual notes"],
+      howItWorks: ["ODA7 listens to the customer", "The objection is detected", "A suggested talk track is shown", "The CRM is updated without manual notes"],
       relatedFeatures: ["dynamic-sales-scripts", "post-call-summaries"],
     },
   ],
@@ -1340,18 +1340,18 @@ const ai = mk("ai-intelligence", [
     "Predictive lead scoring",
     "Machine-learning scores for inbound prospects from firmographics, behaviour and intent.",
     [
-      "ODA7 scores inbound prospects on a 1–100 scale using machine-learning models that consider firmographics, behaviour and intent signals.",
+      "ODA7 scores inbound prospects on a 1 to 100 scale using machine-learning models that consider firmographics, behaviour and intent signals.",
       "Scores feed the priority queue so high-intent prospects reach reps first.",
     ],
-    ["1–100 prospect scores", "Firmographic signals", "Behavioural signals", "Intent signals", "Feeds My Queue ranking"],
+    ["1 to 100 prospect scores", "Firmographic signals", "Behavioural signals", "Intent signals", "Feeds My Queue ranking"],
     { relatedFeatures: ["lead-distribution"] },
   ],
   [
     "post-call-summaries",
     "AI post-call summarization",
-    "Action items, sentiment context and prospect themes surfaced after each call.",
+    "Action items, the mood of the call and the prospect's main topics, shown after each call.",
     [
-      "After a call, ODA7's AI produces a summary that surfaces action items, sentiment context and the themes the prospect raised, for review inside the workflow.",
+      "After a call, ODA7's AI writes a summary of action items, the mood of the conversation (sentiment) and the topics the prospect raised, for review inside the workflow.",
       "Summaries can update deal stages so reps spend less time writing notes.",
     ],
     ["Action items", "Sentiment context", "Prospect themes", "Deal-stage sync"],
@@ -1360,9 +1360,9 @@ const ai = mk("ai-intelligence", [
   [
     "ai-recommendations",
     "AI sales recommendations",
-    "Next-best-action suggestions for call times, pitch strategy and sequence steps.",
+    "Suggested next steps for call times, pitch strategy and sequence steps.",
     [
-      "ODA7 suggests next-best actions for each prospect: when to call, which pitch strategy to use and which sequence step comes next.",
+      "ODA7 suggests the best next step for each prospect: when to call, which pitch strategy to use and which sequence step comes next.",
       "The site frames these as AI-assisted recommendations shown inside the workflow, with availability confirmed during scoping.",
     ],
     ["Suggested call times", "Pitch strategy suggestions", "Sequence step suggestions", "Per-prospect recommendations"],
@@ -1371,12 +1371,12 @@ const ai = mk("ai-intelligence", [
   [
     "insight-alerts",
     "Automated insight alerts",
-    "Proactive alerts on burnout risk, slowing deal velocity and rising objection topics.",
+    "Early alerts on burnout risk, slowing deals and rising objection topics.",
     [
-      "ODA7 watches activity for anomalies and alerts managers proactively instead of waiting for reports.",
+      "ODA7 watches activity for anything unusual and alerts managers early, instead of waiting for reports.",
       "Examples on the site include rep burnout risk, deals slowing down and objection topics that are surging across calls.",
     ],
-    ["Anomaly detection", "Rep burnout risk alerts", "Deal velocity slowdown alerts", "Surging objection topic alerts"],
+    ["Spotting unusual activity", "Rep burnout risk alerts", "Alerts on slowing deals", "Alerts on rising objection topics"],
     {
       problem: "The site describes managers discovering dropped connection rates and fumbled objections days later in delayed spreadsheet reports.",
       relatedFeatures: ["notification-routing", "manager-scorecard"],
@@ -1387,7 +1387,7 @@ const ai = mk("ai-intelligence", [
     "AI sales assistant copilot",
     "A personal AI assistant that drafts replies, follow-up emails and call briefings.",
     [
-      "Each rep can use an AI assistant that drafts contextual replies, composes follow-up emails — including from call transcripts — and prepares briefings before calls.",
+      "Each rep can use an AI assistant that drafts contextual replies, composes follow-up emails, including from call transcripts, and prepares briefings before calls.",
       "The site positions it as assistance that stays visible to the agent inside the workflow.",
     ],
     ["Contextual reply drafts", "Follow-up email composition", "Drafts based on call transcripts", "Pre-call briefings"],
@@ -1401,18 +1401,18 @@ const people = mk(
     [
       "floor-queue-monitor",
       "Real-time floor queue monitor",
-      "Live oversight of queue load, waiting leads, concurrent calls and floor availability.",
+      "A live view of queue load, waiting leads, calls in progress and who is available.",
       [
         "Floor supervisors get a live view of the queue: how much load it carries, which leads are waiting, how many calls are active at once and who on the floor is available.",
         "The site positions this against abandoned prospect calls during peak periods, letting supervisors balance agent availability as volume changes.",
       ],
-      ["Queue load", "Waiting leads", "Active concurrent calls", "Floor availability", "Queue load balancing"],
+      ["Queue load", "Waiting leads", "Calls in progress", "Floor availability", "Queue load balancing"],
       { audience: ["Floor supervisors", "Call center managers"], relatedFeatures: ["agent-status-grid", "manager-scorecard"] },
     ],
     [
       "agent-status-grid",
       "Agent status grid & live coaching",
-      "See who is on a call, idle, in wrap-up or available — and listen in or whisper-coach live.",
+      "See who is on a call, idle, in wrap-up or available, and listen in or whisper-coach live.",
       [
         "The agent status grid is a live roster of the floor showing each rep's state: On Call, Idle, In Wrap-up or Available, along with active dials.",
         "From the grid, managers can silently listen to a call, whisper coaching into the rep's headset without the customer hearing, or barge in.",
@@ -1426,7 +1426,7 @@ const people = mk(
       "Structure the sales organization into squads, territories, pods and regional divisions.",
       [
         "ODA7 models the sales organization as agents, managers, teams and departments. Teams can be organized as squads, territories, vertical pods or regional divisions.",
-        "Structure drives work: pods carry their own queue routing, quota pacing and leaderboards, and departments carry role-based access and telephony line routing.",
+        "This structure shapes the work: each pod has its own queue routing, quota pacing and leaderboards, and each department has its own role-based access and phone line routing.",
       ],
       ["Squads and pods", "Territories and regional divisions", "Department-level access control", "Department telephony line routing", "Dedicated queue routing per team", "Agent profiles and calling skill rules"],
       { relatedFeatures: ["roles-permissions", "leaderboards"] },
@@ -1434,12 +1434,12 @@ const people = mk(
     [
       "onboarding-workflows",
       "Automated onboarding workflows",
-      "Standard onboarding paths with script certifications, mock call scoring and access provisioning.",
+      "Standard onboarding paths with script certifications, scored mock calls and automatic access set-up.",
       [
         "New agents follow standardized onboarding paths in ODA7.",
-        "Paths include script certifications and scored mock calls, and access is provisioned automatically as onboarding progresses.",
+        "Paths include script certifications and scored mock calls, and access is granted automatically as onboarding progresses.",
       ],
-      ["Standardized onboarding paths", "Script certifications", "Mock call scoring", "Automated access provisioning"],
+      ["Standardized onboarding paths", "Script certifications", "Mock call scoring", "Automatic access set-up"],
       { relatedFeatures: ["dynamic-sales-scripts", "team-hierarchy"] },
     ],
     [
@@ -1473,7 +1473,7 @@ const people = mk(
       "Team-level tracking of pickup ratios, wrap-up time, conversion benchmarks and pacing.",
       [
         "The manager scorecard is a high-level view of a team's performance in real time.",
-        "It benchmarks pickup ratios, talk and wrap-up times, conversions and deal-stage velocity so managers can coach while the day is still running.",
+        "It compares pickup ratios, talk and wrap-up times, conversions and deal speed against benchmarks, so managers can coach while the day is still running.",
       ],
       ["Team pickup ratios", "Talk and wrap-up times", "Conversion benchmarks", "Deal-stage pacing"],
       { audience: ["Sales managers"], relatedFeatures: ["agent-status-grid", "conversion-telemetry"] },
@@ -1527,7 +1527,7 @@ const comp = mk(
       "Incentives & SPIFFs",
       "Launch flash bonuses, product SPIFFs and quota multipliers with start and end triggers.",
       [
-        "ODA7 lets managers run dynamic incentive plans on top of standard commission: weekend flash bonuses, product-specific SPIFFs and quota multipliers.",
+        "ODA7 lets managers run extra incentive plans on top of standard commission: weekend flash bonuses, product-specific SPIFFs (short-term sales bonuses) and quota multipliers.",
         "Each incentive has custom start and end triggers, and bonuses are tied to real-time performance on the floor.",
       ],
       ["Weekend flash bonuses", "Product-specific SPIFFs", "Quota multipliers", "Custom start and end triggers"],
@@ -1538,7 +1538,7 @@ const comp = mk(
       "Quota pacing & accelerator rules",
       "Commission tiers step up automatically as reps pass quota thresholds.",
       [
-        "Accelerator rules step commission tiers automatically as a rep moves through quota — for example a higher rate once quota is exceeded.",
+        "Accelerator rules step commission tiers automatically as a rep moves through quota, for example a higher rate once quota is exceeded.",
         "Pacing against quota is visible, and salary models can combine base pay with tiered accelerators.",
       ],
       ["Automatic tier stepping", "Quota thresholds", "Quota pacing", "Base pay plus tiered accelerators"],
@@ -1556,7 +1556,7 @@ const engage = mk(
       "Sales contests & battles",
       "Head-to-head rep duels, squad tournaments and multi-week revenue challenges.",
       [
-        "ODA7 gamifies the sales floor with contests: head-to-head duels between reps, squad-versus-squad tournaments and revenue challenges that run over several weeks.",
+        "ODA7 turns selling into a game with contests: head-to-head duels between reps, squad-versus-squad tournaments and revenue challenges that run over several weeks.",
         "Contests run with live countdown timers, and the site connects contests to compensation and incentives.",
       ],
       ["Rep vs rep duels", "Squad vs squad tournaments", "Multi-week revenue challenges", "Live countdown timers"],
@@ -1605,9 +1605,9 @@ const insights = mk("revenue-insights", [
     "Find peak connection hours and the best pickup windows across geographic zones.",
     [
       "ODA7 turns call activity into hour-by-hour heatmaps of pickup ratios.",
-      "Interactive heatmaps by timezone, geography and carrier show the windows when prospects answer most, which the site links to better dial timing and shift staffing.",
+      "Interactive heatmaps by timezone, region and carrier show when prospects answer most, which the site links to better call timing and shift staffing.",
     ],
-    ["Hour-by-hour pickup ratios", "Timezone and geographic zones", "Carrier-level views", "Optimal dial windows", "Input to shift staffing"],
+    ["Hour-by-hour pickup ratios", "Timezone and geographic zones", "Carrier-level views", "Best times to call", "Input to shift staffing"],
     { relatedFeatures: ["conversion-telemetry", "floor-queue-monitor"] },
   ],
   [
@@ -1615,19 +1615,19 @@ const insights = mk("revenue-insights", [
     "Executive revenue dashboard",
     "A leadership dashboard covering pipeline velocity, CAC, LTV and cohort retention.",
     [
-      "The executive dashboard gives leadership one view of revenue: pipeline velocity, customer acquisition cost, lifetime value and cohort retention.",
-      "The site also describes revenue velocity and ARR/MRR modelling in the master BI view.",
+      "The executive dashboard gives leadership one view of revenue: how fast deals move through the pipeline, customer acquisition cost, lifetime value and cohort retention (how well groups of customers stay).",
+      "The site also describes revenue speed and ARR/MRR (annual and monthly recurring revenue) modelling in the main reporting view.",
     ],
     ["Pipeline velocity", "Customer acquisition cost (CAC)", "Lifetime value (LTV)", "Cohort retention", "ARR/MRR modelling"],
     { audience: ["Executives", "Revenue leaders"], relatedFeatures: ["explain-my-numbers", "scheduled-bi-reports"] },
   ],
   [
     "conversion-telemetry",
-    "Pickup ratio & conversion telemetry",
+    "Pickup ratio & conversion tracking",
     "Drill into pickup and conversion by carrier, dialer pool, lead source, rep and queue.",
     [
-      "ODA7's telephony analytics let teams drill into pickup and conversion data to find where results leak.",
-      "Breakdowns cover carrier, dialer pool, area code, lead source, individual rep and queue, along with connection metrics and carrier route health.",
+      "ODA7's call analytics let teams dig into pickup and conversion data to find where results are being lost.",
+      "Breakdowns cover carrier, dialer pool, area code, lead source, individual rep and queue, along with connection rates and how well each carrier route is working.",
     ],
     ["By carrier and dialer pool", "By area code", "By lead source", "By rep and queue", "Carrier route health"],
     { relatedFeatures: ["call-heatmaps", "manager-scorecard"] },
@@ -1649,7 +1649,7 @@ const admin = mk("platform-administration", [
   [
     "roles-permissions",
     "Roles & permissions",
-    "Role-based access control with field-level permissions, masking and queue assignments.",
+    "Role-based access control (RBAC) with field-level permissions, hidden fields and queue assignments.",
     [
       "ODA7 uses role-based access control. Permissions can be set down to individual fields, sensitive fields can be masked and queue assignments are part of a role.",
       "The site describes distinct views for sales reps, managers, admins and super admins, with what each person sees shaped by role and workspace configuration.",
@@ -1706,7 +1706,7 @@ const admin = mk("platform-administration", [
     "Scheduled data sync",
     "Recurring background jobs that sync ODA7 data to Snowflake, BigQuery or Amazon S3.",
     [
-      "ODA7 can run recurring background ETL jobs that sync its data out to a warehouse or storage.",
+      "ODA7 can run scheduled background ETL jobs (extract, transform, load) that copy its data to a data warehouse or storage.",
       "Destinations named on the site are Snowflake, BigQuery and Amazon S3.",
     ],
     ["Recurring ETL jobs", "Snowflake destination", "BigQuery destination", "Amazon S3 destination"],
@@ -1737,9 +1737,9 @@ const admin = mk("platform-administration", [
   [
     "multi-tenant-organizations",
     "Multi-tenant organization management",
-    "Provision, suspend, scale and manage independent tenant organizations from a master console.",
+    "Set up, suspend, scale and manage separate customer organizations from one master console.",
     [
-      "ODA7 has a separate Super Admin experience for running it as a SaaS platform. From a master console, operators provision, suspend, scale and manage independent customer organizations.",
+      "ODA7 has a separate Super Admin area for running it as a SaaS platform. From a master console, operators set up, suspend, scale and manage separate customer organizations.",
       "Each tenant is isolated, with its own data and telephony, and the site describes provisioning a new client workspace in one click. New agencies can also create their own workspace through public sign-up.",
     ],
     ["Tenant provisioning", "Suspending tenants", "Scaling tenants", "Data and telephony isolation per tenant", "Seat, trunk and recording-storage entitlements"],
@@ -1758,10 +1758,10 @@ const admin = mk("platform-administration", [
   ],
   [
     "platform-revenue",
-    "Platform revenue & MRR telemetry",
-    "Platform-level ARR, MRR, churn, expansion revenue and tenant lifetime value.",
+    "Platform revenue & MRR tracking",
+    "Platform-wide ARR, MRR, churn, expansion revenue and tenant lifetime value.",
     [
-      "Super admins see a consolidated view of the platform business.",
+      "Super admins see the whole platform business in one view.",
       "Dashboards cover ARR, MRR, churn rate, expansion revenue and tenant lifetime value, plus subscription velocity and usage.",
     ],
     ["ARR and MRR", "Churn rate", "Expansion revenue", "Tenant lifetime value", "Usage metrics"],
@@ -1769,7 +1769,7 @@ const admin = mk("platform-administration", [
   ],
   [
     "ip-blocker",
-    "Global IP blocker & threat defense",
+    "Global IP blocker & threat protection",
     "Ban malicious IP ranges, rate-limit brute-force attempts and enforce geo-fencing platform-wide.",
     [
       "ODA7's Super Admin includes platform-wide security controls.",
@@ -1781,9 +1781,9 @@ const admin = mk("platform-administration", [
   [
     "data-platform-connectors",
     "Data platform connectors",
-    "Manage global data streams, multi-region clusters, vector embeddings and telephony gateways.",
+    "Manage global data streams, multi-region databases, vector embeddings (data used by AI search) and phone (SIP) gateways.",
     [
-      "The Super Admin data platform area is where operators manage the infrastructure behind tenants.",
+      "The Super Admin data platform area is where operators manage the technical setup behind customer workspaces.",
       "It covers global data streams, multi-region database clusters, vector embeddings and telephony (SIP) gateways.",
     ],
     ["Global data streams", "Multi-region database clusters", "Vector embeddings", "Telephony and SIP gateways"],
@@ -1831,7 +1831,7 @@ export const oda7: Product = {
   shortDescription:
     "A sales operating system that brings leads, calling, teams, attendance, commission payroll and analytics into one workspace.",
   longDescription:
-    "ODA7 presents itself as one workspace for sales, people and business performance. Instead of separate CRM, dialer, spreadsheet, HR, payroll, inbox and analytics tools, it connects sales execution, people operations, compensation and payroll, floor engagement, revenue insights and platform administration in one shared operating context — from the first lead to the commission payout.\n\nOn the sales side, incoming leads are tagged with their source, checked for duplicates and ranked into each rep's queue; reps call from an in-browser softphone with branching scripts beside the call, follow up over WhatsApp, SMS and email from one inbox, and send quotes from the same record. On the people side, managers see agent availability live, record geo-verified shift attendance and organise reps into pods and teams.\n\nWhen a deal is marked closed-won, ODA7 calculates the commission tier and the result feeds payroll and itemized payslips, while leaderboards, contests and heatmaps draw on the same activity. A separate Super Admin layer lets operators run ODA7 as a multi-tenant platform with isolated customer organizations, plans and subscriptions. ODA7 labels its website previews as illustrative and confirms scope, integrations and pricing in a proposal.",
+    "ODA7 presents itself as one workspace for sales, people and business performance. Instead of separate CRM, dialer, spreadsheet, HR, payroll, inbox and analytics tools, it brings sales execution, people operations, compensation and payroll, floor engagement, revenue insights and platform administration together in one place, from the first lead to the commission payout.\n\nOn the sales side, incoming leads are tagged with their source, checked for duplicates and ranked into each rep's queue; reps call from an in-browser softphone with branching scripts beside the call, follow up over WhatsApp, SMS and email from one inbox, and send quotes from the same record. On the people side, managers see agent availability live, record geo-verified shift attendance and organise reps into pods and teams.\n\nWhen a deal is marked closed-won, ODA7 calculates the commission tier and the result feeds payroll and itemized payslips, while leaderboards, contests and heatmaps draw on the same activity. A separate Super Admin layer lets operators run ODA7 as a multi-tenant platform with isolated customer organizations, plans and subscriptions. ODA7 labels its website previews as illustrative and confirms scope, integrations and pricing in a proposal.",
   tagline: "One workspace for sales, people and business performance.",
   category: "sales-marketing",
   secondaryCategories: ["hr-people"],
@@ -1862,9 +1862,9 @@ export const oda7: Product = {
     {
       slug: "omnichannel-communication",
       name: "Omnichannel communication",
-      description: "Voice, WhatsApp, SMS and email from one pane.",
+      description: "Voice, WhatsApp, SMS and email from one screen.",
       body: [
-        "ODA7's communication engine connects reps with prospects over voice, WhatsApp, SMS, email and scheduled meetings from one pane, with every exchange kept on the lead record.",
+        "ODA7 lets reps reach prospects by phone, WhatsApp, SMS, email and scheduled meetings from one screen, with every exchange kept on the lead record.",
       ],
     },
     {
@@ -1872,7 +1872,7 @@ export const oda7: Product = {
       name: "AI intelligence",
       description: "AI assistance inside the calling and reporting workflow.",
       body: [
-        "ODA7 places AI inside the telephony workflow rather than in a separate chat window: it listens during calls, surfaces objection battlecards, scores leads, summarizes calls and answers plain-English questions about the numbers.",
+        "ODA7 puts AI inside the calling workflow rather than in a separate chat window: it listens during calls, shows objection battlecards, scores leads, summarizes calls and answers plain-English questions about the numbers.",
         "The site describes these previews as illustrative and says capability, availability and data requirements are confirmed during product scoping.",
       ],
     },
@@ -1897,15 +1897,15 @@ export const oda7: Product = {
       name: "Floor Engagement",
       description: "Leaderboards, contests, badges and floor-wide recognition.",
       body: [
-        "Floor Engagement gamifies the sales floor with TV-mode leaderboards, contests between reps and squads, milestone badges, sprint bonuses and team celebrations.",
+        "Floor Engagement turns sales targets into friendly competition with TV-mode leaderboards, contests between reps and squads, milestone badges, sprint bonuses and team celebrations.",
       ],
     },
     {
       slug: "revenue-insights",
       name: "Revenue Insights",
-      description: "Heatmaps, telemetry, executive dashboards and scheduled reports.",
+      description: "Heatmaps, call tracking, executive dashboards and scheduled reports.",
       body: [
-        "Revenue Insights turns call telemetry into decisions: hour-by-hour pickup heatmaps, carrier route health, team conversion pacing and executive dashboards, with plain-English questions answered by Explain My Numbers.",
+        "Revenue Insights turns call data into decisions: hour-by-hour pickup heatmaps, carrier route health, team conversion pacing and executive dashboards, with plain-English questions answered by Explain My Numbers.",
       ],
     },
     {
@@ -1913,7 +1913,7 @@ export const oda7: Product = {
       name: "Platform Administration",
       description: "Roles, audit, templates, integrations, billing and the multi-tenant Super Admin.",
       body: [
-        "Platform Administration covers workspace governance — roles and permissions, audit logs, templates, webhooks, notifications, billing and branding.",
+        "Platform Administration covers how the workspace is run and controlled: roles and permissions, audit logs, templates, webhooks, notifications, billing and branding.",
         "A distinct Super Admin layer lets operators manage isolated customer organizations, subscription plans, platform revenue, security controls and tenant-wide broadcasts.",
       ],
     },
@@ -1924,10 +1924,10 @@ export const oda7: Product = {
     { title: "Calls", description: "The agent calls from the lead, script and calling view together, using the browser softphone, branching talk tracks and objection battlecards instead of rebuilding context across tools." },
     { title: "People", description: "Managers, teams, departments and attendance stay connected to the activity: agent availability is visible live and shift attendance is recorded with a geo-verified punch." },
     { title: "Compensation", description: "Salary, payroll, incentives and contests reference the work behind them. A closed-won deal triggers the commission tier calculation, and the payroll run produces itemized PDF payslips." },
-    { title: "Analytics", description: "Heatmaps and executive views turn connected activity into decisions, from hour-by-hour pickup patterns to plain-English answers about the numbers." },
+    { title: "Analytics", description: "Heatmaps and executive views turn day-to-day activity into decisions, from hour-by-hour pickup patterns to plain-English answers about the numbers." },
   ],
   benefits: [
-    { title: "One connected workspace", description: "Sales, people, compensation, insights and administration share one operating context. ODA7 positions this against running a separate CRM, dialer, spreadsheets, HR, payroll, inbox and analytics tool." },
+    { title: "One connected workspace", description: "Sales, people, compensation, insights and administration all work from the same shared data. ODA7 offers this instead of running a separate CRM, dialer, spreadsheets, HR, payroll, inbox and analytics tool." },
     { title: "Live floor context", description: "Agent states, queues and manager workflows are visible in the same model, so supervisors can act on queue volume and availability during the shift rather than in next week's spreadsheet." },
     { title: "Connected operations", description: "Closed-won activity flows into incentives, payroll preparation and performance review. ODA7 says this removes spreadsheet disputes between sales and operations over who earned what." },
     { title: "Follow-up that doesn't depend on memory", description: "Automated sequences mix SMS, WhatsApp, voicemail and email steps, and conversations land on the lead record instead of on reps' personal devices." },
@@ -1936,7 +1936,7 @@ export const oda7: Product = {
   security: [
     { title: "Role-based access", description: "Roles with field-level permissions and masking shape what each user can see, so sensitive fields can be hidden from roles that don't need them." },
     { title: "Audit logging", description: "Logins, exports, recording access and permission changes are logged, giving admins a record of who touched data and settings." },
-    { title: "Tenant isolation", description: "Customer organizations in the Super Admin platform are kept isolated from each other; for agencies, each client pod has strict data partitioning." },
+    { title: "Tenant isolation", description: "Customer organizations in the Super Admin platform are kept isolated from each other; for agencies, each client pod's data is kept strictly separate." },
     { title: "IP controls", description: "Platform-wide IP bans, brute-force rate limiting, geo-fencing and IP whitelisting let operators restrict where and how the workspace is reached." },
     { title: "Invite-only agent access", description: "Agents cannot sign themselves up; a workspace admin invites them from Settings → Users. Users sign in with a work email or Google, and password reset links are one-time and expire after 30 minutes." },
   ],
@@ -1962,7 +1962,7 @@ export const oda7: Product = {
       summary: "Floor supervisors of large call centers monitoring queues, availability and live calls.",
       body: ["For call centers and BPO floors, ODA7 focuses on supervision: supervisors monitor concurrent queue volume live, balance agent availability states and coach reps during calls."],
       approach: [
-        "Live queue telemetry to prevent abandoned calls",
+        "Live queue tracking to prevent abandoned calls",
         "Agent availability balancing from the status grid",
         "One-click silent listening and whisper coaching into rep headsets",
         "Hourly pickup heatmaps to plan shift staffing",
@@ -1977,7 +1977,7 @@ export const oda7: Product = {
       summary: "Agencies running several client sales pods under one master login.",
       body: ["Revenue and lead-generation agencies can run several client sales pods from one master login in ODA7, with each client kept separate in data, telephony, talk tracks and billing."],
       approach: [
-        "Isolated pods per client with strict data partitioning",
+        "Separate pods per client, with data kept strictly apart",
         "Dedicated carrier trunks per client",
         "Distinct talk tracks for each client",
         "Segmented client billing including itemized carrier minutes",
@@ -1996,7 +1996,7 @@ export const oda7: Product = {
         "One-click tenant provisioning",
         "Custom CNAME domains and white-label branding",
         "Subscription billing tiers (the site names Stripe)",
-        "Global IP defense across the platform",
+        "IP protection across the whole platform",
       ],
       audience: ["Platform operators", "Resellers"],
       features: ["multi-tenant-organizations", "white-labeling", "saas-plans", "ip-blocker", "partner-referrals"],
@@ -2059,7 +2059,7 @@ export const oda7: Product = {
       slug: "creating-an-agency-workspace",
       name: "Creating an agency workspace",
       summary: "How a new agency signs up, picks a plan and gets admin access.",
-      body: ["New agencies create their own tenant on oda7.com. Sign-up gives an agency admin account, a subscription and workspace access — the same flow ODA7's super admin uses to onboard a new customer."],
+      body: ["New agencies create their own tenant on oda7.com. Sign-up gives an agency admin account, a subscription and workspace access, the same flow ODA7's super admin uses to onboard a new customer."],
       steps: [
         "Register as a company with the agency name, your name and work email",
         "Set a password and continue to plans",
@@ -2114,7 +2114,7 @@ export const oda7: Product = {
         price: "Custom",
         description: "For platform operators managing organizations, plans and administration.",
         features: ["Organizations and customer accounts", "Plans, subscriptions and invoices", "Audit logs, branding and notifications", "Platform settings and AI features"],
-        cta: { label: "Talk to platform sales", href: SITE },
+        cta: { label: "Talk to platform sales", href: "/contact?type=sales&product=oda7#contact-form" },
       },
     ],
     asOf: "2026-10-08",
@@ -2128,15 +2128,15 @@ export const oda7: Product = {
     { title: "Paying commission without spreadsheets", description: "A deal marked closed-won triggers the commission tier calculation and credits the rep's wallet, and the month-end payroll run produces itemized PDF payslips." },
   ],
   faqs: [
-    { question: "How is ODA7 different from a traditional CRM or standalone dialer?", answer: "ODA7 presents itself as a connected business workspace: leads, calling, team structure, attendance, compensation and analytics share one operating context instead of being separate tools." },
+    { question: "How is ODA7 different from a traditional CRM or standalone dialer?", answer: "ODA7 presents itself as a connected business workspace: leads, calling, team structure, attendance, compensation and analytics share the same data instead of being separate tools." },
     { question: "Which sales workflows does ODA7 cover?", answer: "Leads, dialer, calls, inbox, calendar, campaigns, products, scripts, sequences and quotes. ODA7 says exact implementation and telephony requirements should be confirmed with them." },
     { question: "How does ODA7 use AI?", answer: "The site demonstrates AI-assisted recommendations and analytical explanations inside the workflow. Its previews are illustrative; capability, availability and data requirements are confirmed during scoping." },
-    { question: "What can managers see?", answer: "Team activity, calls, queue ownership, performance context and coaching workflows — shaped by role and workspace configuration." },
+    { question: "What can managers see?", answer: "Team activity, calls, queue ownership, performance context and coaching workflows, shaped by role and workspace configuration." },
     { question: "What is the Super Admin platform?", answer: "A separate experience covering organizations, plans, subscriptions, invoices, audit context, data platforms, AI assistance, IP controls, branding and platform-wide administration." },
     { question: "How should we plan an implementation?", answer: "Map your teams, current tools, lead and calling workflows, people operations, reporting needs and platform controls; ODA7 then confirms scope, integrations, rollout and pricing." },
     { question: "Is ODA7 pricing published?", answer: "No. All three starting points are priced on scope, and ODA7 says no price or entitlement applies until confirmed in a proposal." },
     { question: "Can agents create their own accounts?", answer: "No. Agents get access through their workspace admin, who invites them from Settings → Users. They then sign in with their work email and password, or with Google." },
-    { question: "How does a new agency get started?", answer: "An agency registers on oda7.com with its organization name, the admin's name and work email, chooses a billing plan and pays with Razorpay. Sign-up creates an agency admin account, a subscription and workspace access — the same flow ODA7's super admin uses to onboard a customer." },
+    { question: "How does a new agency get started?", answer: "An agency registers on oda7.com with its organization name, the admin's name and work email, chooses a billing plan and pays with Razorpay. Sign-up creates an agency admin account, a subscription and workspace access, the same flow ODA7's super admin uses to onboard a customer." },
     { question: "Which messaging channels does ODA7 connect to?", answer: "The site describes the official WhatsApp Business API alongside two-way SMS and email in a unified inbox on the lead record, and Slack as a destination for scheduled reports and routed alerts." },
     { question: "Is there a free trial?", answer: "ODA7 states that no price or entitlement is implied until it is confirmed in an ODA7 proposal. Ask ODA7 about trial and migration terms while scoping your workspace." },
   ],

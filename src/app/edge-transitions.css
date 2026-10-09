@@ -14,25 +14,25 @@
 [data-edge] :is(.zs-band--tint, .pz-band--tint) + * { --edge-from: var(--pz-tint); }
 
 /* ---------- angle: rounded stepped shoulder + blue glow (Zia Chat) ---------- */
-[data-edge="angle"] :is(:is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)), :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)) + .fz-pager)
+[data-edge="angle"] :is(:is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white:not([data-faq="dark"] .pz-faq), .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band, [data-faq="dark"] .fz-sec:has(#faq))), :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white:not([data-faq="dark"] .pz-faq), .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band, [data-faq="dark"] .fz-sec:has(#faq))) + .fz-pager)
   + :is(.zs-band--dark, .zs-band--black, .fz-sec--band, .zs-cta--glow, .zs-cta--spin) {
   position: relative; isolation: isolate;
   padding-top: calc(var(--sec-y) + clamp(48px, 5vw, 80px));
 }
-[data-edge="angle"] :is(:is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)), :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)) + .fz-pager)
+[data-edge="angle"] :is(:is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white:not([data-faq="dark"] .pz-faq), .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band, [data-faq="dark"] .fz-sec:has(#faq))), :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white:not([data-faq="dark"] .pz-faq), .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band, [data-faq="dark"] .fz-sec:has(#faq))) + .fz-pager)
   + :is(.zs-band--dark, .zs-band--black, .fz-sec--band, .zs-cta--glow, .zs-cta--spin)::before {
   content: ""; position: absolute; left: 0; right: 0; top: 0; z-index: 1; height: clamp(48px, 5vw, 80px); pointer-events: none;
   background: var(--edge-from, var(--surface));
   -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'><path d='M0 0H1000V24Q1000 40 984 40H500Q478 40 466 56L444 86Q434 100 412 100H44Q0 100 0 62Z'/></svg>") 0 0 / 100% 100% no-repeat;
   mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'><path d='M0 0H1000V24Q1000 40 984 40H500Q478 40 466 56L444 86Q434 100 412 100H44Q0 100 0 62Z'/></svg>") 0 0 / 100% 100% no-repeat;
 }
-[data-edge="angle"] :is(:is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)), :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)) + .fz-pager)
+[data-edge="angle"] :is(:is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white:not([data-faq="dark"] .pz-faq), .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band, [data-faq="dark"] .fz-sec:has(#faq))), :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white:not([data-faq="dark"] .pz-faq), .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band, [data-faq="dark"] .fz-sec:has(#faq))) + .fz-pager)
   + :is(.zs-band--dark, .zs-band--black, .fz-sec--band, .zs-cta--glow, .zs-cta--spin)::after {
   content: ""; position: absolute; left: -5%; top: 0; z-index: 0; width: 60%; height: clamp(160px, 18vw, 280px); pointer-events: none;
   background: radial-gradient(ellipse 60% 55% at 72% 30%, rgb(30 110 230 / .55), transparent 70%), radial-gradient(ellipse 50% 50% at 20% 35%, rgb(30 110 230 / .35), transparent 70%);
   filter: blur(8px);
 }
-[data-edge="angle"] :is(:is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)), :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)) + .fz-pager)
+[data-edge="angle"] :is(:is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white:not([data-faq="dark"] .pz-faq), .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band, [data-faq="dark"] .fz-sec:has(#faq))), :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white:not([data-faq="dark"] .pz-faq), .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band, [data-faq="dark"] .fz-sec:has(#faq))) + .fz-pager)
   + :is(.zs-band--dark, .zs-band--black, .fz-sec--band, .zs-cta--glow, .zs-cta--spin) > * { position: relative; z-index: 2; }
 
 /* ---------- Dark FAQ on inner pages when the overview's FAQ is dark ---------- */
@@ -61,7 +61,7 @@
 [data-edge] .pz-pricing + * { --edge-from: var(--surface); }
 
 /* ---------- round: curved top corners lifting over the light section ---------- */
-[data-edge="round"] :is(:is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)), :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white, .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band)) + .fz-pager)
+[data-edge="round"] :is(:is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white:not([data-faq="dark"] .pz-faq), .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band, [data-faq="dark"] .fz-sec:has(#faq))), :is(.zs-band--plain, .zs-band--soft, .zs-band--tint, .pz-band--white:not([data-faq="dark"] .pz-faq), .pz-band--tint, .pz-index, .fz-sec:not(.fz-sec--band, [data-faq="dark"] .fz-sec:has(#faq))) + .fz-pager)
   + :is(.zs-band--dark, .zs-band--black, .fz-sec--band, .zs-cta--glow, .zs-cta--spin) {
   position: relative; z-index: 1;
   border-top-left-radius: clamp(28px, 6vw, 80px); border-top-right-radius: clamp(28px, 6vw, 80px);

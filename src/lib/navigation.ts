@@ -140,11 +140,11 @@ export function getMainNav(): NavMenu[] {
           title: "Support",
           links: [
             { label: "Help & support", href: routes.support(), icon: "headset", description: "Help with ToyoApps and its products." },
-            { label: "Contact us", href: routes.contact(), icon: "chat", description: "Talk to the ToyoApps team." },
+            { label: "Contact us", href: routes.contactForm(), icon: "chat", description: "Talk to the ToyoApps team." },
           ],
         },
       ],
-      footerLink: { label: "Contact us", href: routes.contact() },
+      footerLink: { label: "Contact us", href: routes.contactForm() },
     },
   ];
 }
@@ -193,7 +193,7 @@ function optionalMenus(): NavMenu[] {
       id: "industries",
       label: "Industries",
       kind: "simple",
-      intro: { title: "Industries", text: `ToyoApps products by sector — ${plural(industries.length, "industry").replace(/ys$/, "ies")} with tools picked for how they work.` },
+      intro: { title: "Industries", text: `ToyoApps products by sector: ${plural(industries.length, "industry").replace(/ys$/, "ies")} with tools picked for how they work.` },
       groups: [
         {
           title: "By industry",
@@ -258,7 +258,7 @@ function optionalMenus(): NavMenu[] {
           title: "Support",
           links: [
             { label: "Help & support", href: routes.support() },
-            { label: "Contact us", href: routes.contact() },
+            { label: "Contact us", href: routes.contactForm() },
           ],
         },
       ],
@@ -301,7 +301,7 @@ export function getFooterColumns(): NavGroup[] {
       title: "Support",
       links: [
         { label: "Help & support", href: routes.support() },
-        { label: "Contact", href: routes.contact() },
+        { label: "Contact", href: routes.contactForm() },
       ],
     },
   ];

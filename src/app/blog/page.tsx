@@ -41,7 +41,7 @@ export default function BlogPage() {
           <hr className="co-hero__rule" />
           <h1 className="co-hero__title">The ToyoApps blog</h1>
           <p className="co-hero__lead co-hero__lead--max">
-            Guides and how-tos across the ToyoApps ecosystem — {items.length} guides and support topics for {productCount} products, organised by product and business category.
+            Guides and how-tos across the ToyoApps ecosystem: {items.length} guides and support topics for {productCount} products, organised by product and business category.
           </p>
           <ImageSlot src="/images/company/blog-hero.webp" alt="Guides and articles from across the ToyoApps ecosystem" width={1200} height={420} priority className="co-hero__art" />
         </div>
@@ -111,7 +111,7 @@ export default function BlogPage() {
           <p>Each product has its own support page, and the ToyoApps team can point you in the right direction.</p>
           <div className="co-btns">
             <Link className="co-btn" href={routes.support()}>Help &amp; support</Link>
-            <Link className="co-btn co-btn--ghost" href={routes.contact()}>Contact us</Link>
+            <Link className="co-btn co-btn--ghost" href={routes.contactForm()}>Contact us</Link>
           </div>
         </div>
       </section>

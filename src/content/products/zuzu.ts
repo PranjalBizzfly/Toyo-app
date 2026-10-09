@@ -9,7 +9,7 @@ const featureCategories: FeatureCategory[] = [
     name: "Capture",
     description: "What the Windows agent records on the device, and how private content is protected.",
     body: [
-      "Capture in ZUZU happens on the employee's Windows machine. The agent samples the active application and window, records attendance and idle time, and takes periodic screenshots — painting out private content on the device before anything is written or uploaded.",
+      "Capture in ZUZU happens on the employee's Windows machine. The agent checks which application and window are active, records attendance and idle time, and takes periodic screenshots, painting out private content on the device before anything is written or uploaded.",
       "ZUZU states its limits openly: the agent is Windows-only, policy is set per organisation, and on personal laptops capture can be restricted to the hours between punch-in and punch-out.",
     ],
   },
@@ -19,7 +19,7 @@ const featureCategories: FeatureCategory[] = [
     description: "Reports, insights and exports produced from the day's activity.",
     body: [
       "ZUZU treats capture as only half the job. Its reporting engine reads each day's activity, writes a report per employee on a schedule, and delivers digests to admins and managers with the evidence attached so a conclusion can be challenged.",
-      "Beyond the daily report, Insights looks across the whole workforce record, behaviour-change detection flags drift from a person's own baseline, and exports cover CSV, Excel and PDF.",
+      "Beyond the daily report, Insights looks across the whole workforce record, behaviour-change detection flags when someone's work changes from their own usual pattern, and exports cover CSV, Excel and PDF.",
     ],
   },
   {
@@ -27,8 +27,8 @@ const featureCategories: FeatureCategory[] = [
     name: "Oversight",
     description: "People, permissions and the audit trail for admins and managers.",
     body: [
-      "ZUZU describes monitoring people as a responsibility rather than a feature flag. Admins run the organisation from one portal, managers work in a scoped version of it, and access is granted by capability rather than by job title.",
-      "Significant events — from employee and team changes to payments and live capture — land in an audit trail that can be filtered by severity, viewed as a timeline and exported.",
+      "ZUZU describes monitoring people as a responsibility, not just a setting to switch on. Admins run the organisation from one portal, managers work in a version of it limited to their own people, and access is given through specific permissions rather than by job title.",
+      "Significant events, from employee and team changes to payments and live capture, land in an audit trail that can be filtered by severity, viewed as a timeline and exported.",
     ],
   },
 ];
@@ -38,19 +38,19 @@ const features: Feature[] = [
   {
     slug: "windows-desktop-agent",
     name: "Windows desktop agent",
-    summary: "Installed once per machine and activated with a code — it runs from the system tray and looks after itself.",
+    summary: "Installed once per machine and activated with a code; it runs from the system tray and looks after itself.",
     category: "capture",
     highlight: true,
     hasPage: true,
     body: [
       "Employees run a small ZUZU agent on their Windows computer. It is installed once per machine, activated with a code issued by the organisation's administrator, and then runs from the system tray without needing day-to-day attention.",
-      "The agent starts with Windows, captures on the schedule the organisation has set, keeps captures queued locally if the network drops, and updates itself from the organisation's own release feed. It ships for Windows only — there is no macOS or Linux build today.",
+      "The agent starts with Windows, captures on the schedule the organisation has set, keeps captures queued locally if the network drops, and updates itself from the organisation's own release feed. It ships for Windows only; there is no macOS or Linux build today.",
     ],
     howItWorks: [
       "Download the 64-bit Windows installer (about 80 MB).",
       "Run it; on a new build Windows SmartScreen may warn about an unrecognised publisher.",
       "Setup adds ZUZU to the Start Menu and registers it to start with Windows for the current user.",
-      "Paste the 16-character activation code from the administrator's email — entered once, on first launch.",
+      "Paste the 16-character activation code from the administrator's email, entered once, on first launch.",
       "Leave it running in the system tray; it captures on schedule and updates itself.",
     ],
     capabilities: [
@@ -71,12 +71,12 @@ const features: Feature[] = [
   {
     slug: "on-device-privacy-redaction",
     name: "Screenshots with on-device privacy redaction",
-    summary: "Periodic screenshots at a cadence you set, with private content painted out on the device before anything is saved or uploaded.",
+    summary: "Regular screenshots at an interval you set, with private content painted out on the device before anything is saved or uploaded.",
     category: "capture",
     highlight: true,
     hasPage: true,
     body: [
-      "ZUZU takes periodic screenshots at an interval the organisation chooses — anywhere from 1 to 15 minutes, or a custom interval. Before an image is written to disk or uploaded, private content is painted out on the employee's own machine, so those pixels never leave it.",
+      "ZUZU takes periodic screenshots at an interval the organisation chooses: anywhere from 1 to 15 minutes, or a custom interval. Before an image is written to disk or uploaded, private content is painted out on the employee's own machine, so those pixels never leave it.",
       "Redaction covers password boxes, passwords typed into documents, private windows such as messaging, banking, webmail and password managers, and desktop notifications. Admins decide how long screenshots are kept and can download or delete a single day's captures.",
     ],
     capabilities: [
@@ -88,9 +88,9 @@ const features: Feature[] = [
       "Download or delete a single day's captures as a ZIP from the employee record",
     ],
     faqs: [
-      { question: "How often are screenshots captured?", answer: "At a cadence the organisation sets — 1 to 15 minutes, or a custom interval." },
+      { question: "How often are screenshots captured?", answer: "At an interval the organisation sets: 1 to 15 minutes, or a custom interval." },
       { question: "What stops sensitive content from being captured?", answer: "Passwords, private windows such as messaging, banking, webmail and password managers, and desktop notifications are painted out on the device before the image is written or uploaded." },
-      { question: "How long are screenshots kept?", answer: "For 30, 90 or 180 days, one year, or indefinitely — the organisation decides." },
+      { question: "How long are screenshots kept?", answer: "For 30, 90 or 180 days, one year, or indefinitely; the organisation decides." },
     ],
     relatedFeatures: ["windows-desktop-agent", "consent-gated-tracking-on-personal-laptops"],
     sources: [HOME],
@@ -128,15 +128,15 @@ const features: Feature[] = [
   {
     slug: "activity-monitoring",
     name: "Activity monitoring",
-    summary: "The agent samples the active application and window title and rolls it up into per-application time.",
+    summary: "The agent checks which application and window title are active and adds it up into time per application.",
     category: "capture",
     hasPage: true,
     body: [
-      "The ZUZU agent samples which application and window are active and turns that into a picture of where the working day goes: time per application, the top applications, and the working rhythm across the day.",
-      "Alongside this, ZUZU tracks hours per day and keeps an attendance roster for the team, reporting idle and screen-off periods separately — so a long day and a busy day are not counted as the same thing.",
+      "The ZUZU agent regularly checks which application and window are active and turns that into a picture of where the working day goes: time per application, the top applications, and the working rhythm across the day.",
+      "Alongside this, ZUZU tracks hours per day and keeps an attendance roster for the team, reporting idle and screen-off periods separately, so a long day and a busy day are not counted as the same thing.",
     ],
     capabilities: [
-      "Sampling of the active application and window title",
+      "Regular checks of the active application and window title",
       "Per-application time and top applications",
       "Tracked hours per day",
       "Team attendance roster",
@@ -148,12 +148,12 @@ const features: Feature[] = [
   {
     slug: "consent-gated-tracking-on-personal-laptops",
     name: "Consent-gated tracking on personal laptops",
-    summary: "Session-gated employees are captured only between punch-in and punch-out.",
+    summary: "Employees set to session-only tracking are captured only between punch-in and punch-out.",
     category: "capture",
     hasPage: true,
     body: [
-      "For people working on their own laptops, ZUZU can gate tracking to a work session. Session-gated employees are captured only between punch-in and punch-out.",
-      "The permission to capture is a short-lived lease that the agent has to keep renewing. If the laptop goes offline, the lease simply runs out on its own.",
+      "For people working on their own laptops, ZUZU can limit tracking to a work session. Employees set up this way are captured only between punch-in and punch-out.",
+      "The permission to capture is a short-lived lease (a temporary pass) that the agent has to keep renewing. If the laptop goes offline, the lease simply runs out on its own.",
     ],
     capabilities: [
       "Capture limited to the time between punch-in and punch-out",
@@ -161,12 +161,12 @@ const features: Feature[] = [
       "Lease expires automatically if the laptop goes offline",
     ],
     faqs: [
-      { question: "Can people be monitored on their own laptops?", answer: "Session-gated employees are captured only between punch-in and punch-out, under a short-lived permission that expires on its own if the laptop goes offline." },
+      { question: "Can people be monitored on their own laptops?", answer: "Employees set to session-only tracking are captured only between punch-in and punch-out, under a short-lived permission that expires on its own if the laptop goes offline." },
     ],
     howItWorks: [
       "The employee punches in to start a work session, and capture begins.",
       "The agent keeps renewing a short-lived lease for as long as the session runs.",
-      "At punch-out — or if the laptop goes offline and the lease lapses — capture stops.",
+      "At punch-out, or if the laptop goes offline and the lease lapses, capture stops.",
     ],
     audience: ["Admins", "Employees"],
     relatedFeatures: ["windows-desktop-agent", "on-device-privacy-redaction"],
@@ -182,14 +182,14 @@ const features: Feature[] = [
     highlight: true,
     hasPage: true,
     body: [
-      "ZUZU reads each day's activity and writes a report for every employee. Reports are generated on a schedule rather than on request, so by the time someone opens the report browser — at year, month or day level — the day is already there.",
-      "Reports are pushed to the people who need them: an organisation-wide digest goes to admins and a scoped digest to each manager, in the organisation's timezone, with the PDF attached. Managers can confirm or correct what the engine concluded, and the evidence is attached so a conclusion can be challenged.",
+      "ZUZU reads each day's activity and writes a report for every employee. Reports are generated on a schedule rather than on request, so by the time someone opens the report browser (at year, month or day level), the day is already there.",
+      "Reports are pushed to the people who need them: an organisation-wide digest goes to admins and a team digest to each manager, in the organisation's timezone, with the PDF attached. Managers can confirm or correct what the engine concluded, and the evidence is attached so a conclusion can be challenged.",
     ],
-    problem: "Capturing activity is only half the job — someone still has to turn it into a report before the meeting starts.",
+    problem: "Capturing activity is only half the job; someone still has to turn it into a report before the meeting starts.",
     howItWorks: [
       "The engine reads the day's activity for each employee.",
       "It writes a per-employee report on a schedule.",
-      "Digests are emailed — organisation-wide to admins, scoped to each manager — in the organisation's timezone, with the PDF attached.",
+      "Digests are emailed (organisation-wide to admins, one per team to each manager) in the organisation's timezone, with the PDF attached.",
       "Managers review the report and confirm or correct its conclusions; corrections feed back into scoring.",
     ],
     capabilities: [
@@ -210,17 +210,17 @@ const features: Feature[] = [
   {
     slug: "workforce-insights",
     name: "Workforce insights",
-    summary: "Organisation health, executive highlights, department benchmarking, burnout risk and recommendations.",
+    summary: "Organisation health, executive highlights, department comparisons, burnout risk and recommendations.",
     category: "reporting",
     hasPage: true,
     body: [
-      "Insights is where ZUZU looks across the whole workforce record rather than a single day. It covers organisation health, executive highlights, department benchmarking and burnout risk expressed as weeks-to-risk.",
+      "Insights is where ZUZU looks across the whole workforce record rather than a single day. It covers organisation health, executive highlights, comparisons between departments, and burnout risk shown as weeks-to-risk (an estimate of how many weeks until someone is at risk).",
       "Recommendations name the observation behind them, and the Insights page includes a question box for asking about the workforce record, alongside standing highlights and notable days. Managers see insights for their own team only.",
     ],
     capabilities: [
       "Organisation health overview",
       "AI executive summary and highlights",
-      "Department benchmarking",
+      "Department comparisons",
       "Burnout risk with weeks-to-risk",
       "Recommendations that cite the underlying observation",
       "Question box for the workforce record",
@@ -254,23 +254,23 @@ const features: Feature[] = [
   {
     slug: "behaviour-change-detection",
     name: "Behaviour-change detection",
-    summary: "Flags work that has drifted from a person's own baseline and routes it to a review queue.",
+    summary: "Flags when a person's work changes from their own usual pattern and sends it to a review queue.",
     category: "reporting",
     hasPage: true,
     body: [
-      "Rather than applying a fixed rule about a job title, ZUZU compares each person's work with their own baseline and flags when it drifts. Flagged items go to a review queue in the portal.",
-      "The queue learns from every correction reviewers make. Admins see anomaly review across the organisation; managers see anomalies for their own team only.",
+      "Rather than applying a fixed rule about a job title, ZUZU compares each person's work with their own baseline (how they normally work) and flags when it changes. Flagged items go to a review queue in the portal.",
+      "The queue learns from every correction reviewers make. Admins review unusual changes (anomalies) across the organisation; managers see anomalies for their own team only.",
     ],
     capabilities: [
       "Detection against each person's own baseline",
       "Review queue for flagged changes",
       "Learning from reviewer corrections",
-      "Anomaly review scoped to a manager's own team",
+      "Anomaly review limited to a manager's own team",
     ],
     howItWorks: [
       "ZUZU compares each person's work with that person's own baseline.",
-      "When the work drifts from the baseline, the change is flagged.",
-      "Flagged items land in a review queue in the portal — organisation-wide for admins, team-only for managers.",
+      "When the work moves away from the baseline, the change is flagged.",
+      "Flagged items land in a review queue in the portal: organisation-wide for admins, team-only for managers.",
       "Reviewers confirm or correct each flag, and the queue learns from every correction.",
     ],
     problem: "A fixed rule tied to a job title treats everyone in a role the same; ZUZU instead measures change against how each individual normally works.",
@@ -298,7 +298,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "ZUZU lets admins and managers take data out of the portal in the format they need: CSV, Excel and PDF exports, with each employee's AI daily report also downloadable as a PDF.",
-      "Reports also go out by email — weekly report emails, a team daily digest, and organisation-wide or per-manager digests in the organisation's timezone. When everything is needed in one file, a full organisation export is available.",
+      "Reports also go out by email: weekly report emails, a team daily digest, and organisation-wide or per-manager digests in the organisation's timezone. When everything is needed in one file, a full organisation export is available.",
     ],
     capabilities: [
       "CSV, Excel and PDF exports",
@@ -318,23 +318,23 @@ const features: Feature[] = [
   {
     slug: "manager-workspace",
     name: "Manager workspace",
-    summary: "The same portal, scoped — managers only reach the people assigned to them.",
+    summary: "The same portal, limited so managers only reach the people assigned to them.",
     category: "oversight",
     hasPage: true,
     body: [
-      "ZUZU has three surfaces that read from the same record: the agent employees run, the admin portal for the organisation, and a manager workspace. The manager workspace is the same portal, scoped to the people assigned to that manager — they cannot reach anyone outside that assignment.",
-      "Access is granted by capability rather than by role name, and a manager holds a strict subset of an admin's permissions.",
+      "ZUZU has three parts that share the same data: the agent employees run, the admin portal for the organisation, and a manager workspace. The manager workspace is the same portal, limited to the people assigned to that manager; they cannot reach anyone outside that assignment.",
+      "Access is based on specific permissions rather than role names, and a manager never has more permissions than an admin.",
     ],
     capabilities: [
       "Team dashboard, employees and reports",
       "Daily AI reports with a review action",
       "Insights and anomalies for the manager's own team only",
-      "Scoped email digest for each manager",
-      "Permissions that are a strict subset of an admin's",
+      "Email digest for each manager, covering only their team",
+      "Permissions that never go beyond an admin's",
     ],
     audience: ["Team managers"],
     faqs: [
-      { question: "Can managers see the whole organisation?", answer: "No. Managers only reach the people and teams assigned to them, with a strict subset of an admin's permissions." },
+      { question: "Can managers see the whole organisation?", answer: "No. Managers only reach the people and teams assigned to them, and their permissions never go beyond an admin's." },
     ],
     relatedFeatures: ["admin-portal", "ai-daily-reports", "audit-trail"],
     sources: [HOME],
@@ -342,12 +342,12 @@ const features: Feature[] = [
   {
     slug: "admin-portal",
     name: "Admin portal",
-    summary: "The control plane for the organisation — people, monitoring policy, reporting and the audit trail.",
+    summary: "The central place to run the organisation: people, monitoring policy, reporting and the audit trail.",
     category: "oversight",
     hasPage: true,
     body: [
-      "The admin portal is the full control plane for an organisation. Admins manage employees, managers and teams, set the monitoring policy, read reports and insights, and review the audit trail, all in one workspace.",
-      "Admins add employees, each of whom is emailed a 16-character activation code, and invite managers scoped to the teams they own. One sign-in can hold different roles at different companies and switch between them.",
+      "The admin portal is where an organisation is run. Admins manage employees, managers and teams, set the monitoring policy, read reports and insights, and review the audit trail, all in one workspace.",
+      "Admins add employees, each of whom is emailed a 16-character activation code, and invite managers limited to the teams they own. One sign-in can hold different roles at different companies and switch between them.",
     ],
     capabilities: [
       "Dashboard, employees, managers, teams and settings",
@@ -364,22 +364,22 @@ const features: Feature[] = [
   {
     slug: "people-and-organisation",
     name: "People & organisation",
-    summary: "Employees with activation codes, teams, and managers scoped to the people they own, with one sign-in across companies.",
+    summary: "Employees with activation codes, teams, and managers limited to the people they own, with one sign-in across companies.",
     category: "oversight",
     hasPage: true,
     body: [
-      "ZUZU's people management lives in the admin portal. Admins add employees, group them into teams and invite managers, each scoped to the teams they own and unable to reach anyone outside that assignment.",
+      "ZUZU's people management lives in the admin portal. Admins add employees, group them into teams and invite managers, each limited to the teams they own and unable to reach anyone outside that assignment.",
       "Adding an employee emails them a 16-character activation code for the desktop agent. A single sign-in can hold different roles at different companies and switch between them.",
     ],
     howItWorks: [
       "Add employees from the portal; each is emailed a 16-character activation code.",
       "Organise employees into teams.",
-      "Invite managers and scope them to the teams they own.",
+      "Invite managers and limit them to the teams they own.",
     ],
     capabilities: [
       "Employee records with activation codes",
       "Teams",
-      "Managers scoped to the people assigned to them",
+      "Managers limited to the people assigned to them",
       "One sign-in holding different roles at different companies, with switching",
       "Seats changed later from Settings",
     ],
@@ -390,20 +390,20 @@ const features: Feature[] = [
   {
     slug: "access-control-and-sign-in",
     name: "Permissions & two-factor sign-in",
-    summary: "Access granted by capability rather than job title, with authenticator-app two-factor codes on admin and manager sign-in.",
+    summary: "Access based on specific permissions rather than job title, with two-factor codes from an authenticator app on admin and manager sign-in.",
     category: "oversight",
     hasPage: true,
     body: [
-      "ZUZU gates every endpoint by capability rather than by role name. A manager holds a strict subset of an admin's permissions and only ever reaches the teams assigned to them.",
-      "Admin and manager sign-in supports authenticator-app two-factor codes alongside Google sign-in, and new organisations sign up through an OTP-verified path.",
+      "ZUZU checks specific permissions, not role names, before allowing any action. A manager's permissions are always a subset of an admin's and only ever reaches the teams assigned to them.",
+      "Admin and manager sign-in supports two-factor codes from an authenticator app (a second check after the password) alongside Google sign-in, and new organisations sign up with a one-time passcode (OTP) check.",
     ],
     capabilities: [
-      "Capability-based permissions instead of role names",
-      "Manager permissions are a strict subset of admin permissions",
+      "Permissions set per action, not by role name",
+      "Managers get only part of what admins can do",
       "Managers limited to their assigned teams",
       "Authenticator-app two-factor codes on admin and manager sign-in",
       "Google sign-in",
-      "OTP-verified signup for new organisations",
+      "One-time passcode (OTP) check at signup for new organisations",
     ],
     audience: ["Admins", "Team managers"],
     relatedFeatures: ["manager-workspace", "admin-portal", "audit-trail"],
@@ -440,9 +440,9 @@ export const zuzu: Product = {
   slug: "zuzu",
   name: "ZUZU",
   shortDescription:
-    "Time tracking and activity insight for teams on Windows — a desktop agent captures the workday privately, and AI writes the reports.",
+    "Time tracking and activity insight for teams on Windows: a desktop agent captures the workday privately, and AI writes the reports.",
   longDescription:
-    "ZUZU pairs a Windows desktop agent with an admin and manager portal. Activity is captured on the device with private content painted out before anything leaves it, and each day reaches the portal already summarised — attendance, focus, applications and an AI report per person, scoped by permission.\n\nThe product has three surfaces that read from one record: the agent employees install once and activate with a code, the admin portal that holds people, monitoring policy, reporting and the audit trail, and a manager workspace that is the same portal limited to the people a manager is assigned.\n\nReporting runs on a schedule rather than on request. A report is written for every employee each day, digests go out in the organisation's timezone with the PDF attached, and managers can confirm or correct what the engine concluded. ZUZU states its limits up front: the agent is Windows-only, and policy such as screenshot cadence and retention is set per organisation.",
+    "ZUZU pairs a Windows desktop agent with an admin and manager portal. Activity is captured on the device with private content painted out before anything leaves it, and each day reaches the portal already summarised: attendance, focus, applications and an AI report per person, shown according to each person's permissions.\n\nThe product has three parts that share one record: the agent employees install once and activate with a code, the admin portal that holds people, monitoring policy, reporting and the audit trail, and a manager workspace that is the same portal limited to the people a manager is assigned.\n\nReporting runs on a schedule rather than on request. A report is written for every employee each day, digests go out in the organisation's timezone with the PDF attached, and managers can confirm or correct what the engine concluded. ZUZU states its limits up front: the agent is Windows-only, and policy such as screenshot frequency and how long screenshots are kept is set per organisation.",
   tagline: "Know how the workday actually went.",
   category: "hr-people",
   secondaryCategories: ["insights-research"],
@@ -459,25 +459,25 @@ export const zuzu: Product = {
   featureCategories,
   features,
   howItWorks: [
-    { title: "Create the workspace", description: "Sign up with a verified email; a 7-day trial organisation for up to 10 employees is provisioned immediately, with no card. Paid organisations activate straight after checkout instead." },
-    { title: "Add people, send codes", description: "Add employees from the portal and each is emailed a 16-character activation code. Invite managers and scope them to the teams they own." },
-    { title: "Install the agent", description: "Employees run the roughly 80 MB Windows installer and paste their code once. The agent then runs from the system tray, starts with Windows and keeps itself current." },
+    { title: "Create the workspace", description: "Sign up with a verified email; a 7-day trial organisation for up to 10 employees is set up immediately, with no card. Paid organisations activate straight after checkout instead." },
+    { title: "Add people, send codes", description: "Add employees from the portal and each is emailed a 16-character activation code. Invite managers and limit them to the teams they own." },
+    { title: "Install the agent", description: "Employees run the roughly 80 MB Windows installer and paste their code once. The agent then runs from the system tray, starts with Windows and keeps itself up to date." },
     { title: "Read the day", description: "Activity, screenshots and attendance flow into the portal, and reports, insights and digests are produced on a schedule, so nobody has to remember to generate them. ZUZU says there is no integration project or agent configuration to write." },
   ],
   benefits: [
     { title: "Reports that are already written", description: "The engine writes a report per employee per day on a schedule. By the time a manager opens the report browser, the day is there, and the digest has already arrived with the PDF attached." },
     { title: "Private content stays on the machine", description: "Passwords, private windows and desktop notifications are painted out on the employee's device before a screenshot is written or uploaded, so those pixels never leave it." },
     { title: "Conclusions a person can challenge", description: "Each report carries its evidence, managers confirm or correct the engine's conclusions, and those corrections feed back into scoring. The portal also reports how often reviewers agreed." },
-    { title: "Managers see only their own people", description: "Access is granted by capability, and the manager workspace is scoped to assigned teams, so a manager cannot reach anyone outside that assignment." },
-    { title: "A rollout measured in an afternoon", description: "Setup is four steps — workspace, people, agent, read the day — and the trial lets you see a full day of activity, attendance and reporting before you decide anything." },
+    { title: "Managers see only their own people", description: "Access is based on specific permissions, and the manager workspace is limited to assigned teams, so a manager cannot reach anyone outside that assignment." },
+    { title: "A rollout measured in an afternoon", description: "Setup is four steps (workspace, people, agent, read the day), and the trial lets you see a full day of activity, attendance and reporting before you decide anything." },
   ],
   security: [
     { title: "On-device redaction", description: "Passwords, private windows such as messaging, banking, webmail and password managers, and desktop notifications are painted out before the image is written to disk or uploaded." },
     { title: "Retention you decide", description: "Screenshots are kept for 30, 90 or 180 days, one year, or indefinitely; admins can download or delete a single day's captures." },
-    { title: "Permission-based access", description: "Endpoints are gated by capability, not role name; managers hold a strict subset of admin permissions and only reach their assigned teams." },
+    { title: "Permission-based access", description: "Every action is checked against specific permissions, not role names; managers get only part of what admins can do and only reach their assigned teams." },
     { title: "Two-factor authentication", description: "Authenticator-app codes on admin and manager sign-in, alongside Google sign-in and OTP-verified signup for new organisations." },
     { title: "Audit trail", description: "Organisation events filterable by severity, viewable as a table or timeline, and exportable." },
-    { title: "Consent-gated tracking on personal laptops", description: "Session-gated employees are captured only between punch-in and punch-out, under a short-lived lease that expires if the laptop goes offline." },
+    { title: "Consent-gated tracking on personal laptops", description: "Employees set to session-only tracking are captured only between punch-in and punch-out, under a short-lived lease that expires if the laptop goes offline." },
   ],
   pricing: {
     unit: "employee",
@@ -486,7 +486,7 @@ export const zuzu: Product = {
     asOf: "2026-10-08",
     sourceUrl: "https://usezuzu.com/#plans",
     plans: [
-      { name: "Free trial", price: "Free", period: "7 days", description: "The full platform — agent, reports, AI daily reports, insights and audit — for teams that want to see a real day of data before buying. Provisioned instantly after email verification.", features: ["7 days of the full platform", "Up to 10 employees", "No card required to start", "One live trial per account"], cta: { label: "Start free trial", href: TRIAL } },
+      { name: "Free trial", price: "Free", period: "7 days", description: "The full platform (agent, reports, AI daily reports, insights and audit) for teams that want to see a real day of data before buying. Set up instantly after email verification.", features: ["7 days of the full platform", "Up to 10 employees", "No card required to start", "One live trial per account"], cta: { label: "Start free trial", href: TRIAL } },
       { name: "Paid plan", price: "Per employee", description: "For organisations ready to roll out, or needing more than 10 employees from the start. Buy for your headcount; the organisation activates as soon as payment settles, with no approval queue.", features: ["Priced per employee, confirmed at checkout", "Email and mobile verification during signup", "Coupon codes applied before payment", "Seats and plan changed later from Settings"], cta: { label: "Buy a plan", href: "https://usezuzu.com/apply" }, recommended: true },
     ],
   },
@@ -495,21 +495,21 @@ export const zuzu: Product = {
   useCases: [
     { title: "Daily reporting without writing reports", description: "Managers get an AI-written report per person per day, delivered as a digest before the meeting starts." },
     { title: "Spotting change early", description: "Behaviour-change detection flags work that drifts from a person's own baseline and routes it to review." },
-    { title: "Monitoring with real limits", description: "On-device redaction, retention settings and session-gated capture on personal laptops keep monitoring within stated bounds." },
+    { title: "Monitoring with real limits", description: "On-device redaction, retention settings and session-only capture on personal laptops keep monitoring within stated bounds." },
     { title: "Seeing where the working day goes", description: "Per-application time, top applications and the hour-by-hour working rhythm show how a team's day is split, with idle and screen-off time reported separately from active time." },
-    { title: "Team-scoped oversight for managers", description: "Each manager works in a scoped workspace with their own team's dashboard, daily reports, insights and anomalies, and receives a digest covering only that team." },
+    { title: "Team-only oversight for managers", description: "Each manager works in a workspace limited to their own team's dashboard, daily reports, insights and anomalies, and receives a digest covering only that team." },
   ],
   faqs: [
     { question: "Which computers does ZUZU support?", answer: "The desktop agent runs on Windows only and ships as a 64-bit installer of about 80 MB. There is no macOS or Linux build today, and ZUZU says the portal will not offer one until it exists." },
     { question: "How does ZUZU handle private content?", answer: "Password boxes, passwords typed into documents, private windows such as messaging, banking, webmail and password managers, and desktop notifications are painted out on the device. This happens before the image is written to disk or uploaded, so those pixels never leave the machine." },
-    { question: "Can managers see the whole organisation?", answer: "No. Managers work in a scoped version of the portal and only reach the people and teams assigned to them. Their permissions are a strict subset of an admin's." },
-    { question: "How often are screenshots captured?", answer: "At a cadence the organisation sets: anywhere from 1 to 15 minutes, or a custom interval. The setting is part of the organisation's monitoring policy." },
+    { question: "Can managers see the whole organisation?", answer: "No. Managers work in a limited version of the portal and only reach the people and teams assigned to them. Their permissions never go beyond an admin's." },
+    { question: "How often are screenshots captured?", answer: "At an interval the organisation sets: anywhere from 1 to 15 minutes, or a custom interval. The setting is part of the organisation's monitoring policy." },
     { question: "How long are screenshots kept?", answer: "The organisation chooses 30, 90 or 180 days, one year, or indefinitely. Admins can also download or delete a single day's captures as a ZIP from the employee record." },
-    { question: "What happens when a laptop goes offline?", answer: "The agent keeps captures in a local queue and uploads them when the network returns. For session-gated employees on personal laptops, the capture permission is a short-lived lease, so it expires on its own while the laptop is offline." },
-    { question: "Can people be monitored on their own laptops?", answer: "Session-gated employees are captured only between punch-in and punch-out. The agent has to keep renewing a short-lived lease to keep capturing, and that lease runs out if the laptop goes offline." },
-    { question: "How are reports delivered?", answer: "Reports are generated on a schedule, not on a button. An organisation-wide digest reaches admins and a scoped digest reaches each manager, in the organisation's timezone, with the PDF attached." },
-    { question: "Is there a free trial?", answer: "Yes — a 7-day trial of the full platform for up to 10 employees, with no card required." },
-    { question: "What happens when the trial ends?", answer: "The workspace stays yours to sign in to, and you upgrade from inside the portal — Settings shows the plan, expiry date and upgrade path. Each account can hold one live trial at a time." },
+    { question: "What happens when a laptop goes offline?", answer: "The agent keeps captures in a local queue and uploads them when the network returns. For employees on personal laptops with session-only tracking, the capture permission is a short-lived lease, so it expires on its own while the laptop is offline." },
+    { question: "Can people be monitored on their own laptops?", answer: "Employees set to session-only tracking are captured only between punch-in and punch-out. The agent has to keep renewing a short-lived lease to keep capturing, and that lease runs out if the laptop goes offline." },
+    { question: "How are reports delivered?", answer: "Reports are generated on a schedule, not on demand. An organisation-wide digest reaches admins and each manager gets a digest for their own team, in the organisation's timezone, with the PDF attached." },
+    { question: "Is there a free trial?", answer: "Yes, a 7-day trial of the full platform for up to 10 employees, with no card required." },
+    { question: "What happens when the trial ends?", answer: "The workspace stays yours to sign in to, and you upgrade from inside the portal; Settings shows the plan, expiry date and upgrade path. Each account can hold one live trial at a time." },
   ],
   supportTopics: [
     {
@@ -521,14 +521,14 @@ export const zuzu: Product = {
         "The code is entered once, on first launch. After that the agent runs from the system tray, starts with Windows and updates itself from the organisation's release feed.",
       ],
       steps: [
-        "Download ZUZU-Windows-latest-Setup.exe from the ZUZU site — the link serves the current build.",
+        "Download ZUZU-Windows-latest-Setup.exe from the ZUZU site; the link serves the current build.",
         "Run the installer. If Windows SmartScreen warns about an unrecognised publisher on a new build, choose More info → Run anyway when your organisation expects this download.",
         "Finish setup: ZUZU is added to the Start Menu and registered to start with Windows for the current user.",
         "Paste the 16-character activation code from your administrator's email.",
         "Leave the agent running in the system tray; it captures on your organisation's schedule.",
       ],
       keyPoints: [
-        "Windows only — there is no macOS or Linux build today",
+        "Windows only; there is no macOS or Linux build today",
         "No window needs to stay open; the agent lives in the system tray",
         "Captures queue locally while offline and upload when the network returns",
         "Updates arrive from your organisation's own release feed",
@@ -545,7 +545,7 @@ export const zuzu: Product = {
       name: "Start a free trial",
       summary: "Create a 7-day ZUZU trial workspace for up to 10 employees, with no card required.",
       body: [
-        "ZUZU's trial is the full platform — desktop agent, reports, AI daily reports, insights and the audit trail — not a cut-down build. The trial workspace is provisioned as soon as your email is verified; nothing waits in an approval queue.",
+        "ZUZU's trial is the full platform (desktop agent, reports, AI daily reports, insights and the audit trail), not a cut-down build. The trial workspace is set up as soon as your email is verified; nothing waits in an approval queue.",
         "When the trial ends the workspace stays yours to sign in to, and you upgrade from inside the portal, where Settings shows the plan, the expiry date and the upgrade path.",
       ],
       steps: [
@@ -563,7 +563,7 @@ export const zuzu: Product = {
         "Need more than 10 employees or a paid plan straight away? Buy a plan instead",
       ],
       faqs: [
-        { question: "What happens when the trial ends?", answer: "The workspace stays yours to sign in to, and you upgrade from inside the portal — Settings shows the plan, the expiry date and the upgrade path." },
+        { question: "What happens when the trial ends?", answer: "The workspace stays yours to sign in to, and you upgrade from inside the portal; Settings shows the plan, the expiry date and the upgrade path." },
       ],
       features: ["windows-desktop-agent", "ai-daily-reports", "workforce-insights", "audit-trail"],
       sources: [HOME, TRIAL],
@@ -573,7 +573,7 @@ export const zuzu: Product = {
       name: "Buy a plan",
       summary: "Purchase ZUZU for your headcount and have the organisation activate as soon as payment settles.",
       body: [
-        "ZUZU is priced per employee, and the price is confirmed during checkout against the headcount you enter. The purchase flow verifies both your email and mobile number before you pay, and the organisation activates as soon as payment settles — there is no approval queue.",
+        "ZUZU is priced per employee, and the price is confirmed during checkout against the headcount you enter. The purchase flow verifies both your email and mobile number before you pay, and the organisation activates as soon as payment settles; there is no approval queue.",
         "If you have already applied, you can check on your application from the status page by entering the work email you applied with.",
       ],
       steps: [

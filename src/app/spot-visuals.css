@@ -10,16 +10,12 @@
 .sv--tiles svg { width: 24px; height: 24px; padding: 4px; border-radius: 8px; background: var(--primary-soft); fill: none; stroke: var(--primary); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
 /* 2. Flow chips joined by arrows — no numbers */
-.sv--flow ol { display: grid; justify-items: start; gap: 0; }
-.sv--flow li { display: grid; justify-items: start; }
-.sv--flow li span { padding: 10px 14px; border-radius: 999px; background: var(--primary-soft); color: var(--heading); font-size: 13.5px; line-height: 1.4; }
-.sv--flow li:nth-child(2) span { margin-left: 18px; }
-.sv--flow li:nth-child(3) span { margin-left: 36px; }
-.sv--flow li:nth-child(4) span { margin-left: 54px; background: var(--primary); color: var(--on-primary); }
-.sv--flow li i { margin: 2px 0 2px calc(22px + var(--shift, 0px)); font-style: normal; color: var(--primary); }
-.sv--flow li:nth-child(1) i { --shift: 9px; }
-.sv--flow li:nth-child(2) i { --shift: 27px; }
-.sv--flow li:nth-child(3) i { --shift: 45px; }
+/* Aligned vertical flow: equal-width steps, centred arrows, last step highlighted */
+.sv--flow ol { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.sv--flow li { display: grid; justify-items: center; }
+.sv--flow li span { box-sizing: border-box; width: 100%; padding: 11px 16px; border-radius: 12px; background: var(--primary-soft); color: var(--heading); font-size: 13.5px; line-height: 1.45; text-align: center; }
+.sv--flow li:last-child span { background: var(--primary); color: var(--on-primary); font-weight: 600; }
+.sv--flow li i { display: block; margin: 4px 0; font-style: normal; line-height: 1; color: var(--primary); }
 
 /* 3. Search panel with dotted results */
 .sv__bar { display: flex; align-items: center; gap: 10px; padding: 12px 14px; margin-bottom: 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--bg); font-weight: 600; color: var(--heading); }

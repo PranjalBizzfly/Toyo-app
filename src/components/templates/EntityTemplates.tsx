@@ -3,7 +3,9 @@ import { Labelled } from "@/components/ui/Labelled";
 import { poolImage } from "@/lib/pool-image";
 import Link from "next/link";
 import type { Comparison, Faq, Feature, IconName, Industry, Integration, Product, Resource, Solution } from "@/content/types";
-import { getCategory, getFeatures, productsFor } from "@/lib/catalog";
+import { getCategory, getFeatures, getIndustries, productsFor } from "@/lib/catalog";
+import { getIntegrationEntry, getProductIndustryEntries, initialOf, integrationsForProducts, relatedIntegrations, sectorOfGuide } from "@/lib/directory";
+import { DirHero, GuideCard, IndustryCard, IntegrationCard, ProductChip, SectionHead } from "@/components/directory/DirectoryParts";
 import { featureHasPage } from "@/lib/rules";
 import { routes } from "@/lib/routes";
 import { ProductLogo } from "@/components/product/cards";
@@ -76,7 +78,7 @@ function HeroActions() {
       <Link href={routes.products()} className="ez-btn ez-btn--primary">
         Explore products
       </Link>
-      <Link href={routes.contact()} className="ez-link">
+      <Link href={routes.contactForm({ type: "sales" })} className="ez-link">
         Contact sales <Icon name="arrow-right" />
       </Link>
     </div>
@@ -108,7 +110,7 @@ function Closing() {
           <Link href={routes.products()} className="ez-btn ez-btn--primary">
             Explore products
           </Link>
-          <Link href={routes.contact()} className="ez-btn ez-btn--outline">
+          <Link href={routes.contactForm({ type: "sales" })} className="ez-btn ez-btn--outline">
             Contact sales
           </Link>
         </div>
@@ -544,40 +546,153 @@ function ProblemApproach({ problem, approach, problemTitle = "The problem", appr
 
 export function IndustryPageTemplate({ industry }: { industry: Industry }) {
   const products = productsFor(industry.products);
+  const sector = sectorOfGuide(industry);
+  const sectorPages = sector ? getProductIndustryEntries().filter((e) => e.sector === sector.slug) : [];
+  const integrations = integrationsForProducts(industry.products, 6);
+  const others = getIndustries().filter((g) => g.slug !== industry.slug);
   return (
     <>
-      <Hero
+      <DirHero
+        tone="industry"
         crumbs={[
           { name: "Industries", href: routes.industries() },
           { name: industry.name, href: routes.industry(industry.slug) },
         ]}
-        eyebrow="Industry"
+        eyebrow={sector ? `Industry guide · ${sector.name}` : "Industry guide"}
         title={`Software for ${industry.name}`}
         lead={industry.summary}
-        visual={<ImageSlot src={poolImage(industry.slug)} alt="" width={1600} height={900} priority />}
       >
-        <HeroActions />
-      </Hero>
-      {industry.challenges?.length ? (
-        <section className="ez-band">
-          <div className="container">
-            <Heading title={`What ${industry.name} teams deal with`} light />
-            <div className="ez-feats">
-              {industry.challenges.map((c) => (
-                <div key={c} className="ez-feat">
-                  <span className="ez-feat__icon" aria-hidden>
-                    <Icon name={industry.icon ?? "check"} />
-                  </span>
-                  <p className="ez-feat__text">{c}</p>
+        <div className="dx-hero__chips" aria-label="Products in this guide">
+          {products.map((p) => (
+            <ProductChip key={p.slug} product={p} />
+          ))}
+        </div>
+      </DirHero>
+
+      {(industry.challenges?.length || industry.body?.length) && (
+        <section className="dx-sec dx-sec--ind" aria-labelledby="dx-overview">
+          <div className="container dx-overview">
+            {industry.challenges?.length ? (
+              <div className="dx-challenges">
+                <p className="dx-kicker">The challenge</p>
+                <h2 id="dx-overview" className="dx-head__title">
+                  What {industry.name.toLowerCase()} teams deal with
+                </h2>
+                <ol>
+                  {industry.challenges.map((c) => (
+                    <li key={c}>
+                      <span className="dx-challenges__icon" aria-hidden>
+                        <Icon name={industry.icon ?? "check"} />
+                      </span>
+                      {c}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            ) : null}
+            {industry.body?.length ? (
+              <div className="dx-helps">
+                <p className="dx-kicker">The approach</p>
+                <h2 className="dx-head__title">How ToyoApps helps</h2>
+                <div className="dx-prose">
+                  {industry.body.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
                 </div>
+              </div>
+            ) : null}
+          </div>
+        </section>
+      )}
+
+      {products.length > 0 && (
+        <section className="dx-sec dx-sec--tint dx-sec--ind" aria-labelledby="dx-products">
+          <div className="container">
+            <SectionHead id="dx-products" kicker="Products" title={`Products for ${industry.name}`} />
+            <ul className={`dx-grid dx-grid--${Math.min(products.length, 3)}`}>
+              {products.map((p) => {
+                const own = p.productIndustries?.find((x) => x.slug === industry.slug);
+                return (
+                  <li key={p.slug} className="dx-prod">
+                    <div className="dx-prod__top">
+                      <ProductLogo product={p} />
+                      <div>
+                        <h3 className="dx-prod__name">
+                          <Link href={routes.product(p.slug)} className="dx-stretch">
+                            {p.name}
+                          </Link>
+                        </h3>
+                        {getCategory(p.category) && <p className="dx-card__meta">{getCategory(p.category)?.name}</p>}
+                      </div>
+                    </div>
+                    {p.tagline && <p className="dx-prod__tag">{p.tagline}</p>}
+                    <p className="dx-card__text">{p.shortDescription}</p>
+                    <div className="dx-card__foot">
+                      {own ? (
+                        <Link href={routes.productItem(p.slug, "industries", own.slug)} className="dx-pchip dx-pchip--sm">
+                          {p.name} for {own.name}
+                        </Link>
+                      ) : (
+                        <span />
+                      )}
+                      <span className="dx-more" aria-hidden>
+                        View product <Icon name="arrow-right" />
+                      </span>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      <ProductFit title={`How each product serves ${industry.name}`} lead="Drawn from each product's own published pages." entries={industryFit(industry, products)} />
+
+      {sectorPages.length > 0 && sector && (
+        <section className="dx-sec dx-sec--ind" aria-labelledby="dx-sector">
+          <div className="container">
+            <SectionHead id="dx-sector" kicker={sector.name} title="Related industry pages" lead="Industries in the same sector that individual ToyoApps products document in detail." />
+            <ul className="dx-grid dx-grid--industries">
+              {sectorPages.map((e) => (
+                <IndustryCard key={e.key} entry={e} />
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {integrations.length > 0 && (
+        <section className="dx-sec dx-sec--tint" aria-labelledby="dx-ints">
+          <div className="container">
+            <SectionHead id="dx-ints" kicker="Integrations" title="Tools these products connect with" />
+            <ul className="dx-grid dx-grid--guides dx-grid--center">
+              {integrations.map((e) => (
+                <IntegrationCard key={e.key} entry={e} compact />
+              ))}
+            </ul>
+            <p className="dx-after">
+              <Link href={`${routes.integrations()}#dx-all`} className="dx-more">
+                Browse all integrations <Icon name="arrow-right" />
+              </Link>
+            </p>
+          </div>
+        </section>
+      )}
+
+      {others.length > 0 && (
+        <section className="dx-sec dx-sec--ind" aria-labelledby="dx-others">
+          <div className="container">
+            <SectionHead id="dx-others" kicker="More industry guides" title="Other industries" />
+            <div className={`dx-grid dx-grid--${Math.min(others.length, 3)}`}>
+              {others.map((g) => (
+                <GuideCard key={g.slug} industry={g} />
               ))}
             </div>
           </div>
         </section>
-      ) : null}
-      <Prose body={industry.body} kicker={`ToyoApps for ${industry.name}`} title="How ToyoApps helps" />
-      <ProductTiles products={products} title={`Products for ${industry.name}`} />
-      <ProductFit title={`How each product serves ${industry.name}`} lead="Drawn from each product's own published pages." entries={industryFit(industry, products)} />
+      )}
+
       <Faqs faqs={getIndustryFaqs(industry.slug)} />
       <Closing />
     </>
@@ -586,29 +701,171 @@ export function IndustryPageTemplate({ industry }: { industry: Industry }) {
 
 /* ---------- Integration detail ---------- */
 
+/** Splits "Product: text" paragraphs onto their product; the rest describe the connection itself. */
+function splitBody(integration: Integration, products: Product[]) {
+  const general: string[] = [];
+  const byProduct = new Map<string, string[]>();
+  for (const para of integration.body ?? []) {
+    const p = products.find((x) => para.startsWith(`${x.name}:`));
+    if (p) {
+      const t = para.slice(p.name.length + 1).trim();
+      byProduct.set(p.slug, [...(byProduct.get(p.slug) ?? []), t.charAt(0).toUpperCase() + t.slice(1)]);
+    } else general.push(para);
+  }
+  // A single-product integration: every paragraph is about that product's use.
+  if (products.length === 1 && !byProduct.size) return { general: general.slice(0, 1), byProduct: new Map([[products[0].slug, general.slice(1)]]) };
+  return { general, byProduct };
+}
+
 export function IntegrationPageTemplate({ integration }: { integration: Integration }) {
+  // Registry products plus any product that documents this integration itself
+  const products = getIntegrationEntry(integration.slug)?.links.map((l) => l.product) ?? productsFor(integration.products);
+  const { general, byProduct } = splitBody(integration, products);
+  const fit = integrationFit(integration, products);
+  const related = relatedIntegrations(integration, 6);
   return (
     <>
-      <Hero
+      <DirHero
+        tone="integration"
         crumbs={[
           { name: "Integrations", href: routes.integrations() },
           { name: integration.name, href: routes.integration(integration.slug) },
         ]}
-        eyebrow={integration.vendor ? `Integration · ${integration.vendor}` : "Integration"}
-        title={integration.name}
+        eyebrow={`Integration · ${integration.category}`}
+        title={`${integration.name} integration`}
         lead={integration.summary}
-        visual={<ImageSlot src={poolImage(integration.slug)} alt="" width={1600} height={900} priority />}
-      >
-        <p className="ez-hero__chip">{integration.category}</p>
-      </Hero>
-      <Prose body={integration.body} kicker="Integration" title={`About the ${integration.name} integration`} />
-      <ProductTiles products={productsFor(integration.products)} title="Works with" />
-      <ProductFit title={`${integration.name} in each product`} lead="What each product says about this connection." entries={integrationFit(integration, productsFor(integration.products))} />
+      />
+
+      <section className="dx-sec" aria-labelledby="dx-connects">
+        <div className="container dx-connect">
+          <div className="dx-connect__diagram" aria-hidden>
+            <span className="dx-connect__node dx-connect__node--tool">
+              <span className="dx-mono dx-mono--lg">{initialOf(integration.name)}</span>
+              {integration.name}
+            </span>
+            <span className="dx-connect__line" />
+            <span className="dx-connect__products">
+              {products.map((p) => (
+                <span key={p.slug} className="dx-connect__node">
+                  <ProductLogo product={p} />
+                  {p.name}
+                </span>
+              ))}
+            </span>
+          </div>
+          <div className="dx-connect__copy">
+            <p className="dx-kicker">What connects</p>
+            <h2 id="dx-connects" className="dx-head__title">
+              {integration.name} with {products.map((p) => p.name).join(", ").replace(/, ([^,]*)$/, " and $1")}
+            </h2>
+            {general.map((p, i) => (
+              <p key={i} className="dx-connect__text">
+                {p}
+              </p>
+            ))}
+            <dl className="dx-facts">
+              {integration.vendor && (
+                <div>
+                  <dt>Vendor</dt>
+                  <dd>{integration.vendor}</dd>
+                </div>
+              )}
+              <div>
+                <dt>Category</dt>
+                <dd>
+                  <Link href={`${routes.integrations()}?category=${encodeURIComponent(integration.category)}#dx-all`}>{integration.category}</Link>
+                </dd>
+              </div>
+              <div>
+                <dt>Works with</dt>
+                <dd className="dx-facts__chips">
+                  {products.map((p) => (
+                    <ProductChip key={p.slug} product={p} />
+                  ))}
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section className="dx-sec dx-sec--tint" aria-labelledby="dx-how">
+        <div className="container">
+          <SectionHead id="dx-how" kicker="How it works" title={products.length > 1 ? `${integration.name} in each product` : `How ${products[0]?.name ?? "it"} uses ${integration.name}`} />
+          <ol className={`dx-uses dx-uses--${Math.min(products.length, 3)}`}>
+            {fit.map(({ product: p, entry, features }, i) => {
+              const notes = byProduct.get(p.slug) ?? [];
+              const steps = entry?.points ?? [];
+              return (
+                <li key={p.slug} className="dx-use">
+                  <header className="dx-use__head">
+                    <span className="dx-use__n">{String(i + 1).padStart(2, "0")}</span>
+                    <ProductLogo product={p} />
+                    <h3>
+                      <Link href={routes.product(p.slug)}>{p.name}</Link>
+                    </h3>
+                  </header>
+                  {notes.map((t, j) => (
+                    <p key={j}>{t}</p>
+                  ))}
+                  {!notes.length && entry?.text && <p>{entry.text}</p>}
+                  {steps.length > 0 && (
+                    <ul className="dx-use__steps">
+                      {steps.slice(0, 4).map((t) => (
+                        <li key={t}>
+                          <Icon name="check" />
+                          <span>
+                            <Labelled text={t} />
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {features.length > 0 && (
+                    <p className="dx-use__feats">
+                      <strong>Related features: </strong>
+                      {features.map((f, j) => (
+                        <span key={f.slug}>
+                          {j > 0 && ", "}
+                          {featureHasPage(f) ? <Link href={routes.feature(p.slug, f.slug)}>{f.name}</Link> : f.name}
+                        </span>
+                      ))}
+                    </p>
+                  )}
+                  <Link href={entry?.href ?? routes.product(p.slug)} className="dx-more">
+                    {entry ? `${entry.name} in ${p.name}` : `View ${p.name}`} <Icon name="arrow-right" />
+                  </Link>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      </section>
+
+      {related.length > 0 && (
+        <section className="dx-sec" aria-labelledby="dx-related">
+          <div className="container">
+            <SectionHead id="dx-related" kicker="Related" title="Similar integrations" />
+            <ul className="dx-grid dx-grid--guides dx-grid--center">
+              {related.map((e) => (
+                <IntegrationCard key={e.key} entry={e} compact />
+              ))}
+            </ul>
+            <p className="dx-after">
+              <Link href={`${routes.integrations()}#dx-all`} className="dx-more">
+                Browse all integrations <Icon name="arrow-right" />
+              </Link>
+            </p>
+          </div>
+        </section>
+      )}
+
       <Faqs faqs={getIntegrationFaqs(integration.slug)} />
       <Closing />
     </>
   );
 }
+
 
 /* ---------- Comparison detail (Zoho compare layout) ---------- */
 

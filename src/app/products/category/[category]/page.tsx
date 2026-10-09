@@ -163,7 +163,7 @@ export default async function CategoryPage({ params }: Props) {
 
       <CtaBand
         title={`Find the right ${category.name.toLowerCase()} tool`}
-        primary={{ label: "Talk to sales", href: routes.contact() }}
+        primary={{ label: "Talk to sales", href: routes.contactForm({ type: "sales" }) }}
         secondary={{ label: "All products", href: routes.products() }}
       />
     </>

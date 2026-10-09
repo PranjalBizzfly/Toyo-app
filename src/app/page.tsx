@@ -33,7 +33,7 @@ import "@/app/home-hero.css";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 
 export const metadata = buildMetadata({
-  title: `${site.name} — Business software, one ecosystem`,
+  title: `${site.name}: Business software, one ecosystem`,
   description: site.description,
   path: "/",
 });
@@ -55,7 +55,7 @@ const values: { icon: IconName; title: string; text: string }[] = [
   {
     icon: "shield",
     title: "Verified product information",
-    text: "Every feature, plan and price shown here is taken from the product's own official website — nothing invented.",
+    text: "Every feature, plan and price shown here is taken from the product's own official website. Nothing is invented.",
   },
   {
     icon: "store",
@@ -231,7 +231,7 @@ export default function HomePage() {
     {
       icon: "search",
       title: "Four ways in",
-      text: `Discover by ${plural(ecosystem.length, "category", "categories")}, ${plural(totalFeaturePages, "feature page")}, ${plural(solutions.length, "solution")} or ${plural(industries.length, "industry", "industries")}.`,
+      text: `Browse by ${plural(ecosystem.length, "category", "categories")}, ${plural(totalFeaturePages, "feature page")}, ${plural(solutions.length, "solution")} or ${plural(industries.length, "industry", "industries")}.`,
     },
     { icon: "layers", title: "Connected products", text: "Product pages show the stated connections between ToyoApps products and the integrations each one names." },
     { icon: "shield", title: "Consistent pages", text: "Every product follows the same structure, so moving from one tool to the next takes no re-learning." },
@@ -371,7 +371,7 @@ export default function HomePage() {
                   <li key={p.slug}>
                     <article className="h-card h-fcard">
                       <div className="hi-card-art">
-                        <ImageSlot src={`/images/products/${p.slug}/card.webp`} alt={`${p.name} — ${p.tagline ?? p.shortDescription}`} width={640} height={360} />
+                        <ImageSlot src={`/images/products/${p.slug}/card.webp`} alt={`${p.name}: ${p.tagline ?? p.shortDescription}`} width={640} height={360} />
                       </div>
                       <div className="h-fcard__head">
                         <ProductLogo product={p} />
@@ -444,7 +444,7 @@ export default function HomePage() {
       {/* 4. Ecosystem by category */}
       <section className="h-sec" aria-labelledby="eco-title">
         <div className="container">
-          <SectionHead id="eco-title" kicker="Ecosystem" title="The ecosystem by category" lead="Every product sits in the category of the business function it serves, and some also appear in a second category where they clearly fit." />
+          <SectionHead id="eco-title" kicker="Ecosystem" title="Products by category" lead="Each product is listed under the business area it serves. Some also appear in a second category where they fit." />
           <div className="h-eco">
             {ecosystem.map(({ category, products: list }) => (
               <article key={category.slug} className="h-eco__row" style={tintStyle(category.slug)}>
@@ -478,7 +478,7 @@ export default function HomePage() {
       {/* 5. Full portfolio */}
       <section className="h-sec h-sec--surface" aria-labelledby="portfolio-title">
         <div className="container">
-          <SectionHead id="portfolio-title" kicker="Portfolio" title="Every product in the catalog" lead={`All ${plural(products.length, "product")}, A–Z within each category.`} />
+          <SectionHead id="portfolio-title" kicker="Portfolio" title="Every product in the catalog" lead={`All ${plural(products.length, "product")}, A to Z within each category.`} />
           <ul className="h-portfolio">
             {products.map((p) => (
               <li key={p.slug}>
@@ -513,7 +513,7 @@ export default function HomePage() {
       {taskCards.length > 0 && (
         <section className="h-sec" aria-labelledby="tasks-title">
           <div className="container">
-            <SectionHead id="tasks-title" kicker="Discover by task" title="Find the tool by the job to be done" lead="Each card is a feature group from one product, listing the features inside it — a quick way to find a tool by the task you need done." />
+            <SectionHead id="tasks-title" kicker="Browse by task" title="Find a tool by what you need to do" lead="Each card shows a group of features from one product, so you can quickly find a tool for the task at hand." />
             <ul className="h-tasks">
               {taskCards.map(({ product: p, group, features }) => (
                 <li key={`${p.slug}-${group.slug}`} className="h-task">
@@ -812,7 +812,7 @@ export default function HomePage() {
           <p>Browse the catalog by category, start from a business problem, or contact the {site.name} team for help choosing.</p>
           <div className="h-actions h-actions--center">
             <SquareButton href={routes.products()}>Explore products</SquareButton>
-            <SquareButton href={routes.contact()} variant="outline">
+            <SquareButton href={routes.contactForm()} variant="outline">
               Contact us
             </SquareButton>
           </div>

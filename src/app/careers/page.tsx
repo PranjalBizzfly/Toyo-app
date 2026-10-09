@@ -17,7 +17,7 @@ export const metadata = buildMetadata({
   path: routes.careers(),
 });
 
-const apply = (title: string) => `${routes.contact()}?topic=careers&role=${encodeURIComponent(title)}`;
+const apply = (title: string) => routes.contactForm({ topic: "careers", role: title });
 
 export default function CareersPage() {
   const tree = getCatalogTree();
@@ -26,7 +26,7 @@ export default function CareersPage() {
   const work = [
     {
       title: "Many products, one team",
-      text: `ToyoApps brings ${productCount} business products together in one catalog, so work here spans more than a single app — from contact capture and HR to compliance and market research.`,
+      text: `ToyoApps brings ${productCount} business products together in one catalog, so work here spans more than a single app, from contact capture and HR to compliance and market research.`,
     },
     {
       title: "Two sides of a marketplace",
@@ -34,7 +34,7 @@ export default function CareersPage() {
     },
     {
       title: "Organised by business function",
-      text: `Products are grouped into ${tree.length} business areas — ${tree.map((t) => t.category.name).join(", ")} — so the work is framed around the jobs businesses need done.`,
+      text: `Products are grouped into ${tree.length} business areas (${tree.map((t) => t.category.name).join(", ")}), so the work is framed around the jobs businesses need done.`,
     },
   ];
 
@@ -91,7 +91,7 @@ export default function CareersPage() {
           <ul className="cp-grid">
             <li className="cp-card">
               <h3>Culture</h3>
-              <p>The team&apos;s focus is making business software easier to find, compare and buy — starting from the job a business needs done, not the vendor.</p>
+              <p>The team&apos;s focus is making business software easier to find, compare and buy, starting from the job a business needs done, not the vendor.</p>
             </li>
             <li className="cp-card">
               <h3>Learning and growth</h3>
@@ -178,7 +178,7 @@ export default function CareersPage() {
           <h2>Interested in joining ToyoApps?</h2>
           <p>Tell the team which role you&apos;re applying for and a little about yourself.</p>
           <div className="co-btns">
-            <Link className="co-btn" href={`${routes.contact()}?topic=careers`}>Apply via contact page</Link>
+            <Link className="co-btn" href={routes.contactForm({ topic: "careers" })}>Apply via contact page</Link>
             <Link className="co-btn co-btn--ghost" href={routes.company()}>About ToyoApps</Link>
           </div>
         </div>

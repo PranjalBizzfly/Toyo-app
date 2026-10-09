@@ -77,8 +77,8 @@ const featureCategories: FeatureCategory[] = [
     name: "People",
     description: "The records and paperwork behind every employee, from pre-boarding to exit.",
     body: [
-      "HRMagix groups the records that sit behind each person under People: the employee record itself, onboarding, documents, company assets, memos and succession. Everything else in the platform reads from this record rather than keeping its own copy.",
-      "The record is versioned rather than overwritten. Promotions, transfers, confirmations and exits are dated changes on the same record, so payroll, approval routing and statutory applicability follow automatically and the history stays available after someone leaves.",
+      "HRMagix groups the records that sit behind each person under People: the employee record itself, onboarding, documents, company assets, memos and succession. Every other part of the platform uses this record instead of keeping its own copy.",
+      "The record keeps its history instead of being overwritten. Promotions, transfers, confirmations and exits are saved as dated changes on the same record, so payroll, approval routing and which statutory rules apply update automatically and the history stays available after someone leaves.",
     ],
   },
   {
@@ -86,8 +86,8 @@ const featureCategories: FeatureCategory[] = [
     name: "Time & Work",
     description: "Attendance, shifts, leave, holidays and the rules that govern them.",
     body: [
-      "Time & Work holds attendance, leave, the holiday list and the company's policies in one area of the app. Attendance arrives from biometric devices, the mobile app and the browser into a single ledger, and leave balances are worked out by rule from the same record.",
-      "Because attendance and leave feed the monthly payroll cut-off directly, payable days and loss of pay are settled as the month runs instead of being rebuilt in the last week. Shift patterns, grace periods, leave schemes and holiday calendars can differ by location and grade under one policy engine.",
+      "Time & Work holds attendance, leave, the holiday list and the company's policies in one area of the app. Attendance from biometric devices, the mobile app and the browser goes into a single record, and leave balances are worked out by rule from the same record.",
+      "Because attendance and leave feed the monthly payroll cut-off directly, payable days and loss of pay are settled as the month runs instead of being rebuilt in the last week. Shift patterns, grace periods, leave schemes and holiday calendars can differ by location and grade under one set of rules.",
     ],
   },
   {
@@ -114,7 +114,7 @@ const featureCategories: FeatureCategory[] = [
     description: "The monthly run, Indian statutory deductions and the files each authority expects.",
     body: [
       "Payroll in HRMagix runs as one chain: attendance becomes loss of pay, loss of pay becomes gross, gross becomes statutory deductions, and deductions become filings. The run reads attendance, approved leave and overtime already in the platform, so nothing is re-keyed before the cut-off.",
-      "EPF, ESI, Professional Tax, Labour Welfare Fund, TDS under Section 192 and gratuity are derived from the salary structure on the record and the registrations the employer holds. The same run produces payslips, the bank payment file and the statutory outputs, so the return and the ledger are built from one set of figures. Filing itself stays with the employer.",
+      "EPF, ESI, Professional Tax, Labour Welfare Fund, TDS under Section 192 and gratuity are worked out from the salary structure on the record and the employer's registrations. The same run produces payslips, the bank payment file and the statutory outputs, so the return and the ledger are built from one set of figures. Filing itself stays with the employer.",
     ],
   },
   {
@@ -142,17 +142,17 @@ const features: Feature[] = [
     highlight: true,
     hasPage: true,
     body: [
-      "HRMagix is built around a single authoritative record for every employee. Attendance, leave, payroll, performance and documents all read from it, so nothing is typed into a second system and nothing has to be reconciled between copies.",
-      "The record is versioned: personal and statutory identifiers, employment history, reporting line, department, location, legal entity, the compensation structure in force on any date, leave balances and the documents that evidence them. A grade revision in July succeeds the grade that applied in June instead of erasing it, so a payroll run questioned months later can be answered with the structure that was in force at the time.",
+      "HRMagix is built around one trusted master record for every employee. Attendance, leave, payroll, performance and documents all read from it, so nothing is typed into a second system and nothing has to be reconciled between copies.",
+      "The record keeps its history. It holds personal and statutory identifiers (such as PAN and UAN), employment history, reporting line, department, location, legal entity, the compensation structure in force on any date, leave balances and the documents that evidence them. A grade change in July is added after June's grade instead of erasing it, so a payroll run questioned months later can be answered with the structure that was in force at the time.",
       "The directory colleagues use every day and the confidential record behind it live in the same system, separated by role permissions rather than by keeping a second spreadsheet.",
     ],
     problem:
-      "In most growing companies the employee's details live in several files at once, none of them authoritative, so even a simple question such as how many days someone was present in a month depends on who you ask.",
+      "In most growing companies the employee's details live in several files at once, with no single trusted version, so even a simple question such as how many days someone was present in a month depends on who you ask.",
     capabilities: [
-      "Centralised employee master with role-based access control",
+      "One central employee record, with access set by role",
       "Searchable directory with role-based visibility",
       "Org structure by department, grade and reporting line, with the org chart drawn from the record",
-      "Effective-dated compensation, grade and policy changes that reach payroll automatically",
+      "Salary, grade and policy changes with a start date that reach payroll automatically",
       "Identity and statutory fields: PAN, Aadhaar, UAN, ESIC IP number, bank account and IFSC",
       "Alerts for missing statutory identifiers before they block a payroll run",
       "Every change carries who made it and when",
@@ -404,7 +404,7 @@ const features: Feature[] = [
     ],
     capabilities: [
       "Key position vulnerability index and role criticality assessment",
-      "Talent bench readiness ratings: ready now, 1–2 years, 3+ years",
+      "Talent bench readiness ratings: ready now, 1 to 2 years, 3+ years",
       "Individual development plans for high-potential successors",
       "Key-role vulnerability also visible in HR analytics",
     ],
@@ -431,21 +431,21 @@ const features: Feature[] = [
     highlight: true,
     hasPage: true,
     body: [
-      "Attendance is the record every other monthly task depends on. Before payroll can close, HR needs to know who was present, who came in late, who worked a night shift and who was absent without approved leave. HRMagix keeps that record in one ledger through the month, so the cut-off becomes a check rather than a rebuild.",
-      "Punches come from biometric devices that push data to HRMagix, from the iOS and Android app with geo-fencing and selfie validation, and from the browser. These are three inputs to the same ledger, so a person who badges in at a plant on Monday and checks in from a client site on Tuesday has one continuous record.",
+      "Attendance is the record every other monthly task depends on. Before payroll can close, HR needs to know who was present, who came in late, who worked a night shift and who was absent without approved leave. HRMagix keeps that record in one place all month, so the payroll cut-off becomes a quick check rather than a rebuild.",
+      "Punches come from biometric devices that push data to HRMagix, from the iOS and Android app with geo-fencing and selfie validation, and from the browser. All three feed the same attendance record, so a person who badges in at a plant on Monday and checks in from a client site on Tuesday has one continuous record.",
     ],
     problem:
       "When attendance lives in a biometric machine on one side and a spreadsheet on the other, the last week of the month goes into matching the two.",
     capabilities: [
-      "Biometric push API sync with ESSL, Matrix, Realtime and ZKTeco devices",
+      "Automatic sync with ESSL, Matrix, Realtime and ZKTeco biometric devices",
       "iOS and Android punch-in with GPS geo-fencing and selfie validation",
       "Browser check-in for desk-based teams",
       "Rotating shifts, night-shift differentials and late grace periods applied by rule",
       "Live presence board showing present, on leave, absent and remote",
-      "Loss-of-pay register derived automatically and passed to the payroll run",
+      "Loss-of-pay register worked out automatically and passed to the payroll run",
     ],
     howItWorks: [
-      "Punches arrive from devices, the app or the browser into one ledger as they happen.",
+      "Punches from devices, the app or the browser land in one record as they happen.",
       "Shift rules, grace periods and night differentials are applied automatically.",
       "Regularisations approved before the cut-off update the month.",
       "Loss of pay and overtime are carried into the payroll run.",
@@ -515,7 +515,7 @@ const features: Feature[] = [
       "Optional selfie validation",
       "Automatic location tagging for remote and field check-ins",
       "Works from the same account as the web portal",
-      "Mobile punches write to the same ledger as biometric and browser punches",
+      "Mobile punches go into the same record as biometric and browser punches",
     ],
     howItWorks: [
       "The employer draws geofences around the locations where work starts.",
@@ -541,7 +541,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "When a punch is missed, the employee raises a regularisation request against the specific day with a reason attached, and it routes to the reporting manager. Approval updates the ledger and therefore the loss-of-pay register, before the payroll cut-off if it arrives in time.",
-      "The original capture is never overwritten. The correction is recorded alongside it with the reason and approver, so both the corrected position and the original remain visible. HRMagix's position is that an editable attendance ledger is not evidence.",
+      "The original capture is never overwritten. The correction is recorded alongside it with the reason and approver, so both the corrected position and the original remain visible. HRMagix's view is that an attendance record anyone can edit is not evidence.",
     ],
     capabilities: [
       "Regularisation requests raised against a specific day with a reason",
@@ -633,7 +633,7 @@ const features: Feature[] = [
     category: "time-and-work",
     hasPage: true,
     body: [
-      "A comp-off is earned by working a day that was not a working day, which makes it a consequence of the attendance ledger rather than an allowance granted at someone's discretion. HRMagix credits compensatory off when approved weekend or holiday work occurs and tracks it alongside regular leave.",
+      "A comp-off is earned by working a day that was not a working day, so it comes from the attendance record rather than being granted at someone's discretion. HRMagix credits compensatory off when approved weekend or holiday work occurs and tracks it alongside regular leave.",
       "Each comp-off carries the expiry the policy sets and lapses on that date rather than whenever someone notices, which is usually what decides whether a promise of time off for peak-season work is honoured.",
     ],
     capabilities: [
@@ -764,7 +764,7 @@ const features: Feature[] = [
     capabilities: [
       "30, 60 and 90-day plans",
       "Milestone checkpoints with measurable turnaround criteria",
-      "Confidential manager–employee journal and coaching log",
+      "Confidential manager-employee journal and coaching log",
       "Automated timeline escalations",
       "Outcome status sign-off",
     ],
@@ -848,16 +848,16 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "A payroll run is where attendance, leave, overtime, salary structure and statutory deductions all have to agree, and errors usually come from the hand-offs between them rather than the arithmetic. HRMagix takes its inputs from attendance and leave records already in the platform, so the run starts from data checked through the month.",
-      "Salary structures are held as templates on the grade, with each person's figures as an instance of it, so two people on the same band are not paid under different arithmetic. The run produces payslips, statutory outputs and a bank payment file together.",
+      "Salary structures are set up as templates for each grade, and each person's pay follows that template, so two people on the same band are never paid by different calculations. The run produces payslips, statutory outputs and a bank payment file together.",
     ],
     problem:
       "Payroll teams in most Indian companies do not spend days calculating; they spend days establishing what happened, from biometric logs, leave in various states of approval, comp-offs and late marks, before a few minutes of calculation.",
     howItWorks: [
       "Attendance closes: punches, mobile check-ins and approved regularisations settle into the ledger.",
       "Leave resolves: approved leave, sandwich-rule outcomes, comp-off and unpaid days are applied.",
-      "Loss of pay computes from the ledger automatically.",
+      "Loss of pay is calculated from attendance automatically.",
       "Gross assembles from effective-dated structures, overtime, night differentials and one-off components.",
-      "Statutory deductions are evaluated against this month's structure.",
+      "Statutory deductions are worked out from this month's salary structure.",
       "You review a variance view of what changed against last month.",
       "A bank payment file is generated for upload to your corporate banking portal.",
       "Statutory files issue and payslips reach every employee's self-service login.",
@@ -882,13 +882,13 @@ const features: Feature[] = [
   {
     slug: "statutory-compliance",
     name: "Statutory Compliance Engine",
-    summary: "EPF, ESI, Professional Tax, LWF, TDS and gratuity derived inside the run, with filing-ready outputs.",
+    summary: "EPF, ESI, Professional Tax, LWF, TDS and gratuity calculated inside the payroll run, with files ready to submit.",
     category: "payroll-and-compliance",
     highlight: true,
     hasPage: true,
     body: [
       "HRMagix calculates EPF, ESI, Professional Tax, Labour Welfare Fund and TDS inside the payroll run from the salary structure on the employee record and the registrations the employer holds. Rates fixed by central statute are built in; state heads such as Professional Tax and LWF are applied from the schedule attached to each state registration rather than a national default.",
-      "Applicability is re-evaluated every month from the structure in force that month. The same run produces the files each authority expects, so the return and the ledger cannot disagree.",
+      "Which deductions apply is checked again every month, based on that month's salary structure. The same run produces the files each authority expects, so the return and the ledger cannot disagree.",
       "The engine computes and produces; it does not submit on your behalf and does not decide applicability. Whether an establishment is covered, which registrations you hold and whether you opted into voluntary coverage are facts you supply. HRMagix notes that nothing on its compliance pages is tax or legal advice.",
     ],
     capabilities: [
@@ -903,7 +903,7 @@ const features: Feature[] = [
     ],
     howItWorks: [
       "Attendance, approved leave and overtime stop feeding the run at the cut-off.",
-      "Each head is derived from the salary structure and the registrations held.",
+      "Each deduction is calculated from the salary structure and the employer's registrations.",
       "Payslips, the bank batch and every statutory file are produced together.",
       "ECR and the ESIC return go out monthly; Form 24Q quarterly; Form 16 Part B annually.",
     ],
@@ -1002,7 +1002,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "Most HR questions are lookups: how many leaves are left, a copy of last March's payslip, a UAN, whether a regularisation was approved. HRMagix's self-service portal gives people the lookup, on the web and on the phone, so HR spends its week on work only it can do.",
-      "Self-service has clear limits. An employee reads only their own record and everything derived from it. They can apply, declare and request, but applying is not approving: anything with a financial or policy consequence routes to whoever the record says is responsible, and changes that affect a payment, such as a bank account, are confirmed before they take effect.",
+      "Self-service has clear limits. An employee sees only their own record and what comes from it. They can apply, declare and request, but applying is not approving: anything with a financial or policy consequence routes to whoever the record says is responsible, and changes that affect a payment, such as a bank account, are confirmed before they take effect.",
     ],
     capabilities: [
       "Leave application with live, accrual-accurate balances",
@@ -1035,7 +1035,7 @@ const features: Feature[] = [
     hasPage: true,
     body: [
       "For a large part of the Indian workforce, such as field staff, plant operators, drivers and site engineers, the phone is not a secondary channel; it is the only one. The HRMagix iOS and Android app carries the everyday self-service tasks so the portal is available to everyone, not only people with desks.",
-      "The web portal and the apps are the same account. What an employee can see and do is governed by their role, not by which device they use.",
+      "The web portal and the apps are the same account. What an employee can see and do depends on their role, not on which device they use.",
     ],
     capabilities: [
       "Punch-in with GPS geo-fencing and selfie validation",
@@ -1081,7 +1081,7 @@ const features: Feature[] = [
     highlight: true,
     hasPage: true,
     body: [
-      "Most HR reporting is not analysis but collation: headcount from one place, resignations from another, overtime from a third. Because those records already sit in HRMagix, the Analytics module reads them directly, so a question asked on a Tuesday can be answered on a Tuesday.",
+      "Most HR reporting is not analysis but gathering numbers together: headcount from one place, resignations from another, overtime from a third. Because those records already sit in HRMagix, the Analytics module reads them directly, so a question asked on a Tuesday can be answered on a Tuesday.",
       "Reports are read live with no separate reporting database to load, which is why a figure reconciles to the payroll run it came from. HRMagix reports what it can observe and stops there: the attrition risk indicator is an early-warning flag, not a prediction, and engagement is not scored from data the platform does not hold.",
     ],
     capabilities: [
@@ -1249,8 +1249,8 @@ const productSolutions: ProductSolution[] = [
     problem:
       "Growing Indian companies often run several disconnected systems: biometric hardware logs, leave spreadsheets, standalone payroll software, check-ins over messaging apps and annual appraisal PDFs. Each holds up alone, but together they mean basic questions have no single answer, and the payroll team spends days each month reconciling half-days, loss of pay and overtime.",
     body: [
-      "HRMagix describes itself as an HRMS in the strict sense: one authoritative record of every employee that attendance, payroll, performance and documents all read from. The modules are not separate products joined by an API or an overnight sync; they read the same ledger.",
-      "The operational test is whether a correction propagates. In HRMagix an approved leave application backdated on the 28th changes that month's loss-of-pay register before the cut-off, because it is the same number seen from a different page.",
+      "HRMagix describes itself as an HRMS in the strict sense: one trusted record of every employee that attendance, payroll, performance and documents all use. The modules are not separate products joined by an API or an overnight sync; they use the same data.",
+      "The real test is whether a correction flows through everywhere. In HRMagix an approved leave application backdated on the 28th changes that month's loss-of-pay register before the cut-off, because it is the same number seen from a different page.",
     ],
     approach: [
       "One versioned record per employee, edited in one place",
@@ -1344,7 +1344,7 @@ const productSolutions: ProductSolution[] = [
       "Because every location writes into the same record, head office sees headcount and attendance across sites, and where locations are separate legal entities the company switcher lets a user move between them.",
     ],
     approach: [
-      "Biometric sync and geo-fenced mobile punch-in recording into one ledger",
+      "Biometric sync and geo-fenced mobile punch-in recording into one place",
       "Holiday calendars and leave schemes configured per location",
       "Professional Tax and LWF following each employee's work location",
       "Cross-site headcount and attendance reporting",
@@ -1495,7 +1495,7 @@ const productIndustries: ProductIndustry[] = [
       "There is nobody to absorb a payroll mistake",
     ],
     howItHelps: [
-      "Statutory deductions derived from the salary structure instead of typed",
+      "Statutory deductions calculated from the salary structure instead of typed in",
       "Existing ESSL, Matrix, Realtime or ZKTeco devices can usually be kept",
       "Letters, declarations and acknowledgements filed against each person",
       "The run produces ECR, ESIC, PT and Form 24Q output for your accountant to review and file",
@@ -1551,9 +1551,9 @@ const productIndustries: ProductIndustry[] = [
     howItHelps: [
       "Auto shift detection with night shifts attributed to the day they began",
       "Overtime from the shift definition and eligibility on the record",
-      "ESI applicability evaluated monthly against the actual structure",
+      "ESI eligibility checked monthly against the actual salary structure",
       "Per-plant shift patterns, grace periods and weekly offs while filing as one organisation",
-      "Existing biometric hardware or a shared gate kiosk feeding one ledger",
+      "Existing biometric hardware or a shared gate kiosk feeding one attendance record",
     ],
     useCases: [
       { title: "Staff and workmen in one run", description: "Different shift, overtime and capture rules for each population, with shared PF and ESI registrations and returns." },
@@ -1808,10 +1808,10 @@ const productIntegrations: ProductIntegration[] = [
     name: "Biometric Attendance Devices (ESSL, Matrix, Realtime, ZKTeco)",
     summary: "Existing biometric hardware pushes punches into HRMagix in real time.",
     connects:
-      "Biometric fingerprint or facial-recognition terminals from ESSL, Matrix, Realtime and ZKTeco connect to the HRMagix attendance ledger over a secure API push or a local sync service.",
+      "Biometric fingerprint or facial-recognition terminals from ESSL, Matrix, Realtime and ZKTeco connect to HRMagix attendance through a secure API connection or a local sync service.",
     body: [
       "Most Indian offices and plants already own biometric readers; what they lack is a system behind them. HRMagix keeps the capture layer you have and changes what happens to the punches after they arrive: they reach the cloud presence board in real time and flow into shift calculations, late marks and the monthly loss-of-pay register.",
-      "Biometric punches are one of three inputs to the same ledger, alongside the mobile app and the browser, so a location with a device and a field team without one still produce one record.",
+      "Biometric punches are one of three sources for the same attendance record, alongside the mobile app and the browser, so a location with a device and a field team without one still produce one record.",
     ],
     workflow: [
       "The device pushes punches over the API or a local sync service",
@@ -2162,7 +2162,7 @@ const supportTopics: ProductSupportTopic[] = [
     name: "Switching Payroll On, Including Mid-Year",
     summary: "Statutory registrations first, then year-to-date figures if you move during the financial year.",
     body: [
-      "Payroll is the module with a deadline, so HRMagix recommends sequencing it carefully. Statutory registrations go in first because deductions are derived from them rather than entered.",
+      "Payroll is the module with a deadline, so HRMagix recommends sequencing it carefully. Statutory registrations go in first because deductions are calculated from them rather than typed in.",
     ],
     steps: [
       "Enter PF and ESI codes, Professional Tax registrations for each state and TAN for TDS",
@@ -2311,7 +2311,7 @@ export const hrmagix: Product = {
   shortDescription:
     "HRMS and payroll software for Indian companies: attendance, leave, payroll with PF, ESI, PT and TDS, performance and self-service on one employee record.",
   longDescription:
-    "HRMagix brings people, performance and payroll into one workspace built around a single employee record, designed for Indian companies and Indian statute.\n\nTwelve modules read from that record: attendance and shifts, leaves and holidays, payroll, objectives and OKRs, KRA and 9-box, PIPs and growth, recognition, 1-on-1s, onboarding, documents, succession and analytics.\n\nAttendance flows into loss of pay, and statutory deductions — EPF, ESI, Professional Tax, LWF and TDS — are derived from the salary structure. One monthly run produces payslips, the bank file and filing-ready statutory outputs from the same set of figures.\n\nEmployees use self-service on the web and on iOS and Android. Setup typically takes two to three days, including Excel imports, policy validation and a dry-run payroll, with no implementation fee.",
+    "HRMagix brings people, performance and payroll into one workspace built around a single employee record, designed for Indian companies and Indian statute.\n\nTwelve modules read from that record: attendance and shifts, leaves and holidays, payroll, objectives and OKRs, KRA and 9-box, PIPs and growth, recognition, 1-on-1s, onboarding, documents, succession and analytics.\n\nAttendance flows into loss of pay, and statutory deductions (EPF, ESI, Professional Tax, LWF and TDS) are derived from the salary structure. One monthly run produces payslips, the bank file and filing-ready statutory outputs from the same set of figures.\n\nEmployees use self-service on the web and on iOS and Android. Setup typically takes two to three days, including Excel imports, policy validation and a dry-run payroll, with no implementation fee.",
   tagline: "Smart HR for modern teams.",
   category: "hr-people",
   subcategory: "hrms",
@@ -2333,7 +2333,7 @@ export const hrmagix: Product = {
   supportTopics,
   benefits: [
     { title: "Payroll without reconciliation", description: "Attendance, approved leave and overtime feed the monthly cut-off directly, so nothing is re-keyed between systems. Payslips, the bank file and statutory outputs all come from that one set of figures." },
-    { title: "Indian compliance built in", description: "EPF, ESI, multi-state Professional Tax, LWF and TDS are derived inside the run rather than calculated on the side. The run produces ECR, ESIC, PT, Form 24Q and Form 16 Part B outputs, while filing stays with the employer." },
+    { title: "Indian compliance built in", description: "EPF, ESI, multi-state Professional Tax, LWF and TDS are calculated inside the payroll run rather than on the side. The run produces ECR, ESIC, PT, Form 24Q and Form 16 Part B outputs, while filing stays with the employer." },
     { title: "Continuous performance", description: "Quarterly OKRs, KRAs, the 9-box and peer recognition replace a disconnected annual appraisal. 1-on-1s, PIPs and succession plans sit on the same employee record, so performance history stays in one place." },
     { title: "Records you can defend", description: "Records are effective-dated, original punches are retained and payroll runs are locked once closed. A past period can be shown exactly as it stood, which matters when a figure is questioned months later." },
   ],
@@ -2345,7 +2345,7 @@ export const hrmagix: Product = {
   security: [
     { title: "Indian hosting", description: "Platform data is hosted in Indian cloud data centres." },
     { title: "Encryption", description: "Data is encrypted in transit between browser or app and the platform, and at rest, including documents in the employee vault." },
-    { title: "Role-based access", description: "Access is governed by role across every module; HR and payroll roles are scoped separately." },
+    { title: "Role-based access", description: "Access is set by role across every module; HR and payroll roles have separate permissions." },
     { title: "Multi-factor authentication and SSO", description: "MFA is available, and single sign-on ships with the Enterprise plan." },
     { title: "Per-entity permissions", description: "Permissions can be separated across legal entities in multi-entity structures." },
     { title: "Audit trail", description: "Approvals, document actions and payroll runs leave a dated trail, and employee records are versioned rather than overwritten." },
@@ -2380,7 +2380,7 @@ export const hrmagix: Product = {
         price: "Custom",
         description: "For large organisations.",
         features: ["Everything in Growth", "SSO & advanced security", "Succession & lifecycle", "Dedicated success manager"],
-        cta: { label: "Contact sales", href: HOME },
+        cta: { label: "Contact sales", href: "/contact?type=sales&product=hrmagix#contact-form" },
       },
     ],
     asOf: "2026-10-08",
@@ -2388,7 +2388,7 @@ export const hrmagix: Product = {
   },
   useCases: [
     { title: "Closing the monthly payroll", description: "Attendance, leave and overtime are settled before the run, and payslips, the bank file and statutory outputs come from one set of figures." },
-    { title: "Attendance for teams on the move", description: "Geo-fenced mobile punch-in with selfie validation alongside existing biometric devices, all into one ledger." },
+    { title: "Attendance for teams on the move", description: "Geo-fenced mobile punch-in with selfie validation alongside existing biometric devices, all into one attendance record." },
     { title: "Multi-state and multi-entity employers", description: "Professional Tax, LWF, leave schemes and holiday lists follow each employee's location, with per-entity runs and consolidated reporting." },
     { title: "Performance cycles", description: "OKRs and KRAs, 1-on-1s, calibrated reviews, the 9-box and PIPs in one flow." },
     { title: "Bringing new joiners in", description: "Pre-boarding collects PAN, Aadhaar and bank documents before day one, and the appointment letter is signed digitally." },

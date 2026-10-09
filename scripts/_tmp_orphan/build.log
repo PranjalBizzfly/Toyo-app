@@ -1,0 +1,106 @@
+
+> toyoapps-web@0.1.0 build
+> next build
+
+▲ Next.js 16.4.0 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.ts took 27ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1382ms
+  Running TypeScript ...
+  Finished TypeScript in 766ms ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/841) ...
+  Generating static pages using 11 workers (210/841) 
+  Generating static pages using 11 workers (420/841) 
+  Generating static pages using 11 workers (630/841) 
+✓ Generating static pages using 11 workers (841/841) in 21.8s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /blog
+├ ○ /careers
+├ ○ /company
+├ ○ /compare
+├ ● /compare/[slug]
+├ ○ /contact
+├ ○ /industries
+├   /industries/[slug]
+│ ├ ● /industries/accounting-tax-practices
+│ ├ ● /industries/media-creative-agencies
+│ └ ● /industries/startups-and-investors
+├ ○ /integrations
+├   /integrations/[slug]
+│ ├ ● /integrations/aws-s3
+│ ├ ● /integrations/dropbox
+│ ├ ● /integrations/google-contacts
+│ └ ● [+4 more paths]
+├   /legal/[doc]
+│ ├ ● /legal/privacy
+│ ├ ● /legal/terms
+│ └ ● /legal/cookies
+├ ○ /media
+├ ○ /press-kit
+├ ○ /products
+├   /products/[product]
+│ ├ ● /products/getbenj
+│ ├ ● /products/cardizo
+│ ├ ● /products/oda7
+│ └ ● [+13 more paths]
+├   /products/[product]/[section]
+│ ├ ● /products/getbenj/solutions
+│ ├ ● /products/getbenj/industries
+│ ├ ● /products/getbenj/pricing
+│ └ ● [+71 more paths]
+├   /products/[product]/[section]/[item]
+│ ├ ● /products/getbenj/solutions/d2c-product-launch
+│ ├ ● /products/getbenj/solutions/agency-client-plans
+│ ├ ● /products/getbenj/support/getting-started
+│ └ ● [+260 more paths]
+├   /products/[product]/features
+│ ├ ● /products/getbenj/features
+│ ├ ● /products/cardizo/features
+│ ├ ● /products/oda7/features
+│ └ ● [+13 more paths]
+├   /products/[product]/features/[feature]
+│ ├ ● /products/getbenj/features/ai-buyer-persona
+│ ├ ● /products/getbenj/features/best-market-detection
+│ ├ ● /products/getbenj/features/profit-ranked-techniques
+│ └ ● [+367 more paths]
+├   /products/[product]/features/group/[group]
+│ ├ ● /products/getbenj/features/group/capabilities
+│ ├ ● /products/oda7/features/group/sales-execution
+│ ├ ● /products/oda7/features/group/omnichannel-communication
+│ └ ● [+50 more paths]
+├   /products/category/[category]
+│ ├ ● /products/category/sales-marketing
+│ ├ ● /products/category/hr-people
+│ ├ ● /products/category/operations-it
+│ └ ● [+2 more paths]
+├ ○ /publish
+├ ○ /resources
+├   /resources/[type]
+│ ├ ● /resources/blog
+│ ├ ● /resources/guides
+│ ├ ● /resources/tutorials
+│ └ ● [+3 more paths]
+├ ● /resources/[type]/[slug]
+├ ○ /robots.txt
+├ ○ /search
+├ ○ /search/index.json
+├ ○ /sitemap.xml
+├ ○ /solutions
+├   /solutions/[slug]
+│ ├ ● /solutions/run-a-well-organised-office
+│ ├ ● /solutions/manage-people-from-hire-to-growth
+│ └ ● /solutions/prepare-for-launch-and-fundraising
+├ ○ /support
+└ ○ /vendors
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+

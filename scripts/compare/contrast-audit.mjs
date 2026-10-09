@@ -14,6 +14,7 @@ const PAGES = [
   "/products/oda7/features", "/products/sibu/features/search-by-anything", "/products/oda7/features/group/sales-execution", "/products/sibu/pricing", "/products/zuzu/security",
   "/products/oda7/resources", "/products/oda7/resources/leads-workflow", "/products/oda7/solutions/for-sales-managers", "/products/zuzu/support", "/products/oda7/integrations",
 ];
+if (process.env.PAGES_FILE) PAGES.splice(0, PAGES.length, ...fs.readFileSync(process.env.PAGES_FILE, "utf8").split(/\r?\n/).filter(Boolean));
 const lum = ([r, g, b]) => { const f = (c) => { c /= 255; return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b); };
 const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
 

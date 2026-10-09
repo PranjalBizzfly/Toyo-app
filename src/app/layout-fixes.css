@@ -1,0 +1,27 @@
+/* =====================================================================
+   Layout fixes found by scripts/compare/layout-audit.mjs.
+   ===================================================================== */
+
+/* Pricing plans: one plan per row on phones (two columns left ~168px cards
+   that the price and plan name could not fit). */
+@media (max-width: 640px) {
+  html body main :is(.zs-plans, .pz-plans, .cmd-plans__row) { grid-template-columns: minmax(0, 1fr) !important; }
+}
+/* Product pricing pages lay plans out as a flex row: stack them on phones, and let
+   the card's fixed 200px inner column shrink to the card. */
+@media (max-width: 640px) {
+  html body main .pz-plans { flex-direction: column !important; }
+  html body main .pz-plans > .pz-plan { width: 100% !important; max-width: none !important; grid-template-columns: minmax(0, 1fr) !important; }
+}
+/* Long prices wrap inside their card instead of overflowing it */
+html body main :is(.zs-plans, .pz-plans) :is(strong, h2, h3) { overflow-wrap: anywhere; }
+
+/* Feature tiles in one row share the row's height */
+html body main .fz-tiles { align-items: stretch; }
+html body main .fz-tiles > * { height: 100%; }
+
+/* Small labels inside list items wrap instead of overflowing on phones */
+@media (max-width: 640px) { html body main li small { white-space: normal !important; overflow-wrap: anywhere; } }
+
+/* HRMagix card button: fit the card on phones */
+@media (max-width: 640px) { html body main .pc__btn { max-width: 100%; padding-inline: 20px; box-sizing: border-box; } }

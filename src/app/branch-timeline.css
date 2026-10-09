@@ -1,12 +1,12 @@
 /* Branching timeline — see BranchTimeline.tsx. Brand gradient: Toyo blue → green. */
-.bt { --bt-a: var(--primary, #0f7bbe); --bt-b: #5fa32a; --bt-w: 2px; padding-block: clamp(72px, 9vw, 130px); background: var(--surface); }
+.bt { --bt-a: var(--primary, #0f7bbe); --bt-b: #5fa32a; --bt-w: 2px; padding-block: var(--sec-y-lg); background: var(--surface); }
 :root[data-theme="dark"] .bt { --bt-a: #3aaef0; --bt-b: #8fd05a; background: #08131f; }
 .bt__title { text-align: center; font-family: var(--font-display); font-size: clamp(2.2rem, 1.3rem + 3vw, 3.75rem); font-weight: 700; line-height: 1.08; letter-spacing: -0.03em; color: var(--heading); }
 .bt__accent { background: linear-gradient(90deg, var(--bt-a), var(--bt-b)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .bt__list { position: relative; display: grid; grid-template-columns: 1fr 1fr; margin: clamp(48px, 6vw, 80px) auto 0; max-width: 1180px; list-style: none; padding: 0; }
 .bt__spine { position: absolute; left: 50%; top: 0; bottom: 48px; width: var(--bt-w); margin-left: calc(var(--bt-w) / -2); background: linear-gradient(180deg, color-mix(in srgb, var(--bt-a) 30%, transparent), var(--bt-a) 20%, var(--bt-b) 80%, var(--bt-a)); }
-.bt__item { position: relative; grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(48px, 7vw, 110px); padding-bottom: 130px; }
-.bt__item + .bt__item { margin-top: -40px; }
+.bt__item { position: relative; grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(48px, 7vw, 110px); padding-bottom: 80px; }
+.bt__item + .bt__item { margin-top: -24px; }
 .bt__card { position: relative; z-index: 1; padding: clamp(28px, 3vw, 44px); background: var(--surface); box-shadow: 0 30px 80px -30px rgb(15 34 53 / .22), 0 0 0 1px rgb(15 34 53 / .04); transition: transform var(--dur-hover) ease, box-shadow var(--dur-hover) ease; }
 :root[data-theme="dark"] .bt__card { background: #0f1f31; box-shadow: 0 30px 80px -30px rgb(0 0 0 / .7), 0 0 0 1px #1e3550; }
 .bt__card:hover { transform: translateY(-4px); box-shadow: 0 40px 90px -30px rgb(15 34 53 / .3), 0 0 0 1px color-mix(in srgb, var(--bt-a) 30%, transparent); }

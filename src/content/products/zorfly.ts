@@ -9,7 +9,7 @@ export const zorfly: Product = {
   shortDescription:
     "Five-minute daily communication and grammar training for teams, with AI feedback and team analytics.",
   longDescription:
-    "Zorfly is AI-powered internal training and assessment for communication, grammar and brand quality. Each person completes one short mission a day, a few questions on a single concept such as softening hard requests, sized to fit into about five minutes.\n\nThe content is a canonical curriculum of around 250 curated questions across eight grammar domains, starting with a baseline diagnostic at onboarding. When a learner gets something wrong, an AI explanation generated with Anthropic Claude explains why, alongside personalised recommendations.\n\nLearners level up by earning XP, keeping a daily streak and unlocking badges while their weakness profile shrinks. On the Hive Pro plan, managers get team analytics across departments, weakness reports, monthly domain evaluations and per-role question variations.\n\nThe Solo Bee plan is free forever, Hive Pro is priced per seat with a 7-day trial, and Queen Bee adds volume pricing, SSO / SAML on request and a custom DPA for larger organisations.",
+    "Zorfly is AI-based in-house training and testing for communication, grammar and brand quality. Each person completes one short mission a day, a few questions on a single concept such as softening hard requests, sized to fit into about five minutes.\n\nThe content is a fixed core curriculum of around 250 selected questions across eight grammar areas (domains), starting with a short test of each learner's starting level (a baseline diagnostic) when they join. When a learner gets something wrong, an AI explanation generated with Anthropic Claude explains why, alongside personalised recommendations.\n\nLearners level up by earning XP, keeping a daily streak and unlocking badges while their weakness profile shrinks. On the Hive Pro plan, managers get team analytics across departments, weakness reports, monthly domain evaluations and per-role question variations.\n\nThe Solo Bee plan is free forever, Hive Pro is priced per seat with a 7-day trial, and Queen Bee adds volume pricing, SSO / SAML (single sign-on) on request and a custom DPA (data processing agreement) for larger organisations.",
   tagline: "Five minutes a day. Sharper comms forever.",
   category: "hr-people",
   subcategory: "learning-development",
@@ -32,10 +32,10 @@ export const zorfly: Product = {
     {
       slug: "five-minute-lessons",
       name: "Five-minute daily missions",
-      summary: "Bite-sized concepts you can finish in a coffee break — one short mission a day.",
+      summary: "Bite-sized concepts you can finish in a coffee break: one short mission a day.",
       category: "your-daily-buzz",
       body: [
-        "Zorfly is built around one short mission a day. Each mission covers a single communication concept and is sized to fit into a coffee break, so training happens in the flow of the workday rather than in a classroom.",
+        "Zorfly is built around one short mission a day. Each mission covers a single communication concept and is sized to fit into a coffee break, so training fits into the workday rather than taking place in a classroom.",
         "Missions feed the learner's progress: completing them earns XP and keeps the daily streak going.",
       ],
       howItWorks: [
@@ -85,7 +85,7 @@ export const zorfly: Product = {
     {
       slug: "weakness-reports",
       name: "Weakness reports",
-      summary: "Find the patterns behind recurring mistakes so they can be fixed deliberately, rather than correcting the same slip-ups one at a time.",
+      summary: "Find the patterns behind recurring mistakes so they can be fixed on purpose, rather than correcting the same slip-ups one at a time.",
       category: "your-daily-buzz",
       highlight: true,
       hasPage: true,
@@ -95,10 +95,10 @@ export const zorfly: Product = {
       ],
       problem: "Correcting individual errors as they happen doesn't show which grammar or communication habits keep causing them.",
       capabilities: [
-        "Surfaces the patterns behind a learner's recurring mistakes.",
+        "Shows the patterns behind a learner's recurring mistakes.",
         "Maintains a weakness profile that shrinks as training progresses.",
         "Starts from the baseline diagnostic taken at onboarding.",
-        "Comes bundled with team analytics on Hive Pro.",
+        "Included with team analytics on Hive Pro.",
       ],
       audience: ["People managers", "L&D owners", "Teams"],
       relatedFeatures: ["team-analytics", "onboarding-baseline-diagnostic", "ai-coaching"],
@@ -111,7 +111,7 @@ export const zorfly: Product = {
       category: "your-daily-buzz",
       body: [
         "Team analytics give managers organisation-wide trends across departments, so they can see what each team needs to work on next.",
-        "They come with weakness reports, which surface the patterns behind recurring mistakes so they can be fixed deliberately. Both are part of the Hive Pro plan.",
+        "They come with weakness reports, which show the patterns behind recurring mistakes so they can be fixed on purpose. Both are part of the Hive Pro plan.",
       ],
       capabilities: [
         "Trends across the whole organisation",
@@ -136,7 +136,7 @@ export const zorfly: Product = {
       category: "level-up",
       body: [
         "Each learner has a dashboard that shows how their training is going: the current daily streak, total XP, badges unlocked and their level, next to today's mission.",
-        "Zorfly frames this as levelling up — earning XP and badges while the learner's weakness profile shrinks session by session.",
+        "Zorfly frames this as levelling up: earning XP and badges while the learner's weakness profile shrinks session by session.",
       ],
       capabilities: [
         "Current daily streak",
@@ -152,15 +152,15 @@ export const zorfly: Product = {
     {
       slug: "eight-grammar-domains",
       name: "Curriculum and assessments",
-      summary: "A canonical curriculum of around 250 curated questions across eight grammar domains.",
+      summary: "A fixed core curriculum of around 250 selected questions across eight grammar domains.",
       category: "level-up",
       body: [
-        "Zorfly's content is a canonical curriculum of around 250 curated questions spread across eight grammar domains. The full curriculum is included on the free Solo Bee plan.",
+        "Zorfly's content is a fixed core curriculum of around 250 selected questions spread across eight grammar domains. The full curriculum is included on the free Solo Bee plan.",
         "Learners start with a baseline diagnostic at onboarding, and teams on Hive Pro add monthly evaluations by domain and question variations tailored to each role.",
       ],
       capabilities: [
         "Eight grammar domains",
-        "Around 250 curated questions",
+        "Around 250 selected questions",
         "Onboarding baseline diagnostic",
         "Monthly domain evaluations (Hive Pro)",
         "Per-role question variations (Hive Pro)",
@@ -170,7 +170,7 @@ export const zorfly: Product = {
       hasPage: true,
     },
     { slug: "onboarding-baseline-diagnostic", name: "Onboarding baseline diagnostic", summary: "A diagnostic taken when a learner joins establishes their starting point across the grammar domains; it is included on the free Solo Bee plan.", category: "level-up" },
-    { slug: "personalized-recommendations", name: "Personalized recommendations", summary: "AI-powered recommendations delivered alongside wrong-answer explanations, pointing each learner to what to work on next; included on every plan.", category: "level-up" },
+    { slug: "personalized-recommendations", name: "Personalized recommendations", summary: "AI recommendations delivered alongside wrong-answer explanations, pointing each learner to what to work on next; included on every plan.", category: "level-up" },
     { slug: "monthly-domain-evaluations", name: "Monthly domain evaluations", summary: "A monthly evaluation for each grammar domain lets teams on Hive Pro measure progress over time rather than mission by mission.", category: "for-teams" },
     { slug: "per-role-question-variations", name: "Per-role question variations", summary: "On Hive Pro, questions are varied by role, so different roles in a team practise with versions suited to their work.", category: "for-teams" },
     { slug: "owner-admin-and-member-roles", name: "Owner, admin and member roles", summary: "Hive Pro workspaces separate owners, admins and members; Queen Bee adds SSO / SAML on request for larger organisations.", category: "for-teams" },
@@ -180,7 +180,7 @@ export const zorfly: Product = {
     { title: "AI processing disclosed", description: "AI feedback is generated with Anthropic Claude; learner answers are sent to Anthropic for processing under Anthropic's data-processing terms." },
     { title: "No sale of personal data", description: "Zorfly states that it does not sell personal data." },
     { title: "Role-based workspace access", description: "Hive Pro workspaces have owner, admin and member roles, so not every member has administrative control." },
-    { title: "Enterprise options on request", description: "The Queen Bee plan lists SSO / SAML on request and a custom DPA / security review for procurement-heavy buyers." },
+    { title: "Enterprise options on request", description: "The Queen Bee plan lists SSO / SAML on request and a custom DPA (data processing agreement) / security review for buyers with formal purchasing processes." },
     { title: "Policies still being finalised", description: "Zorfly's privacy policy and terms (last updated 30 May 2026) state they are being finalised; for pilot customers, the signed pilot agreement governs." },
   ],
   pricing: {
@@ -193,7 +193,7 @@ export const zorfly: Product = {
     plans: [
       { name: "Solo Bee", price: "$0", description: "Free forever, for curious learners who want to try a few sessions. Includes the full curriculum and AI explanations, but not team analytics.", features: ["Full curriculum (8 domains)", "Baseline diagnostic", "AI explanations", "XP, streaks, badges", "Personalized recommendations"], cta: { label: "Start free", href: `${Z}/signup` } },
       { name: "Hive Pro", price: "$9.99", period: "seat / month", description: "Per seat, for teams who care about lasting communication quality. Adds manager analytics, monthly evaluations and workspace roles; starts with a 7-day trial.", features: ["Everything in Solo Bee", "Team analytics + weakness reports", "Monthly domain evaluations", "Per-role question variations", "Up to 500 AI calls per seat per month", "Owner / admin / member roles"], cta: { label: "Start 7-day trial", href: `${Z}/signup` }, recommended: true },
-      { name: "Queen Bee", price: "Custom", description: "Custom pricing for larger organisations and procurement-heavy buyers, adding volume seats, security review and SSO on request.", features: ["Everything in Hive Pro", "Volume seat pricing", "Higher AI quotas", "SSO / SAML on request", "Priority support", "Custom DPA / security review"], cta: { label: "Contact sales", href: `${Z}/pricing` } },
+      { name: "Queen Bee", price: "Custom", description: "Custom pricing for larger organisations and buyers with formal purchasing processes, adding volume seats, security review and SSO on request.", features: ["Everything in Hive Pro", "Volume seat pricing", "Higher AI quotas", "SSO / SAML on request", "Priority support", "Custom DPA / security review"], cta: { label: "Contact sales", href: "/contact?type=sales&product=zorfly#contact-form" } },
     ],
   },
   useCases: [
@@ -211,12 +211,12 @@ export const zorfly: Product = {
   howItWorks: [
     { title: "Start your hive", description: "Sign up with your company name, name, work email and password, then select \"Create my organization\"." },
     { title: "Invite your team", description: "Bring team members into the workspace. On Hive Pro, owner, admin and member roles separate who manages the hive." },
-    { title: "Take the baseline diagnostic", description: "Each learner starts with an onboarding diagnostic that establishes their weak areas across the eight grammar domains." },
+    { title: "Take the baseline diagnostic", description: "Each learner starts with an onboarding diagnostic that shows their weak areas across the eight grammar domains." },
     { title: "Complete one mission a day", description: "Answer a short set of questions, read the AI explanation for anything missed, and earn XP and streak credit." },
     { title: "Review progress", description: "Learners watch their weakness profile shrink, and managers on Hive Pro use team analytics, weakness reports and monthly domain evaluations." },
   ],
   faqs: [
-    { question: "What does the curriculum cover?", answer: "A canonical curriculum of around 250 curated questions across eight grammar domains. The full curriculum is included on the free Solo Bee plan." },
+    { question: "What does the curriculum cover?", answer: "A fixed core curriculum of around 250 selected questions across eight grammar domains. The full curriculum is included on the free Solo Bee plan." },
     { question: "Is there a free plan?", answer: "Yes. Solo Bee is free forever and includes the full curriculum, the baseline diagnostic, AI explanations, XP, streaks, badges and personalised recommendations. Team features are on Hive Pro." },
     { question: "How much does Hive Pro cost?", answer: "$9.99 per seat per month, starting with a 7-day trial. It adds team analytics, weakness reports, monthly domain evaluations, per-role question variations, up to 500 AI calls per seat per month, and owner, admin and member roles." },
     { question: "Is the pricing final?", answer: "No. Zorfly states that final pricing is still being confirmed, and invites teams to email billing@zorfly.com to lock a price for a pilot." },

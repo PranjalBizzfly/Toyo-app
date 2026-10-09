@@ -119,7 +119,7 @@ function productPool(p: Product): QA[] {
     conns.length > 0 && qa(`Does ${p.name} work with other ToyoApps products?`, conns.map((c) => `With ${c.product.name}: ${end(lower(c.description))}`).join(" ")),
     p.benefits?.length && qa(`Why do teams choose ${p.name}?`, p.benefits.slice(0, 4).map((b) => `${b.title}: ${end(lower(b.description))}`).join(" ")),
     p.useCases?.length && qa(`What are common ways to use ${p.name}?`, p.useCases.slice(0, 4).map((u) => `${u.title}: ${end(lower(u.description))}`).join(" ")),
-    category && qa(`Which ToyoApps category is ${p.name} in?`, `${p.name} is listed under ${category.name} — ${lower(end(category.tagline))} You can compare it with the other ${category.name} products in that category.`),
+    category && qa(`Which ToyoApps category is ${p.name} in?`, `${p.name} is listed under ${category.name}: ${lower(end(category.tagline))} You can compare it with the other ${category.name} products in that category.`),
     qa(`Where do I sign up for ${p.name}?`, `${p.name} runs on its own website, ${host(p)}. ToyoApps describes the product and links you there to sign up, start a plan or contact its team.`),
     ...feats.slice(0, 10).map((f) => qa(`What does ${f.name} do in ${p.name}?`, `${end(f.summary)}${f.capabilities?.length ? ` It includes ${join(f.capabilities.slice(0, 3).map(lower))}.` : ""}`)),
   ];
@@ -140,7 +140,7 @@ function featurePool(p: Product, f: Feature): QA[] {
     f.problem && qa(`What problem does ${f.name} solve?`, `${end(f.problem)} ${f.name} addresses it: ${lower(end(f.summary))}`),
     f.howItWorks?.length && qa(`How does ${f.name} work?`, numbered(f.howItWorks)),
     f.capabilities?.length && qa(`What can you do with ${f.name}?`, `${f.name} includes: ${join(f.capabilities.slice(0, 6).map((c) => lower(clean(c))))}.`),
-    f.audience?.length && qa(`Who uses ${f.name}?`, `${f.name} is used by ${join(f.audience)} — ${lower(end(f.summary))}`),
+    f.audience?.length && qa(`Who uses ${f.name}?`, `${f.name} is used by ${join(f.audience)}: ${lower(end(f.summary))}`),
     f.benefits?.length && qa(`What are the benefits of ${f.name}?`, f.benefits.slice(0, 4).map(end).join(" ")),
     f.useCases?.length && qa(`When would a team use ${f.name}?`, f.useCases.slice(0, 3).map((u) => `${u.title}: ${end(lower(u.description))}`).join(" ")),
     f.body?.[1] && qa(`What else should I know about how ${f.name} behaves?`, `${end(f.body[1])} ${f.body[2] ? end(f.body[2]) : ""}`),
@@ -370,7 +370,7 @@ export function getComparisonFaqs(slug: string): Faq[] {
     c.faqs,
     [
       qa(`What does this comparison cover?`, `${end(c.summary)} It compares ${join(c.subjects)} on ${c.rows.length} criteria.`),
-      ...c.rows.map((r) => qa(`How do ${join(c.subjects)} compare on ${lower(r.criterion)}?`, c.subjects.map((s, i) => `${s}: ${end(r.values[i] ?? "—")}`).join(" "))),
+      ...c.rows.map((r) => qa(`How do ${join(c.subjects)} compare on ${lower(r.criterion)}?`, c.subjects.map((s, i) => `${s}: ${end(r.values[i] ?? "not stated")}`).join(" "))),
       ...(c.body ?? []).slice(0, 2).map((b, i) => qa(i ? `What else should I weigh between ${join(c.subjects)}?` : `How should I read this comparison?`, end(b))),
     ],
     siteHubPool(),
@@ -391,7 +391,7 @@ function siteHubPool(): QA[] {
     qa(`Can I sell my own software on ${site.name}?`, `Yes. Software makers can list and sell on ${site.name}: ${numbered(publisherSteps.map((s) => `${s.title}: ${s.description}`))}`),
     qa(`How do I find the right product?`, `Browse by business area, start from the problem on the solutions pages, look at software matched to your industry, or use search, which covers products, features, solutions, integrations and FAQs.`),
     qa(`How are product details verified?`, `Product information is written from each product's own public pages and dated when last checked. Features, prices and integrations are only listed when the product's official source states them.`),
-    qa(`How do I contact ${site.name}?`, `Use the contact page and pick the topic closest to yours — choosing software, buying for your team, or publishing your own product — so the right person replies.`),
+    qa(`How do I contact ${site.name}?`, `Use the contact page and pick the topic closest to yours (choosing software, buying for your team, or publishing your own product), so the right person replies.`),
   ];
 }
 
@@ -450,7 +450,7 @@ export function getSiteFaqs(page: SitePage, own?: Faq[]): Faq[] {
     vendors: [qa(`What are the steps to becoming a vendor?`, numbered(publisherSteps.map((s) => `${s.title}: ${s.description}`)))],
     contact: [qa(`Which topics can I contact ${site.name} about?`, `The contact page covers choosing software, buying for your team and publishing your own product. Each product also has its own support page and official site.`)],
     support: products.slice(0, 8).map((p) => qa(`Where do I get support for ${p.name}?`, `${p.name} has a support page on ${site.name} with setup guidance and answers${p.supportUrl ? `, and its own help centre at ${p.supportUrl}` : `, and its official site is ${host(p)}`}.`)),
-    media: [qa(`What is listed on the media page?`, `The products currently in the ToyoApps catalog — ${products.length} in all across ${cats.length} business areas — each linking to its product page.`)],
+    media: [qa(`What is listed on the media page?`, `The products currently in the ToyoApps catalog: ${products.length} in all across ${cats.length} business areas, each linking to its product page.`)],
     "press-kit": [qa(`What brand colours does ${site.name} use?`, brandPalette.map((c) => `${c.name} ${c.hex} (${lower(c.use)})`).join(", ") + ".")],
     blog: res.filter((r) => r.type === "blog").slice(0, 6).map((r) => qa(`What is "${r.name}" about?`, end(r.summary))),
     search: [qa(`What can I search for on ${site.name}?`, `Search covers ${products.length} products, their features, solutions, industries, integrations, resources and answered questions. Type a product name, a task like "payroll" or a tool you already use.`)],

@@ -10,7 +10,7 @@ import { toCatalogItem } from "./category/catalog-item";
 
 export const metadata = buildMetadata({
   title: "All products",
-  description: "Browse every ToyoApps product by category — search by task, capability or business function.",
+  description: "Browse every ToyoApps product by category, or search by task, capability or business function.",
   path: routes.products(),
 });
 

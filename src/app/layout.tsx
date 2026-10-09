@@ -16,11 +16,18 @@ import "./motion.css";
 import "./title-case.css";
 import "./contrast-fixes.css";
 import "./contrast-fixes-2.css";
+import "./contrast-fixes-3.css";
+import "./layout-fixes.css";
+import "./text-structure.css";
 import "./story-inner.css";
 import "./mocks.css";
 import "./branch-timeline.css";
 import "./polish.css";
 import "./headings.css";
+import "./contrast.css";
+import "./pattern-cards.css";
+import "./balanced-grids.css";
+import "./grid-balance.css";
 
 // Same typefaces as the original toyoapps.com: Inter for text, Space Grotesk for the wordmark and headings.
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -28,7 +35,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", 
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: `${site.name} — Business software, one ecosystem`, template: `%s | ${site.name}` },
+  title: { default: `${site.name}: Business software, one ecosystem`, template: `%s | ${site.name}` },
   description: site.description,
   applicationName: site.name,
   openGraph: { siteName: site.name, type: "website", locale: "en_US" },
