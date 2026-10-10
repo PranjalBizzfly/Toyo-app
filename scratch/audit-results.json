@@ -1,0 +1,1445 @@
+[
+  {
+    "path": "/about-toyoapps",
+    "pageTitle": "About ToyoApps | ToyoApps",
+    "images": []
+  },
+  {
+    "path": "/become-a-toyoapps-vendor",
+    "pageTitle": "Become a ToyoApps Vendor | ToyoApps",
+    "images": [
+      {
+        "src": "/images/company/vendors-hero.webp",
+        "currentSrc": "http://localhost:3000/images/company/vendors-hero.webp",
+        "alt": "Indian SaaS founders onboarding their software product onto the ToyoApps marketplace",
+        "naturalWidth": 1200,
+        "naturalHeight": 420,
+        "visible": true,
+        "heading": "Become A Vendor On The ToyoApps Marketplace",
+        "context": "FOR VENDORS",
+        "className": "image-slot co-hero__art"
+      }
+    ]
+  },
+  {
+    "path": "/publish-and-sell-your-saas",
+    "pageTitle": "Publish and Sell Your SaaS | ToyoApps",
+    "images": [
+      {
+        "src": "/images/company/publish-hero.webp",
+        "currentSrc": "http://localhost:3000/images/company/publish-hero.webp",
+        "alt": "Indian SaaS founder smiling in modern office after publishing software product",
+        "naturalWidth": 1200,
+        "naturalHeight": 420,
+        "visible": true,
+        "heading": "Launch Your SaaS Where Businesses Look For Software",
+        "context": "FOR SOFTWARE MAKERS",
+        "className": "image-slot co-hero__art"
+      },
+      {
+        "src": "/images/company/publish-steps.webp",
+        "currentSrc": "http://localhost:3000/images/company/publish-steps.webp",
+        "alt": "Indian software partners shaking hands to finalize SaaS marketplace publishing agreement",
+        "naturalWidth": 1200,
+        "naturalHeight": 360,
+        "visible": true,
+        "heading": "From Listing To Growth",
+        "context": "HOW IT WORKS",
+        "className": "image-slot co-band__art"
+      }
+    ]
+  },
+  {
+    "path": "/support",
+    "pageTitle": "Support | ToyoApps",
+    "images": [
+      {
+        "src": "/images/company/support-hero.webp",
+        "currentSrc": "http://localhost:3000/images/company/support-hero.webp",
+        "alt": "Indian technical support specialist with headset smiling warmly at enterprise customer service desk",
+        "naturalWidth": 840,
+        "naturalHeight": 320,
+        "visible": true,
+        "heading": "How Can We Help?",
+        "context": "Each ToyoApps product has its own support page with setup guidance and answers to common questions. ",
+        "className": "image-slot co-hero__art"
+      }
+    ]
+  },
+  {
+    "path": "/blog",
+    "pageTitle": "Blog | ToyoApps",
+    "images": [
+      {
+        "src": "/images/company/blog-hero.webp",
+        "currentSrc": "http://localhost:3000/images/company/blog-hero.webp",
+        "alt": "Indian technical writers collaborating on software documentation and guides in a sunlit tech office",
+        "naturalWidth": 1200,
+        "naturalHeight": 420,
+        "visible": true,
+        "heading": "The ToyoApps Blog",
+        "context": "BLOG",
+        "className": "image-slot co-hero__art"
+      }
+    ]
+  },
+  {
+    "path": "/careers",
+    "pageTitle": "Careers | ToyoApps",
+    "images": [
+      {
+        "src": "/images/company/careers-hero.webp",
+        "currentSrc": "http://localhost:3000/images/company/careers-hero.webp",
+        "alt": "Enthusiastic Indian technology team collaborating happily in a modern corporate lounge",
+        "naturalWidth": 1200,
+        "naturalHeight": 420,
+        "visible": true,
+        "heading": "Help Build One Home For Business Software",
+        "context": "CAREERS",
+        "className": "image-slot co-hero__art"
+      }
+    ]
+  },
+  {
+    "path": "/media-and-news",
+    "pageTitle": "Media and News | ToyoApps",
+    "images": [
+      {
+        "src": "/images/company/media-hero.webp",
+        "currentSrc": "http://localhost:3000/images/company/media-hero.webp",
+        "alt": "Corporate communications director reviewing press releases and news updates on digital tablet",
+        "naturalWidth": 1200,
+        "naturalHeight": 420,
+        "visible": true,
+        "heading": "ToyoApps News And Media Resources",
+        "context": "MEDIA",
+        "className": "image-slot co-hero__art"
+      }
+    ]
+  },
+  {
+    "path": "/press-kit",
+    "pageTitle": "Press Kit | ToyoApps",
+    "images": [
+      {
+        "src": "/images/company/press-kit-hero.webp",
+        "currentSrc": "http://localhost:3000/images/company/press-kit-hero.webp",
+        "alt": "Brand identity designer reviewing color palettes, logo geometry, and typography specifications",
+        "naturalWidth": 1200,
+        "naturalHeight": 420,
+        "visible": true,
+        "heading": "ToyoApps Press Kit",
+        "context": "PRESS KIT",
+        "className": "image-slot co-hero__art"
+      },
+      {
+        "src": "/icon.svg",
+        "currentSrc": "http://localhost:3000/icon.svg",
+        "alt": "Toyo Apps app icon",
+        "naturalWidth": 136,
+        "naturalHeight": 150,
+        "visible": true,
+        "heading": "Official Logo Assets",
+        "context": "LOGO",
+        "className": ""
+      }
+    ]
+  },
+  {
+    "path": "/products",
+    "pageTitle": "All Products | ToyoApps",
+    "images": [
+      {
+        "src": "/images/catalog/products-hero.webp",
+        "currentSrc": "http://localhost:3000/images/catalog/products-hero.webp",
+        "alt": "Cross-functional technology team collaborating on software products in modern innovation hub",
+        "naturalWidth": 960,
+        "naturalHeight": 360,
+        "visible": true,
+        "heading": "All The Software You Need To Run Your Business",
+        "context": "",
+        "className": "image-slot zc-hero__art"
+      }
+    ]
+  },
+  {
+    "path": "/compare-products",
+    "pageTitle": "Compare Products | ToyoApps",
+    "images": [
+      {
+        "src": "/images/catalog/compare-hero.webp",
+        "currentSrc": "http://localhost:3000/images/catalog/compare-hero.webp",
+        "alt": "Two business executives comparing software metrics and feature analytics side by side",
+        "naturalWidth": 840,
+        "naturalHeight": 370,
+        "visible": true,
+        "heading": "Which ToyoApps Product Is Right For You?",
+        "context": "Got A Business Need?",
+        "className": "image-slot zc-intro__art"
+      }
+    ]
+  },
+  {
+    "path": "/products/category/sales-marketing",
+    "pageTitle": "Sales & Marketing | ToyoApps",
+    "images": [
+      {
+        "src": "/images/categories/sales-marketing.webp",
+        "currentSrc": "http://localhost:3000/images/categories/sales-marketing.webp",
+        "alt": "Sales & Marketing enterprise software solutions and team workflows",
+        "naturalWidth": 960,
+        "naturalHeight": 360,
+        "visible": true,
+        "heading": "Sales & Marketing",
+        "context": "Software for the teams that find customers and grow the brand. Cardizo turns scanned business cards ",
+        "className": "image-slot zc-hero__art"
+      }
+    ]
+  },
+  {
+    "path": "/products/category/operations-it",
+    "pageTitle": "Operations & IT | ToyoApps",
+    "images": [
+      {
+        "src": "/images/categories/operations-it.webp",
+        "currentSrc": "http://localhost:3000/images/categories/operations-it.webp",
+        "alt": "Operations & IT enterprise software solutions and team workflows",
+        "naturalWidth": 960,
+        "naturalHeight": 360,
+        "visible": true,
+        "heading": "Operations & IT",
+        "context": "Software for office admins, operations managers and IT teams. ZapBuzzer routes pantry, print, IT and",
+        "className": "image-slot zc-hero__art"
+      }
+    ]
+  },
+  {
+    "path": "/products/category/hr-people",
+    "pageTitle": "HR & People | ToyoApps",
+    "images": [
+      {
+        "src": "/images/categories/hr-people.webp",
+        "currentSrc": "http://localhost:3000/images/categories/hr-people.webp",
+        "alt": "HR & People enterprise software solutions and team workflows",
+        "naturalWidth": 960,
+        "naturalHeight": 360,
+        "visible": true,
+        "heading": "HR & People",
+        "context": "Software for HR teams and people managers. HRMagix covers attendance, leave, payroll with Indian sta",
+        "className": "image-slot zc-hero__art"
+      }
+    ]
+  },
+  {
+    "path": "/products/category/finance-compliance",
+    "pageTitle": "Finance & Compliance | ToyoApps",
+    "images": [
+      {
+        "src": "/images/categories/finance-compliance.webp",
+        "currentSrc": "http://localhost:3000/images/categories/finance-compliance.webp",
+        "alt": "Finance & Compliance enterprise software solutions and team workflows",
+        "naturalWidth": 960,
+        "naturalHeight": 360,
+        "visible": true,
+        "heading": "Finance & Compliance",
+        "context": "Software for accounting practices that carry statutory obligations for many clients. TrackySuite, bu",
+        "className": "image-slot zc-hero__art"
+      }
+    ]
+  },
+  {
+    "path": "/products/category/insights-research",
+    "pageTitle": "Insights & Research | ToyoApps",
+    "images": [
+      {
+        "src": "/images/categories/insights-research.webp",
+        "currentSrc": "http://localhost:3000/images/categories/insights-research.webp",
+        "alt": "Insights & Research enterprise software solutions and team workflows",
+        "naturalWidth": 1920,
+        "naturalHeight": 720,
+        "visible": true,
+        "heading": "Insights & Research",
+        "context": "Software that turns raw information into reports you can act on. Sizoru sizes TAM, SAM and SOM top-d",
+        "className": "image-slot zc-hero__art"
+      }
+    ]
+  },
+  {
+    "path": "/solutions",
+    "pageTitle": "Solutions | ToyoApps",
+    "images": [
+      {
+        "src": "/images/solutions/run-a-well-organised-office.webp",
+        "currentSrc": "",
+        "alt": "Run a well-organised office cross-functional solution overview",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Solutions",
+        "context": "Pick the problem closest to yours to see the approach, what each product contributes, and answers to",
+        "className": "image-slot"
+      },
+      {
+        "src": "/images/solutions/manage-your-people-from-hire-to-growth.webp",
+        "currentSrc": "",
+        "alt": "Manage your people from hire to growth cross-functional solution overview",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Solutions",
+        "context": "Pick the problem closest to yours to see the approach, what each product contributes, and answers to",
+        "className": "image-slot"
+      },
+      {
+        "src": "/images/solutions/prepare-for-launch-and-fundraising.webp",
+        "currentSrc": "",
+        "alt": "Prepare for launch and fundraising cross-functional solution overview",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Solutions",
+        "context": "Pick the problem closest to yours to see the approach, what each product contributes, and answers to",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/solutions/manage-your-people-from-hire-to-growth",
+    "pageTitle": "Manage your people from hire to growth | ToyoApps",
+    "images": [
+      {
+        "src": "/images/pool/p7.webp",
+        "currentSrc": "http://localhost:3000/images/pool/p7.webp",
+        "alt": "Manage your people from hire to growth enterprise solution workflow",
+        "naturalWidth": 1600,
+        "naturalHeight": 900,
+        "visible": true,
+        "heading": "",
+        "context": "",
+        "className": "image-slot"
+      },
+      {
+        "src": "/images/products/hrmagix/card.webp",
+        "currentSrc": "http://localhost:3000/images/products/hrmagix/card.webp",
+        "alt": "HRMagix: Smart HR for modern teams.",
+        "naturalWidth": 640,
+        "naturalHeight": 360,
+        "visible": true,
+        "heading": "The Products Behind It",
+        "context": "Each ToyoApps Product Below Covers One Part Of The Job.",
+        "className": "image-slot"
+      },
+      {
+        "src": "/images/products/zuzu/card.webp",
+        "currentSrc": "http://localhost:3000/images/products/zuzu/card.webp",
+        "alt": "ZUZU: Know how the workday actually went.",
+        "naturalWidth": 640,
+        "naturalHeight": 360,
+        "visible": true,
+        "heading": "The Products Behind It",
+        "context": "Each ToyoApps Product Below Covers One Part Of The Job.",
+        "className": "image-slot"
+      },
+      {
+        "src": "/images/products/zorfly/card.webp",
+        "currentSrc": "http://localhost:3000/images/products/zorfly/card.webp",
+        "alt": "Zorfly: Five minutes a day. Sharper comms forever.",
+        "naturalWidth": 640,
+        "naturalHeight": 360,
+        "visible": true,
+        "heading": "The Products Behind It",
+        "context": "Each ToyoApps Product Below Covers One Part Of The Job.",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/solutions/prepare-for-launch-and-fundraising",
+    "pageTitle": "Prepare for launch and fundraising | ToyoApps",
+    "images": [
+      {
+        "src": "/images/pool/p6.webp",
+        "currentSrc": "http://localhost:3000/images/pool/p6.webp",
+        "alt": "Prepare for launch and fundraising enterprise solution workflow",
+        "naturalWidth": 1600,
+        "naturalHeight": 900,
+        "visible": true,
+        "heading": "",
+        "context": "",
+        "className": "image-slot"
+      },
+      {
+        "src": "/images/products/sizoru/card.webp",
+        "currentSrc": "http://localhost:3000/images/products/sizoru/card.webp",
+        "alt": "Sizoru: A defensible TAM, in three minutes, not three weeks.",
+        "naturalWidth": 640,
+        "naturalHeight": 360,
+        "visible": true,
+        "heading": "The Products Behind It",
+        "context": "Each ToyoApps Product Below Covers One Part Of The Job.",
+        "className": "image-slot"
+      },
+      {
+        "src": "/images/products/benj/card.webp",
+        "currentSrc": "http://localhost:3000/images/products/benj/card.webp",
+        "alt": "Benj: One product in. A complete plan out.",
+        "naturalWidth": 640,
+        "naturalHeight": 360,
+        "visible": true,
+        "heading": "The Products Behind It",
+        "context": "Each ToyoApps Product Below Covers One Part Of The Job.",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/industries",
+    "pageTitle": "Industries | ToyoApps",
+    "images": []
+  },
+  {
+    "path": "/industries/accounting-tax-practices",
+    "pageTitle": "Accounting & tax practices | ToyoApps",
+    "images": []
+  },
+  {
+    "path": "/industries/media-creative-agencies",
+    "pageTitle": "Media, creative & agencies | ToyoApps",
+    "images": []
+  },
+  {
+    "path": "/industries/startups-and-investors",
+    "pageTitle": "Startups & investors | ToyoApps",
+    "images": []
+  },
+  {
+    "path": "/integrations",
+    "pageTitle": "Integrations | ToyoApps",
+    "images": []
+  },
+  {
+    "path": "/integrations/google-workspace",
+    "pageTitle": "Google Workspace | ToyoApps",
+    "images": []
+  },
+  {
+    "path": "/integrations/whatsapp",
+    "pageTitle": "WhatsApp | ToyoApps",
+    "images": []
+  },
+  {
+    "path": "/integrations/google-contacts",
+    "pageTitle": "Google Contacts | ToyoApps",
+    "images": []
+  },
+  {
+    "path": "/integrations/google-drive",
+    "pageTitle": "Google Drive | ToyoApps",
+    "images": []
+  },
+  {
+    "path": "/products/hrmagix",
+    "pageTitle": "HRMagix | Running HR and Indian statutory payroll from one employee record | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/hrmagix/hero-b.webp",
+        "currentSrc": "http://localhost:3000/images/products/hrmagix/hero-b.webp",
+        "alt": "",
+        "naturalWidth": 900,
+        "naturalHeight": 1100,
+        "visible": true,
+        "heading": "Smart HR For Modern Teams.",
+        "context": "H\nHRMagix",
+        "className": ""
+      },
+      {
+        "src": "/images/products/hrmagix/hero-a.webp",
+        "currentSrc": "http://localhost:3000/images/products/hrmagix/hero-a.webp",
+        "alt": "",
+        "naturalWidth": 900,
+        "naturalHeight": 1000,
+        "visible": true,
+        "heading": "Smart HR For Modern Teams.",
+        "context": "H\nHRMagix",
+        "className": ""
+      },
+      {
+        "src": "/images/products/hrmagix/card-team.webp",
+        "currentSrc": "http://localhost:3000/images/products/hrmagix/card-team.webp",
+        "alt": "",
+        "naturalWidth": 900,
+        "naturalHeight": 640,
+        "visible": true,
+        "heading": "People",
+        "context": "The Records And Paperwork Behind Every Employee, From Pre-Boarding To Exit.",
+        "className": ""
+      },
+      {
+        "src": "/images/products/hrmagix/card-recognition.webp",
+        "currentSrc": "http://localhost:3000/images/products/hrmagix/card-recognition.webp",
+        "alt": "",
+        "naturalWidth": 900,
+        "naturalHeight": 640,
+        "visible": true,
+        "heading": "Time & Work",
+        "context": "Attendance, Shifts, Leave, Holidays And The Rules That Govern Them.",
+        "className": ""
+      },
+      {
+        "src": "/images/products/hrmagix/card-payroll.webp",
+        "currentSrc": "http://localhost:3000/images/products/hrmagix/card-payroll.webp",
+        "alt": "",
+        "naturalWidth": 900,
+        "naturalHeight": 640,
+        "visible": true,
+        "heading": "Performance",
+        "context": "Goals, KRAs, Reviews, The 9-Box And Improvement Plans.",
+        "className": ""
+      },
+      {
+        "src": "/images/products/hrmagix/spotlight-1.webp",
+        "currentSrc": "",
+        "alt": "Employee Records & Directory in HRMagix",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Employee Records & Directory",
+        "context": "PEOPLE",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/hrmagix/spotlight-2.webp",
+        "currentSrc": "",
+        "alt": "Onboarding in HRMagix",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Onboarding",
+        "context": "PEOPLE",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/hrmagix/spotlight-3.webp",
+        "currentSrc": "",
+        "alt": "Attendance & Shifts in HRMagix",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Attendance & Shifts",
+        "context": "TIME & WORK",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/hrmagix/tour.webp",
+        "currentSrc": "",
+        "alt": "HRMagix application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See HRMagix In Action",
+        "context": "Visit Hrmagix.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/sibu",
+    "pageTitle": "Sibu | Organising and searching creative assets | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/sibu/spotlight-1.webp",
+        "currentSrc": "",
+        "alt": "Creative asset search in Sibu",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Creative Asset Search",
+        "context": "SEARCH & DISCOVERY",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/sibu/spotlight-2.webp",
+        "currentSrc": "",
+        "alt": "AI-assisted tagging in Sibu",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "AI-Assisted Tagging",
+        "context": "AI",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/sibu/spotlight-3.webp",
+        "currentSrc": "",
+        "alt": "Asset comments in Sibu",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Asset Comments",
+        "context": "COLLABORATION",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/sibu/tour.webp",
+        "currentSrc": "",
+        "alt": "Sibu application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See Sibu In Action",
+        "context": "Visit Getsibu.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/taskmagic",
+    "pageTitle": "TaskMagic | Automating repetitive app and browser work | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/taskmagic/tour.webp",
+        "currentSrc": "",
+        "alt": "TaskMagic application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See TaskMagic In Action",
+        "context": "Visit Taskmagic.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/cardizo",
+    "pageTitle": "Cardizo | Turning business cards into follow-ups | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/cardizo/tour.webp",
+        "currentSrc": "",
+        "alt": "Cardizo application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See Cardizo In Action",
+        "context": "Visit Cardizo.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/sizoru",
+    "pageTitle": "Sizoru | Market sizing for fundraising | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/sizoru/spotlight-1.webp",
+        "currentSrc": "http://localhost:3000/images/products/sizoru/spotlight-1.webp",
+        "alt": "Dual-method convergence test in Sizoru",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Dual-Method Convergence Test",
+        "context": "METHODOLOGY",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/sizoru/spotlight-2.webp",
+        "currentSrc": "http://localhost:3000/images/products/sizoru/spotlight-2.webp",
+        "alt": "India 1/2/3 framework in Sizoru",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "India 1/2/3 Framework",
+        "context": "METHODOLOGY",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/sizoru/spotlight-3.webp",
+        "currentSrc": "",
+        "alt": "Tier-rated source provenance in Sizoru",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Tier-Rated Source Provenance",
+        "context": "METHODOLOGY",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/sizoru/spotlight-1.webp",
+        "currentSrc": "http://localhost:3000/images/products/sizoru/spotlight-1.webp",
+        "alt": "Visible filter chain in Sizoru",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Visible Filter Chain",
+        "context": "METHODOLOGY",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/sizoru/tour.webp",
+        "currentSrc": "",
+        "alt": "Sizoru application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See Sizoru In Action",
+        "context": "Visit Sizoru.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/fleetras",
+    "pageTitle": "Fleetras | Fleet dispatch and trip costing | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/fleetras/spotlight-1.webp",
+        "currentSrc": "http://localhost:3000/images/products/fleetras/spotlight-1.webp",
+        "alt": "Dispatch and assignment in Fleetras",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Dispatch And Assignment",
+        "context": "TRIPS",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/fleetras/spotlight-2.webp",
+        "currentSrc": "http://localhost:3000/images/products/fleetras/spotlight-2.webp",
+        "alt": "Trip costing and cost per kilometre in Fleetras",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Trip Costing And Cost Per Kilometre",
+        "context": "COSTING",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/fleetras/spotlight-3.webp",
+        "currentSrc": "http://localhost:3000/images/products/fleetras/spotlight-3.webp",
+        "alt": "Live vehicle tracking in Fleetras",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Live Vehicle Tracking",
+        "context": "FLEET AND TRACKING",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/fleetras/tour.webp",
+        "currentSrc": "",
+        "alt": "Fleetras application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See Fleetras In Action",
+        "context": "Visit Fleetras.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/trackysuite",
+    "pageTitle": "TrackySuite | Compliance tracking for accounting practices | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/trackysuite/spotlight-1.webp",
+        "currentSrc": "http://localhost:3000/images/products/trackysuite/spotlight-1.webp",
+        "alt": "Compliance Calendar in TrackySuite",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Compliance Calendar",
+        "context": "MODULES",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/trackysuite/spotlight-2.webp",
+        "currentSrc": "http://localhost:3000/images/products/trackysuite/spotlight-2.webp",
+        "alt": "Task & Workflow in TrackySuite",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Task & Workflow",
+        "context": "MODULES",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/trackysuite/spotlight-3.webp",
+        "currentSrc": "http://localhost:3000/images/products/trackysuite/spotlight-3.webp",
+        "alt": "Deadline Reminders in TrackySuite",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Deadline Reminders",
+        "context": "MODULES",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/trackysuite/tour.webp",
+        "currentSrc": "",
+        "alt": "TrackySuite application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See TrackySuite In Action",
+        "context": "Visit Trackysuite.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/sigchanger",
+    "pageTitle": "SigChanger | Centrally managed Gmail signatures | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/sigchanger/spotlight-1.webp",
+        "currentSrc": "http://localhost:3000/images/products/sigchanger/spotlight-1.webp",
+        "alt": "Google Workspace Sync in SigChanger",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "What You Can Do With SigChanger",
+        "context": "CAPABILITIES",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/sigchanger/tour.webp",
+        "currentSrc": "",
+        "alt": "SigChanger application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See SigChanger In Action",
+        "context": "Visit Sigchanger.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/meetingmind",
+    "pageTitle": "MeetingMind | Turning meetings into actions | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/meetingmind/spotlight-1.webp",
+        "currentSrc": "http://localhost:3000/images/products/meetingmind/spotlight-1.webp",
+        "alt": "Meeting bot in MeetingMind",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Meeting Bot",
+        "context": "FEATURES",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/meetingmind/spotlight-2.webp",
+        "currentSrc": "http://localhost:3000/images/products/meetingmind/spotlight-2.webp",
+        "alt": "AI summaries and decisions in MeetingMind",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "AI Summaries And Decisions",
+        "context": "FEATURES",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/meetingmind/spotlight-3.webp",
+        "currentSrc": "http://localhost:3000/images/products/meetingmind/spotlight-3.webp",
+        "alt": "Assigned action items in MeetingMind",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Assigned Action Items",
+        "context": "FEATURES",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/meetingmind/tour.webp",
+        "currentSrc": "",
+        "alt": "MeetingMind application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See MeetingMind In Action",
+        "context": "Visit Meeting.Oxo1.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/fantom",
+    "pageTitle": "Fantom | Company SIM-card management | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/fantom/spotlight-1.webp",
+        "currentSrc": "http://localhost:3000/images/products/fantom/spotlight-1.webp",
+        "alt": "SIM Management in Fantom",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "SIM Management",
+        "context": "FEATURES",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/fantom/spotlight-2.webp",
+        "currentSrc": "http://localhost:3000/images/products/fantom/spotlight-2.webp",
+        "alt": "Recharge Tracking in Fantom",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Recharge Tracking",
+        "context": "FEATURES",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/fantom/spotlight-3.webp",
+        "currentSrc": "http://localhost:3000/images/products/fantom/spotlight-3.webp",
+        "alt": "Call Log Analytics in Fantom",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Call Log Analytics",
+        "context": "FEATURES",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/fantom/tour.webp",
+        "currentSrc": "",
+        "alt": "Fantom application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See Fantom In Action",
+        "context": "Visit Fantomapps.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/oda7",
+    "pageTitle": "ODA7 | Running sales floors from lead to commission payout | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/oda7/spotlight-1.webp",
+        "currentSrc": "http://localhost:3000/images/products/oda7/spotlight-1.webp",
+        "alt": "Lead ingestion & priority queue (My Queue) in ODA7",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Lead Ingestion & Priority Queue (My Queue)",
+        "context": "SALES EXECUTION",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/oda7/spotlight-2.webp",
+        "currentSrc": "",
+        "alt": "Integrated dialer & local presence calling in ODA7",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Integrated Dialer & Local Presence Calling",
+        "context": "SALES EXECUTION",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/oda7/spotlight-3.webp",
+        "currentSrc": "",
+        "alt": "Dynamic branching sales scripts in ODA7",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Dynamic Branching Sales Scripts",
+        "context": "SALES EXECUTION",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/oda7/tour.webp",
+        "currentSrc": "",
+        "alt": "ODA7 application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See ODA7 In Action",
+        "context": "Visit Oda7.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/benj",
+    "pageTitle": "Benj | Marketing plans for product launches | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/benj/spotlight-1.webp",
+        "currentSrc": "http://localhost:3000/images/products/benj/spotlight-1.webp",
+        "alt": "AI Buyer Persona in Benj",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "AI Buyer Persona",
+        "context": "CAPABILITIES",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/benj/spotlight-2.webp",
+        "currentSrc": "http://localhost:3000/images/products/benj/spotlight-2.webp",
+        "alt": "Best-Market Detection in Benj",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Best-Market Detection",
+        "context": "CAPABILITIES",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/benj/spotlight-3.webp",
+        "currentSrc": "",
+        "alt": "Profit-Ranked Techniques in Benj",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Profit-Ranked Techniques",
+        "context": "CAPABILITIES",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/benj/tour.webp",
+        "currentSrc": "",
+        "alt": "Benj application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See Benj In Action",
+        "context": "Visit Getbenj.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/zapbuzzer",
+    "pageTitle": "ZapBuzzer | Internal office requests | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/zapbuzzer/spotlight-1.webp",
+        "currentSrc": "http://localhost:3000/images/products/zapbuzzer/spotlight-1.webp",
+        "alt": "One-tap requests in ZapBuzzer",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "One-Tap Requests",
+        "context": "REQUESTS & CATALOGUE",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/zapbuzzer/spotlight-2.webp",
+        "currentSrc": "http://localhost:3000/images/products/zapbuzzer/spotlight-2.webp",
+        "alt": "First-accept wins in ZapBuzzer",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "First-Accept Wins",
+        "context": "ROUTING & OWNERSHIP",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/zapbuzzer/spotlight-3.webp",
+        "currentSrc": "http://localhost:3000/images/products/zapbuzzer/spotlight-3.webp",
+        "alt": "Multi-channel notifications in ZapBuzzer",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Multi-Channel Notifications",
+        "context": "ROUTING & OWNERSHIP",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/zapbuzzer/tour.webp",
+        "currentSrc": "",
+        "alt": "ZapBuzzer application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See ZapBuzzer In Action",
+        "context": "Visit Zapbuzzer.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/zorfly",
+    "pageTitle": "Zorfly | Improving team writing and communication | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/zorfly/spotlight-1.webp",
+        "currentSrc": "http://localhost:3000/images/products/zorfly/spotlight-1.webp",
+        "alt": "Five-minute daily missions in Zorfly",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Five-Minute Daily Missions",
+        "context": "YOUR DAILY BUZZ",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/zorfly/spotlight-2.webp",
+        "currentSrc": "http://localhost:3000/images/products/zorfly/spotlight-2.webp",
+        "alt": "AI coaching in Zorfly",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "AI Coaching",
+        "context": "YOUR DAILY BUZZ",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/zorfly/spotlight-3.webp",
+        "currentSrc": "http://localhost:3000/images/products/zorfly/spotlight-3.webp",
+        "alt": "Weakness reports in Zorfly",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Weakness Reports",
+        "context": "YOUR DAILY BUZZ",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/zorfly/tour.webp",
+        "currentSrc": "",
+        "alt": "Zorfly application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See Zorfly In Action",
+        "context": "Visit Zorfly.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/zuzu",
+    "pageTitle": "ZUZU | Understanding how team time is spent | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/zuzu/spotlight-1.webp",
+        "currentSrc": "http://localhost:3000/images/products/zuzu/spotlight-1.webp",
+        "alt": "Windows desktop agent in ZUZU",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Windows Desktop Agent",
+        "context": "CAPTURE",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/zuzu/spotlight-2.webp",
+        "currentSrc": "http://localhost:3000/images/products/zuzu/spotlight-2.webp",
+        "alt": "Screenshots with on-device privacy redaction in ZUZU",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "Screenshots With On-Device Privacy Redaction",
+        "context": "CAPTURE",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/zuzu/spotlight-3.webp",
+        "currentSrc": "",
+        "alt": "AI daily reports in ZUZU",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "AI Daily Reports",
+        "context": "REPORTING",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/zuzu/tour.webp",
+        "currentSrc": "",
+        "alt": "ZUZU application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See ZUZU In Action",
+        "context": "Visit Usezuzu.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/tracksuit",
+    "pageTitle": "Tracksuit | Measuring and reporting brand health | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/tracksuit/spotlight-1.webp",
+        "currentSrc": "http://localhost:3000/images/products/tracksuit/spotlight-1.webp",
+        "alt": "Always-on brand tracking in Tracksuit",
+        "naturalWidth": 1160,
+        "naturalHeight": 1040,
+        "visible": true,
+        "heading": "What You Can Do With Tracksuit",
+        "context": "CAPABILITIES",
+        "className": "image-slot pz-spot__img"
+      },
+      {
+        "src": "/images/products/tracksuit/tour.webp",
+        "currentSrc": "",
+        "alt": "Tracksuit application interface and control dashboard",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "See Tracksuit In Action",
+        "context": "Visit Gotracksuit.Com\n↗",
+        "className": "image-slot"
+      }
+    ]
+  },
+  {
+    "path": "/products/hrmagix/features",
+    "pageTitle": "Features | HRMagix | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/hrmagix/groups/people-illustration.webp",
+        "currentSrc": "http://localhost:3000/images/products/hrmagix/groups/people-illustration.webp",
+        "alt": "People in HRMagix",
+        "naturalWidth": 900,
+        "naturalHeight": 900,
+        "visible": true,
+        "heading": "People",
+        "context": "The Records And Paperwork Behind Every Employee, From Pre-Boarding To Exit.",
+        "className": "image-slot fz-art"
+      },
+      {
+        "src": "/images/products/hrmagix/groups/performance-band.webp",
+        "currentSrc": "http://localhost:3000/images/products/hrmagix/groups/performance-band.webp",
+        "alt": "Performance in HRMagix",
+        "naturalWidth": 720,
+        "naturalHeight": 960,
+        "visible": true,
+        "heading": "Performance",
+        "context": "Goals, KRAs, Reviews, The 9-Box And Improvement Plans.",
+        "className": "image-slot fz-art fz-art--band"
+      },
+      {
+        "src": "/images/products/hrmagix/groups/engagement-illustration.webp",
+        "currentSrc": "",
+        "alt": "Engagement in HRMagix",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Engagement",
+        "context": "1-On-1s, Recognition And The Conversations That Keep Teams Connected.",
+        "className": "image-slot fz-art"
+      },
+      {
+        "src": "/images/products/hrmagix/groups/platform-band.webp",
+        "currentSrc": "",
+        "alt": "Platform & Self-Service in HRMagix",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Platform & Self-Service",
+        "context": "Self-Service, The Mobile App, Analytics, Configuration And Multi-Entity Structure.",
+        "className": "image-slot fz-art fz-art--band"
+      }
+    ]
+  },
+  {
+    "path": "/products/sibu/features",
+    "pageTitle": "Features | Sibu | ToyoApps",
+    "images": [
+      {
+        "src": "/images/products/sibu/groups/search-discovery-illustration.webp",
+        "currentSrc": "http://localhost:3000/images/products/sibu/groups/search-discovery-illustration.webp",
+        "alt": "Search & Discovery in Sibu",
+        "naturalWidth": 900,
+        "naturalHeight": 900,
+        "visible": true,
+        "heading": "Search & Discovery",
+        "context": "Find assets by filename, metadata, extracted text, tags, comments or a plain-language description.",
+        "className": "image-slot fz-art"
+      },
+      {
+        "src": "/images/products/sibu/groups/collaboration-band.webp",
+        "currentSrc": "",
+        "alt": "Collaboration in Sibu",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Collaboration",
+        "context": "Comments, threads, timeline notes, mentions and approvals attached to the asset itself.",
+        "className": "image-slot fz-art fz-art--band"
+      },
+      {
+        "src": "/images/products/sibu/groups/versioning-asset-management-illustration.webp",
+        "currentSrc": "",
+        "alt": "Versioning & Asset Management in Sibu",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Versioning & Asset Management",
+        "context": "Versions, statuses, lifecycle, governance and the audit trail kept together in one asset record.",
+        "className": "image-slot fz-art"
+      },
+      {
+        "src": "/images/products/sibu/groups/permissions-multi-tenancy-band.webp",
+        "currentSrc": "",
+        "alt": "Permissions & Multi-Tenancy in Sibu",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Permissions & Multi-Tenancy",
+        "context": "Folder-Level Access Control And Isolated Environments For Every Client.",
+        "className": "image-slot fz-art fz-art--band"
+      },
+      {
+        "src": "/images/products/sibu/groups/analytics-illustration.webp",
+        "currentSrc": "",
+        "alt": "Analytics in Sibu",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Analytics",
+        "context": "Visibility Into Uploads, Storage, Contributors, Tags And Activity Across The Library.",
+        "className": "image-slot fz-art"
+      },
+      {
+        "src": "/images/products/sibu/groups/migration-band.webp",
+        "currentSrc": "",
+        "alt": "Migration in Sibu",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Migration",
+        "context": "Move Existing Libraries In While Keeping Their Metadata And Folder Structures.",
+        "className": "image-slot fz-art fz-art--band"
+      },
+      {
+        "src": "/images/products/sibu/groups/security-illustration.webp",
+        "currentSrc": "",
+        "alt": "Security in Sibu",
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "visible": true,
+        "heading": "Security",
+        "context": "Encryption, authentication, access control, tenant isolation and audit logging built into the archit",
+        "className": "image-slot fz-art"
+      }
+    ]
+  },
+  {
+    "path": "/products/trackysuite/features",
+    "pageTitle": "Features | TrackySuite | ToyoApps",
+    "images": []
+  },
+  {
+    "path": "/products/sibu/features/group/collaboration",
+    "pageTitle": "Collaboration | Sibu | ToyoApps",
+    "images": [
+      {
+        "src": "/images/features/group-hero.webp",
+        "currentSrc": "http://localhost:3000/images/features/group-hero.webp",
+        "alt": "Collaboration in Sibu",
+        "naturalWidth": 560,
+        "naturalHeight": 480,
+        "visible": true,
+        "heading": "Collaboration",
+        "context": "SIBU FEATURES",
+        "className": "image-slot fz-art fz-hero__art"
+      },
+      {
+        "src": "/images/features/group-feature.webp",
+        "currentSrc": "http://localhost:3000/images/features/group-feature.webp",
+        "alt": "Asset comments in Sibu",
+        "naturalWidth": 960,
+        "naturalHeight": 540,
+        "visible": true,
+        "heading": "Asset Comments",
+        "context": "Comment directly on assets so feedback stays attached to the creative work it concerns.",
+        "className": "image-slot fz-art fz-art--band"
+      },
+      {
+        "src": "/images/features/group-feature.webp",
+        "currentSrc": "http://localhost:3000/images/features/group-feature.webp",
+        "alt": "Threaded comments in Sibu",
+        "naturalWidth": 960,
+        "naturalHeight": 540,
+        "visible": true,
+        "heading": "Threaded Comments",
+        "context": "Keep conversations organised around specific issues instead of one long stream of feedback.",
+        "className": "image-slot fz-art fz-art--band"
+      },
+      {
+        "src": "/images/features/group-feature.webp",
+        "currentSrc": "http://localhost:3000/images/features/group-feature.webp",
+        "alt": "Video timeline comments & frame-accurate review in Sibu",
+        "naturalWidth": 960,
+        "naturalHeight": 540,
+        "visible": true,
+        "heading": "Video Timeline Comments & Frame-Accurate Review",
+        "context": "Attach comments to specific points on a video's timeline so editors know exactly which moment a note",
+        "className": "image-slot fz-art fz-art--band"
+      },
+      {
+        "src": "/images/features/group-feature.webp",
+        "currentSrc": "http://localhost:3000/images/features/group-feature.webp",
+        "alt": "@-mentions in Sibu",
+        "naturalWidth": 960,
+        "naturalHeight": 540,
+        "visible": true,
+        "heading": "@-Mentions",
+        "context": "@-mentions pull a colleague into the discussion on an asset, and the autocomplete only offers people",
+        "className": "image-slot fz-art fz-art--band"
+      },
+      {
+        "src": "/images/features/group-feature.webp",
+        "currentSrc": "http://localhost:3000/images/features/group-feature.webp",
+        "alt": "Creative approval workflow in Sibu",
+        "naturalWidth": 960,
+        "naturalHeight": 540,
+        "visible": true,
+        "heading": "Creative Approval Workflow",
+        "context": "Request review, make changes and mark assets as approved, with a status history on each asset.",
+        "className": "image-slot fz-art fz-art--band"
+      },
+      {
+        "src": "/images/features/group-feature.webp",
+        "currentSrc": "http://localhost:3000/images/features/group-feature.webp",
+        "alt": "Approval history in Sibu",
+        "naturalWidth": 960,
+        "naturalHeight": 540,
+        "visible": true,
+        "heading": "Approval History",
+        "context": "A record of review activity that shows which version was accepted and supports accountability.",
+        "className": "image-slot fz-art fz-art--band"
+      }
+    ]
+  },
+  {
+    "path": "/products/cardizo/features/ai-card-scanning",
+    "pageTitle": "AI card scanning | Cardizo | ToyoApps",
+    "images": [
+      {
+        "src": "/images/features/feature-hero.webp",
+        "currentSrc": "http://localhost:3000/images/features/feature-hero.webp",
+        "alt": "AI card scanning in Cardizo",
+        "naturalWidth": 1000,
+        "naturalHeight": 560,
+        "visible": true,
+        "heading": "What Is AI Card Scanning?",
+        "context": "Cardizo reads a photo of a visiting card and turns it into a contact record. You upload the front of",
+        "className": "image-slot fz-art fz-art--band"
+      },
+      {
+        "src": "/images/features/feature-screen.webp",
+        "currentSrc": "http://localhost:3000/images/features/feature-screen.webp",
+        "alt": "AI card scanning screen in Cardizo",
+        "naturalWidth": 960,
+        "naturalHeight": 540,
+        "visible": true,
+        "heading": "Inside AI Card Scanning",
+        "context": "Upload the cards you collected, let Claude Vision fill in the fields, and correct the few low-confid",
+        "className": "image-slot fz-art fz-art--band"
+      }
+    ]
+  }
+]

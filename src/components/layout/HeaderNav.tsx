@@ -217,7 +217,11 @@ export function HeaderNav({ menus }: { menus: NavMenu[] }) {
       </nav>
 
       <div className="header-actions">
-        <SearchForm id="header-search" className="header-search header-search--pill" placeholder="Search products, solutions, etc..." />
+        {/* Looks like a search field, opens the dedicated search page */}
+        <Link href="/search" className="header-search header-search--pill header-search--link" aria-label="Search ToyoApps">
+          <Icon name="search" />
+          <span>Search products, solutions, etc...</span>
+        </Link>
         <Link href="/search" className="icon-btn icon-btn--plain header-search-link" aria-label="Search ToyoApps">
           <Icon name="search" />
         </Link>

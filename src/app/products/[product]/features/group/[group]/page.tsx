@@ -1,3 +1,5 @@
+import { photoForProduct } from "@/lib/photos";
+import { SpotVisual } from "@/components/product/SpotVisual";
 import { PageFaqs } from "@/components/ui/PageFaqs";
 import { getFeatureGroupFaqs } from "@/lib/faqs";
 import { Labelled } from "@/components/ui/Labelled";
@@ -87,7 +89,7 @@ export default async function FeatureGroupPage({ params }: Props) {
                 </a>
               </div>
             </div>
-            <ImageSlot src="/images/features/group-hero.webp" alt={`${group.name} in ${product.name}`} width={560} height={480} priority className="fz-art fz-hero__art" />
+            {photoForProduct(product.slug) && <ImageSlot src={photoForProduct(product.slug)!.src} alt={photoForProduct(product.slug)!.alt} width={1280} height={720} priority className="fz-art fz-hero__art" />}
           </div>
         </div>
       </header>
@@ -125,7 +127,7 @@ export default async function FeatureGroupPage({ params }: Props) {
               )}
             </div>
             <div className="fz-panel fz-panel--shot">
-              <ImageSlot src="/images/features/group-feature.webp" alt={`${f.name} in ${product.name}`} width={960} height={540} className="fz-art fz-art--band" />
+              <div className="fz-art fz-art--band fz-art--visual"><SpotVisual feature={f} variant={i} /></div>
             </div>
           </div>
         </section>

@@ -1,3 +1,4 @@
+import { categoryPhoto } from "@/lib/photos";
 import { getCategoryFaqs } from "@/lib/faqs";
 import "../../../catalog-zoho.css";
 import { ImageSlot } from "@/components/ui/ImageSlot";
@@ -68,7 +69,7 @@ export default async function CategoryPage({ params }: Props) {
       id: "products",
       title: `${category.name} products`,
       tagline: category.tagline,
-      items: products.map((p) => toCatalogItem(p, p.category === category.slug ? undefined : `Primarily ${getCategory(p.category)?.name ?? ""}`)),
+      items: products.map((p) => toCatalogItem(p)),
     },
   ];
 
@@ -85,7 +86,7 @@ export default async function CategoryPage({ params }: Props) {
           <h1>{category.name}</h1>
           <hr className="zc-rule" />
           {category.description && <p className="zc-hero__lead">{category.description}</p>}
-          <ImageSlot src={`/images/categories/${category.slug}.webp`} alt={`${category.name} software`} width={960} height={360} priority className="zc-hero__art" />
+          <ImageSlot src={categoryPhoto(category.slug)?.src ?? `/images/categories/${category.slug}.webp`} alt={categoryPhoto(category.slug)?.alt ?? ""} width={960} height={360} priority className="zc-hero__art" />
         </div>
       </header>
 

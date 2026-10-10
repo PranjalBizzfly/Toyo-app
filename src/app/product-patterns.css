@@ -13,9 +13,9 @@
 .zs-aud-1 .zs-ribbon li::before { width: 10px; height: 10px; background: var(--primary); }
 .zs-aud-1 .zs-ribbon li[aria-hidden] { display: none; }
 /* 2: left-aligned heading with a chip rail of squared tags */
-.zs-aud-2 .zs-eyebrow { text-align: left; }
+.zs-aud-2 .zs-eyebrow { text-align: center; }
 .zs-aud-2 .zs-ribbon { max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); -webkit-mask-image: none; mask-image: none; }
-.zs-aud-2 .zs-ribbon__track { flex-wrap: wrap !important; width: auto !important; justify-content: flex-start !important; animation: none !important; padding-inline: 0; }
+.zs-aud-2 .zs-ribbon__track { flex-wrap: wrap !important; width: auto !important; justify-content: center !important; animation: none !important; padding-inline: 0; }
 .zs-aud-2 .zs-ribbon li { border-radius: 8px; min-height: 44px; background: var(--primary-soft); border-color: transparent; color: var(--primary); font-weight: 600; }
 .zs-aud-2 .zs-ribbon li::before { border-radius: 2px; background: var(--primary); }
 .zs-aud-2 .zs-ribbon li[aria-hidden] { display: none; }
@@ -135,3 +135,8 @@
 .zs-faq-2 > div:first-child { position: static !important; text-align: center; }
 .zs-faq-2 > :last-child { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); align-items: start; }
 .zs-faq-2 details { padding: 4px 20px; border: 1px solid var(--border) !important; border-radius: 16px; background: var(--surface); }
+
+/* Real photos in the "in action" section: no browser frame or tilt */
+.zs-tour.zs-tour--photo { padding: 0 !important; background: none !important; border: 0 !important; transform: none !important; overflow: hidden; border-radius: 20px; box-shadow: 0 30px 60px -36px rgb(15 34 53 / .45); }
+.zs-tour.zs-tour--photo::before { display: none !important; }
+.zs-tour.zs-tour--photo img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 20px !important; }

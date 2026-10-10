@@ -1,6 +1,7 @@
 import { getComparisonFaqs, getIndustryFaqs, getIntegrationFaqs, getResourceFaqs, getSolutionFaqs } from "@/lib/faqs";
 import { Labelled } from "@/components/ui/Labelled";
-import { poolImage } from "@/lib/pool-image";
+import { photoForProduct } from "@/lib/photos";
+import { solutionPhoto, tilePhoto } from "@/lib/in-action";
 import Link from "next/link";
 import type { Comparison, Faq, Feature, IconName, Industry, Integration, Product, Resource, Solution } from "@/content/types";
 import { getCategory, getFeatures, getIndustries, productsFor } from "@/lib/catalog";
@@ -139,9 +140,11 @@ function ProductTiles({ products, title, lead }: { products: Product[]; title: s
               <span className="ez-link">
                 Learn more <Icon name="arrow-right" />
               </span>
-              <span className="ez-tile__shot">
-                <ImageSlot src="/images/entity/product-tile.webp" alt={`${p.name} application interface and verified capabilities`} width={400} height={260} />
-              </span>
+              {tilePhoto(p.slug) && (
+                <span className="ez-tile__shot">
+                  <ImageSlot src={tilePhoto(p.slug)!.src} alt={tilePhoto(p.slug)!.alt} width={400} height={260} />
+                </span>
+              )}
             </Link>
           ))}
         </div>
@@ -354,7 +357,7 @@ export function HubPageTemplate({
               {items.map((i) => (
                 <Link key={i.href} href={i.href} className="ez-card">
                   <span className="ez-card__band" aria-hidden>
-                    <ImageSlot src="/images/entity/hub-card.webp" alt={`${i.name} cross-functional solution overview`} width={370} height={172} />
+                    <ImageSlot src={`/images/solutions/${i.href.split("/").pop()}.webp`} alt={`${i.name} cross-functional solution overview`} width={370} height={172} />
                     <span className="ez-card__icon">
                       <Icon name={i.icon ?? "layers"} />
                     </span>
@@ -493,7 +496,7 @@ export function SolutionPageTemplate({ solution }: { solution: Solution }) {
         title={solution.name}
         lead={solution.summary}
         align="left"
-        visual={<ImageSlot src={poolImage(solution.slug)} alt="" width={1600} height={900} priority />}
+        visual={<ImageSlot src={(solutionPhoto(solution.slug) ?? photoForProduct(solution.products[0] ?? ""))?.src ?? ""} alt={(solutionPhoto(solution.slug) ?? photoForProduct(solution.products[0] ?? ""))?.alt ?? ""} width={1600} height={900} priority />}
       >
         <HeroActions />
       </Hero>
@@ -843,7 +846,7 @@ export function IntegrationPageTemplate({ integration }: { integration: Integrat
       </section>
 
       {related.length > 0 && (
-        <section className="dx-sec" aria-labelledby="dx-related">
+        <section className="dx-sec dx-int" aria-labelledby="dx-related">
           <div className="container">
             <SectionHead id="dx-related" kicker="Related" title="Similar integrations" />
             <ul className="dx-grid dx-grid--guides dx-grid--center">
@@ -957,7 +960,7 @@ export function ResourcePageTemplate({ resource, typeLabel }: { resource: Resour
         </div>
       </header>
       <div className="container ez-narrow ez-article-cover">
-        <ImageSlot src={poolImage(resource.slug)} alt="" width={860} height={484} />
+        {photoForProduct(resource.products?.[0] ?? "") && <ImageSlot src={photoForProduct(resource.products?.[0] ?? "")!.src} alt={photoForProduct(resource.products?.[0] ?? "")!.alt} width={1280} height={720} />}
       </div>
       <Prose body={resource.body} />
       <ProductTiles products={productsFor(resource.products ?? [])} title="Products in this article" />

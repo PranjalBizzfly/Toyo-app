@@ -1,3 +1,5 @@
+import { photoForProduct } from "@/lib/photos";
+import { SpotVisual } from "@/components/product/SpotVisual";
 import { getProductItemFaqs } from "@/lib/faqs";
 import { Labelled } from "@/components/ui/Labelled";
 import { ProductCta } from "@/components/product/ProductCta";
@@ -118,6 +120,7 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
     .slice(0, 6);
   const { primary } = getProductCtas(product);
   const title = section === "compare" && e.competitor ? `${product.name} vs ${e.competitor}` : item.name;
+  const heroPhoto = photoForProduct(product.slug);
 
   // Present fields, in layout order.
   const fields = LAYOUT[section]
@@ -178,7 +181,7 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
               </Link>
             </div>
           </div>
-          <ImageSlot src="/images/features/item-hero.webp" alt={`${title} with ${product.name}`} width={1200} height={400} priority className="fz-vhero__art" />
+          {heroPhoto && <ImageSlot src={heroPhoto.src} alt={heroPhoto.alt} width={1280} height={720} priority className="fz-vhero__art" />}
         </div>
       </header>
 
@@ -314,7 +317,7 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
       {features.length > 0 && (
         <Centered id="features" kicker={`Key ${product.name} features`} heading={`Built for ${item.name.toLowerCase()}`}>
           <div className="fz-panel fz-panel--shot">
-            <ImageSlot src="/images/features/item-screen.webp" alt={`${product.name} features for ${item.name}`} width={960} height={540} className="fz-art fz-art--band" />
+            <div className="fz-art fz-art--band fz-art--visual"><SpotVisual feature={{ name: item.name, capabilities: features.map((f) => f.name) }} variant={0} /></div>
           </div>
           <ul className="fz-tiles">
             {features.map((f) => (

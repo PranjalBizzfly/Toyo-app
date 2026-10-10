@@ -3,7 +3,6 @@ import { ProductCta } from "@/components/product/ProductCta";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs, FaqList } from "@/components/ui/primitives";
-import { ImageSlot } from "@/components/ui/ImageSlot";
 import "@/app/product-zoho.css";
 import { getCategory, getProduct, getProducts, integrationHasPage } from "@/lib/catalog";
 import { getProductCtas } from "@/lib/product-cta";
@@ -235,9 +234,6 @@ export default async function ProductSectionPage({ params }: Props) {
                   const d = cardDetail(l.entity);
                   return (
                   <Link key={l.href} href={l.href} className="pz-vcard">
-                    <span className="pz-vcard__art">
-                      <ImageSlot src="/images/product/section-card.webp" alt={`${l.name} feature capability and integration overview`} width={370} height={172} />
-                    </span>
                     <span className="pz-vcard__body">
                       <h3>{l.name}</h3>
                       <p className={d.more || d.points.length ? "pz-vcard__sum" : undefined}>{l.summary}</p>

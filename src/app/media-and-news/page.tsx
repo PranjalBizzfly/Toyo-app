@@ -32,7 +32,7 @@ export default function MediaPage() {
           <div className="co-btns co-btns--hero">
             <Link className="co-btn co-btn--invert" href={routes.pressKit()}>Get the press kit</Link>
           </div>
-          <ImageSlot src="/images/company/media-hero.webp" alt="ToyoApps company and product updates" width={1200} height={420} priority className="co-hero__art" />
+          <ImageSlot src="/images/company/media-hero.webp" alt="Corporate communications director reviewing press releases and news updates on digital tablet" width={1200} height={420} priority className="co-hero__art" />
         </div>
       </section>
 

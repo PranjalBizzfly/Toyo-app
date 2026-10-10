@@ -582,3 +582,14 @@
 @media (min-width: 1024px) { .hh .hh__art--exact { translate: clamp(0px, 2.2vw, 36px) 0; } }
 /* The scene sits on the highlights line: its bottom aligns with the copy column's bottom */
 @media (min-width: 1024px) { .hh .hh__grid { align-items: end; } }
+
+/* Responsive: grid items may shrink below their content, so the scene fits small phones */
+.hh .hh__grid > * { min-width: 0; }
+@media (max-width: 480px) {
+  .hh__highlight-text strong, .hh__highlight-text small { white-space: normal; }
+  .hh__highlight { align-items: flex-start; }
+}
+
+/* Readable minimums for small labels */
+.hh .hh__eyebrow, .hh-strip__eyebrow { font-size: 12px; }
+.hh-strip__more-btn { font-size: 12px; }

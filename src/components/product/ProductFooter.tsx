@@ -5,32 +5,11 @@ import { getProductCtas } from "@/lib/product-cta";
 import "@/app/product-zoho.css";
 import { getAvailableSections } from "@/lib/product-sections";
 import { routes, sectionLabels } from "@/lib/routes";
-import { FooterCopyright, FooterLegalLinks } from "@/components/layout/SiteFooter";
+import { FooterGroup } from "@/components/layout/FooterGroup";
+import { site } from "@/content/site";
 import { ProductLogo } from "./cards";
 
 type FooterLink = { label: string; href: string };
-
-function Column({ title, links }: { title: string; links: FooterLink[] }) {
-  if (!links.length) return null;
-  return (
-    <div className="pfoot__col">
-      <h3>{title}</h3>
-      <ul>
-        {links.map((l) => (
-          <li key={l.href + l.label}>
-            {l.href.startsWith("http") ? (
-              <a href={l.href} rel="noopener">
-                {l.label}
-              </a>
-            ) : (
-              <Link href={l.href}>{l.label}</Link>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
 
 /**
  * Product footer — the only footer on every product page (FooterResolver keeps
@@ -60,26 +39,79 @@ export function ProductFooter({ product }: { product: Product }) {
   ].filter((l): l is FooterLink => !!l);
 
   const cta = getProductCtas(product).primary;
+  const legal: FooterLink[] = [
+    { label: "Privacy Policy", href: routes.legal("privacy") },
+    { label: "Terms of Service", href: routes.legal("terms") },
+    { label: "Cookie Policy", href: routes.legal("cookies") },
+  ];
 
+  // Same design as the main site footer (SiteFooter), with this product's own links.
   return (
-    <footer className="pfoot pz-foot" aria-label={`${product.name} footer`}>
-      <div className="container pz-foot__top">
-        <div className="pz-foot__promo">
-          <ProductLogo product={product} />
-          <strong>{product.name}</strong>
-          <p>{product.shortDescription}</p>
-          <a href={cta.href} rel="noopener">
+    <footer className="site-footer sfoot sfoot--wide sfoot--product" aria-label={`${product.name} footer`}>
+      <div className="container sfoot__grid">
+        <div className="sfoot__brand">
+          <Link href={routes.product(product.slug)} className="sfoot__logo sfoot__plogo">
+            <ProductLogo product={product} />
+            <strong>{product.name}</strong>
+          </Link>
+          <p className="sfoot__tagline">{product.shortDescription}</p>
+          <a href={cta.href} rel="noopener" className="sfoot__pill">
             {cta.label} <span aria-hidden>→</span>
           </a>
         </div>
-        <Column title={`Explore ${product.name}`} links={explore} />
-        <Column title="Resources" links={resources} />
-        <Column title="Get started" links={start} />
+
+        <nav aria-label={`${product.name} footer`} className="sfoot__cols sfoot__cols--product">
+          {explore.length > 0 && (
+            <FooterGroup title={`Explore ${product.name}`}>
+              <LinkList links={explore} />
+            </FooterGroup>
+          )}
+          {resources.length > 0 && (
+            <FooterGroup title="Resources">
+              <LinkList links={resources} />
+            </FooterGroup>
+          )}
+          <FooterGroup title="Get Started">
+            <LinkList links={start} />
+          </FooterGroup>
+          <FooterGroup title="Legal">
+            <LinkList links={legal} />
+          </FooterGroup>
+          <div className="fgroup fgroup--static sfoot__contact">
+            <h3 className="fgroup__title">
+              <span className="fgroup__heading">Contact Sales</span>
+            </h3>
+            <p className="sfoot__note">Questions about {product.name}? We&apos;ll point you to the right plan.</p>
+            <Link href={routes.contactForm({ type: "product", product: product.slug })} className="sfoot__pill sfoot__pill--outline">
+              Talk To Us <span aria-hidden>→</span>
+            </Link>
+            <Link href={routes.products()} className="sfoot__pill">
+              Explore Products
+            </Link>
+          </div>
+        </nav>
       </div>
-      <div className="container pfoot__legal">
-        <FooterLegalLinks />
-      </div>
-      <FooterCopyright />
+      <p className="sfoot__copy">
+        © {new Date().getFullYear()} {site.legalName}. All Rights Reserved.
+      </p>
     </footer>
+  );
+}
+
+function LinkList({ links }: { links: FooterLink[] }) {
+  return (
+    <ul className="fgroup__list">
+      {links.map((l) => (
+        <li key={l.href + l.label}>
+          {l.href.startsWith("http") ? (
+            <a href={l.href} rel="noopener">
+              {l.label}
+            </a>
+          ) : (
+            <Link href={l.href}>{l.label}</Link>
+          )}
+        </li>
+      ))}
+    </ul>
   );
 }

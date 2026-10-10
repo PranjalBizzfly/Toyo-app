@@ -70,14 +70,14 @@ a.primary-nav__trigger[aria-current="page"]::after {
 }
 .header-actions { gap: 12px; display: flex; align-items: center; margin-left: auto; min-width: 0; }
 .icon-btn--plain { border-color: transparent; background: transparent; }
-.header-signin { display: none; color: var(--heading); font-weight: 500; font-size: 15px; }
+.header-signin { display: none; color: var(--heading); font-weight: 500; font-size: 15px; white-space: nowrap; flex: none; }
 .header-signin:hover { color: #0066FF; text-decoration: none; }
 .header-cta { border-radius: 999px; min-height: 40px; font-size: 14.5px; font-weight: 600; padding: 0 20px; background: #0066FF; color: #ffffff; }
 .header-cta:hover { background: #0052cc; }
 @media (min-width: 1080px) { .header-signin { display: inline-flex; } }
 /* Search field (pill) visible on desktop */
 .header-search--pill { display: none !important; }
-@media (min-width: 1100px) {
+@media (min-width: 1300px) {
   .header-search--pill {
     display: flex !important;
     width: auto; flex: 0 1 250px; min-width: 140px; /* shrinks before the bar can overflow */
@@ -93,6 +93,9 @@ a.primary-nav__trigger[aria-current="page"]::after {
   }
   .header-search--pill svg { width: 16px; height: 16px; color: var(--text-secondary); }
   .header-search--pill input { font-size: 13.5px; }
+  .header-search--link { color: var(--text-muted); text-decoration: none; cursor: text; transition: border-color .2s; }
+  .header-search--link span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: 13.5px; }
+  .header-search--link:hover { border-color: var(--primary); }
   .header-search--pill ~ .header-search-link { display: none; }
 }
 .header-cta.btn--primary { gap: 8px; min-height: 40px; padding: 0 18px; border-radius: 999px; font-weight: 600; background: #0066FF; }
@@ -385,6 +388,129 @@ a.primary-nav__trigger[aria-current="page"]::after {
   .sfoot .site-footer__legal li + li::before { display: none; }
 }
 
+/* ---------- Wide footer: brand column + six compact link columns + centred copyright ---------- */
+.sfoot--wide .sfoot__grid { display: grid; gap: 32px; padding-block: 56px 32px; }
+@media (min-width: 1100px) { .sfoot--wide .sfoot__grid { grid-template-columns: 240px minmax(0, 1fr); gap: 48px; } }
+.sfoot__brand { display: grid; align-content: start; justify-items: start; gap: 16px; }
+.sfoot__logo { display: inline-flex; text-decoration: none; }
+.sfoot__tagline { margin: 0; max-width: 26ch; font-size: 15px; line-height: 1.6; color: var(--text-secondary); }
+.sfoot--wide .sfoot__social { justify-content: flex-start; gap: 10px; padding: 4px 0 0; }
+.sfoot--wide .sfoot__social a, .sfoot--wide .sfoot__social li > span { width: 40px; height: 40px; border: 1.5px solid var(--border-strong); border-radius: 50%; background: var(--surface); color: var(--heading); opacity: 1; transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease); }
+.sfoot--wide .sfoot__social a:hover, .sfoot--wide .sfoot__social li > span:hover { background: var(--primary); border-color: var(--primary); color: var(--on-primary); transform: translateY(-2px); }
+.sfoot--wide .sfoot__social svg { width: 18px; height: 18px; }
+
+.sfoot--wide .sfoot__cols { padding: 0; gap: 0 28px; }
+/* Wide screens: a wider footer, brand column fits the payment row, link columns sized to their content */
+@media (min-width: 1100px) {
+  .sfoot--wide .sfoot__grid.container { max-width: min(1480px, calc(100% - 2 * var(--gutter, 24px))); }
+  .sfoot--wide .sfoot__grid { grid-template-columns: 290px minmax(0, 1fr) !important; gap: 48px !important; }
+  .sfoot--wide .sfoot__cols { grid-template-columns: repeat(7, auto) !important; justify-content: space-between; gap: 32px 28px !important; }
+  .sfoot--wide .fgroup { min-width: 0; max-width: 220px; }
+}
+/* Product footers: same design, four link columns + contact */
+.sfoot__plogo { display: inline-flex; align-items: center; gap: 12px; color: var(--heading); }
+.sfoot__plogo .product-card__logo { width: 44px; height: 44px; border-radius: 12px; }
+.sfoot__plogo strong { font-family: var(--font-display); font-size: 24px; font-weight: 600; }
+.sfoot--product .sfoot__brand > .sfoot__pill { margin-top: 4px; }
+.sfoot--product .sfoot__tagline { max-width: 32ch; }
+@media (min-width: 1100px) { .sfoot--wide.sfoot--product .sfoot__cols.sfoot__cols--product { grid-template-columns: repeat(4, minmax(0, 1fr)) 220px !important; } }
+
+/* Every word starts with a capital letter in the footer (brand names keep their own capitals) */
+.sfoot--wide :is(.fgroup__title, .fgroup__list a, .sfoot__note, .sfoot__pill, .sfoot__copy, .sfoot__badge-text) { text-transform: capitalize; }
+/* Contact column never pushes past the footer edge */
+@media (min-width: 1100px) {
+  .sfoot--wide .sfoot__cols { grid-template-columns: repeat(6, auto) 190px !important; }
+  .sfoot--wide .sfoot__contact :is(.sfoot__note, .sfoot__pill) { max-width: 100%; }
+  .sfoot--wide .sfoot__contact { min-width: 0; max-width: 190px; }
+}
+@media (min-width: 1100px) and (max-width: 1279.98px) {
+  .sfoot--wide .sfoot__grid { grid-template-columns: 250px minmax(0, 1fr) !important; gap: 24px !important; }
+  .sfoot--wide .sfoot__cols { gap: 24px 14px !important; grid-template-columns: repeat(6, auto) 170px !important; }
+  .sfoot--wide .fgroup__title { font-size: 19px; }
+  .sfoot--wide .sfoot__brand .sfoot__pay { flex-wrap: wrap; }
+}
+@media (min-width: 1100px) and (max-width: 1499.98px) {
+  .sfoot--wide .sfoot__grid { grid-template-columns: 280px minmax(0, 1fr) !important; gap: 32px !important; }
+  .sfoot--wide .sfoot__cols { gap: 28px 18px !important; }
+  .sfoot--wide .fgroup { max-width: 180px; }
+  .sfoot--wide .sfoot__pill { padding: 0 16px; }
+}
+/* Original footer type (display font headings, 17px links), sized to fit seven columns without breaking words */
+.sfoot--wide :is(.fgroup__title, .fgroup__list a, .sfoot__note) { overflow-wrap: normal; word-break: normal; hyphens: none; }
+@media (min-width: 1100px) {
+  .sfoot--wide .fgroup__title { font-size: clamp(20px, 1.45vw, 26px); }
+  .sfoot--wide .fgroup__list a { font-size: clamp(15px, 1.05vw, 17px); }
+}
+@media (min-width: 768px) { .sfoot--wide .sfoot__cols { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 28px; } }
+@media (min-width: 1100px) { .sfoot--wide .sfoot__cols { grid-template-columns: .85fr 1fr 1fr .95fr .8fr 1.05fr 1.1fr; gap: 32px 24px; } }
+.sfoot--wide .sfoot__contact { display: grid; align-content: start; justify-items: start; gap: 12px; }
+.sfoot__pill { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; min-height: 44px; padding: 0 20px; border-radius: 999px; background: var(--primary); color: var(--on-primary); font-size: 15px; font-weight: 600; text-decoration: none; transition: transform .2s var(--ease), filter .2s; }
+.sfoot__pill:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.sfoot__pill svg { width: 14px; height: 14px; }
+.sfoot__pill--outline { background: transparent; color: var(--primary); border: 1.5px solid var(--primary); }
+/* Badge row: apps + partner on the left, payment cards on the right — one line on desktop */
+.sfoot__badges { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; padding-block: 8px 28px; }
+.sfoot__apps, .sfoot__pay { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.sfoot__badge { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 14px 0 10px; border-radius: 8px; text-decoration: none; line-height: 1.1; }
+.sfoot__badge-icon svg { display: block; width: 26px; height: 26px; }
+.sfoot__badge-text { display: grid; }
+.sfoot__badge-text small { font-size: 10.5px; letter-spacing: .02em; }
+.sfoot__badge-text strong { font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+.sfoot__badge--chrome { background: #1e88e5; color: #fff; }
+.sfoot__badge--chrome .sfoot__badge-icon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 6px; background: #fff; }
+.sfoot__badge--chrome .sfoot__badge-text strong { font-size: 13.5px; }
+.sfoot__badge--chrome .sfoot__badge-text small { font-size: 13.5px; font-weight: 600; }
+.sfoot__badge--play, .sfoot__badge--apple { background: #000; color: #fff; border: 1px solid #a6a6a6; }
+.sfoot__badge--apple .sfoot__badge-icon svg { color: #fff; }
+.sfoot__badge--meta { justify-content: center; min-width: 150px; padding: 0 16px; background: #fff; color: #1c2b33; border: 1px solid var(--border); }
+.sfoot__badge--meta .sfoot__badge-text { justify-items: center; }
+.sfoot__badge--meta strong { display: inline-flex; align-items: center; gap: 4px; font-size: 20px; font-weight: 500; }
+.sfoot__badge--meta small { font-size: 11px; }
+.sfoot__meta-mark { width: 30px; height: 16px; }
+a.sfoot__badge { transition: transform .2s var(--ease); }
+a.sfoot__badge:hover { transform: translateY(-2px); }
+.sfoot__card { display: grid; place-items: center; width: 56px; height: 38px; border-radius: 6px; background: #fff; border: 1px solid var(--border); }
+.sfoot__card svg { width: 40px; height: 24px; }
+.sfoot__card--mastercard { background: #1a1f71; } .sfoot__card--maestro { background: #10306b; }
+.sfoot__card--american-express { background: #2671b9; }
+.sfoot__card-word { font-family: Arial, Helvetica, sans-serif; font-weight: 900; font-style: italic; letter-spacing: -.02em; }
+.sfoot__card-word--visa { font-size: 17px; color: #1a1f71; }
+.sfoot__card-word--amex { font-size: 12px; font-style: normal; color: #fff; }
+.sfoot__card-word--paypal { font-size: 22px; color: #003087; text-shadow: 3px 2px 0 #009cde; }
+@media (max-width: 640px) { .sfoot__badges { justify-content: center; } .sfoot__apps, .sfoot__pay { justify-content: center; } }
+/* One single row from small laptops up: compact badges, nothing wraps */
+@media (min-width: 1000px) {
+  .sfoot__badges, .sfoot__apps, .sfoot__pay { flex-wrap: nowrap; }
+  .sfoot__badges { gap: 16px; }
+  .sfoot__apps, .sfoot__pay { gap: 8px; }
+  .sfoot__badge { height: 44px; padding: 0 12px 0 8px; gap: 8px; }
+  .sfoot__badge-text strong { font-size: 15px; }
+  .sfoot__badge--chrome .sfoot__badge-icon { width: 30px; height: 30px; }
+  .sfoot__badge--meta { min-width: 0; padding: 0 14px; }
+  .sfoot__card { width: 50px; height: 34px; }
+}
+
+/* Reference layout: badges stacked in the brand column, payment cards in one row below */
+@media (min-width: 1100px) { .sfoot--wide .sfoot__grid { grid-template-columns: 250px minmax(0, 1fr); gap: 36px; } }
+.sfoot__brand .sfoot__badges { display: grid; justify-items: start; gap: 18px; padding: 18px 0 0; }
+.sfoot__brand .sfoot__apps { flex-direction: column; flex-wrap: nowrap; align-items: flex-start; gap: 10px; }
+.sfoot__brand .sfoot__badge { width: 168px; height: 48px; }
+.sfoot__brand .sfoot__badge--meta { width: 170px; }
+.sfoot__brand .sfoot__pay { flex-wrap: nowrap; gap: 6px; }
+.sfoot__brand .sfoot__card { width: 42px; height: 30px; }
+.sfoot__brand .sfoot__card svg { width: 32px; height: 20px; }
+.sfoot__brand .sfoot__card-word--visa { font-size: 13px; }
+.sfoot__brand .sfoot__card-word--amex { font-size: 9.5px; }
+.sfoot__brand .sfoot__card-word--paypal { font-size: 17px; }
+.sfoot--wide .sfoot__brand .sfoot__social { padding-top: 6px; }
+@media (max-width: 1099.98px) { .sfoot__brand { justify-items: center; text-align: center; } .sfoot__brand .sfoot__badges { justify-items: center; } .sfoot__brand .sfoot__apps { flex-direction: row; flex-wrap: wrap; justify-content: center; } .sfoot__brand .sfoot__pay { flex-wrap: wrap; justify-content: center; } }
+
+.sfoot__copy { margin: 0; padding: 20px var(--gutter) 28px; border-top: 1px solid var(--border-soft); text-align: center; font-size: 14px; color: var(--text-secondary); }
+@media (max-width: 767.98px) {
+  .sfoot--wide .sfoot__grid { padding-top: 40px; }
+  .sfoot--wide .sfoot__contact { padding-top: 18px; }
+}
+
 /* =====================================================================
    Inner pages
    ===================================================================== */
@@ -501,8 +627,8 @@ a.primary-nav__trigger[aria-current="page"]::after {
 .zf-hero h1 strong { display: block; font-size: 1.6em; font-weight: 700; color: var(--primary); }
 .zf-hero p { font-size: 20px; color: var(--text); max-width: 34ch; }
 .zf-hero__pills { position: absolute; top: 50%; transform: translateY(-50%); display: none; flex-wrap: wrap; gap: 14px; width: 28%; opacity: .55; }
-.zf-hero__pills--left { left: -2%; justify-content: flex-start; }
-.zf-hero__pills--right { right: -2%; justify-content: flex-end; }
+.zf-hero__pills--left { left: 0; justify-content: flex-start; }
+.zf-hero__pills--right { right: 0; justify-content: flex-end; }
 .zf-hero__pills li { padding: 14px 18px; border-radius: 10px; background: color-mix(in srgb, var(--surface) 75%, transparent); box-shadow: var(--shadow-sm); font-size: 13px; font-weight: 500; letter-spacing: .03em; text-transform: uppercase; color: var(--text-muted); white-space: nowrap; }
 @media (min-width: 1280px) { .zf-hero__pills { display: flex; } }
 .zf-row { padding: var(--sec-y) 0; border-top: 1px solid var(--border-soft); background: var(--surface); }

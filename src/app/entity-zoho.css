@@ -240,3 +240,6 @@ a:hover > .ez-link svg, .ez-link:hover svg { transform: translateX(4px); }
 .ez-card__points li::before { content: ""; position: absolute; left: 2px; top: .5em; width: 9px; height: 9px; border-radius: 50%; background: var(--primary); opacity: .75; }
 .ez-card__body .ez-card__text { flex: 0 0 auto; }
 .ez-card__body > .ez-link { margin-top: auto; }
+
+/* Product tiles without a photo: link sits right under the text */
+html body main .ez-tile:not(:has(.ez-tile__shot)) > .ez-link { margin-top: 8px !important; }

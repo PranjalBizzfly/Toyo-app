@@ -65,5 +65,6 @@
 .pc-sec { padding-block: var(--sec-y-lg); background: var(--surface); }
 .pc-sec .zs-h2 { font-weight: 800; color: #0b0f14; }
 :root[data-theme="dark"] .pc-sec { background: #08131f; } :root[data-theme="dark"] .pc-sec .zs-h2 { color: #fff; }
-.vh__arch img, .vh__circle img { mix-blend-mode: multiply; filter: contrast(1.05) saturate(1.05); }
+.vh__arch img, .vh__circle img { mix-blend-mode: normal; filter: contrast(1.02) saturate(1.02); }
+.vh__arch, .vh__circle { box-shadow: 0 16px 36px -12px rgb(0 0 0 / 0.25); }
 .vh__arch::after { display: none; }

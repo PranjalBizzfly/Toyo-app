@@ -14,6 +14,7 @@ import {
 import { getProductCtas, platformLabels } from "@/lib/product-cta";
 import { getAvailableSections, getProductSectionData, OVERVIEW_FEATURE_LIMIT } from "@/lib/product-sections";
 import { getProductStory, getStoryPatterns } from "@/lib/product-story";
+import { inActionPhoto } from "@/lib/in-action";
 import { routes } from "@/lib/routes";
 import { absoluteUrl, jsonLd } from "@/lib/seo";
 import { ProductCard, ProductLogo } from "@/components/product/cards";
@@ -29,12 +30,6 @@ import "@/app/product-zoho.css";
 import "@/app/product-story.css";
 import "@/app/product-refs.css";
 import "@/app/alt-patterns.css";
-
-const SPOT_ART = [
-  <ImageSlot key="1" src="/images/product/spotlight-1.webp" alt="" width={580} height={520} className="pz-spot__img" />,
-  <ImageSlot key="2" src="/images/product/spotlight-2.webp" alt="" width={580} height={520} className="pz-spot__img" />,
-  <ImageSlot key="3" src="/images/product/spotlight-3.webp" alt="" width={580} height={520} className="pz-spot__img" />,
-];
 
 const SPOTLIGHTS = 3;
 const MORE_FEATURES = 9;
@@ -132,7 +127,7 @@ export function ProductPageTemplate({ product }: { product: Product }) {
     <div className={`pz zs zs--${story.look} zs-ref--${story.hero}${story.serif ? " zs--serif" : ""}`} data-ref={story.ref}>
       {story.recipe === "voice" ? (
         <>
-          <VoiceHero product={product} cta={cta} photos={[`/images/products/${product.slug}/hero-a.webp`, `/images/products/${product.slug}/hero-b.webp`]} />
+          <VoiceHero product={product} cta={cta} photos={["/images/products/hrmagix/in-action.webp", "/images/categories/hr-people.webp"]} />
           {groups.length >= 3 && (
             <section className="pc-sec" aria-labelledby="pc-title">
               <div className="container">
@@ -143,7 +138,7 @@ export function ProductPageTemplate({ product }: { product: Product }) {
                   cards={groups.slice(0, 3).map((g, i) => ({
                     title: g.group.name,
                     text: g.group.description ?? g.features.slice(0, 3).map((f) => f.name).join(", "),
-                    image: `/images/products/${product.slug}/${["card-team", "card-recognition", "card-payroll"][i]}.webp`,
+                    image: ["/images/solutions/manage-your-people-from-hire-to-growth.webp", "/images/products/zuzu/in-action.webp", "/images/products/zorfly/in-action.webp"][i],
                     href: `${featuresHref}#${g.group.slug}`,
                     label: ["Explore more", "See how it works", "Learn more"][i],
                   }))}
@@ -278,7 +273,7 @@ export function ProductPageTemplate({ product }: { product: Product }) {
                 ))}
               </div>
               <div className="zs-acc__art" data-reveal="right">
-                {SPOT_ART[0]}
+                
                 <SpotVisual feature={spotlights[0]} variant={0} />
               </div>
             </div>
@@ -355,7 +350,7 @@ export function ProductPageTemplate({ product }: { product: Product }) {
                       <img className="zs-spot__shot" src={shots[i + 1].src} alt={shots[i + 1].alt} loading="lazy" />
                     ) : (
                       <>
-                        {SPOT_ART[i % 3]}
+                        
                         {/* A different representation per row; numbered steps stay in "How it works" */}
                         <SpotVisual feature={f} variant={i} />
                       </>
@@ -613,15 +608,18 @@ export function ProductPageTemplate({ product }: { product: Product }) {
               Visit {host} <span aria-hidden>↗</span>
             </a>
           </p>
-          <figure className="zs-tour" data-reveal="scale">
-            {tourShot ? (
+          <figure className={`zs-tour${inActionPhoto(product.slug) ? " zs-tour--photo" : ""}`} data-reveal="scale">
+            {inActionPhoto(product.slug) ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={inActionPhoto(product.slug)!.src} alt={inActionPhoto(product.slug)!.alt} width={1280} height={720} loading="lazy" />
+            ) : tourShot ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={tourShot.src} alt={tourShot.alt} loading="lazy" />
             ) : (
-              <ImageSlot src="/images/product/tour.webp" alt={`${product.name} application interface`} width={1100} height={560} />
+              <ImageSlot src={`/images/products/${product.slug}/tour.webp`} alt={`${product.name} application interface and control dashboard`} width={1100} height={560} />
             )}
           </figure>
-          {tourShot && shots.length > 1 && (
+          {!inActionPhoto(product.slug) && tourShot && shots.length > 1 && (
             <div className="pz-tour__thumbs">
               {shots
                 .filter((s) => s.src !== tourShot.src)

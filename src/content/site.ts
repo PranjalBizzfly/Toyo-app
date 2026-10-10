@@ -10,12 +10,26 @@ export const site = {
   description:
     "ToyoApps is one home for business software. Discover, buy and use SaaS products organised by business function: sales and marketing, HR, operations and IT, finance and compliance, insights and research. You can also list and sell your own.",
   // Social profiles are linked from the current site; fill in the exact URLs.
+  // Footer order follows the site owner's reference (2026-10-10).
   social: [
-    { label: "X", href: "" },
+    { label: "Facebook", href: "" },
+    { label: "Instagram", href: "" },
     { label: "LinkedIn", href: "" },
-    { label: "GitHub", href: "" },
+    { label: "X", href: "" },
+    { label: "YouTube", href: "" },
   ],
   contactEmail: "",
+  // Footer badge row (confirmed by the site owner, 2026-10-10). Add each store
+  // URL when it is available; badges without a URL render but are not links.
+  badges: {
+    apps: [
+      { kind: "chrome", top: "Install", bottom: "Extension Now", href: "" },
+      { kind: "play", top: "Get it on", bottom: "Google Play", href: "" },
+      { kind: "apple", top: "Download on the", bottom: "App Store", href: "" },
+    ],
+    partner: { top: "Meta", bottom: "Business Partner" },
+    payments: ["Mastercard", "Maestro", "Diners Club", "PayPal", "American Express", "Visa"],
+  },
 };
 
 /** Publisher journey, from the current toyoapps.com page. */

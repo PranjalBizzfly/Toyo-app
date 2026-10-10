@@ -1,3 +1,4 @@
+import { SpotVisual } from "@/components/product/SpotVisual";
 import { getFeatureFaqs } from "@/lib/faqs";
 import { Labelled } from "@/components/ui/Labelled";
 import { ProductCta } from "@/components/product/ProductCta";
@@ -118,14 +119,12 @@ export function FeaturePageTemplate({ product, feature }: { product: Product; fe
 
       <section className={`fz-sec${tone()}`} aria-labelledby="what">
         <div className="container">
-          <div className="fz-panel fz-panel--shot">
-            {feature.media?.[0] ? (
+          {feature.media?.[0] && (
+            <div className="fz-panel fz-panel--shot">
               <ScreenshotFrame media={feature.media[0]} />
-            ) : (
-              <ImageSlot src="/images/features/feature-hero.webp" alt={`${feature.name} in ${product.name}`} width={1000} height={560} priority className="fz-art fz-art--band" />
-            )}
-          </div>
-          <div className="fz-center" style={{ marginTop: "clamp(56px, 7vw, 96px)" }}>
+            </div>
+          )}
+          <div className="fz-center" style={feature.media?.[0] ? { marginTop: "clamp(56px, 7vw, 96px)" } : undefined}>
             <h2 id="what" className="fz-h2">
               What is {feature.name}?
             </h2>
@@ -209,7 +208,7 @@ export function FeaturePageTemplate({ product, feature }: { product: Product; fe
               {feature.media?.[1] ? (
                 <ScreenshotFrame media={feature.media[1]} />
               ) : (
-                <ImageSlot src="/images/features/feature-screen.webp" alt={`${feature.name} screen in ${product.name}`} width={960} height={540} className="fz-art fz-art--band" />
+                <div className="fz-art fz-art--band fz-art--visual"><SpotVisual feature={feature} variant={(feature.slug.length) % 4} /></div>
               )}
             </div>
           </div>

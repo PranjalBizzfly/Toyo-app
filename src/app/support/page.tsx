@@ -25,7 +25,7 @@ export default function SupportPage() {
           <h1 className="co-hero__title">How can we help?</h1>
           <p className="co-hero__lead">Each ToyoApps product has its own support page with setup guidance and answers to common questions. Pick your product below, or contact the ToyoApps team.</p>
           <hr className="co-hero__rule" />
-          <ImageSlot src="/images/company/support-hero.webp" alt="ToyoApps unified support center and technical documentation directory" width={840} height={320} priority className="co-hero__art" />
+          <ImageSlot src="/images/company/support-hero.webp" alt="Indian technical support specialist with headset smiling warmly at enterprise customer service desk" width={840} height={320} priority className="co-hero__art" />
         </div>
       </section>
       {withSupport.length > 0 && (

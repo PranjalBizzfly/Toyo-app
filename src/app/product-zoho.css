@@ -248,7 +248,7 @@
 .pz-index__head h2 { font-family: var(--font-display); font-size: clamp(2rem, 1.5rem + 2vw, 3.2rem); font-weight: 400; letter-spacing: -0.03em; color: var(--heading); }
 .pz-index__head p { margin-top: 12px; font-size: 18px; color: var(--text-secondary); }
 .pz-vcards { display: grid; gap: 40px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
-.pz-vcard { display: flex; flex-direction: column; overflow: hidden; border-radius: 20px; background: var(--surface); box-shadow: 0 2px 6px rgb(15 34 53 / .06), 0 16px 32px -24px rgb(15 34 53 / .35); transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
+.pz-vcard { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--border); border-radius: 20px; background: var(--surface); box-shadow: 0 2px 6px rgb(15 34 53 / .06), 0 16px 32px -24px rgb(15 34 53 / .35); transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
 a.pz-vcard:hover { transform: translateY(-6px); box-shadow: 0 2px 6px rgb(15 34 53 / .06), 0 28px 48px -28px rgb(15 34 53 / .45); }
 .pz-vcard__art { display: grid; place-items: center; height: 150px; font-family: var(--font-display); font-size: 64px; font-weight: 600; color: color-mix(in srgb, var(--surface) 85%, transparent); }
 .pz-vcard:nth-child(3n+1) .pz-vcard__art { background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 55%, var(--surface)), color-mix(in srgb, var(--highlight) 60%, var(--surface))); }

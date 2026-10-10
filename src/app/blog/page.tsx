@@ -43,7 +43,7 @@ export default function BlogPage() {
           <p className="co-hero__lead co-hero__lead--max">
             Guides and how-tos across the ToyoApps ecosystem: {items.length} guides and support topics for {productCount} products, organised by product and business category.
           </p>
-          <ImageSlot src="/images/company/blog-hero.webp" alt="Guides and articles from across the ToyoApps ecosystem" width={1200} height={420} priority className="co-hero__art" />
+          <ImageSlot src="/images/company/blog-hero.webp" alt="Indian technical writers collaborating on software documentation and guides in a sunlit tech office" width={1200} height={420} priority className="co-hero__art" />
         </div>
       </section>
 

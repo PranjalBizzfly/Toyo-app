@@ -78,7 +78,7 @@ html body main .h-fcard > .h-more { align-self: end; justify-self: start; }
 /* Plans: five plans stay in one row on desktop. (balanced-grids.css means to do this, but its
    5-item rule with a longer selector list outranks it, giving 3 + 2.) */
 @media (min-width: 1024px) {
-  html body main :is(.pz-plans, .zs-plans):has(> :nth-child(5):last-child):not(.no-a.no-b) { --cols: 5; }
+  html body main :is(.pz-plans, .zs-plans:not(.zs-plans-1)):has(> :nth-child(5):last-child):not(.no-a.no-b) { --cols: 5; }
 }
 /* Plans without a billing-period line keep the button level with plans that have one. */
 html body main .pz-plan > .pz-plan__desc { min-height: 3lh; }
@@ -94,6 +94,9 @@ html body main .zs-dotcards:has(> :nth-child(7):last-child):has(> svg:last-child
 /* Tablets: balanced-grids.css forces two columns below 1024px, which leaves a lone card
    for 3, 5 and 7 items. Three columns for 3, 5 (3 + 2) and 6; four for 7 (4 + 3). */
 @media (min-width: 720px) and (max-width: 1023px) {
-  html body main :is(.h-industries, .cp-grid, .co-cols, .co-panel, .pc, .pz-related, .zs-bgrid, .zs-usecases, .zs-steps, .zs-plans, .pz-plans, .ez-cards, .fz-tiles, .h-ints, .zs-cards, .zs-dotcards):is(:has(> :nth-child(3):last-child), :has(> :nth-child(5):last-child), :has(> :nth-child(6):last-child)):not(.no-a.no-b) { --cols: 3 !important; }
-  html body main :is(.h-industries, .cp-grid, .co-cols, .co-panel, .pc, .pz-related, .zs-bgrid, .zs-usecases, .zs-steps, .zs-plans, .pz-plans, .ez-cards, .fz-tiles, .h-ints, .zs-cards):has(> :nth-child(7):last-child):not(.no-a.no-b) { --cols: 4 !important; }
+  html body main :is(.h-industries, .cp-grid, .co-cols, .co-panel, .pc, .pz-related, .zs-bgrid, .zs-usecases, .zs-steps, .zs-plans:not(.zs-plans-1), .pz-plans, .ez-cards, .fz-tiles, .h-ints, .zs-cards, .zs-dotcards):is(:has(> :nth-child(3):last-child), :has(> :nth-child(5):last-child), :has(> :nth-child(6):last-child)):not(.no-a.no-b) { --cols: 3 !important; }
+  html body main :is(.h-industries, .cp-grid, .co-cols, .co-panel, .pc, .pz-related, .zs-bgrid, .zs-usecases, .zs-steps, .zs-plans:not(.zs-plans-1), .pz-plans, .ez-cards, .fz-tiles, .h-ints, .zs-cards):has(> :nth-child(7):last-child):not(.no-a.no-b) { --cols: 4 !important; }
 }
+
+/* Small phones: card grids are one column (overrides the count-aware 2-column rules above) */
+@media (max-width: 520px) { html body main :is(.fz-why,.pz-vcards,.fz-tiles,.fz-doclinks,.cp-grid,.h-ints,.co-panel,.zs-dotcards,.fz-alt-flow,.pz-plans,.zs-usecases,.zs-cards,ul.zs-index,.zs-bgrid,.zs-glass-grid,ul.co-cols,.pc,.zc-why,.zc-uses,.pr-cards,.pr-why,.h-industries,.pz-cards,.zs-fits:not(.zs-fits-1),.zs-plans:not(.zs-plans-1),.zs-steps:not(.zs-how-2):not(.zs-how-3),.pz-related,.ez-cards,.zs-stage,.zs-channels,.zs-faq-2 > .accordion,section div.grid,.h-tasks), html body main :is(.fz-why,.pz-vcards,.fz-tiles,.fz-doclinks,.cp-grid,.h-ints,.co-panel,.zs-dotcards,.fz-alt-flow,.pz-plans,.zs-usecases,.zs-cards,ul.zs-index,.zs-bgrid,.zs-glass-grid,ul.co-cols,.pc,.zc-why,.zc-uses,.pr-cards,.pr-why,.h-industries,.pz-cards,.zs-fits:not(.zs-fits-1),.zs-plans:not(.zs-plans-1),.zs-steps:not(.zs-how-2):not(.zs-how-3),.pz-related,.ez-cards,.zs-stage,.zs-channels,.zs-faq-2 > .accordion,section div.grid,.h-tasks):not(.no-a):not(.no-b):not(.no-c):not(.no-d) { --cols: 1 !important; } }

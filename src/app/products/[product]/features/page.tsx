@@ -1,3 +1,6 @@
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+const GROUP_PHOTOS = new Set<string>();
 import { PageFaqs } from "@/components/ui/PageFaqs";
 import { getFeaturesHubFaqs } from "@/lib/faqs";
 import { Labelled } from "@/components/ui/Labelled";
@@ -200,11 +203,18 @@ export default async function FeaturesPage({ params }: Props) {
                 </div>
               </div>
               <div className={`fz-media${variant === 2 ? " fz-media--band" : ""}`}>
-                {variant === 0 ? (
-                  <ImageSlot src="/images/features/area-illustration.webp" alt={`${g.group.name} in ${product.name}`} width={450} height={450} className="fz-art" />
-                ) : (
-                  <ImageSlot src="/images/features/area-band.webp" alt={`${g.group.name} in ${product.name}`} width={360} height={480} className="fz-art fz-art--band" />
-                )}
+                {(() => {
+                  // Only groups with their own photo show an image; the rest show just the links.
+                  const file = `/images/products/${product.slug}/groups/${g.group.slug}-${variant === 0 ? "illustration" : "band"}.webp`;
+                  // Only real photos we added (the other group files are mock dashboards).
+                  if (!GROUP_PHOTOS.has(`${product.slug}/${g.group.slug}`) || !existsSync(join(process.cwd(), "public", file))) return null;
+                  const alt = `${g.group.name} in ${product.name}`;
+                  return variant === 0 ? (
+                    <ImageSlot src={file} alt={alt} width={450} height={450} className="fz-art" />
+                  ) : (
+                    <ImageSlot src={file} alt={alt} width={360} height={480} className="fz-art fz-art--band" />
+                  );
+                })()}
                 <ul className="fz-links">
                   {g.features.map((f) => (
                     <LinkRow key={f.slug} f={f} productSlug={product.slug} />

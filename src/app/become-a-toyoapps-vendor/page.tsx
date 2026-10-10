@@ -60,7 +60,7 @@ export default function VendorsPage() {
           <div className="co-btns co-btns--hero">
             <Link className="co-btn co-btn--invert" href={routes.contactForm({ type: "vendor" })}>Make a vendor enquiry</Link>
           </div>
-          <ImageSlot src="/images/company/vendors-hero.webp" alt="A vendor's SaaS product listed in the ToyoApps marketplace" width={1200} height={420} priority className="co-hero__art" />
+          <ImageSlot src="/images/company/vendors-hero.webp" alt="Indian SaaS founders onboarding their software product onto the ToyoApps marketplace" width={1200} height={420} priority className="co-hero__art" />
         </div>
       </section>
 

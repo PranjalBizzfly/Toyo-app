@@ -35,7 +35,7 @@ export default function PublishPage() {
           <div className="co-btns co-btns--hero">
             <Link className="co-btn co-btn--invert" href={routes.contactForm({ type: "publish" })}>Get in touch</Link>
           </div>
-          <ImageSlot src="/images/company/publish-hero.webp" alt="A SaaS product listed on ToyoApps" width={1200} height={420} priority className="co-hero__art" />
+          <ImageSlot src="/images/company/publish-hero.webp" alt="Indian SaaS founder smiling in modern office after publishing software product" width={1200} height={420} priority className="co-hero__art" />
         </div>
       </section>
 
@@ -71,7 +71,7 @@ export default function PublishPage() {
               </li>
             ))}
           </ol>
-          <ImageSlot src="/images/company/publish-steps.webp" alt="From listing to growth on ToyoApps" width={1200} height={360} className="co-band__art" />
+          <ImageSlot src="/images/company/publish-steps.webp" alt="Indian software partners shaking hands to finalize SaaS marketplace publishing agreement" width={1200} height={360} className="co-band__art" />
         </div>
       </section>
       <PageFaqs faqs={getSiteFaqs("publish")} />

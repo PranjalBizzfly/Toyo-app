@@ -2,7 +2,6 @@ import { PageFaqs } from "@/components/ui/PageFaqs";
 import { getSiteFaqs } from "@/lib/faqs";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/primitives";
-import { ImageSlot } from "@/components/ui/ImageSlot";
 import { site } from "@/content/site";
 import { routes } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo";
@@ -38,14 +37,6 @@ export default function CompanyPage() {
           <span className="co-statement__big">One home for business software.</span>
         </div>
       </section>
-
-      <ImageSlot
-        src="/images/company/about-team.webp"
-        alt="How ToyoApps connects its catalog and SaaS products"
-        width={1440}
-        height={720}
-        className="co-img co-img--full"
-      />
 
       <section className="co-band co-band--tint">
         <div className="co-wrap">

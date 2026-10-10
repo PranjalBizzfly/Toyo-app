@@ -50,7 +50,7 @@ export default function IntegrationsPage() {
       ) : (
         <>
           {guides.length > 0 && (
-            <section className="dx-sec dx-sec--tint" aria-labelledby="dx-guides">
+            <section className="dx-sec dx-sec--tint dx-int" aria-labelledby="dx-guides">
               <div className="container">
                 <SectionHead
                   id="dx-guides"
@@ -67,7 +67,7 @@ export default function IntegrationsPage() {
             </section>
           )}
 
-          <section className="dx-sec" aria-labelledby="dx-all">
+          <section className="dx-sec dx-int" aria-labelledby="dx-all">
             <div className="container">
               <SectionHead id="dx-all" kicker="All integrations" title="Browse the directory" />
               <DirectoryFilters

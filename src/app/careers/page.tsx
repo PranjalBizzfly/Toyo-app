@@ -59,7 +59,7 @@ export default function CareersPage() {
           <div className="co-btns co-btns--hero">
             <a className="co-btn co-btn--invert" href="#open-positions">See open positions</a>
           </div>
-          <ImageSlot src="/images/company/careers-hero.webp" alt="The ToyoApps team working across several business products" width={1200} height={420} priority className="co-hero__art" />
+          <ImageSlot src="/images/company/careers-hero.webp" alt="Enthusiastic Indian technology team collaborating happily in a modern corporate lounge" width={1200} height={420} priority className="co-hero__art" />
         </div>
       </section>
 

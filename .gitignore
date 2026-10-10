@@ -17,3 +17,4 @@ scripts/.compare/
 scripts/_tmp_space/
 !.env.example
 scripts/_tmp_*/
+incoming-images/

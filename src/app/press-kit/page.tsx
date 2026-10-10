@@ -34,7 +34,7 @@ export default function PressKitPage() {
           <div className="co-btns co-btns--hero">
             <a className="co-btn co-btn--invert" href="/press/toyoapps-logo.svg" download>Download logo (SVG)</a>
           </div>
-          <ImageSlot src="/images/company/press-kit-hero.webp" alt="ToyoApps logo and brand assets" width={1200} height={420} priority className="co-hero__art" />
+          <ImageSlot src="/images/company/press-kit-hero.webp" alt="Brand identity designer reviewing color palettes, logo geometry, and typography specifications" width={1200} height={420} priority className="co-hero__art" />
         </div>
       </section>
 

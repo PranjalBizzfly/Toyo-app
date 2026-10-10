@@ -261,3 +261,7 @@ a.fz-tile:hover { transform: translateY(-4px); box-shadow: 0 14px 34px -14px rgb
 .fz-about .fz-lead { max-width: 68ch; text-align: left; }
 @media (min-width: 900px) { .fz-about .fz-lead { text-align: center; } }
 .fz-about__use { margin: 0; font-size: 16px; line-height: 1.6; color: var(--text-secondary); }
+
+/* Cards and group rows without a photo: no empty gap, links use the full width */
+html body main .fz-media:not(:has(.fz-art)) { display: block !important; margin-top: 32px; }
+html body main .fz-media:not(:has(.fz-art)) > .fz-links { width: 100%; max-width: none; margin-left: 0; }

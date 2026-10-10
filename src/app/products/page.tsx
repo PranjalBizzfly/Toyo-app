@@ -39,7 +39,7 @@ export default function ProductsPage() {
         <div className="container">
           <h1>All the software you need to run your business</h1>
           <hr className="zc-rule" />
-          <ImageSlot src="/images/catalog/products-hero.webp" alt="ToyoApps products for every part of a business" width={960} height={360} priority className="zc-hero__art" />
+          <ImageSlot src="/images/catalog/products-hero.webp" alt="Cross-functional technology team collaborating on software products in modern innovation hub" width={960} height={360} priority className="zc-hero__art" />
         </div>
       </header>
       <CatalogBrowser sections={sections} sideLinks={sideLinks} />
