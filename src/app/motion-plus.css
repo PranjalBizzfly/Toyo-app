@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Motion layer 2 — modern, subtle effects on top of motion.css:
+   1. Reading-progress bar (CSS scroll-driven animation)
+   2. Header gains depth once the page scrolls (scroll-driven)
+   3. Cursor spotlight glow on cards (MotionPlus.tsx sets --mx/--my)
+   4. Shine sweep across primary buttons on hover
+   5. Photos ease in with a soft zoom as they enter the viewport (view timeline)
+   6. Count-up numbers in stat blocks (MotionPlus.tsx)
+   7. Gradient accent text gently drifts
+   Scroll-driven effects only run where the browser supports them; hover
+   effects only on fine pointers; everything is off under reduced motion.
+   ========================================================================== */
+
+/* 1. Reading progress */
+.mp-progress { position: fixed; inset: 0 0 auto; z-index: 1000; height: 3px; pointer-events: none; background: linear-gradient(90deg, var(--primary), var(--accent), var(--highlight)); transform-origin: 0 50%; transform: scaleX(0); }
+@supports (animation-timeline: scroll()) {
+  .mp-progress { animation: mp-progress linear both; animation-timeline: scroll(root block); }
+  @keyframes mp-progress { to { transform: scaleX(1); } }
+
+  /* 2. Header depth after the first 120px of scrolling */
+  .site-header { animation: mp-header linear both; animation-timeline: scroll(root block); animation-range: 0 120px; }
+  @keyframes mp-header { to { box-shadow: 0 10px 30px -18px rgb(15 34 53 / .35); } }
+
+  /* 5. Photos: soft zoom-in as they scroll into view */
+  main :is(.zs-tour--photo img, .pc__img img, .ez-tile__shot img, .vh__photo img, .ez-hero__visual img) {
+    animation: mp-photo linear both; animation-timeline: view(); animation-range: entry 0% cover 35%;
+  }
+  @keyframes mp-photo { from { scale: 1.08; filter: saturate(.85); } to { scale: 1; filter: none; } }
+}
+
+/* 3. Cursor spotlight on cards */
+@media (hover: hover) and (pointer: fine) {
+  :is(.dx-card, .dx-guide, .dx-icard, .dx-prod, .zs-benefit, .fz-tile, .pz-vcard, .ez-tile, .ez-card, .product-card, .pc__card, .zs-usecase, .h-card) { --mx: 50%; --my: 50%; }
+  :is(.dx-card, .dx-guide, .dx-icard, .dx-prod, .zs-benefit, .fz-tile, .pz-vcard, .ez-tile, .ez-card, .product-card, .zs-usecase, .h-card).mp-spot { position: relative; isolation: isolate; }
+  :is(.dx-card, .dx-guide, .dx-icard, .dx-prod, .zs-benefit, .fz-tile, .pz-vcard, .ez-tile, .ez-card, .product-card, .zs-usecase, .h-card).mp-spot::after {
+    content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none; opacity: 0;
+    background: radial-gradient(320px circle at var(--mx) var(--my), color-mix(in srgb, var(--primary) 14%, transparent), transparent 60%);
+    transition: opacity .3s ease;
+  }
+  :is(.dx-card, .dx-guide, .dx-icard, .dx-prod, .zs-benefit, .fz-tile, .pz-vcard, .ez-tile, .ez-card, .product-card, .zs-usecase, .h-card).mp-spot:hover::after { opacity: 1; }
+
+  /* 4. Shine sweep on primary buttons */
+  :is(.btn--primary, .zs-btn--solid, .ez-btn--primary, .hh-btn--primary, .sfoot__pill:not(.sfoot__pill--outline), .header-cta) { position: relative; overflow: hidden; isolation: isolate; }
+  :is(.btn--primary, .zs-btn--solid, .ez-btn--primary, .hh-btn--primary, .sfoot__pill:not(.sfoot__pill--outline), .header-cta)::before {
+    content: ""; position: absolute; inset: 0 auto 0 -60%; z-index: -1; width: 45%; pointer-events: none;
+    background: linear-gradient(105deg, transparent, rgb(255 255 255 / .35), transparent); transform: skewX(-18deg); transition: left .6s var(--ease-out-expo, ease);
+  }
+  :is(.btn--primary, .zs-btn--solid, .ez-btn--primary, .hh-btn--primary, .sfoot__pill:not(.sfoot__pill--outline), .header-cta):hover::before { left: 120%; }
+}
+
+/* 7. Gradient accent text drift */
+.hh__title-accent, .hh__accent { background-size: 200% 100% !important; animation: mp-drift 8s ease-in-out infinite alternate; }
+@keyframes mp-drift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
+
+/* 6. Count-up numbers keep their width while counting */
+[data-countup] { font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mp-progress, .site-header, main img { animation: none !important; }
+  .mp-progress { display: none; }
+  .hh__title-accent, .hh__accent { animation: none; }
+  :is(.btn--primary, .zs-btn--solid, .ez-btn--primary, .hh-btn--primary, .sfoot__pill, .header-cta)::before { display: none; }
+}
+
+/* ---------- Layer 3: distinctive touches ---------- */
+
+/* 8. 3D tilt on feature cards (MotionPlus sets --rx/--ry) */
+@media (hover: hover) and (pointer: fine) {
+  :is(.dx-guide, .dx-prod, .product-card, .pc__card, .ez-tile).mp-tilt {
+    transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-4px);
+    transition: transform .15s ease-out;
+  }
+}
+
+/* 9. Magnetic buttons drift toward the cursor (MotionPlus sets --tx/--ty) */
+@media (hover: hover) and (pointer: fine) {
+  .mp-magnet { translate: var(--tx, 0) var(--ty, 0); transition: translate .25s var(--ease-out-expo, ease); }
+}
+
+/* 10. Section headings: accent underline draws in as the heading scrolls into view */
+@supports (animation-timeline: view()) {
+  main :is(.zs-h2, .dx-head__title, .ez-intro__title) { background-image: linear-gradient(90deg, var(--primary), var(--accent)); background-repeat: no-repeat; background-position: 0 100%; background-size: 0 3px; padding-bottom: 6px; animation: mp-underline linear both; animation-timeline: view(); animation-range: entry 20% cover 40%; }
+  main :is(.zs-center, .dx-head--center, .ez-intro--center) :is(.zs-h2, .dx-head__title, .ez-intro__title), main .zs-h2.zs-center { background-position: 50% 100%; }
+  @keyframes mp-underline { to { background-size: 72px 3px; } }
+}
+
+/* 11. Ambient glows drifting behind directory heroes */
+.dx-hero { position: relative; overflow: hidden; isolation: isolate; }
+.dx-hero::before, .dx-hero::after { content: ""; position: absolute; z-index: -1; width: 420px; height: 420px; border-radius: 50%; filter: blur(70px); opacity: .35; pointer-events: none; animation: mp-orb 18s ease-in-out infinite alternate; }
+.dx-hero::before { top: -160px; right: 8%; background: var(--primary); }
+.dx-hero::after { bottom: -200px; left: 4%; background: var(--accent); animation-duration: 22s; animation-direction: alternate-reverse; }
+:root[data-theme="dark"] .dx-hero::before, :root[data-theme="dark"] .dx-hero::after { opacity: .22; }
+@keyframes mp-orb { from { transform: translate(0, 0) scale(1); } to { transform: translate(-60px, 40px) scale(1.15); } }
+
+/* 12. Click ripple on buttons */
+.mp-ripple { position: absolute; border-radius: 50%; pointer-events: none; background: currentColor; opacity: .25; transform: scale(0); animation: mp-ripple .6s ease-out forwards; }
+@keyframes mp-ripple { to { transform: scale(4); opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .mp-tilt { transform: none !important; }
+  .mp-magnet { translate: none !important; }
+  main :is(.zs-h2, .dx-head__title, .ez-intro__title) { animation: none !important; background-size: 72px 3px !important; }
+  .dx-hero::before, .dx-hero::after { animation: none; }
+  .mp-ripple { display: none; }
+}
+
+/* ---------- Layer 4: interactive ---------- */
+
+
+/* 14. Word-by-word heading rise (MotionPlus wraps words in .mp-w) */
+.mp-words .mp-w { display: inline-block; opacity: 0; transform: translateY(.45em); transition: opacity .5s ease, transform .6s var(--ease-out-expo, ease); transition-delay: calc(var(--i) * 45ms); }
+.mp-words.is-in .mp-w { opacity: 1; transform: none; }
+
+/* 15. Curtain reveal on photos */
+@supports (animation-timeline: view()) {
+  main :is(.zs-tour--photo, .pc__img, .vh__photo) { animation: mp-curtain linear both; animation-timeline: view(); animation-range: entry 0% cover 30%; }
+  @keyframes mp-curtain { from { clip-path: inset(0 0 100% 0 round 20px); } to { clip-path: inset(0 0 0 0 round 20px); } }
+}
+
+/* 16. Back-to-top button shows scroll progress as a ring */
+.scroll-toggle { --p: 0; background-image: conic-gradient(var(--primary) calc(var(--p) * 1turn), transparent 0) !important; background-origin: border-box; }
+.scroll-toggle::before { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: var(--surface); z-index: -1; }
+.scroll-toggle { isolation: isolate; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mp-words .mp-w { opacity: 1 !important; transform: none !important; transition: none !important; }
+  main :is(.zs-tour--photo, .pc__img, .vh__photo) { animation: none !important; }
+}

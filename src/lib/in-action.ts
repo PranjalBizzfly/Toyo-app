@@ -19,7 +19,6 @@ const alts: Record<string, string> = {
   taskmagic: "Operations specialist working calmly at a laptop by the window",
   zuzu: "Team lead walking colleagues through their work on a laptop",
   zorfly: "Sales coach training two young sales representatives",
-  tracksuit: "Manager reviewing an end-of-day report on a tablet with an employee",
 };
 
 /** Product card photos on solution/industry pages (public/images/products/{slug}/tile.webp). */

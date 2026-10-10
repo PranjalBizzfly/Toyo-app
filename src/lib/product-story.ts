@@ -53,7 +53,6 @@ const STORIES: Record<string, ProductStory> = {
   zapbuzzer: { ref: "Zoho CRM", look: "pastel", hero: "pastel", art: "flow", benefits: "pastel", spot: "split", signature: "orbit", edge: "round", cta: "spin" },
   zorfly: { ref: "Zoho Flow", look: "snow", hero: "flow", art: "chat", benefits: "columns", spot: "split", signature: "dotgrid", edge: "round", cta: "panel" },
   zuzu: { ref: "Zoho CommandCenter", look: "grid", hero: "frame", art: "desktop", benefits: "grid", spot: "split", signature: "tabs", edge: "flat", cta: "band" },
-  tracksuit: { ref: "Zoho Creator", look: "sky", hero: "prompt", art: "chart", benefits: "columns", spot: "accordion", signature: "dotgrid", edge: "flat", cta: "glow" },
 };
 
 const FALLBACK: ProductStory = { ref: "—", look: "daylight", hero: "voice", art: "desktop", benefits: "glass", spot: "split", signature: "timeline", edge: "round", cta: "glow" };

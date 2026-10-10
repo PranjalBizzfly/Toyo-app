@@ -148,13 +148,13 @@ Changes to `src/content/types.ts` from this research:
 **Deferred until content or business confirmation:**
 - Feature detail pages, group hubs, solutions, industries, comparisons, resources and integration detail pages.
 - Bundles.
-- Tracksuit, TaskMagic, Fleetras and MeetingMind.
+- TaskMagic, Fleetras and MeetingMind.
 - Publisher badges.
 
 ## 7. Open questions for the business
 
 1. **Ownership.** The sites show Stolvix (TrackySuite, Sizoru), Bizzfly (ZUZU, likely HRMagix and Cardizo), GetBenj Inc., and no owner for the rest. How does ToyoApps relate to each? This decides whether they are first-party products or marketplace listings.
-2. **Tracksuit** (blocked) and **TaskMagic** (TaskMagic, Inc.): are these really ToyoApps products?
+2. **TaskMagic** (TaskMagic, Inc.): is this really a ToyoApps product? (Tracksuit was removed on 2026-10-10: not a ToyoApps product.)
 3. Are **Fleetras** and **MeetingMind** sold publicly?
 4. Which are the remaining products of the "~20"?
 5. Do the product teams have legal pages, real pricing for HRMagix/ZUZU/Fantom, and permission to use any customer proof?

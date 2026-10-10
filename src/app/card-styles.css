@@ -40,6 +40,6 @@
 [data-cards="pastel"] .fz-tiles__item:nth-child(3n+2) .fz-tile, [data-cards="pastel"] :is(.pz-vcard, .pz-card):nth-child(3n+2) { background: color-mix(in srgb, var(--art-1, var(--primary)) 13%, var(--surface)); }
 [data-cards="pastel"] .fz-tiles__item:nth-child(3n+3) .fz-tile, [data-cards="pastel"] :is(.pz-vcard, .pz-card):nth-child(3n+3) { background: color-mix(in srgb, var(--art-2, #3fa34d) 15%, var(--surface)); }
 
-/* columns — open columns divided by a rule (Zorfly, Tracksuit) */
+/* columns — open columns divided by a rule (Zorfly) */
 [data-cards="columns"] :is(.fz-tile, .pz-card) { border: 0; border-left: 1px solid var(--border); border-radius: 0; background: transparent; box-shadow: none; }
 [data-cards="columns"] :is(.fz-tile, .pz-card):hover { transform: none; border-left-color: var(--primary); }

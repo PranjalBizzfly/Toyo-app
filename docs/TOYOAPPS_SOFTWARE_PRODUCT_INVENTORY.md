@@ -37,7 +37,6 @@
 | 9 | **Fleetras** | fleetras.com | Fleet dispatch and trip-cost tracking for Dubai operations | "Fleetras", Dubai, UAE | **No** (login wall; site is `noindex`) | **Hold as draft**: confirm it is sold publicly |
 | 10 | **MeetingMind** | meeting.oxo1.com | AI meeting analysis: summaries, action items, decisions, meeting Q&A | Not stated (oxo1.com is an unrelated blog) | **No** (login-only app) | **Hold as draft**: no public copy |
 | 11 | **Zorfly** | zorfly.com | Gamified five-minute daily communication and grammar training for teams | "Zorfly" | Yes (thin; pricing "being confirmed") | **Include** |
-| 12 | **Tracksuit** | gotracksuit.com | NOT VERIFIED (site blocked all requests with HTTP 429 "Vercel Security Checkpoint") | NOT VERIFIED | NOT VERIFIED | **Pending verification**: kept as a draft record; site content not yet audited |
 | 13 | **Cardizo** | cardizo.com | AI business-card scanner and contact relationship memory | Not stated; Enterprise CTA is `sales@bizzfly.com` | Yes | **Include** |
 | 14 | **TaskMagic** | taskmagic.com | No-code app and browser automation | **"TaskMagic, Inc."**, Los Angeles, California | Yes | **Pending verification**: the site names a separate company; kept as a draft record until the business confirms the relationship |
 | 15 | **SigChanger** | sigchanger.com | Gmail signature design and deployment for Google Workspace | Not stated | Yes | **Include** |
@@ -47,7 +46,8 @@
 - 12 products are publishable now (ODA7 added 8 Oct 2026).
 - 4 are **pending verification** and held as drafts (not public, not indexed):
   - Fleetras and MeetingMind: public-sale status to confirm.
-  - TaskMagic and Tracksuit: relationship to ToyoApps to confirm.
+  - TaskMagic: relationship to ToyoApps to confirm.
+  - Tracksuit (gotracksuit.com) was removed from the site on 2026-10-10: it is not a ToyoApps product.
 - **No product has been removed or permanently excluded.** All 15 remain in this research and in the code registry.
 - The brief mentions "~20 products". **15 were supplied**, so 5 or more slots are unknown and are not invented.
 
@@ -59,7 +59,6 @@
 | Stolvix (Stolvix Softwares) | TrackySuite, Sizoru | STATED; both also load the same help widget |
 | Not stated | ZapBuzzer, Sibu, GetBenj (GetBenj Inc.), Fantom, Fleetras, MeetingMind, Zorfly, SigChanger | — |
 | Third party | TaskMagic, Inc. | STATED |
-| Unknown | Tracksuit | Blocked |
 
 No product site mentions "ToyoApps" or "Toyo Apps". The relationship between ToyoApps and these products must be confirmed by the business.
 
@@ -75,7 +74,6 @@ No product site mentions "ToyoApps" or "Toyo Apps". The relationship between Toy
 | Fleetras | Partly verified (login panel, privacy page) | **PENDING** | **PENDING** (login-only, noindex) | Draft |
 | MeetingMind | [code] only | **PENDING** | **PENDING** (login-only, no marketing site) | Draft |
 | TaskMagic | VERIFIED from official site; operator "TaskMagic, Inc." | **PENDING** | VERIFIED (public sign-up) | Draft |
-| Tracksuit | NOT VERIFIED (site blocked) | **PENDING** | **PENDING** | Draft |
 
 Nothing in this document or on the website asserts that ToyoApps owns any of these products. Parent-company names (Bizzfly, Stolvix, GetBenj Inc., TaskMagic, Inc.) are recorded only because each product's own site states them.
 
@@ -384,11 +382,6 @@ Nothing in this document or on the website asserts that ToyoApps owns any of the
 
   The free plan has "no time limit and no credit card required".
 - **Pages:** `/`, `/about-us`, `/features`, `/pricing`, `/contact-us`, `/privacy-policy`, `/terms-of-service`. No sitemap.
-
-### 2.14 Tracksuit: gotracksuit.com (PENDING VERIFICATION)
-Every request returned HTTP 429 "Vercel Security Checkpoint". Nothing about the product was verified.
-
-**Status:** pending verification. It is kept as a draft record (name and website only). It needs a successful audit of its site (for example, from a browser) and confirmation of its relationship to ToyoApps.
 
 ### 2.15 TaskMagic: taskmagic.com (PENDING VERIFICATION)
 The site states "TaskMagic, Inc.", California law, Los Angeles. It is an AI no-code app and browser-automation product. **VERIFIED:** the site names "TaskMagic, Inc." as the operator.

@@ -337,7 +337,7 @@ html[data-theme="dark"] .ref-paper :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-her
 html .ref-voice :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { background: radial-gradient(circle at 92% 30%, color-mix(in srgb, var(--art-3) 70%, transparent) 0 70px, transparent 71px), radial-gradient(circle at 6% 85%, color-mix(in srgb, var(--art-1) 35%, transparent) 0 90px, transparent 91px); }
 /* Lit frame (MeetingMind) */
 html .ref-agent :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { inset: 16px; border-radius: 28px; border: 1.5px solid rgb(102 194 245 / .45); box-shadow: inset 0 0 80px rgb(30 156 229 / .14), 0 0 40px rgb(123 193 66 / .12); }
-/* Grid (ZUZU) and prompt (Tracksuit) */
+/* Grid (ZUZU) */
 html .ref-frame :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { background: linear-gradient(rgb(15 123 190 / .07) 1px, transparent 1px) 0 0 / 40px 40px, linear-gradient(90deg, rgb(15 123 190 / .07) 1px, transparent 1px) 0 0 / 40px 40px; }
 html .ref-flow :is(.pz-sec-hero, .fz-hero, .zf-hero, .ez-hero)::before { background: radial-gradient(circle at 1px 1px, rgb(15 111 184 / .14) 1px, transparent 0) 0 0 / 24px 24px; }
 /* Radial glow (ODA7) / marquee warmth (GetBenj) / pastel mesh (ZapBuzzer) / lime (Fantom) */

@@ -265,3 +265,7 @@ a.fz-tile:hover { transform: translateY(-4px); box-shadow: 0 14px 34px -14px rgb
 /* Cards and group rows without a photo: no empty gap, links use the full width */
 html body main .fz-media:not(:has(.fz-art)) { display: block !important; margin-top: 32px; }
 html body main .fz-media:not(:has(.fz-art)) > .fz-links { width: 100%; max-width: none; margin-left: 0; }
+
+/* Visual cards inside a shot panel sit in the centre */
+.fz-panel--shot:has(> .sv) { display: grid; place-items: center; }
+.fz-panel--shot .sv { margin-inline: auto; }

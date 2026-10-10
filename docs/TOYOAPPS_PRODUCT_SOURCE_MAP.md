@@ -23,7 +23,6 @@
 | Sizoru | https://sizoru.com/ | https://sizoru.com/sign-in?mode=signup | `/` (hero, why-trust-it, how it works, pricing), `/methodology` | `…/sizoru.ts` |
 | Fleetras (draft) | https://fleetras.com/ | — (admin-created accounts) | Login page panel, `/privacy` | `…/fleetras.ts` |
 | MeetingMind (draft) | https://meeting.oxo1.com/ | https://meeting.oxo1.com/signup | Public JS bundle only [code] | `…/meetingmind.ts` |
-| Tracksuit | https://www.gotracksuit.com/ | — | **None** (blocked, HTTP 429) | `…/pending.ts` (draft: name and website only) |
 | TaskMagic | https://taskmagic.com/ | https://taskmagic.com/ | `/` (hero, stack, use cases), `/terms` (operator) | `…/pending.ts` (draft) |
 
 ---
@@ -64,7 +63,6 @@
 | ZUZU | Price per employee; HRMagix sync as a live integration | Not stated; the bundle says the sync is "not enabled on this platform yet". Recorded as a product connection marked "listed by ZUZU" |
 | MeetingMind | All copy | No public marketing page; the product is held as a draft |
 | Fleetras | Everything beyond the 3 login-panel features | The site is `noindex` and login-only; the product is held as a draft |
-| Tracksuit | Everything | Site not yet audited (pending) |
 | TaskMagic | Pricing, customer logos, press claims | Pending verification of the ToyoApps relationship; pricing would be added once confirmed |
 
 ---
@@ -75,7 +73,7 @@
 2. Check whether any product added a sitemap, feature pages, integrations or legal pages. These may unlock new ToyoApps pages.
 3. Confirm with the business:
    - ownership of all products (only Stolvix and Bizzfly are stated)
-   - Tracksuit and TaskMagic status
+   - TaskMagic status
    - whether Fleetras and MeetingMind are publicly sold
    - the 5+ missing products of the "~20"
 4. Update `asOf` and this file.

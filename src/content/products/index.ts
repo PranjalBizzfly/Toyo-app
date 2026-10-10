@@ -5,7 +5,7 @@ import { fantom } from "./fantom";
 import { getbenj } from "./getbenj";
 import { hrmagix } from "./hrmagix";
 import { oda7 } from "./oda7";
-import { taskmagic, tracksuit } from "./pending";
+import { taskmagic } from "./pending";
 import { sibu } from "./sibu";
 import { sigchanger } from "./sigchanger";
 import { sizoru } from "./sizoru";
@@ -22,7 +22,7 @@ import { zuzu } from "./zuzu";
  * and add it here. Routes, menus, cards, sitemap and internal links follow.
  *
  * Drafts (preview only, not indexed) are PENDING VERIFICATION, not excluded:
- * Fleetras, MeetingMind (public sale), TaskMagic, Tracksuit (relationship).
+ * Fleetras, MeetingMind (public sale), TaskMagic.
  */
 export const products: Product[] = [
   cardizo,
@@ -40,5 +40,4 @@ export const products: Product[] = [
   fleetras,
   meetingmind,
   taskmagic,
-  tracksuit,
 ];

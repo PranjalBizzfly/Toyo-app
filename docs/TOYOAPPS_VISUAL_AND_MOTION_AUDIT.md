@@ -150,7 +150,6 @@ content are used throughout. No Zoho text, images or code. Source of truth: `src
 | ZapBuzzer | CRM | Pastel mesh, huge blue type | Pastel tiles | Alternating split | Orbit rings ("360° view") | "Take … for a spin" |
 | Zorfly | Flow | White split + glowing dark screen | Icon columns + black buttons | Alternating split | Navy dot-grid cards | Panel |
 | ZUZU | CommandCenter | Grid, gradient frame with journey nodes | Bordered grid | Alternating split | Dark tab switcher | Brand band |
-| Tracksuit | Creator | Prompt box under blue headline | Icon columns + black buttons | Accordion + sticky art | Navy dot-grid cards | Glow |
 
 Inner pages (features hub, feature detail, pricing, solutions, industries, integrations, security,
 compare, resources, support) inherit the product's look and hero treatment through the `ref-*`

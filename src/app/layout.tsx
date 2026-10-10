@@ -3,16 +3,18 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import { FooterResolver } from "@/components/layout/FooterResolver";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Motion } from "@/components/layout/Motion";
+import { MotionPlus } from "@/components/layout/MotionPlus";
 import { ScrollToggle } from "@/components/layout/ScrollToggle";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { site } from "@/content/site";
 import { getProducts } from "@/lib/catalog";
 import { jsonLd } from "@/lib/seo";
 import { themeInitScript } from "@/lib/theme";
-import { titleCaseScript } from "@/lib/title-case";
+import { TitleCaseMarker } from "@/components/TitleCaseMarker";
 import "./globals.css";
 import "./layout-zoho.css";
 import "./motion.css";
+import "./motion-plus.css";
 import "./title-case.css";
 import "./contrast-fixes.css";
 import "./contrast-fixes-2.css";
@@ -76,10 +78,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <FooterResolver productSlugs={getProducts().map((p) => p.slug)}>
           <SiteFooter />
         </FooterResolver>
-        {/* Marks 100+ word paragraphs so they stay in sentence case (see title-case.css). */}
-        <script dangerouslySetInnerHTML={{ __html: titleCaseScript }} />
+        {/* Marks long paragraphs so they stay in sentence case (see title-case.css). Runs after hydration. */}
+        <TitleCaseMarker />
         <ScrollToggle />
         <Motion />
+        <MotionPlus />
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(organization)} />
       </body>
     </html>

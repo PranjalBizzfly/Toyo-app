@@ -10,7 +10,6 @@ No website code or content was changed in Part 1.
 |---|--:|--:|--:|--:|--:|--:|
 | TaskMagic | 6 | 0 | 0 | 0 | 3 | 3 |
 | ODA7 | 9 | 0 | 0 | 4 | 5 | 0 |
-| Tracksuit | 2 | 0 | 0 | 2 | 0 | 0 |
 | SigChanger | 2 | 0 | 0 | 0 | 2 | 0 |
 | ZUZU | 27 | 0 | 0 | 5 | 20 | 2 |
 | Sizoru | 6 | 0 | 0 | 4 | 2 | 0 |
