@@ -86,7 +86,7 @@ export function ProductFooter({ product }: { product: Product }) {
               Talk To Us <span aria-hidden>→</span>
             </Link>
             <Link href={routes.products()} className="sfoot__pill">
-              Explore Products
+              All Products
             </Link>
           </div>
         </nav>

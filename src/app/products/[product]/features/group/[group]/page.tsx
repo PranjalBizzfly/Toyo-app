@@ -1,4 +1,3 @@
-import { photoForProduct } from "@/lib/photos";
 import { SpotVisual } from "@/components/product/SpotVisual";
 import { PageFaqs } from "@/components/ui/PageFaqs";
 import { getFeatureGroupFaqs } from "@/lib/faqs";
@@ -89,7 +88,6 @@ export default async function FeatureGroupPage({ params }: Props) {
                 </a>
               </div>
             </div>
-            {photoForProduct(product.slug) && <ImageSlot src={photoForProduct(product.slug)!.src} alt={photoForProduct(product.slug)!.alt} width={1280} height={720} priority className="fz-art fz-hero__art" />}
           </div>
         </div>
       </header>

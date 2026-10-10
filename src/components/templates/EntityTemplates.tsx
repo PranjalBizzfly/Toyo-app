@@ -1,6 +1,5 @@
 import { getComparisonFaqs, getIndustryFaqs, getIntegrationFaqs, getResourceFaqs, getSolutionFaqs } from "@/lib/faqs";
 import { Labelled } from "@/components/ui/Labelled";
-import { photoForProduct } from "@/lib/photos";
 import { solutionPhoto, tilePhoto } from "@/lib/in-action";
 import Link from "next/link";
 import type { Comparison, Faq, Feature, IconName, Industry, Integration, Product, Resource, Solution } from "@/content/types";
@@ -496,7 +495,7 @@ export function SolutionPageTemplate({ solution }: { solution: Solution }) {
         title={solution.name}
         lead={solution.summary}
         align="left"
-        visual={<ImageSlot src={(solutionPhoto(solution.slug) ?? photoForProduct(solution.products[0] ?? ""))?.src ?? ""} alt={(solutionPhoto(solution.slug) ?? photoForProduct(solution.products[0] ?? ""))?.alt ?? ""} width={1600} height={900} priority />}
+        visual={solutionPhoto(solution.slug) && <ImageSlot src={solutionPhoto(solution.slug)!.src} alt={solutionPhoto(solution.slug)!.alt} width={1600} height={900} priority />}
       >
         <HeroActions />
       </Hero>
@@ -960,7 +959,6 @@ export function ResourcePageTemplate({ resource, typeLabel }: { resource: Resour
         </div>
       </header>
       <div className="container ez-narrow ez-article-cover">
-        {photoForProduct(resource.products?.[0] ?? "") && <ImageSlot src={photoForProduct(resource.products?.[0] ?? "")!.src} alt={photoForProduct(resource.products?.[0] ?? "")!.alt} width={1280} height={720} />}
       </div>
       <Prose body={resource.body} />
       <ProductTiles products={productsFor(resource.products ?? [])} title="Products in this article" />

@@ -1,7 +1,7 @@
 import { useId } from "react";
 import Link from "next/link";
 import type { Feature, Product } from "@/content/types";
-import type { ProductStory } from "@/lib/product-story";
+import { DARK_LOOKS, type ProductStory } from "@/lib/product-story";
 import { getCategory } from "@/lib/catalog";
 import { platformLabels } from "@/lib/product-cta";
 import { routes } from "@/lib/routes";
@@ -18,8 +18,6 @@ interface Props {
   cta: { label: string; href: string };
 }
 
-const DARK = new Set(["glass", "starfield", "touch", "agent", "lime", "radial"]);
-
 /**
  * Product hero — one composition per product (see product-story.ts). All share
  * the same copy block; what changes is how copy and artwork are staged.
@@ -27,7 +25,8 @@ const DARK = new Set(["glass", "starfield", "touch", "agent", "lime", "radial"])
 export function ProductHero({ product, story, highlights, integrations, cta }: Props) {
   const category = getCategory(product.category);
   const host = new URL(product.websiteUrl).hostname.replace(/^www\./, "");
-  const dark = DARK.has(story.hero);
+  // Text colour follows the colour look (it sets the hero background), so any look/hero pairing stays legible.
+  const dark = DARK_LOOKS.includes(story.look);
   const center = ["glass", "starfield", "landscape", "radial", "marquee", "frame", "prompt"].includes(story.hero);
   // Large realistic product shots for showcase heroes; illustrated scenes for the rest.
   const shot = <DashboardMock product={product} />;

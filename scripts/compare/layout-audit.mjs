@@ -2,10 +2,10 @@
 // its card, clipped text, and uneven sibling cards. Desktop 1440 + mobile 390.
 import { chromium } from "playwright";
 import fs from "node:fs";
-const base = "http://localhost:3100";
+const base = process.env.BASE ?? "http://localhost:3100";
 const PAGES = [
-  "/", "/products", "/solutions", "/industries", "/integrations", "/search?q=pay", "/company", "/publish", "/support", "/vendors", "/careers",
-  ...["zuzu", "sibu", "oda7", "trackysuite", "hrmagix", "cardizo", "fantom", "getbenj", "taskmagic", "sigchanger", "sizoru", "tracksuit", "zapbuzzer", "zorfly", "meetingmind", "fleetras"].map((s) => `/products/${s}`),
+  "/", "/products", "/solutions", "/industries", "/integrations", "/search?q=pay", "/about-toyoapps", "/publish-and-sell-your-saas", "/support", "/become-a-toyoapps-vendor", "/contact-us", "/careers",
+  ...["zuzu", "sibu", "oda7", "trackysuite", "hrmagix", "cardizo", "fantom", "benj", "taskmagic", "sigchanger", "sizoru", "zapbuzzer", "zorfly", "meetingmind", "fleetras", "growbizz", "speechwright", "1xl-infra-channel-partner-portal", "zeal-partner-program", "sopgalaxy", "theprojectchecker", "warwi", "dizola", "247meetings", "finzola", "social-magix"].map((s) => `/products/${s}`),
   "/products/oda7/features", "/products/sibu/features/search-by-anything", "/products/oda7/resources/leads-workflow", "/products/oda7/solutions/for-sales-managers", "/products/sibu/pricing",
 ];
 const b = await chromium.launch({ args: ["--disable-gpu"] });

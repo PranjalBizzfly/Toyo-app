@@ -137,7 +137,7 @@ export function SiteFooter() {
               Talk to Us <Icon name="arrow-right" />
             </Link>
             <Link href={routes.products()} className="sfoot__pill">
-              Explore Products
+              All Products
             </Link>
           </div>
         </nav>

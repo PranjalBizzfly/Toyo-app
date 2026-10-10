@@ -17,7 +17,7 @@ const SCREEN = {
   sub: "Here's what's happening with your business today.",
   user: { name: "Alex Johnson", role: "Business Owner" },
   stats: [
-    { label: "Total Products", value: "16+", delta: "12%" },
+    { label: "Total Products", value: "25+", delta: "12%" },
     { label: "Active Users", value: "12,480", delta: "20%" },
     { label: "Integrations", value: "250+", delta: "18%" },
   ],
@@ -244,7 +244,7 @@ export function HeroScene({
           SaaS Ecosystem
         </strong>
         <span>
-          16+ products. 1 platform.
+          25+ products. 1 platform.
           <br />
           Endless possibilities.
         </span>

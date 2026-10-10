@@ -127,7 +127,7 @@ export function ProductPageTemplate({ product }: { product: Product }) {
     <div className={`pz zs zs--${story.look} zs-ref--${story.hero}${story.serif ? " zs--serif" : ""}`} data-ref={story.ref}>
       {story.recipe === "voice" ? (
         <>
-          <VoiceHero product={product} cta={cta} photos={["/images/products/hrmagix/in-action.webp", "/images/categories/hr-people.webp"]} />
+          <VoiceHero product={product} cta={cta} photos={[`/images/products/${product.slug}/hero-a.webp?v=2`, `/images/products/${product.slug}/hero-b.webp?v=2`]} />
           {groups.length >= 3 && (
             <section className="pc-sec" aria-labelledby="pc-title">
               <div className="container">
@@ -138,7 +138,7 @@ export function ProductPageTemplate({ product }: { product: Product }) {
                   cards={groups.slice(0, 3).map((g, i) => ({
                     title: g.group.name,
                     text: g.group.description ?? g.features.slice(0, 3).map((f) => f.name).join(", "),
-                    image: ["/images/solutions/manage-your-people-from-hire-to-growth.webp", "/images/products/zuzu/in-action.webp", "/images/products/zorfly/in-action.webp"][i],
+                    image: `/images/products/${product.slug}/${["card-team", "card-recognition", "card-payroll"][i]}.webp`,
                     href: `${featuresHref}#${g.group.slug}`,
                     label: ["Explore more", "See how it works", "Learn more"][i],
                   }))}

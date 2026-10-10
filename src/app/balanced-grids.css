@@ -61,3 +61,14 @@ html main .dx-card__text { flex: 1; }
 html main .dx-card__foot { margin-top: auto; }
 html main .dx-grid--center { align-items: stretch; }
 html main .dx-grid--center > .dx-card { height: auto; align-self: stretch; }
+
+/* Step sequences (01, 02, …): always in order, every card the same width and height.
+   Overrides the 6-column span trick in grid-balance.css, which scrambled the order. */
+html body main ol.fz-steps { display: grid !important; grid-auto-flow: row !important; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)) !important; align-items: stretch; }
+@media (min-width: 1024px) { html body main ol.fz-steps:has(> :nth-child(5):last-child) { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; } html body main ol.fz-steps:has(> :nth-child(4):last-child) { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; } html body main ol.fz-steps:has(> :nth-child(6):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; } }
+html body main ol.fz-steps > li { grid-column: auto !important; grid-row: auto !important; width: auto !important; max-width: none !important; margin: 0 !important; }
+@media (min-width: 600px) { html body main ol.fz-steps { grid-auto-rows: 1fr; } }
+
+/* Same root cause for every container that switches to a single column-flow row at ≥1024px:
+   no card may keep the 3+2 span from grid-balance.css, or order and widths break. */
+@media (min-width: 1024px) { html body main :is(.h-stats, .cp-swatches, .co-steps, .fz-steps, .h-steps, .fz-facts, .hs-spot__caps):is(:has(> :nth-child(5):last-child), :has(> :nth-child(6):last-child)) > * { grid-column: auto !important; grid-row: auto !important; } }

@@ -13,6 +13,17 @@ import { trackysuite } from "./trackysuite";
 import { zapbuzzer } from "./zapbuzzer";
 import { zorfly } from "./zorfly";
 import { zuzu } from "./zuzu";
+import { snaaps } from "./growbizz";
+import { myspeechmaker } from "./speechwright";
+import { xlInfraChannelPartnerPortal } from "./1xl-infra-channel-partner-portal";
+import { rentwithzealPartnerPortal } from "./zeal-partner-program";
+import { sopgalaxy } from "./sopgalaxy";
+import { theprojectchecker } from "./theprojectchecker";
+import { warwi } from "./warwi";
+import { dizola } from "./dizola";
+import { meetings247 } from "./247meetings";
+import { finzola } from "./finzola";
+import { socialmagix } from "./social-magix";
 
 /**
  * Product registry. Every record is written from the product's official site
@@ -40,4 +51,15 @@ export const products: Product[] = [
   fleetras,
   meetingmind,
   taskmagic,
+  snaaps,
+  myspeechmaker,
+  xlInfraChannelPartnerPortal,
+  rentwithzealPartnerPortal,
+  sopgalaxy,
+  theprojectchecker,
+  warwi,
+  dizola,
+  meetings247,
+  finzola,
+  socialmagix,
 ];

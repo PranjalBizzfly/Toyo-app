@@ -42,7 +42,7 @@ export function HomeHero({
           </h1>
 
           <p className="hh__lead">
-            ToyoApps brings together 16+ software products for running your business. Sales, marketing, HR, finance and operations, all in one ecosystem, so you can find the right tool fast.
+            ToyoApps brings together 25+ software products for running your business. Sales, marketing, HR, finance and operations, all in one ecosystem, so you can find the right tool fast.
           </p>
 
           <div className="hh__ctas">
@@ -65,7 +65,7 @@ export function HomeHero({
                 </svg>
               </span>
               <div className="hh__highlight-text">
-                <strong>16+ Products</strong>
+                <strong>25+ Products</strong>
                 <small>Complete business suite</small>
               </div>
             </div>
@@ -136,7 +136,7 @@ export function HomeHero({
                 </svg>
               </span>
               <div className="hh-strip__stat-content">
-                <b>16+</b>
+                <b>25+</b>
                 <small>Powerful Products</small>
               </div>
             </div>

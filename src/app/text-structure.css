@@ -80,3 +80,7 @@ html body main .zs-aud-1 .zs-ribbon li { font-size: clamp(17px, .9rem + .5vw, 22
 
 /* Paragraph rhythm: consecutive paragraphs are separated by a consistent gap */
 html body main :is(p + p) { margin-top: .85em; }
+
+/* FAQ inside a dark band: question rows sit on the band (white rows made white text unreadable). */
+html body main .zs-band--dark details { background: rgb(255 255 255 / .06) !important; border-color: rgb(255 255 255 / .18) !important; }
+html body main .zs-band--dark details :is(summary, .accordion__body, .accordion__body *) { color: #e6eef6 !important; }

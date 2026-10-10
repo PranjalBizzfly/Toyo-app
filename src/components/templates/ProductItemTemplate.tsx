@@ -1,4 +1,3 @@
-import { photoForProduct } from "@/lib/photos";
 import { SpotVisual } from "@/components/product/SpotVisual";
 import { getProductItemFaqs } from "@/lib/faqs";
 import { Labelled } from "@/components/ui/Labelled";
@@ -120,7 +119,7 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
     .slice(0, 6);
   const { primary } = getProductCtas(product);
   const title = section === "compare" && e.competitor ? `${product.name} vs ${e.competitor}` : item.name;
-  const heroPhoto = photoForProduct(product.slug);
+
 
   // Present fields, in layout order.
   const fields = LAYOUT[section]
@@ -181,7 +180,7 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
               </Link>
             </div>
           </div>
-          {heroPhoto && <ImageSlot src={heroPhoto.src} alt={heroPhoto.alt} width={1280} height={720} priority className="fz-vhero__art" />}
+
         </div>
       </header>
 

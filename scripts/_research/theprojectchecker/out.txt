@@ -1,0 +1,1208 @@
+===== https://theprojectchecker.com/ 
+ TheProjectChecker
+Home
+Features
+Pricing
+FAQ
+About
+Contact
+Log In
+Get Started
+Manage Your Company Projects From Assignment to Delivery
+
+Streamline Your Operations with our Integrated SaaS Platform — assign projects, track development, manage QA handoffs, and approve deliveries across all your client companies.
+
+Get Started Free
+Book a Demo
+Dashboard
+Companies
+Projects
+Reports
+Vendor Companies
+4 active
+N
+Neuromonk
+8 projects assigned
+Active
+U
+UKValley
+6 projects assigned
+Active
+TC
+TheProjectChecker Team
+5 projects assigned
+Active
+B
+Bizzfly
+5 projects assigned
+Active
+0+
+Projects Managed
+0
+Vendor Teams
+0%
+Uptime Guarantee
+0+
+Bugs Tracked
+FEATURES
+Everything You Need to Manage Software Development
+
+From project creation to final approval, complete visibility and control over your entire software portfolio.
+
+FEATURE 01
+Project Management
+
+Every software project tracked with comprehensive fields — from auto-generated IDs to priority levels, deadlines, and real-time progress.
+
+FEATURE 02
+Vendor Management
+
+Onboard and manage multiple development teams with complete isolation. Each vendor only sees their assigned projects.
+
+FEATURE 03
+Testing & QA Management
+
+A dedicated module for your testing team to manage build receipts, testing workflows, defect logging, and version-wise panel reports.
+
+FEATURE 04
+Notification System
+
+Automated email notifications at every important event — keeping admins, vendors, and testers instantly informed.
+
+FEATURE 05
+Demo & Document Management
+
+Versioned demo URLs with approval workflows, plus complete project documentation with meeting request capabilities.
+
+FEATURE 06
+Dashboard & Analytics
+
+A powerful Super Admin dashboard with overview cards, workload charts, priority boards, timeline views, and activity feeds.
+
+HOW IT WORKS
+From Idea to Delivery in 5 Phases
+
+A structured workflow ensures every project moves through a clear lifecycle with checkpoints at every stage.
+
+1
+Project Setup
+
+Admin creates project, uploads documents, assigns vendor and testing team.
+
+2
+Vendor Onboarding
+
+Vendor reviews docs, requests meetings if needed, begins development.
+
+3
+Development
+
+Vendor builds software, updates progress, submits demo when ready.
+
+4
+Testing & QA
+
+Tester validates demo, reports bugs with severity, vendor fixes issues.
+
+5
+Final Approval
+
+Admin reviews QA reports, gives final sign-off. Project complete.
+
+WHY THEPROJECTCHECKER
+Built for Modern Software Teams
+
+Secure, cloud-native, and real-time by design — so your projects keep moving.
+
+Role-Based Access
+
+Secure, isolated views for admins, vendors, and testers.
+
+Cloud-Based
+
+Access your projects from anywhere, on any device.
+
+Real-Time Updates
+
+Instant status changes and notification delivery.
+
+Data-Driven
+
+Make decisions backed by comprehensive analytics.
+
+Ready to Streamline Your Development?
+
+Join organisations that trust TheProjectChecker to manage their entire software development lifecycle.
+
+Get Started Today
+TheProjectChecker
+
+The centralised platform to manage all your software projects, vendors, and testing workflows in one place.
+
+Product
+Features
+Pricing
+Integrations
+Changelog
+Company
+About
+Contact
+Careers
+Blog
+Resources
+Documentation
+Help Center
+Log In
+Sign Up
+
+© 2026 TheProjectChecker. All Rights Reserved.
+
+Privacy Policy
+Terms of Service 
+LINKS https://theprojectchecker.com/ https://theprojectchecker.com/features https://theprojectchecker.com/pricing https://theprojectchecker.com/faq https://theprojectchecker.com/about https://theprojectchecker.com/contact https://app.theprojectchecker.com/login https://app.theprojectchecker.com/signup https://theprojectchecker.com/integrations https://theprojectchecker.com/changelog https://theprojectchecker.com/careers https://theprojectchecker.com/blog https://theprojectchecker.com/documentation https://theprojectchecker.com/help-center https://theprojectchecker.com/privacy https://theprojectchecker.com/terms 
+COL rgba(0, 0, 0, 0)|rgb(15, 23, 42) oklab(0.600217 -0.10346 -0.00850549 / 0.1)|rgb(13, 148, 136) rgba(0, 0, 0, 0)|oklab(0.999994 0.0000455677 0.0000200868 / 0.8) rgba(0, 0, 0, 0)|rgb(255, 255, 255) rgb(13, 148, 136)|rgb(255, 255, 255) rgba(0, 0, 0, 0)|rgb(148, 163, 184) rgb(15, 23, 42)|rgb(255, 255, 255)
+===== https://theprojectchecker.com/features 
+ TheProjectChecker
+Home
+Features
+Pricing
+FAQ
+About
+Contact
+Log In
+Get Started
+Powerful Features for Complete Control
+
+Every tool you need to manage software development across multiple vendor teams, with built-in testing workflows and real-time visibility.
+
+FEATURE 01
+Project Management
+
+Every software project tracked with comprehensive fields — from auto-generated IDs to priority levels, deadlines, and real-time progress.
+
+Auto-generated project IDs (SW-001, SW-002...)
+Priority levels: Critical, High, Medium, Low
+Status tracking across entire lifecycle
+Progress percentage (0-100%)
+Threaded comments between all stakeholders
+File attachments and artifact management
+FEATURE 02
+Vendor Management
+
+Onboard and manage multiple development teams with complete isolation. Each vendor only sees their assigned projects.
+
+Vendor profiles with team size and specialisation
+Isolated dashboards per vendor team
+Admin-managed credential creation
+Workload distribution visualisation
+Performance tracking and quality scores
+On-time delivery rate monitoring
+FEATURE 03
+Testing & QA Management
+
+A dedicated module for your testing team to manage build receipts, testing workflows, defect logging, and version-wise panel reports.
+
+Build/document receipt acknowledgement
+Testing status: In Testing / Pending / Completed
+Defect count logging per project and version
+Panel-wise test reports (admin, website, org panels)
+Version management for every tested build
+Mantis bug tracker integration
+FEATURE 04
+Dashboard & Analytics
+
+A powerful Super Admin dashboard with overview cards, workload charts, priority boards, timeline views, and activity feeds.
+
+Overview cards for total, in-progress, completed, overdue
+Vendor workload chart with status breakdown
+Kanban-style priority board
+Gantt chart / calendar timeline view
+Bug density and resolution rate tracking
+Export PDF/CSV
+FEATURE 05
+Notification System
+
+Automated email notifications at every important event — keeping admins, vendors, and testers instantly informed.
+
+Admin alerts: status updates, demo submissions, bugs
+Vendor alerts: new assignments, comments, QA feedback
+Tester alerts: new demos, bug fixes ready for retest
+Deadline reminders (3 days, 1 day before)
+Overdue project notifications
+Priority change alerts
+FEATURE 06
+Demo & Document Management
+
+Versioned demo URLs with approval workflows, plus complete project documentation with meeting request capabilities.
+
+Multiple versioned demo URLs per project
+Tester QA approval before admin sign-off
+Demo history with timestamps
+Project document uploads (SOPs, wireframes)
+Meeting request system with agenda & time slots
+Dedicated Q&A thread per project
+ROLES & PERMISSIONS
+Granular Access Control for Every Role
+
+Three distinct user roles with carefully designed permissions ensure security, focus, and accountability.
+
+PERMISSION	
+SUPER ADMIN	
+VENDOR	
+TESTER
+Create/Delete Projects	
+	
+	
+
+Assign Projects	
+	
+	
+
+Update Project Status	
+	Own Only	
+
+Submit Demo URLs	
+	
+	
+
+Test Demos	
+	
+	
+
+Report Bugs	
+	
+	
+
+Approve/Reject Demos	Final	
+	QA
+View All Projects	
+	Own Only	Assigned
+Manage Users	
+	
+	
+
+View Reports	
+	
+	Testing
+Add Comments	
+	
+	
+
+Upload Documents	
+	Artifacts	Evidence
+Request Meetings	
+	
+	
+See It In Action
+
+Ready to see how TheProjectChecker can transform your software management workflow?
+
+Request a Demo
+TheProjectChecker
+
+The centralised platform to manage all your software projects, vendors, and testing workflows in one place.
+
+Product
+Features
+Pricing
+Integrations
+Changelog
+Company
+About
+Contact
+Careers
+Blog
+Resources
+Documentation
+Help Center
+Log In
+Sign Up
+
+© 2026 TheProjectChecker. All Rights Reserved.
+
+Privacy Policy
+Terms of Service 
+LINKS https://theprojectchecker.com/ https://theprojectchecker.com/features https://theprojectchecker.com/pricing https://theprojectchecker.com/faq https://theprojectchecker.com/about https://theprojectchecker.com/contact https://app.theprojectchecker.com/login https://app.theprojectchecker.com/signup https://theprojectchecker.com/integrations https://theprojectchecker.com/changelog https://theprojectchecker.com/careers https://theprojectchecker.com/blog https://theprojectchecker.com/documentation https://theprojectchecker.com/help-center https://theprojectchecker.com/privacy https://theprojectchecker.com/terms 
+COL rgba(0, 0, 0, 0)|rgb(15, 23, 42) rgba(0, 0, 0, 0)|rgb(100, 116, 139) oklab(0.600217 -0.10346 -0.00850549 / 0.1)|rgb(13, 148, 136) rgba(0, 0, 0, 0)|rgb(255, 255, 255) rgba(0, 0, 0, 0)|rgb(20, 184, 166) rgba(0, 0, 0, 0)|oklch(0.707 0.022 261.325)
+===== https://theprojectchecker.com/pricing 
+ TheProjectChecker
+Home
+Features
+Pricing
+FAQ
+About
+Contact
+Log In
+Get Started
+Simple, Transparent Pricing
+
+Start free, upgrade when you outgrow the limits. Pro and Business plans include a 14-day free trial — no credit card required.
+
+Monthly
+Yearly SAVE ~17%
+Free
+
+Try the full workflow on one project — perfect for evaluating before you commit.
+
+$0
+/forever
+Up to 1 active projects
+Up to 2 client companies
+Up to 5 total user seats (Organization Admin + Company Admins + Internal Team + Mentors)
+Audit log: 30 days
+CSV export
+Bulk delete / Excel export
+Graphical project report
+1 active project
+1 dev team + 1 testing team
+Up to 5 users (you + vendor + tester + internal team)
+Full handoff & QA workflow
+External bug tracker links (Jira / Mantis)
+Email notifications
+Community support
+Get Started Free
+Most Popular
+Pro
+
+For small teams and agencies running multiple client projects.
+
+$29
+/month
+Up to 10 active projects
+Up to 6 client companies
+Up to 10 total user seats (Organization Admin + Company Admins + Internal Team + Mentors)
+Audit log: 30 days
+CSV export
+Bulk delete / Excel export
+Graphical project report
+Everything in Free, plus:
+Up to 10 active projects
+Up to 6 vendor / testing teams
+Up to 10 users (you + 6 vendor leads + internal team + mentors)
+Daily summary email reports
+Reporting emails (distribution list — up to 5)
+Project mentors
+Audit log (90 days)
+CSV export (invoices, plan history)
+Email support — 24h SLA
+Start Free Trial
+Business
+
+For growing product companies managing several vendors in parallel.
+
+$79
+/month
+Up to 50 active projects
+Up to 20 client companies
+Up to 30 total user seats (Organization Admin + Company Admins + Internal Team + Mentors)
+Audit log: 30 days
+CSV export
+Bulk delete / Excel export
+Graphical project report
+Everything in Pro, plus:
+Up to 50 active projects
+Up to 20 vendor / testing teams
+Up to 30 users (you + 20 vendor leads + internal team + mentors)
+Daily summary — custom send time + timezone
+Reporting emails (distribution list — up to 15)
+Unlimited project mentors
+Audit log (365 days)
+Bulk operations (Excel export, bulk delete)
+Priority email + chat support — 8h SLA
+Start Free Trial
+Enterprise
+
+Custom limits, dedicated support, and procurement-friendly billing.
+
+Custom
+Unlimited active projects
+Unlimited client companies
+Unlimited total user seats (Organization Admin + Company Admins + Internal Team + Mentors)
+Unlimited Project Mentor seats
+Unlimited Internal Team seats
+Audit log: 30 days
+CSV export
+Bulk delete / Excel export
+Graphical project report
+Everything in Business, plus:
+Unlimited projects
+Unlimited vendor / testing teams
+Unlimited users
+Custom data retention
+Custom branding / white-label (roadmap)
+SSO — Google / Microsoft (roadmap)
+Dedicated customer success manager
+Custom contract & NET-30 invoicing
+Phone support — 4h SLA
+Contact Sales
+Still have questions?
+
+Find answers about plans, billing, team counts, security, and setup in our FAQ.
+
+Visit our FAQ
+TheProjectChecker
+
+The centralised platform to manage all your software projects, vendors, and testing workflows in one place.
+
+Product
+Features
+Pricing
+Integrations
+Changelog
+Company
+About
+Contact
+Careers
+Blog
+Resources
+Documentation
+Help Center
+Log In
+Sign Up
+
+© 2026 TheProjectChecker. All Rights Reserved.
+
+Privacy Policy
+Terms of Service 
+LINKS https://theprojectchecker.com/ https://theprojectchecker.com/features https://theprojectchecker.com/pricing https://theprojectchecker.com/faq https://theprojectchecker.com/about https://theprojectchecker.com/contact https://app.theprojectchecker.com/login https://app.theprojectchecker.com/signup https://theprojectchecker.com/contact?subject=custom_plan https://theprojectchecker.com/integrations https://theprojectchecker.com/changelog https://theprojectchecker.com/careers https://theprojectchecker.com/blog https://theprojectchecker.com/documentation https://theprojectchecker.com/help-center https://theprojectchecker.com/privacy https://theprojectchecker.com/terms 
+COL rgba(0, 0, 0, 0)|rgb(15, 23, 42) rgba(0, 0, 0, 0)|rgb(100, 116, 139) oklab(0.600217 -0.10346 -0.00850549 / 0.1)|rgb(13, 148, 136) rgba(0, 0, 0, 0)|rgb(255, 255, 255) rgb(255, 255, 255)|rgb(15, 23, 42) rgba(0, 0, 0, 0)|rgb(148, 163, 184)
+===== https://theprojectchecker.com/faq 
+ TheProjectChecker
+Home
+Features
+Pricing
+FAQ
+About
+Contact
+Log In
+Get Started
+FAQs
+Frequently Asked Questions
+
+Everything you need to know about TheProjectChecker — plans, features, billing, and setup.
+
+01
+How does the free trial work?
+02
+Can I switch plans later?
+03
+Monthly or yearly billing?
+04
+How are vendor / testing teams counted?
+05
+How many users can I have?
+06
+Is my data secure?
+07
+What integrations are supported?
+08
+Do you offer on-premise deployment?
+TheProjectChecker
+
+The centralised platform to manage all your software projects, vendors, and testing workflows in one place.
+
+Product
+Features
+Pricing
+Integrations
+Changelog
+Company
+About
+Contact
+Careers
+Blog
+Resources
+Documentation
+Help Center
+Log In
+Sign Up
+
+© 2026 TheProjectChecker. All Rights Reserved.
+
+Privacy Policy
+Terms of Service 
+LINKS https://theprojectchecker.com/ https://theprojectchecker.com/features https://theprojectchecker.com/pricing https://theprojectchecker.com/faq https://theprojectchecker.com/about https://theprojectchecker.com/contact https://app.theprojectchecker.com/login https://app.theprojectchecker.com/signup https://theprojectchecker.com/integrations https://theprojectchecker.com/changelog https://theprojectchecker.com/careers https://theprojectchecker.com/blog https://theprojectchecker.com/documentation https://theprojectchecker.com/help-center https://theprojectchecker.com/privacy https://theprojectchecker.com/terms 
+COL rgba(0, 0, 0, 0)|rgb(15, 23, 42) rgba(0, 0, 0, 0)|rgb(100, 116, 139) oklab(0.600217 -0.10346 -0.00850549 / 0.1)|rgb(13, 148, 136) rgba(0, 0, 0, 0)|rgb(255, 255, 255)
+===== https://theprojectchecker.com/about 
+ TheProjectChecker
+Home
+Features
+Pricing
+FAQ
+About
+Contact
+Log In
+Get Started
+The Story Behind TheProjectChecker
+
+Born from the need to manage a large-scale internal software initiative, TheProjectChecker is the platform that keeps every project, vendor, and test cycle organised.
+
+OUR MISSION
+Building the Single Source of Truth for Software Development
+
+When you're managing 30+ projects simultaneously with multiple vendor teams, chaos is the default. Scattered communications, missed deadlines, untested demos, and zero visibility into who's building what.
+
+TheProjectChecker was created to solve exactly this problem. It's the first tool we built — a centralised platform where Super Admins can assign, track, and manage all software projects, while vendors and testers operate in their own focused workspaces.
+
+Every feature was designed around a real workflow: project setup, vendor onboarding, development tracking, QA testing, and final approval. No bloat, no guesswork — just a clear path from idea to delivery.
+
+30+
+Projects Managed
+4
+Vendor Teams
+5
+Project Phases
+3
+User Roles
+WHY THEPROJECTCHECKER
+Built for Real-World Challenges
+
+Every feature addresses a specific pain point in managing large-scale, multi-vendor software development.
+
+Centralised Control
+
+One platform to manage every software project, vendor team, and testing cycle — eliminating scattered spreadsheets and emails.
+
+Complete Visibility
+
+Real-time dashboards give you instant insight into project status, vendor workloads, bug counts, and delivery timelines.
+
+Built-in Security
+
+Role-based access ensures vendors only see their projects, testers only access testing data, and sensitive info stays protected.
+
+Streamlined Workflows
+
+A structured 5-phase lifecycle from project setup to final approval, with automated notifications at every checkpoint.
+
+TECH STACK
+Built with Modern Technologies
+
+A robust, scalable architecture designed for performance and reliability.
+
+Next.js
+
+Modern React framework
+
+Node.js
+
+Express-powered backend
+
+MongoDB
+
+Flexible document database
+
+JWT Auth
+
+Role-based access control
+
+Cloud Hosted
+
+AWS / Vercel deployment
+
+Real-time
+
+Instant notifications
+
+Ready to Take Control?
+
+Start managing your software projects with clarity and confidence.
+
+Get Started
+TheProjectChecker
+
+The centralised platform to manage all your software projects, vendors, and testing workflows in one place.
+
+Product
+Features
+Pricing
+Integrations
+Changelog
+Company
+About
+Contact
+Careers
+Blog
+Resources
+Documentation
+Help Center
+Log In
+Sign Up
+
+© 2026 TheProjectChecker. All Rights Reserved.
+
+Privacy Policy
+Terms of Service 
+LINKS https://theprojectchecker.com/ https://theprojectchecker.com/features https://theprojectchecker.com/pricing https://theprojectchecker.com/faq https://theprojectchecker.com/about https://theprojectchecker.com/contact https://app.theprojectchecker.com/login https://app.theprojectchecker.com/signup https://theprojectchecker.com/integrations https://theprojectchecker.com/changelog https://theprojectchecker.com/careers https://theprojectchecker.com/blog https://theprojectchecker.com/documentation https://theprojectchecker.com/help-center https://theprojectchecker.com/privacy https://theprojectchecker.com/terms 
+COL rgba(0, 0, 0, 0)|rgb(15, 23, 42) rgba(0, 0, 0, 0)|rgb(100, 116, 139) oklab(0.600217 -0.10346 -0.00850549 / 0.1)|rgb(13, 148, 136) rgba(0, 0, 0, 0)|rgb(255, 255, 255) rgba(0, 0, 0, 0)|oklch(0.707 0.022 261.325)
+===== https://theprojectchecker.com/contact 
+ TheProjectChecker
+Home
+Features
+Pricing
+FAQ
+About
+Contact
+Log In
+Get Started
+Get in Touch
+
+Have questions about TheProjectChecker? Want a demo or need help choosing the right plan? We'd love to hear from you.
+
+Send us a message
+Full Name*
+Email ID*
+Organisation Name
+Subject*
+Select a subject
+Request a Demo
+Pricing Enquiry
+Custom Plan
+Technical Support
+Partnership
+General Enquiry
+Other
+Message*
+Send Message
+Need Quick Help?
+
+Check out our FAQ section for answers to common questions about plans, features, and setup.
+
+View FAQs →
+TheProjectChecker
+
+The centralised platform to manage all your software projects, vendors, and testing workflows in one place.
+
+Product
+Features
+Pricing
+Integrations
+Changelog
+Company
+About
+Contact
+Careers
+Blog
+Resources
+Documentation
+Help Center
+Log In
+Sign Up
+
+© 2026 TheProjectChecker. All Rights Reserved.
+
+Privacy Policy
+Terms of Service 
+LINKS https://theprojectchecker.com/ https://theprojectchecker.com/features https://theprojectchecker.com/pricing https://theprojectchecker.com/faq https://theprojectchecker.com/about https://theprojectchecker.com/contact https://app.theprojectchecker.com/login https://app.theprojectchecker.com/signup https://theprojectchecker.com/integrations https://theprojectchecker.com/changelog https://theprojectchecker.com/careers https://theprojectchecker.com/blog https://theprojectchecker.com/documentation https://theprojectchecker.com/help-center https://theprojectchecker.com/privacy https://theprojectchecker.com/terms 
+COL rgba(0, 0, 0, 0)|rgb(15, 23, 42) rgba(0, 0, 0, 0)|rgb(100, 116, 139) oklab(0.600217 -0.10346 -0.00850549 / 0.1)|rgb(13, 148, 136) rgba(0, 0, 0, 0)|rgb(255, 255, 255) rgba(0, 0, 0, 0)|rgb(13, 148, 136) rgba(0, 0, 0, 0)|oklch(0.707 0.022 261.325)
+===== https://theprojectchecker.com/integrations 
+ TheProjectChecker
+Home
+Features
+Pricing
+FAQ
+About
+Contact
+Log In
+Get Started
+
+PRODUCT
+
+Integrations
+
+Connect TheProjectChecker with the tools your teams already rely on, so work flows between systems without manual copying.
+
+Coming soon
+Mantis bug-tracker sync for defect logging
+Email & notification provider hooks
+Webhook & REST API access for custom workflows
+Single sign-on (SSO) for enterprise teams
+Get in touch
+Back to Home
+TheProjectChecker
+
+The centralised platform to manage all your software projects, vendors, and testing workflows in one place.
+
+Product
+Features
+Pricing
+Integrations
+Changelog
+Company
+About
+Contact
+Careers
+Blog
+Resources
+Documentation
+Help Center
+Log In
+Sign Up
+
+© 2026 TheProjectChecker. All Rights Reserved.
+
+Privacy Policy
+Terms of Service 
+LINKS https://theprojectchecker.com/ https://theprojectchecker.com/features https://theprojectchecker.com/pricing https://theprojectchecker.com/faq https://theprojectchecker.com/about https://theprojectchecker.com/contact https://app.theprojectchecker.com/login https://app.theprojectchecker.com/signup https://theprojectchecker.com/integrations https://theprojectchecker.com/changelog https://theprojectchecker.com/careers https://theprojectchecker.com/blog https://theprojectchecker.com/documentation https://theprojectchecker.com/help-center https://theprojectchecker.com/privacy https://theprojectchecker.com/terms 
+COL rgba(0, 0, 0, 0)|rgb(15, 23, 42) rgba(0, 0, 0, 0)|rgb(100, 116, 139) rgba(0, 0, 0, 0)|rgb(255, 255, 255) rgba(0, 0, 0, 0)|oklch(0.707 0.022 261.325)
+===== https://theprojectchecker.com/changelog 
+ TheProjectChecker
+Home
+Features
+Pricing
+FAQ
+About
+Contact
+Log In
+Get Started
+
+PRODUCT
+
+Changelog
+
+A version-by-version record of everything new in TheProjectChecker — so you always know what changed and when.
+
+Coming soon
+New feature releases
+Improvements and refinements
+Bug fixes and performance updates
+Get in touch
+Back to Home
+TheProjectChecker
+
+The centralised platform to manage all your software projects, vendors, and testing workflows in one place.
+
+Product
+Features
+Pricing
+Integrations
+Changelog
+Company
+About
+Contact
+Careers
+Blog
+Resources
+Documentation
+Help Center
+Log In
+Sign Up
+
+© 2026 TheProjectChecker. All Rights Reserved.
+
+Privacy Policy
+Terms of Service 
+LINKS https://theprojectchecker.com/ https://theprojectchecker.com/features https://theprojectchecker.com/pricing https://theprojectchecker.com/faq https://theprojectchecker.com/about https://theprojectchecker.com/contact https://app.theprojectchecker.com/login https://app.theprojectchecker.com/signup https://theprojectchecker.com/integrations https://theprojectchecker.com/changelog https://theprojectchecker.com/careers https://theprojectchecker.com/blog https://theprojectchecker.com/documentation https://theprojectchecker.com/help-center https://theprojectchecker.com/privacy https://theprojectchecker.com/terms 
+COL rgba(0, 0, 0, 0)|rgb(15, 23, 42) rgba(0, 0, 0, 0)|rgb(100, 116, 139) rgba(0, 0, 0, 0)|rgb(255, 255, 255) rgba(0, 0, 0, 0)|oklch(0.707 0.022 261.325)
+===== https://theprojectchecker.com/careers 
+ TheProjectChecker
+Home
+Features
+Pricing
+FAQ
+About
+Contact
+Log In
+Get Started
+
+COMPANY
+
+Careers
+
+We're building the platform that brings clarity to software delivery across vendors and teams — and we're growing the people behind it.
+
+Coming soon
+Roles across engineering, design, and QA
+Remote-friendly, outcome-focused culture
+Open positions will be posted here soon
+Get in touch
+Back to Home
+TheProjectChecker
+
+The centralised platform to manage all your software projects, vendors, and testing workflows in one place.
+
+Product
+Features
+Pricing
+Integrations
+Changelog
+Company
+About
+Contact
+Careers
+Blog
+Resources
+Documentation
+Help Center
+Log In
+Sign Up
+
+© 2026 TheProjectChecker. All Rights Reserved.
+
+Privacy Policy
+Terms of Service 
+LINKS https://theprojectchecker.com/ https://theprojectchecker.com/features https://theprojectchecker.com/pricing https://theprojectchecker.com/faq https://theprojectchecker.com/about https://theprojectchecker.com/contact https://app.theprojectchecker.com/login https://app.theprojectchecker.com/signup https://theprojectchecker.com/integrations https://theprojectchecker.com/changelog https://theprojectchecker.com/careers https://theprojectchecker.com/blog https://theprojectchecker.com/documentation https://theprojectchecker.com/help-center https://theprojectchecker.com/privacy https://theprojectchecker.com/terms 
+COL rgba(0, 0, 0, 0)|rgb(15, 23, 42) rgba(0, 0, 0, 0)|rgb(100, 116, 139) rgba(0, 0, 0, 0)|rgb(255, 255, 255) rgba(0, 0, 0, 0)|oklch(0.707 0.022 261.325)
+===== https://theprojectchecker.com/blog 
+ TheProjectChecker
+Home
+Features
+Pricing
+FAQ
+About
+Contact
+Log In
+Get Started
+
+COMPANY
+
+Blog
+
+Practical insights on managing software projects across multiple vendors, running effective QA, and shipping with confidence.
+
+Coming soon
+Best practices for vendor & QA workflows
+Product updates and deep dives
+Customer stories and case studies
+Get in touch
+Back to Home
+TheProjectChecker
+
+The centralised platform to manage all your software projects, vendors, and testing workflows in one place.
+
+Product
+Features
+Pricing
+Integrations
+Changelog
+Company
+About
+Contact
+Careers
+Blog
+Resources
+Documentation
+Help Center
+Log In
+Sign Up
+
+© 2026 TheProjectChecker. All Rights Reserved.
+
+Privacy Policy
+Terms of Service 
+LINKS https://theprojectchecker.com/ https://theprojectchecker.com/features https://theprojectchecker.com/pricing https://theprojectchecker.com/faq https://theprojectchecker.com/about https://theprojectchecker.com/contact https://app.theprojectchecker.com/login https://app.theprojectchecker.com/signup https://theprojectchecker.com/integrations https://theprojectchecker.com/changelog https://theprojectchecker.com/careers https://theprojectchecker.com/blog https://theprojectchecker.com/documentation https://theprojectchecker.com/help-center https://theprojectchecker.com/privacy https://theprojectchecker.com/terms 
+COL rgba(0, 0, 0, 0)|rgb(15, 23, 42) rgba(0, 0, 0, 0)|rgb(100, 116, 139) rgba(0, 0, 0, 0)|rgb(255, 255, 255) rgba(0, 0, 0, 0)|oklch(0.707 0.022 261.325)
+===== https://theprojectchecker.com/documentation 
+ TheProjectChecker
+Home
+Features
+Pricing
+FAQ
+About
+Contact
+Log In
+Get Started
+
+RESOURCES
+
+Documentation
+
+Step-by-step guides and references covering everything from your first project to advanced workflows.
+
+Coming soon
+Getting started & onboarding guides
+Role-by-role walkthroughs (admin, vendor, tester)
+API reference for custom integrations
+Get in touch
+Back to Home
+TheProjectChecker
+
+The centralised platform to manage all your software projects, vendors, and testing workflows in one place.
+
+Product
+Features
+Pricing
+Integrations
+Changelog
+Company
+About
+Contact
+Careers
+Blog
+Resources
+Documentation
+Help Center
+Log In
+Sign Up
+
+© 2026 TheProjectChecker. All Rights Reserved.
+
+Privacy Policy
+Terms of Service 
+LINKS https://theprojectchecker.com/ https://theprojectchecker.com/features https://theprojectchecker.com/pricing https://theprojectchecker.com/faq https://theprojectchecker.com/about https://theprojectchecker.com/contact https://app.theprojectchecker.com/login https://app.theprojectchecker.com/signup https://theprojectchecker.com/integrations https://theprojectchecker.com/changelog https://theprojectchecker.com/careers https://theprojectchecker.com/blog https://theprojectchecker.com/documentation https://theprojectchecker.com/help-center https://theprojectchecker.com/privacy https://theprojectchecker.com/terms 
+COL rgba(0, 0, 0, 0)|rgb(15, 23, 42) rgba(0, 0, 0, 0)|rgb(100, 116, 139) rgba(0, 0, 0, 0)|rgb(255, 255, 255) rgba(0, 0, 0, 0)|oklch(0.707 0.022 261.325)
+===== https://theprojectchecker.com/help-center 
+ TheProjectChecker
+Home
+Features
+Pricing
+FAQ
+About
+Contact
+Log In
+Get Started
+
+RESOURCES
+
+Help Center
+
+Find answers to common questions and get help when you need it. In the meantime, our team is one message away.
+
+Coming soon
+Frequently asked questions
+Troubleshooting and how-to articles
+Direct support via the Contact page
+Get in touch
+Back to Home
+TheProjectChecker
+
+The centralised platform to manage all your software projects, vendors, and testing workflows in one place.
+
+Product
+Features
+Pricing
+Integrations
+Changelog
+Company
+About
+Contact
+Careers
+Blog
+Resources
+Documentation
+Help Center
+Log In
+Sign Up
+
+© 2026 TheProjectChecker. All Rights Reserved.
+
+Privacy Policy
+Terms of Service 
+LINKS https://theprojectchecker.com/ https://theprojectchecker.com/features https://theprojectchecker.com/pricing https://theprojectchecker.com/faq https://theprojectchecker.com/about https://theprojectchecker.com/contact https://app.theprojectchecker.com/login https://app.theprojectchecker.com/signup https://theprojectchecker.com/integrations https://theprojectchecker.com/changelog https://theprojectchecker.com/careers https://theprojectchecker.com/blog https://theprojectchecker.com/documentation https://theprojectchecker.com/help-center https://theprojectchecker.com/privacy https://theprojectchecker.com/terms 
+COL rgba(0, 0, 0, 0)|rgb(15, 23, 42) rgba(0, 0, 0, 0)|rgb(100, 116, 139) rgba(0, 0, 0, 0)|rgb(255, 255, 255) rgba(0, 0, 0, 0)|oklch(0.707 0.022 261.325)
+===== https://theprojectchecker.com/privacy 
+ TheProjectChecker
+Home
+Features
+Pricing
+FAQ
+About
+Contact
+Log In
+Get Started
+Privacy Policy
+
+Last updated: May 27, 2026
+
+1. Information We Collect
+
+We collect information you provide directly to us when you create an account, including your name, Email ID, organisation name, and contact number. We also collect project data, comments, and files you upload to the platform.
+
+2. How We Use Your Information
+
+Your information is used to provide and improve the service, send notifications, process payments, respond to support requests, and comply with legal obligations.
+
+3. Data Sharing
+
+We do not sell your personal information. We may share data with trusted third-party service providers (hosting, email delivery, analytics) only to the extent necessary to operate the platform.
+
+4. Data Security
+
+We implement industry-standard security measures including encryption in transit, password hashing, and access controls. However, no system is 100% secure and we cannot guarantee absolute security.
+
+5. Cookies and Tracking
+
+We use cookies and similar technologies to keep you logged in, remember preferences, and understand platform usage. You can control cookies through your browser settings.
+
+6. Your Rights
+
+You have the right to access, correct, or delete your personal data. You may also request a copy of your data or object to certain processing. Contact us to exercise these rights.
+
+7. Data Retention
+
+We retain your data for as long as your account is active or as needed to provide the service. When your organisation is deleted, all related data is permanently removed from our systems.
+
+8. Children's Privacy
+
+TheProjectChecker is not intended for users under the age of 16. We do not knowingly collect data from children.
+
+9. Changes to This Policy
+
+We may update this Privacy Policy from time to time. We will notify you of significant changes via email or through the platform.
+
+10. Contact Us
+
+If you have questions about this Privacy Policy, please contact us at privacy@theprojectchecker.com.
+
+TheProjectChecker
+
+The centralised platform to manage all your software projects, vendors, and testing workflows in one place.
+
+Product
+Features
+Pricing
+Integrations
+Changelog
+Company
+About
+Contact
+Careers
+Blog
+Resources
+Documentation
+Help Center
+Log In
+Sign Up
+
+© 2026 TheProjectChecker. All Rights Reserved.
+
+Privacy Policy
+Terms of Service 
+LINKS https://theprojectchecker.com/ https://theprojectchecker.com/features https://theprojectchecker.com/pricing https://theprojectchecker.com/faq https://theprojectchecker.com/about https://theprojectchecker.com/contact https://app.theprojectchecker.com/login https://app.theprojectchecker.com/signup mailto:privacy@theprojectchecker.com https://theprojectchecker.com/integrations https://theprojectchecker.com/changelog https://theprojectchecker.com/careers https://theprojectchecker.com/blog https://theprojectchecker.com/documentation https://theprojectchecker.com/help-center https://theprojectchecker.com/privacy https://theprojectchecker.com/terms 
+COL rgba(0, 0, 0, 0)|rgb(15, 23, 42) rgba(0, 0, 0, 0)|rgb(100, 116, 139) rgba(0, 0, 0, 0)|rgb(255, 255, 255) rgba(0, 0, 0, 0)|rgb(13, 148, 136) rgba(0, 0, 0, 0)|oklch(0.707 0.022 261.325)
+===== https://theprojectchecker.com/terms 
+ TheProjectChecker
+Home
+Features
+Pricing
+FAQ
+About
+Contact
+Log In
+Get Started
+Terms of Service
+
+Last updated: May 27, 2026
+
+1. Acceptance of Terms
+
+By accessing or using TheProjectChecker, you agree to be bound by these Terms of Service. If you do not agree, please do not use our platform.
+
+2. Description of Service
+
+TheProjectChecker provides a multi-tenant SaaS platform for software project management, vendor tracking, and QA workflow coordination. Features include dashboards, handoff tracking, bug management, and reporting.
+
+3. User Accounts
+
+You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. Notify us immediately of any unauthorised use.
+
+4. Acceptable Use
+
+You agree not to misuse the platform, attempt unauthorised access, upload harmful content, or violate any applicable laws. We reserve the right to suspend accounts that violate these terms.
+
+5. Subscription and Billing
+
+Paid plans are billed according to the selected plan. You may cancel at any time. Refunds are handled on a case-by-case basis.
+
+6. Data Ownership
+
+You retain ownership of all data you upload to TheProjectChecker. We process your data solely to provide the service and according to our Privacy Policy.
+
+7. Limitation of Liability
+
+TheProjectChecker is provided "as is" without warranties of any kind. We are not liable for indirect, incidental, or consequential damages arising from use of the platform.
+
+8. Changes to Terms
+
+We may update these terms from time to time. Continued use of the platform after changes constitutes acceptance of the revised terms.
+
+9. Contact Us
+
+If you have questions about these Terms of Service, please contact us at support@theprojectchecker.com.
+
+TheProjectChecker
+
+The centralised platform to manage all your software projects, vendors, and testing workflows in one place.
+
+Product
+Features
+Pricing
+Integrations
+Changelog
+Company
+About
+Contact
+Careers
+Blog
+Resources
+Documentation
+Help Center
+Log In
+Sign Up
+
+© 2026 TheProjectChecker. All Rights Reserved.
+
+Privacy Policy
+Terms of Service 
+LINKS https://theprojectchecker.com/ https://theprojectchecker.com/features https://theprojectchecker.com/pricing https://theprojectchecker.com/faq https://theprojectchecker.com/about https://theprojectchecker.com/contact https://app.theprojectchecker.com/login https://app.theprojectchecker.com/signup mailto:support@theprojectchecker.com https://theprojectchecker.com/integrations https://theprojectchecker.com/changelog https://theprojectchecker.com/careers https://theprojectchecker.com/blog https://theprojectchecker.com/documentation https://theprojectchecker.com/help-center https://theprojectchecker.com/privacy https://theprojectchecker.com/terms 
+COL rgba(0, 0, 0, 0)|rgb(15, 23, 42) rgba(0, 0, 0, 0)|rgb(100, 116, 139) rgba(0, 0, 0, 0)|rgb(255, 255, 255) rgba(0, 0, 0, 0)|rgb(13, 148, 136) rgba(0, 0, 0, 0)|oklch(0.707 0.022 261.325)
+===== https://theprojectchecker.com/contact?subject=custom_plan 
+ TheProjectChecker
+Home
+Features
+Pricing
+FAQ
+About
+Contact
+Log In
+Get Started
+Get in Touch
+
+Have questions about TheProjectChecker? Want a demo or need help choosing the right plan? We'd love to hear from you.
+
+Send us a message
+Full Name*
+Email ID*
+Organisation Name
+Subject*
+Select a subject
+Request a Demo
+Pricing Enquiry
+Custom Plan
+Technical Support
+Partnership
+General Enquiry
+Other
+Message*
+Send Message
+Need Quick Help?
+
+Check out our FAQ section for answers to common questions about plans, features, and setup.
+
+View FAQs →
+TheProjectChecker
+
+The centralised platform to manage all your software projects, vendors, and testing workflows in one place.
+
+Product
+Features
+Pricing
+Integrations
+Changelog
+Company
+About
+Contact
+Careers
+Blog
+Resources
+Documentation
+Help Center
+Log In
+Sign Up
+
+© 2026 TheProjectChecker. All Rights Reserved.
+
+Privacy Policy
+Terms of Service 
+LINKS https://theprojectchecker.com/ https://theprojectchecker.com/features https://theprojectchecker.com/pricing https://theprojectchecker.com/faq https://theprojectchecker.com/about https://theprojectchecker.com/contact https://app.theprojectchecker.com/login https://app.theprojectchecker.com/signup https://theprojectchecker.com/integrations https://theprojectchecker.com/changelog https://theprojectchecker.com/careers https://theprojectchecker.com/blog https://theprojectchecker.com/documentation https://theprojectchecker.com/help-center https://theprojectchecker.com/privacy https://theprojectchecker.com/terms 
+COL rgba(0, 0, 0, 0)|rgb(15, 23, 42) rgba(0, 0, 0, 0)|rgb(100, 116, 139) oklab(0.600217 -0.10346 -0.00850549 / 0.1)|rgb(13, 148, 136) rgba(0, 0, 0, 0)|rgb(255, 255, 255) rgba(0, 0, 0, 0)|rgb(13, 148, 136) rgba(0, 0, 0, 0)|oklch(0.707 0.022 261.325)

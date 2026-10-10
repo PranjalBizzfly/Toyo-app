@@ -53,6 +53,17 @@ const STORIES: Record<string, ProductStory> = {
   zapbuzzer: { ref: "Zoho CRM", look: "pastel", hero: "pastel", art: "flow", benefits: "pastel", spot: "split", signature: "orbit", edge: "round", cta: "spin" },
   zorfly: { ref: "Zoho Flow", look: "snow", hero: "flow", art: "chat", benefits: "columns", spot: "split", signature: "dotgrid", edge: "round", cta: "panel" },
   zuzu: { ref: "Zoho CommandCenter", look: "grid", hero: "frame", art: "desktop", benefits: "grid", spot: "split", signature: "tabs", edge: "flat", cta: "band" },
+  "growbizz": { ref: "Zoho Survey", look: "sunrise", hero: "landscape", art: "chat", benefits: "warm", spot: "phone", signature: "problems", edge: "round", cta: "spin" },
+  "speechwright": { ref: "Zoho Writer", look: "cream", hero: "prompt", art: "flow", benefits: "columns", spot: "accordion", signature: "timeline", edge: "flat", cta: "landscape", serif: true },
+  "1xl-infra-channel-partner-portal": { ref: "Zoho Bigin", look: "forest", hero: "path", art: "chart", benefits: "photo", spot: "stack", signature: "timeline", edge: "angle", cta: "band" },
+  "zeal-partner-program": { ref: "Zoho Billing", look: "sky", hero: "flow", art: "flow", benefits: "mint", spot: "tabbar", signature: "problems", edge: "round", cta: "landscape" },
+  sopgalaxy: { ref: "Zoho Learn", look: "cream", hero: "paper", art: "desktop", benefits: "grid", spot: "tabbar", signature: "tabs", edge: "flat", cta: "glow" },
+  theprojectchecker: { ref: "Zoho Sprints", look: "ocean", hero: "frame", art: "calendar", benefits: "columns", spot: "code", signature: "dotgrid", edge: "angle", cta: "panel" },
+  warwi: { ref: "Zoho Cliq", look: "mint", hero: "voice", art: "chat", benefits: "pastel", spot: "phone", signature: "orbit", edge: "round", cta: "glow" },
+  dizola: { ref: "Zoho WorkDrive", look: "daylight", hero: "practice", art: "desktop", benefits: "glass", spot: "accordion", signature: "hub", edge: "round", cta: "spin" },
+  "247meetings": { ref: "Zoho Meeting", look: "void", hero: "agent", art: "calendar", benefits: "black", spot: "split", signature: "timeline", edge: "flat", cta: "landscape" },
+  "finzola": { ref: "Zoho Books", look: "snow", hero: "lime", art: "chart", benefits: "grid", spot: "stack", signature: "problems", edge: "round", cta: "band" },
+  "social-magix": { ref: "Zoho Social", look: "aurora", hero: "marquee", art: "chart", benefits: "photo", spot: "tabbar", signature: "orbit", edge: "angle", cta: "glow" },
 };
 
 const FALLBACK: ProductStory = { ref: "—", look: "daylight", hero: "voice", art: "desktop", benefits: "glass", spot: "split", signature: "timeline", edge: "round", cta: "glow" };
