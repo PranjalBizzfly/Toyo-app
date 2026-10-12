@@ -1,0 +1,2437 @@
+[
+ {
+  "source": "/industries/accounting-tax-practices",
+  "destination": "/industries/accounting-and-tax-practices",
+  "permanent": true
+ },
+ {
+  "source": "/industries/media-creative-agencies",
+  "destination": "/industries/media-creative-and-agencies",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/auto-replies",
+  "destination": "/products/247meetings/features/automatic-replies",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/calendar-events",
+  "destination": "/products/247meetings/features/calendar-event-management",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/connect-mailbox",
+  "destination": "/products/247meetings/features/mailbox-connection",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/data-requests",
+  "destination": "/products/247meetings/features/data-access-and-export-requests",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/email-outreach",
+  "destination": "/products/247meetings/features/email-outreach-from-your-google-account",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/email-sign-in",
+  "destination": "/products/247meetings/features/email-and-password-sign-in",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/encryption",
+  "destination": "/products/247meetings/features/encryption-and-encrypted-oauth-tokens",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/free-busy",
+  "destination": "/products/247meetings/features/availability-check-free-busy",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/google-sign-in",
+  "destination": "/products/247meetings/features/sign-in-with-google",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/group/account",
+  "destination": "/products/247meetings/features/group/account-and-access",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/group/security",
+  "destination": "/products/247meetings/features/group/security-and-privacy",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/lead-import",
+  "destination": "/products/247meetings/features/lead-and-contact-import",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/limited-use",
+  "destination": "/products/247meetings/features/google-limited-use-compliance",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/message-approval",
+  "destination": "/products/247meetings/features/compose-or-approve-before-sending",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/no-ai-training",
+  "destination": "/products/247meetings/features/no-ai-training-on-your-data",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/nova-ai-sdr",
+  "destination": "/products/247meetings/features/nova-your-ai-sdr",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/opt-out-handling",
+  "destination": "/products/247meetings/features/opt-out-and-unsubscribe-handling",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/revoke-access",
+  "destination": "/products/247meetings/features/revoke-google-access",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/send-from-gmail",
+  "destination": "/products/247meetings/features/send-from-your-own-mailbox",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/tenant-isolation",
+  "destination": "/products/247meetings/features/tenant-isolation-row-level-security",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/features/workspaces",
+  "destination": "/products/247meetings/features/workspace-creation",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/integrations/gmail",
+  "destination": "/products/247meetings/integrations/247meetings-gmail-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/integrations/google-calendar",
+  "destination": "/products/247meetings/integrations/247meetings-google-calendar-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/integrations/openai",
+  "destination": "/products/247meetings/integrations/247meetings-openai-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/resources/compliant-outreach",
+  "destination": "/products/247meetings/resources/sending-compliant-outreach",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/support/data-rights",
+  "destination": "/products/247meetings/support/your-data-and-privacy-rights",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/support/getting-started",
+  "destination": "/products/247meetings/support/getting-started-with-247meetings",
+  "permanent": true
+ },
+ {
+  "source": "/products/247meetings/support/google-access",
+  "destination": "/products/247meetings/support/connecting-and-revoking-google-access",
+  "permanent": true
+ },
+ {
+  "source": "/products/benj/features/copy-paste-creatives",
+  "destination": "/products/benj/features/copy-ready-creatives",
+  "permanent": true
+ },
+ {
+  "source": "/products/benj/features/editable-brief",
+  "destination": "/products/benj/features/editable-ai-brief-goal-budget-tone",
+  "permanent": true
+ },
+ {
+  "source": "/products/benj/features/osm-verification",
+  "destination": "/products/benj/features/openstreetmap-venue-verification",
+  "permanent": true
+ },
+ {
+  "source": "/products/benj/features/product-input",
+  "destination": "/products/benj/features/product-input-brief",
+  "permanent": true
+ },
+ {
+  "source": "/products/benj/features/share-plans",
+  "destination": "/products/benj/features/share-plans-with-team-or-clients",
+  "permanent": true
+ },
+ {
+  "source": "/products/benj/features/team-company",
+  "destination": "/products/benj/features/team-company-workspace",
+  "permanent": true
+ },
+ {
+  "source": "/products/benj/features/tv-radio-scripts",
+  "destination": "/products/benj/features/tv-and-radio-scripts",
+  "permanent": true
+ },
+ {
+  "source": "/products/benj/solutions/agency-client-plans",
+  "destination": "/products/benj/solutions/client-plans-for-marketing-agencies",
+  "permanent": true
+ },
+ {
+  "source": "/products/benj/solutions/d2c-product-launch",
+  "destination": "/products/benj/solutions/launch-plans-for-d2c-products",
+  "permanent": true
+ },
+ {
+  "source": "/products/benj/solutions/founders-first-launch",
+  "destination": "/products/benj/solutions/a-founders-first-launch",
+  "permanent": true
+ },
+ {
+  "source": "/products/benj/solutions/growth-teams",
+  "destination": "/products/benj/solutions/plans-for-growth-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/benj/support/account-access",
+  "destination": "/products/benj/support/account-access-and-reporting-an-issue",
+  "permanent": true
+ },
+ {
+  "source": "/products/benj/support/getting-started",
+  "destination": "/products/benj/support/getting-started-with-benj",
+  "permanent": true
+ },
+ {
+  "source": "/products/cardizo/features/analytics",
+  "destination": "/products/cardizo/features/analytics-and-dashboard",
+  "permanent": true
+ },
+ {
+  "source": "/products/cardizo/features/sso",
+  "destination": "/products/cardizo/features/single-sign-on-sso",
+  "permanent": true
+ },
+ {
+  "source": "/products/cardizo/features/whatsapp-plus-email-outreach",
+  "destination": "/products/cardizo/features/whatsapp-email-outreach",
+  "permanent": true
+ },
+ {
+  "source": "/products/cardizo/integrations/anthropic-claude",
+  "destination": "/products/cardizo/integrations/cardizo-anthropic-claude-bring-your-own-api-key-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/cardizo/solutions/business-development-teams",
+  "destination": "/products/cardizo/solutions/cardizo-for-business-development-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/cardizo/support/create-workspace-and-sign-in",
+  "destination": "/products/cardizo/support/creating-your-workspace-and-signing-in",
+  "permanent": true
+ },
+ {
+  "source": "/products/cardizo/support/getting-started",
+  "destination": "/products/cardizo/support/getting-started-with-cardizo",
+  "permanent": true
+ },
+ {
+  "source": "/products/category/finance-compliance",
+  "destination": "/products/category/finance-and-compliance",
+  "permanent": true
+ },
+ {
+  "source": "/products/category/hr-people",
+  "destination": "/products/category/hr-and-people",
+  "permanent": true
+ },
+ {
+  "source": "/products/category/insights-research",
+  "destination": "/products/category/insights-and-research",
+  "permanent": true
+ },
+ {
+  "source": "/products/category/operations-it",
+  "destination": "/products/category/operations-and-it",
+  "permanent": true
+ },
+ {
+  "source": "/products/category/sales-marketing",
+  "destination": "/products/category/sales-and-marketing",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/commission-dashboard",
+  "destination": "/products/channel-partner-portal/features/commission-dashboards-and-reports",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/commission-engine",
+  "destination": "/products/channel-partner-portal/features/commission-engine-flat-1",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/country-registration-forms",
+  "destination": "/products/channel-partner-portal/features/partner-registration-by-country-india-and-uae",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/document-storage",
+  "destination": "/products/channel-partner-portal/features/partner-document-storage",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/encrypted-sessions",
+  "destination": "/products/channel-partner-portal/features/encrypted-sessions-and-auto-sign-out",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/iban-payouts",
+  "destination": "/products/channel-partner-portal/features/payouts-to-your-iban",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/lead-registration",
+  "destination": "/products/channel-partner-portal/features/lead-registration-and-attribution",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/light-dark-theme",
+  "destination": "/products/channel-partner-portal/features/light-and-dark-theme",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/location-prefill",
+  "destination": "/products/channel-partner-portal/features/location-based-form-prefill",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/meta-lead-forms",
+  "destination": "/products/channel-partner-portal/features/meta-lead-form-capture",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/multi-developer",
+  "destination": "/products/channel-partner-portal/features/multi-developer-portal",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/password-security",
+  "destination": "/products/channel-partner-portal/features/passwords-and-sign-in-link-reset",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/property-maps-and-video",
+  "destination": "/products/channel-partner-portal/features/maps-and-video-on-property-pages",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/registration-drafts",
+  "destination": "/products/channel-partner-portal/features/saved-registration-drafts",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/remember-me",
+  "destination": "/products/channel-partner-portal/features/remember-me-on-this-device",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/role-based-access",
+  "destination": "/products/channel-partner-portal/features/partner-rm-and-admin-sign-in",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/service-notifications",
+  "destination": "/products/channel-partner-portal/features/service-messages-and-in-portal-notifications",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/tranche-tracking",
+  "destination": "/products/channel-partner-portal/features/tranche-based-commission-tracking",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/features/whatsapp-otp-verification",
+  "destination": "/products/channel-partner-portal/features/whatsapp-otp-phone-verification",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/industries/real-estate",
+  "destination": "/products/channel-partner-portal/industries/channel-partner-portal-for-dubai-real-estate-brokerage",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/integrations/google",
+  "destination": "/products/channel-partner-portal/integrations/channel-partner-portal-google-services-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/integrations/whatsapp",
+  "destination": "/products/channel-partner-portal/integrations/channel-partner-portal-whatsapp-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/resources/getting-started",
+  "destination": "/products/channel-partner-portal/resources/getting-started-as-a-channel-partner",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/support/contact",
+  "destination": "/products/channel-partner-portal/support/contact-the-partner-team",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/support/faq",
+  "destination": "/products/channel-partner-portal/support/channel-partner-faq",
+  "permanent": true
+ },
+ {
+  "source": "/products/channel-partner-portal/support/privacy-requests",
+  "destination": "/products/channel-partner-portal/support/partner-data-privacy-and-requests",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/api",
+  "destination": "/products/dizola/features/rest-api-and-custom-integrations",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/backups",
+  "destination": "/products/dizola/features/daily-backups-and-disaster-recovery",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/data-export",
+  "destination": "/products/dizola/features/data-export-portability",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/data-recovery",
+  "destination": "/products/dizola/features/30-day-data-recovery-after-termination",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/encryption",
+  "destination": "/products/dizola/features/encryption-at-rest-and-in-transit",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/expiry-reminders",
+  "destination": "/products/dizola/features/automated-expiry-reminders",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/folders",
+  "destination": "/products/dizola/features/folder-organisation",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/google-workspace",
+  "destination": "/products/dizola/features/google-workspace-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/group/expiry",
+  "destination": "/products/dizola/features/group/expiry-and-notifications",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/group/insights",
+  "destination": "/products/dizola/features/group/reports",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/group/security",
+  "destination": "/products/dizola/features/group/security-and-access",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/group/signing",
+  "destination": "/products/dizola/features/group/signing-and-approvals",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/group/support",
+  "destination": "/products/dizola/features/group/support-and-service",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/microsoft-365",
+  "destination": "/products/dizola/features/microsoft-365-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/on-premise",
+  "destination": "/products/dizola/features/on-premise-option",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/organisation-signup",
+  "destination": "/products/dizola/features/organisation-registration-and-plan-selection",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/report-an-issue",
+  "destination": "/products/dizola/features/account-issue-reporting",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/reports-analytics",
+  "destination": "/products/dizola/features/reports-and-analytics",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/sla",
+  "destination": "/products/dizola/features/sla-agreement",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/slack",
+  "destination": "/products/dizola/features/slack-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/sso",
+  "destination": "/products/dizola/features/sso-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/support-24-7",
+  "destination": "/products/dizola/features/24-7-dedicated-support",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/features/watermarking",
+  "destination": "/products/dizola/features/document-watermarking",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/support/cancellations-and-refunds",
+  "destination": "/products/dizola/support/cancellations-refunds-and-downgrades",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/support/faqs",
+  "destination": "/products/dizola/support/dizola-faqs",
+  "permanent": true
+ },
+ {
+  "source": "/products/dizola/support/getting-started",
+  "destination": "/products/dizola/support/getting-started-with-dizola",
+  "permanent": true
+ },
+ {
+  "source": "/products/fantom/support/account-and-password",
+  "destination": "/products/fantom/support/creating-your-account-and-resetting-your-password",
+  "permanent": true
+ },
+ {
+  "source": "/products/fantom/support/data-and-privacy",
+  "destination": "/products/fantom/support/your-data-and-privacy",
+  "permanent": true
+ },
+ {
+  "source": "/products/fantom/support/getting-started",
+  "destination": "/products/fantom/support/getting-started-with-fantom",
+  "permanent": true
+ },
+ {
+  "source": "/products/fantom/support/payments-and-subscriptions",
+  "destination": "/products/fantom/support/plans-payments-and-renewals",
+  "permanent": true
+ },
+ {
+  "source": "/products/fantom/support/set-up-the-mobile-app",
+  "destination": "/products/fantom/support/setting-up-the-android-app-for-call-log-sync",
+  "permanent": true
+ },
+ {
+  "source": "/products/finzola/features/organisation-setup",
+  "destination": "/products/finzola/features/organisation-registration-and-base-currency",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/accept-reject-reassign",
+  "destination": "/products/fleetras/features/accept-reject-or-request-reassignment",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/admin",
+  "destination": "/products/fleetras/features/admin-role",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/base-currency",
+  "destination": "/products/fleetras/features/base-currency-per-company",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/cost-per-kilometre",
+  "destination": "/products/fleetras/features/trip-costing-and-cost-per-kilometre",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/dispatch-and-live-trips",
+  "destination": "/products/fleetras/features/dispatch-and-assignment",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/driver-app",
+  "destination": "/products/fleetras/features/driver-app-on-any-phone",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/driver-day-sign-in",
+  "destination": "/products/fleetras/features/daily-driver-sign-in",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/edit-cancellation-requests",
+  "destination": "/products/fleetras/features/trip-edit-and-cancellation-requests",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/finished-by-the-driver",
+  "destination": "/products/fleetras/features/approvals-and-corrections",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/fuel-cost",
+  "destination": "/products/fleetras/features/fuel-cost-formula",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/gps-start-end-pauses",
+  "destination": "/products/fleetras/features/gps-start-end-and-pauses",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/group/driver",
+  "destination": "/products/fleetras/features/group/driver-app",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/group/registry",
+  "destination": "/products/fleetras/features/group/fleet-registry",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/home-screen-install",
+  "destination": "/products/fleetras/features/install-to-home-screen",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/implausible-km-flags",
+  "destination": "/products/fleetras/features/implausible-kilometre-flags",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/itemised-expenses",
+  "destination": "/products/fleetras/features/itemised-expenses-with-receipt-photos",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/manual-km-requests",
+  "destination": "/products/fleetras/features/manual-kilometre-requests",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/roles-and-permissions",
+  "destination": "/products/fleetras/features/four-roles",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/safe-deletion",
+  "destination": "/products/fleetras/features/safe-permanent-deletion",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/salik",
+  "destination": "/products/fleetras/features/salik-toll-costs",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/super-admin",
+  "destination": "/products/fleetras/features/super-admin-role",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/total-cost",
+  "destination": "/products/fleetras/features/total-cost-with-allocations",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/trip-gps-check",
+  "destination": "/products/fleetras/features/trip-check-against-gps",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/features/trip-priority",
+  "destination": "/products/fleetras/features/trip-priority-and-scheduling",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/integrations/tracksolid-pro",
+  "destination": "/products/fleetras/integrations/fleetras-tracksolid-pro-gps-tracking-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/solutions/month-end-trip-cost-accounting",
+  "destination": "/products/fleetras/solutions/clean-trip-costs-at-month-end",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/support/data-retention-and-rights",
+  "destination": "/products/fleetras/support/data-retention-and-your-rights",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/support/recording-trips-and-expenses",
+  "destination": "/products/fleetras/support/recording-trips-and-expenses-drivers",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/support/reviewing-trips-and-approvals",
+  "destination": "/products/fleetras/support/reviewing-trips-and-approval-requests-managers",
+  "permanent": true
+ },
+ {
+  "source": "/products/fleetras/support/vehicle-tracking-and-privacy",
+  "destination": "/products/fleetras/support/vehicle-tracking-and-driver-privacy",
+  "permanent": true
+ },
+ {
+  "source": "/products/growbizz/features/qr-codes",
+  "destination": "/products/growbizz/features/qr-code-generation",
+  "permanent": true
+ },
+ {
+  "source": "/products/growbizz/features/share-links",
+  "destination": "/products/growbizz/features/easy-share-links",
+  "permanent": true
+ },
+ {
+  "source": "/products/growbizz/integrations/google-business-profile",
+  "destination": "/products/growbizz/integrations/growbizz-google-business-profile-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/growbizz/support/getting-started",
+  "destination": "/products/growbizz/support/getting-started-with-growbizz",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/features/analytics",
+  "destination": "/products/hrmagix/features/hr-analytics",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/features/arrears-and-revisions",
+  "destination": "/products/hrmagix/features/arrears-and-salary-revisions",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/features/employee-records",
+  "destination": "/products/hrmagix/features/employee-records-and-directory",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/features/group/platform",
+  "destination": "/products/hrmagix/features/group/platform-and-self-service",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/features/holiday-calendars",
+  "destination": "/products/hrmagix/features/location-holiday-calendars",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/features/mobile-app",
+  "destination": "/products/hrmagix/features/ios-and-android-app",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/features/multi-entity-and-locations",
+  "destination": "/products/hrmagix/features/multi-entity-and-multi-location",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/features/payroll-review-and-locking",
+  "destination": "/products/hrmagix/features/payroll-review-and-run-locking",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/features/performance-reviews",
+  "destination": "/products/hrmagix/features/performance-reviews-and-calibration",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/features/policy-configuration",
+  "destination": "/products/hrmagix/features/no-code-policy-engine",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/features/statutory-compliance",
+  "destination": "/products/hrmagix/features/statutory-compliance-engine",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/features/tds-and-tax-regimes",
+  "destination": "/products/hrmagix/features/tds-and-tax-regime-declarations",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/industries/construction",
+  "destination": "/products/hrmagix/industries/hrmagix-for-construction",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/industries/education",
+  "destination": "/products/hrmagix/industries/hrmagix-for-education",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/industries/healthcare",
+  "destination": "/products/hrmagix/industries/hrmagix-for-healthcare",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/industries/hospitality",
+  "destination": "/products/hrmagix/industries/hrmagix-for-hospitality",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/industries/it-and-technology",
+  "destination": "/products/hrmagix/industries/hrmagix-for-it-and-technology",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/industries/logistics-and-warehousing",
+  "destination": "/products/hrmagix/industries/hrmagix-for-logistics-and-warehousing",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/industries/manufacturing",
+  "destination": "/products/hrmagix/industries/hrmagix-for-manufacturing",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/industries/nonprofits",
+  "destination": "/products/hrmagix/industries/hrmagix-for-nonprofits",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/industries/professional-services",
+  "destination": "/products/hrmagix/industries/hrmagix-for-professional-services",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/industries/retail",
+  "destination": "/products/hrmagix/industries/hrmagix-for-retail",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/industries/small-and-medium-enterprises",
+  "destination": "/products/hrmagix/industries/hrmagix-for-small-and-medium-enterprises",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/industries/small-business",
+  "destination": "/products/hrmagix/industries/hrmagix-for-small-business",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/industries/staffing-and-recruitment",
+  "destination": "/products/hrmagix/industries/hrmagix-for-staffing-and-recruitment",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/industries/startups",
+  "destination": "/products/hrmagix/industries/hrmagix-for-startups",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/integrations/biometric-attendance-devices",
+  "destination": "/products/hrmagix/integrations/hrmagix-biometric-attendance-devices-essl-matrix-realtime-zkteco-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/resources/earned-casual-and-sick-leave",
+  "destination": "/products/hrmagix/resources/earned-vs-casual-vs-sick-leave",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/resources/epf-vs-eps",
+  "destination": "/products/hrmagix/resources/epf-vs-eps-how-the-employers-12-is-split",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/resources/gratuity-vs-pf",
+  "destination": "/products/hrmagix/resources/gratuity-vs-provident-fund",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/resources/hrms-comparison",
+  "destination": "/products/hrmagix/resources/hrms-comparison-spreadsheets-vs-point-tools-vs-an-integrated-hrms",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/resources/payroll-resources",
+  "destination": "/products/hrmagix/resources/payroll-resources-index",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/resources/per-employee-vs-flat-pricing",
+  "destination": "/products/hrmagix/resources/per-employee-vs-flat-hrms-pricing",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/solutions/audit-and-inspection-readiness",
+  "destination": "/products/hrmagix/solutions/audit-inspection-and-diligence-readiness",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/solutions/for-accounting-and-payroll-firms",
+  "destination": "/products/hrmagix/solutions/hrmagix-for-accounting-and-payroll-firms",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/solutions/for-finance-and-payroll-teams",
+  "destination": "/products/hrmagix/solutions/hrmagix-for-finance-and-payroll-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/solutions/for-hr-teams",
+  "destination": "/products/hrmagix/solutions/hrmagix-for-hr-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/solutions/for-multi-location-businesses",
+  "destination": "/products/hrmagix/solutions/hrmagix-for-multi-location-businesses",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/solutions/one-employee-record",
+  "destination": "/products/hrmagix/solutions/replace-disconnected-hr-tools-with-one-employee-record",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/support/dry-run-payroll",
+  "destination": "/products/hrmagix/support/the-dry-run-payroll",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/support/exporting-data-and-cancelling",
+  "destination": "/products/hrmagix/support/exporting-your-data-and-cancelling",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/support/importing-employee-data",
+  "destination": "/products/hrmagix/support/importing-employee-data-from-excel",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/support/plans-billing-and-trial",
+  "destination": "/products/hrmagix/support/plans-billing-and-the-free-trial",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/support/rolling-out-self-service",
+  "destination": "/products/hrmagix/support/rolling-out-self-service-to-employees",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/support/switching-payroll-on",
+  "destination": "/products/hrmagix/support/switching-payroll-on-including-mid-year",
+  "permanent": true
+ },
+ {
+  "source": "/products/hrmagix/support/turning-policies-into-rules",
+  "destination": "/products/hrmagix/support/turning-your-policies-into-rules",
+  "permanent": true
+ },
+ {
+  "source": "/products/meetingmind/features/group/premium",
+  "destination": "/products/meetingmind/features/group/premium-specialist-modules",
+  "permanent": true
+ },
+ {
+  "source": "/products/meetingmind/features/meeting-assistant",
+  "destination": "/products/meetingmind/features/ask-your-meetings",
+  "permanent": true
+ },
+ {
+  "source": "/products/meetingmind/features/meeting-summaries",
+  "destination": "/products/meetingmind/features/ai-summaries-and-decisions",
+  "permanent": true
+ },
+ {
+  "source": "/products/meetingmind/features/projects-tasks",
+  "destination": "/products/meetingmind/features/assigned-action-items",
+  "permanent": true
+ },
+ {
+  "source": "/products/meetingmind/features/transcripts",
+  "destination": "/products/meetingmind/features/searchable-transcripts",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/achievement-badges",
+  "destination": "/products/oda7/features/achievement-badges-and-milestones",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/agent-status-grid",
+  "destination": "/products/oda7/features/agent-status-grid-and-live-coaching",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/ai-copilot",
+  "destination": "/products/oda7/features/ai-sales-assistant-copilot",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/ai-recommendations",
+  "destination": "/products/oda7/features/ai-sales-recommendations",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/announcements-kudos",
+  "destination": "/products/oda7/features/company-announcements-and-kudos",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/attendance",
+  "destination": "/products/oda7/features/attendance-and-shift-clock-in",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/billing-center",
+  "destination": "/products/oda7/features/subscription-and-invoicing-center",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/calendar-scheduler",
+  "destination": "/products/oda7/features/calendar-and-meeting-scheduler",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/call-heatmaps",
+  "destination": "/products/oda7/features/hour-by-hour-pickup-heatmaps",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/call-history-recordings",
+  "destination": "/products/oda7/features/call-history-and-recordings",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/commission-engine",
+  "destination": "/products/oda7/features/real-time-commission-engine",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/company-hierarchy",
+  "destination": "/products/oda7/features/companies-and-account-hierarchy",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/conversion-telemetry",
+  "destination": "/products/oda7/features/pickup-ratio-and-conversion-tracking",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/coupons",
+  "destination": "/products/oda7/features/coupons-and-discount-engine",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/data-sync",
+  "destination": "/products/oda7/features/scheduled-data-sync",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/dynamic-sales-scripts",
+  "destination": "/products/oda7/features/dynamic-branching-sales-scripts",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/email-tracking",
+  "destination": "/products/oda7/features/email-tracking-and-threading",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/executive-dashboard",
+  "destination": "/products/oda7/features/executive-revenue-dashboard",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/floor-queue-monitor",
+  "destination": "/products/oda7/features/real-time-floor-queue-monitor",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/gamification",
+  "destination": "/products/oda7/features/sales-contests-and-battles",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/group/compensation-payroll",
+  "destination": "/products/oda7/features/group/compensation-and-payroll",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/incentives",
+  "destination": "/products/oda7/features/incentives-and-spiffs",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/insight-alerts",
+  "destination": "/products/oda7/features/automated-insight-alerts",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/integrated-dialer",
+  "destination": "/products/oda7/features/integrated-dialer-and-local-presence-calling",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/ip-blocker",
+  "destination": "/products/oda7/features/global-ip-blocker-and-threat-protection",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/lead-distribution",
+  "destination": "/products/oda7/features/lead-ingestion-and-priority-queue-my-queue",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/lead-management",
+  "destination": "/products/oda7/features/lead-management-and-tagging",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/leaderboards",
+  "destination": "/products/oda7/features/live-sales-floor-leaderboards",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/leave-management",
+  "destination": "/products/oda7/features/leave-and-pto-management",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/manager-scorecard",
+  "destination": "/products/oda7/features/manager-live-scorecard",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/multi-tenant-organizations",
+  "destination": "/products/oda7/features/multi-tenant-organization-management",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/notification-routing",
+  "destination": "/products/oda7/features/notification-routing-rules",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/objection-buster",
+  "destination": "/products/oda7/features/real-time-objection-buster",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/onboarding-workflows",
+  "destination": "/products/oda7/features/automated-onboarding-workflows",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/partner-referrals",
+  "destination": "/products/oda7/features/partner-referral-program",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/payroll",
+  "destination": "/products/oda7/features/automated-payroll-calculation",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/payslips",
+  "destination": "/products/oda7/features/digital-payslip-distribution",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/platform-broadcasts",
+  "destination": "/products/oda7/features/platform-wide-broadcasts",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/platform-revenue",
+  "destination": "/products/oda7/features/platform-revenue-and-mrr-tracking",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/post-call-summaries",
+  "destination": "/products/oda7/features/ai-post-call-summarization",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/quota-accelerators",
+  "destination": "/products/oda7/features/quota-pacing-and-accelerator-rules",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/quotes-and-proposals",
+  "destination": "/products/oda7/features/quotes-cpq-proposals-and-e-signatures",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/roles-permissions",
+  "destination": "/products/oda7/features/roles-and-permissions",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/saas-plans",
+  "destination": "/products/oda7/features/saas-plans-and-subscription-engine",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/team-hierarchy",
+  "destination": "/products/oda7/features/departments-teams-and-pods",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/template-studio",
+  "destination": "/products/oda7/features/email-and-whatsapp-template-studio",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/two-way-sms",
+  "destination": "/products/oda7/features/two-way-sms-messaging",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/voicemail-drop",
+  "destination": "/products/oda7/features/one-click-voicemail-drop",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/web-callbacks-ivr",
+  "destination": "/products/oda7/features/web-callbacks-and-inbound-ivr",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/webhooks",
+  "destination": "/products/oda7/features/custom-webhooks",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/whatsapp-business-messaging",
+  "destination": "/products/oda7/features/whatsapp-business-api-messaging",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/features/white-labeling",
+  "destination": "/products/oda7/features/branding-and-white-labeling",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/integrations/slack",
+  "destination": "/products/oda7/integrations/oda7-slack-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/integrations/whatsapp-business-api",
+  "destination": "/products/oda7/integrations/oda7-whatsapp-business-api-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/calendar-workflow",
+  "destination": "/products/oda7/resources/the-calendar-workflow-in-oda7",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/calls-workflow",
+  "destination": "/products/oda7/resources/the-calls-workflow-in-oda7",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/campaigns-workflow",
+  "destination": "/products/oda7/resources/the-campaigns-workflow-in-oda7",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/dialer-workflow",
+  "destination": "/products/oda7/resources/the-dialer-workflow-in-oda7",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/how-context-travels",
+  "destination": "/products/oda7/resources/how-context-travels-through-oda7",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/inbox-workflow",
+  "destination": "/products/oda7/resources/the-inbox-workflow-in-oda7",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/leads-workflow",
+  "destination": "/products/oda7/resources/the-leads-workflow-in-oda7",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/lifecycle-calling",
+  "destination": "/products/oda7/resources/sales-lifecycle-stage-2-calling-from-the-browser",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/lifecycle-commission-payroll",
+  "destination": "/products/oda7/resources/sales-lifecycle-stage-6-automated-commission-and-payroll",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/lifecycle-lead-ingestion",
+  "destination": "/products/oda7/resources/sales-lifecycle-stage-1-lead-ingestion-and-the-priority-queue",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/lifecycle-live-scripting",
+  "destination": "/products/oda7/resources/sales-lifecycle-stage-3-live-scripting-and-objection-battlecards",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/lifecycle-omnichannel-follow-up",
+  "destination": "/products/oda7/resources/sales-lifecycle-stage-4-follow-up-across-whatsapp-sms-and-email",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/lifecycle-quotes",
+  "destination": "/products/oda7/resources/sales-lifecycle-stage-5-quotes-and-proposals",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/people-ops-to-payroll",
+  "destination": "/products/oda7/resources/from-shift-clock-in-to-payroll-run",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/products-workflow",
+  "destination": "/products/oda7/resources/the-products-workflow-in-oda7",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/quotes-workflow",
+  "destination": "/products/oda7/resources/the-quotes-workflow-in-oda7",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/scripts-workflow",
+  "destination": "/products/oda7/resources/the-scripts-workflow-in-oda7",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/sequences-workflow",
+  "destination": "/products/oda7/resources/the-sequences-workflow-in-oda7",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/tour-floor-supervisor",
+  "destination": "/products/oda7/resources/guided-tour-oda7-for-the-floor-supervisor",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/tour-ops-payroll-admin",
+  "destination": "/products/oda7/resources/guided-tour-oda7-for-the-operations-and-payroll-admin",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/tour-platform-executive",
+  "destination": "/products/oda7/resources/guided-tour-oda7-for-the-platform-executive",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/resources/tour-sales-rep",
+  "destination": "/products/oda7/resources/guided-tour-oda7-for-the-sales-rep-inside-sales-sdr",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/solutions/call-center-floor-supervision",
+  "destination": "/products/oda7/solutions/call-center-and-bpo-floor-supervision",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/solutions/for-business-leadership",
+  "destination": "/products/oda7/solutions/oda7-for-business-leadership",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/solutions/for-hr-and-people-teams",
+  "destination": "/products/oda7/solutions/oda7-for-hr-and-people-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/solutions/for-marketing-teams",
+  "destination": "/products/oda7/solutions/oda7-for-marketing-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/solutions/for-operations-teams",
+  "destination": "/products/oda7/solutions/oda7-for-operations-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/solutions/for-sales-managers",
+  "destination": "/products/oda7/solutions/oda7-for-sales-managers-and-floor-supervisors",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/solutions/for-sales-reps",
+  "destination": "/products/oda7/solutions/oda7-for-sales-reps",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/solutions/high-velocity-sdr-floor",
+  "destination": "/products/oda7/solutions/high-velocity-sdr-floors",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/solutions/revenue-agencies",
+  "destination": "/products/oda7/solutions/multi-client-bpo-and-lead-gen-agencies",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/solutions/saas-platform-resellers",
+  "destination": "/products/oda7/solutions/white-label-saas-platform-resellers",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/support/ai-assisted-features",
+  "destination": "/products/oda7/support/understanding-oda7s-ai-assisted-features",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/support/manager-views-and-access",
+  "destination": "/products/oda7/support/what-managers-can-see-and-do",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/support/planning-an-implementation",
+  "destination": "/products/oda7/support/planning-an-oda7-implementation",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/support/preview-vs-live-app",
+  "destination": "/products/oda7/support/the-oda7-website-preview-vs-the-live-app",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/support/signing-in-and-access",
+  "destination": "/products/oda7/support/signing-in-and-getting-access",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/support/super-admin-platform",
+  "destination": "/products/oda7/support/the-super-admin-platform",
+  "permanent": true
+ },
+ {
+  "source": "/products/oda7/support/telephony-and-integrations-scoping",
+  "destination": "/products/oda7/support/scoping-telephony-and-integrations",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/activity-history",
+  "destination": "/products/sibu/features/asset-activity-and-history",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/aes-256-at-rest",
+  "destination": "/products/sibu/features/encryption-and-secret-storage",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/ai-tag-review",
+  "destination": "/products/sibu/features/ai-tag-review-confidence-bulk-approval-and-override",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/api-authentication",
+  "destination": "/products/sibu/features/api-authentication-and-tenant-context",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/approvals",
+  "destination": "/products/sibu/features/creative-approval-workflow",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/asset-ownership",
+  "destination": "/products/sibu/features/asset-ownership-and-attribution",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/asset-status-management",
+  "destination": "/products/sibu/features/asset-statuses-and-review-status",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/audit-logs-everywhere",
+  "destination": "/products/sibu/features/audit-logs",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/auto-ingest-from-anywhere",
+  "destination": "/products/sibu/features/automated-ingestion-and-watch-folders",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/bulk-import",
+  "destination": "/products/sibu/features/bulk-import-without-downtime",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/collaboration-events-api",
+  "destination": "/products/sibu/features/approval-and-comment-events",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/comments-in-context",
+  "destination": "/products/sibu/features/asset-comments",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/expiring-creative-assets",
+  "destination": "/products/sibu/features/asset-expiry",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/granular-permissions",
+  "destination": "/products/sibu/features/roles-and-folder-level-permissions",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/group/permissions-multi-tenancy",
+  "destination": "/products/sibu/features/group/permissions-and-multi-tenancy",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/group/search-discovery",
+  "destination": "/products/sibu/features/group/search-and-discovery",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/group/storage-ingestion",
+  "destination": "/products/sibu/features/group/storage-and-ingestion",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/group/versioning-asset-management",
+  "destination": "/products/sibu/features/group/versioning-and-asset-management",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/insightful-analytics",
+  "destination": "/products/sibu/features/library-analytics-dashboards",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/media-processing-status",
+  "destination": "/products/sibu/features/asset-processing-and-processing-status",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/metadata-preserved",
+  "destination": "/products/sibu/features/metadata-preservation",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/most-searched-tags",
+  "destination": "/products/sibu/features/most-searched-tags-and-tag-analytics",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/multi-tenant-by-design",
+  "destination": "/products/sibu/features/multi-tenancy-and-client-isolation",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/ocr-extraction",
+  "destination": "/products/sibu/features/ocr-and-document-search",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/onboarding-included",
+  "destination": "/products/sibu/features/onboarding",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/per-client-environments",
+  "destination": "/products/sibu/features/per-client-storage-authentication-ai-keys-and-white-label",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/reliable-large-uploads",
+  "destination": "/products/sibu/features/reliable-large-file-uploads",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/saved-searches",
+  "destination": "/products/sibu/features/saved-searches-and-shared-views",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/search-by-anything",
+  "destination": "/products/sibu/features/creative-asset-search",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/semantic-search",
+  "destination": "/products/sibu/features/semantic-and-natural-language-search",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/streaming-previews",
+  "destination": "/products/sibu/features/thumbnails-and-streaming-previews",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/unified-media-search",
+  "destination": "/products/sibu/features/one-library-for-video-images-audio-and-documents",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/version-restore",
+  "destination": "/products/sibu/features/version-restore-and-recovery",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/versioning",
+  "destination": "/products/sibu/features/creative-asset-versioning",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/video-timeline-comments",
+  "destination": "/products/sibu/features/video-timeline-comments-and-frame-accurate-review",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/features/webhooks",
+  "destination": "/products/sibu/features/webhooks-and-automation",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/industries/creative-agencies",
+  "destination": "/products/sibu/industries/sibu-for-creative-and-advertising-agencies",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/industries/e-commerce",
+  "destination": "/products/sibu/industries/sibu-for-e-commerce-brands",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/industries/education",
+  "destination": "/products/sibu/industries/sibu-for-education-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/industries/events",
+  "destination": "/products/sibu/industries/sibu-for-event-companies",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/industries/film-production",
+  "destination": "/products/sibu/industries/sibu-for-film-production",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/industries/newsrooms-media",
+  "destination": "/products/sibu/industries/sibu-for-newsrooms-and-media-companies",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/industries/nonprofits",
+  "destination": "/products/sibu/industries/sibu-for-nonprofits",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/industries/photography",
+  "destination": "/products/sibu/industries/sibu-for-photography-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/industries/post-production",
+  "destination": "/products/sibu/industries/sibu-for-post-production",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/industries/retail",
+  "destination": "/products/sibu/industries/sibu-for-retail-brands",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/integrations/aws-s3",
+  "destination": "/products/sibu/integrations/sibu-aws-s3-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/integrations/custom-integrations",
+  "destination": "/products/sibu/integrations/sibu-custom-integrations-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/integrations/dropbox",
+  "destination": "/products/sibu/integrations/sibu-dropbox-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/integrations/google-drive",
+  "destination": "/products/sibu/integrations/sibu-google-drive-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/resources/what-is-multi-tenant-dam",
+  "destination": "/products/sibu/resources/what-is-multi-tenant-digital-asset-management",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/solutions/brand-teams",
+  "destination": "/products/sibu/solutions/sibu-for-brand-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/solutions/enterprise-marketing",
+  "destination": "/products/sibu/solutions/sibu-for-enterprise-marketing",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/solutions/freelancers",
+  "destination": "/products/sibu/solutions/sibu-for-freelancers",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/solutions/marketing-teams",
+  "destination": "/products/sibu/solutions/sibu-for-marketing-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/solutions/multi-market-teams",
+  "destination": "/products/sibu/solutions/sibu-for-multi-market-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/solutions/video-teams",
+  "destination": "/products/sibu/solutions/sibu-for-video-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/sibu/support/connecting-other-tools",
+  "destination": "/products/sibu/support/connecting-sibu-to-other-tools",
+  "permanent": true
+ },
+ {
+  "source": "/products/sigchanger/features/dual-payment-gateways",
+  "destination": "/products/sigchanger/features/dual-payment-gateways-stripe-and-razorpay",
+  "permanent": true
+ },
+ {
+  "source": "/products/sigchanger/features/dynamic-fields",
+  "destination": "/products/sigchanger/features/dynamic-fields-in-email-signatures",
+  "permanent": true
+ },
+ {
+  "source": "/products/sigchanger/features/multi-currency-pricing",
+  "destination": "/products/sigchanger/features/multi-currency-pricing-usd-and-inr",
+  "permanent": true
+ },
+ {
+  "source": "/products/sigchanger/features/scheduled-auto-sync",
+  "destination": "/products/sigchanger/features/scheduled-auto-sync-daily-or-hourly",
+  "permanent": true
+ },
+ {
+  "source": "/products/sigchanger/integrations/google-workspace",
+  "destination": "/products/sigchanger/integrations/sigchanger-google-workspace-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/sigchanger/resources/sub-processors",
+  "destination": "/products/sigchanger/resources/sub-processors-and-third-party-services",
+  "permanent": true
+ },
+ {
+  "source": "/products/sigchanger/solutions/consistent-company-wide-branding",
+  "destination": "/products/sigchanger/solutions/consistent-company-wide-email-branding",
+  "permanent": true
+ },
+ {
+  "source": "/products/sigchanger/solutions/signature-management-for-it-teams",
+  "destination": "/products/sigchanger/solutions/signature-administration-for-it-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/sigchanger/support/billing-and-cancellation",
+  "destination": "/products/sigchanger/support/billing-cancellation-and-failed-payments",
+  "permanent": true
+ },
+ {
+  "source": "/products/sigchanger/support/contacting-support",
+  "destination": "/products/sigchanger/support/contacting-sigchanger",
+  "permanent": true
+ },
+ {
+  "source": "/products/sigchanger/support/data-retention-and-deletion",
+  "destination": "/products/sigchanger/support/data-retention-and-account-deletion",
+  "permanent": true
+ },
+ {
+  "source": "/products/sigchanger/support/getting-started",
+  "destination": "/products/sigchanger/support/getting-started-with-sigchanger",
+  "permanent": true
+ },
+ {
+  "source": "/products/sigchanger/support/plan-limits",
+  "destination": "/products/sigchanger/support/plan-limits-and-upgrades",
+  "permanent": true
+ },
+ {
+  "source": "/products/sigchanger/support/revoking-workspace-access",
+  "destination": "/products/sigchanger/support/revoking-google-workspace-access",
+  "permanent": true
+ },
+ {
+  "source": "/products/sigchanger/support/service-availability",
+  "destination": "/products/sigchanger/support/service-availability-and-rendering",
+  "permanent": true
+ },
+ {
+  "source": "/products/sizoru/compare/sizoru-vs-chatgpt-and-free-ai",
+  "destination": "/products/sizoru/compare/sizoru-vs-chatgpt-free-ai-tools",
+  "permanent": true
+ },
+ {
+  "source": "/products/sizoru/compare/sizoru-vs-syndicated-research-reports",
+  "destination": "/products/sizoru/compare/sizoru-vs-mordor-intelligence-ibisworld",
+  "permanent": true
+ },
+ {
+  "source": "/products/sizoru/features/email-code-sign-in",
+  "destination": "/products/sizoru/features/passwordless-email-code-sign-in",
+  "permanent": true
+ },
+ {
+  "source": "/products/sizoru/features/executive-summary-and-confidence-score",
+  "destination": "/products/sizoru/features/executive-summary-with-confidence-score",
+  "permanent": true
+ },
+ {
+  "source": "/products/sizoru/features/named-source-validation",
+  "destination": "/products/sizoru/features/named-source-benchmark-validation",
+  "permanent": true
+ },
+ {
+  "source": "/products/sizoru/features/seven-field-brief",
+  "destination": "/products/sizoru/features/seven-field-brief-with-indian-defaults",
+  "permanent": true
+ },
+ {
+  "source": "/products/sizoru/resources/sizoru-methodology",
+  "destination": "/products/sizoru/resources/the-sizoru-methodology",
+  "permanent": true
+ },
+ {
+  "source": "/products/sizoru/solutions/market-sizing-for-consultants",
+  "destination": "/products/sizoru/solutions/market-sizing-for-consultants-and-advisors",
+  "permanent": true
+ },
+ {
+  "source": "/products/sizoru/solutions/market-sizing-for-founders",
+  "destination": "/products/sizoru/solutions/market-sizing-for-founders-raising-capital",
+  "permanent": true
+ },
+ {
+  "source": "/products/sizoru/support/revisions-and-refunds",
+  "destination": "/products/sizoru/support/revisions-redos-and-refunds",
+  "permanent": true
+ },
+ {
+  "source": "/products/sizoru/support/what-sizoru-cannot-do",
+  "destination": "/products/sizoru/support/what-sizoru-cant-do",
+  "permanent": true
+ },
+ {
+  "source": "/products/social-magix/features/group/platforms",
+  "destination": "/products/social-magix/features/group/supported-platforms",
+  "permanent": true
+ },
+ {
+  "source": "/products/social-magix/features/multi-platform-support",
+  "destination": "/products/social-magix/features/8-platform-support",
+  "permanent": true
+ },
+ {
+  "source": "/products/speechwright/features/bring-your-own-keys",
+  "destination": "/products/speechwright/features/bring-your-own-keys-and-key-encryption",
+  "permanent": true
+ },
+ {
+  "source": "/products/speechwright/features/chat-packs",
+  "destination": "/products/speechwright/features/pricing-pay-as-you-go-chat-packs",
+  "permanent": true
+ },
+ {
+  "source": "/products/speechwright/features/compare-and-refine",
+  "destination": "/products/speechwright/features/compare-pick-and-edit",
+  "permanent": true
+ },
+ {
+  "source": "/products/speechwright/features/email-package",
+  "destination": "/products/speechwright/features/email-the-full-package",
+  "permanent": true
+ },
+ {
+  "source": "/products/speechwright/features/export",
+  "destination": "/products/speechwright/features/export-to-word-and-pdf",
+  "permanent": true
+ },
+ {
+  "source": "/products/speechwright/features/free-speech",
+  "destination": "/products/speechwright/features/free-first-speech",
+  "permanent": true
+ },
+ {
+  "source": "/products/speechwright/features/google-sign-in",
+  "destination": "/products/speechwright/features/sign-in-with-email-or-google",
+  "permanent": true
+ },
+ {
+  "source": "/products/speechwright/features/onboarding-walkthrough",
+  "destination": "/products/speechwright/features/getting-started-walkthrough",
+  "permanent": true
+ },
+ {
+  "source": "/products/speechwright/features/password-reset",
+  "destination": "/products/speechwright/features/account-recovery-by-6-digit-code",
+  "permanent": true
+ },
+ {
+  "source": "/products/speechwright/features/team-workspaces",
+  "destination": "/products/speechwright/features/team-workspaces-and-roles",
+  "permanent": true
+ },
+ {
+  "source": "/products/speechwright/integrations/anthropic-claude",
+  "destination": "/products/speechwright/integrations/speechwright-anthropic-claude-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/speechwright/integrations/openai",
+  "destination": "/products/speechwright/integrations/speechwright-openai-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/features/ai-usage",
+  "destination": "/products/taskmagix/features/ai-usage-and-token-allowance",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/features/custom-migration",
+  "destination": "/products/taskmagix/features/custom-migration-help",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/features/department-workflows",
+  "destination": "/products/taskmagix/features/department-workflows-and-statuses",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/features/group/account",
+  "destination": "/products/taskmagix/features/group/account-and-billing",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/features/group/admin-security",
+  "destination": "/products/taskmagix/features/group/admin-and-security",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/features/group/automation",
+  "destination": "/products/taskmagix/features/group/automation-and-ai",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/features/group/reporting",
+  "destination": "/products/taskmagix/features/group/reminders-and-reports",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/features/import-asana",
+  "destination": "/products/taskmagix/features/import-from-asana",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/features/import-clickup",
+  "destination": "/products/taskmagix/features/import-from-clickup",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/features/import-csv",
+  "destination": "/products/taskmagix/features/import-from-csv",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/features/import-monday",
+  "destination": "/products/taskmagix/features/import-from-monday",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/features/import-trello",
+  "destination": "/products/taskmagix/features/import-from-trello",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/features/n8n",
+  "destination": "/products/taskmagix/features/n8n-automation",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/features/report-an-issue",
+  "destination": "/products/taskmagix/features/account-issue-reporting",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/features/task-hierarchy",
+  "destination": "/products/taskmagix/features/full-task-hierarchy",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/solutions/creative-agencies",
+  "destination": "/products/taskmagix/solutions/creative-and-agencies",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/support/billing-and-refunds",
+  "destination": "/products/taskmagix/support/billing-cancellations-and-refunds",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/support/faqs",
+  "destination": "/products/taskmagix/support/taskmagix-faqs",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/support/getting-started",
+  "destination": "/products/taskmagix/support/getting-started-in-five-steps",
+  "permanent": true
+ },
+ {
+  "source": "/products/taskmagix/support/importing-data",
+  "destination": "/products/taskmagix/support/importing-from-other-tools",
+  "permanent": true
+ },
+ {
+  "source": "/products/theprojectchecker/features/dashboard-analytics",
+  "destination": "/products/theprojectchecker/features/dashboard-and-analytics",
+  "permanent": true
+ },
+ {
+  "source": "/products/theprojectchecker/features/demo-document-management",
+  "destination": "/products/theprojectchecker/features/demo-and-document-management",
+  "permanent": true
+ },
+ {
+  "source": "/products/theprojectchecker/features/project-qanda-thread",
+  "destination": "/products/theprojectchecker/features/project-q-and-a-thread",
+  "permanent": true
+ },
+ {
+  "source": "/products/theprojectchecker/features/testing-qa-management",
+  "destination": "/products/theprojectchecker/features/testing-and-qa-management",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/approved-vs-filed",
+  "destination": "/products/trackysuite/features/approved-vs-filed-counts",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/client-document-upload",
+  "destination": "/products/trackysuite/features/client-document-upload-and-downloads",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/compliance-catalogue",
+  "destination": "/products/trackysuite/features/compliance-catalogue-maintained-by-trackysuite",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/entity-types",
+  "destination": "/products/trackysuite/features/entity-types-8",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/excel-client-import",
+  "destination": "/products/trackysuite/features/excel-client-import-500-at-once",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/gst",
+  "destination": "/products/trackysuite/features/gst-returns-gstr-1-3b-9",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/help-library",
+  "destination": "/products/trackysuite/features/in-app-help-library",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/maker-checker-review",
+  "destination": "/products/trackysuite/features/maker-checker-review-pipeline",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/pf-esi",
+  "destination": "/products/trackysuite/features/pf-and-esi",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/reminder-ladder-escalation",
+  "destination": "/products/trackysuite/features/14-7-3-1-reminder-ladder-and-escalation",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/reports-analytics",
+  "destination": "/products/trackysuite/features/reports-and-analytics",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/roc-mca",
+  "destination": "/products/trackysuite/features/roc-mca-annual-filings",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/row-level-security",
+  "destination": "/products/trackysuite/features/role-scoped-access-and-row-level-security",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/support-tickets",
+  "destination": "/products/trackysuite/features/portal-support-tickets",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/task-workflow",
+  "destination": "/products/trackysuite/features/task-and-workflow",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/features/tds-tcs",
+  "destination": "/products/trackysuite/features/tds-and-tcs-returns",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/industries/ca-cs-tax-practices",
+  "destination": "/products/trackysuite/industries/trackysuite-for-ca-cs-and-tax-practices-in-india",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/solutions/client-document-collection",
+  "destination": "/products/trackysuite/solutions/client-document-collection-through-the-portal",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/support/client-portal-visibility",
+  "destination": "/products/trackysuite/support/controlling-what-clients-see-in-the-portal",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/support/email-delivery",
+  "destination": "/products/trackysuite/support/how-trackysuite-sends-email",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/support/getting-started",
+  "destination": "/products/trackysuite/support/setting-up-your-firm",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/support/setting-client-registrations",
+  "destination": "/products/trackysuite/support/setting-client-registrations-to-build-the-calendar",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/support/trial-and-billing",
+  "destination": "/products/trackysuite/support/trial-billing-and-cancellation",
+  "permanent": true
+ },
+ {
+  "source": "/products/trackysuite/support/your-data",
+  "destination": "/products/trackysuite/support/data-ownership-export-and-deletion",
+  "permanent": true
+ },
+ {
+  "source": "/products/warwi/support/account-safety",
+  "destination": "/products/warwi/support/whatsapp-account-safety",
+  "permanent": true
+ },
+ {
+  "source": "/products/warwi/support/cancellation",
+  "destination": "/products/warwi/support/cancellation-and-data-retention",
+  "permanent": true
+ },
+ {
+  "source": "/products/warwi/support/getting-started",
+  "destination": "/products/warwi/support/getting-started-and-team-setup",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/features/analytics-plus-scorecard",
+  "destination": "/products/zapbuzzer/features/analytics-scorecard",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/features/group/analytics",
+  "destination": "/products/zapbuzzer/features/group/ratings-analytics-and-history",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/features/group/requests",
+  "destination": "/products/zapbuzzer/features/group/requests-and-catalogue",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/features/group/routing",
+  "destination": "/products/zapbuzzer/features/group/routing-and-ownership",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/features/group/tracking",
+  "destination": "/products/zapbuzzer/features/group/tracking-and-delivery",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/features/hardware-requests",
+  "destination": "/products/zapbuzzer/features/hardware-swaps",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/features/hdmi-requests",
+  "destination": "/products/zapbuzzer/features/hdmi-and-adapter-requests",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/features/multi-channel",
+  "destination": "/products/zapbuzzer/features/multi-channel-notifications",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/features/print-room",
+  "destination": "/products/zapbuzzer/features/pdf-print-requests",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/features/request-catalog",
+  "destination": "/products/zapbuzzer/features/request-catalogue",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/features/request-status",
+  "destination": "/products/zapbuzzer/features/request-status-lifecycle",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/integrations/custom-domain",
+  "destination": "/products/zapbuzzer/integrations/zapbuzzer-custom-domain-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/integrations/rest-api",
+  "destination": "/products/zapbuzzer/integrations/zapbuzzer-rest-api-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/integrations/sso-and-saml",
+  "destination": "/products/zapbuzzer/integrations/zapbuzzer-sso-and-saml-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/integrations/telegram",
+  "destination": "/products/zapbuzzer/integrations/zapbuzzer-telegram-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/integrations/webhooks",
+  "destination": "/products/zapbuzzer/integrations/zapbuzzer-webhooks-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/integrations/whatsapp",
+  "destination": "/products/zapbuzzer/integrations/zapbuzzer-whatsapp-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/integrations/white-label",
+  "destination": "/products/zapbuzzer/integrations/zapbuzzer-white-label-integration",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/solutions/courier-and-reception",
+  "destination": "/products/zapbuzzer/solutions/courier-mailroom-and-reception",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/solutions/facilities",
+  "destination": "/products/zapbuzzer/solutions/facilities-requests",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/solutions/facility-companies-and-groups",
+  "destination": "/products/zapbuzzer/solutions/facility-companies-and-multi-office-groups",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/solutions/hr-teams",
+  "destination": "/products/zapbuzzer/solutions/for-hr-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/solutions/it-support",
+  "destination": "/products/zapbuzzer/solutions/it-support-for-quick-office-fixes",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/solutions/leaders-and-founders",
+  "destination": "/products/zapbuzzer/solutions/for-ceos-and-founders",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/solutions/office-managers-and-admin-teams",
+  "destination": "/products/zapbuzzer/solutions/for-office-managers-and-admin-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/solutions/pantry",
+  "destination": "/products/zapbuzzer/solutions/pantry-management",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/support/billing-and-seats",
+  "destination": "/products/zapbuzzer/support/billing-seats-and-currencies",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/support/delete-account",
+  "destination": "/products/zapbuzzer/support/delete-your-account-and-data",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/support/getting-started",
+  "destination": "/products/zapbuzzer/support/getting-started-and-the-free-trial",
+  "permanent": true
+ },
+ {
+  "source": "/products/zapbuzzer/support/install-android-app",
+  "destination": "/products/zapbuzzer/support/install-or-update-the-android-app",
+  "permanent": true
+ },
+ {
+  "source": "/products/zorfly/features/eight-grammar-domains",
+  "destination": "/products/zorfly/features/curriculum-and-assessments",
+  "permanent": true
+ },
+ {
+  "source": "/products/zorfly/features/five-minute-lessons",
+  "destination": "/products/zorfly/features/five-minute-daily-missions",
+  "permanent": true
+ },
+ {
+  "source": "/products/zorfly/features/xp-streaks-and-badges",
+  "destination": "/products/zorfly/features/progress-dashboard-xp-streaks-and-badges",
+  "permanent": true
+ },
+ {
+  "source": "/products/zorfly/solutions/individual-learners",
+  "destination": "/products/zorfly/solutions/communication-training-for-individual-learners",
+  "permanent": true
+ },
+ {
+  "source": "/products/zorfly/solutions/teams",
+  "destination": "/products/zorfly/solutions/communication-training-for-teams",
+  "permanent": true
+ },
+ {
+  "source": "/products/zorfly/support/ai-and-your-data",
+  "destination": "/products/zorfly/support/how-zorfly-uses-ai-and-your-data",
+  "permanent": true
+ },
+ {
+  "source": "/products/zorfly/support/create-your-workspace",
+  "destination": "/products/zorfly/support/creating-your-zorfly-workspace",
+  "permanent": true
+ },
+ {
+  "source": "/products/zorfly/support/sign-in-and-password-reset",
+  "destination": "/products/zorfly/support/signing-in-and-resetting-your-password",
+  "permanent": true
+ },
+ {
+  "source": "/products/zuzu/features/access-control-and-sign-in",
+  "destination": "/products/zuzu/features/permissions-and-two-factor-sign-in",
+  "permanent": true
+ },
+ {
+  "source": "/products/zuzu/features/burnout-risk",
+  "destination": "/products/zuzu/features/burnout-risk-with-weeks-to-risk",
+  "permanent": true
+ },
+ {
+  "source": "/products/zuzu/features/coupon-codes",
+  "destination": "/products/zuzu/features/coupon-codes-at-checkout",
+  "permanent": true
+ },
+ {
+  "source": "/products/zuzu/features/on-device-privacy-redaction",
+  "destination": "/products/zuzu/features/screenshots-with-on-device-privacy-redaction",
+  "permanent": true
+ },
+ {
+  "source": "/products/zuzu/features/recommendations",
+  "destination": "/products/zuzu/features/evidence-linked-recommendations",
+  "permanent": true
+ },
+ {
+  "source": "/products/zuzu/features/report-review",
+  "destination": "/products/zuzu/features/report-review-and-reviewer-agreement",
+  "permanent": true
+ },
+ {
+  "source": "/products/zuzu/features/runs-on-your-infrastructure",
+  "destination": "/products/zuzu/features/runs-on-infrastructure-you-control",
+  "permanent": true
+ },
+ {
+  "source": "/products/zuzu/features/screenshot-retention",
+  "destination": "/products/zuzu/features/screenshot-retention-settings",
+  "permanent": true
+ },
+ {
+  "source": "/products/zuzu/features/shifts-and-leave",
+  "destination": "/products/zuzu/features/shift-and-leave-records",
+  "permanent": true
+ }
+]

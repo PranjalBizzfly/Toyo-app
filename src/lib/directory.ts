@@ -70,8 +70,8 @@ const SECTOR_OF: Record<string, string> = {
 
 /** Cross-product industry guides → the sector they belong to. */
 const GUIDE_SECTOR: Record<string, string> = {
-  "accounting-tax-practices": "professional-services",
-  "media-creative-agencies": "creative-media",
+  "accounting-and-tax-practices": "professional-services",
+  "media-creative-and-agencies": "creative-media",
   "startups-and-investors": "startups-growth",
 };
 

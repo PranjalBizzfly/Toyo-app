@@ -119,6 +119,12 @@ export interface Feature extends SeoFields {
   /** Highlight on the product overview. */
   highlight?: boolean;
   hasPage?: boolean;
+  /**
+   * "listed" = the official site only names this feature (e.g. a pricing-table row) without
+   * describing it. Its page explains the kind of feature in general terms, states only what the
+   * site confirms, and shows a note that the vendor publishes no further detail.
+   */
+  evidence?: "listed";
   status?: ContentStatus;
 }
 
@@ -300,6 +306,11 @@ export interface ProductComparison extends ProductDetailBase {
 /** A real resource published by the product (/products/[p]/resources/[slug]). */
 export interface ProductResource extends ProductDetailBase {
   type: "guide" | "tutorial" | "checklist" | "documentation" | "article" | "glossary" | "video" | "case-study";
+  /**
+   * "toyoapps" = a ToyoApps-written guide about the product's field (general practice, not product claims).
+   * Shown with a label; any product detail in it must still come from the product's official sources.
+   */
+  author?: "toyoapps";
   keyPoints?: string[];
   steps?: string[];
 }

@@ -23,7 +23,7 @@ const CONFIRM = "The ODA7 site presents this workflow with illustrative previews
 
 export const roleSolutions: ProductSolution[] = [
   {
-    slug: "for-sales-reps",
+    slug: "oda7-for-sales-reps",
     name: "ODA7 for sales reps",
     summary: "One place for a rep to work leads, calls, scripts, follow-ups and quotes, from assigned lead to a clear next action.",
     problem: "Reps lose time and context when the lead list, the dialer, the script, the follow-up reminder and the quote tool are all separate. Every switch means re-reading the lead before the conversation can move on.",
@@ -40,7 +40,7 @@ export const roleSolutions: ProductSolution[] = [
     workflow: ["Find the next lead", "Start the conversation", "Capture the outcome", "Move the opportunity forward"],
     benefits: ["Less tool switching during the working day", "Clearer ownership of every lead", "Follow-up that stays connected to the conversation"],
     audience: ["SDRs", "Inside sales reps", "Account executives"],
-    features: ["lead-distribution", "integrated-dialer", "dynamic-sales-scripts", "automated-sequences", "quotes-and-proposals", "sales-dashboard"],
+    features: ["lead-ingestion-and-priority-queue-my-queue", "integrated-dialer-and-local-presence-calling", "dynamic-branching-sales-scripts", "automated-sequences", "quotes-cpq-proposals-and-e-signatures", "sales-dashboard"],
     faqs: [
       { question: "Which parts of ODA7 does a sales rep use day to day?", answer: "The sales workspace: leads, the dialer and calls, scripts, the shared inbox, the calendar, sequences and quotes, plus the rep's own dashboard." },
       { question: "Does the rep still log calls manually?", answer: "ODA7 is designed so the call outcome is captured in the workflow and becomes the next action, rather than being typed up afterwards." },
@@ -48,7 +48,7 @@ export const roleSolutions: ProductSolution[] = [
     sources: S,
   },
   {
-    slug: "for-sales-managers",
+    slug: "oda7-for-sales-managers-and-floor-supervisors",
     name: "ODA7 for sales managers & floor supervisors",
     summary: "See the floor, coach in the moment and improve the system: team activity, queue ownership and performance in one manager view.",
     problem: "Managers usually find out what happened on the floor from reports built after the fact. By then the moment to coach a call or rebalance a queue has passed.",
@@ -65,14 +65,14 @@ export const roleSolutions: ProductSolution[] = [
     workflow: ["Monitor activity", "Spot problems", "Coach with context", "Review the improvement"],
     benefits: ["A live view of the floor", "Coaching focused on real conversations", "Visible accountability for every queue"],
     audience: ["Sales managers", "Floor supervisors", "Team leads"],
-    features: ["floor-queue-monitor", "agent-status-grid", "manager-scorecard", "call-history-recordings", "call-heatmaps"],
+    features: ["real-time-floor-queue-monitor", "agent-status-grid-and-live-coaching", "manager-live-scorecard", "call-history-and-recordings", "call-heatmaps"],
     faqs: [
       { question: "What can managers see in ODA7?", answer: "Manager views focus on team activity, calls, queue ownership, performance context and coaching workflows. What each manager can access is shaped by their role and the workspace configuration." },
     ],
     sources: S,
   },
   {
-    slug: "for-marketing-teams",
+    slug: "oda7-for-marketing-teams",
     name: "ODA7 for marketing teams",
     summary: "Connect campaign activity to lead movement: sources, assignments and outcomes stay linked from the first response onward.",
     problem: "Campaign reports stop at the click when lead ownership and sales outcomes live in another system. Marketing can see interest arrive but not what sales did with it.",
@@ -89,11 +89,11 @@ export const roleSolutions: ProductSolution[] = [
     workflow: ["Launch the campaign", "Capture interest", "Route to sales", "Review movement"],
     benefits: ["Source context on every lead", "Cleaner handoffs to sales", "Outcome visibility beyond the click"],
     audience: ["Growth marketers", "Demand generation teams"],
-    features: ["lead-distribution", "lead-management", "automated-sequences", "predictive-lead-scoring", "conversion-telemetry"],
+    features: ["lead-ingestion-and-priority-queue-my-queue", "lead-management-and-tagging", "automated-sequences", "predictive-lead-scoring", "conversion-telemetry"],
     sources: S,
   },
   {
-    slug: "for-operations-teams",
+    slug: "oda7-for-operations-teams",
     name: "ODA7 for operations teams",
     summary: "Connect people, attendance and productivity, and run the operations behind the sales floor without rebuilding them in spreadsheets.",
     problem: "Team structures, attendance records and compensation inputs are often kept in separate sheets, so every review means stitching data together by hand.",
@@ -110,11 +110,11 @@ export const roleSolutions: ProductSolution[] = [
     workflow: ["Structure teams", "Review attendance", "Connect compensation", "Understand productivity"],
     benefits: ["Shared people context across teams", "Repeatable operating reviews", "Faster review cycles"],
     audience: ["Operations managers", "Revenue operations"],
-    features: ["team-hierarchy", "attendance", "leave-management", "commission-engine", "payroll", "executive-dashboard"],
+    features: ["departments-teams-and-pods", "attendance-and-shift-clock-in", "leave-and-pto-management", "real-time-commission-engine", "automated-payroll-calculation", "executive-dashboard"],
     sources: S,
   },
   {
-    slug: "for-hr-and-people-teams",
+    slug: "oda7-for-hr-and-people-teams",
     name: "ODA7 for HR & people teams",
     summary: "Make people operations part of the workspace: teams, departments, onboarding, leave and attendance in one visible flow.",
     problem: "When onboarding, leave and attendance sit outside the sales workspace, HR decisions and floor operations drift apart; a rep can be on leave while leads still route to them.",
@@ -131,11 +131,11 @@ export const roleSolutions: ProductSolution[] = [
     workflow: ["Organize people", "Onboard consistently", "Track availability", "Support the team"],
     benefits: ["A clear organizational structure", "Visible attendance", "Connected onboarding"],
     audience: ["HR teams", "People operations"],
-    features: ["team-hierarchy", "onboarding-workflows", "attendance", "leave-management", "payslips"],
+    features: ["departments-teams-and-pods", "automated-onboarding-workflows", "attendance-and-shift-clock-in", "leave-and-pto-management", "payslips"],
     sources: S,
   },
   {
-    slug: "for-business-leadership",
+    slug: "oda7-for-business-leadership",
     name: "ODA7 for business leadership",
     summary: "Turn activity into a clearer picture of the business: analytics, performance and operating detail for better decisions.",
     problem: "Leadership often sees results without the operating detail behind them, and different teams report the same numbers with different definitions.",
@@ -152,7 +152,7 @@ export const roleSolutions: ProductSolution[] = [
     workflow: ["Review performance", "Understand movement", "Find bottlenecks", "Decide the next action"],
     benefits: ["Cross-team visibility", "Shared definitions across teams", "Clear context for decisions"],
     audience: ["Founders", "Sales and revenue leaders", "Executives"],
-    features: ["executive-dashboard", "call-heatmaps", "conversion-telemetry", "explain-my-numbers", "scheduled-bi-reports"],
+    features: ["executive-revenue-dashboard", "hour-by-hour-pickup-heatmaps", "pickup-ratio-and-conversion-tracking", "explain-my-numbers", "scheduled-bi-reports"],
     sources: S,
   },
 ];
@@ -177,7 +177,7 @@ type ModuleSpec = {
 
 const MODULES: ModuleSpec[] = [
   {
-    slug: "leads-workflow",
+    slug: "the-leads-workflow-in-oda7",
     module: "Leads",
     eyebrow: "Sales workspace",
     headline: "Turn every lead into a next action",
@@ -197,10 +197,10 @@ const MODULES: ModuleSpec[] = [
       ["Manager visibility", "Managers review queue health without asking for a manual report."],
     ],
     scenario: "A website enquiry enters ODA7, is given context, moves into the correct agent's queue and stays visible through every follow-up.",
-    features: ["lead-distribution", "lead-management", "predictive-lead-scoring", "company-hierarchy"],
+    features: ["lead-ingestion-and-priority-queue-my-queue", "lead-management-and-tagging", "predictive-lead-scoring", "company-hierarchy"],
   },
   {
-    slug: "dialer-workflow",
+    slug: "the-dialer-workflow-in-oda7",
     module: "Dialer",
     eyebrow: "Calling workspace",
     headline: "Give every conversation the context it needs",
@@ -220,10 +220,10 @@ const MODULES: ModuleSpec[] = [
       ["Outcome capture", "Every call result turns into an accountable next step."],
     ],
     scenario: "An agent opens the next assigned lead, reviews the context, starts the call and schedules the follow-up without leaving the workspace.",
-    features: ["integrated-dialer", "voicemail-drop", "dynamic-sales-scripts", "web-callbacks-ivr"],
+    features: ["integrated-dialer-and-local-presence-calling", "one-click-voicemail-drop", "dynamic-branching-sales-scripts", "web-callbacks-ivr"],
   },
   {
-    slug: "calls-workflow",
+    slug: "the-calls-workflow-in-oda7",
     module: "Calls",
     eyebrow: "Conversation activity",
     headline: "Make every call part of the bigger picture",
@@ -243,10 +243,10 @@ const MODULES: ModuleSpec[] = [
       ["Follow-up continuity", "The call outcome carries straight into the next action."],
     ],
     scenario: "A completed call updates the lead's timeline and gives the manager enough context to coach the next interaction.",
-    features: ["call-history-recordings", "post-call-summaries", "manager-scorecard"],
+    features: ["call-history-and-recordings", "ai-post-call-summarization", "manager-scorecard"],
   },
   {
-    slug: "inbox-workflow",
+    slug: "the-inbox-workflow-in-oda7",
     module: "Inbox",
     eyebrow: "Shared conversations",
     headline: "Keep conversations organized around ownership",
@@ -266,10 +266,10 @@ const MODULES: ModuleSpec[] = [
       ["Follow-up that gets done", "Conversations move into the right next workflow instead of sitting unread."],
     ],
     scenario: "A customer reply lands in the shared inbox, is assigned to the account owner and becomes a visible follow-up task.",
-    features: ["unified-inbox", "whatsapp-business-messaging", "two-way-sms", "email-tracking"],
+    features: ["unified-inbox", "whatsapp-business-api-messaging", "two-way-sms-messaging", "email-tracking"],
   },
   {
-    slug: "calendar-workflow",
+    slug: "the-calendar-workflow-in-oda7",
     module: "Calendar",
     eyebrow: "Coordinated follow-up",
     headline: "Make the next commitment visible",
@@ -289,10 +289,10 @@ const MODULES: ModuleSpec[] = [
       ["Follow-up discipline", "Future actions are visible before they are missed."],
     ],
     scenario: "A follow-up created after a call appears in the agent's schedule and stays visible to the manager.",
-    features: ["calendar-scheduler", "automated-sequences"],
+    features: ["calendar-and-meeting-scheduler", "automated-sequences"],
   },
   {
-    slug: "campaigns-workflow",
+    slug: "the-campaigns-workflow-in-oda7",
     module: "Campaigns",
     eyebrow: "Marketing to sales",
     headline: "Connect every campaign to the work it creates",
@@ -312,10 +312,10 @@ const MODULES: ModuleSpec[] = [
       ["Outcome visibility", "Teams see what a campaign produced, not only the response."],
     ],
     scenario: "A campaign generates interest, routes the lead to sales and keeps the original source visible through every follow-up.",
-    features: ["lead-distribution", "automated-sequences", "conversion-telemetry", "template-studio"],
+    features: ["lead-ingestion-and-priority-queue-my-queue", "automated-sequences", "pickup-ratio-and-conversion-tracking", "template-studio"],
   },
   {
-    slug: "products-workflow",
+    slug: "the-products-workflow-in-oda7",
     module: "Products",
     eyebrow: "Products and pricing",
     headline: "Keep the offer close to the opportunity",
@@ -335,10 +335,10 @@ const MODULES: ModuleSpec[] = [
       ["Quote continuity", "The chosen offer carries into the quote."],
     ],
     scenario: "An agent identifies the relevant product, uses the connected script and prepares the right quote.",
-    features: ["product-catalog", "quotes-and-proposals", "dynamic-sales-scripts"],
+    features: ["product-catalog", "quotes-cpq-proposals-and-e-signatures", "dynamic-sales-scripts"],
   },
   {
-    slug: "scripts-workflow",
+    slug: "the-scripts-workflow-in-oda7",
     module: "Scripts",
     eyebrow: "Conversation guidance",
     headline: "Turn good conversations into repeatable practice",
@@ -358,10 +358,10 @@ const MODULES: ModuleSpec[] = [
       ["Coaching feedback", "Outcomes feed back into better guidance."],
     ],
     scenario: "A new agent follows a structured conversation path while a manager reviews the outcomes and improves the guidance.",
-    features: ["dynamic-sales-scripts", "objection-buster", "onboarding-workflows"],
+    features: ["dynamic-branching-sales-scripts", "real-time-objection-buster", "onboarding-workflows"],
   },
   {
-    slug: "sequences-workflow",
+    slug: "the-sequences-workflow-in-oda7",
     module: "Sequences",
     eyebrow: "Follow-up workflow",
     headline: "Keep momentum after the first conversation",
@@ -381,10 +381,10 @@ const MODULES: ModuleSpec[] = [
       ["Connected response", "Replies return to the lead instead of a separate inbox."],
     ],
     scenario: "A qualified lead enters a follow-up sequence, and every completed or pending action stays visible to the team.",
-    features: ["automated-sequences", "whatsapp-business-messaging", "two-way-sms", "email-tracking"],
+    features: ["automated-sequences", "whatsapp-business-api-messaging", "two-way-sms-messaging", "email-tracking"],
   },
   {
-    slug: "quotes-workflow",
+    slug: "the-quotes-workflow-in-oda7",
     module: "Quotes",
     eyebrow: "Commercial workflow",
     headline: "Move from conversation to a clear proposal",
@@ -404,7 +404,7 @@ const MODULES: ModuleSpec[] = [
       ["Owned follow-up", "The next action after sharing stays clear."],
     ],
     scenario: "An agent turns a qualified conversation into a quote, and the manager can see its state and next action.",
-    features: ["quotes-and-proposals", "product-catalog"],
+    features: ["quotes-cpq-proposals-and-e-signatures", "product-catalog"],
   },
 ];
 
@@ -429,7 +429,7 @@ type StageSpec = { slug: string; n: number; name: string; summary: string; body:
 
 const STAGES: StageSpec[] = [
   {
-    slug: "lifecycle-lead-ingestion",
+    slug: "sales-lifecycle-stage-1-lead-ingestion-and-the-priority-queue",
     n: 1,
     name: "Lead ingestion & the priority queue",
     summary: "How new leads from forms, ads and webhooks are tagged, de-duplicated and queued before a rep ever sees them.",
@@ -439,10 +439,10 @@ const STAGES: StageSpec[] = [
     ],
     steps: ["A lead arrives from a web form, Facebook Ads or an inbound webhook", "Its UTM source tags (campaign tracking codes) are attached to the record", "Duplicate checks stop an existing prospect from being treated as new", "The lead is ranked by timezone and closing likelihood", "It lands in an owned queue, ready to work"],
     points: ["One pipeline for every lead source", "Source context travels with the lead", "Automatic ordering instead of cherry-picking"],
-    features: ["lead-distribution", "lead-management", "predictive-lead-scoring", "webhooks"],
+    features: ["lead-ingestion-and-priority-queue-my-queue", "lead-management-and-tagging", "predictive-lead-scoring", "webhooks"],
   },
   {
-    slug: "lifecycle-calling",
+    slug: "sales-lifecycle-stage-2-calling-from-the-browser",
     n: 2,
     name: "Calling from the browser",
     summary: "How reps call leads from a browser softphone with local presence numbers and one-click voicemail drop.",
@@ -452,10 +452,10 @@ const STAGES: StageSpec[] = [
     ],
     steps: ["Open the next lead from the queue", "Dial from the browser softphone", "A local presence number is used as caller ID", "If the call goes to voicemail, drop a recorded message in one click", "Move to the next lead"],
     points: ["Calling inside the sales workspace", "Local presence caller ID", "One-click voicemail drop to save time"],
-    features: ["integrated-dialer", "voicemail-drop", "call-history-recordings"],
+    features: ["integrated-dialer-and-local-presence-calling", "one-click-voicemail-drop", "call-history-recordings"],
   },
   {
-    slug: "lifecycle-live-scripting",
+    slug: "sales-lifecycle-stage-3-live-scripting-and-objection-battlecards",
     n: 3,
     name: "Live scripting & objection battlecards",
     summary: "How branching scripts and on-call battlecards guide reps through objections and required disclosures.",
@@ -465,10 +465,10 @@ const STAGES: StageSpec[] = [
     ],
     steps: ["The rep follows the branching script for this type of call", "Required disclosures are part of the script", "The prospect raises an objection", "A battlecard with a suggested response appears on the call view", "The rep continues down the matching branch"],
     points: ["Branching scripts for different conversation paths", "Compliance disclosures built into the script", "Battlecards for price, timing and competitor objections"],
-    features: ["dynamic-sales-scripts", "objection-buster", "ai-copilot"],
+    features: ["dynamic-branching-sales-scripts", "real-time-objection-buster", "ai-copilot"],
   },
   {
-    slug: "lifecycle-omnichannel-follow-up",
+    slug: "sales-lifecycle-stage-4-follow-up-across-whatsapp-sms-and-email",
     n: 4,
     name: "Follow-up across WhatsApp, SMS & email",
     summary: "How follow-ups on WhatsApp, SMS and email land in one timeline on the lead, with approved templates and read tracking.",
@@ -478,10 +478,10 @@ const STAGES: StageSpec[] = [
     ],
     steps: ["After the call, choose the follow-up channel", "Send an approved WhatsApp, SMS or email template", "Read status is tracked on the message", "Replies arrive in the same lead timeline", "The next action is set from the reply"],
     points: ["WhatsApp, SMS and email in one lead timeline", "Approved message templates", "Read tracking on outbound messages"],
-    features: ["whatsapp-business-messaging", "two-way-sms", "email-tracking", "unified-inbox", "template-studio"],
+    features: ["whatsapp-business-api-messaging", "two-way-sms-messaging", "email-tracking-and-threading", "unified-inbox", "template-studio"],
   },
   {
-    slug: "lifecycle-quotes",
+    slug: "sales-lifecycle-stage-5-quotes-and-proposals",
     n: 5,
     name: "Quotes & proposals",
     summary: "How a rep builds a quote from the catalog, applies approved discounts and tracks the proposal to signature.",
@@ -491,10 +491,10 @@ const STAGES: StageSpec[] = [
     ],
     steps: ["Select products from the catalog", "Apply a pre-approved discount tier", "Send the proposal as a link", "Get notified when the customer opens it", "Track the e-signature through to close"],
     points: ["Quotes built from one product catalog", "Discounts limited to approved tiers", "Open and signature tracking on proposals"],
-    features: ["quotes-and-proposals", "product-catalog"],
+    features: ["quotes-cpq-proposals-and-e-signatures", "product-catalog"],
   },
   {
-    slug: "lifecycle-commission-payroll",
+    slug: "sales-lifecycle-stage-6-automated-commission-and-payroll",
     n: 6,
     name: "Automated commission & payroll",
     summary: "How a closed-won deal flows into a commission credit and an itemized payslip without month-end spreadsheets.",
@@ -504,7 +504,7 @@ const STAGES: StageSpec[] = [
     ],
     steps: ["A deal is marked closed-won", "Commission is calculated under the configured tier, flat or accelerator rules", "The amount is credited to the rep's earnings", "Payroll brings together base pay, commission and other components", "An itemized payslip is generated"],
     points: ["Commission calculated at the moment of close", "Tiered, flat and accelerator rules", "Itemized payslips without spreadsheet reconciliation"],
-    features: ["commission-engine", "quota-accelerators", "payroll", "payslips"],
+    features: ["real-time-commission-engine", "quota-pacing-and-accelerator-rules", "automated-payroll-calculation", "payslips"],
   },
 ];
 
@@ -524,40 +524,40 @@ type TourSpec = { slug: string; role: string; summary: string; body: string; ste
 
 const TOURS: TourSpec[] = [
   {
-    slug: "tour-sales-rep",
+    slug: "guided-tour-oda7-for-the-sales-rep-inside-sales-sdr",
     role: "Sales rep / inside sales SDR",
     summary: "A four-step walk through a rep's day in ODA7: a lead arrives, the call, live AI support, and the follow-up.",
     body: "The ODA7 guided tour shows the product from four points of view. For a sales rep, the tour follows one lead from the moment it arrives to the follow-up after the call.",
     steps: ["Lead arrival: a new lead enters the prioritized queue", "The call: dialing from the browser softphone with a local caller ID", "Live speech AI: objection support appears while the prospect is talking", "Follow-up: a WhatsApp summary is sent and the deal stage moves on"],
     points: ["The rep never leaves one workspace", "AI support appears during the call, not after it", "The follow-up is part of finishing the call"],
-    features: ["lead-distribution", "integrated-dialer", "objection-buster", "whatsapp-business-messaging"],
+    features: ["lead-ingestion-and-priority-queue-my-queue", "integrated-dialer-and-local-presence-calling", "real-time-objection-buster", "whatsapp-business-messaging"],
   },
   {
-    slug: "tour-floor-supervisor",
+    slug: "guided-tour-oda7-for-the-floor-supervisor",
     role: "Floor supervisor",
     summary: "A four-step walk through a supervisor's view: the roster, live activity, floor performance and stepping into a call.",
     body: "For a floor supervisor, the guided tour moves from who is working right now to stepping in on a live call when a rep needs help.",
     steps: ["Team roster: a live grid of agent availability", "Live activity: current queue volume across the floor", "Floor performance: progress against quota and an hourly pickup heatmap", "Supervisor action: silently listen to a call or whisper to the rep"],
     points: ["Live view of the floor instead of end-of-day reports", "Performance and timing patterns in one place", "Coaching during the call itself"],
-    features: ["agent-status-grid", "floor-queue-monitor", "call-heatmaps", "manager-scorecard"],
+    features: ["agent-status-grid-and-live-coaching", "real-time-floor-queue-monitor", "hour-by-hour-pickup-heatmaps", "manager-scorecard"],
   },
   {
-    slug: "tour-ops-payroll-admin",
+    slug: "guided-tour-oda7-for-the-operations-and-payroll-admin",
     role: "Operations & payroll admin",
     summary: "A four-step walk through people operations: the roster, verified attendance, automated payroll and payslips.",
     body: "For operations and payroll administrators, the guided tour follows the path from organizing people to paying them.",
     steps: ["People roster: teams, shift setup and skill rules", "Attendance: location-verified shift clock-ins", "Automated payroll: commission from closed-won deals is calculated", "Payslip reports: itemized payslips are produced"],
     points: ["Roster, attendance and pay in one flow", "Commission arrives from sales data, not re-entry", "Payslips without a separate payroll spreadsheet"],
-    features: ["team-hierarchy", "attendance", "payroll", "payslips"],
+    features: ["departments-teams-and-pods", "attendance-and-shift-clock-in", "automated-payroll-calculation", "payslips"],
   },
   {
-    slug: "tour-platform-executive",
+    slug: "guided-tour-oda7-for-the-platform-executive",
     role: "Platform executive",
     summary: "A four-step walk through the Super Admin layer: organizations, plans and licences, platform revenue and governance.",
     body: "For people running ODA7 as a platform, the guided tour covers the separate Super Admin layer above individual workspaces.",
     steps: ["Organizations: the tenant organizations on the platform", "Plans & licences: seats, telephony trunks and recording storage per plan", "Platform revenue: recurring revenue across tenants", "Governance & security: IP allow-listing, custom domains and SSO domains"],
     points: ["A separate administrative layer above workspaces", "Plans that cover seats, telephony and storage", "Platform-wide security controls"],
-    features: ["multi-tenant-organizations", "saas-plans", "platform-revenue", "ip-blocker", "white-labeling"],
+    features: ["multi-tenant-organization-management", "saas-plans-and-subscription-engine", "platform-revenue-and-mrr-tracking", "global-ip-blocker-and-threat-protection", "white-labeling"],
   },
 ];
 
@@ -575,7 +575,7 @@ const roleTours: ProductResource[] = TOURS.map((t) => ({
 
 const overviews: ProductResource[] = [
   {
-    slug: "how-context-travels",
+    slug: "how-context-travels-through-oda7",
     type: "article",
     name: "How context travels through ODA7",
     summary: "Follow one opportunity from arrival to leadership review, and see how sales, people and performance share the same data.",
@@ -591,12 +591,12 @@ const overviews: ProductResource[] = [
       "The pattern becomes visible to leadership: analytics, heatmaps and executive views",
     ],
     keyPoints: ["One record from first contact to leadership review", "Every team sees the same workflow state", "Pay and recognition follow from the same activity data"],
-    features: ["lead-distribution", "integrated-dialer", "team-hierarchy", "commission-engine", "executive-dashboard"],
+    features: ["lead-ingestion-and-priority-queue-my-queue", "integrated-dialer-and-local-presence-calling", "departments-teams-and-pods", "real-time-commission-engine", "executive-dashboard"],
     faqs: [{ question: "How is ODA7 different from a traditional CRM or a standalone dialer?", answer: "ODA7 is presented as a connected business workspace: leads, calling, team structure, attendance, compensation and analytics share the same data instead of being separate tools." }],
     sources: S,
   },
   {
-    slug: "people-ops-to-payroll",
+    slug: "from-shift-clock-in-to-payroll-run",
     type: "article",
     name: "From shift clock-in to payroll run",
     summary: "How ODA7 links attendance, the live roster, closed deals, commission and the monthly payroll into one chain.",
@@ -612,7 +612,7 @@ const overviews: ProductResource[] = [
       "The amount is included in the end-of-month payroll run",
     ],
     keyPoints: ["Attendance and sales activity in one chain", "Commission calculated as deals close", "Payroll built from recorded activity"],
-    features: ["attendance", "agent-status-grid", "commission-engine", "payroll", "payslips"],
+    features: ["attendance-and-shift-clock-in", "agent-status-grid-and-live-coaching", "real-time-commission-engine", "automated-payroll-calculation", "payslips"],
     sources: S,
   },
 ];
@@ -625,7 +625,7 @@ export const oda7Resources: ProductResource[] = [...overviews, ...moduleGuides, 
 
 export const moreSupportTopics: ProductSupportTopic[] = [
   {
-    slug: "ai-assisted-features",
+    slug: "understanding-oda7s-ai-assisted-features",
     name: "Understanding ODA7's AI-assisted features",
     summary: "What the AI features do in the workflow, and what to confirm with ODA7 before relying on them.",
     body: [
@@ -634,11 +634,11 @@ export const moreSupportTopics: ProductSupportTopic[] = [
     ],
     steps: ["List the AI features your team wants to use", "Note the data each one would need (calls, messages, CRM history)", "Ask ODA7 which are available for your plan and region", "Confirm data requirements and how outputs are reviewed", "Pilot with one team before rolling out"],
     keyPoints: ["AI suggestions appear inside the workflow", "Previews on the site are illustrative", "Availability and data needs are confirmed in scoping"],
-    features: ["ai-copilot", "objection-buster", "post-call-summaries", "ai-recommendations", "explain-my-numbers"],
+    features: ["ai-sales-assistant-copilot", "real-time-objection-buster", "ai-post-call-summarization", "ai-sales-recommendations", "explain-my-numbers"],
     sources: S,
   },
   {
-    slug: "manager-views-and-access",
+    slug: "what-managers-can-see-and-do",
     name: "What managers can see and do",
     summary: "The manager views in ODA7 and how role and workspace settings shape what each manager can access.",
     body: [
@@ -647,11 +647,11 @@ export const moreSupportTopics: ProductSupportTopic[] = [
     ],
     steps: ["Decide which teams each manager is responsible for", "Set up the team hierarchy to match", "Assign the manager role and permissions", "Check the manager can see their queues, calls and scorecard", "Adjust permissions as responsibilities change"],
     keyPoints: ["Team activity, calls and queue ownership in one view", "Coaching workflows on live calls", "Access shaped by role and configuration"],
-    features: ["manager-scorecard", "floor-queue-monitor", "agent-status-grid", "roles-permissions", "team-hierarchy"],
+    features: ["manager-live-scorecard", "real-time-floor-queue-monitor", "agent-status-grid-and-live-coaching", "roles-and-permissions", "team-hierarchy"],
     sources: S,
   },
   {
-    slug: "super-admin-platform",
+    slug: "the-super-admin-platform",
     name: "The Super Admin platform",
     summary: "What the separate Super Admin layer covers for platform operators running many organizations.",
     body: [
@@ -660,11 +660,11 @@ export const moreSupportTopics: ProductSupportTopic[] = [
     ],
     steps: ["Provision an organization for a new customer", "Assign a plan and subscription", "Apply branding and domain settings", "Set IP controls and review audit context", "Send platform-wide notices when needed"],
     keyPoints: ["Separate from customer workspaces", "Plans, subscriptions and invoices per organization", "Platform-wide security and branding"],
-    features: ["multi-tenant-organizations", "saas-plans", "billing-center", "audit-logs", "ip-blocker", "white-labeling", "platform-broadcasts"],
+    features: ["multi-tenant-organization-management", "saas-plans-and-subscription-engine", "subscription-and-invoicing-center", "audit-logs", "global-ip-blocker-and-threat-protection", "branding-and-white-labeling", "platform-broadcasts"],
     sources: S,
   },
   {
-    slug: "preview-vs-live-app",
+    slug: "the-oda7-website-preview-vs-the-live-app",
     name: "The ODA7 website preview vs. the live app",
     summary: "Why the screens on the ODA7 website are illustrative, and where the real application lives.",
     body: [
@@ -678,7 +678,7 @@ export const moreSupportTopics: ProductSupportTopic[] = [
     sources: [SITE, "https://oda7.com/sign-in"],
   },
   {
-    slug: "telephony-and-integrations-scoping",
+    slug: "scoping-telephony-and-integrations",
     name: "Scoping telephony & integrations",
     summary: "What to prepare so ODA7 can confirm telephony, integrations, data migration and security for your rollout.",
     body: [
@@ -687,7 +687,7 @@ export const moreSupportTopics: ProductSupportTopic[] = [
     ],
     steps: ["List your current phone system and numbers", "List the messaging channels you use (WhatsApp, SMS, email)", "List the tools ODA7 would need to connect to", "Describe the data you need to migrate", "Share security questionnaires or SLA needs with ODA7"],
     keyPoints: ["Telephony requirements are confirmed with ODA7", "Integrations are scoped, not assumed", "Security and SLA questions go directly to ODA7"],
-    features: ["integrated-dialer", "whatsapp-business-messaging", "webhooks", "data-sync", "calendar-scheduler"],
+    features: ["integrated-dialer-and-local-presence-calling", "whatsapp-business-api-messaging", "custom-webhooks", "scheduled-data-sync", "calendar-scheduler"],
     sources: S,
   },
 ];

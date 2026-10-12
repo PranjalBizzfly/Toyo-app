@@ -16,6 +16,39 @@ const featureCategories: FeatureCategory[] = [
       "Every module is linked to the same central system, so a client's registrations set the compliance calendar, the calendar sets tasks and reminders, and each action is recorded in the audit trail.",
     ],
   },
+  {
+    slug: "statutory-heads",
+    name: "Statutory heads",
+    description: "The tax, corporate, labour and foreign exchange heads in TrackySuite's built-in calendar.",
+    body: [
+      "TrackySuite groups its compliance catalogue into statutory heads: GST, income tax, ROC/MCA, labour (PF, ESI and professional tax) and FEMA/RBI, with TDS and TCS returns alongside. The due dates for every head come built in, set up as rules and kept current by TrackySuite.",
+      "A head only appears on a client's calendar when that client's registrations call for it, so each page below explains one head and what the official site says about it.",
+    ],
+  },
+  {
+    slug: "workflow",
+    name: "Workflow",
+    description: "How filings are scheduled, prepared, reviewed and followed up.",
+    body: [
+      "These pages cover the mechanics behind a filing in TrackySuite: how registrations and entity types decide what a client owes, how a return moves from preparer to reviewer, and how reminders, tickets and documents keep the work moving.",
+    ],
+  },
+  {
+    slug: "security",
+    name: "Security",
+    description: "How TrackySuite protects client documents and firm accounts.",
+    body: [
+      "TrackySuite states four specific security measures on its site: encryption of stored documents, access scoped by role with row-level security, a separate log of every document view, and mandatory two-factor authentication for firm owners.",
+    ],
+  },
+  {
+    slug: "onboarding",
+    name: "Onboarding",
+    description: "Getting a firm's data in, getting it out, and learning the screens.",
+    body: [
+      "Onboarding covers the practical side of moving a practice onto TrackySuite: importing an existing client book from Excel, exporting data at any time, and the in-app help library with a guide for each screen.",
+    ],
+  },
 ];
 
 const features: Feature[] = [
@@ -58,7 +91,7 @@ const features: Feature[] = [
     ],
   },
   {
-    slug: "task-workflow",
+    slug: "task-and-workflow",
     name: "Task & Workflow",
     summary: "Prepare → review → file, with an owner at every stage.",
     category: "modules",
@@ -221,7 +254,7 @@ const features: Feature[] = [
     ],
     problem: "Partners otherwise rely on a weekly status meeting to learn what is due, stuck in review or overdue.",
     audience: ["Partners"],
-    relatedFeatures: ["reports-analytics", "task-workflow"],
+    relatedFeatures: ["reports-and-analytics", "task-workflow"],
     sources: [HOME],
   },
   {
@@ -278,7 +311,7 @@ const features: Feature[] = [
       "Two-factor authentication, mandatory for firm owners",
     ],
     audience: ["Partners", "Managers", "Firm administrators"],
-    relatedFeatures: ["task-workflow", "reports-analytics", "audit-trail"],
+    relatedFeatures: ["task-and-workflow", "reports-and-analytics", "audit-trail"],
     sources: [HOME, SIGNUP, "https://trackysuite.com/terms"],
   },
   {
@@ -306,7 +339,7 @@ const features: Feature[] = [
     sources: [HOME, ABOUT],
   },
   {
-    slug: "reports-analytics",
+    slug: "reports-and-analytics",
     name: "Reports & Analytics",
     summary: "Filings by status, workload by member and deadlines ahead, each number traceable to a logged action.",
     category: "modules",
@@ -343,6 +376,411 @@ const features: Feature[] = [
     relatedFeatures: ["compliance-calendar", "client-management", "reports-analytics"],
     sources: [ABOUT],
   },
+  // Statutory heads
+  {
+    slug: "gst-returns-gstr-1-3b-9",
+    name: "GST returns (GSTR-1, 3B, 9)",
+    summary: "GSTR-1, GSTR-3B and GSTR-9 due dates built in and scheduled only for clients with a GSTIN.",
+    category: "statutory-heads",
+    hasPage: true,
+    body: [
+      "GST is one of the statutory heads TrackySuite ships with. The FAQ on the official site names GSTR-1, GSTR-3B and GSTR-9 among the returns whose dates come built in.",
+      "GST returns are tied to the GSTIN on a client's record. A client with no GSTIN is never scheduled a GST return, and a GSTIN issued in July does not produce an April period.",
+    ],
+    capabilities: [
+      "GSTR-1, GSTR-3B and GSTR-9 dates built in",
+      "Scheduled only for clients with a GSTIN ticked",
+      "Periods start from the date of registration, not from the start of the year",
+      "Reminders 14, 7, 3 and 1 day before each scheduled GST filing",
+    ],
+    relatedFeatures: ["registration-driven-scheduling", "compliance-calendar", "deadline-reminders"],
+    sources: [HOME, ABOUT],
+  },
+  {
+    slug: "tds-and-tcs-returns",
+    name: "TDS and TCS returns",
+    summary: "TDS quarterly returns and TCS sit in the built-in statutory calendar.",
+    category: "statutory-heads",
+    hasPage: true,
+    body: [
+      "TrackySuite lists TDS and TCS among the obligations held in a firm's statutory calendar, and its FAQ names TDS quarterly returns as one of the built-in sets of dates.",
+      "Like every head, TDS and TCS returns are placed per client from the registrations on the client record, and each scheduled return is followed by the reminder ladder.",
+    ],
+    capabilities: [
+      "TDS quarterly return dates built in",
+      "TCS covered in the statutory calendar",
+      "Placed per client from the registrations ticked on the client record",
+    ],
+    relatedFeatures: ["registration-driven-scheduling", "compliance-calendar"],
+    sources: [HOME, ABOUT],
+  },
+  {
+    slug: "roc-mca-annual-filings",
+    name: "ROC / MCA annual filings",
+    summary: "ROC/MCA annual filing dates for companies and LLPs, built into the calendar.",
+    category: "statutory-heads",
+    hasPage: true,
+    body: [
+      "ROC/MCA annual filings are one of TrackySuite's statutory heads, with their due dates built in rather than typed in by the firm. The home page shows AOC-4 for FY25 as an example of the work tracked.",
+      "Corporate filings follow the company and LLP registrations on the client record: CIN and LLPIN are among the registrations a firm ticks for each client.",
+    ],
+    capabilities: [
+      "ROC/MCA annual filing dates built in",
+      "CIN and LLPIN registrations on the client record",
+      "Covers companies and LLPs among the 8 supported entity types",
+    ],
+    relatedFeatures: ["entity-types-8", "registration-driven-scheduling"],
+    sources: [HOME, ABOUT],
+  },
+  {
+    slug: "pf-and-esi",
+    name: "PF and ESI",
+    summary: "Monthly PF and ESI filings listed in TrackySuite's built-in calendar.",
+    category: "statutory-heads",
+    evidence: "listed",
+    hasPage: true,
+    body: [
+      "Provident Fund and Employees' State Insurance are monthly labour law obligations for employers in India. Practices often track them for many employer clients at once, which is why they sit naturally in a compliance calendar.",
+      "TrackySuite lists PF/ESI monthly filings among the dates that ship built in, under its labour head.",
+    ],
+    capabilities: ["PF/ESI monthly filings listed as built in."],
+    relatedFeatures: ["compliance-calendar"],
+    sources: [HOME, ABOUT],
+  },
+  {
+    slug: "income-tax",
+    name: "Income tax",
+    summary: "Income-tax due dates listed among TrackySuite's built-in statutory heads.",
+    category: "statutory-heads",
+    evidence: "listed",
+    hasPage: true,
+    body: [
+      "Income-tax compliance covers the returns and payments a taxpayer owes through the year. For a practice, the dates differ by client type, so tracking them centrally avoids missed filings.",
+      "TrackySuite lists income-tax dates among those that ship built in, and names income tax as one of its statutory heads.",
+    ],
+    capabilities: ["Income-tax dates listed as built in."],
+    relatedFeatures: ["compliance-calendar", "entity-types"],
+    sources: [HOME, ABOUT],
+  },
+  {
+    slug: "professional-tax",
+    name: "Professional tax",
+    summary: "Professional tax in the statutory calendar, with PTRC and PTEC registrations on each client.",
+    category: "statutory-heads",
+    evidence: "listed",
+    hasPage: true,
+    body: [
+      "Professional tax is a state levy on employment, with an employer registration (PTRC) and an enrolment for the business itself (PTEC). Firms that handle payroll compliance track both.",
+      "TrackySuite lists professional tax in its statutory calendar and includes PTRC and PTEC among the registrations a firm ticks on each client record.",
+    ],
+    capabilities: ["Professional tax listed in the statutory calendar.", "PTRC and PTEC listed as client registrations."],
+    relatedFeatures: ["registration-driven-scheduling"],
+    sources: [ABOUT, HOME],
+  },
+  {
+    slug: "fema-rbi",
+    name: "FEMA / RBI",
+    summary: "FEMA/RBI listed as one of TrackySuite's statutory heads.",
+    category: "statutory-heads",
+    evidence: "listed",
+    hasPage: true,
+    body: [
+      "FEMA and RBI compliance covers reporting under India's foreign exchange rules, for example by businesses with foreign investment. Practices that serve such clients need these dates alongside tax and corporate filings.",
+      "TrackySuite lists FEMA/RBI as one of the statutory heads in its compliance catalogue.",
+    ],
+    capabilities: ["FEMA/RBI listed as a statutory head in the compliance catalogue."],
+    relatedFeatures: ["compliance-catalogue"],
+    sources: [HOME],
+  },
+  // Workflow
+  {
+    slug: "registration-driven-scheduling",
+    name: "Registration-driven scheduling",
+    summary: "A client's GSTIN, TAN, PAN, CIN, LLPIN, PTRC and PTEC decide which returns it owes and from when.",
+    category: "workflow",
+    hasPage: true,
+    body: [
+      "In TrackySuite, nobody types a client's deadlines. The registrations on the client record decide which returns that client owes and from which period.",
+      "That rule works in both directions: a client without a GSTIN is never scheduled a GST return, and a registration issued in July does not create an April period.",
+    ],
+    howItWorks: [
+      "Open the client record, or create it by import.",
+      "Tick the registrations the client holds: GSTIN, TAN, PAN, CIN, LLPIN, PTRC, PTEC.",
+      "The client's statutory calendar populates instantly.",
+      "Tasks and reminders follow from the scheduled filings.",
+    ],
+    relatedFeatures: ["client-management", "compliance-calendar", "entity-types"],
+    sources: [ABOUT, HOME, SIGNUP],
+  },
+  {
+    slug: "entity-types-8",
+    name: "Entity types (8)",
+    summary: "Eight entity types covered, from individual and HUF to public limited and Section 8 companies.",
+    category: "workflow",
+    hasPage: true,
+    body: [
+      "TrackySuite's catalogue of 110 statutory filings spans 8 entity types, so the same system handles individual taxpayers and companies.",
+      "The official list is: individual, HUF, partnership, LLP, OPC, private limited, public limited, and trust or society or Section 8 company.",
+    ],
+    capabilities: [
+      "Individual and HUF",
+      "Partnership and LLP",
+      "OPC, private limited and public limited companies",
+      "Trust, society or Section 8 company",
+    ],
+    relatedFeatures: ["compliance-catalogue-maintained-by-trackysuite", "registration-driven-scheduling"],
+    sources: [ABOUT, HOME],
+  },
+  {
+    slug: "compliance-catalogue-maintained-by-trackysuite",
+    name: "Compliance catalogue maintained by TrackySuite",
+    summary: "110 statutory filings, each due date encoded as a rule and maintained by TrackySuite.",
+    category: "workflow",
+    hasPage: true,
+    body: [
+      "The compliance catalogue is the list of filings TrackySuite ships with. TrackySuite maintains it, so a firm does not keep its own deadline list.",
+      "Each due date is encoded as a rule rather than typed in, which is what lets the calendar place itself for every client.",
+    ],
+    capabilities: [
+      "110 statutory filings maintained",
+      "Every due date encoded as a rule, not typed",
+      "8 entity types covered",
+      "Heads: GST, income tax, ROC/MCA, labour and FEMA/RBI",
+    ],
+    relatedFeatures: ["compliance-calendar", "entity-types"],
+    sources: [HOME, ABOUT],
+  },
+  {
+    slug: "maker-checker-review-pipeline",
+    name: "Maker-checker review pipeline",
+    summary: "A four-stage review where the preparer of a return cannot sign it off.",
+    category: "workflow",
+    hasPage: true,
+    body: [
+      "TrackySuite separates the person who makes a return from the person who checks it. Its review pipeline has four stages, and the preparer cannot be the one who signs the return off.",
+      "This is the review chain the Practice plan is pitched at: growing practices where a second pair of eyes is required before filing.",
+    ],
+    capabilities: [
+      "Four-stage review pipeline",
+      "Preparer blocked from signing off their own return",
+      "Owner named at every stage",
+      "Approvals and filings recorded in the audit trail",
+    ],
+    relatedFeatures: ["task-and-workflow", "approved-vs-filed-counts", "audit-trail"],
+    sources: [ABOUT, HOME],
+  },
+  {
+    slug: "14-7-3-1-reminder-ladder-and-escalation",
+    name: "14-7-3-1 reminder ladder and escalation",
+    summary: "A reminder ladder on every scheduled filing that escalates to a manager at T minus 3.",
+    category: "workflow",
+    hasPage: true,
+    body: [
+      "TrackySuite calls its reminder schedule a ladder because each step raises the pressure. It fires on every scheduled filing, with no setup per task.",
+      "The site's example ladder shows an email at T minus 14, escalation to a manager at T minus 3 and a final notice at T minus 1.",
+    ],
+    howItWorks: [
+      "T minus 14: email sent.",
+      "T minus 7: another reminder.",
+      "T minus 3: escalated to a manager.",
+      "T minus 1: final notice.",
+    ],
+    relatedFeatures: ["deadline-reminders"],
+    sources: [HOME],
+  },
+  {
+    slug: "portal-support-tickets",
+    name: "Portal support tickets",
+    summary: "Clients raise support tickets in the portal instead of calling the firm.",
+    category: "workflow",
+    hasPage: true,
+    body: [
+      "The client portal includes support tickets, so a client with a question raises a ticket rather than phoning the firm. The site's example shows a ticket numbered and marked as replied.",
+    ],
+    capabilities: [
+      "Tickets raised by clients from the portal",
+      "Each ticket numbered with a replied status",
+      "Replaces status calls to the firm",
+    ],
+    relatedFeatures: ["client-portal"],
+    sources: [HOME],
+  },
+  {
+    slug: "client-document-upload-and-downloads",
+    name: "Client document upload and downloads",
+    summary: "Clients upload into their own vault and download what the firm has filed for them.",
+    category: "workflow",
+    hasPage: true,
+    body: [
+      "Through the portal, each client uploads documents into their own vault and downloads what the firm has filed for them. The firm controls what is visible.",
+      "Uploaded documents show as awaiting review until the firm checks them.",
+    ],
+    capabilities: [
+      "Upload into the client's own vault",
+      "Download of filed returns",
+      "Uploads shown as awaiting review",
+      "Visibility controlled by the firm",
+    ],
+    relatedFeatures: ["client-portal", "document-vault"],
+    sources: [HOME, SIGNUP],
+  },
+  {
+    slug: "workload-by-member",
+    name: "Workload by member",
+    summary: "Reports chart how much work each team member is carrying.",
+    category: "workflow",
+    hasPage: true,
+    body: [
+      "Workload by member is one of the views in Reports & Analytics, alongside filings by status and deadlines ahead. Team Management also tracks a workload for each member.",
+    ],
+    capabilities: [
+      "Workload shown per team member",
+      "Shown alongside filings by status and deadlines ahead",
+      "Numbers traceable to logged actions",
+    ],
+    relatedFeatures: ["reports-and-analytics", "team-management"],
+    sources: [HOME],
+  },
+  {
+    slug: "approved-vs-filed-counts",
+    name: "Approved vs filed counts",
+    summary: "Approved work is counted separately from filed work, so the filed number is exact.",
+    category: "workflow",
+    hasPage: true,
+    body: [
+      "On the practice dashboard, TrackySuite counts approved returns separately from filed returns, \"so the number means what it says\".",
+      "A return that has passed review but not yet been filed does not inflate the filed figure.",
+    ],
+    capabilities: [
+      "Approved and filed counted separately",
+      "Shown alongside due, in review and overdue",
+      "Covers the whole client book",
+    ],
+    relatedFeatures: ["practice-dashboard", "maker-checker-review"],
+    sources: [HOME],
+  },
+  // Onboarding
+  {
+    slug: "excel-client-import-500-at-once",
+    name: "Excel client import (500 at once)",
+    summary: "Import up to 500 clients from an Excel template, with a dry run first.",
+    category: "onboarding",
+    hasPage: true,
+    body: [
+      "A firm's existing client list comes in from an Excel file, up to 500 clients at once. The template includes a worked example row and dropdowns to keep the format right.",
+    ],
+    howItWorks: [
+      "Download the template.",
+      "Fill it in, following the example row and dropdowns.",
+      "A dry run checks every row before anything is created.",
+      "Tick registrations so each client's calendar populates.",
+    ],
+    relatedFeatures: ["client-management"],
+    sources: [HOME],
+  },
+  {
+    slug: "data-export",
+    name: "Data export",
+    summary: "Export your data at any time, including during the trial.",
+    category: "onboarding",
+    hasPage: true,
+    body: [
+      "TrackySuite says a firm's data stays the firm's. Data can be exported at any time, including during the trial, and if a firm does not continue, TrackySuite hands the data over on request.",
+    ],
+    capabilities: [
+      "Export available at any time",
+      "Included in the trial",
+      "Data handed over on request if the firm does not continue",
+    ],
+    relatedFeatures: ["help-library"],
+    sources: [SIGNUP, HOME],
+  },
+  {
+    slug: "in-app-help-library",
+    name: "In-app help library",
+    summary: "A help library written for Indian practice workflows, with a guide for every screen.",
+    category: "onboarding",
+    hasPage: true,
+    body: [
+      "After onboarding, firms get support tickets inside the app and a help library written for Indian practice workflows. Every screen has its own guide.",
+    ],
+    capabilities: [
+      "Guide for every screen",
+      "Written for Indian practice workflows",
+      "Support tickets from inside the app, answered by the TrackySuite team",
+    ],
+    relatedFeatures: ["excel-client-import"],
+    sources: [HOME],
+  },
+  // Security
+  {
+    slug: "document-view-logging",
+    name: "Document view logging",
+    summary: "Every time a document is opened, it is logged separately from other actions.",
+    category: "security",
+    hasPage: true,
+    body: [
+      "TrackySuite logs every document view as its own record, separate from the audit log of other actions, so a firm can see who opened a client's file.",
+    ],
+    capabilities: [
+      "Every document view logged",
+      "Kept separate from the general audit log",
+      "Applies to every client vault",
+    ],
+    relatedFeatures: ["document-vault", "audit-trail"],
+    sources: [HOME],
+  },
+  {
+    slug: "encryption-at-rest",
+    name: "Encryption at rest",
+    summary: "Documents in each client vault are encrypted at rest.",
+    category: "security",
+    hasPage: true,
+    body: [
+      "Documents stored in TrackySuite are encrypted at rest. Sensitive settings such as a firm's mail server (SMTP) login are also stored encrypted.",
+    ],
+    capabilities: [
+      "Vault documents encrypted at rest",
+      "SMTP login details stored encrypted",
+      "Encryption listed among the signup page's assurances",
+    ],
+    relatedFeatures: ["document-vault", "row-level-security"],
+    sources: [HOME, SIGNUP, PRIVACY],
+  },
+  {
+    slug: "role-scoped-access-and-row-level-security",
+    name: "Role-scoped access and row-level security",
+    summary: "Access is scoped by role and enforced record by record in the database.",
+    category: "security",
+    hasPage: true,
+    body: [
+      "Access in TrackySuite is scoped by each person's role and enforced in the database with row-level security, so documents are shown only to authorised users.",
+      "Each firm's data is kept separate, and clients in the portal see only their own records.",
+    ],
+    capabilities: [
+      "Access scoped by role",
+      "Row-level security in the database",
+      "Each firm's data kept separate",
+      "Clients see only their own records",
+    ],
+    relatedFeatures: ["team-management", "document-vault"],
+    sources: [HOME, PRIVACY],
+  },
+  {
+    slug: "two-factor-authentication",
+    name: "Two-factor authentication",
+    summary: "Two-factor authentication is mandatory for firm owners.",
+    category: "security",
+    evidence: "listed",
+    hasPage: true,
+    body: [
+      "Two-factor authentication asks for a second proof of identity, such as a one-time code, on top of a password. It protects the accounts that hold the most control.",
+      "TrackySuite states that two-factor authentication is mandatory for firm owners, and its signup page lists 2FA as available.",
+    ],
+    capabilities: ["Mandatory for firm owners.", "Listed as available on the signup page."],
+    relatedFeatures: ["row-level-security"],
+    sources: [HOME, SIGNUP],
+  },
 ];
 
 export const trackysuite: Product = {
@@ -354,8 +792,8 @@ export const trackysuite: Product = {
   longDescription:
     "TrackySuite is software for running Indian chartered accountancy, company secretary and tax practices. It keeps one main record per client, and the registrations on that record (GSTIN, TAN, PAN, CIN, LLPIN, PTRC, PTEC) decide which returns the client owes and from which period, so the statutory calendar is never typed in by hand.\n\nThe list of compliances is kept up to date by TrackySuite: 110 statutory filings across 8 entity types, covering GST, TDS and TCS, income tax, ROC/MCA, PF and ESI, professional tax and FEMA/RBI. Every scheduled filing gets reminders 14, 7, 3 and 1 day before it is due, passed to a manager if work is still open.\n\nWork moves through four stages in which the person who prepared a return cannot sign it off, and the database writes a permanent audit trail of every action. Partners see due, in-review, filed and overdue counts on one dashboard, while clients follow their own status, upload documents and raise tickets through a client portal.\n\nTrackySuite is built and operated by Stolvix Softwares with practising chartered accountants, whose review notes shape what gets built next.",
   tagline: "Your entire practice, in orbit around one system.",
-  category: "finance-compliance",
-  secondaryCategories: ["operations-it"],
+  category: "finance-and-compliance",
+  secondaryCategories: ["operations-and-it"],
   subcategory: "practice-management",
   primaryUseCase: "Compliance tracking for accounting practices",
   audience: ["Chartered accountant (CA) firms", "Company secretary (CS) firms", "Tax practices"],
@@ -376,9 +814,70 @@ export const trackysuite: Product = {
     { title: "Run the work", description: "Invite your team and assign roles. Filings move through prepare, review and file with an owner at each stage, while reminders go out 14, 7, 3 and 1 day before every scheduled filing." },
     { title: "Open the portal to clients", description: "Clients log in to see their compliance status, upload documents into their own vault, download filed returns and raise tickets, while partners track every client on the Practice Dashboard." },
   ],
+  productSolutions: [
+    {
+      slug: "client-document-collection-through-the-portal",
+      name: "Client document collection through the portal",
+      summary: "Move client documents off WhatsApp and email and into each client's own portal vault.",
+      problem: "Clients send data over WhatsApp or email, so documents end up scattered and staff chase them across chats and inboxes.",
+      body: [
+        "TrackySuite gives each client a portal with their own document vault. Clients upload there, and the firm sees each upload awaiting review in one place, next to the documents still outstanding.",
+        "A founding firm partner from Pune describes the change: earlier clients sent data on WhatsApp or email and it was scattered, now they upload through the client portal.",
+      ],
+      workflow: [
+        "The firm gives the client portal access.",
+        "The client uploads documents into their own vault.",
+        "The firm sees uploads awaiting review and documents still to come.",
+        "Every document view is logged separately.",
+      ],
+      benefits: ["One place for each client's documents", "Stored documents encrypted at rest"],
+      features: ["client-document-upload-and-downloads", "document-vault", "client-portal"],
+      sources: [HOME],
+    },
+    {
+      slug: "fewer-client-status-calls",
+      name: "Fewer client status calls",
+      summary: "Clients check their filing status in the portal instead of phoning the firm.",
+      problem: "Clients phone the firm repeatedly to ask whether a return has been filed, taking staff away from the work itself.",
+      body: [
+        "In the TrackySuite portal, each client sees their own compliance status, downloads what has been filed and raises a ticket for anything else. TrackySuite's own line is that the \"any update?\" calls stop.",
+        "A managing partner quoted on the site says clients are happy with their dashboard and check everything there instead of calling frequently.",
+      ],
+      workflow: [
+        "The client logs in to the portal.",
+        "They see the status of their own filings, for example GSTR-3B filed.",
+        "They download filed returns.",
+        "Questions go in as support tickets, which the firm replies to.",
+      ],
+      benefits: ["Fewer interruptions for staff", "The firm still controls what each client sees"],
+      features: ["client-portal", "support-tickets"],
+      sources: [HOME, SIGNUP],
+    },
+    {
+      slug: "growing-and-multi-office-practices",
+      name: "Growing and multi-office practices",
+      summary: "Review chains, seats and client limits that scale from a growing practice to a multi-office firm.",
+      body: [
+        "TrackySuite pitches its Practice plan at growing practices with a review chain, and its Firm plan at multi-office firms running a full compliance calendar. Multi-Partner covers firms with 6 to 10 partners, and Enterprise is priced per practice above 400 clients.",
+        "As more people join, the four-stage review keeps preparer and approver separate, roles scope access, and partners follow the whole book on one dashboard.",
+      ],
+      approach: [
+        "Practice plan: up to 60 clients and 15 staff seats.",
+        "Firm plan: up to 150 clients and 40 staff seats.",
+        "Multi-Partner plan: up to 400 clients with unlimited staff seats.",
+        "Enterprise: unlimited clients and seats, with a dedicated success manager.",
+      ],
+      benefits: [
+        "The preparer of a return cannot sign it off.",
+        "Workload by member shows who is carrying what.",
+      ],
+      features: ["maker-checker-review-pipeline", "workload-by-member", "practice-dashboard", "team-management"],
+      sources: [HOME, ABOUT],
+    },
+  ],
   productIndustries: [
     {
-      slug: "ca-cs-tax-practices",
+      slug: "trackysuite-for-ca-cs-and-tax-practices-in-india",
       name: "CA, CS and tax practices in India",
       summary: "Built for Indian chartered accountancy, company secretary and tax firms that handle statutory work for dozens to hundreds of clients.",
       body: [
@@ -398,13 +897,13 @@ export const trackysuite: Product = {
         "A client portal lets clients check their status, upload documents and raise tickets.",
         "For any client and financial year, a compliance position shows every obligation, its status, and why an obligation does not apply where that is the case.",
       ],
-      features: ["compliance-calendar", "task-workflow", "deadline-reminders", "client-portal", "client-management", "audit-trail"],
+      features: ["compliance-calendar", "task-and-workflow", "deadline-reminders", "client-portal", "client-management", "audit-trail"],
       sources: [HOME, ABOUT],
     },
   ],
   supportTopics: [
     {
-      slug: "getting-started",
+      slug: "setting-up-your-firm",
       name: "Setting up your firm",
       summary: "How a firm starts on TrackySuite, from creating a workspace to having a live compliance calendar.",
       body: [
@@ -427,7 +926,7 @@ export const trackysuite: Product = {
       sources: [HOME, SIGNUP],
     },
     {
-      slug: "trial-and-billing",
+      slug: "trial-billing-and-cancellation",
       name: "Trial, billing and cancellation",
       summary: "How the trial, billing cycles, plan changes and cancellation work.",
       body: [
@@ -443,7 +942,7 @@ export const trackysuite: Product = {
       sources: [HOME, "https://trackysuite.com/terms"],
     },
     {
-      slug: "your-data",
+      slug: "data-ownership-export-and-deletion",
       name: "Data ownership, export and deletion",
       summary: "Who owns the data a firm enters into TrackySuite and how to get it out.",
       body: [
@@ -459,7 +958,7 @@ export const trackysuite: Product = {
       sources: [HOME, SIGNUP, PRIVACY, "https://trackysuite.com/terms"],
     },
     {
-      slug: "email-delivery",
+      slug: "how-trackysuite-sends-email",
       name: "How TrackySuite sends email",
       summary: "Which emails TrackySuite sends, and how a firm can send them from its own domain.",
       body: [
@@ -489,6 +988,43 @@ export const trackysuite: Product = {
       ],
       links: [{ label: "TrackySuite contact page", href: "https://trackysuite.com/contact" }],
       sources: ["https://trackysuite.com/contact", ABOUT, HOME],
+    },
+    {
+      slug: "setting-client-registrations-to-build-the-calendar",
+      name: "Setting client registrations to build the calendar",
+      summary: "How ticking a client's registrations places its statutory deadlines.",
+      body: [
+        "Each client's statutory calendar is built from the registrations ticked on the client record. Tick them once and the calendar builds itself; there is no list of dates to type.",
+      ],
+      steps: [
+        "Open the client record, or import clients from the Excel template.",
+        "Tick each registration the client holds: GSTIN, TAN, PAN, CIN, LLPIN, PTRC, PTEC.",
+        "The client's statutory calendar populates instantly.",
+        "Check the client's compliance position for a financial year to see each obligation and why any does not apply.",
+      ],
+      faqs: [
+        { question: "What if a client has no GSTIN?", answer: "No GST return is scheduled for that client." },
+        { question: "What if a registration was issued mid-year?", answer: "Periods start from when the client holds it. A registration issued in July does not produce an April period." },
+      ],
+      features: ["registration-driven-scheduling", "compliance-position"],
+      sources: [SIGNUP, ABOUT, HOME],
+    },
+    {
+      slug: "controlling-what-clients-see-in-the-portal",
+      name: "Controlling what clients see in the portal",
+      summary: "The firm decides which statuses and documents each client can see and download.",
+      body: [
+        "Every client gets portal access, but the firm controls what is visible. Clients see only their own records, enforced by role-scoped access with row-level security.",
+      ],
+      keyPoints: [
+        "Clients see their own compliance status.",
+        "Clients upload documents into their own vault.",
+        "Clients download what the firm has filed for them.",
+        "Clients raise support tickets instead of calling.",
+        "The firm controls what is visible to each client.",
+      ],
+      features: ["client-portal", "row-level-security"],
+      sources: [HOME],
     },
   ],
   benefits: [
@@ -542,7 +1078,7 @@ export const trackysuite: Product = {
     { question: "What support do we get?", answer: "Founding firms are set up directly by the TrackySuite team. After that, support tickets are raised from inside the app and answered by the team, and a help library written for Indian practice workflows has a guide for every screen." },
     { question: "Who builds TrackySuite?", answer: "TrackySuite is built and operated by Stolvix Softwares, together with practising chartered accountants whose review notes shape what gets built next." },
   ],
-  industries: ["accounting-tax-practices"],
+  industries: ["accounting-and-tax-practices"],
   sources: [HOME, ABOUT, PRIVACY, SIGNUP, LOGIN, "https://trackysuite.com/terms"],
   lastVerified: "2026-10-08",
 };

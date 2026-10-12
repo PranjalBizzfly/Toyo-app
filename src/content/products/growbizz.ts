@@ -3,8 +3,9 @@ import type { Product } from "@/content/types";
 /**
  * GrowBizz' site is a single landing page branded GrowBizz, plus sign-in and
  * sign-up pages. Its stats (4.9 rating, 500+ businesses, 12k+ reviews),
- * testimonials and generic "services" copy (chatbots, outreach, content) look
- * like placeholder data and are deliberately not used. Plans are named but no
+ * and testimonials look like placeholder data and are deliberately not used.
+ * The "services" (workflow automation, chatbots, outreach, content) are only
+ * named on the home page, so they appear as listed-only features. Plans are named but no
  * prices are published, so no pricing block is given.
  */
 const HOME = "https://snaaps.com/";
@@ -20,7 +21,7 @@ export const snaaps: Product = {
   longDescription:
     "GrowBizz is an AI tool that helps local businesses collect more Google reviews.\n\nA business owner adds their business details and Google review link. GrowBizz then gives them a custom review link and a QR code to share with customers. A customer who opens the link fills a short form about their visit and gets three AI-written review drafts. They copy the one they like and are sent to Google's review page to paste and submit it.\n\nQR codes can be printed on receipts and flyers, and paid plans add PDF flyers with the QR code ready to print. A browser extension called BizSync confirms that you own each business by syncing the locations from your Google Business Profile, so only verified businesses can be registered.\n\nThere is a free plan with one business, AI review generation and basic QR codes, and no credit card is needed to start. Pro and Enterprise plans add unlimited businesses, PDF downloads and priority support.",
   tagline: "Grow Your Business Reviews Faster Using AI",
-  category: "sales-marketing",
+  category: "sales-and-marketing",
   primaryUseCase: "Collecting Google reviews",
   audience: ["Local business owners", "Agencies", "Franchises", "Businesses with several locations"],
   platforms: ["web", "chrome"],
@@ -41,6 +42,15 @@ export const snaaps: Product = {
       slug: "business-management",
       name: "Business management",
       description: "Add, verify and manage the businesses you collect reviews for.",
+    },
+    {
+      slug: "ai-services",
+      name: "AI services",
+      description: "AI services GrowBizz names on its home page, beyond review collection.",
+      body: [
+        "Besides review collection, the GrowBizz home page has a services section titled \"GrowBizz AI Solutions\". It names four services: AI workflow automation, smart chatbots, AI-powered personalised outreach and AI content for business growth.",
+        "The site gives one short description for each and no plan, price or setup details, so each page below states only what is listed.",
+      ],
     },
   ],
   features: [
@@ -71,13 +81,13 @@ export const snaaps: Product = {
         "Customers can leave a review in seconds.",
         "The review still reflects what the customer said about their visit.",
       ],
-      relatedFeatures: ["share-links", "qr-codes"],
+      relatedFeatures: ["easy-share-links", "qr-codes"],
       sources: [HOME],
       highlight: true,
       hasPage: true,
     },
     {
-      slug: "share-links",
+      slug: "easy-share-links",
       name: "Easy Share Links",
       summary: "A custom review link for each business that guides customers through the review.",
       category: "review-collection",
@@ -97,7 +107,7 @@ export const snaaps: Product = {
       hasPage: true,
     },
     {
-      slug: "qr-codes",
+      slug: "qr-code-generation",
       name: "QR Code Generation",
       summary: "A unique QR code for each business to print on receipts, flyers or display in store.",
       category: "review-collection",
@@ -121,8 +131,18 @@ export const snaaps: Product = {
       name: "PDF Downloads",
       summary: "Professional PDF flyers with your QR code for offline marketing.",
       category: "review-collection",
-      body: ["Download professional PDF flyers that carry your QR code, ready for offline marketing. PDF downloads are part of the Pro and Enterprise plans."],
+      evidence: "listed",
+      body: [
+        "A printable flyer puts a review QR code in front of customers who are not online at that moment, for example at a counter, on a table or in a shop window. It saves the business designing its own artwork around the code.",
+        "GrowBizz says you can download professional PDF flyers with QR codes for offline marketing and customer engagement. It lists PDF downloads on its Pro and Enterprise plans.",
+      ],
+      capabilities: [
+        "Downloads PDF flyers that include the business QR code.",
+        "Listed on the Pro and Enterprise plans, not the free plan.",
+      ],
+      relatedFeatures: ["qr-codes"],
       sources: [HOME],
+      hasPage: true,
     },
     {
       slug: "multi-business-management",
@@ -130,7 +150,15 @@ export const snaaps: Product = {
       summary: "Add and manage several businesses from one dashboard.",
       category: "business-management",
       body: ["Add and manage unlimited businesses from a single dashboard, which suits agencies, franchises and owners with several locations. This is part of the Pro and Enterprise plans; the free plan covers one business."],
+      capabilities: [
+        "Adds unlimited businesses on the Pro and Enterprise plans.",
+        "Manages every business from a single dashboard.",
+        "Limits the free plan to one business.",
+      ],
+      problem: "Agencies and franchises that need review collection for many locations at once.",
+      relatedFeatures: ["bizsync-extension", "share-links"],
       sources: [HOME],
+      hasPage: true,
     },
     {
       slug: "bizsync-extension",
@@ -150,6 +178,141 @@ export const snaaps: Product = {
       relatedFeatures: ["multi-business-management"],
       sources: [HOME],
       hasPage: true,
+    },
+    {
+      slug: "reviewer-experience",
+      name: "Reviewer Experience",
+      summary: "A simple flow for customers: fill a short form and get AI-written reviews ready to submit.",
+      category: "review-collection",
+      body: [
+        "GrowBizz is built so the customer does very little work. They see your business details, answer a short form about their visit and get reviews ready to submit.",
+        "They do not write anything from scratch. After copying a review they are redirected to Google's review submission page to paste it.",
+      ],
+      howItWorks: [
+        "The customer opens your link or scans your QR code and sees your business info.",
+        "They fill a short form about their experience.",
+        "They get three AI-generated reviews and copy the one they prefer.",
+        "They are redirected to Google's review page to paste and submit it.",
+      ],
+      relatedFeatures: ["ai-review-generation", "share-links"],
+      sources: [HOME],
+      hasPage: true,
+    },
+    {
+      slug: "ai-workflow-automation",
+      name: "AI Workflow Automation",
+      summary: "GrowBizz lists a service that analyses business processes and adds AI workflows to automate tasks.",
+      category: "ai-services",
+      evidence: "listed",
+      body: [
+        "Workflow automation uses software to carry out repeated steps in a business process, such as moving data or sending routine messages. Teams use it to cut manual work and errors.",
+        "GrowBizz lists AI workflow automation as a service: it says it analyses your business processes and implements AI-powered workflows that automate tasks and improve operational efficiency.",
+      ],
+      capabilities: ["Listed as a GrowBizz service on the home page."],
+      sources: [HOME],
+      hasPage: true,
+    },
+    {
+      slug: "smart-chatbots",
+      name: "Smart Chatbots",
+      summary: "GrowBizz lists AI chatbots built to understand customers and help them.",
+      category: "ai-services",
+      evidence: "listed",
+      body: [
+        "A chatbot answers customer questions in a chat window without a person typing each reply. Businesses use one to respond at any hour and handle common questions.",
+        "GrowBizz lists smart chatbots as a service and says it creates AI chatbots that understand your customers and provide smooth, helpful interactions.",
+      ],
+      capabilities: ["Listed as a GrowBizz service on the home page."],
+      sources: [HOME],
+      hasPage: true,
+    },
+    {
+      slug: "ai-powered-personalized-outreach",
+      name: "AI-Powered Personalized Outreach",
+      summary: "GrowBizz lists a service that uses customer data to write personalised outreach messages.",
+      category: "ai-services",
+      evidence: "listed",
+      body: [
+        "Personalised outreach means tailoring each message to the person who receives it, instead of sending the same text to everyone. It tends to get more replies than generic messages.",
+        "GrowBizz lists this as a service and says it analyses customer data to create highly personalised outreach messages that drive better responses and higher conversions.",
+      ],
+      capabilities: ["Listed as a GrowBizz service on the home page."],
+      sources: [HOME],
+      hasPage: true,
+    },
+    {
+      slug: "ai-content-for-business-growth",
+      name: "AI Content for Business Growth",
+      summary: "GrowBizz lists a service that produces customised content with AI and audience insights.",
+      category: "ai-services",
+      evidence: "listed",
+      body: [
+        "AI content tools help a business draft posts, pages and other marketing copy faster. Good results depend on knowing who the audience is.",
+        "GrowBizz lists this as a service and says it combines audience insights with advanced AI to produce high-quality, customised content that aligns with your business objectives.",
+      ],
+      capabilities: ["Listed as a GrowBizz service on the home page."],
+      sources: [HOME],
+      hasPage: true,
+    },
+  ],
+  productIntegrations: [
+    {
+      slug: "growbizz-google-business-profile-integration",
+      name: "Google Business Profile",
+      summary: "GrowBizz links customers to your Google review page and syncs your verified locations through BizSync.",
+      connects: "GrowBizz connects to Google in two places: the review page your customers post on, and the Google Business Profile locations you own.",
+      body: [
+        "GrowBizz generates a direct link to your Google review page. When a customer copies an AI-generated review, they are redirected to Google's review submission page to paste and submit it.",
+        "The BizSync browser extension uses your Google Business Profile to confirm ownership. Signed in with the same Google account, it securely syncs your locations, and GrowBizz lets you register only those verified businesses.",
+      ],
+      setup: [
+        "Download the BizSync extension from the GrowBizz landing page.",
+        "Sign in with the same Google account you use for GrowBizz.",
+        "Let it sync the locations from your Google Business Profile.",
+      ],
+      workflow: [
+        "Register one of the synced, verified businesses.",
+        "Add its Google review link so GrowBizz can build your review link.",
+        "Customers are sent to Google's review page to paste and submit their review.",
+      ],
+      features: ["bizsync-extension", "share-links"],
+      sources: [HOME],
+    },
+  ],
+  supportTopics: [
+    {
+      slug: "getting-started-with-growbizz",
+      name: "Getting started with GrowBizz",
+      summary: "Set up a business, share your review link or QR code and see how customers post a review.",
+      body: [
+        "GrowBizz lets business owners add their business details and Google review link, then share a custom review link or QR code with customers. You can start on the free plan with no credit card.",
+      ],
+      steps: [
+        "Sign up for a free GrowBizz account.",
+        "Add your business details and your Google review link.",
+        "Share your custom review link, or show customers your QR code.",
+        "Customers fill a short form and receive three AI-generated reviews.",
+        "They copy the best one and are redirected to Google to submit it.",
+      ],
+      features: ["easy-share-links", "qr-code-generation", "ai-review-generation"],
+      links: [{ label: "Sign up", href: SIGN_UP }],
+      sources: [HOME, SIGN_UP],
+    },
+    {
+      slug: "plans-and-billing",
+      name: "Plans and billing",
+      summary: "What the free plan includes and what the Pro and Enterprise plans add.",
+      body: [
+        "GrowBizz offers a free plan and two paid plans, Pro and Enterprise. The site does not publish prices for the paid plans.",
+      ],
+      keyPoints: [
+        "The free plan includes 1 business.",
+        "The free plan includes AI review generation and basic QR codes.",
+        "No credit card is required to start.",
+        "Pro and Enterprise add unlimited businesses, PDF downloads and priority support.",
+      ],
+      features: ["multi-business-management", "pdf-downloads"],
+      sources: [HOME],
     },
   ],
   howItWorks: [

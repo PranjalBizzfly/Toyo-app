@@ -12,14 +12,31 @@ const featureCategories: FeatureCategory[] = [
       "The plan comes back in the formats teams already use: a clean PDF, creatives ready to paste, and a report to share with a team or client.",
     ],
   },
+  {
+    slug: "plan-sections",
+    name: "Plan sections",
+    description: "The individual outputs inside a Benj plan.",
+    body: [
+      "Beyond the core capabilities, a Benj plan contains specific outputs: the four creative formats, the venue checks behind the ad map, and the score and calendar shown in the plan mock on the official site.",
+    ],
+  },
+  {
+    slug: "workflow",
+    name: "Workflow",
+    description: "How you get a plan in, adjust it and share it.",
+    body: [
+      "These pages cover the working steps around a plan: what you type, what the AI fills in for you, how packs add regeneration, priority and team use, and how plans and creatives leave Benj.",
+    ],
+  },
 ];
 
-const f = (x: Omit<Feature, "category" | "sources" | "hasPage">): Feature => ({
+const f =(x: Omit<Feature, "category" | "sources" | "hasPage">): Feature => ({
   category: "capabilities",
   sources: [HOME],
   hasPage: true,
   ...x,
 });
+const g = (category: string, x: Omit<Feature, "category" | "sources" | "hasPage">): Feature => ({ ...f(x), category });
 
 const features: Feature[] = [
   f({
@@ -387,6 +404,199 @@ const features: Feature[] = [
     ],
     relatedFeatures: ["hyperlocal-ad-map", "ready-to-use-creatives", "exact-budget-split"],
   }),
+  // Workflow
+  g("workflow", {
+    slug: "product-input-brief",
+    name: "Product input brief",
+    summary: "Name, category, a one-line pitch and what makes it different: the only typing you do.",
+    body: [
+      "A Benj plan starts from four details about the product: its name, its category, a one-line pitch and what makes it different. Benj describes this as the only typing you do.",
+      "Everything after that, from the buyer persona to the budget, is generated from those four details.",
+    ],
+    howItWorks: [
+      "Enter the product name.",
+      "Enter its category.",
+      "Write a one-line pitch.",
+      "Say what makes it different.",
+    ],
+    relatedFeatures: ["editable-ai-brief-goal-budget-tone", "ai-buyer-persona"],
+  }),
+  g("workflow", {
+    slug: "editable-ai-brief-goal-budget-tone",
+    name: "Editable AI brief (goal, budget, tone)",
+    summary: "Goal, budget, tone, market and techniques are set by the AI from the product, and all of them can be edited.",
+    body: [
+      "After the buyer is detected, Benj builds the brief: the best market and regions, the goal, the budget, the tone and profit-ranked techniques. Benj describes these as \"all generated, all editable\".",
+      "You can accept the brief as generated or change any input before the plan is produced.",
+    ],
+    capabilities: [
+      "Goal set by the AI from the product, editable.",
+      "Budget set by the AI, editable.",
+      "Brand tone set by the AI, editable; creatives are written in it.",
+      "Market, regions and techniques generated and editable.",
+    ],
+    relatedFeatures: ["product-input-brief", "exact-budget-split", "best-market-detection"],
+  }),
+  g("workflow", {
+    slug: "section-regenerate",
+    name: "Section regenerate",
+    summary: "Regenerate individual sections of a plan, included in the Pro and Agency packs.",
+    evidence: "listed",
+    body: [
+      "Section regeneration lets you ask an AI tool for a fresh version of one part of its output without starting the whole job again. It is useful when most of a result works but one part does not.",
+      "Benj lists section regenerate as a feature of the Pro pack, and the Agency pack includes all Pro features.",
+    ],
+    capabilities: ["Listed on the Pro pack.", "Included in Agency through all Pro features."],
+    relatedFeatures: ["priority-generation"],
+  }),
+  g("workflow", {
+    slug: "priority-generation",
+    name: "Priority generation",
+    summary: "Priority generation of plans, included in the Pro and Agency packs.",
+    evidence: "listed",
+    body: [
+      "Priority generation is a common paid option in AI tools: requests from higher tiers are handled ahead of others when demand is high.",
+      "Benj lists priority generation as a feature of the Pro pack, and the Agency pack includes all Pro features.",
+    ],
+    capabilities: ["Listed on the Pro pack.", "Included in Agency through all Pro features."],
+    relatedFeatures: ["section-regenerate"],
+  }),
+  g("workflow", {
+    slug: "team-company-workspace",
+    name: "Team company workspace",
+    summary: "A team company account, listed on the Agency pack.",
+    evidence: "listed",
+    body: [
+      "A team or company workspace lets several people in an organisation work under one account instead of separate logins. Agencies use it to share the work across staff.",
+      "Benj lists \"Team company\" as a feature of its Agency pack, alongside 20 reports and email support.",
+    ],
+    capabilities: ["Listed on the Agency pack."],
+    relatedFeatures: ["share-plans"],
+  }),
+  g("workflow", {
+    slug: "share-plans-with-team-or-clients",
+    name: "Share plans with team or clients",
+    summary: "Plans can be shared with your team or clients.",
+    evidence: "listed",
+    body: [
+      "Sharing a plan lets the people who will act on it, colleagues or a client, see the same version rather than a copy passed around.",
+      "Benj states that you can share plans with your team or clients, and that each plan exports as a share-ready PDF.",
+    ],
+    capabilities: ["Sharing with team or clients stated on the official site.", "Share-ready PDF export in one click."],
+    relatedFeatures: ["clean-pdf-report", "team-company"],
+  }),
+  g("workflow", {
+    slug: "copy-ready-creatives",
+    name: "Copy-ready creatives",
+    summary: "Copy creatives out of the plan and paste them straight into campaigns.",
+    evidence: "listed",
+    body: [
+      "Copy-ready creatives are text outputs formatted so they can go straight into an ad platform or post without retyping.",
+      "Benj states that you can copy ready-to-paste creatives from a plan, and its plan mock shows Instagram ad copy marked ready with a 280 character count.",
+    ],
+    capabilities: ["Ready-to-paste creatives stated on the official site."],
+    relatedFeatures: ["ready-to-use-creatives", "ad-copy"],
+  }),
+  g("workflow", {
+    slug: "google-sign-in",
+    name: "Google sign-in",
+    summary: "Create a Benj account or sign in with Google.",
+    evidence: "listed",
+    body: [
+      "Signing in with Google lets you use an existing Google account instead of creating a new password.",
+      "The Benj signup page offers \"Continue with Google\" next to the full name, email and password form.",
+    ],
+    capabilities: ["\"Continue with Google\" offered on the signup page."],
+    relatedFeatures: ["product-input"],
+  }),
+  // Plan sections
+  g("plan-sections", {
+    slug: "marketability-score",
+    name: "Marketability score",
+    summary: "A marketability score out of 100, shown in the plan mock on the Benj home page.",
+    evidence: "listed",
+    body: [
+      "A marketability score rates how ready a product is to market, giving a single number to compare launches or track changes.",
+      "The Benj home page shows a plan mock for a skincare launch with a marketability rating marked \"Strong\" out of 100. The site does not describe how the score is calculated.",
+    ],
+    capabilities: ["Shown out of 100 in the home page plan mock."],
+    relatedFeatures: ["clean-pdf-report"],
+  }),
+  g("plan-sections", {
+    slug: "openstreetmap-venue-verification",
+    name: "OpenStreetMap venue verification",
+    summary: "Every locality in the ad map is confirmed against live OpenStreetMap data.",
+    body: [
+      "Benj checks the places in its hyperlocal ad map against live OpenStreetMap data, a free, public world map, so the plan points at real places rather than guesses.",
+      "Verification sits under the drill-down from country to state, city, locality and venue, and the site describes the targeting as venue-level and OSM-verified.",
+    ],
+    capabilities: [
+      "Every locality confirmed against live OpenStreetMap data.",
+      "Venue-level targeting.",
+      "Feeds the hyperlocal ad map's choice of venue and ad type.",
+    ],
+    relatedFeatures: ["hyperlocal-ad-map"],
+  }),
+  g("plan-sections", {
+    slug: "taglines",
+    name: "Taglines",
+    summary: "Taglines for the product, written in the brand tone.",
+    evidence: "listed",
+    body: [
+      "A tagline is a short line that sums up a product or campaign and repeats across ads, packaging and posts.",
+      "Benj lists taglines among the ready-to-use creatives in every plan, written in the brand tone set in the brief.",
+    ],
+    capabilities: ["Listed among the plan's ready-to-use creatives."],
+    relatedFeatures: ["ready-to-use-creatives"],
+  }),
+  g("plan-sections", {
+    slug: "ad-copy",
+    name: "Ad copy",
+    summary: "Ad copy ready to paste into campaigns.",
+    evidence: "listed",
+    body: [
+      "Ad copy is the text of an advertisement: the headline and body a buyer reads on a platform such as Instagram or Google.",
+      "Benj lists ad copy among its ready-to-use creatives, and its home page mock shows an Instagram ad line marked ready.",
+    ],
+    capabilities: ["Listed among the plan's ready-to-use creatives.", "Instagram ad copy shown in the home page mock."],
+    relatedFeatures: ["ready-to-use-creatives", "copy-paste-creatives"],
+  }),
+  g("plan-sections", {
+    slug: "banners",
+    name: "Banners",
+    summary: "Banners included among the plan's creatives.",
+    evidence: "listed",
+    body: [
+      "Banners are display ads, online or printed, that combine a short message with the brand's look.",
+      "Benj lists banners among the ready-to-use creatives in every plan.",
+    ],
+    capabilities: ["Listed among the plan's ready-to-use creatives."],
+    relatedFeatures: ["ready-to-use-creatives"],
+  }),
+  g("plan-sections", {
+    slug: "tv-and-radio-scripts",
+    name: "TV and radio scripts",
+    summary: "Scripts for TV and radio spots, included in the plan's creatives.",
+    evidence: "listed",
+    body: [
+      "TV and radio scripts set out what is said and shown in a broadcast spot, ready for a production team or a station.",
+      "Benj lists TV and radio scripts among the ready-to-use creatives, alongside the named TV channels and radio stations in its media outlet section.",
+    ],
+    capabilities: ["Listed among the plan's ready-to-use creatives."],
+    relatedFeatures: ["ready-to-use-creatives", "real-media-outlets"],
+  }),
+  g("plan-sections", {
+    slug: "content-calendar",
+    name: "Content calendar",
+    summary: "A 30-day content calendar view shown in the Benj home page mock.",
+    evidence: "listed",
+    body: [
+      "A content calendar schedules what will be published or run on each day, so a campaign's posts and ads go out in a planned order.",
+      "The Benj home page shows a \"30-day Calendar\" mock with Table, Timeline, Grid, Gantt, Board and Calendar views. The site does not describe it further.",
+    ],
+    capabilities: ["30-day calendar with six views shown in the home page mock."],
+    relatedFeatures: ["ready-to-use-creatives"],
+  }),
 ];
 
 export const getbenj: Product = {
@@ -398,8 +608,8 @@ export const getbenj: Product = {
   longDescription:
     "Benj turns a short product description into a complete AI marketing plan in about 60 seconds. It is built for Indian D2C (direct-to-consumer) brands and the agencies that serve them, from a founder's first launch to an agency's hundredth.\n\nYou type only the product name, category, a one-line pitch and what makes it different. Benj then works out the buyer persona, the best country and regions, the goal, budget and tone, and profit-ranked techniques, every one of them editable.\n\nThe plan is based on real data: localities and venues are checked against live OpenStreetMap data, and past ads and media outlets are collected from the web with links to the originals. It also includes ready-to-paste creatives and a budget split in rupees.\n\nEverything exports as a PDF ready to share. Pricing is per report or by pack, with no subscription and no credit card needed to start.",
   tagline: "One product in. A complete plan out.",
-  category: "sales-marketing",
-  secondaryCategories: ["insights-research"],
+  category: "sales-and-marketing",
+  secondaryCategories: ["insights-and-research"],
   subcategory: "marketing-planning",
   primaryUseCase: "Marketing plans for product launches",
   audience: ["D2C founders", "Marketing agencies", "Growth teams"],
@@ -427,7 +637,7 @@ export const getbenj: Product = {
   ],
   productSolutions: [
     {
-      slug: "d2c-product-launch",
+      slug: "launch-plans-for-d2c-products",
       name: "Launch plans for D2C products",
       summary: "Go from a product description to a full launch plan covering buyer, markets, channels, ads and budget.",
       body: [
@@ -450,7 +660,7 @@ export const getbenj: Product = {
       sources: [HOME],
     },
     {
-      slug: "agency-client-plans",
+      slug: "client-plans-for-marketing-agencies",
       name: "Client plans for marketing agencies",
       summary: "Agencies create marketing plans ready to share with clients, with packs sized for repeat use.",
       body: [
@@ -467,10 +677,48 @@ export const getbenj: Product = {
       features: ["clean-pdf-report", "ready-to-use-creatives", "real-past-ads", "real-media-outlets"],
       sources: [HOME],
     },
+    {
+      slug: "a-founders-first-launch",
+      name: "A founder's first launch",
+      summary: "A complete, ready-to-launch plan for a first product, with no marketing team required.",
+      problem: "A founder launching a first product rarely has a marketing team, and starting from a blank plan means guessing at buyers, channels and spend.",
+      body: [
+        "Benj is built for a founder's first launch as much as an agency's hundredth. It turns a few details about the product into a complete plan, which Benj sums up as \"a whole marketing team, in one plan\".",
+        "A founder can start with one free report and no credit card, and the Lite pack covers one full report with all sections.",
+      ],
+      workflow: [
+        "Sign up and use the free report.",
+        "Type the product name, category, pitch and differentiator.",
+        "Check the generated buyer, market and budget, and edit anything that is off.",
+        "Export the PDF and paste the creatives into the first campaigns.",
+      ],
+      benefits: ["About 60 seconds from product to full plan", "Pay per report, no subscription"],
+      audience: ["D2C founders"],
+      features: ["product-input-brief", "editable-ai-brief-goal-budget-tone", "clean-pdf-report"],
+      sources: [HOME, "https://getbenj.com/signup"],
+    },
+    {
+      slug: "plans-for-growth-teams",
+      name: "Plans for growth teams",
+      summary: "In-house growth teams produce plans for several products and share them across the team.",
+      body: [
+        "Benj names growth teams alongside founders and agencies as its audience. For a team planning several products or launches, the Pro pack covers 5 reports, and plans can be shared with the team.",
+      ],
+      approach: [
+        "Generate a plan per product or launch from the Pro pack's 5 reports.",
+        "Regenerate individual sections instead of the whole plan.",
+        "Share plans with the team, or export the PDF.",
+        "Use the budget split in rupees to agree spend before launch.",
+      ],
+      benefits: ["One format for every product's plan", "Reasoning shown for each technique and allocation"],
+      audience: ["Growth teams"],
+      features: ["share-plans-with-team-or-clients", "section-regenerate", "exact-budget-split"],
+      sources: [HOME],
+    },
   ],
   supportTopics: [
     {
-      slug: "getting-started",
+      slug: "getting-started-with-benj",
       name: "Getting started with Benj",
       summary: "How to create your first Benj plan, from signing up to exporting the PDF.",
       body: [
@@ -485,6 +733,22 @@ export const getbenj: Product = {
       ],
       features: ["ai-buyer-persona", "best-market-detection", "clean-pdf-report"],
       sources: [HOME],
+    },
+    {
+      slug: "account-access-and-reporting-an-issue",
+      name: "Account access and reporting an issue",
+      summary: "What to do if you cannot get into your Benj account.",
+      body: [
+        "The Benj signup page includes a route for access problems: if you cannot access your account, you can report an issue and the support team can help.",
+      ],
+      keyPoints: [
+        "Use \"Report an issue\" under \"Can't access your account?\" on the signup page.",
+        "\"Contact Support\" is linked from the same page for other problems.",
+        "If you created the account with Google, sign in with \"Continue with Google\".",
+        "The Agency pack includes email support.",
+      ],
+      features: ["google-sign-in"],
+      sources: ["https://getbenj.com/signup", HOME],
     },
   ],
   pricing: {
@@ -517,7 +781,7 @@ export const getbenj: Product = {
     { question: "Is it only for India?", answer: "Benj is built for Indian direct-to-consumer (D2C) brands and plans for India's Tier 1, 2 and 3 markets, but Best-Market Detection can also recommend markets globally." },
   ],
   solutions: ["prepare-for-launch-and-fundraising"],
-  industries: ["startups-and-investors", "media-creative-agencies"],
+  industries: ["startups-and-investors", "media-creative-and-agencies"],
   sources: [HOME],
   lastVerified: "2026-10-08",
 };

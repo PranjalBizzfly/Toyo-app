@@ -220,7 +220,7 @@ export const solutions: Solution[] = [
 /** Industries — only where a product is built for, or explicitly serves, the industry. */
 export const industries: Industry[] = [
   {
-    slug: "accounting-tax-practices",
+    slug: "accounting-and-tax-practices",
     name: "Accounting & tax practices",
     icon: "wallet",
     summary:
@@ -238,7 +238,7 @@ export const industries: Industry[] = [
     status: "live",
   },
   {
-    slug: "media-creative-agencies",
+    slug: "media-creative-and-agencies",
     name: "Media, creative & agencies",
     icon: "spark",
     summary:

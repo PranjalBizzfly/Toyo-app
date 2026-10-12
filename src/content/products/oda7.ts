@@ -50,7 +50,7 @@ const q = (question: string, answer: string) => ({ question, answer });
  */
 const DEEP: Record<string, Partial<Feature>> = {
   // ── Sales Execution ──────────────────────────────────────────────
-  "lead-distribution": {
+  "lead-ingestion-and-priority-queue-my-queue": {
     capabilities: [
       "Every new prospect is tagged with its UTM source (campaign tracking tags), so the rep can see which form, ad or webhook brought the lead in.",
       "Duplicate rules run at intake, so an existing prospect is not handed to a second rep as a new lead.",
@@ -73,7 +73,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Can reps choose which leads to work?", "The queue is designed to prevent cherry-picking: reps work their ranked queue from the top rather than choosing from a shared list."),
     ],
   },
-  "integrated-dialer": {
+  "integrated-dialer-and-local-presence-calling": {
     capabilities: [
       "Calls are made from a WebRTC softphone (a phone that runs in the browser), so reps don't need a separate desk phone or dialer app.",
       "ODA7 provides local numbers that match the prospect's area code, which the site presents as a way to build trust and get more calls answered.",
@@ -92,7 +92,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("What is local presence calling?", "ODA7 provides local numbers that match the prospect's area code, so the call shows a local caller ID rather than an unfamiliar long-distance number."),
     ],
   },
-  "dynamic-sales-scripts": {
+  "dynamic-branching-sales-scripts": {
     capabilities: [
       "Talk tracks branch according to the customer's answers, so the rep follows the path that fits the conversation.",
       "Prompts are suggested in real time while the call is live, inside the active call view.",
@@ -166,7 +166,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Why does ODA7 keep all messages in one place?", "The site describes WhatsApp and calling outreach as often manual, unrecorded and disconnected from the CRM, with conversations scattered across devices; the inbox keeps it on the lead."),
     ],
   },
-  "quotes-and-proposals": {
+  "quotes-cpq-proposals-and-e-signatures": {
     capabilities: [
       "Reps build a proposal by selecting products and bundles from ODA7's product catalog.",
       "Pre-approved discount tiers and automated discount rules keep pricing within agreed limits.",
@@ -194,7 +194,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("How are discounts controlled?", "Reps apply pre-approved discount tiers, and automated discount rules govern what can be offered."),
     ],
   },
-  "lead-management": {
+  "lead-management-and-tagging": {
     capabilities: [
       "Filters let reps and managers sort leads by several details at once.",
       "Custom fields hold extra lead details specific to the business.",
@@ -213,7 +213,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("How do we update many leads at once?", "Bulk actions and bulk tagging apply changes or tags to a filtered set of leads in one step."),
     ],
   },
-  "call-history-recordings": {
+  "call-history-and-recordings": {
     capabilities: [
       "Calls are recorded in dual-channel audio, keeping the rep's and the prospect's sides separate.",
       "Recordings are transcribed automatically with speech-to-text.",
@@ -256,7 +256,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Does the catalog support subscriptions?", "Yes, the site lists recurring billing plans alongside SKUs and pricing tiers."),
     ],
   },
-  "company-hierarchy": {
+  "companies-and-account-hierarchy": {
     capabilities: [
       "Several contacts can be linked to one company account.",
       "Decision-makers and buying committees can be mapped on the account.",
@@ -274,7 +274,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("What does the company view add over leads?", "It groups contacts, decision-makers and buying committees under one account, with org charts for decision-makers."),
     ],
   },
-  "calendar-scheduler": {
+  "calendar-and-meeting-scheduler": {
     capabilities: [
       "Booking links let prospects choose a meeting time themselves.",
       "Bookings sync with Google Calendar.",
@@ -316,7 +316,7 @@ const DEEP: Record<string, Partial<Feature>> = {
   },
 
   // ── Omnichannel ──────────────────────────────────────────────────
-  "whatsapp-business-messaging": {
+  "whatsapp-business-api-messaging": {
     capabilities: [
       "Messages go through the official WhatsApp Business API from Meta.",
       "Verified broadcast campaigns reach many prospects with approved content.",
@@ -340,7 +340,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Where do WhatsApp replies go?", "Into the lead's unified inbox timeline, alongside SMS and email."),
     ],
   },
-  "two-way-sms": {
+  "two-way-sms-messaging": {
     capabilities: [
       "ODA7 provides dedicated local business phone numbers for texting prospects.",
       "Conversations are two-way: prospects can reply and reps answer from ODA7.",
@@ -354,7 +354,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Where do SMS threads appear?", "In the lead's unified inbox, next to WhatsApp and email."),
     ],
   },
-  "email-tracking": {
+  "email-tracking-and-threading": {
     capabilities: [
       "Email is synced in both directions, so sent and received messages appear on the lead.",
       "Opens and clicks are tracked on each email.",
@@ -369,7 +369,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Is email two-way?", "Yes, email is synced both ways so threads live on the lead record."),
     ],
   },
-  "voicemail-drop": {
+  "one-click-voicemail-drop": {
     capabilities: [
       "Reps record personalized voicemails ahead of time.",
       "When an answering machine picks up, one click drops the recording.",
@@ -384,7 +384,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Can voicemails be automated?", "Yes, automated voicemail steps can be part of a sequence."),
     ],
   },
-  "web-callbacks-ivr": {
+  "web-callbacks-and-inbound-ivr": {
     capabilities: [
       "Website visitors can request a callback.",
       "Inbound calls can be handled through an IVR.",
@@ -424,7 +424,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Is Explain My Numbers available on every plan?", "ODA7 says AI capability, availability and data requirements are confirmed during product scoping; the Platform plan lists AI features."),
     ],
   },
-  "objection-buster": {
+  "real-time-objection-buster": {
     capabilities: [
       "ODA7 listens to the customer's speech during the live call.",
       "It detects objections about pricing, timing, competitors and security.",
@@ -464,7 +464,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("How is the score used?", "It feeds the priority ranking in My Queue together with timezone."),
     ],
   },
-  "post-call-summaries": {
+  "ai-post-call-summarization": {
     capabilities: [
       "After each call, ODA7 lists the action items that came up.",
       "Summaries include sentiment context from the conversation.",
@@ -479,7 +479,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Do summaries change the CRM?", "They can update deal stages, so reps don't have to update the record by hand."),
     ],
   },
-  "ai-recommendations": {
+  "ai-sales-recommendations": {
     capabilities: [
       "Suggests when to call a prospect.",
       "Suggests which pitch strategy to use.",
@@ -493,7 +493,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Are recommendations guaranteed to be available?", "ODA7 frames its AI as illustrated on the site, with capability and availability confirmed during scoping."),
     ],
   },
-  "insight-alerts": {
+  "automated-insight-alerts": {
     capabilities: [
       "ODA7 keeps watching activity for anything unusual.",
       "Alerts flag reps at risk of burnout.",
@@ -508,7 +508,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("How are alerts delivered?", "Notification routing rules can send critical alerts to Slack, SMS, WhatsApp or browser push."),
     ],
   },
-  "ai-copilot": {
+  "ai-sales-assistant-copilot": {
     capabilities: [
       "Drafts contextual replies to prospect messages.",
       "Composes follow-up emails.",
@@ -524,7 +524,7 @@ const DEEP: Record<string, Partial<Feature>> = {
   },
 
   // ── People ───────────────────────────────────────────────────────
-  "floor-queue-monitor": {
+  "real-time-floor-queue-monitor": {
     capabilities: [
       "Shows how much load the queue currently carries.",
       "Lists leads that are waiting for an agent.",
@@ -540,7 +540,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("What does it show?", "Queue load, waiting leads, concurrent calls and floor availability."),
     ],
   },
-  "agent-status-grid": {
+  "agent-status-grid-and-live-coaching": {
     capabilities: [
       "Each agent's state is shown live: On Call, Idle, In Wrap-up or Available.",
       "Managers can silently listen to a live call.",
@@ -555,7 +555,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Which agent states are shown?", "On Call, Idle, In Wrap-up and Available."),
     ],
   },
-  "team-hierarchy": {
+  "departments-teams-and-pods": {
     capabilities: [
       "Teams can be organized as squads or vertical pods.",
       "Territories and regional divisions model geographic structure.",
@@ -571,7 +571,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("What does structure control?", "Queue routing, quota pacing and leaderboards per pod, and access and telephony routing per department."),
     ],
   },
-  "onboarding-workflows": {
+  "automated-onboarding-workflows": {
     capabilities: [
       "New agents follow a standardized onboarding path.",
       "Script certifications confirm agents know the talk tracks.",
@@ -586,7 +586,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("How is access handled?", "ODA7 grants access automatically as the agent moves through onboarding."),
     ],
   },
-  "attendance": {
+  "attendance-and-shift-clock-in": {
     capabilities: [
       "Agents clock in and out with a geo-verified punch.",
       "Time can be tracked through the browser or biometrically.",
@@ -602,7 +602,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Does attendance affect payroll?", "Yes, attendance feeds ODA7's payroll calculation."),
     ],
   },
-  "leave-management": {
+  "leave-and-pto-management": {
     capabilities: [
       "Agents submit vacation and sick leave requests themselves.",
       "Requests move through approval chains.",
@@ -617,7 +617,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Who approves leave?", "Requests follow configured approval chains."),
     ],
   },
-  "manager-scorecard": {
+  "manager-live-scorecard": {
     capabilities: [
       "Benchmarks team pickup ratios in real time.",
       "Tracks talk time and wrap-up time.",
@@ -632,7 +632,7 @@ const DEEP: Record<string, Partial<Feature>> = {
   },
 
   // ── Compensation ─────────────────────────────────────────────────
-  "commission-engine": {
+  "real-time-commission-engine": {
     capabilities: [
       "Commission is calculated the moment a deal is marked Closed-Won.",
       "The amount is credited to the rep's digital commission wallet, where the balance updates.",
@@ -651,7 +651,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Does commission reach payroll?", "Yes, the calculated amount flows into payroll and itemized payslips."),
     ],
   },
-  "payroll": {
+  "automated-payroll-calculation": {
     capabilities: [
       "Base salary is calculated from salary rules.",
       "Overtime is included in the payroll run.",
@@ -669,7 +669,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Can payroll be exported?", "Yes, with a one-click payroll export."),
     ],
   },
-  "payslips": {
+  "digital-payslip-distribution": {
     capabilities: [
       "Itemized PDF payslips are generated for every agent at the payroll run.",
       "Each payslip breaks down base pay, taxes and earned bonuses.",
@@ -684,7 +684,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("How are payslips sent?", "They are dispatched in one click after the payroll run."),
     ],
   },
-  "incentives": {
+  "incentives-and-spiffs": {
     capabilities: [
       "Managers can run weekend flash bonuses.",
       "Product-specific SPIFFs (short-term sales bonuses) reward selling particular products.",
@@ -700,7 +700,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("How long does an incentive run?", "Each has custom start and end triggers."),
     ],
   },
-  "quota-accelerators": {
+  "quota-pacing-and-accelerator-rules": {
     capabilities: [
       "Commission tiers step up automatically at quota thresholds.",
       "Quota thresholds are defined per plan.",
@@ -716,7 +716,7 @@ const DEEP: Record<string, Partial<Feature>> = {
   },
 
   // ── Engagement ───────────────────────────────────────────────────
-  "gamification": {
+  "sales-contests-and-battles": {
     capabilities: [
       "Head-to-head duels pit one rep against another.",
       "Squad-versus-squad tournaments run between teams.",
@@ -731,7 +731,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Are contests linked to pay?", "The site connects contests to compensation and incentives."),
     ],
   },
-  "leaderboards": {
+  "live-sales-floor-leaderboards": {
     capabilities: [
       "Leaderboards can be broadcast on TV screens in TV mode.",
       "Revenue leaders are ranked.",
@@ -746,7 +746,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Which time periods are available?", "Daily, weekly and monthly views."),
     ],
   },
-  "achievement-badges": {
+  "achievement-badges-and-milestones": {
     capabilities: [
       "Reps unlock collectible badges at performance milestones.",
       "Revenue milestones, such as a first big month, earn badges.",
@@ -760,7 +760,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("What earns a badge?", "The site's examples include revenue months, dialing milestones and pickup-ratio targets."),
     ],
   },
-  "announcements-kudos": {
+  "company-announcements-and-kudos": {
     capabilities: [
       "Executives can send shout-outs to every agent's workspace.",
       "Win banners celebrate closed deals.",
@@ -776,7 +776,7 @@ const DEEP: Record<string, Partial<Feature>> = {
   },
 
   // ── Insights ─────────────────────────────────────────────────────
-  "call-heatmaps": {
+  "hour-by-hour-pickup-heatmaps": {
     capabilities: [
       "Pickup ratios are plotted hour by hour.",
       "Heatmaps break down by timezone and geographic zone.",
@@ -791,7 +791,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("How are heatmaps used?", "To pick dial windows and plan shift staffing."),
     ],
   },
-  "executive-dashboard": {
+  "executive-revenue-dashboard": {
     capabilities: [
       "Tracks how fast deals move through the pipeline across the business.",
       "Shows customer acquisition cost (CAC).",
@@ -805,7 +805,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Can executives get it by email?", "Scheduled BI reports deliver PDF or CSV summaries to executive inboxes and Slack."),
     ],
   },
-  "conversion-telemetry": {
+  "pickup-ratio-and-conversion-tracking": {
     capabilities: [
       "Pickup and conversion can be broken down by carrier and dialer pool.",
       "Breakdowns by area code show regional differences.",
@@ -837,7 +837,7 @@ const DEEP: Record<string, Partial<Feature>> = {
   },
 
   // ── Administration ───────────────────────────────────────────────
-  "roles-permissions": {
+  "roles-and-permissions": {
     capabilities: [
       "Access is granted through roles rather than per user.",
       "Permissions can be set at the level of individual fields.",
@@ -867,7 +867,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Can audit entries be altered?", "ODA7 describes the audit log as tamper-proof."),
     ],
   },
-  "template-studio": {
+  "email-and-whatsapp-template-studio": {
     capabilities: [
       "Templates are built visually in rich text or HTML.",
       "Merge tags insert lead details automatically.",
@@ -882,7 +882,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Can templates be personalized?", "Yes, with merge tags and dynamic variables."),
     ],
   },
-  "webhooks": {
+  "custom-webhooks": {
     capabilities: [
       "REST webhooks fire when a lead is created.",
       "Webhooks fire when a call completes.",
@@ -897,7 +897,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Can webhooks send leads into ODA7?", "Yes, inbound webhooks are one of the lead sources feeding My Queue."),
     ],
   },
-  "notification-routing": {
+  "notification-routing-rules": {
     capabilities: [
       "Critical alerts can be routed to Slack.",
       "Alerts can be sent by SMS.",
@@ -912,7 +912,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Can alerts escalate?", "Yes, with customizable escalation policies."),
     ],
   },
-  "data-sync": {
+  "scheduled-data-sync": {
     capabilities: [
       "Scheduled background jobs (ETL: extract, transform, load) export ODA7 data.",
       "Data can sync to Snowflake.",
@@ -926,7 +926,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("How often does sync run?", "As recurring background jobs; ODA7 confirms integrations during scoping."),
     ],
   },
-  "billing-center": {
+  "subscription-and-invoicing-center": {
     capabilities: [
       "Admins manage their subscription themselves.",
       "Usage meters show consumption.",
@@ -940,7 +940,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Where are invoices?", "VAT invoice receipts are downloadable from the billing center."),
     ],
   },
-  "white-labeling": {
+  "branding-and-white-labeling": {
     capabilities: [
       "A custom domain can be set through a CNAME.",
       "Portal logos can be replaced.",
@@ -954,7 +954,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("What can be branded?", "Portal logos, colour schemes and email headers across customer-facing interfaces."),
     ],
   },
-  "multi-tenant-organizations": {
+  "multi-tenant-organization-management": {
     capabilities: [
       "Operators provision new tenant organizations from a master console, in one click.",
       "Tenants can be suspended.",
@@ -969,7 +969,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Can agencies create their own workspace?", "Yes, new agencies can sign up publicly on oda7.com."),
     ],
   },
-  "saas-plans": {
+  "saas-plans-and-subscription-engine": {
     capabilities: [
       "Tiered pricing plans are configured by the operator.",
       "Seat limits are set per plan.",
@@ -984,7 +984,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Who manages plans?", "Super admins in the Super Admin layer."),
     ],
   },
-  "platform-revenue": {
+  "platform-revenue-and-mrr-tracking": {
     capabilities: [
       "Shows ARR and MRR across the platform.",
       "Tracks churn rate.",
@@ -999,7 +999,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Is this visible to tenants?", "It is part of the Super Admin experience for platform operators."),
     ],
   },
-  "ip-blocker": {
+  "global-ip-blocker-and-threat-protection": {
     capabilities: [
       "Malicious IP ranges can be banned platform-wide.",
       "Brute-force login attempts are rate-limited.",
@@ -1027,7 +1027,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Who uses it?", "Super admins operating ODA7 as a platform."),
     ],
   },
-  "coupons": {
+  "coupons-and-discount-engine": {
     capabilities: [
       "Promotional coupon codes can be generated.",
       "Percentage discounts can be applied.",
@@ -1041,7 +1041,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Where are coupons managed?", "In the Super Admin layer."),
     ],
   },
-  "partner-referrals": {
+  "partner-referral-program": {
     capabilities: [
       "Affiliates are tracked across multiple tiers.",
       "Partner commissions are paid out.",
@@ -1055,7 +1055,7 @@ const DEEP: Record<string, Partial<Feature>> = {
       q("Do partners get their own portal?", "Yes, resellers get a partner portal."),
     ],
   },
-  "platform-broadcasts": {
+  "platform-wide-broadcasts": {
     capabilities: [
       "Urgent maintenance notices can be sent to tenants.",
       "Release notes can be published.",
@@ -1075,7 +1075,7 @@ const sales = mk(
   "sales-execution",
   [
     [
-      "lead-distribution",
+      "lead-ingestion-and-priority-queue-my-queue",
       "Lead ingestion & priority queue (My Queue)",
       "New leads are tagged, checked for duplicates and ranked into each rep's priority queue.",
       [
@@ -1099,11 +1099,11 @@ const sales = mk(
         ],
         benefits: ["Stops reps cherry-picking leads", "Gets reps to high-intent prospects quickly"],
         audience: ["SDRs", "Inside sales reps"],
-        relatedFeatures: ["predictive-lead-scoring", "integrated-dialer", "lead-management"],
+        relatedFeatures: ["predictive-lead-scoring", "integrated-dialer-and-local-presence-calling", "lead-management"],
       },
     ],
     [
-      "integrated-dialer",
+      "integrated-dialer-and-local-presence-calling",
       "Integrated dialer & local presence calling",
       "An in-browser WebRTC softphone with local presence caller ID, built into the lead workspace.",
       [
@@ -1120,11 +1120,11 @@ const sales = mk(
       {
         howItWorks: ["Open the next lead from My Queue", "Dial from the browser with a local number", "Work the call alongside script and lead context", "Log the outcome and move to the next dial"],
         audience: ["SDRs", "Account executives"],
-        relatedFeatures: ["lead-distribution", "dynamic-sales-scripts", "voicemail-drop", "call-history-recordings"],
+        relatedFeatures: ["lead-ingestion-and-priority-queue-my-queue", "dynamic-branching-sales-scripts", "one-click-voicemail-drop", "call-history-recordings"],
       },
     ],
     [
-      "dynamic-sales-scripts",
+      "dynamic-branching-sales-scripts",
       "Dynamic branching sales scripts",
       "Interactive call scripts that branch on the customer's answers and suggest prompts in real time.",
       [
@@ -1138,7 +1138,7 @@ const sales = mk(
         "Compliance disclosure guidance",
         "Adaptive qualification flows",
       ],
-      { audience: ["Junior reps", "SDRs"], relatedFeatures: ["objection-buster", "integrated-dialer"] },
+      { audience: ["Junior reps", "SDRs"], relatedFeatures: ["real-time-objection-buster", "integrated-dialer"] },
     ],
     [
       "automated-sequences",
@@ -1152,7 +1152,7 @@ const sales = mk(
       {
         problem: "The site describes high-intent leads going cold because manual follow-up is inconsistent.",
         integrations: ["whatsapp"],
-        relatedFeatures: ["whatsapp-business-messaging", "two-way-sms", "email-tracking", "unified-inbox"],
+        relatedFeatures: ["whatsapp-business-api-messaging", "two-way-sms-messaging", "email-tracking-and-threading", "unified-inbox"],
       },
     ],
     [
@@ -1167,11 +1167,11 @@ const sales = mk(
       {
         problem: "The site describes WhatsApp and calling outreach that is manual, unrecorded and disconnected from the CRM.",
         integrations: ["whatsapp"],
-        relatedFeatures: ["whatsapp-business-messaging", "two-way-sms", "email-tracking"],
+        relatedFeatures: ["whatsapp-business-api-messaging", "two-way-sms-messaging", "email-tracking"],
       },
     ],
     [
-      "quotes-and-proposals",
+      "quotes-cpq-proposals-and-e-signatures",
       "Quotes, CPQ proposals & e-signatures",
       "Build quotes from the product catalog, apply approved discounts and track client opens and signatures.",
       [
@@ -1182,7 +1182,7 @@ const sales = mk(
       { relatedFeatures: ["product-catalog", "company-hierarchy"] },
     ],
     [
-      "lead-management",
+      "lead-management-and-tagging",
       "Lead management & tagging",
       "Lead records with flexible filters, custom fields, pipeline stages and bulk actions.",
       [
@@ -1190,10 +1190,10 @@ const sales = mk(
         "Bulk actions and tags let teams act on many leads at once, and the site describes the lead's source, qualification context and owner as visible before the next action begins.",
       ],
       ["Filtering by several details at once", "Custom fields for extra details", "Custom pipeline and lifecycle stages", "Bulk actions and bulk tagging", "Visible source, qualification and ownership"],
-      { relatedFeatures: ["lead-distribution", "company-hierarchy"] },
+      { relatedFeatures: ["lead-ingestion-and-priority-queue-my-queue", "company-hierarchy"] },
     ],
     [
-      "call-history-recordings",
+      "call-history-and-recordings",
       "Call history & recordings",
       "Dual-channel call recordings with automatic transcription and searchable transcripts.",
       [
@@ -1201,7 +1201,7 @@ const sales = mk(
         "The site's product tour also shows recordings carrying AI sentiment context, and recording access is one of the events captured in ODA7's audit logs.",
       ],
       ["Dual-channel call recording", "Automatic speech-to-text transcription", "Searchable transcripts", "Call history per lead"],
-      { relatedFeatures: ["integrated-dialer", "post-call-summaries", "audit-logs"] },
+      { relatedFeatures: ["integrated-dialer-and-local-presence-calling", "ai-post-call-summarization", "audit-logs"] },
     ],
     [
       "product-catalog",
@@ -1215,7 +1215,7 @@ const sales = mk(
       { relatedFeatures: ["quotes-and-proposals"] },
     ],
     [
-      "company-hierarchy",
+      "companies-and-account-hierarchy",
       "Companies & account hierarchy",
       "Map contacts, decision-makers and buying committees under parent accounts.",
       [
@@ -1223,10 +1223,10 @@ const sales = mk(
         "Parent-subsidiary mapping and decision-maker org charts keep larger deals organized around the account rather than individual leads.",
       ],
       ["Multiple contacts per account", "Decision-maker and buying-committee mapping", "Parent-subsidiary account structure", "Decision-maker org charts"],
-      { relatedFeatures: ["lead-management", "quotes-and-proposals"] },
+      { relatedFeatures: ["lead-management-and-tagging", "quotes-and-proposals"] },
     ],
     [
-      "calendar-scheduler",
+      "calendar-and-meeting-scheduler",
       "Calendar & meeting scheduler",
       "Meeting booking links synced with Google Calendar and Outlook, with automatic reminders.",
       [
@@ -1245,7 +1245,7 @@ const sales = mk(
         "It also gives a real-time overview of the active queue and the live dialer alongside personal performance.",
       ],
       ["Calls made", "Pickup ratio", "Conversions", "Live commission earnings", "Active queue and dialer overview"],
-      { audience: ["Sales reps"], relatedFeatures: ["commission-engine", "lead-distribution"] },
+      { audience: ["Sales reps"], relatedFeatures: ["real-time-commission-engine", "lead-distribution"] },
     ],
   ],
   4,
@@ -1253,7 +1253,7 @@ const sales = mk(
 
 const omni = mk("omnichannel-communication", [
   [
-    "whatsapp-business-messaging",
+    "whatsapp-business-api-messaging",
     "WhatsApp Business API messaging",
     "Verified broadcasts, automated reminders and interactive buttons sent from the lead record.",
     [
@@ -1264,7 +1264,7 @@ const omni = mk("omnichannel-communication", [
     { integrations: ["whatsapp"], relatedFeatures: ["unified-inbox", "automated-sequences", "template-studio"] },
   ],
   [
-    "two-way-sms",
+    "two-way-sms-messaging",
     "Two-way SMS messaging",
     "Dedicated local business numbers for two-way SMS with keyword triggers and media.",
     [
@@ -1275,7 +1275,7 @@ const omni = mk("omnichannel-communication", [
     { relatedFeatures: ["unified-inbox", "automated-sequences"] },
   ],
   [
-    "email-tracking",
+    "email-tracking-and-threading",
     "Email tracking & threading",
     "Two-way email sync with open and click tracking, attachment-view tracking and bounce handling.",
     [
@@ -1286,7 +1286,7 @@ const omni = mk("omnichannel-communication", [
     { relatedFeatures: ["unified-inbox", "automated-sequences"] },
   ],
   [
-    "voicemail-drop",
+    "one-click-voicemail-drop",
     "One-click voicemail drop",
     "Drop a pre-recorded personalized voicemail when a machine answers and move on.",
     [
@@ -1294,10 +1294,10 @@ const omni = mk("omnichannel-communication", [
       "The rep then moves straight on to the next call; voicemail steps can also be part of automated sequences.",
     ],
     ["Pre-recorded personalized voicemails", "One-click drop on answering machines", "Immediate move to the next dial", "Voicemail steps in sequences"],
-    { relatedFeatures: ["integrated-dialer", "automated-sequences"] },
+    { relatedFeatures: ["integrated-dialer-and-local-presence-calling", "automated-sequences"] },
   ],
   [
-    "web-callbacks-ivr",
+    "web-callbacks-and-inbound-ivr",
     "Web callbacks & inbound IVR",
     "Website call requests are bridged to an owned agent queue.",
     [
@@ -1305,7 +1305,7 @@ const omni = mk("omnichannel-communication", [
       "The site describes a web-to-call bridge that dials an active agent and connects the prospect, keeping website enquiries, lead ownership and calling in one view.",
     ],
     ["Website callback requests", "Inbound IVR", "Web-to-call bridge to active agents", "Routing to an owned agent queue"],
-    { relatedFeatures: ["lead-distribution", "integrated-dialer"] },
+    { relatedFeatures: ["lead-ingestion-and-priority-queue-my-queue", "integrated-dialer"] },
   ],
 ]);
 
@@ -1319,10 +1319,10 @@ const ai = mk("ai-intelligence", [
       "The site presents it as AI-assisted analysis inside the workflow and notes that availability and data requirements are confirmed during scoping.",
     ],
     ["Plain-English questions about sales data", "Clear written answers", "Works on connected workspace data", "Part of revenue insights"],
-    { audience: ["Sales leaders", "Executives"], relatedFeatures: ["executive-dashboard", "conversion-telemetry"] },
+    { audience: ["Sales leaders", "Executives"], relatedFeatures: ["executive-revenue-dashboard", "conversion-telemetry"] },
   ],
   [
-    "objection-buster",
+    "real-time-objection-buster",
     "Real-time objection buster",
     "Listens to live calls and shows battlecards when price or competitor objections come up.",
     [
@@ -1332,7 +1332,7 @@ const ai = mk("ai-intelligence", [
     ["Live speech listening during calls", "Objection detection (price, timing, competitor, security)", "Battlecards on the active call view", "Automatic CRM notes after the call"],
     {
       howItWorks: ["ODA7 listens to the customer", "The objection is detected", "A suggested talk track is shown", "The CRM is updated without manual notes"],
-      relatedFeatures: ["dynamic-sales-scripts", "post-call-summaries"],
+      relatedFeatures: ["dynamic-branching-sales-scripts", "post-call-summaries"],
     },
   ],
   [
@@ -1347,7 +1347,7 @@ const ai = mk("ai-intelligence", [
     { relatedFeatures: ["lead-distribution"] },
   ],
   [
-    "post-call-summaries",
+    "ai-post-call-summarization",
     "AI post-call summarization",
     "Action items, the mood of the call and the prospect's main topics, shown after each call.",
     [
@@ -1355,10 +1355,10 @@ const ai = mk("ai-intelligence", [
       "Summaries can update deal stages so reps spend less time writing notes.",
     ],
     ["Action items", "Sentiment context", "Prospect themes", "Deal-stage sync"],
-    { relatedFeatures: ["call-history-recordings", "objection-buster"] },
+    { relatedFeatures: ["call-history-and-recordings", "objection-buster"] },
   ],
   [
-    "ai-recommendations",
+    "ai-sales-recommendations",
     "AI sales recommendations",
     "Suggested next steps for call times, pitch strategy and sequence steps.",
     [
@@ -1369,7 +1369,7 @@ const ai = mk("ai-intelligence", [
     { relatedFeatures: ["automated-sequences", "lead-distribution"] },
   ],
   [
-    "insight-alerts",
+    "automated-insight-alerts",
     "Automated insight alerts",
     "Early alerts on burnout risk, slowing deals and rising objection topics.",
     [
@@ -1379,11 +1379,11 @@ const ai = mk("ai-intelligence", [
     ["Spotting unusual activity", "Rep burnout risk alerts", "Alerts on slowing deals", "Alerts on rising objection topics"],
     {
       problem: "The site describes managers discovering dropped connection rates and fumbled objections days later in delayed spreadsheet reports.",
-      relatedFeatures: ["notification-routing", "manager-scorecard"],
+      relatedFeatures: ["notification-routing-rules", "manager-scorecard"],
     },
   ],
   [
-    "ai-copilot",
+    "ai-sales-assistant-copilot",
     "AI sales assistant copilot",
     "A personal AI assistant that drafts replies, follow-up emails and call briefings.",
     [
@@ -1391,7 +1391,7 @@ const ai = mk("ai-intelligence", [
       "The site positions it as assistance that stays visible to the agent inside the workflow.",
     ],
     ["Contextual reply drafts", "Follow-up email composition", "Drafts based on call transcripts", "Pre-call briefings"],
-    { relatedFeatures: ["post-call-summaries", "unified-inbox"] },
+    { relatedFeatures: ["ai-post-call-summarization", "unified-inbox"] },
   ],
 ]);
 
@@ -1399,7 +1399,7 @@ const people = mk(
   "people-operations",
   [
     [
-      "floor-queue-monitor",
+      "real-time-floor-queue-monitor",
       "Real-time floor queue monitor",
       "A live view of queue load, waiting leads, calls in progress and who is available.",
       [
@@ -1407,10 +1407,10 @@ const people = mk(
         "The site positions this against abandoned prospect calls during peak periods, letting supervisors balance agent availability as volume changes.",
       ],
       ["Queue load", "Waiting leads", "Calls in progress", "Floor availability", "Queue load balancing"],
-      { audience: ["Floor supervisors", "Call center managers"], relatedFeatures: ["agent-status-grid", "manager-scorecard"] },
+      { audience: ["Floor supervisors", "Call center managers"], relatedFeatures: ["agent-status-grid-and-live-coaching", "manager-scorecard"] },
     ],
     [
-      "agent-status-grid",
+      "agent-status-grid-and-live-coaching",
       "Agent status grid & live coaching",
       "See who is on a call, idle, in wrap-up or available, and listen in or whisper-coach live.",
       [
@@ -1418,10 +1418,10 @@ const people = mk(
         "From the grid, managers can silently listen to a call, whisper coaching into the rep's headset without the customer hearing, or barge in.",
       ],
       ["Live agent states (On Call, Idle, Wrap-up, Available)", "Silent listening", "Headset whisper coaching", "Barge-in", "Active dial visibility"],
-      { audience: ["Floor supervisors", "Sales managers"], relatedFeatures: ["floor-queue-monitor", "attendance"] },
+      { audience: ["Floor supervisors", "Sales managers"], relatedFeatures: ["real-time-floor-queue-monitor", "attendance"] },
     ],
     [
-      "team-hierarchy",
+      "departments-teams-and-pods",
       "Departments, teams & pods",
       "Structure the sales organization into squads, territories, pods and regional divisions.",
       [
@@ -1429,10 +1429,10 @@ const people = mk(
         "This structure shapes the work: each pod has its own queue routing, quota pacing and leaderboards, and each department has its own role-based access and phone line routing.",
       ],
       ["Squads and pods", "Territories and regional divisions", "Department-level access control", "Department telephony line routing", "Dedicated queue routing per team", "Agent profiles and calling skill rules"],
-      { relatedFeatures: ["roles-permissions", "leaderboards"] },
+      { relatedFeatures: ["roles-and-permissions", "leaderboards"] },
     ],
     [
-      "onboarding-workflows",
+      "automated-onboarding-workflows",
       "Automated onboarding workflows",
       "Standard onboarding paths with script certifications, scored mock calls and automatic access set-up.",
       [
@@ -1440,10 +1440,10 @@ const people = mk(
         "Paths include script certifications and scored mock calls, and access is granted automatically as onboarding progresses.",
       ],
       ["Standardized onboarding paths", "Script certifications", "Mock call scoring", "Automatic access set-up"],
-      { relatedFeatures: ["dynamic-sales-scripts", "team-hierarchy"] },
+      { relatedFeatures: ["dynamic-branching-sales-scripts", "team-hierarchy"] },
     ],
     [
-      "attendance",
+      "attendance-and-shift-clock-in",
       "Attendance & shift clock-in",
       "Geo-verified clock-in tied directly to agent shift availability and the live roster.",
       [
@@ -1453,11 +1453,11 @@ const people = mk(
       ["Geo-verified clock-in and clock-out", "Browser or biometric time tracking", "Live floor roster updated by shift punches", "Attendance tied to dialer readiness", "Feeds payroll"],
       {
         problem: "The site describes manual management of agents and shift rotations creating time-tracking disputes between sales and operations.",
-        relatedFeatures: ["leave-management", "payroll", "agent-status-grid"],
+        relatedFeatures: ["leave-and-pto-management", "automated-payroll-calculation", "agent-status-grid"],
       },
     ],
     [
-      "leave-management",
+      "leave-and-pto-management",
       "Leave & PTO management",
       "Self-serve leave requests with approval chains and automatic queue re-routing.",
       [
@@ -1465,10 +1465,10 @@ const people = mk(
         "When someone is on leave, ODA7 re-routes their lead queue to reps who are active on the floor.",
       ],
       ["Self-serve vacation and sick leave requests", "Approval chains", "Automatic lead queue re-routing", "Leave visible to operations"],
-      { relatedFeatures: ["attendance", "lead-distribution"] },
+      { relatedFeatures: ["attendance-and-shift-clock-in", "lead-distribution"] },
     ],
     [
-      "manager-scorecard",
+      "manager-live-scorecard",
       "Manager live scorecard",
       "Team-level tracking of pickup ratios, wrap-up time, conversion benchmarks and pacing.",
       [
@@ -1476,17 +1476,17 @@ const people = mk(
         "It compares pickup ratios, talk and wrap-up times, conversions and deal speed against benchmarks, so managers can coach while the day is still running.",
       ],
       ["Team pickup ratios", "Talk and wrap-up times", "Conversion benchmarks", "Deal-stage pacing"],
-      { audience: ["Sales managers"], relatedFeatures: ["agent-status-grid", "conversion-telemetry"] },
+      { audience: ["Sales managers"], relatedFeatures: ["agent-status-grid-and-live-coaching", "conversion-telemetry"] },
     ],
   ],
   1,
 );
 
 const comp = mk(
-  "compensation-payroll",
+  "compensation-and-payroll",
   [
     [
-      "commission-engine",
+      "real-time-commission-engine",
       "Real-time commission engine",
       "Commissions calculate and credit the rep's wallet the moment a deal is marked Closed-Won.",
       [
@@ -1497,11 +1497,11 @@ const comp = mk(
       {
         problem: "The site describes end-of-month spreadsheet reconciliation and disputes between sales and operations over commissions.",
         howItWorks: ["A deal is marked Closed-Won", "The commission tier is calculated", "The rep's wallet is credited", "The amount flows into payroll and payslips"],
-        relatedFeatures: ["quota-accelerators", "payroll", "payslips"],
+        relatedFeatures: ["quota-pacing-and-accelerator-rules", "automated-payroll-calculation", "payslips"],
       },
     ],
     [
-      "payroll",
+      "automated-payroll-calculation",
       "Automated payroll calculation",
       "Base salary, overtime, commissions, clawbacks and bonuses calculated with one-click exports.",
       [
@@ -1509,10 +1509,10 @@ const comp = mk(
         "Salary rules define base pay structures, and the payroll run can be exported in one click, removing manual spreadsheet work at month end.",
       ],
       ["Base salary", "Overtime", "Commissions", "Clawbacks", "Bonuses", "One-click payroll exports"],
-      { relatedFeatures: ["commission-engine", "payslips", "attendance"] },
+      { relatedFeatures: ["real-time-commission-engine", "digital-payslip-distribution", "attendance"] },
     ],
     [
-      "payslips",
+      "digital-payslip-distribution",
       "Digital payslip distribution",
       "Itemized, downloadable payslips for the whole floor, dispatched in one click.",
       [
@@ -1520,10 +1520,10 @@ const comp = mk(
         "Payslips break down base pay, taxes and earned bonuses so reps can see how their pay was reached.",
       ],
       ["Itemized PDF payslips", "Breakdown of base pay, taxes and bonuses", "Downloadable monthly payslips", "One-click batch dispatch"],
-      { relatedFeatures: ["payroll", "commission-engine"] },
+      { relatedFeatures: ["automated-payroll-calculation", "commission-engine"] },
     ],
     [
-      "incentives",
+      "incentives-and-spiffs",
       "Incentives & SPIFFs",
       "Launch flash bonuses, product SPIFFs and quota multipliers with start and end triggers.",
       [
@@ -1531,10 +1531,10 @@ const comp = mk(
         "Each incentive has custom start and end triggers, and bonuses are tied to real-time performance on the floor.",
       ],
       ["Weekend flash bonuses", "Product-specific SPIFFs", "Quota multipliers", "Custom start and end triggers"],
-      { relatedFeatures: ["commission-engine", "gamification"] },
+      { relatedFeatures: ["real-time-commission-engine", "gamification"] },
     ],
     [
-      "quota-accelerators",
+      "quota-pacing-and-accelerator-rules",
       "Quota pacing & accelerator rules",
       "Commission tiers step up automatically as reps pass quota thresholds.",
       [
@@ -1542,7 +1542,7 @@ const comp = mk(
         "Pacing against quota is visible, and salary models can combine base pay with tiered accelerators.",
       ],
       ["Automatic tier stepping", "Quota thresholds", "Quota pacing", "Base pay plus tiered accelerators"],
-      { relatedFeatures: ["commission-engine", "payroll"] },
+      { relatedFeatures: ["real-time-commission-engine", "payroll"] },
     ],
   ],
   2,
@@ -1552,7 +1552,7 @@ const engage = mk(
   "floor-engagement",
   [
     [
-      "gamification",
+      "sales-contests-and-battles",
       "Sales contests & battles",
       "Head-to-head rep duels, squad tournaments and multi-week revenue challenges.",
       [
@@ -1560,10 +1560,10 @@ const engage = mk(
         "Contests run with live countdown timers, and the site connects contests to compensation and incentives.",
       ],
       ["Rep vs rep duels", "Squad vs squad tournaments", "Multi-week revenue challenges", "Live countdown timers"],
-      { relatedFeatures: ["leaderboards", "achievement-badges", "incentives"] },
+      { relatedFeatures: ["live-sales-floor-leaderboards", "achievement-badges-and-milestones", "incentives"] },
     ],
     [
-      "leaderboards",
+      "live-sales-floor-leaderboards",
       "Live sales floor leaderboards",
       "TV-mode broadcast screens showing revenue leaders, call champions and deal celebrations.",
       [
@@ -1571,10 +1571,10 @@ const engage = mk(
         "Rankings are available daily, weekly and monthly.",
       ],
       ["TV-mode broadcast screens", "Revenue leader rankings", "Call champion rankings", "Deal celebrations", "Daily, weekly and monthly views"],
-      { relatedFeatures: ["gamification", "announcements-kudos"] },
+      { relatedFeatures: ["sales-contests-and-battles", "announcements-kudos"] },
     ],
     [
-      "achievement-badges",
+      "achievement-badges-and-milestones",
       "Achievement badges & milestones",
       "Collectible badges that recognize performance milestones automatically.",
       [
@@ -1582,10 +1582,10 @@ const engage = mk(
         "Badges are awarded automatically to recognize top performers and career milestones.",
       ],
       ["Collectible performance badges", "Revenue milestones", "Dialing milestones", "Automatic awarding"],
-      { relatedFeatures: ["leaderboards", "gamification"] },
+      { relatedFeatures: ["live-sales-floor-leaderboards", "gamification"] },
     ],
     [
-      "announcements-kudos",
+      "company-announcements-and-kudos",
       "Company announcements & kudos",
       "Broadcast shout-outs, win banners and policy updates to every agent workspace.",
       [
@@ -1600,7 +1600,7 @@ const engage = mk(
 
 const insights = mk("revenue-insights", [
   [
-    "call-heatmaps",
+    "hour-by-hour-pickup-heatmaps",
     "Hour-by-hour pickup heatmaps",
     "Find peak connection hours and the best pickup windows across geographic zones.",
     [
@@ -1608,10 +1608,10 @@ const insights = mk("revenue-insights", [
       "Interactive heatmaps by timezone, region and carrier show when prospects answer most, which the site links to better call timing and shift staffing.",
     ],
     ["Hour-by-hour pickup ratios", "Timezone and geographic zones", "Carrier-level views", "Best times to call", "Input to shift staffing"],
-    { relatedFeatures: ["conversion-telemetry", "floor-queue-monitor"] },
+    { relatedFeatures: ["pickup-ratio-and-conversion-tracking", "floor-queue-monitor"] },
   ],
   [
-    "executive-dashboard",
+    "executive-revenue-dashboard",
     "Executive revenue dashboard",
     "A leadership dashboard covering pipeline velocity, CAC, LTV and cohort retention.",
     [
@@ -1622,7 +1622,7 @@ const insights = mk("revenue-insights", [
     { audience: ["Executives", "Revenue leaders"], relatedFeatures: ["explain-my-numbers", "scheduled-bi-reports"] },
   ],
   [
-    "conversion-telemetry",
+    "pickup-ratio-and-conversion-tracking",
     "Pickup ratio & conversion tracking",
     "Drill into pickup and conversion by carrier, dialer pool, lead source, rep and queue.",
     [
@@ -1630,7 +1630,7 @@ const insights = mk("revenue-insights", [
       "Breakdowns cover carrier, dialer pool, area code, lead source, individual rep and queue, along with connection rates and how well each carrier route is working.",
     ],
     ["By carrier and dialer pool", "By area code", "By lead source", "By rep and queue", "Carrier route health"],
-    { relatedFeatures: ["call-heatmaps", "manager-scorecard"] },
+    { relatedFeatures: ["hour-by-hour-pickup-heatmaps", "manager-scorecard"] },
   ],
   [
     "scheduled-bi-reports",
@@ -1641,13 +1641,13 @@ const insights = mk("revenue-insights", [
       "Daily or weekly exports are produced as PDF or CSV and delivered to executive inboxes and Slack channels.",
     ],
     ["Daily and weekly schedules", "PDF exports", "CSV exports", "Email delivery", "Slack channel delivery"],
-    { integrations: ["slack"], relatedFeatures: ["executive-dashboard", "data-sync"] },
+    { integrations: ["slack"], relatedFeatures: ["executive-revenue-dashboard", "data-sync"] },
   ],
 ]);
 
 const admin = mk("platform-administration", [
   [
-    "roles-permissions",
+    "roles-and-permissions",
     "Roles & permissions",
     "Role-based access control (RBAC) with field-level permissions, hidden fields and queue assignments.",
     [
@@ -1669,7 +1669,7 @@ const admin = mk("platform-administration", [
     { relatedFeatures: ["roles-permissions"] },
   ],
   [
-    "template-studio",
+    "email-and-whatsapp-template-studio",
     "Email & WhatsApp template studio",
     "A visual template builder with merge tags, dynamic variables and localization.",
     [
@@ -1677,10 +1677,10 @@ const admin = mk("platform-administration", [
       "Templates use merge tags and dynamic variables, can be localized and can include interactive buttons and brand controls.",
     ],
     ["Rich-text and HTML builder", "Merge tags", "Dynamic variables", "Localization", "Interactive buttons"],
-    { integrations: ["whatsapp"], relatedFeatures: ["whatsapp-business-messaging", "automated-sequences"] },
+    { integrations: ["whatsapp"], relatedFeatures: ["whatsapp-business-api-messaging", "automated-sequences"] },
   ],
   [
-    "webhooks",
+    "custom-webhooks",
     "Custom webhooks",
     "Fire REST webhooks on events like lead created, call completed, deal closed or agent clocked out.",
     [
@@ -1688,10 +1688,10 @@ const admin = mk("platform-administration", [
       "Events named on the site include a lead being created, a call completing, a deal closing and an agent clocking out; inbound webhooks can also bring leads in.",
     ],
     ["Lead-created events", "Call-completed events", "Deal-closed events", "Agent clock-out events", "Inbound lead webhooks"],
-    { relatedFeatures: ["lead-distribution", "notification-routing"] },
+    { relatedFeatures: ["lead-ingestion-and-priority-queue-my-queue", "notification-routing"] },
   ],
   [
-    "notification-routing",
+    "notification-routing-rules",
     "Notification routing rules",
     "Route critical alerts via Slack, SMS, WhatsApp or browser push with escalation policies.",
     [
@@ -1699,10 +1699,10 @@ const admin = mk("platform-administration", [
       "Critical notifications can go to Slack, SMS, WhatsApp or browser push, with customizable escalation policies.",
     ],
     ["Slack alerts", "SMS alerts", "WhatsApp alerts", "Browser push", "Escalation policies"],
-    { integrations: ["slack", "whatsapp"], relatedFeatures: ["insight-alerts", "webhooks"] },
+    { integrations: ["slack", "whatsapp"], relatedFeatures: ["automated-insight-alerts", "webhooks"] },
   ],
   [
-    "data-sync",
+    "scheduled-data-sync",
     "Scheduled data sync",
     "Recurring background jobs that sync ODA7 data to Snowflake, BigQuery or Amazon S3.",
     [
@@ -1713,7 +1713,7 @@ const admin = mk("platform-administration", [
     { integrations: ["aws-s3"], relatedFeatures: ["scheduled-bi-reports"] },
   ],
   [
-    "billing-center",
+    "subscription-and-invoicing-center",
     "Subscription & invoicing center",
     "Self-serve billing, usage meters, add-on purchases and VAT invoices.",
     [
@@ -1724,7 +1724,7 @@ const admin = mk("platform-administration", [
     { relatedFeatures: ["saas-plans"] },
   ],
   [
-    "white-labeling",
+    "branding-and-white-labeling",
     "Branding & white-labeling",
     "Custom domain, logos, colour schemes and email headers for customer-facing interfaces.",
     [
@@ -1735,7 +1735,7 @@ const admin = mk("platform-administration", [
     { relatedFeatures: ["multi-tenant-organizations"] },
   ],
   [
-    "multi-tenant-organizations",
+    "multi-tenant-organization-management",
     "Multi-tenant organization management",
     "Set up, suspend, scale and manage separate customer organizations from one master console.",
     [
@@ -1743,10 +1743,10 @@ const admin = mk("platform-administration", [
       "Each tenant is isolated, with its own data and telephony, and the site describes provisioning a new client workspace in one click. New agencies can also create their own workspace through public sign-up.",
     ],
     ["Tenant provisioning", "Suspending tenants", "Scaling tenants", "Data and telephony isolation per tenant", "Seat, trunk and recording-storage entitlements"],
-    { audience: ["Platform operators", "Agencies"], relatedFeatures: ["saas-plans", "platform-revenue", "white-labeling"] },
+    { audience: ["Platform operators", "Agencies"], relatedFeatures: ["saas-plans-and-subscription-engine", "platform-revenue-and-mrr-tracking", "white-labeling"] },
   ],
   [
-    "saas-plans",
+    "saas-plans-and-subscription-engine",
     "SaaS plans & subscription engine",
     "Configure pricing tiers, seat limits, call-minute bundles and custom enterprise contracts.",
     [
@@ -1754,10 +1754,10 @@ const admin = mk("platform-administration", [
       "The plan engine configures tiered pricing plans, seat limits, call-minute bundles and custom enterprise contracts, with subscriptions and invoices managed alongside.",
     ],
     ["Tiered pricing plans", "Seat limits", "Call-minute bundles", "Custom enterprise contracts", "Subscriptions and invoices"],
-    { relatedFeatures: ["coupons", "billing-center", "multi-tenant-organizations"] },
+    { relatedFeatures: ["coupons-and-discount-engine", "subscription-and-invoicing-center", "multi-tenant-organizations"] },
   ],
   [
-    "platform-revenue",
+    "platform-revenue-and-mrr-tracking",
     "Platform revenue & MRR tracking",
     "Platform-wide ARR, MRR, churn, expansion revenue and tenant lifetime value.",
     [
@@ -1768,7 +1768,7 @@ const admin = mk("platform-administration", [
     { relatedFeatures: ["saas-plans"] },
   ],
   [
-    "ip-blocker",
+    "global-ip-blocker-and-threat-protection",
     "Global IP blocker & threat protection",
     "Ban malicious IP ranges, rate-limit brute-force attempts and enforce geo-fencing platform-wide.",
     [
@@ -1790,7 +1790,7 @@ const admin = mk("platform-administration", [
     { relatedFeatures: ["multi-tenant-organizations"] },
   ],
   [
-    "coupons",
+    "coupons-and-discount-engine",
     "Coupons & discount engine",
     "Create promo codes, percentage discounts, trial extensions and partner credits.",
     [
@@ -1798,10 +1798,10 @@ const admin = mk("platform-administration", [
       "The engine generates promotional coupon codes, percentage discounts, trial extensions and partner referral incentives.",
     ],
     ["Promotional coupon codes", "Percentage discounts", "Trial extensions", "Partner credits"],
-    { relatedFeatures: ["saas-plans", "partner-referrals"] },
+    { relatedFeatures: ["saas-plans-and-subscription-engine", "partner-referrals"] },
   ],
   [
-    "partner-referrals",
+    "partner-referral-program",
     "Partner referral program",
     "Multi-tier affiliate tracking, commission payouts and a partner portal for agency resellers.",
     [
@@ -1812,7 +1812,7 @@ const admin = mk("platform-administration", [
     { relatedFeatures: ["coupons"] },
   ],
   [
-    "platform-broadcasts",
+    "platform-wide-broadcasts",
     "Platform-wide broadcasts",
     "Send maintenance notices, release notes and banners to all or selected tenants.",
     [
@@ -1833,8 +1833,8 @@ export const oda7: Product = {
   longDescription:
     "ODA7 presents itself as one workspace for sales, people and business performance. Instead of separate CRM, dialer, spreadsheet, HR, payroll, inbox and analytics tools, it brings sales execution, people operations, compensation and payroll, floor engagement, revenue insights and platform administration together in one place, from the first lead to the commission payout.\n\nOn the sales side, incoming leads are tagged with their source, checked for duplicates and ranked into each rep's queue; reps call from an in-browser softphone with branching scripts beside the call, follow up over WhatsApp, SMS and email from one inbox, and send quotes from the same record. On the people side, managers see agent availability live, record geo-verified shift attendance and organise reps into pods and teams.\n\nWhen a deal is marked closed-won, ODA7 calculates the commission tier and the result feeds payroll and itemized payslips, while leaderboards, contests and heatmaps draw on the same activity. A separate Super Admin layer lets operators run ODA7 as a multi-tenant platform with isolated customer organizations, plans and subscriptions. ODA7 labels its website previews as illustrative and confirms scope, integrations and pricing in a proposal.",
   tagline: "One workspace for sales, people and business performance.",
-  category: "sales-marketing",
-  secondaryCategories: ["hr-people"],
+  category: "sales-and-marketing",
+  secondaryCategories: ["hr-and-people"],
   primaryUseCase: "Running sales floors from lead to commission payout",
   audience: ["Inside sales and SDR teams", "Call centers and BPOs", "Revenue and lead-gen agencies", "Sales managers and floor supervisors", "HR and operations teams", "Platform operators"],
   platforms: ["web"],
@@ -1885,7 +1885,7 @@ export const oda7: Product = {
       ],
     },
     {
-      slug: "compensation-payroll",
+      slug: "compensation-and-payroll",
       name: "Compensation & Payroll",
       description: "Commissions, payroll, payslips and incentives tied to closed deals.",
       body: [
@@ -1942,7 +1942,7 @@ export const oda7: Product = {
   ],
   productSolutions: [
     {
-      slug: "high-velocity-sdr-floor",
+      slug: "high-velocity-sdr-floors",
       name: "High-velocity SDR floors",
       summary: "Inside sales and outbound SDR pods that need to reach new leads fast and keep reps dialing.",
       body: ["For high-volume inside sales and outbound SDR pods, ODA7 aims to remove idle time between calls: inbound leads go straight into a prioritized queue, reps dial with local presence numbers, and branching talk tracks and objection battlecards support the conversation."],
@@ -1953,11 +1953,11 @@ export const oda7: Product = {
         "Closed-won deals credit the commission wallet instantly",
       ],
       audience: ["SDRs", "Inside sales teams"],
-      features: ["lead-distribution", "integrated-dialer", "dynamic-sales-scripts", "objection-buster", "commission-engine"],
+      features: ["lead-ingestion-and-priority-queue-my-queue", "integrated-dialer-and-local-presence-calling", "dynamic-branching-sales-scripts", "real-time-objection-buster", "commission-engine"],
       sources: S,
     },
     {
-      slug: "call-center-floor-supervision",
+      slug: "call-center-and-bpo-floor-supervision",
       name: "Call center & BPO floor supervision",
       summary: "Floor supervisors of large call centers monitoring queues, availability and live calls.",
       body: ["For call centers and BPO floors, ODA7 focuses on supervision: supervisors monitor concurrent queue volume live, balance agent availability states and coach reps during calls."],
@@ -1968,11 +1968,11 @@ export const oda7: Product = {
         "Hourly pickup heatmaps to plan shift staffing",
       ],
       audience: ["Floor supervisors", "Call center managers"],
-      features: ["floor-queue-monitor", "agent-status-grid", "call-heatmaps", "attendance"],
+      features: ["real-time-floor-queue-monitor", "agent-status-grid-and-live-coaching", "hour-by-hour-pickup-heatmaps", "attendance"],
       sources: S,
     },
     {
-      slug: "revenue-agencies",
+      slug: "multi-client-bpo-and-lead-gen-agencies",
       name: "Multi-client BPO & lead-gen agencies",
       summary: "Agencies running several client sales pods under one master login.",
       body: ["Revenue and lead-generation agencies can run several client sales pods from one master login in ODA7, with each client kept separate in data, telephony, talk tracks and billing."],
@@ -1984,11 +1984,11 @@ export const oda7: Product = {
         "Automated commission pay for agency reps",
       ],
       audience: ["BPO agencies", "Lead-gen agencies"],
-      features: ["multi-tenant-organizations", "dynamic-sales-scripts", "commission-engine", "team-hierarchy"],
+      features: ["multi-tenant-organization-management", "dynamic-branching-sales-scripts", "real-time-commission-engine", "team-hierarchy"],
       sources: S,
     },
     {
-      slug: "saas-platform-resellers",
+      slug: "white-label-saas-platform-resellers",
       name: "White-label SaaS platform resellers",
       summary: "Operators running ODA7 as their own multi-tenant SaaS platform.",
       body: ["ODA7 can be operated as an isolated multi-tenant SaaS platform: the operator provisions client workspaces, bills them on subscription and controls security across all tenants, under their own domain and brand."],
@@ -1999,7 +1999,7 @@ export const oda7: Product = {
         "IP protection across the whole platform",
       ],
       audience: ["Platform operators", "Resellers"],
-      features: ["multi-tenant-organizations", "white-labeling", "saas-plans", "ip-blocker", "partner-referrals"],
+      features: ["multi-tenant-organization-management", "branding-and-white-labeling", "saas-plans-and-subscription-engine", "global-ip-blocker-and-threat-protection", "partner-referrals"],
       sources: S,
     },
     ...roleSolutions,
@@ -2007,7 +2007,7 @@ export const oda7: Product = {
   productResources: oda7Resources,
   productIntegrations: [
     {
-      slug: "whatsapp-business-api",
+      slug: "oda7-whatsapp-business-api-integration",
       name: "WhatsApp Business API",
       summary: "Official WhatsApp Business messaging from the lead record.",
       connects: "ODA7 connects to the official WhatsApp Business API so reps message prospects from the lead record and conversations land in the unified inbox.",
@@ -2019,11 +2019,11 @@ export const oda7: Product = {
         "Route critical alerts to WhatsApp",
       ],
       registry: "whatsapp",
-      features: ["whatsapp-business-messaging", "unified-inbox", "automated-sequences", "template-studio", "notification-routing"],
+      features: ["whatsapp-business-api-messaging", "unified-inbox", "automated-sequences", "email-and-whatsapp-template-studio", "notification-routing"],
       sources: S,
     },
     {
-      slug: "slack",
+      slug: "oda7-slack-integration",
       name: "Slack",
       summary: "Scheduled reports and critical alerts delivered to Slack.",
       connects: "ODA7 sends scheduled BI reports and routed alerts to Slack channels.",
@@ -2040,7 +2040,7 @@ export const oda7: Product = {
   ],
   supportTopics: [
     {
-      slug: "planning-an-implementation",
+      slug: "planning-an-oda7-implementation",
       name: "Planning an ODA7 implementation",
       summary: "What to map before ODA7 scopes your rollout, integrations and pricing.",
       body: ["ODA7's own guidance is to start by mapping how your organization works today; ODA7 then confirms scope, integrations, rollout expectations and pricing in a proposal. No price or entitlement is implied until it is confirmed in that proposal."],
@@ -2052,7 +2052,7 @@ export const oda7: Product = {
         "Have ODA7 confirm scope, integrations, rollout and pricing",
       ],
       links: [{ label: "ODA7 website", href: SITE }],
-      features: ["lead-distribution", "integrated-dialer", "attendance", "roles-permissions"],
+      features: ["lead-ingestion-and-priority-queue-my-queue", "integrated-dialer-and-local-presence-calling", "attendance-and-shift-clock-in", "roles-permissions"],
       sources: S,
     },
     {
@@ -2067,11 +2067,11 @@ export const oda7: Product = {
         "Invite your team from Settings → Users",
       ],
       links: [{ label: "Create an account", href: "https://oda7.com/sign-up" }],
-      features: ["multi-tenant-organizations", "billing-center"],
+      features: ["multi-tenant-organization-management", "billing-center"],
       sources: ["https://oda7.com/sign-up"],
     },
     {
-      slug: "signing-in-and-access",
+      slug: "signing-in-and-getting-access",
       name: "Signing in and getting access",
       summary: "How agents get access, sign in and reset a password.",
       body: ["Agents don't sign themselves up: the workspace admin invites them. Users then sign in with their work email or Google."],

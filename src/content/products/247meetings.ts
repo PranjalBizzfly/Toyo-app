@@ -1,4 +1,4 @@
-import type { Product } from "@/content/types";
+import type { Feature, Product } from "@/content/types";
 
 /**
  * 247Meetings' public site is a sign-in screen plus Terms and Privacy pages.
@@ -6,6 +6,9 @@ import type { Product } from "@/content/types";
  * legal pages. No pricing, plans or customer numbers are published.
  */
 const SITE = "https://247meetings.com";
+
+/** A feature the site only names: its page explains the kind of feature and states what is confirmed. */
+const listed = (f: Omit<Feature, "evidence" | "hasPage">): Feature => ({ ...f, evidence: "listed", hasPage: true });
 
 export const meetings247: Product = {
   id: "247meetings",
@@ -18,30 +21,74 @@ export const meetings247: Product = {
     "Nova reads replies and classifies them, for example as interested, out of office, unsubscribe or bounce. People who ask to opt out stop getting messages. When a lead is ready, it books a discovery call on your Google Calendar and checks your free and busy times so slots do not clash.\n\n" +
     "You create a workspace, connect a mailbox, and Nova starts writing, sending, replying and booking, around the clock. Messages are drafted and replies classified with OpenAI's API, and 247Meetings states that its AI provider may not train on your data.",
   tagline: "Book discovery calls while you sleep.",
-  category: "sales-marketing",
+  category: "sales-and-marketing",
   primaryUseCase: "AI email outreach and meeting booking",
   platforms: ["web"],
-  status: "pending",
+  status: "live",
   verification: {
     relationship: "pending",
     publicSale: "pending",
     notes:
-      "Public site is only a sign-in screen and legal pages. No pricing or plans published. Terms mention fees only if a plan includes them.",
+      "Re-verified 2026-10-12 against the sign-in, register, forgot-password, Terms and Privacy pages. Other paths such as /pricing, /about, /docs, /help and /blog redirect to sign-in. No pricing, plans, trial terms, customers or in-app screens are published. Terms mention fees only if a plan includes them. Integrations beyond Google Gmail and Calendar, and OpenAI as AI sub-processor, are not stated.",
   },
   accent: "#8B83FF",
   websiteUrl: `${SITE}/`,
   appUrl: `${SITE}/register`,
   integrations: ["google-workspace"],
   featureCategories: [
-    { slug: "outreach", name: "Outreach", description: "Personalised email campaigns sent from your own Google account." },
+    {
+      slug: "outreach",
+      name: "Outreach",
+      description: "Personalised email campaigns sent from your own Google account.",
+      body: [
+        "Outreach is where Nova, the 247Meetings AI SDR, does most of its work. Campaigns go out from your own connected Gmail or Google Workspace mailbox, to the leads and contacts you import.",
+        "Messages are drafted with OpenAI's API, and only the outreach and reply messages you compose or approve are sent.",
+      ],
+    },
     { slug: "replies-booking", name: "Replies and booking", description: "Reply handling and meetings booked on your calendar." },
+    {
+      slug: "replies",
+      name: "Replies",
+      description: "Reading, classifying and routing the replies to your campaigns.",
+      body: [
+        "247Meetings reads the replies to your campaigns through read-only Gmail access. Each reply is classified, for example as interested, out of office, unsubscribe or bounce, so the app can route the response.",
+        "People who ask to opt out stop getting messages.",
+      ],
+    },
+    {
+      slug: "booking",
+      name: "Booking",
+      description: "Discovery calls booked on your Google Calendar.",
+      body: [
+        "247Meetings books discovery calls on your calendar, automatically. It creates and updates the meeting events that result from your outreach, and checks your free and busy times so proposed slots do not clash.",
+      ],
+    },
+    {
+      slug: "account-and-access",
+      name: "Account and access",
+      description: "Signing in, creating a workspace and controlling Google access.",
+      body: [
+        "You can sign in with Google or with a work email and password. A new account starts with a workspace, then a connected mailbox.",
+        "You stay in control of access: Google access can be revoked at any time, and the account can be deleted whenever you stop using the Service.",
+      ],
+    },
+    {
+      slug: "security-and-privacy",
+      name: "Security and privacy",
+      description: "How 247Meetings protects your data and your Google account.",
+      body: [
+        "247Meetings states that data is encrypted in transit and at rest, OAuth tokens are stored encrypted, and each workspace is isolated with row-level security.",
+        "Its use of Google data follows the Google API Services User Data Policy, including the Limited Use requirements, and its AI sub-processor may not train on your data.",
+      ],
+    },
   ],
   features: [
     {
-      slug: "email-outreach",
+      slug: "email-outreach-from-your-google-account",
       name: "Email outreach from your Google account",
       summary: "Personalised outreach sent from your own connected Gmail or Google Workspace mailbox.",
       category: "outreach",
+      hasPage: true,
       body: [
         "247Meetings runs email campaigns from your own connected Gmail or Google Workspace account. It sends the outreach and reply messages you compose or approve.",
         "You import your leads and contacts and set up campaigns and sequences. Messages are drafted with AI.",
@@ -61,7 +108,8 @@ export const meetings247: Product = {
       slug: "reply-classification",
       name: "Reply classification",
       summary: "Reads replies and sorts them, such as interested, out of office, unsubscribe or bounce.",
-      category: "replies-booking",
+      category: "replies",
+      hasPage: true,
       body: [
         "247Meetings reads replies to your campaigns and classifies them, for example as interested, out of office, unsubscribe or bounce. This routes each response and stops messages to people who ask to opt out.",
       ],
@@ -70,7 +118,7 @@ export const meetings247: Product = {
         "Classifies replies as interested, out of office, unsubscribe or bounce.",
         "Stops messaging people who ask to opt out.",
       ],
-      relatedFeatures: ["email-outreach", "meeting-booking"],
+      relatedFeatures: ["email-outreach-from-your-google-account", "meeting-booking"],
       sources: [`${SITE}/`, `${SITE}/privacy`],
       highlight: true,
     },
@@ -78,7 +126,8 @@ export const meetings247: Product = {
       slug: "meeting-booking",
       name: "Meeting booking",
       summary: "Books discovery calls on your Google Calendar without clashing with your schedule.",
-      category: "replies-booking",
+      category: "booking",
+      hasPage: true,
       body: [
         "247Meetings books discovery calls on your calendar. It creates and updates the booking events that come from your outreach.",
         "It reads your free and busy times, so proposed meeting slots do not conflict with your schedule.",
@@ -93,27 +142,581 @@ export const meetings247: Product = {
       sources: [`${SITE}/`, `${SITE}/privacy`],
       highlight: true,
     },
+    {
+      slug: "nova-your-ai-sdr",
+      name: "Nova, your AI SDR",
+      summary: "Nova is the 247Meetings AI SDR that writes, sends, replies and books meetings, 24/7.",
+      category: "outreach",
+      hasPage: true,
+      body: [
+        "Nova is the name 247Meetings gives its AI SDR (sales development rep). Once you create a workspace and connect a mailbox, Nova starts writing, sending, replying and booking, around the clock.",
+        "The aim, in the site's words, is to book discovery calls while you sleep.",
+      ],
+      howItWorks: [
+        "Create your workspace.",
+        "Connect a mailbox.",
+        "Nova starts writing, sending, replying and booking, 24/7.",
+      ],
+      capabilities: [
+        "Writes and sends personalised email outreach from your Google account.",
+        "Reads and classifies replies.",
+        "Books discovery calls on your calendar.",
+      ],
+      relatedFeatures: ["email-outreach-from-your-google-account", "reply-classification", "meeting-booking"],
+      sources: [`${SITE}/login`, `${SITE}/register`],
+    },
+    {
+      slug: "send-from-your-own-mailbox",
+      name: "Send from your own mailbox",
+      summary: "Outreach and replies are sent from your connected Gmail or Google Workspace mailbox.",
+      category: "outreach",
+      hasPage: true,
+      body: [
+        "247Meetings sends email on your behalf using the gmail.send scope. It sends the outbound outreach and reply messages you compose or approve from your connected mailbox, so they come from your own address.",
+      ],
+      capabilities: [
+        "Uses the gmail.send scope, granted only after you authorise it.",
+        "Sends outbound outreach from your connected mailbox.",
+        "Sends reply messages you compose or approve.",
+      ],
+      integrations: ["google-workspace"],
+      relatedFeatures: ["email-outreach-from-your-google-account", "connect-mailbox"],
+      sources: [`${SITE}/privacy`],
+    },
+    {
+      slug: "ai-message-drafting",
+      name: "AI message drafting",
+      summary: "Messages are drafted with OpenAI's API, without sending your Google credentials to the AI provider.",
+      category: "outreach",
+      hasPage: true,
+      body: [
+        "247Meetings uses OpenAI's API to draft messages. Content sent for processing may include message text and contact context.",
+        "Its AI sub-processor is not permitted to train on your data, and Google account credentials and OAuth tokens are never sent to any AI provider.",
+      ],
+      capabilities: [
+        "Drafts outreach messages with OpenAI's API.",
+        "May use message text and contact context for drafting.",
+        "Never sends Google credentials or OAuth tokens to the AI provider.",
+      ],
+      relatedFeatures: ["no-ai-training-on-your-data", "message-approval"],
+      sources: [`${SITE}/privacy`],
+    },
+    listed({
+      slug: "compose-or-approve-before-sending",
+      name: "Compose or approve before sending",
+      summary: "247Meetings sends the outreach and reply messages you compose or approve.",
+      category: "outreach",
+      body: [
+        "An approval step lets a person write a message, or check a drafted one, before it goes out. Sales teams use it to keep control of what reaches prospects in their name.",
+        "The 247Meetings Privacy Policy states that it sends the outbound outreach and reply messages you compose or approve from your connected mailbox.",
+      ],
+      capabilities: ["Sends outreach and reply messages you compose or approve."],
+      sources: [`${SITE}/privacy`],
+    }),
+    listed({
+      slug: "campaigns",
+      name: "Campaigns",
+      summary: "247Meetings runs email campaigns from your connected Google account.",
+      category: "outreach",
+      body: [
+        "An email campaign groups the messages sent to a set of leads for one goal. Teams use campaigns to organise outreach and see what came back from it.",
+        "The 247Meetings Terms describe it as helping you run email campaigns from your own connected Gmail or Google Workspace account, and its Privacy Policy lists campaign and message content among the data you provide.",
+      ],
+      capabilities: ["Runs email campaigns from your connected Gmail or Google Workspace account."],
+      sources: [`${SITE}/terms`, `${SITE}/privacy`],
+    }),
+    listed({
+      slug: "sequences",
+      name: "Sequences",
+      summary: "247Meetings lists sequences among the business data you configure in the Service.",
+      category: "outreach",
+      body: [
+        "A sequence is a planned series of outreach messages sent to a contact over time. Sales teams use sequences so follow-ups happen without manual tracking.",
+        "The 247Meetings Privacy Policy lists sequences among the business data you provide in the Service.",
+      ],
+      capabilities: ["Listed as business data you provide in the Service."],
+      sources: [`${SITE}/privacy`],
+    }),
+    listed({
+      slug: "lead-and-contact-import",
+      name: "Lead and contact import",
+      summary: "You import the leads and contacts that 247Meetings reaches out to.",
+      category: "outreach",
+      body: [
+        "Lead import brings an existing list of prospects into an outreach tool, so campaigns can start without typing contacts in one by one.",
+        "The 247Meetings Privacy Policy lists leads and contacts you import among the business data you provide, and its Terms state that you keep all rights to them.",
+      ],
+      capabilities: ["Leads and contacts can be imported.", "You retain all rights to the leads and contacts you provide."],
+      sources: [`${SITE}/privacy`, `${SITE}/terms`],
+    }),
+    {
+      slug: "reply-detection",
+      name: "Reply detection",
+      summary: "Reads your mailbox with read-only access to find replies to your campaigns.",
+      category: "replies",
+      hasPage: true,
+      body: [
+        "247Meetings uses the gmail.readonly scope to read your email messages and detect replies to your campaigns. Humans are not allowed to read your Gmail data, and the processing is automated to deliver the features you request.",
+      ],
+      capabilities: [
+        "Uses read-only Gmail access (gmail.readonly).",
+        "Detects replies to your campaigns.",
+        "Passes detected replies on for classification.",
+      ],
+      integrations: ["google-workspace"],
+      relatedFeatures: ["reply-classification", "response-routing"],
+      sources: [`${SITE}/privacy`],
+    },
+    listed({
+      slug: "response-routing",
+      name: "Response routing",
+      summary: "Classified replies let 247Meetings route each response.",
+      category: "replies",
+      body: [
+        "Response routing sends each reply down the right path, such as a follow-up, a booking or a stop, based on what the reply says.",
+        "The 247Meetings Privacy Policy states that replies are classified so the app can route responses.",
+      ],
+      capabilities: ["Routes responses based on reply classification."],
+      sources: [`${SITE}/privacy`],
+    }),
+    {
+      slug: "opt-out-and-unsubscribe-handling",
+      name: "Opt-out and unsubscribe handling",
+      summary: "People who ask to opt out stop getting messages.",
+      category: "replies",
+      hasPage: true,
+      body: [
+        "247Meetings classifies replies and honours opt-out and unsubscribe requests. When someone asks to opt out, the app stops messaging them.",
+        "Its Terms also make honouring opt-outs your responsibility as the sender, alongside anti-spam laws such as CAN-SPAM and GDPR.",
+      ],
+      capabilities: [
+        "Recognises unsubscribe replies through reply classification.",
+        "Stops messaging people who ask to opt out.",
+        "Supports your duty under the Terms to honour opt-out requests.",
+      ],
+      relatedFeatures: ["reply-classification"],
+      sources: [`${SITE}/privacy`, `${SITE}/terms`],
+    },
+    listed({
+      slug: "automatic-replies",
+      name: "Automatic replies",
+      summary: "Nova replies to prospects as well as writing and sending outreach.",
+      category: "replies",
+      body: [
+        "Automatic replies answer a prospect's response without someone writing each message by hand, so conversations keep moving outside working hours.",
+        "247Meetings says Nova starts writing, sending, replying and booking, and its Privacy Policy states that it sends the reply messages you compose or approve.",
+      ],
+      capabilities: ["Nova replies as part of its 24/7 work.", "Sends reply messages you compose or approve."],
+      sources: [`${SITE}/register`, `${SITE}/privacy`],
+    }),
+    {
+      slug: "calendar-event-management",
+      name: "Calendar event management",
+      summary: "Creates, updates and reads the meeting events that come from your outreach.",
+      category: "booking",
+      hasPage: true,
+      body: [
+        "247Meetings uses the calendar.events scope to view and manage calendar events. It creates, updates and reads the meeting and booking events that result from your outreach, and records the meetings you book.",
+      ],
+      capabilities: [
+        "Creates booking events on Google Calendar.",
+        "Updates meeting events that result from outreach.",
+        "Reads those events to record the meetings you book.",
+      ],
+      integrations: ["google-workspace"],
+      relatedFeatures: ["meeting-booking", "free-busy"],
+      sources: [`${SITE}/privacy`],
+    },
+    {
+      slug: "availability-check-free-busy",
+      name: "Availability check (free/busy)",
+      summary: "Reads free and busy times so proposed meeting slots do not clash with your schedule.",
+      category: "booking",
+      hasPage: true,
+      body: [
+        "247Meetings uses the calendar.freebusy scope to check calendar availability. It reads free and busy times, so the meeting slots it proposes do not conflict with your schedule.",
+      ],
+      capabilities: [
+        "Uses the calendar.freebusy scope.",
+        "Reads free and busy times on your calendar.",
+        "Keeps proposed slots clear of your existing schedule.",
+      ],
+      integrations: ["google-workspace"],
+      relatedFeatures: ["meeting-booking", "calendar-events"],
+      sources: [`${SITE}/privacy`],
+    },
+    listed({
+      slug: "booking-settings",
+      name: "Booking settings",
+      summary: "247Meetings lists booking settings you configure in the Service.",
+      category: "booking",
+      body: [
+        "Booking settings control how meetings get scheduled, so automated booking fits the way a team wants to meet.",
+        "The 247Meetings Privacy Policy lists booking settings you configure in the Service among the business data you provide.",
+      ],
+      capabilities: ["Booking settings are configured in the Service."],
+      sources: [`${SITE}/privacy`],
+    }),
+    {
+      slug: "sign-in-with-google",
+      name: "Sign in with Google",
+      summary: "Create and secure your account with your Google account.",
+      category: "account-and-access",
+      hasPage: true,
+      body: [
+        "247Meetings offers secure sign-in with your Google account. Google shares your name, email address and profile picture, which are used to create and secure your account and identify you when you sign in.",
+      ],
+      capabilities: [
+        "Signs you in with your Google account.",
+        "Uses your name, email address and profile picture from Google.",
+        "Offered on both the sign-in and create workspace screens.",
+      ],
+      relatedFeatures: ["email-and-password-sign-in", "workspaces"],
+      sources: [`${SITE}/login`, `${SITE}/register`, `${SITE}/privacy`],
+    },
+    {
+      slug: "email-and-password-sign-in",
+      name: "Email and password sign-in",
+      summary: "Sign in with your work email and a password.",
+      category: "account-and-access",
+      hasPage: true,
+      body: [
+        "As well as Google sign-in, 247Meetings lets you sign in with a work email and password. The Terms ask you to keep your credentials secure.",
+      ],
+      howItWorks: [
+        "Enter your work email.",
+        "Enter your password.",
+        "Select Sign in, or use Forgot password if you need a reset.",
+      ],
+      relatedFeatures: ["sign-in-with-google", "password-reset"],
+      sources: [`${SITE}/login`, `${SITE}/terms`],
+    },
+    {
+      slug: "password-reset",
+      name: "Password reset",
+      summary: "Request a reset link to your work email.",
+      category: "account-and-access",
+      hasPage: true,
+      body: [
+        "If you forget your password, the Forgot password link on the sign-in screen opens a reset page that sends a reset link to your work email.",
+      ],
+      howItWorks: [
+        "Select Forgot password on the sign-in screen.",
+        "Enter your work email.",
+        "Select Send reset link.",
+        "Use Back to sign in to return to the sign-in screen.",
+      ],
+      relatedFeatures: ["email-sign-in"],
+      sources: [`${SITE}/login`, `${SITE}/forgot-password`],
+    },
+    {
+      slug: "workspace-creation",
+      name: "Workspace creation",
+      summary: "Every 247Meetings account starts with a named workspace for your company.",
+      category: "account-and-access",
+      hasPage: true,
+      body: [
+        "Getting started with 247Meetings means creating a workspace, either with Google or with a short form. Each workspace's data is isolated with row-level security.",
+      ],
+      howItWorks: [
+        "Enter your company or workspace name.",
+        "Enter your name and work email.",
+        "Choose a password of at least 8 characters.",
+        "Select Create workspace.",
+      ],
+      relatedFeatures: ["mailbox-connection", "tenant-isolation"],
+      sources: [`${SITE}/register`, `${SITE}/privacy`],
+    },
+    {
+      slug: "mailbox-connection",
+      name: "Mailbox connection",
+      summary: "Connect your Gmail or Google Workspace mailbox so Nova can start work.",
+      category: "account-and-access",
+      hasPage: true,
+      body: [
+        "After creating a workspace, you connect a mailbox. 247Meetings works with your own Gmail or Google Workspace account, and asks only for the specific Google scopes it needs, after you explicitly authorise them.",
+      ],
+      capabilities: [
+        "Connects a Gmail or Google Workspace account.",
+        "Requests Gmail scopes to send email and read replies.",
+        "Requests Calendar scopes to manage events and check free and busy times.",
+      ],
+      integrations: ["google-workspace"],
+      relatedFeatures: ["workspace-creation", "revoke-access"],
+      sources: [`${SITE}/register`, `${SITE}/privacy`],
+    },
+    {
+      slug: "revoke-google-access",
+      name: "Revoke Google access",
+      summary: "Disconnect Google at any time, in the app or from your Google Account.",
+      category: "account-and-access",
+      hasPage: true,
+      body: [
+        "You can revoke 247Meetings' access to your Google account at any time. When you disconnect a Google account, the associated Google user data is deleted or de-identified within 30 days, except where law requires retention.",
+      ],
+      capabilities: [
+        "Revoke access in the 247Meetings app.",
+        "Revoke access from your Google Account at myaccount.google.com/permissions.",
+        "Associated Google user data is deleted or de-identified within 30 days.",
+      ],
+      relatedFeatures: ["mailbox-connection", "account-deletion"],
+      sources: [`${SITE}/privacy`],
+    },
+    {
+      slug: "account-deletion",
+      name: "Account deletion",
+      summary: "Stop using the Service and delete your account at any time.",
+      category: "account-and-access",
+      hasPage: true,
+      body: [
+        "Both the Terms and the Privacy Policy state that you can delete your 247Meetings account at any time.",
+      ],
+      capabilities: [
+        "Delete your account at any time.",
+        "Associated Google user data is deleted or de-identified within 30 days.",
+        "Data is kept longer only where law requires it.",
+      ],
+      relatedFeatures: ["revoke-google-access", "data-requests"],
+      sources: [`${SITE}/terms`, `${SITE}/privacy`],
+    },
+    {
+      slug: "data-access-and-export-requests",
+      name: "Data access and export requests",
+      summary: "Ask to access, correct, export or delete your personal data by email.",
+      category: "security-and-privacy",
+      hasPage: true,
+      body: [
+        "247Meetings handles personal data requests by email at privacy@247meetings.com. Depending on where you live, you may have extra rights under the GDPR, UK GDPR or CCPA/CPRA.",
+      ],
+      capabilities: [
+        "Request access to your personal data.",
+        "Request a correction or an export.",
+        "Request deletion of your personal data.",
+      ],
+      relatedFeatures: ["account-deletion"],
+      sources: [`${SITE}/privacy`],
+    },
+    listed({
+      slug: "tenant-isolation-row-level-security",
+      name: "Tenant isolation (row-level security)",
+      summary: "Each workspace's data is isolated with row-level security.",
+      category: "security-and-privacy",
+      body: [
+        "Tenant isolation keeps each customer's data separate in a shared system. Row-level security enforces this in the database, so one account's records are not visible to another.",
+        "The 247Meetings Privacy Policy lists tenant isolation (row-level security) among its security measures, together with access controls.",
+      ],
+      capabilities: ["Tenant isolation with row-level security.", "Access controls."],
+      sources: [`${SITE}/privacy`],
+    }),
+    {
+      slug: "encryption-and-encrypted-oauth-tokens",
+      name: "Encryption and encrypted OAuth tokens",
+      summary: "Data is encrypted in transit and at rest, and OAuth tokens are stored encrypted.",
+      category: "security-and-privacy",
+      hasPage: true,
+      body: [
+        "247Meetings states that it protects your data with encryption in transit and at rest. The OAuth tokens that connect your Google account are stored encrypted, and they are never sent to any AI provider.",
+      ],
+      capabilities: [
+        "Encryption in transit.",
+        "Encryption at rest.",
+        "OAuth tokens stored encrypted.",
+      ],
+      relatedFeatures: ["tenant-isolation-row-level-security", "no-ai-training"],
+      sources: [`${SITE}/privacy`],
+    },
+    {
+      slug: "no-ai-training-on-your-data",
+      name: "No AI training on your data",
+      summary: "247Meetings does not let its AI sub-processor train on your data.",
+      category: "security-and-privacy",
+      hasPage: true,
+      body: [
+        "247Meetings uses OpenAI as its AI sub-processor for drafting and reply classification. It states that it does not permit this sub-processor to use your data to train its models.",
+      ],
+      capabilities: [
+        "The AI sub-processor may not train on your data.",
+        "Google credentials and OAuth tokens are never sent to any AI provider.",
+        "AI processing is used to deliver the features you request.",
+      ],
+      relatedFeatures: ["ai-message-drafting", "limited-use"],
+      sources: [`${SITE}/privacy`],
+    },
+    {
+      slug: "google-limited-use-compliance",
+      name: "Google Limited Use compliance",
+      summary: "Use of Google data follows the Google API Services User Data Policy.",
+      category: "security-and-privacy",
+      hasPage: true,
+      body: [
+        "247Meetings states that its use and transfer of information from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.",
+      ],
+      capabilities: [
+        "Google user data is not used for advertising or sold.",
+        "Humans are not allowed to read your Gmail or Calendar data.",
+        "Google data is not transferred except for user-facing features, security, legal compliance or with your consent.",
+      ],
+      relatedFeatures: ["no-ai-training-on-your-data", "revoke-access"],
+      sources: [`${SITE}/privacy`],
+    },
+  ],
+  productIntegrations: [
+    {
+      slug: "247meetings-gmail-integration",
+      name: "Gmail",
+      summary: "Sends your outreach and reads replies through your own Gmail or Google Workspace mailbox.",
+      connects: "247Meetings connects to your Gmail or Google Workspace mailbox to send outreach and read replies.",
+      body: [
+        "Gmail is where 247Meetings sends from and listens for answers. It requests two Gmail scopes, only after you explicitly authorise them.",
+      ],
+      workflow: [
+        "gmail.send: sends the outbound outreach and reply messages you compose or approve.",
+        "gmail.readonly: reads messages to detect and classify replies to your campaigns.",
+        "Classified replies are routed, and people who opt out stop getting messages.",
+      ],
+      benefits: ["Outreach comes from your own address.", "Humans are not allowed to read your Gmail data."],
+      setup: [
+        "Connect a mailbox after creating your workspace.",
+        "Revoke access at any time in the app or at myaccount.google.com/permissions.",
+      ],
+      registry: "google-workspace",
+      features: ["send-from-your-own-mailbox", "reply-detection", "connect-mailbox"],
+      sources: [`${SITE}/privacy`, `${SITE}/register`],
+    },
+    {
+      slug: "247meetings-google-calendar-integration",
+      name: "Google Calendar",
+      summary: "Books discovery calls on your Google Calendar and checks your availability.",
+      connects: "247Meetings connects to Google Calendar to book meetings and read free and busy times.",
+      body: [
+        "Google Calendar is where the meetings from your outreach land. 247Meetings requests two Calendar scopes, only after you authorise them.",
+      ],
+      workflow: [
+        "calendar.events: creates, updates and reads the meeting and booking events that result from your outreach.",
+        "calendar.freebusy: reads free and busy times.",
+        "Proposed meeting slots are kept clear of your existing schedule.",
+      ],
+      benefits: ["Discovery calls are booked on your calendar automatically.", "No clashes with existing commitments."],
+      registry: "google-workspace",
+      features: ["meeting-booking", "calendar-event-management", "free-busy"],
+      sources: [`${SITE}/privacy`, `${SITE}/login`],
+    },
+    {
+      slug: "247meetings-openai-integration",
+      name: "OpenAI",
+      summary: "247Meetings uses OpenAI's API to draft messages and classify replies.",
+      connects: "247Meetings sends message text and contact context to OpenAI's API for drafting and reply classification.",
+      body: [
+        "OpenAI is the AI sub-processor behind 247Meetings. The Terms list OpenAI among the third-party services the Service integrates with.",
+      ],
+      workflow: [
+        "Drafts outreach messages.",
+        "Classifies replies, for example as interested, out of office, unsubscribe or bounce.",
+      ],
+      benefits: [
+        "OpenAI is not permitted to train its models on your data.",
+        "Google credentials and OAuth tokens are never sent to any AI provider.",
+      ],
+      features: ["ai-message-drafting", "reply-classification", "no-ai-training"],
+      sources: [`${SITE}/privacy`, `${SITE}/terms`],
+    },
+  ],
+  supportTopics: [
+    {
+      slug: "getting-started-with-247meetings",
+      name: "Getting started with 247Meetings",
+      summary: "Create a workspace, connect a mailbox and let Nova start booking meetings.",
+      body: [
+        "Setting up 247Meetings takes three moves: create your workspace, connect a mailbox, and Nova starts writing, sending, replying and booking, 24/7.",
+      ],
+      steps: [
+        "Open the Create workspace screen, or use Sign in with Google.",
+        "Enter your company or workspace name, your name, your work email and a password of at least 8 characters.",
+        "Select Create workspace.",
+        "Connect your Gmail or Google Workspace mailbox and authorise the Google scopes.",
+        "Import your leads and contacts.",
+      ],
+      keyPoints: ["You must be at least 16 to use the Service."],
+      features: ["workspace-creation", "mailbox-connection", "nova-ai-sdr"],
+      sources: [`${SITE}/register`, `${SITE}/privacy`, `${SITE}/terms`],
+    },
+    {
+      slug: "connecting-and-revoking-google-access",
+      name: "Connecting and revoking Google access",
+      summary: "Which Google scopes 247Meetings asks for, and how to take access back.",
+      body: [
+        "247Meetings asks only for the Google scopes needed for the features you use, and only after you explicitly authorise them. You can take that access back whenever you like.",
+      ],
+      keyPoints: [
+        "Sign in with Google: name, email address and profile picture.",
+        "gmail.send and gmail.readonly: sending outreach and reading replies.",
+        "calendar.events and calendar.freebusy: booking meetings and checking availability.",
+        "Data from a disconnected Google account is deleted or de-identified within 30 days, except where law requires retention.",
+      ],
+      steps: [
+        "Revoke access in the 247Meetings app.",
+        "Or revoke it from your Google Account at myaccount.google.com/permissions.",
+      ],
+      features: ["mailbox-connection", "revoke-google-access", "limited-use"],
+      sources: [`${SITE}/privacy`],
+    },
+    {
+      slug: "your-data-and-privacy-rights",
+      name: "Your data and privacy rights",
+      summary: "How to access, correct, export or delete your personal data.",
+      body: [
+        "Requests about your personal data go to privacy@247meetings.com. Questions about the Terms go to support@247meetings.com.",
+      ],
+      keyPoints: [
+        "You can access, correct, export or delete your personal data.",
+        "You may have extra rights under the GDPR, UK GDPR or CCPA/CPRA, depending on where you live.",
+        "247Meetings does not sell your personal information.",
+        "You can delete your account at any time.",
+      ],
+      features: ["data-access-and-export-requests", "account-deletion"],
+      sources: [`${SITE}/privacy`, `${SITE}/terms`],
+    },
+  ],
+  productResources: [
+    {
+      slug: "sending-compliant-outreach",
+      name: "Sending compliant outreach",
+      type: "guide",
+      summary: "What the 247Meetings Terms expect of you when you email prospects.",
+      body: [
+        "247Meetings sends email from your own mailbox, and its Terms make you solely responsible for the recipients you contact and the content you send. This guide sums up those rules.",
+      ],
+      keyPoints: [
+        "Have a lawful basis and the right consent to email each contact.",
+        "Do not send unsolicited bulk email or spam, and follow CAN-SPAM, GDPR and anti-spam laws in your recipients' jurisdictions.",
+        "Honour opt-out and unsubscribe requests.",
+        "Do not send content that is unlawful, deceptive, harassing or infringing.",
+        "Follow Google's and other third parties' terms of service.",
+      ],
+      features: ["opt-out-and-unsubscribe-handling", "reply-classification"],
+      sources: [`${SITE}/terms`],
+    },
   ],
   benefits: [
     { title: "Meetings booked around the clock", description: "Nova writes, sends, replies and books 24/7, so discovery calls land on your calendar while you sleep." },
-    { title: "Sent from your own mailbox", description: "Outreach goes out from your own Gmail or Google Workspace account, not a shared sender." },
+    { title: "Sent from your own mailbox", description: "Outreach goes out from your own connected Gmail or Google Workspace account." },
     { title: "Opt-outs honoured", description: "Replies are classified, and people who ask to unsubscribe stop getting messages." },
     { title: "No double bookings", description: "Free and busy times are checked so proposed slots fit your schedule." },
   ],
   howItWorks: [
-    { title: "Create your workspace", description: "Sign up with Google or a work email and name your company workspace." },
-    { title: "Connect a mailbox", description: "Connect your Gmail or Google Workspace account and Google Calendar." },
+    { title: "Create your workspace", description: "Sign up with Google or a work email, then give your company or workspace a name." },
+    { title: "Connect a mailbox", description: "Connect your Gmail or Google Workspace mailbox. Calendar access is used to book meetings." },
     { title: "Nova gets to work", description: "Nova writes and sends outreach, reads and classifies replies, and books meetings, 24/7." },
   ],
   useCases: [
     { title: "Booking discovery calls", description: "Run outreach to your leads and get discovery calls booked on your calendar automatically." },
-    { title: "Handling replies at scale", description: "Let replies be sorted as interested, out of office, unsubscribe or bounce, instead of reading each one." },
+    { title: "Handling replies", description: "Let replies be sorted as interested, out of office, unsubscribe or bounce, instead of reading each one." },
   ],
   security: [
     { title: "Encryption", description: "247Meetings states that data is encrypted in transit and at rest, and OAuth tokens are stored encrypted." },
     { title: "Tenant isolation", description: "Each workspace's data is isolated with row-level security." },
     { title: "Limited Google access", description: "Only the Gmail and Calendar scopes needed are requested, and Google data is not sold or used for advertising." },
-    { title: "No AI training on your data", description: "Its AI provider is not permitted to train on your data, and credentials and tokens are never sent to it." },
+    { title: "No AI training on your data", description: "Its AI sub-processor is not permitted to train on your data, and Google credentials and OAuth tokens are never sent to any AI provider." },
   ],
   faqs: [
     { question: "What is 247Meetings?", answer: "An AI sales assistant that runs email outreach from your Google account, classifies replies and books discovery calls on your calendar." },
@@ -121,7 +724,9 @@ export const meetings247: Product = {
     { question: "Which accounts does it work with?", answer: "Gmail or Google Workspace for email, and Google Calendar for meetings." },
     { question: "Does it use AI on my emails?", answer: "Yes. It uses OpenAI's API to draft messages and classify replies. 247Meetings states that the provider may not train on your data." },
     { question: "Can I remove my data?", answer: "You can disconnect Google or delete your account at any time. Associated Google data is deleted or de-identified within 30 days, except where law requires retention." },
+    { question: "Who is responsible for the emails sent?", answer: "You are. The Terms say you must have a lawful basis and consent to email each contact, honour opt-outs and follow anti-spam laws such as CAN-SPAM and GDPR." },
+    { question: "Is pricing published?", answer: "No. 247Meetings does not publish plans or prices on its site. You can contact support@247meetings.com." },
   ],
-  sources: [`${SITE}/`, `${SITE}/register`, `${SITE}/privacy`, `${SITE}/terms`],
-  lastVerified: "2026-10-10",
+  sources: [`${SITE}/`, `${SITE}/login`, `${SITE}/register`, `${SITE}/forgot-password`, `${SITE}/privacy`, `${SITE}/terms`],
+  lastVerified: "2026-10-12",
 };

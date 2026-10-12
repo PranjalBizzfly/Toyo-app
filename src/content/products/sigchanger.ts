@@ -35,6 +35,24 @@ const featureCategories: FeatureCategory[] = [
       "They are built on SigChanger's privacy-first design, in which each company keeps its own service account and is kept fully separate from every other company.",
     ],
   },
+  {
+    slug: "security-and-access",
+    name: "Security & Access",
+    description: "How SigChanger controls who can sign in, what each role can do and how companies are kept apart.",
+    body: [
+      "SigChanger's privacy policy and About page describe the controls that sit behind every admin action: roles checked by the system, short-lived sessions, request checks on sensitive endpoints and strict separation between companies.",
+      "These pages explain each control using only what SigChanger states about it.",
+    ],
+  },
+  {
+    slug: "plans-and-billing",
+    name: "Plans & Billing",
+    description: "The free plan, billing cycles, payment gateways and currencies SigChanger offers.",
+    body: [
+      "SigChanger publishes its prices openly and describes its pricing as transparent, with a real free tier. Paid plans can be billed monthly or yearly.",
+      "Customers pay in US dollars through Stripe or in Indian rupees through Razorpay, and SigChanger never sees or stores the full card number.",
+    ],
+  },
 ];
 
 const features: Feature[] = [
@@ -454,6 +472,295 @@ const features: Feature[] = [
     relatedFeatures: ["scheduled-rollouts", "one-click-deployment", "multi-company-support"],
     sources: [HOME, FEATURES],
   },
+  {
+    slug: "dynamic-fields-in-email-signatures",
+    name: "Dynamic fields in email signatures",
+    summary: "Fields in a template fill in each person's name, title, phone and photo automatically, with no HTML.",
+    category: "core-capabilities",
+    hasPage: true,
+    body: [
+      "Dynamic fields are placeholders in a signature template. Instead of typing one person's details, the admin places a field, and SigChanger fills it with each user's own name, title, phone number and photo.",
+      "The values come from the user details SigChanger syncs from Google Workspace, so one template serves the whole team and nobody has to write HTML.",
+    ],
+    howItWorks: [
+      "Place dynamic fields in a template in the drag-and-drop builder.",
+      "SigChanger fills each field from the user's synced directory record.",
+      "Each person's signature shows their own details when it is deployed.",
+    ],
+    capabilities: [
+      "Auto-populates name, title, phone and photo per user",
+      "Uses directory details: first and last name, email, job title, department and contact number",
+      "No HTML required",
+    ],
+    relatedFeatures: ["visual-signature-builder", "google-workspace-sync", "multi-template-support"],
+    sources: [HOME, FEATURES, PRIVACY],
+  },
+  {
+    slug: "scheduled-auto-sync-daily-or-hourly",
+    name: "Scheduled auto-sync (daily or hourly)",
+    summary: "Paid plans re-sync the Google Workspace directory automatically: daily on Basic, hourly on Professional and Enterprise.",
+    category: "automation-at-scale",
+    hasPage: true,
+    body: [
+      "Auto-sync is the scheduled re-read of the Google Workspace directory that keeps SigChanger's user list current without anyone starting it by hand.",
+      "How often it runs depends on the plan. The pricing page lists daily auto-sync on Basic and hourly auto-sync on Professional and Enterprise. The Free plan lists Google Workspace sync but no auto-sync.",
+    ],
+    capabilities: [
+      "Basic: auto-sync daily",
+      "Professional: auto-sync hourly",
+      "Enterprise: auto-sync hourly",
+      "Free: Google Workspace sync listed, without auto-sync",
+    ],
+    relatedFeatures: ["real-time-sync", "google-workspace-sync"],
+    sources: [PRICING],
+  },
+  {
+    slug: "company-profile-and-brand-settings",
+    name: "Company profile and brand settings",
+    summary: "Setup starts with a company profile holding your domain, brand colours and company details.",
+    category: "core-capabilities",
+    hasPage: true,
+    body: [
+      "The first step in SigChanger is registering your company. You sign up and create a company profile with your domain, brand colours and company details.",
+      "The account record holds the company name, the registered domain and the administrator's name, email and password, which is stored as a bcrypt hash.",
+    ],
+    howItWorks: [
+      "Sign up and create your company profile.",
+      "Add your domain, brand colours and company details.",
+      "Connect Google Workspace for that domain with a secure service account.",
+    ],
+    capabilities: [
+      "Stores the company name and registered domain",
+      "Holds brand colours for use in signatures",
+      "Administrator password stored as a bcrypt hash",
+    ],
+    relatedFeatures: ["brand-locked-templates", "google-workspace-sync", "multi-company-support"],
+    sources: [HOME, PRIVACY],
+  },
+  {
+    slug: "role-based-access-control",
+    name: "Role-based access control",
+    summary: "Super Admin, Company Admin and Employee roles, enforced at the API layer.",
+    category: "security-and-access",
+    hasPage: true,
+    body: [
+      "SigChanger gives every user one of three roles: Super Admin, Company Admin or Employee. What a user can do depends on that role.",
+      "The privacy policy states that these roles are enforced at the API layer, so the check happens in the system itself and not only in the screens people see.",
+    ],
+    capabilities: [
+      "Super Admin role",
+      "Company Admin role",
+      "Employee role",
+      "Role checks enforced at the API layer",
+    ],
+    relatedFeatures: ["secure-sign-in-and-sessions", "multi-tenant-isolation", "audit-logs"],
+    sources: [PRIVACY, ABOUT],
+  },
+  {
+    slug: "secure-sign-in-and-sessions",
+    name: "Secure sign-in and sessions",
+    summary: "Passwords stored as bcrypt hashes, short-lived JWT access tokens and rotating refresh tokens.",
+    category: "security-and-access",
+    hasPage: true,
+    body: [
+      "SigChanger protects administrator sign-in in two ways. Passwords are stored as bcrypt hashes, a scrambled form that can't be read back, and signed-in sessions use short-lived JWT access tokens paired with rotating refresh tokens.",
+      "Essential cookies and browser local storage keep you signed in and secure the session. SigChanger states it uses no third-party advertising or cross-site tracking cookies.",
+    ],
+    capabilities: [
+      "Passwords stored as bcrypt hashes",
+      "Short-lived JWT access tokens",
+      "Rotating refresh tokens",
+      "Essential cookies only; no advertising or cross-site tracking cookies",
+    ],
+    relatedFeatures: ["role-based-access-control", "rate-limiting-and-request-validation"],
+    sources: [PRIVACY, ABOUT],
+  },
+  {
+    slug: "rate-limiting-and-request-validation",
+    name: "Rate limiting and request validation",
+    summary: "Rate limiting, request validation and audit logging on every sensitive endpoint.",
+    category: "security-and-access",
+    hasPage: true,
+    body: [
+      "Sensitive endpoints in SigChanger, the parts of the system that change data or touch credentials, carry three protections: rate limiting, request validation and audit logging.",
+      "The terms of service back this up with fair-use rules that ban automated scraping, repeated brute-force sign-in attempts and getting around plan limits.",
+    ],
+    capabilities: [
+      "Rate limiting on every sensitive endpoint",
+      "Request validation on every endpoint",
+      "Audit logging on every sensitive endpoint",
+      "Regular dependency updates, security patches and access reviews",
+    ],
+    relatedFeatures: ["audit-logs", "secure-sign-in-and-sessions"],
+    sources: [PRIVACY, ABOUT, TERMS],
+  },
+  {
+    slug: "multi-tenant-isolation",
+    name: "Multi-tenant isolation",
+    summary: "Every company runs in complete isolation, with separate users, templates, signatures and credentials.",
+    category: "security-and-access",
+    hasPage: true,
+    body: [
+      "Many companies use SigChanger, and each one is a separate tenant. SigChanger calls this true multi-tenancy: every company operates in complete isolation.",
+      "Users, templates, signatures and encrypted credentials are kept apart per company, and the privacy policy states that no company can access another company's data.",
+    ],
+    capabilities: [
+      "Separate users per company",
+      "Separate templates and signatures per company",
+      "Separate encrypted credentials per company",
+      "No company can access another company's data",
+    ],
+    relatedFeatures: ["multi-company-support", "privacy-first-security", "role-based-access-control"],
+    sources: [ABOUT, PRIVACY],
+  },
+  {
+    slug: "soc-2-ready-controls",
+    name: "SOC 2-ready controls",
+    summary: "SigChanger lists SOC 2-ready controls alongside encryption at rest and TLS in transit.",
+    category: "security-and-access",
+    hasPage: true,
+    evidence: "listed",
+    body: [
+      "SOC 2 is a widely used framework for how service providers protect customer data. Software described as SOC 2-ready has controls designed with that framework in mind, which helps customers with their own security reviews.",
+      "SigChanger's features page lists SOC 2-ready controls together with AES-256-CBC encryption at rest and TLS in transit. The site does not state a completed SOC 2 audit or report.",
+    ],
+    capabilities: ["Listed on the features page with AES-256-CBC encryption at rest and TLS in transit."],
+    relatedFeatures: ["aes-256-cbc-encryption", "privacy-first-security"],
+    sources: [FEATURES],
+  },
+  {
+    slug: "free-plan",
+    name: "Free plan",
+    summary: "A free plan with no time limit and no credit card, for up to 10 users and 2 templates.",
+    category: "plans-and-billing",
+    hasPage: true,
+    body: [
+      "SigChanger's Free plan is not a trial. It has no time limit and needs no credit card to start.",
+      "It covers up to 10 users and up to 2 templates, and includes Google Workspace sync and the visual template builder. Teams that outgrow it can upgrade at any time, and existing data is never deleted because a limit was reached.",
+    ],
+    capabilities: [
+      "No time limit",
+      "No credit card required",
+      "Up to 10 users and up to 2 templates",
+      "Includes Google Workspace sync and the visual template builder",
+    ],
+    relatedFeatures: ["monthly-and-yearly-billing", "visual-signature-builder"],
+    sources: [HOME, PRICING, TERMS],
+  },
+  {
+    slug: "monthly-and-yearly-billing",
+    name: "Monthly and yearly billing",
+    summary: "Paid plans are billed in advance on a monthly or annual cycle chosen at purchase.",
+    category: "plans-and-billing",
+    hasPage: true,
+    body: [
+      "The pricing page has a Monthly and Yearly switch. Paid plans are billed in advance on the cycle you select when you buy, and renew on that cycle until you cancel.",
+      "Cancelling from the billing page takes effect at the end of the current period, and you keep access until then.",
+    ],
+    capabilities: [
+      "Monthly or annual billing cycle chosen at purchase",
+      "Billed in advance, renewing until cancelled",
+      "Cancel any time from the billing page; access continues to the end of the period",
+      "No refunds for partial periods except where the law requires",
+    ],
+    relatedFeatures: ["dual-payment-gateways-stripe-and-razorpay", "free-plan"],
+    sources: [PRICING, TERMS],
+  },
+  {
+    slug: "dual-payment-gateways-stripe-and-razorpay",
+    name: "Dual payment gateways (Stripe and Razorpay)",
+    summary: "Stripe handles USD billing and Razorpay handles INR billing.",
+    category: "plans-and-billing",
+    hasPage: true,
+    body: [
+      "SigChanger uses two payment processors. Stripe takes card, Google Pay and Apple Pay payments for USD billing. Razorpay takes UPI, net banking, card and wallet payments for INR billing.",
+      "SigChanger receives plan, payment method metadata and invoice history from these processors, but never sees or stores your full card number.",
+    ],
+    capabilities: [
+      "Stripe: card, Google Pay and Apple Pay for USD",
+      "Razorpay: UPI, net banking, card and wallets for INR",
+      "Full card numbers never seen or stored by SigChanger",
+      "Failed payments are retried and you are notified by email",
+    ],
+    relatedFeatures: ["multi-currency-pricing-usd-and-inr", "monthly-and-yearly-billing"],
+    sources: [ABOUT, PRIVACY, TERMS],
+  },
+  {
+    slug: "multi-currency-pricing-usd-and-inr",
+    name: "Multi-currency pricing (USD and INR)",
+    summary: "Paid plans are priced in US dollars and Indian rupees.",
+    category: "plans-and-billing",
+    hasPage: true,
+    body: [
+      "SigChanger lists multi-currency support, with prices in US dollars and Indian rupees.",
+      "Each paid plan on the pricing page shows both prices, and the currency decides which payment gateway handles the charge.",
+    ],
+    capabilities: [
+      "Basic: $29 or ₹999 per month",
+      "Professional: $79 or ₹2,999 per month",
+      "Enterprise: custom pricing",
+      "USD charged through Stripe; INR through Razorpay",
+    ],
+    relatedFeatures: ["dual-payment-gateways-stripe-and-razorpay", "free-plan"],
+    sources: [ABOUT, PRICING, PRIVACY],
+  },
+  {
+    slug: "worldwide-asset-delivery",
+    name: "Worldwide asset delivery",
+    summary: "Uploaded images, logos and assets are stored on Amazon Web Services and delivered fast worldwide.",
+    category: "full-control",
+    hasPage: true,
+    body: [
+      "Signatures show images such as logos, banners and headshots, and these have to load wherever the recipient is. SigChanger lists fast asset delivery worldwide as part of its global accessibility.",
+      "Uploaded images, logos and assets are kept in secure storage on Amazon Web Services (S3 and related services), one of the sub-processors named in its privacy policy.",
+    ],
+    capabilities: [
+      "Fast asset delivery worldwide",
+      "Uploaded images, logos and assets stored on Amazon Web Services (S3 and related)",
+      "Assets managed centrally in the Asset Library",
+    ],
+    relatedFeatures: ["asset-library", "global-deployment"],
+    sources: [ABOUT, PRIVACY],
+  },
+  {
+    slug: "transactional-and-security-emails",
+    name: "Transactional and security emails",
+    summary: "Welcome, billing, security alert and ticket notification emails, delivered through Brevo.",
+    category: "automation-at-scale",
+    hasPage: true,
+    body: [
+      "SigChanger sends transactional emails so admins hear about events on their account: welcome emails, billing emails, security alerts and support ticket notifications.",
+      "These emails are delivered through Brevo (SMTP), and failed payment retries are also announced by email.",
+    ],
+    capabilities: [
+      "Welcome emails",
+      "Billing emails, including failed payment notices",
+      "Security alerts",
+      "Ticket notifications",
+      "Delivered through Brevo (SMTP)",
+    ],
+    relatedFeatures: ["smart-notifications", "support-tickets"],
+    sources: [PRIVACY, TERMS],
+  },
+  {
+    slug: "support-tickets",
+    name: "Support tickets",
+    summary: "Contact support with messages, screenshots and attachments, and get ticket notifications by email.",
+    category: "full-control",
+    hasPage: true,
+    body: [
+      "When you contact SigChanger support, the information you send becomes support data: ticket messages, screenshots and attachments.",
+      "Ticket updates arrive as notification emails, technical support is one of the subjects on the Contact Us form, and Priority support is included on Professional and Enterprise.",
+    ],
+    capabilities: [
+      "Ticket messages, screenshots and attachments",
+      "Email notifications for ticket updates",
+      "Technical support subject on the Contact Us form",
+      "Priority support on Professional and Enterprise",
+    ],
+    relatedFeatures: ["transactional-and-security-emails"],
+    sources: [PRIVACY, PRICING, "https://sigchanger.com/contact-us"],
+  },
 ];
 
 export const sigchanger: Product = {
@@ -465,7 +772,7 @@ export const sigchanger: Product = {
   longDescription:
     "SigChanger connects to Google Workspace, imports your users, and lets admins design brand-locked signature templates in a visual builder. Signatures are assigned by group, scheduled for campaigns or rebrands, and deployed to every mailbox in one step, with audit logs and multi-company support for larger organisations.\n\nIt is built only for Gmail in Google Workspace. Each company connects its own Google Cloud service account; SigChanger reads the directory fields a signature needs (name, email, job title, department and phone) and sets each user's Gmail signature from its own servers, so employees don't copy or install anything.\n\nOnce set up it keeps running in the background: new hires, role changes and departures carry through from the directory, a template edit updates everyone who uses it, and alerts flag failed deployments, sync issues and approaching plan limits. A Free plan with no time limit covers up to 10 users and 2 templates; paid plans add users, templates and automatic sync.",
   tagline: "Turn Gmail Into Brand Ambassadors",
-  category: "operations-it",
+  category: "operations-and-it",
   subcategory: "it-administration",
   primaryUseCase: "Centrally managed Gmail signatures",
   audience: ["Google Workspace admins", "IT teams", "Brand & marketing teams"],
@@ -480,7 +787,7 @@ export const sigchanger: Product = {
   features,
   productIntegrations: [
     {
-      slug: "google-workspace",
+      slug: "sigchanger-google-workspace-integration",
       name: "Google Workspace",
       summary: "SigChanger works through your own Google Cloud service account. It reads your Workspace directory and writes Gmail signatures for your domain.",
       connects:
@@ -517,7 +824,7 @@ export const sigchanger: Product = {
   ],
   productSolutions: [
     {
-      slug: "consistent-company-wide-branding",
+      slug: "consistent-company-wide-email-branding",
       name: "Consistent company-wide email branding",
       summary: "Keep every Gmail signature in the organisation accurate, consistent and on-brand from one place.",
       problem:
@@ -537,7 +844,7 @@ export const sigchanger: Product = {
       sources: [ABOUT, HOME, FEATURES],
     },
     {
-      slug: "signature-management-for-it-teams",
+      slug: "signature-administration-for-it-teams",
       name: "Signature administration for IT teams",
       summary: "Remove the manual work of setting up and fixing employee signatures across Google Workspace.",
       problem:
@@ -557,10 +864,71 @@ export const sigchanger: Product = {
       features: ["google-workspace-sync", "multi-template-support", "one-click-deployment", "admin-dashboard", "smart-notifications", "audit-logs"],
       sources: [ABOUT, FEATURES, HOME],
     },
+    {
+      slug: "rebrands-and-campaign-rollouts",
+      name: "Rebrands and campaign rollouts",
+      summary: "Put a new brand or a campaign into every signature on a planned date.",
+      problem:
+        "A rebrand or campaign has to reach every mailbox on the same day. Changing signatures one person at a time means some people show the old brand long after launch.",
+      body: [
+        "SigChanger lets admins assign templates to teams, departments or individual users and schedule the rollout for a specific date, which its site calls perfect for rebrands and campaigns.",
+      ],
+      workflow: [
+        "Build the new or campaign template in the visual builder.",
+        "Update logos and banners once in the Asset Library.",
+        "Assign the template to teams, departments or individual users.",
+        "Schedule the rollout for a specific date and time, timed across time zones if needed.",
+        "SigChanger deploys through the Gmail API with no action from employees.",
+      ],
+      audience: ["Brand and marketing teams", "IT teams"],
+      features: ["scheduled-rollouts", "global-deployment", "asset-library", "brand-locked-templates"],
+      sources: [HOME, FEATURES],
+    },
+    {
+      slug: "onboarding-and-offboarding-signatures",
+      name: "Onboarding and offboarding signatures",
+      summary: "New hires get a signature on day one, and departures are handled automatically.",
+      problem:
+        "Without automation, new starters send emails with no signature or a copied one, and leavers stay on manual lists.",
+      body: [
+        "SigChanger imports every employee from Google Workspace. New hires are added on day one, role changes carry through, and departures are handled automatically.",
+      ],
+      workflow: [
+        "Connect Google Workspace with your own service account.",
+        "SigChanger imports the full user directory.",
+        "New hires are picked up and given the template for their group.",
+        "Title and department changes update the details in their signature.",
+        "People who leave are handled without editing a user list.",
+      ],
+      benefits: ["No manual user lists", "Accurate signatures from the first day"],
+      audience: ["IT teams", "Google Workspace admins"],
+      features: ["google-workspace-sync", "real-time-sync", "group-rules", "dynamic-fields"],
+      sources: [HOME, FEATURES],
+    },
+  ],
+  productResources: [
+    {
+      slug: "sub-processors-and-third-party-services",
+      name: "Sub-processors and third-party services",
+      type: "documentation",
+      summary: "The five third-party services SigChanger names in its privacy policy, and what each one does.",
+      body: [
+        "Section 7 of SigChanger's privacy policy names a small number of sub-processors that help deliver the service. SigChanger states that it does not sell, rent or trade personal data or use it for third-party advertising.",
+      ],
+      keyPoints: [
+        "Google Workspace APIs: user directory sync and Gmail signature deployment.",
+        "Stripe: card, Google Pay and Apple Pay processing for USD billing.",
+        "Razorpay: UPI, net banking, card and wallet processing for INR billing.",
+        "Amazon Web Services (S3 and related): secure storage of uploaded images, logos and assets.",
+        "Brevo (SMTP): delivery of transactional and notification emails.",
+      ],
+      features: ["dual-payment-gateways-stripe-and-razorpay", "worldwide-asset-delivery", "transactional-and-security-emails"],
+      sources: [PRIVACY],
+    },
   ],
   supportTopics: [
     {
-      slug: "getting-started",
+      slug: "getting-started-with-sigchanger",
       name: "Getting started with SigChanger",
       summary: "How to go from registering your company to deploying signatures for the first time.",
       body: [
@@ -584,7 +952,7 @@ export const sigchanger: Product = {
       sources: [HOME, PRICING],
     },
     {
-      slug: "revoking-workspace-access",
+      slug: "revoking-google-workspace-access",
       name: "Revoking Google Workspace access",
       summary: "What happens when you disconnect Google Workspace or rotate your service-account key.",
       body: [
@@ -600,7 +968,7 @@ export const sigchanger: Product = {
       sources: [PRIVACY, TERMS],
     },
     {
-      slug: "plan-limits",
+      slug: "plan-limits-and-upgrades",
       name: "Plan limits and upgrades",
       summary: "How user and template limits work, and what happens when you reach one.",
       body: [
@@ -617,7 +985,7 @@ export const sigchanger: Product = {
       sources: [HOME, TERMS, PRICING],
     },
     {
-      slug: "billing-and-cancellation",
+      slug: "billing-cancellation-and-failed-payments",
       name: "Billing, cancellation and failed payments",
       summary: "How paid plans are billed and renewed, how to cancel, and what happens if a payment fails.",
       body: [
@@ -632,7 +1000,7 @@ export const sigchanger: Product = {
       sources: [TERMS, PRIVACY, ABOUT],
     },
     {
-      slug: "data-retention-and-deletion",
+      slug: "data-retention-and-account-deletion",
       name: "Data retention and account deletion",
       summary: "How long SigChanger keeps your data and how to exercise your data rights.",
       body: [
@@ -648,7 +1016,7 @@ export const sigchanger: Product = {
       sources: [PRIVACY, TERMS],
     },
     {
-      slug: "contacting-support",
+      slug: "contacting-sigchanger",
       name: "Contacting SigChanger",
       summary: "How to reach the SigChanger team about features, setup, billing or enterprise plans.",
       body: [
@@ -662,6 +1030,59 @@ export const sigchanger: Product = {
       ],
       links: [{ label: "SigChanger Contact Us", href: "https://sigchanger.com/contact-us" }],
       sources: ["https://sigchanger.com/contact-us", PRICING],
+    },
+    {
+      slug: "acceptable-use",
+      name: "Acceptable use",
+      summary: "What SigChanger's terms do not allow, and what happens if an account breaks them.",
+      body: [
+        "Sections 6 and 7 of the terms of service set out fair use and acceptable use. SigChanger may investigate and suspend or terminate accounts that break these rules, with or without notice depending on severity.",
+      ],
+      keyPoints: [
+        "No spam, chain letters or unsolicited marketing.",
+        "No signatures with unlawful, misleading, defamatory, infringing or harmful content.",
+        "No malware, viruses or other malicious code.",
+        "No attempts to gain unauthorised access to the service, other customers' data or the infrastructure.",
+        "No reselling, sublicensing or white-labelling without written consent.",
+        "No reverse engineering, decompiling or copying the service, except where the law prohibits that restriction.",
+        "Fair use: no unreasonable load, automated scraping, brute-force sign-in attempts or getting around plan limits.",
+      ],
+      sources: [TERMS],
+    },
+    {
+      slug: "service-availability-and-rendering",
+      name: "Service availability and rendering",
+      summary: "SigChanger's uptime target, maintenance notices and how signatures display across email apps.",
+      body: [
+        "Sections 10 and 11 of the terms cover availability. SigChanger targets 99.9% monthly uptime but does not guarantee the service will be uninterrupted or error-free.",
+      ],
+      keyPoints: [
+        "Target of 99.9% monthly uptime.",
+        "Planned maintenance is announced in advance where practical.",
+        "Downtime caused by Google Workspace API outages, internet provider issues or force majeure is outside SigChanger's responsibility.",
+        "Signatures may not display identically in every email client, device or Gmail mobile version, because that depends on third-party systems.",
+      ],
+      sources: [TERMS],
+    },
+    {
+      slug: "privacy-rights-requests",
+      name: "Privacy rights requests",
+      summary: "How to access, correct, export or delete your personal data, and how SigChanger responds.",
+      body: [
+        "Depending on where you live, you may have rights over the personal data SigChanger holds about you. You can use them by signing in to your account or through the Contact Us page.",
+      ],
+      steps: [
+        "Sign in to your account, or open the Contact Us page.",
+        "Ask to access, correct, export or delete your personal data.",
+        "SigChanger responds to verified requests within 30 days.",
+      ],
+      keyPoints: [
+        "Data may be processed in other regions, protected by safeguards such as standard contractual clauses.",
+        "The service is not directed at children under 16; data from a child is deleted on request.",
+        "Material changes to the privacy policy are emailed to account administrators.",
+      ],
+      links: [{ label: "SigChanger Contact Us", href: "https://sigchanger.com/contact-us" }],
+      sources: [PRIVACY],
     },
   ],
   benefits: [

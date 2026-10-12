@@ -1,4 +1,5 @@
 import type { Product } from "@/content/types";
+import { productGuides } from "./guides";
 import { cardizo } from "./cardizo";
 import { fleetras, meetingmind } from "./drafts";
 import { fantom } from "./fantom";
@@ -15,8 +16,7 @@ import { zorfly } from "./zorfly";
 import { zuzu } from "./zuzu";
 import { snaaps } from "./growbizz";
 import { myspeechmaker } from "./speechwright";
-import { xlInfraChannelPartnerPortal } from "./1xl-infra-channel-partner-portal";
-import { rentwithzealPartnerPortal } from "./zeal-partner-program";
+import { channelPartnerPortal } from "./channel-partner-portal";
 import { sopgalaxy } from "./sopgalaxy";
 import { theprojectchecker } from "./theprojectchecker";
 import { warwi } from "./warwi";
@@ -33,9 +33,9 @@ import { socialmagix } from "./social-magix";
  * and add it here. Routes, menus, cards, sitemap and internal links follow.
  *
  * Drafts (preview only, not indexed) are PENDING VERIFICATION, not excluded:
- * Fleetras, MeetingMind (public sale), TaskMagic.
+ * FINZOLA (too little published information).
  */
-export const products: Product[] = [
+const registry: Product[] = [
   cardizo,
   getbenj,
   sibu,
@@ -53,8 +53,7 @@ export const products: Product[] = [
   taskmagic,
   snaaps,
   myspeechmaker,
-  xlInfraChannelPartnerPortal,
-  rentwithzealPartnerPortal,
+  channelPartnerPortal,
   sopgalaxy,
   theprojectchecker,
   warwi,
@@ -63,3 +62,8 @@ export const products: Product[] = [
   finzola,
   socialmagix,
 ];
+
+/** Each product with its ToyoApps guides appended to its resources (see ./guides). */
+export const products: Product[] = registry.map((p) =>
+  productGuides[p.slug]?.length ? { ...p, productResources: [...(p.productResources ?? []), ...productGuides[p.slug]] } : p,
+);

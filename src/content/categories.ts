@@ -14,7 +14,7 @@ import type { Category } from "./types";
  */
 export const categories: Category[] = [
   {
-    slug: "sales-marketing",
+    slug: "sales-and-marketing",
     name: "Sales & Marketing",
     tagline: "Capture contacts, run sales floors, plan campaigns and organise creative assets",
     description:
@@ -51,7 +51,7 @@ export const categories: Category[] = [
     ],
   },
   {
-    slug: "hr-people",
+    slug: "hr-and-people",
     name: "HR & People",
     tagline: "HR and payroll, workday insight and daily skills practice",
     description:
@@ -83,7 +83,7 @@ export const categories: Category[] = [
     ],
   },
   {
-    slug: "operations-it",
+    slug: "operations-and-it",
     name: "Operations & IT",
     tagline: "Office requests, Gmail signatures and company SIMs, each under control",
     description:
@@ -116,7 +116,7 @@ export const categories: Category[] = [
     ],
   },
   {
-    slug: "finance-compliance",
+    slug: "finance-and-compliance",
     name: "Finance & Compliance",
     tagline: "Every client's statutory deadlines, filings and documents in one system",
     description:
@@ -127,7 +127,7 @@ export const categories: Category[] = [
     subcategories: [{ slug: "practice-management", name: "Practice management & compliance" }],
   },
   {
-    slug: "insights-research",
+    slug: "insights-and-research",
     name: "Insights & Research",
     tagline: "Market sizing, marketing plans and activity reports you can defend",
     description:

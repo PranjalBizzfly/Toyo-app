@@ -118,7 +118,7 @@ const featureCategories: FeatureCategory[] = [
     ],
   },
   {
-    slug: "platform",
+    slug: "platform-and-self-service",
     name: "Platform & Self-Service",
     description: "Self-service, the mobile app, analytics, configuration and multi-entity structure.",
     body: [
@@ -135,7 +135,7 @@ const featureCategories: FeatureCategory[] = [
 const features: Feature[] = [
   /* ---------------------------- People ---------------------------- */
   {
-    slug: "employee-records",
+    slug: "employee-records-and-directory",
     name: "Employee Records & Directory",
     summary: "One versioned record per employee, with an open directory and a protected record behind it.",
     category: "people",
@@ -233,7 +233,7 @@ const features: Feature[] = [
           "The documents every new hire must submit, your appointment letter template and signatory, the standard asset kit per role, and the welcome steps for each department.",
       },
     ],
-    relatedFeatures: ["documents", "assets", "employee-records", "confirmations-transfers-and-promotions"],
+    relatedFeatures: ["documents", "assets", "employee-records-and-directory", "confirmations-transfers-and-promotions"],
     sources: [SRC.fOnboarding, SRC.sLifecycle],
   },
   {
@@ -355,7 +355,7 @@ const features: Feature[] = [
     faqs: [
       { question: "Who decides the probation length and criteria?", answer: "The employer. HRMagix holds the date and the outcome; the probation period, assessment and extension rules are written into your own policy." },
     ],
-    relatedFeatures: ["employee-records", "onboarding", "exit-and-full-and-final-settlement"],
+    relatedFeatures: ["employee-records-and-directory", "onboarding", "exit-and-full-and-final-settlement"],
     sources: [SRC.sLifecycle, SRC.sEmployee],
   },
   {
@@ -597,11 +597,11 @@ const features: Feature[] = [
       { question: "Is maternity leave tracked separately?", answer: "Yes. It is a distinct leave type, so ordinary entitlement keeps accruing through it and the absence stays identifiable in the record." },
       { question: "How does leave without balance affect salary?", answer: "It becomes a loss-of-pay day, reducing paid days and therefore salary, the PF wage and, where applicable, the ESI contribution." },
     ],
-    relatedFeatures: ["holiday-calendars", "compensatory-off", "leave-year-end-and-encashment", "payroll"],
+    relatedFeatures: ["location-holiday-calendars", "compensatory-off", "leave-year-end-and-encashment", "payroll"],
     sources: [SRC.fLeaves, SRC.sLeave],
   },
   {
-    slug: "holiday-calendars",
+    slug: "location-holiday-calendars",
     name: "Location Holiday Calendars",
     summary: "Holiday lists defined per location and combined with the team's approved leave.",
     category: "time-and-work",
@@ -696,7 +696,7 @@ const features: Feature[] = [
     faqs: [
       { question: "Should OKR progress feed performance ratings?", answer: "That is the employer's choice; deciding it is one of the setup decisions, alongside cycle length, cascade depth and check-in frequency." },
     ],
-    relatedFeatures: ["kra-and-9-box", "performance-reviews", "1-on-1s-and-meetings"],
+    relatedFeatures: ["kra-and-9-box", "performance-reviews-and-calibration", "1-on-1s-and-meetings"],
     sources: [SRC.fOkrs, SRC.sPerformance],
   },
   {
@@ -722,11 +722,11 @@ const features: Feature[] = [
       "Leadership calibrates ratings and uses the 9-box for promotion and succession decisions.",
     ],
     audience: ["HR teams", "Managers", "Leadership"],
-    relatedFeatures: ["objectives-and-okrs", "performance-reviews", "succession"],
+    relatedFeatures: ["objectives-and-okrs", "performance-reviews-and-calibration", "succession"],
     sources: [SRC.fKra, SRC.sPerformance],
   },
   {
-    slug: "performance-reviews",
+    slug: "performance-reviews-and-calibration",
     name: "Performance Reviews & Calibration",
     summary: "Reviews that read the objectives, key results and KRAs agreed at the start of the cycle.",
     category: "performance",
@@ -876,11 +876,11 @@ const features: Feature[] = [
       { question: "Which plan includes payroll?", answer: "Payroll is part of the Growth plan and above." },
       { question: "Does an HRMS replace our accounting software?", answer: "No. HRMagix produces the payroll outputs accounting needs, such as cost by head, statutory liabilities and the bank file; the ledger stays in your accounting system. The site does not publish an accounting integration." },
     ],
-    relatedFeatures: ["statutory-compliance", "tds-and-tax-regimes", "arrears-and-revisions", "payroll-review-and-locking", "attendance-and-shifts"],
+    relatedFeatures: ["statutory-compliance-engine", "tds-and-tax-regime-declarations", "arrears-and-salary-revisions", "payroll-review-and-run-locking", "attendance-and-shifts"],
     sources: [SRC.fPayroll, SRC.sPayroll, SRC.sHrms, SRC.sFinance],
   },
   {
-    slug: "statutory-compliance",
+    slug: "statutory-compliance-engine",
     name: "Statutory Compliance Engine",
     summary: "EPF, ESI, Professional Tax, LWF, TDS and gratuity calculated inside the payroll run, with files ready to submit.",
     category: "payroll-and-compliance",
@@ -913,11 +913,11 @@ const features: Feature[] = [
       { question: "Why doesn't ESI eligibility change when a salary crosses the threshold mid-year?", answer: "Eligibility is fixed for the contribution period rather than retested monthly; an employee covered at the start stays covered for its duration." },
       { question: "Which states' Professional Tax rules are configured?", answer: "The site lists rule sets for Maharashtra, Karnataka, Telangana, Tamil Nadu, Andhra Pradesh, Gujarat and West Bengal." },
     ],
-    relatedFeatures: ["payroll", "tds-and-tax-regimes", "multi-entity-and-locations"],
+    relatedFeatures: ["payroll", "tds-and-tax-regime-declarations", "multi-entity-and-locations"],
     sources: [SRC.sCompliance, SRC.sPayroll, SRC.home],
   },
   {
-    slug: "tds-and-tax-regimes",
+    slug: "tds-and-tax-regime-declarations",
     name: "TDS & Tax Regime Declarations",
     summary: "Old versus new regime comparison, investment declarations, proof verification and Form 24Q/16.",
     category: "payroll-and-compliance",
@@ -945,11 +945,11 @@ const features: Feature[] = [
       { question: "Who makes the regime choice?", answer: "The employee. Your side is verifying proofs, which then feeds the deduction schedule." },
       { question: "Does HRMagix issue Form 16 Part A?", answer: "No. Part A is issued by TRACES against the employer's TAN; HRMagix generates Part B." },
     ],
-    relatedFeatures: ["employee-self-service", "statutory-compliance", "payroll"],
+    relatedFeatures: ["employee-self-service", "statutory-compliance-engine", "payroll"],
     sources: [SRC.sPayroll, SRC.sEss, SRC.sCompliance],
   },
   {
-    slug: "arrears-and-revisions",
+    slug: "arrears-and-salary-revisions",
     name: "Arrears & Salary Revisions",
     summary: "Backdated increments recomputed and paid as identified arrears, without restating closed months.",
     category: "payroll-and-compliance",
@@ -966,11 +966,11 @@ const features: Feature[] = [
       "Arrear counted in the PF wage of the month paid and in year-to-date TDS",
     ],
     audience: ["Payroll teams", "Finance leads"],
-    relatedFeatures: ["payroll", "payroll-review-and-locking", "statutory-compliance"],
+    relatedFeatures: ["payroll", "payroll-review-and-run-locking", "statutory-compliance"],
     sources: [SRC.sPayroll, SRC.sCompliance],
   },
   {
-    slug: "payroll-review-and-locking",
+    slug: "payroll-review-and-run-locking",
     name: "Payroll Review & Run Locking",
     summary: "A variance review before money moves, and locked runs corrected only by identified adjustments.",
     category: "payroll-and-compliance",
@@ -988,7 +988,7 @@ const features: Feature[] = [
       "Every run leaves a trail that can be reconstructed later",
     ],
     audience: ["Payroll controllers", "Finance leads", "Auditors"],
-    relatedFeatures: ["payroll", "arrears-and-revisions", "analytics"],
+    relatedFeatures: ["payroll", "arrears-and-salary-revisions", "analytics"],
     sources: [SRC.sPayroll, SRC.sFinance, SRC.partners],
   },
 
@@ -997,7 +997,7 @@ const features: Feature[] = [
     slug: "employee-self-service",
     name: "Employee Self-Service",
     summary: "Payslips, balances, declarations, documents and approvals behind each employee's own login.",
-    category: "platform",
+    category: "platform-and-self-service",
     highlight: true,
     hasPage: true,
     body: [
@@ -1024,14 +1024,14 @@ const features: Feature[] = [
       { question: "Is there anything employees still email HR about?", answer: "Yes: anything needing judgement rather than access, such as a grievance, a policy exception or a request to change a leave rule." },
       { question: "Does it work without a company email address?", answer: "Yes. Access is tied to the employee record, and the mobile app is the primary route for shop-floor, field and retail staff." },
     ],
-    relatedFeatures: ["mobile-app", "employee-dashboard", "tds-and-tax-regimes", "attendance-regularisation"],
+    relatedFeatures: ["ios-and-android-app", "employee-dashboard", "tds-and-tax-regime-declarations", "attendance-regularisation"],
     sources: [SRC.sEss, SRC.qa],
   },
   {
-    slug: "mobile-app",
+    slug: "ios-and-android-app",
     name: "iOS & Android App",
     summary: "The same account as the web portal, built for staff who have no desk, laptop or work email.",
-    category: "platform",
+    category: "platform-and-self-service",
     hasPage: true,
     body: [
       "For a large part of the Indian workforce, such as field staff, plant operators, drivers and site engineers, the phone is not a secondary channel; it is the only one. The HRMagix iOS and Android app carries the everyday self-service tasks so the portal is available to everyone, not only people with desks.",
@@ -1053,7 +1053,7 @@ const features: Feature[] = [
     slug: "employee-dashboard",
     name: "Employee Dashboard",
     summary: "A personal day-at-a-glance: punch state, hours, leave balance, growth points and reporting line.",
-    category: "platform",
+    category: "platform-and-self-service",
     hasPage: true,
     body: [
       "Every employee starts the day on the HRMagix dashboard in the Overview area. It shows their punch state, logged work, leave position and growth points at a glance, and lets them clock in or out in one tap.",
@@ -1074,10 +1074,10 @@ const features: Feature[] = [
     sources: [SRC.features, SRC.sHrTeams, SRC.fRecognition],
   },
   {
-    slug: "analytics",
+    slug: "hr-analytics",
     name: "HR Analytics",
     summary: "Headcount, attrition risk, overtime, leave utilisation and payroll variance read from the live record.",
-    category: "platform",
+    category: "platform-and-self-service",
     highlight: true,
     hasPage: true,
     body: [
@@ -1109,10 +1109,10 @@ const features: Feature[] = [
     sources: [SRC.fAnalytics, SRC.sAnalytics],
   },
   {
-    slug: "policy-configuration",
+    slug: "no-code-policy-engine",
     name: "No-Code Policy Engine",
     summary: "Leave, shifts, approvals, salary components and statutory applicability configured per entity, location or grade.",
-    category: "platform",
+    category: "platform-and-self-service",
     hasPage: true,
     body: [
       "Indian companies rarely fit a default. A manufacturer with three plants may run different shifts, overtime rules and leave quotas at each and still file one set of returns; a services firm may have one policy everywhere but different approval chains by grade.",
@@ -1131,14 +1131,14 @@ const features: Feature[] = [
       "Salaried office staff and shift-based floor staff can run on one system",
     ],
     audience: ["HR administrators", "Implementation consultants"],
-    relatedFeatures: ["approval-workflows", "multi-entity-and-locations", "shift-rules-and-overtime"],
+    relatedFeatures: ["approval-workflows", "multi-entity-and-multi-location", "shift-rules-and-overtime"],
     sources: [SRC.sHrms, SRC.setup, ind("small-and-medium-enterprises")],
   },
   {
     slug: "approval-workflows",
     name: "Approval Workflows",
     summary: "Approvals that follow the current reporting line, with delegates, thresholds and escalation.",
-    category: "platform",
+    category: "platform-and-self-service",
     hasPage: true,
     body: [
       "At forty people an approval goes to whoever is nearest; at four hundred across three cities it is a chain that has to keep working when a link is on leave, has moved or has left. HRMagix routes requests by reading the current reporting line on the record.",
@@ -1157,10 +1157,10 @@ const features: Feature[] = [
     sources: [ind("small-and-medium-enterprises"), SRC.sLeave, ind("professional-services")],
   },
   {
-    slug: "multi-entity-and-locations",
+    slug: "multi-entity-and-multi-location",
     name: "Multi-Entity & Multi-Location",
     summary: "Several legal entities and locations under one login, each with its own registrations and runs.",
-    category: "platform",
+    category: "platform-and-self-service",
     hasPage: true,
     body: [
       "Entity and location are attributes of the employee record rather than separate installations. Each legal entity keeps its own PF and ESI registrations, its own Professional Tax registrations by state, and its own payroll run and returns, while reporting can be read at group level or filtered to one entity.",
@@ -1178,14 +1178,14 @@ const features: Feature[] = [
     faqs: [
       { question: "We have three legal entities. Is that three subscriptions?", answer: "HRMagix states that multi-entity structures are supported under one login, with permissions deciding who sees which entity and payroll runs kept distinct per entity." },
     ],
-    relatedFeatures: ["employee-records", "statutory-compliance", "analytics"],
+    relatedFeatures: ["employee-records-and-directory", "statutory-compliance-engine", "analytics"],
     sources: [SRC.qaSetup, SRC.sHrms, SRC.sMultiLocation, SRC.sFirms],
   },
   {
     slug: "data-import-and-migration",
     name: "Data Import & Migration",
     summary: "Excel templates for employee master data, leave balances, salary structures and hierarchies, validated on import.",
-    category: "platform",
+    category: "platform-and-self-service",
     hasPage: true,
     body: [
       "Importing a list of names is trivial; what makes the first live payroll correct is everything attached to them. HRMagix's structured Excel templates bring across employee master data, leave balances accrued to date, the salary structures in force, department hierarchies and the statutory identifiers each employee holds.",
@@ -1206,7 +1206,7 @@ const features: Feature[] = [
       "Run a dry-run payroll and compare it with your last real run.",
     ],
     audience: ["HR teams", "Payroll teams", "Implementation consultants"],
-    relatedFeatures: ["employee-records", "payroll"],
+    relatedFeatures: ["employee-records-and-directory", "payroll"],
     sources: [SRC.setup, SRC.qaSetup, SRC.sHrms],
   },
   { slug: "memos", name: "Memos", summary: "Company memos kept in the People area.", category: "people", hasPage: false, sources: [SRC.features] },
@@ -1215,7 +1215,7 @@ const features: Feature[] = [
     slug: "announcements-and-notifications",
     name: "Announcements & Notifications",
     summary: "Company-wide announcements and personal notifications, one click from the top bar of every screen.",
-    category: "platform",
+    category: "platform-and-self-service",
     hasPage: false,
     sources: [SRC.features],
   },
@@ -1223,7 +1223,7 @@ const features: Feature[] = [
     slug: "global-search",
     name: "Global Search",
     summary: "Press Ctrl K on any screen to search across pages, employees, departments and assets without leaving the work in front of you.",
-    category: "platform",
+    category: "platform-and-self-service",
     hasPage: false,
     sources: [SRC.features],
   },
@@ -1231,7 +1231,7 @@ const features: Feature[] = [
     slug: "feature-requests",
     name: "Feature Requests & What's New",
     summary: "Suggest improvements to the product and see product updates from inside the app.",
-    category: "platform",
+    category: "platform-and-self-service",
     hasPage: false,
     sources: [SRC.features],
   },
@@ -1243,7 +1243,7 @@ const features: Feature[] = [
 
 const productSolutions: ProductSolution[] = [
   {
-    slug: "one-employee-record",
+    slug: "replace-disconnected-hr-tools-with-one-employee-record",
     name: "Replace Disconnected HR Tools With One Employee Record",
     summary: "Consolidate biometric logs, leave sheets, standalone payroll and appraisal forms onto one record.",
     problem:
@@ -1270,7 +1270,7 @@ const productSolutions: ProductSolution[] = [
       "Switching a module on later is a setting, not a migration",
     ],
     audience: ["HR managers and heads of people", "Founders", "Finance leads"],
-    features: ["employee-records", "policy-configuration", "data-import-and-migration", "payroll", "attendance-and-shifts"],
+    features: ["employee-records-and-directory", "no-code-policy-engine", "data-import-and-migration", "payroll", "attendance-and-shifts"],
     faqs: [
       { question: "What usually starts the search for an HRMS?", answer: "HRMagix cites a renewal date approaching, leadership asking for a number that takes days to produce, or a new entity doubling the records to reconcile." },
       { question: "What is the difference between an HRMS and payroll software?", answer: "Payroll software calculates salaries; an HRMS holds the record payroll needs to calculate them correctly. HRMagix is both, the record and the run." },
@@ -1278,7 +1278,7 @@ const productSolutions: ProductSolution[] = [
     sources: [SRC.sHrms, SRC.solutions, SRC.home],
   },
   {
-    slug: "for-hr-teams",
+    slug: "hrmagix-for-hr-teams",
     name: "HRMagix for HR Teams",
     summary: "The HR manager's recurring week of lookups and follow-ups, mapped to the modules that carry it.",
     problem:
@@ -1299,14 +1299,14 @@ const productSolutions: ProductSolution[] = [
       "Policy questions have one place to point to",
     ],
     audience: ["HR managers", "People operations teams"],
-    features: ["employee-records", "documents", "leaves-and-holidays", "employee-dashboard", "performance-reviews"],
+    features: ["employee-records-and-directory", "documents", "leaves-and-holidays", "employee-dashboard", "performance-reviews"],
     faqs: [
       { question: "Is this a different product from the HRMS?", answer: "No. It is the same HRMagix HRMS described from an HR manager's point of view." },
     ],
     sources: [SRC.sHrTeams],
   },
   {
-    slug: "for-finance-and-payroll-teams",
+    slug: "hrmagix-for-finance-and-payroll-teams",
     name: "HRMagix for Finance & Payroll Teams",
     summary: "Closing payroll each month when attendance, leave and statutory deductions all have to agree.",
     problem:
@@ -1327,14 +1327,14 @@ const productSolutions: ProductSolution[] = [
       "Exceptions reviewed before money moves",
     ],
     audience: ["Finance leads", "Payroll controllers"],
-    features: ["payroll", "statutory-compliance", "payroll-review-and-locking", "analytics"],
+    features: ["payroll", "statutory-compliance-engine", "payroll-review-and-run-locking", "analytics"],
     faqs: [
       { question: "Does HRMagix post journal entries to our accounting system?", answer: "The site does not publish an accounting integration; HRMagix suggests asking in a demo how payroll output can be taken into your books." },
     ],
     sources: [SRC.sFinance, SRC.sPayroll],
   },
   {
-    slug: "for-multi-location-businesses",
+    slug: "hrmagix-for-multi-location-businesses",
     name: "HRMagix for Multi-Location Businesses",
     summary: "Branches, sites and stores writing into one employee record, with state rules held per location.",
     problem:
@@ -1354,14 +1354,14 @@ const productSolutions: ProductSolution[] = [
       "Employees at any branch see their own hours, balance and manager",
     ],
     audience: ["Multi-branch businesses", "Retail chains", "Head-office HR and payroll"],
-    features: ["attendance-and-shifts", "holiday-calendars", "statutory-compliance", "multi-entity-and-locations"],
+    features: ["attendance-and-shifts", "location-holiday-calendars", "statutory-compliance-engine", "multi-entity-and-locations"],
     faqs: [
       { question: "Can we set location-level administrators with restricted access?", answer: "Documents support role-based access control; the site does not publish further detail on location-level roles and suggests asking in a demo." },
     ],
     sources: [SRC.sMultiLocation],
   },
   {
-    slug: "for-accounting-and-payroll-firms",
+    slug: "hrmagix-for-accounting-and-payroll-firms",
     name: "HRMagix for Accounting & Payroll Firms",
     summary: "Running payroll for several client companies from one login with the company switcher.",
     problem:
@@ -1380,7 +1380,7 @@ const productSolutions: ProductSolution[] = [
       "Filing output to review rather than build from scratch",
     ],
     audience: ["Chartered accountants", "Payroll bureaus", "Labour-law consultants"],
-    features: ["multi-entity-and-locations", "statutory-compliance", "payroll"],
+    features: ["multi-entity-and-multi-location", "statutory-compliance-engine", "payroll"],
     faqs: [
       { question: "Is there a partner or reseller programme?", answer: "The site states there is no published programme; relationships are arranged individually." },
       { question: "How is pricing worked out for a firm with many clients?", answer: "Published pricing is per plan; firm or multi-client pricing is not published, so contact the team." },
@@ -1410,7 +1410,7 @@ const productSolutions: ProductSolution[] = [
       "Managers' notes survive a change of manager",
     ],
     audience: ["HR leads designing a review cycle", "Managers", "Leadership"],
-    features: ["objectives-and-okrs", "kra-and-9-box", "1-on-1s-and-meetings", "performance-reviews", "pips-and-growth", "recognition"],
+    features: ["objectives-and-okrs", "kra-and-9-box", "1-on-1s-and-meetings", "performance-reviews-and-calibration", "pips-and-growth", "recognition"],
     faqs: [
       { question: "What is the difference between an OKR and a KRA in practice?", answer: "An OKR is time-bound and describes what you are trying to change this quarter; a KRA is continuous and describes what a role is accountable for while you hold it. HRMagix notes many appraisal disputes come from using only one of the two." },
       { question: "Which plan includes the performance modules?", answer: "Growth, which carries performance, OKRs, KRAs and 9-box, recognition and analytics alongside payroll." },
@@ -1418,7 +1418,7 @@ const productSolutions: ProductSolution[] = [
     sources: [SRC.sPerformance],
   },
   {
-    slug: "audit-and-inspection-readiness",
+    slug: "audit-inspection-and-diligence-readiness",
     name: "Audit, Inspection & Diligence Readiness",
     summary: "Reconstructing a past period as it stood, for inspectors, auditors and investors.",
     problem:
@@ -1439,7 +1439,7 @@ const productSolutions: ProductSolution[] = [
       "Diligence can see appointment letters, filings and policy acknowledgements as they stood",
     ],
     audience: ["HR teams", "Founders preparing for diligence", "Compliance officers"],
-    features: ["employee-records", "attendance-regularisation", "payroll-review-and-locking", "documents", "workplace-policy-library"],
+    features: ["employee-records-and-directory", "attendance-regularisation", "payroll-review-and-run-locking", "documents", "workplace-policy-library"],
     sources: [SRC.sHrms, SRC.sEmployee, SRC.partners, ind("startups")],
   },
 ];
@@ -1450,7 +1450,7 @@ const productSolutions: ProductSolution[] = [
 
 const productIndustries: ProductIndustry[] = [
   {
-    slug: "startups",
+    slug: "hrmagix-for-startups",
     name: "Startups",
     summary: "For founders and first HR hires: write the rules down and get statutory payroll right from employee one.",
     body: [
@@ -1473,7 +1473,7 @@ const productIndustries: ProductIndustry[] = [
       { title: "Due diligence", description: "Headcount, appointment letters, statutory filings and policy acknowledgements shown as they stood at the time." },
       { title: "Remote teams", description: "Browser or mobile check-in without a geofence establishes payable days without policing presence." },
     ],
-    features: ["payroll", "leaves-and-holidays", "employee-self-service", "employee-records", "objectives-and-okrs"],
+    features: ["payroll", "leaves-and-holidays", "employee-self-service", "employee-records-and-directory", "objectives-and-okrs"],
     faqs: [
       { question: "We have twelve people. Is this too early?", answer: "HRMagix argues the statutory pieces are the reason to start early, and the Starter plan exists for this size." },
       { question: "Can we add payroll later?", answer: "Yes. Attendance, leave and the directory usually come first; payroll is switched on when ready, ideally at the start of a financial year or with a parallel month." },
@@ -1481,7 +1481,7 @@ const productIndustries: ProductIndustry[] = [
     sources: [ind("startups"), SRC.industries],
   },
   {
-    slug: "small-business",
+    slug: "hrmagix-for-small-business",
     name: "Small Business",
     summary: "For owner-managed businesses with no HR department: correct salaries on time, fair leave and records on demand.",
     body: [
@@ -1500,7 +1500,7 @@ const productIndustries: ProductIndustry[] = [
       "Letters, declarations and acknowledgements filed against each person",
       "The run produces ECR, ESIC, PT and Form 24Q output for your accountant to review and file",
     ],
-    features: ["payroll", "statutory-compliance", "attendance-and-shifts", "documents", "employee-self-service"],
+    features: ["payroll", "statutory-compliance-engine", "attendance-and-shifts", "documents", "employee-self-service"],
     faqs: [
       { question: "Our accountant does payroll. Does this replace them?", answer: "It replaces the manual calculation and filing preparation, not the advice." },
       { question: "How long does setup take?", answer: "HRMagix states most organisations of this size complete setup within two to three days, including a dry-run payroll." },
@@ -1508,7 +1508,7 @@ const productIndustries: ProductIndustry[] = [
     sources: [ind("small-business")],
   },
   {
-    slug: "small-and-medium-enterprises",
+    slug: "hrmagix-for-small-and-medium-enterprises",
     name: "Small & Medium Enterprises",
     summary: "For multi-branch, multi-state businesses that are one company operationally and several statutorily.",
     body: [
@@ -1527,14 +1527,14 @@ const productIndustries: ProductIndustry[] = [
       "Approval routing with delegates and second-approver thresholds",
       "One policy engine for salaried and shift-based populations",
     ],
-    features: ["multi-entity-and-locations", "statutory-compliance", "approval-workflows", "policy-configuration", "analytics"],
+    features: ["multi-entity-and-multi-location", "statutory-compliance-engine", "approval-workflows", "no-code-policy-engine", "analytics"],
     faqs: [
       { question: "What happens to continuity of service when someone transfers between entities?", answer: "It is preserved, because the transfer is a dated change on the existing record." },
     ],
     sources: [ind("small-and-medium-enterprises")],
   },
   {
-    slug: "manufacturing",
+    slug: "hrmagix-for-manufacturing",
     name: "Manufacturing",
     summary: "For plants and production units: rotating shifts, night differentials, overtime, comp-off and ESI on a moving wage base.",
     body: [
@@ -1558,11 +1558,11 @@ const productIndustries: ProductIndustry[] = [
     useCases: [
       { title: "Staff and workmen in one run", description: "Different shift, overtime and capture rules for each population, with shared PF and ESI registrations and returns." },
     ],
-    features: ["attendance-and-shifts", "shift-rules-and-overtime", "compensatory-off", "statutory-compliance", "analytics"],
+    features: ["attendance-and-shifts", "shift-rules-and-overtime", "compensatory-off", "statutory-compliance-engine", "analytics"],
     sources: [ind("manufacturing")],
   },
   {
-    slug: "it-and-technology",
+    slug: "hrmagix-for-it-and-technology",
     name: "IT & Technology",
     summary: "For product companies, services firms and delivery centres: distributed attendance, OKR alignment and rotating rosters.",
     body: [
@@ -1582,14 +1582,14 @@ const productIndustries: ProductIndustry[] = [
       "Effective-dated records so every change reaches payroll",
       "Resignation, notice, clearance and settlement handled from the record",
     ],
-    features: ["employee-records", "objectives-and-okrs", "geo-fenced-mobile-attendance", "tds-and-tax-regimes", "analytics"],
+    features: ["employee-records-and-directory", "objectives-and-okrs", "geo-fenced-mobile-attendance", "tds-and-tax-regime-declarations", "analytics"],
     faqs: [
       { question: "Does HRMagix replace our project timesheet tool?", answer: "No. HRMagix states timesheets measure effort against a client while attendance measures presence against an employment contract, and payroll follows presence." },
     ],
     sources: [ind("it-and-technology")],
   },
   {
-    slug: "professional-services",
+    slug: "hrmagix-for-professional-services",
     name: "Professional Services",
     summary: "For consultancies and agencies whose people work at client sites and whose hours are what is sold.",
     body: [
@@ -1613,7 +1613,7 @@ const productIndustries: ProductIndustry[] = [
     sources: [ind("professional-services")],
   },
   {
-    slug: "retail",
+    slug: "hrmagix-for-retail",
     name: "Retail",
     summary: "For store chains and franchise operators: rotating weekly offs, store rosters and state-wise rules.",
     body: [
@@ -1632,11 +1632,11 @@ const productIndustries: ProductIndustry[] = [
       "Approvals by email and push, routing onward when a manager is away",
       "Seasonal staff run through the same onboarding and payroll with dated start and exit",
     ],
-    features: ["shift-rules-and-overtime", "holiday-calendars", "onboarding", "mobile-app", "approval-workflows"],
+    features: ["shift-rules-and-overtime", "location-holiday-calendars", "onboarding", "ios-and-android-app", "approval-workflows"],
     sources: [ind("retail")],
   },
   {
-    slug: "healthcare",
+    slug: "hrmagix-for-healthcare",
     name: "Healthcare",
     summary: "For hospitals and clinic chains: 24x7 rosters, night pay and credentials that must stay valid.",
     body: [
@@ -1655,11 +1655,11 @@ const productIndustries: ProductIndustry[] = [
       "Approvers see who else is off that shift before approving",
       "Staff categories recorded so statutory treatment follows the category",
     ],
-    features: ["shift-rules-and-overtime", "documents", "holiday-calendars", "payroll"],
+    features: ["shift-rules-and-overtime", "documents", "location-holiday-calendars", "payroll"],
     sources: [ind("healthcare")],
   },
   {
-    slug: "hospitality",
+    slug: "hrmagix-for-hospitality",
     name: "Hospitality",
     summary: "For hotels, resorts and restaurant groups: split shifts, late closes, seasonal hiring and service charge lines.",
     body: [
@@ -1682,7 +1682,7 @@ const productIndustries: ProductIndustry[] = [
     sources: [ind("hospitality")],
   },
   {
-    slug: "logistics-and-warehousing",
+    slug: "hrmagix-for-logistics-and-warehousing",
     name: "Logistics & Warehousing",
     summary: "For warehouses, 3PLs and delivery fleets: night-shift rosters and geo-tagged attendance for drivers.",
     body: [
@@ -1705,7 +1705,7 @@ const productIndustries: ProductIndustry[] = [
     sources: [ind("logistics-and-warehousing")],
   },
   {
-    slug: "staffing-and-recruitment",
+    slug: "hrmagix-for-staffing-and-recruitment",
     name: "Staffing & Recruitment",
     summary: "For staffing firms whose associates work at client sites under each client's rules.",
     body: [
@@ -1724,11 +1724,11 @@ const productIndustries: ProductIndustry[] = [
       "One run and one set of returns across every associate",
       "Payroll cost reportable by client site",
     ],
-    features: ["employee-records", "geo-fenced-mobile-attendance", "statutory-compliance", "employee-self-service"],
+    features: ["employee-records-and-directory", "geo-fenced-mobile-attendance", "statutory-compliance-engine", "employee-self-service"],
     sources: [ind("staffing-and-recruitment")],
   },
   {
-    slug: "education",
+    slug: "hrmagix-for-education",
     name: "Education",
     summary: "For schools, colleges and institutes: academic-calendar leave, visiting faculty and financial-year payroll.",
     body: [
@@ -1751,7 +1751,7 @@ const productIndustries: ProductIndustry[] = [
     sources: [ind("education")],
   },
   {
-    slug: "construction",
+    slug: "hrmagix-for-construction",
     name: "Construction",
     summary: "For builders and EPC contractors: site attendance, staff moving between projects and states, and credential expiry.",
     body: [
@@ -1774,7 +1774,7 @@ const productIndustries: ProductIndustry[] = [
     sources: [ind("construction")],
   },
   {
-    slug: "nonprofits",
+    slug: "hrmagix-for-nonprofits",
     name: "Nonprofits",
     summary: "For NGOs, trusts and Section 8 companies: grant-linked staff costs, field attendance and fixed-term contracts.",
     body: [
@@ -1793,7 +1793,7 @@ const productIndustries: ProductIndustry[] = [
       "Mobile check-in with location tagging for field staff",
       "Contract end dates and signed contracts held on the record",
     ],
-    features: ["payroll", "employee-records", "geo-fenced-mobile-attendance", "analytics"],
+    features: ["payroll", "employee-records-and-directory", "geo-fenced-mobile-attendance", "analytics"],
     sources: [ind("nonprofits")],
   },
 ];
@@ -1804,7 +1804,7 @@ const productIndustries: ProductIndustry[] = [
 
 const productIntegrations: ProductIntegration[] = [
   {
-    slug: "biometric-attendance-devices",
+    slug: "hrmagix-biometric-attendance-devices-essl-matrix-realtime-zkteco-integration",
     name: "Biometric Attendance Devices (ESSL, Matrix, Realtime, ZKTeco)",
     summary: "Existing biometric hardware pushes punches into HRMagix in real time.",
     connects:
@@ -1838,7 +1838,7 @@ const productIntegrations: ProductIntegration[] = [
 
 const productResources: ProductResource[] = [
   {
-    slug: "hrms-comparison",
+    slug: "hrms-comparison-spreadsheets-vs-point-tools-vs-an-integrated-hrms",
     name: "HRMS Comparison: Spreadsheets vs Point Tools vs an Integrated HRMS",
     type: "guide",
     summary: "HRMagix's comparison of three ways to run HR across ten structural properties, and how to tell which one you are running.",
@@ -1859,11 +1859,11 @@ const productResources: ProductResource[] = [
       "Ask for last March's position, not last March's file",
       "Ask what an employee does to get a two-year-old payslip",
     ],
-    features: ["employee-records", "employee-self-service", "payroll"],
+    features: ["employee-records-and-directory", "employee-self-service", "payroll"],
     sources: [SRC.hrmsComparison],
   },
   {
-    slug: "payroll-resources",
+    slug: "payroll-resources-index",
     name: "Payroll Resources Index",
     type: "documentation",
     summary: "HRMagix's payroll material indexed by task: work out a figure, diagnose a wrong number, set up payroll or find the rule.",
@@ -1929,11 +1929,11 @@ const productResources: ProductResource[] = [
       "A common hybrid: quarterly check-ins with one annual calibration tied to increments",
       "Keep a short written record of each check-in so evidence exists at year end",
     ],
-    features: ["performance-reviews", "1-on-1s-and-meetings", "objectives-and-okrs"],
+    features: ["performance-reviews-and-calibration", "1-on-1s-and-meetings", "objectives-and-okrs"],
     sources: [cmp("annual-vs-continuous-performance-reviews")],
   },
   {
-    slug: "earned-casual-and-sick-leave",
+    slug: "earned-vs-casual-vs-sick-leave",
     name: "Earned vs Casual vs Sick Leave",
     type: "article",
     summary: "How the three main Indian leave types differ in accrual, carry-forward and encashment, and where state law sets the minimum.",
@@ -1963,11 +1963,11 @@ const productResources: ProductResource[] = [
       "Take-home conversations should use an estimated net with a note on declarations",
       "Two people with the same CTC can take home different amounts",
     ],
-    features: ["payroll", "statutory-compliance", "tds-and-tax-regimes"],
+    features: ["payroll", "statutory-compliance-engine", "tds-and-tax-regimes"],
     sources: [cmp("ctc-vs-gross-vs-net-salary")],
   },
   {
-    slug: "epf-vs-eps",
+    slug: "epf-vs-eps-how-the-employers-12-is-split",
     name: "EPF vs EPS: How the Employer's 12% Is Split",
     type: "article",
     summary: "How the employer's PF contribution divides between the provident fund and the pension scheme.",
@@ -1980,11 +1980,11 @@ const productResources: ProductResource[] = [
       "EDLI and EPF administration charges are additional employer costs",
       "The site advises checking the current EPFO position before relying on figures",
     ],
-    features: ["statutory-compliance", "payroll"],
+    features: ["statutory-compliance-engine", "payroll"],
     sources: [cmp("epf-vs-eps")],
   },
   {
-    slug: "gratuity-vs-pf",
+    slug: "gratuity-vs-provident-fund",
     name: "Gratuity vs Provident Fund",
     type: "article",
     summary: "Two retirement benefits compared: who pays, eligibility, the formula and when each is paid.",
@@ -1998,7 +1998,7 @@ const productResources: ProductResource[] = [
       "A final part-year over six months counts as a full year",
       "The ₹15,000 ceiling is a PF rule and does not apply to gratuity",
     ],
-    features: ["statutory-compliance", "exit-and-full-and-final-settlement"],
+    features: ["statutory-compliance-engine", "exit-and-full-and-final-settlement"],
     sources: [cmp("gratuity-vs-pf")],
   },
   {
@@ -2032,11 +2032,11 @@ const productResources: ProductResource[] = [
       "Cloud usually fits teams without dedicated IT and with phone-based self-service",
       "Ask where data is hosted, who can access it and how you export it on exit",
     ],
-    features: ["mobile-app", "employee-self-service"],
+    features: ["ios-and-android-app", "employee-self-service"],
     sources: [cmp("cloud-vs-on-premise-hrms"), SRC.qa],
   },
   {
-    slug: "per-employee-vs-flat-pricing",
+    slug: "per-employee-vs-flat-hrms-pricing",
     name: "Per-Employee vs Flat HRMS Pricing",
     type: "article",
     summary: "How HR software pricing models behave as headcount changes, and the hidden costs to ask about.",
@@ -2065,7 +2065,7 @@ const productResources: ProductResource[] = [
       "Hiring, development and succession questions point to HCM scope",
       "Ask each provider to show your own processes on your own data, including an Indian payroll run",
     ],
-    features: ["employee-records", "payroll", "succession"],
+    features: ["employee-records-and-directory", "payroll", "succession"],
     sources: [cmp("hrms-vs-hris-vs-hcm")],
   },
 ];
@@ -2096,7 +2096,7 @@ const supportTopics: ProductSupportTopic[] = [
     sources: [SRC.setup, SRC.pricing],
   },
   {
-    slug: "importing-employee-data",
+    slug: "importing-employee-data-from-excel",
     name: "Importing Employee Data From Excel",
     summary: "What to bring across, in what order, and what happens to records that fail validation.",
     body: [
@@ -2117,7 +2117,7 @@ const supportTopics: ProductSupportTopic[] = [
     sources: [SRC.setup, SRC.qaSetup],
   },
   {
-    slug: "turning-policies-into-rules",
+    slug: "turning-your-policies-into-rules",
     name: "Turning Your Policies Into Rules",
     summary: "The configuration step: leave, shifts, notice, probation and approvals written down and set up.",
     body: [
@@ -2133,11 +2133,11 @@ const supportTopics: ProductSupportTopic[] = [
       "Policies can be changed later",
       "A change applies from its effective date without rewriting earlier months",
     ],
-    features: ["policy-configuration", "approval-workflows", "leaves-and-holidays", "shift-rules-and-overtime"],
+    features: ["no-code-policy-engine", "approval-workflows", "leaves-and-holidays", "shift-rules-and-overtime"],
     sources: [SRC.setup],
   },
   {
-    slug: "dry-run-payroll",
+    slug: "the-dry-run-payroll",
     name: "The Dry-Run Payroll",
     summary: "Running a payroll on imported data and comparing it line by line with your last real run.",
     body: [
@@ -2158,7 +2158,7 @@ const supportTopics: ProductSupportTopic[] = [
     sources: [SRC.setup, SRC.sHrms],
   },
   {
-    slug: "switching-payroll-on",
+    slug: "switching-payroll-on-including-mid-year",
     name: "Switching Payroll On, Including Mid-Year",
     summary: "Statutory registrations first, then year-to-date figures if you move during the financial year.",
     body: [
@@ -2178,7 +2178,7 @@ const supportTopics: ProductSupportTopic[] = [
     sources: [SRC.setup, SRC.sHrms],
   },
   {
-    slug: "rolling-out-self-service",
+    slug: "rolling-out-self-service-to-employees",
     name: "Rolling Out Self-Service to Employees",
     summary: "Open self-service once records are right, with short lists of what changes for employees and managers.",
     body: [
@@ -2232,7 +2232,7 @@ const supportTopics: ProductSupportTopic[] = [
     sources: [SRC.setup, SRC.pricing, SRC.qa, SRC.about],
   },
   {
-    slug: "plans-billing-and-trial",
+    slug: "plans-billing-and-the-free-trial",
     name: "Plans, Billing & the Free Trial",
     summary: "What per-employee billing counts, what the trial includes and how plan changes work.",
     body: [
@@ -2249,7 +2249,7 @@ const supportTopics: ProductSupportTopic[] = [
     sources: [SRC.pricing, SRC.qaSetup],
   },
   {
-    slug: "exporting-data-and-cancelling",
+    slug: "exporting-your-data-and-cancelling",
     name: "Exporting Your Data & Cancelling",
     summary: "Cancel at any time, and export payroll, attendance and leave history while you can still log in.",
     body: [
@@ -2278,7 +2278,7 @@ const supportTopics: ProductSupportTopic[] = [
       "Reporting consolidates across entities while statutory totals stay with the entity that owes them",
       "Enterprise adds single sign-on and advanced security for groups that need it",
     ],
-    features: ["multi-entity-and-locations", "statutory-compliance", "analytics"],
+    features: ["multi-entity-and-multi-location", "statutory-compliance-engine", "analytics"],
     sources: [SRC.qaSetup, SRC.sCompliance],
   },
   {
@@ -2295,7 +2295,7 @@ const supportTopics: ProductSupportTopic[] = [
       "HR administrators see the full record, and the record notes that they looked",
       "Analytics follows the same permissions",
     ],
-    features: ["employee-records", "analytics", "documents"],
+    features: ["employee-records-and-directory", "hr-analytics", "documents"],
     sources: [SRC.sHrms, SRC.sEmployee, SRC.security],
   },
 ];
@@ -2307,13 +2307,14 @@ const supportTopics: ProductSupportTopic[] = [
 export const hrmagix: Product = {
   id: "hrmagix",
   slug: "hrmagix",
+  accent: "#0f7bbe",
   name: "HRMagix",
   shortDescription:
     "HRMS and payroll software for Indian companies: attendance, leave, payroll with PF, ESI, PT and TDS, performance and self-service on one employee record.",
   longDescription:
     "HRMagix brings people, performance and payroll into one workspace built around a single employee record, designed for Indian companies and Indian statute.\n\nTwelve modules read from that record: attendance and shifts, leaves and holidays, payroll, objectives and OKRs, KRA and 9-box, PIPs and growth, recognition, 1-on-1s, onboarding, documents, succession and analytics.\n\nAttendance flows into loss of pay, and statutory deductions (EPF, ESI, Professional Tax, LWF and TDS) are derived from the salary structure. One monthly run produces payslips, the bank file and filing-ready statutory outputs from the same set of figures.\n\nEmployees use self-service on the web and on iOS and Android. Setup typically takes two to three days, including Excel imports, policy validation and a dry-run payroll, with no implementation fee.",
   tagline: "Smart HR for modern teams.",
-  category: "hr-people",
+  category: "hr-and-people",
   subcategory: "hrms",
   primaryUseCase: "Running HR and Indian statutory payroll from one employee record",
   audience: ["HR teams", "Finance and payroll teams", "People managers", "Founders", "Accounting and payroll firms"],

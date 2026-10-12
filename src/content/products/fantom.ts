@@ -5,6 +5,9 @@ import type { Product } from "@/content/types";
  * testimonials, contact details and plan prices look like placeholder/test
  * data and are deliberately not used (see the source map).
  */
+const FANTOM_LANDING = "https://api.fantomapps.com/api/landing-content/public";
+const FANTOM_COMPARE = "https://api.fantomapps.com/api/subscriptions/compare";
+
 export const fantom: Product = {
   id: "fantom",
   slug: "fantom",
@@ -14,7 +17,7 @@ export const fantom: Product = {
   longDescription:
     "Fantom is a cloud platform for businesses that issue SIM cards to staff. Its site brands it SIM Manager. It brings the whole SIM inventory, recharges, call logs and messaging-app status into one dashboard.\n\nEach SIM is recorded with its operator, circle (telecom service region), status and assignee. Fantom reminds you before recharges expire, keeps the recharge history with analytics, and alerts you about due dates, inactive SIMs and subscription expiry by email or SMS.\n\nAn Android app installed on company phones syncs call logs automatically once the number is verified with a one-time password (OTP), and the dashboard analyses call patterns, durations and contact frequency. Fantom also shows which SIMs have WhatsApp or Telegram active and when they were last used.\n\nAdmins manage everything while users sync call logs, with access set by role, secure JWT sign-in and encrypted data. Every plan starts with a 14-day free trial and no credit card.",
   tagline: "Manage All Your SIM Cards in One Place",
-  category: "operations-it",
+  category: "operations-and-it",
   subcategory: "telecom-devices",
   primaryUseCase: "Company SIM-card management",
   audience: ["Operations managers", "IT administrators", "Business owners"],
@@ -24,11 +27,19 @@ export const fantom: Product = {
   verification: { relationship: "pending", publicSale: "confirmed" },
   websiteUrl: "https://fantomapps.com/",
   appUrl: "https://fantomapps.com/register",
-  // Fantom's site is short. Pages exist only where the home page gives enough
-  // stated detail; plan-table items (WiFi Monitor, SMS Logs, CCTV, Call Automation)
-  // are named without any description and get no page.
+  // Fantom's site is short. Documented pages use the home page's stated detail;
+  // plan-table items (WiFi Monitor, SMS Logs, CCTV, Call Automation and others) are
+  // named without description, so their pages are marked as listed only.
   featureCategories: [
-    { slug: "features", name: "Features", description: "Tools that make managing SIM cards easier for businesses of any size." },
+    {
+      slug: "features",
+      name: "Features",
+      description: "Tools that make managing SIM cards easier for businesses of any size.",
+      body: [
+        "Fantom groups its core tools under one heading: tools that make managing SIM cards easier for businesses of any size. They cover the SIM inventory, recharges, call logs, alerts, user access and security.",
+        "This group also includes the items Fantom's plan comparison names, such as CCTV Monitoring, WiFi Monitor, SMS Logs and API Access. Those pages state only what the plan table confirms.",
+      ],
+    },
     { slug: "messaging-apps", name: "Messaging apps", description: "Monitor WhatsApp and Telegram status for your managed SIMs." },
   ],
   features: [
@@ -351,6 +362,141 @@ export const fantom: Product = {
       sources: ["https://fantomapps.com/"],
       hasPage: true,
     },
+    {
+      slug: "advanced-reports",
+      name: "Advanced Reports",
+      summary: "Advanced reports, listed on the Gold and Enterprise plans but not on the Starter trial.",
+      category: "features",
+      evidence: "listed",
+      hasPage: true,
+      body: [
+        "Advanced reporting goes beyond the standard dashboard views, giving managers deeper summaries of the data a tool already holds, such as usage across many SIMs or users.",
+        "Fantom's plan comparison lists Advanced Reports on the Gold and Enterprise plans. It is not included on the 14-day Starter trial, although basic reports are.",
+      ],
+      capabilities: ["Listed on Gold and Enterprise.", "Not included on the Starter trial."],
+      relatedFeatures: ["call-log-analytics", "excel-export"],
+      sources: [FANTOM_COMPARE],
+    },
+    {
+      slug: "sim-import",
+      name: "SIM import",
+      summary: "Bring existing SIM cards into Fantom by importing them or adding them by hand.",
+      category: "features",
+      evidence: "listed",
+      hasPage: true,
+      body: [
+        "Importing records lets a business move an existing list, such as a spreadsheet of company numbers, into a new tool in one go instead of retyping each entry.",
+        "Fantom names \"Add SIMs\" as the second step of its setup: \"Import or manually add your SIM cards\". Each plan sets how many SIMs an account can hold.",
+      ],
+      capabilities: ["SIMs can be imported or added manually.", "The number of SIMs is limited by plan."],
+      relatedFeatures: ["sim-management", "excel-export"],
+      sources: [FANTOM_LANDING, FANTOM_COMPARE],
+    },
+    {
+      slug: "cctv-monitoring",
+      name: "CCTV Monitoring",
+      summary: "CCTV monitoring, listed on every plan with camera and snapshot limits set by plan.",
+      category: "features",
+      evidence: "listed",
+      hasPage: true,
+      body: [
+        "CCTV monitoring connects security cameras to a dashboard so footage or snapshots from a site can be checked remotely, without someone watching each camera in person.",
+        "Fantom's plan comparison lists CCTV Monitoring on every plan. Starter and Gold allow up to 5 cameras with snapshots kept for 30 days; Enterprise allows up to 50 cameras with snapshots kept for 365 days.",
+      ],
+      capabilities: ["Starter and Gold: up to 5 cameras, 30 days of snapshots.", "Enterprise: up to 50 cameras, 365 days of snapshots."],
+      relatedFeatures: ["wifi-monitor"],
+      sources: [FANTOM_COMPARE],
+    },
+    {
+      slug: "wifi-monitor",
+      name: "WiFi Monitor",
+      summary: "WiFi monitoring, listed on every Fantom plan.",
+      category: "features",
+      evidence: "listed",
+      hasPage: true,
+      body: [
+        "WiFi monitoring keeps an eye on wireless networks or the devices connected to them, so an administrator can see connection status without visiting each location.",
+        "Fantom's plan comparison lists WiFi Monitor on the Starter, Gold and Enterprise plans. Fantom publishes no further detail on what it monitors.",
+      ],
+      capabilities: ["Listed on Starter, Gold and Enterprise."],
+      relatedFeatures: ["cctv-monitoring"],
+      sources: [FANTOM_COMPARE],
+    },
+    {
+      slug: "call-automation",
+      name: "Call Automation",
+      summary: "Call automation, listed on every Fantom plan.",
+      category: "features",
+      evidence: "listed",
+      hasPage: true,
+      body: [
+        "Call automation handles routine calling tasks by rule rather than by hand, which saves time for teams that make or manage many calls on company numbers.",
+        "Fantom's plan comparison lists Call Automation on the Starter, Gold and Enterprise plans. Fantom publishes no further detail on how it works.",
+      ],
+      capabilities: ["Listed on Starter, Gold and Enterprise."],
+      relatedFeatures: ["call-log-analytics", "sms-logs"],
+      sources: [FANTOM_COMPARE],
+    },
+    {
+      slug: "sms-logs",
+      name: "SMS Logs",
+      summary: "SMS logs, listed on every Fantom plan alongside call log sync.",
+      category: "features",
+      evidence: "listed",
+      hasPage: true,
+      body: [
+        "An SMS log is a record of text messages sent and received on a number. For company SIMs it gives managers a record of messaging activity alongside calls.",
+        "Fantom's plan comparison lists SMS Logs on the Starter, Gold and Enterprise plans, next to Call Log Sync.",
+      ],
+      capabilities: ["Listed on Starter, Gold and Enterprise."],
+      relatedFeatures: ["call-log-analytics", "call-automation"],
+      sources: [FANTOM_COMPARE],
+    },
+    {
+      slug: "excel-export",
+      name: "Excel Export",
+      summary: "Export Fantom data to Excel, listed on every plan.",
+      category: "features",
+      evidence: "listed",
+      hasPage: true,
+      body: [
+        "Exporting to Excel lets a team take data out of a tool for its own spreadsheets, audits or reports to people who do not use the tool.",
+        "Fantom's plan comparison lists Excel Export on the Starter, Gold and Enterprise plans.",
+      ],
+      capabilities: ["Listed on Starter, Gold and Enterprise."],
+      relatedFeatures: ["sim-management", "advanced-reports"],
+      sources: [FANTOM_COMPARE],
+    },
+    {
+      slug: "api-access",
+      name: "API Access",
+      summary: "API access, listed on the Gold and Enterprise plans.",
+      category: "features",
+      evidence: "listed",
+      hasPage: true,
+      body: [
+        "API access lets a company's own systems read or send data to a tool programmatically, so information can flow between systems without manual copying.",
+        "Fantom's plan comparison lists API Access on the Gold and Enterprise plans. It is not included on the Starter trial.",
+      ],
+      capabilities: ["Listed on Gold and Enterprise.", "Not included on the Starter trial."],
+      relatedFeatures: ["excel-export"],
+      sources: [FANTOM_COMPARE],
+    },
+    {
+      slug: "priority-support",
+      name: "Priority Support",
+      summary: "Priority support, listed on the Gold and Enterprise plans.",
+      category: "features",
+      evidence: "listed",
+      hasPage: true,
+      body: [
+        "Priority support means a customer's requests are handled ahead of the general queue, which matters when a business depends on a tool day to day.",
+        "Fantom's plan comparison lists Priority Support on the Gold and Enterprise plans. It is not included on the Starter trial.",
+      ],
+      capabilities: ["Listed on Gold and Enterprise.", "Not included on the Starter trial."],
+      relatedFeatures: ["secure-and-reliable"],
+      sources: [FANTOM_COMPARE],
+    },
   ],
   benefits: [
     { title: "No more lapsed numbers", description: "Reminders before expiry and alerts for recharge due dates keep company SIMs in service. The recharge history shows what each number has cost." },
@@ -387,6 +533,112 @@ export const fantom: Product = {
     { question: "How can I pay?", answer: "Payments go through Razorpay, which accepts credit and debit cards, UPI, net banking and wallets." },
     { question: "Can I export my data?", answer: "Yes. Excel export is listed on Fantom's plans." },
     { question: "Can I cancel?", answer: "Fantom's pricing section says you can cancel at any time, with monthly and yearly billing available." },
+  ],
+  supportTopics: [
+    {
+      slug: "getting-started-with-fantom",
+      name: "Getting started with Fantom",
+      summary: "The four steps from sign-up to tracking your SIMs, starting with a 14-day free trial.",
+      body: [
+        "Fantom describes setup as a simple four-step process. Every plan starts with a 14-day free trial, and no credit card is required to start.",
+      ],
+      steps: [
+        "Sign up: create your company account and choose a plan.",
+        "Add SIMs: import your SIM cards or add them manually.",
+        "Install the app: download the Android app on company phones for call log sync.",
+        "Track and manage: monitor recharges, call logs and messaging status from the dashboard.",
+      ],
+      keyPoints: [
+        "The Starter plan is a free 14-day trial.",
+        "Each plan sets limits on SIMs, users and recharges.",
+      ],
+      links: [{ label: "Start free trial", href: "https://fantomapps.com/register" }],
+      features: ["sim-import", "sim-management", "call-log-analytics"],
+      sources: [FANTOM_LANDING, FANTOM_COMPARE, "https://fantomapps.com/register"],
+    },
+    {
+      slug: "creating-your-account-and-resetting-your-password",
+      name: "Creating your account and resetting your password",
+      summary: "The details Fantom asks for at registration, its password rules and how to reset a password by OTP.",
+      body: [
+        "Registering creates the company account on the plan you selected. A forgotten password is reset with a verification code sent to the admin email.",
+      ],
+      steps: [
+        "Choose a plan on the registration page, monthly or yearly.",
+        "Enter your full name (2 to 50 characters), email ID and company name (2 to 100 characters).",
+        "Optionally add a contact number and company address.",
+        "Set a password and confirm it, then register.",
+        "To reset a password, select \"Forgot Password?\", enter your admin email and select \"Send OTP\".",
+      ],
+      keyPoints: [
+        "Passwords must be 8 to 15 characters with an uppercase letter, a lowercase letter, a number and a special character.",
+        "Fantom's terms make you responsible for keeping your account credentials secure and for all activity under your account.",
+      ],
+      links: [
+        { label: "Register", href: "https://fantomapps.com/register" },
+        { label: "Forgot password", href: "https://fantomapps.com/forgot-password" },
+      ],
+      sources: ["https://fantomapps.com/register", "https://fantomapps.com/forgot-password", "https://fantomapps.com/terms-of-service"],
+    },
+    {
+      slug: "setting-up-the-android-app-for-call-log-sync",
+      name: "Setting up the Android app for call-log sync",
+      summary: "How to install Fantom's Android app on a company phone so its call logs sync to the dashboard.",
+      body: [
+        "Call logs reach Fantom through its Android app, which syncs them automatically from registered devices to the dashboard. Users sync call logs through the app, while admins manage everything else.",
+      ],
+      steps: [
+        "Install Fantom's Android app on the company phone.",
+        "Verify the phone number with the one-time password (OTP).",
+        "Grant the app permission to read call logs.",
+        "Call logs then sync to the dashboard automatically.",
+      ],
+      keyPoints: [
+        "Fantom only mentions an Android app.",
+        "Call Log Sync is listed on every plan.",
+      ],
+      features: ["call-log-analytics", "multi-user-access"],
+      sources: [FANTOM_LANDING, FANTOM_COMPARE],
+    },
+    {
+      slug: "plans-payments-and-renewals",
+      name: "Plans, payments and renewals",
+      summary: "How Fantom bills: payment methods, billing cycles and what its terms say about fees.",
+      body: [
+        "Fantom runs on a subscription. You need an active subscription to use the service, and payments go through Razorpay.",
+      ],
+      keyPoints: [
+        "Accepted methods: credit and debit cards, UPI, net banking and wallets, through Razorpay.",
+        "Paid plans bill on a 28-day monthly cycle or a 336-day yearly cycle.",
+        "The Starter plan is a 14-day free trial with no credit card required.",
+        "Subscription fees are non-refundable except as stated in the terms.",
+        "You agree to give accurate billing information and to tell Fantom when it changes.",
+      ],
+      sources: [FANTOM_LANDING, FANTOM_COMPARE, "https://fantomapps.com/terms-of-service"],
+    },
+    {
+      slug: "your-data-and-privacy",
+      name: "Your data and privacy",
+      summary: "What personal data Fantom's privacy policy says it collects and how it uses it.",
+      body: [
+        "Fantom's privacy policy (last updated 17 June 2026) groups the personal data it collects into four categories and lists the purposes it uses that data for.",
+        "It states that appropriate security measures are in place to prevent personal data from being lost, used or accessed without authorisation, altered or disclosed.",
+      ],
+      keyPoints: [
+        "Identity data: first name, last name, username or similar identifier.",
+        "Contact data: email ID and telephone numbers.",
+        "Technical data: IP address, browser type and version, time zone setting and location.",
+        "Usage data: how you use the website and services.",
+      ],
+      steps: [
+        "To provide and maintain the service.",
+        "To notify you about changes to the service.",
+        "To provide customer support.",
+        "To analyse and improve the service, and to monitor its usage.",
+      ],
+      links: [{ label: "Privacy policy", href: "https://fantomapps.com/privacy-policy" }],
+      sources: ["https://fantomapps.com/privacy-policy", "https://api.fantomapps.com/api/pages/privacy-policy"],
+    },
   ],
   solutions: ["run-a-well-organised-office"],
   sources: ["https://fantomapps.com/", "https://api.fantomapps.com/api/landing-content/public"],

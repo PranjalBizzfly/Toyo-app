@@ -12,11 +12,11 @@ export type Photo = { src: string; alt: string };
 const FOLDER: Record<string, string> = { getbenj: "benj" };
 
 const CATEGORY: Record<string, string> = {
-  "sales-marketing": "Indian sales manager guiding his team at their desks in a busy open-plan office",
-  "hr-people": "HR manager walking a new hire through her onboarding papers and laptop",
-  "operations-it": "IT operations team reviewing system monitors in a network operations room",
-  "finance-compliance": "Chartered accountant and colleague reviewing client spreadsheets beside stacked case files",
-  "insights-research": "Manager reviewing an end-of-day report on a tablet with an employee",
+  "sales-and-marketing": "Indian sales manager guiding his team at their desks in a busy open-plan office",
+  "hr-and-people": "HR manager walking a new hire through her onboarding papers and laptop",
+  "operations-and-it": "IT operations team reviewing system monitors in a network operations room",
+  "finance-and-compliance": "Chartered accountant and colleague reviewing client spreadsheets beside stacked case files",
+  "insights-and-research": "Manager reviewing an end-of-day report on a tablet with an employee",
 };
 
 export function categoryPhoto(slug: string | undefined): Photo | undefined {

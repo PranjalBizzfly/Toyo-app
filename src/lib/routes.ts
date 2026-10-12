@@ -2,6 +2,9 @@ import type { ResourceType } from "@/content/types";
 
 export type ContactTypeParam = "product" | "sales" | "support" | "vendor" | "publish" | "general" | "other";
 
+/** URL segment for a resource type: matches the type's page name ("Product updates" → product-updates). */
+export const resourceTypeSegment = (type: ResourceType): string => (type === "updates" ? "product-updates" : type);
+
 /** Every internal URL is built here so the URL scheme can change in one place. */
 export const routes = {
   home: () => "/",
@@ -23,8 +26,8 @@ export const routes = {
   comparison: (slug: string) => `/compare-products/${slug}`,
   resources: () => "/resources",
   // The blog hub lives at /blog; /resources/blog permanently redirects there (next.config.ts).
-  resourceType: (type: ResourceType) => (type === "blog" ? "/blog" : `/resources/${type}`),
-  resource: (type: ResourceType, slug: string) => `/resources/${type}/${slug}`,
+  resourceType: (type: ResourceType) => (type === "blog" ? "/blog" : `/resources/${resourceTypeSegment(type)}`),
+  resource: (type: ResourceType, slug: string) => `/resources/${resourceTypeSegment(type)}/${slug}`,
   company: () => "/about-toyoapps",
   publish: () => "/publish-and-sell-your-saas",
   support: () => "/support",

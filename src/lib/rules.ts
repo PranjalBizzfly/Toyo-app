@@ -15,6 +15,9 @@ export const MIN_FEATURE_DETAIL = 3;
  */
 export function featureHasPage(f: Feature): boolean {
   const detail = (f.capabilities?.length ?? 0) + (f.howItWorks?.length ?? 0);
+  // A feature the official site only names gets a page when it is explained (two paragraphs) and
+  // cites its official source; the page labels it as listed rather than documented.
+  if (f.evidence === "listed") return !!f.hasPage && (f.body?.length ?? 0) >= 2 && !!f.sources?.length && detail >= 1;
   return !!f.hasPage && !!f.body?.length && detail >= MIN_FEATURE_DETAIL;
 }
 
