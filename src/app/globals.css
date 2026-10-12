@@ -499,8 +499,8 @@ h1, h2, h3, .display, .h2 { font-family: var(--font-display); }
 .logo__mark { width: 40px; height: 44px; }
 .logo__name { display: flex; flex-direction: column; line-height: 1.05; }
 .logo__nm { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -0.01em; background: linear-gradient(90deg, var(--brand) 0%, var(--brand) 45%, var(--green) 55%, var(--green) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.logo__tag { font-size: 9px; letter-spacing: 0.2em; color: var(--text-muted); text-transform: uppercase; margin-top: 3px; font-weight: 500; }
-.site-footer .logo__tag { color: var(--island-faint); }
+.logo__tag { font-size: 9px; letter-spacing: 0.2em; color: var(--text-secondary); text-transform: uppercase; margin-top: 3px; font-weight: 500; }
+.site-footer .logo__tag { color: var(--text-secondary); }
 .section--ink, .site-footer { background: var(--island); }
 .mega__aside { background: var(--island); }
 .btn--primary:hover { background: var(--brand-strong); }
@@ -608,3 +608,11 @@ a.primary-nav__trigger[aria-current="page"] { background: var(--primary-soft); c
   .section:not([class*="section--"]):has(+ .section:not([class*="section--"])),
   .section--surface:has(+ .section--surface)
 ) { padding-bottom: var(--sec-seam); }
+
+/* Product marks: the product's own brand colour for the active theme (src/lib/product-brand.ts) */
+html body .product-mark { background: var(--brand) !important; color: var(--brand-ink) !important; }
+html[data-theme="dark"] body .product-mark { background: var(--brand-dark) !important; color: var(--brand-dark-ink) !important; }
+@media (prefers-color-scheme: dark) { html:not([data-theme="light"]) body .product-mark { background: var(--brand-dark) !important; color: var(--brand-dark-ink) !important; } }
+html body .product-mark--outline { color: var(--brand) !important; border-color: var(--brand) !important; background: transparent !important; }
+html[data-theme="dark"] body .product-mark--outline { color: var(--brand-dark) !important; border-color: var(--brand-dark) !important; }
+@media (prefers-color-scheme: dark) { html:not([data-theme="light"]) body .product-mark--outline { color: var(--brand-dark) !important; border-color: var(--brand-dark) !important; } }

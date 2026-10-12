@@ -175,8 +175,8 @@
   --band-brand: #1557c0; --band-brand-2: #0c3a8c; --band-soft: #f1f5fd;
 }
 
-/* Product monogram takes the product colour in its own nav/hero. */
-.pt :is(.product-nav__brand, .zs-hero) span.product-card__logo { background: var(--primary) !important; color: var(--on-primary); }
+/* Product monogram keeps its configured colour (productAccent) everywhere; only the text colour is set here. */
+.pt :is(.product-nav__brand, .zs-hero) span.product-card__logo { color: #ffffff; }
 .pt :is(.pz-foot__promo, .pz-foot__more) span.product-card__logo { color: var(--primary); font-weight: 700; display: grid; place-items: center; }
 :root[data-theme="dark"] .pt :is(.pz-foot__promo, .pz-foot__more) span.product-card__logo { color: #0a1a2a; }
 

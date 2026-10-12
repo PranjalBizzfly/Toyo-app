@@ -11,7 +11,7 @@ import {
   integrationHasPage,
 } from "./catalog";
 import { resourceTypes, routes } from "./routes";
-import { monogram, productAccent } from "./tint";
+import { brandVars, monogram, productAccent } from "./tint";
 import type { IconName, Product } from "@/content/types";
 
 const productLink = (p: Product): NavLink => ({
@@ -19,6 +19,7 @@ const productLink = (p: Product): NavLink => ({
   href: routes.product(p.slug),
   description: p.tagline ?? p.shortDescription,
   accent: productAccent(p),
+  brand: brandVars(p.slug, productAccent(p)),
   initials: monogram(p.name),
 });
 
@@ -46,6 +47,7 @@ export interface NavLink {
   description?: string;
   /** Product links only: brand colour and initials for the mega-menu tile. */
   accent?: string;
+  brand?: Record<string, string>;
   initials?: string;
   /** Small supporting line, e.g. the products a solution uses. */
   meta?: string;

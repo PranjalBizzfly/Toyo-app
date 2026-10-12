@@ -1,5 +1,6 @@
 import { categories } from "@/content/categories";
 import type { Product } from "@/content/types";
+import { PRODUCT_BRAND } from "./product-brand";
 
 /**
  * Category palette built from the original toyoapps.com brand colours
@@ -22,7 +23,7 @@ export function categoryTint(slug: string) {
   return PALETTE[i % PALETTE.length];
 }
 
-export const productAccent = (p: Product) => p.accent ?? categoryTint(p.category).ink;
+export const productAccent = (p: Product) => PRODUCT_BRAND[p.slug]?.light ?? p.accent ?? categoryTint(p.category).ink;
 
 export function tintStyle(slug: string): React.CSSProperties {
   const t = categoryTint(slug);
@@ -37,3 +38,22 @@ export const monogram = (name: string) =>
     .join("")
     .slice(0, 2)
     .toUpperCase();
+
+/**
+ * Inline style for a product mark: light/dark brand colours as CSS variables, so the
+ * mark follows the active theme (see .product-mark rules in globals.css).
+ */
+export function brandStyle(p: Product): React.CSSProperties {
+  return brandVars(p.slug, p.accent ?? categoryTint(p.category).ink);
+}
+
+/** Same CSS variables from a slug (for data passed to client components). */
+export function brandVars(slug: string, fallback: string): Record<string, string> {
+  const b = PRODUCT_BRAND[slug];
+  return {
+    "--brand": b?.light ?? fallback,
+    "--brand-ink": b?.lightInk ?? "#fff",
+    "--brand-dark": b?.dark ?? fallback,
+    "--brand-dark-ink": b?.darkInk ?? "#fff",
+  };
+}

@@ -10,6 +10,7 @@ export interface CatalogItem {
   name: string;
   description: string;
   accent: string;
+  brand?: Record<string, string>;
   initials: string;
   logo?: string;
   pending?: boolean;
@@ -40,7 +41,7 @@ function AppMark({ item }: { item: CatalogItem }) {
     return <img className="zc-card__logo" src={item.logo} alt={`${item.name} logo`} />;
   }
   return (
-    <span className="zc-card__logo zc-card__logo--mono" style={{ color: item.accent, borderColor: item.accent }} aria-hidden>
+    <span className="zc-card__logo zc-card__logo--mono product-mark--outline" data-product={item.href.split("/").pop()} style={(item.brand ?? { "--brand": item.accent, "--brand-dark": item.accent }) as React.CSSProperties} aria-hidden>
       {item.initials}
     </span>
   );

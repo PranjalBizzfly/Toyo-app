@@ -7,7 +7,7 @@ import { site } from "@/content/site";
 import { getCatalogTree } from "@/lib/catalog";
 import { routes } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo";
-import { monogram, productAccent } from "@/lib/tint";
+import { monogram, brandStyle } from "@/lib/tint";
 import "@/app/company-zoho.css";
 import "@/app/company-pages.css";
 
@@ -55,7 +55,7 @@ export default function MediaPage() {
                 {products.map((p) => (
                   <li key={p.slug} className="cp-card">
                     <div className="cp-card__head">
-                      <span className="cp-dot" style={{ background: productAccent(p) }} aria-hidden="true">{monogram(p.name)}</span>
+                      <span className="cp-dot product-mark" data-product={p.slug} style={brandStyle(p)} aria-hidden="true">{monogram(p.name)}</span>
                       <div>
                         <p className="cp-card__meta">Product update</p>
                         <h4>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Category, Feature, PricingPlan, Product } from "@/content/types";
 import { featureHasPage } from "@/lib/rules";
 import { routes } from "@/lib/routes";
-import { monogram, productAccent, tintStyle } from "@/lib/tint";
+import { monogram, brandStyle, tintStyle } from "@/lib/tint";
 import { Icon } from "@/components/ui/Icon";
 import { ButtonLink, CheckList, StatusBadge } from "@/components/ui/primitives";
 
@@ -12,7 +12,7 @@ export function ProductLogo({ product }: { product: Product }) {
     return <img className="product-card__logo" src={product.logo.src} alt={`${product.name} logo`} style={{ background: "transparent" }} />;
   }
   return (
-    <span className="product-card__logo" style={{ background: productAccent(product) }} aria-hidden>
+    <span className="product-card__logo product-mark" data-product={product.slug} style={brandStyle(product)} aria-hidden>
       {monogram(product.name)}
     </span>
   );

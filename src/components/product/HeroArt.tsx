@@ -1,3 +1,4 @@
+import { brandStyle } from "@/lib/tint";
 import type { Product } from "@/content/types";
 import type { StoryArt } from "@/lib/product-story";
 
@@ -94,7 +95,7 @@ export function HeroArt({ product, art }: { product: Product; art: StoryArt }) {
             <div className="zs-node zs-node--1"><Dot />{pick(0, "Trigger")}</div>
             <div className="zs-node zs-node--2"><Dot />{pick(1, "Collect data")}</div>
             <div className="zs-node zs-node--hub">
-              <span className="product-card__logo">{initial}</span>
+              <span className="product-card__logo product-mark" data-product={product.slug} style={brandStyle(product)}>{initial}</span>
               {product.name}
             </div>
             <div className="zs-node zs-node--3"><Dot />{pick(2, "Send")}</div>

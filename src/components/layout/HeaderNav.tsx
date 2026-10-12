@@ -24,7 +24,7 @@ function AppTile({ link, onNavigate }: { link: NavLink; onNavigate: () => void }
   return (
     <Link href={link.href} className="mm-app" onClick={onNavigate}>
       <span className="mm-app__head">
-        <span className="mm-app__logo" style={{ background: link.accent }} aria-hidden>
+        <span className="mm-app__logo product-mark" style={(link.brand ?? { "--brand": link.accent ?? "", "--brand-dark": link.accent ?? "", "--brand-ink": "#fff", "--brand-dark-ink": "#fff" }) as React.CSSProperties} aria-hidden>
           {link.initials}
         </span>
         <span className="mm-app__name">{link.label}</span>
@@ -246,6 +246,7 @@ export function HeaderNav({ menus }: { menus: NavMenu[] }) {
         </button>
       </div>
 
+      {mobileOpen && <div className="mobile-nav__backdrop" aria-hidden="true" onClick={close} />}
       {mobileOpen && (
         <div className="mobile-nav" id="mobile-nav">
           <SearchForm id="mobile-search" />
