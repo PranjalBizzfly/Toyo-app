@@ -1,3 +1,5 @@
+import mobileImages from "@/lib/mobile-images.json";
+
 /**
  * A placed image, positioned where Zoho places artwork (hero visuals, feature
  * screenshots, section illustrations). Each slot points at its own file under
@@ -26,7 +28,7 @@ export function ImageSlot({
     ? src.replace(/\.svg$/, ".webp")
     : src;
 
-  return (
+  const img = (
     // eslint-disable-next-line @next/next/no-img-element -- plain img so files can be swapped (svg/png/webp) without config
     <img
       src={resolvedSrc}
@@ -34,9 +36,21 @@ export function ImageSlot({
       width={width}
       height={height}
       loading={priority ? "eager" : "lazy"}
+      fetchPriority={priority ? "high" : undefined}
       decoding="async"
       className={["image-slot", className].filter(Boolean).join(" ")}
       style={{ aspectRatio: `${width} / ${height}` }}
     />
+  );
+
+  // Header images have an 800px copy for phones (scripts/make-mobile-heroes.mjs); desktop keeps the original.
+  // display: contents keeps <picture> out of the layout, so the <img> is styled and placed exactly as before.
+  const mobile = priority ? (mobileImages as Record<string, string>)[resolvedSrc] : undefined;
+  if (!mobile) return img;
+  return (
+    <picture style={{ display: "contents" }}>
+      <source media="(max-width: 767px)" srcSet={mobile} type="image/webp" />
+      {img}
+    </picture>
   );
 }

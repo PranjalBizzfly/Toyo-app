@@ -16,9 +16,18 @@ const alts: Record<string, string> = {
   fleetras:"Fleet manager with a tablet standing beside a row of delivery vans",
   sizoru: "Founder presenting market-size charts to two investors",
   benj: "Marketers planning a campaign with sticky notes on a glass wall",
-  taskmagic: "Operations specialist working calmly at a laptop by the window",
+  taskmagix: "Operations specialist working calmly at a laptop by the window",
   zuzu: "Team lead walking colleagues through their work on a laptop",
   zorfly: "Sales coach training two young sales representatives",
+  "247meetings": "Founder smiling at a calendar full of booked meetings while sipping coffee",
+  "channel-partner-portal": "Real-estate broker presenting a property investment on a tablet to a couple",
+  growbizz: "Customer scanning a review QR code at a café counter as the owner looks on",
+  "social-magix": "Social media analysts reviewing profile performance on a large monitor",
+  speechwright: "Business leader rehearsing a speech from printed notes in his office",
+  warwi: "Marketing manager planning her team's status updates on her phone",
+  dizola: "HR manager e-signing a document on a tablet beside neat folders",
+  sopgalaxy: "Operations manager training new staff with a procedure manual on a warehouse floor",
+  theprojectchecker: "Project manager reviewing project progress with a developer and a QA tester",
 };
 
 /** Product card photos on solution/industry pages (public/images/products/{slug}/tile.webp). */
