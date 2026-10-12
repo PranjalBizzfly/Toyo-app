@@ -22,3 +22,4 @@ incoming-images/
 scripts/_plan/
 scripts/_research/*/
 !scripts/_research/README*
+.npm-cache/
