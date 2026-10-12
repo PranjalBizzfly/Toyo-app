@@ -70,7 +70,10 @@ html main :is(.ez-card, .zc-card, .co-card, .card, [class*="-card"]):is(a):hover
 /* Standard page FAQ section (PageFaqs.tsx). */
 .page-faq { padding-block: var(--sec-y); background: var(--surface); border-top: 1px solid var(--border-soft); }
 :root[data-theme="dark"] .page-faq { background: #08131f; border-color: #16283c; }
-.page-faq__inner { display: grid; gap: 28px; }
-@media (min-width: 960px) { .page-faq__inner { grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: 72px; } .page-faq__head { position: sticky; top: calc(var(--header-h) + 32px); align-self: start; } }
+/* Title centred above the questions; the question list keeps a readable centred column. */
+.page-faq__inner { display: grid; gap: 28px; justify-items: center; }
+.page-faq__head { text-align: center; max-width: 760px; }
+.page-faq__head .h2 { text-wrap: balance; }
+.page-faq__inner > .accordion { width: 100%; max-width: 860px; }
 .page-faq .accordion summary { color: var(--heading); }
 .page-faq .accordion__body { color: var(--text-secondary); line-height: 1.7; }

@@ -157,6 +157,7 @@ a.co-panel__cell:hover { border-color: var(--border-hover); box-shadow: 0 8px 24
 
 /* ---------- Legal: sidebar + tinted summary + text column ---------- */
 .lg { display: grid; grid-template-columns: 340px 1fr; border-top: 1px solid var(--border); background: var(--surface); }
+.lg > :not(.lg__side):not(.lg__main) { grid-column: 1 / -1; }
 .lg__side { border-right: 1px solid var(--border); background: var(--surface); }
 .lg__nav { position: sticky; top: 72px; }
 .lg__group { margin: 0; padding: 0; list-style: none; }

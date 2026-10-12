@@ -626,7 +626,7 @@ a.sfoot__badge:hover { transform: translateY(-2px); }
 }
 .zf-hero__copy { position: relative; z-index: 1; display: grid; justify-items: center; gap: 22px; max-width: 760px; }
 .zf-hero h1 { font-size: clamp(2.2rem, 1.6rem + 2.4vw, 3.4rem); font-weight: 500; letter-spacing: -0.03em; color: var(--heading); line-height: 1.1; }
-.zf-hero h1 strong { display: block; font-size: 1.6em; font-weight: 700; color: var(--primary); }
+.zf-hero h1 strong { display: block; font-size: min(1.6em, calc(1150px / var(--len, 10)), calc(150vw / var(--len, 10))); white-space: nowrap; font-weight: 700; color: var(--primary); }
 .zf-hero p { font-size: 20px; color: var(--text); max-width: 34ch; }
 .zf-hero__pills { position: absolute; top: 50%; transform: translateY(-50%); display: none; flex-wrap: wrap; gap: 14px; width: 28%; opacity: .55; }
 .zf-hero__pills--left { left: 0; justify-content: flex-start; }

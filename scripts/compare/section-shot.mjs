@@ -10,7 +10,7 @@ for (const w of widths) for (const theme of ["light", "dark"]) {
   const p = await ctx.newPage();
   await p.goto(base + "/" + path.replace(/^\/+/, ""), { waitUntil: "networkidle" });
   await p.evaluate(() => document.querySelectorAll("[data-reveal],[data-stage]").forEach((e) => e.classList.add("is-in")));
-  await p.waitForTimeout(500);
+  await p.waitForTimeout(1600);
   const el = await p.$(sel);
   const out = `scripts/.compare/section-${w}-${theme}.png`;
   await el.screenshot({ path: out });

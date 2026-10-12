@@ -270,24 +270,6 @@ export function FeaturePageTemplate({ product, feature }: { product: Product; fe
                 <Link href={`${routes.productSection(product.slug, "features")}#${group.slug}`}>{group.name}</Link>
               </div>
             )}
-            {feature.sources?.length ? (
-              <div className="fz-fact">
-                <h2>Source</h2>
-                <p>
-                  Described from{" "}
-                  {feature.sources.map((s, i) => (
-                    <span key={s}>
-                      {i > 0 && ", "}
-                      <a href={s} rel="noopener nofollow" style={{ textDecoration: "underline" }}>
-                        {new URL(s).hostname.replace(/^www\./, "")}
-                        {new URL(s).pathname === "/" ? "" : new URL(s).pathname}
-                      </a>
-                    </span>
-                  ))}
-                  .
-                </p>
-              </div>
-            ) : null}
           </div>
         </section>
       )}

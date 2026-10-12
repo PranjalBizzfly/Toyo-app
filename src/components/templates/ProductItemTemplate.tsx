@@ -439,22 +439,6 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
               </ul>
             </div>
           )}
-          <div className="fz-fact">
-            <h2>Source</h2>
-            <p>
-              {(e as { author?: string }).author === "toyoapps" ? "Written by ToyoApps. Product details checked against " : "Written from "}
-              {e.sources.map((s, i) => (
-                <span key={s}>
-                  {i > 0 && ", "}
-                  <a href={s} rel="noopener nofollow" style={{ textDecoration: "underline" }}>
-                    {new URL(s).hostname.replace(/^www\./, "")}
-                    {new URL(s).pathname === "/" ? "" : new URL(s).pathname}
-                  </a>
-                </span>
-              ))}
-              .
-            </p>
-          </div>
         </div>
       </section>
 

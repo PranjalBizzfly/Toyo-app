@@ -27,9 +27,9 @@
 .sv--search li[data-tone="2"] i { background: #f5a524; }
 
 /* 4. Tag cloud */
-.sv--tags { padding: 22px; }
+.sv--tags { padding: 22px; text-align: center; }
 .sv__big { margin: 0 0 16px; font-family: var(--font-display); font-size: 24px; line-height: 1.2; color: var(--heading); }
-.sv--tags ul { display: flex; flex-wrap: wrap; gap: 8px; }
+.sv--tags ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 .sv--tags li { padding: 7px 12px; border-radius: 999px; font-size: 13px; background: var(--primary-soft); color: var(--primary); }
 .sv--tags li[data-tone="1"] { background: color-mix(in srgb, #3fa34d 15%, transparent); color: #2f7d3a; }
 .sv--tags li[data-tone="2"] { background: color-mix(in srgb, #9b51e0 15%, transparent); color: #7b3fd6; }

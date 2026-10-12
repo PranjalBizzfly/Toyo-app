@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 const GROUP_PHOTOS = new Set<string>();
@@ -143,7 +144,7 @@ export default async function FeaturesPage({ params }: Props) {
           />
           <h1>
             Features that power
-            <strong>{product.name}</strong>
+            <strong style={{ "--len": product.name.length } as CSSProperties}>{product.name}</strong>
           </h1>
           <p>
             {total} {total === 1 ? "feature" : "features"}

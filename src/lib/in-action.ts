@@ -36,6 +36,8 @@ const tileAlts: Record<string, string> = {
   zorfly: "Employee practising spoken English with earphones, recording herself on her phone",
   zuzu: "Manager reviewing his team's workday on a laptop in the evening",
   zapbuzzer: "Facilities staff member delivering a document and a parcel to an employee's desk",
+  sigchanger: "IT administrator rolling out email signatures on a laptop in a bright office",
+  hrmagix: "HR manager handing an employee a folder across her desk",
 };
 export function tilePhoto(slug: string) {
   return tileAlts[slug] ? { src: `/images/products/${slug}/tile.webp`, alt: tileAlts[slug] } : undefined;
