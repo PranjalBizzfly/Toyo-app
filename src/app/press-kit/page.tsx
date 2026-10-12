@@ -15,13 +15,14 @@ import "@/app/company-pages.css";
 
 export const metadata = buildMetadata({
   title: "Press Kit",
-  description: "ToyoApps press kit: company overview, brand description, logo files, colour palette and boilerplate descriptions for every product.",
+  description: "ToyoApps press kit: company overview, brand description, logo guidelines, colour palette and boilerplate descriptions for every product.",
   path: routes.pressKit(),
 });
 
 export default function PressKitPage() {
   const tree = getCatalogTree();
-  const total = tree.reduce((n, t) => n + t.products.length, 0);
+  // Unique products: a product listed in two business areas counts once.
+  const total = new Set(tree.flatMap((t) => t.products.map((p) => p.slug))).size;
   return (
     <>
       <section className="co-hero">
@@ -30,10 +31,7 @@ export default function PressKitPage() {
           <p className="co-hero__label">Press kit</p>
           <hr className="co-hero__rule" />
           <h1 className="co-hero__title">ToyoApps press kit</h1>
-          <p className="co-hero__lead co-hero__lead--max">Approved descriptions, logo files, brand colours and product boilerplates for writing about ToyoApps.</p>
-          <div className="co-btns co-btns--hero">
-            <a className="co-btn co-btn--invert" href="/press/toyoapps-logo.svg" download>Download logo (SVG)</a>
-          </div>
+          <p className="co-hero__lead co-hero__lead--max">Approved descriptions, logo guidelines, brand colours and product boilerplates for writing about ToyoApps.</p>
           <ImageSlot src="/images/company/press-kit-hero.webp" alt="Brand identity designer reviewing color palettes, logo geometry, and typography specifications" width={1200} height={420} priority className="co-hero__art" />
         </div>
       </section>
@@ -80,12 +78,16 @@ export default function PressKitPage() {
             <p className="co-eyebrow">Product ecosystem</p>
             <h2 className="co-h2">{total} products, {tree.length} business areas</h2>
           </div>
-          <ul className="cp-grid">
+          <ul className="cp-grid cp-grid--areas">
             {tree.map(({ category, products }) => (
               <li key={category.slug} className="cp-card">
                 <h3><Link href={routes.category(category.slug)}>{category.name}</Link></h3>
                 <p>{category.tagline}</p>
-                <p className="cp-card__meta">{products.map((p) => p.name).join(" · ")}</p>
+                <ul className="cp-areas__products" aria-label={`${category.name} products`}>
+                  {products.map((p) => (
+                    <li key={p.slug}>{p.name}</li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ul>
@@ -105,7 +107,6 @@ export default function PressKitPage() {
               <div className="cp-logo__body">
                 <h3>Logo mark on a light background</h3>
                 <p>Vector SVG, scales to any size.</p>
-                <a className="co-link" href="/press/toyoapps-logo.svg" download>Download SVG ›</a>
               </div>
             </div>
             <div className="cp-logo">
@@ -113,7 +114,6 @@ export default function PressKitPage() {
               <div className="cp-logo__body">
                 <h3>Logo mark on a dark background</h3>
                 <p>The same file works on dark backgrounds thanks to its white outline.</p>
-                <a className="co-link" href="/press/toyoapps-logo.svg" download>Download SVG ›</a>
               </div>
             </div>
             <div className="cp-logo">
@@ -124,7 +124,6 @@ export default function PressKitPage() {
               <div className="cp-logo__body">
                 <h3>App icon</h3>
                 <p>The site icon version of the mark, with a soft drop shadow.</p>
-                <a className="co-link" href="/icon.svg" download="toyoapps-icon.svg">Download SVG ›</a>
               </div>
             </div>
           </div>
@@ -163,7 +162,7 @@ export default function PressKitPage() {
           <ul className="cp-grid">
             {tree.flatMap(({ category, products }) =>
               products.map((p) => (
-                <li key={p.slug} className="cp-card">
+                <li key={`${category.slug}:${p.slug}`} className="cp-card">
                   <div className="cp-card__head">
                     <span className="cp-dot product-mark" data-product={p.slug} style={brandStyle(p)} aria-hidden="true">{monogram(p.name)}</span>
                     <div>

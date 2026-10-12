@@ -110,3 +110,12 @@
 .cp-card h4 { font-size: 1.0625rem; font-weight: 600; color: var(--heading); margin: 0; line-height: 1.4; }
 .cp-card h4 a { color: inherit; text-decoration: none; }
 .cp-card h4 a:hover { color: var(--primary); text-decoration: underline; }
+
+/* Press kit "Product ecosystem" cards only (.cp-grid--areas): title, description and product
+   chips stack with even spacing from the top, so every card reads the same way and no card
+   has a large empty gap. Scoped to this section; other .cp-card grids are unchanged. */
+html body main .cp-grid--areas > .cp-card { display: flex !important; flex-direction: column; justify-content: flex-start; gap: 12px; padding: 26px 28px; }
+html body main .cp-grid--areas > .cp-card > * { margin: 0 !important; }
+html body main .cp-grid--areas > .cp-card > p { min-height: 0; }
+.cp-areas__products { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 4px 0 0; padding: 0; }
+.cp-areas__products li { padding: 5px 11px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface-muted, var(--bg)); color: var(--heading); font-size: .8125rem; font-weight: 600; line-height: 1.3; white-space: nowrap; }
