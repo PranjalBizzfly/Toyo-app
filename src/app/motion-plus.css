@@ -81,6 +81,8 @@
 @supports (animation-timeline: view()) {
   main :is(.zs-h2, .dx-head__title, .ez-intro__title) { background-image: linear-gradient(90deg, var(--primary), var(--accent)); background-repeat: no-repeat; background-position: 0 100%; background-size: 0 3px; padding-bottom: 6px; animation: mp-underline linear both; animation-timeline: view(); animation-range: entry 20% cover 40%; }
   main :is(.zs-center, .dx-head--center, .ez-intro--center) :is(.zs-h2, .dx-head__title, .ez-intro__title), main .zs-h2.zs-center { background-position: 50% 100%; }
+  main :is(.zs-h2, .dx-head__title, .ez-intro__title)[data-align="center"] { background-position: 50% 100%; }
+  main :is(.zs-h2, .dx-head__title, .ez-intro__title)[data-align="right"] { background-position: 100% 100%; }
   @keyframes mp-underline { to { background-size: 72px 3px; } }
 }
 

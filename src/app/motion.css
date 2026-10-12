@@ -59,8 +59,9 @@
 .marquee__viewport { flex: 1; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 .marquee__track { display: flex; width: max-content; animation: m-marquee 42s linear infinite; }
 .marquee__list { display: flex; gap: 48px; padding-right: 48px; list-style: none; margin: 0; }
-.marquee__list a { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--heading); opacity: .8; transition: opacity .2s; }
-.marquee__list a:hover { opacity: 1; }
+.marquee__list a { display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--heading); text-underline-offset: 4px; }
+/* Hover underlines instead of fading in: the dimmed resting state fell below 4.5:1 on the blue band. */
+.marquee__list a:hover { text-decoration: underline; }
 .marquee__list :is(img, svg) { max-height: 28px; width: auto; }
 .marquee:hover .marquee__track, .marquee:focus-within .marquee__track, .marquee[data-paused] .marquee__track { animation-play-state: paused; }
 .marquee__toggle { flex: none; display: grid; place-items: center; width: 32px; height: 32px; margin-right: 16px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg); color: var(--text-secondary); }
@@ -85,6 +86,10 @@ html :is(.card, .h-card, .h-need, .h-ind, .mm-app, .zcard, .z-show__tiles a, .h-
   :root { interpolate-size: allow-keywords; }
   details::details-content { height: 0; overflow: clip; transition: height .35s ease, content-visibility .35s allow-discrete; }
   details[open]::details-content { height: auto; }
+  /* A closed answer is clipped to 0 height but stays rendered; hide it once the close
+     animation ends so it is not treated as visible text (screen readers, contrast checks). */
+  details:not([open]) > :not(summary) { visibility: hidden; transition: visibility 0s .35s; }
+  details[open] > :not(summary) { visibility: visible; transition: visibility 0s; }
 }
 
 /* 9. Popup entrance (dropdowns, mega menu): slide-down .3s ease-out. */

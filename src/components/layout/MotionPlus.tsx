@@ -22,48 +22,68 @@ export function MotionPlus() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const cleanups: (() => void)[] = [];
 
+    // Heading underline follows each heading's real alignment (centred headings get a centred line)
+    document.querySelectorAll<HTMLElement>("main :is(.zs-h2, .dx-head__title, .ez-intro__title)").forEach((h) => {
+      const a = getComputedStyle(h).textAlign;
+      h.dataset.align = a === "center" ? "center" : a === "right" || a === "end" ? "right" : "left";
+    });
+
     // Cursor spotlight (fine pointers only)
     if (!reduce && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-      const onMove = (e: PointerEvent) => {
-        const card = (e.target as Element | null)?.closest<HTMLElement>(SPOT);
-        if (!card) return;
-        const r = card.getBoundingClientRect();
-        card.classList.add("mp-spot");
-        card.style.setProperty("--mx", `${e.clientX - r.left}px`);
-        card.style.setProperty("--my", `${e.clientY - r.top}px`);
+      // Spotlight, tilt and magnet share one pointer handler that runs at most once per frame
+      // with the latest pointer position. All rects are read before any style is written,
+      // and unchanged values are not rewritten, so moving the mouse no longer forces layouts.
+      let last: PointerEvent | null = null;
+      let raf = 0;
+      let tilted: HTMLElement | null = null;
+      const set = (el: HTMLElement, prop: string, value: string) => {
+        if (el.style.getPropertyValue(prop) !== value) el.style.setProperty(prop, value);
       };
-      document.addEventListener("pointermove", onMove, { passive: true });
-      cleanups.push(() => document.removeEventListener("pointermove", onMove));
-
-      // 3D tilt on feature cards (max 5°)
-      const onTilt = (e: PointerEvent) => {
-        const card = (e.target as Element | null)?.closest<HTMLElement>(TILT);
-        document.querySelectorAll<HTMLElement>(".mp-tilt").forEach((c) => {
-          if (c !== card) { c.classList.remove("mp-tilt"); c.style.removeProperty("--rx"); c.style.removeProperty("--ry"); }
-        });
-        if (!card) return;
-        const r = card.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
-        card.classList.add("mp-tilt");
-        card.style.setProperty("--ry", `${(x * 10).toFixed(2)}deg`);
-        card.style.setProperty("--rx", `${(-y * 10).toFixed(2)}deg`);
-      };
-      document.addEventListener("pointermove", onTilt, { passive: true });
-      cleanups.push(() => document.removeEventListener("pointermove", onTilt));
-
-      // Magnetic buttons: drift up to 6px toward the cursor
-      const onMagnet = (e: PointerEvent) => {
-        document.querySelectorAll<HTMLElement>(MAGNET).forEach((btn) => {
-          const r = btn.getBoundingClientRect();
+      const frame = () => {
+        raf = 0;
+        const e = last;
+        if (!e) return;
+        const target = e.target as Element | null;
+        // Reads
+        const spot = target?.closest<HTMLElement>(SPOT) ?? null;
+        const spotRect = spot?.getBoundingClientRect();
+        // 3D tilt on feature cards (max 5°)
+        const tilt = target?.closest<HTMLElement>(TILT) ?? null;
+        const tiltRect = tilt === spot ? spotRect : tilt?.getBoundingClientRect();
+        // Magnetic buttons: drift up to 6px toward the cursor
+        const magnets = [...document.querySelectorAll<HTMLElement>(MAGNET)].map((btn) => ({ btn, r: btn.getBoundingClientRect() }));
+        // Writes
+        if (spot && spotRect) {
+          spot.classList.add("mp-spot");
+          set(spot, "--mx", `${e.clientX - spotRect.left}px`);
+          set(spot, "--my", `${e.clientY - spotRect.top}px`);
+        }
+        if (tilted && tilted !== tilt) { tilted.classList.remove("mp-tilt"); tilted.style.removeProperty("--rx"); tilted.style.removeProperty("--ry"); }
+        tilted = tilt;
+        if (tilt && tiltRect) {
+          const x = (e.clientX - tiltRect.left) / tiltRect.width - 0.5, y = (e.clientY - tiltRect.top) / tiltRect.height - 0.5;
+          tilt.classList.add("mp-tilt");
+          set(tilt, "--ry", `${(x * 10).toFixed(2)}deg`);
+          set(tilt, "--rx", `${(-y * 10).toFixed(2)}deg`);
+        }
+        for (const { btn, r } of magnets) {
           const dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
           const near = Math.abs(dx) < r.width / 2 + 40 && Math.abs(dy) < r.height / 2 + 30;
-          btn.classList.add("mp-magnet");
-          btn.style.setProperty("--tx", near ? `${(dx / r.width) * 12}px` : "0px");
-          btn.style.setProperty("--ty", near ? `${(dy / r.height) * 8}px` : "0px");
-        });
+          if (!btn.classList.contains("mp-magnet")) btn.classList.add("mp-magnet");
+          set(btn, "--tx", near ? `${(dx / r.width) * 12}px` : "0px");
+          set(btn, "--ty", near ? `${(dy / r.height) * 8}px` : "0px");
+        }
       };
-      document.addEventListener("pointermove", onMagnet, { passive: true });
-      cleanups.push(() => document.removeEventListener("pointermove", onMagnet));
+      const onMove = (e: PointerEvent) => {
+        last = e;
+        if (!raf) raf = requestAnimationFrame(frame);
+      };
+      document.addEventListener("pointermove", onMove, { passive: true });
+      cleanups.push(() => {
+        document.removeEventListener("pointermove", onMove);
+        cancelAnimationFrame(raf);
+        if (tilted) { tilted.classList.remove("mp-tilt"); tilted.style.removeProperty("--rx"); tilted.style.removeProperty("--ry"); }
+      });
     }
 
     // Click ripple on buttons (any pointer)

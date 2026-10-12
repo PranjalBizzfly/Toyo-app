@@ -49,15 +49,20 @@ export function Motion() {
 
     const frame = requestAnimationFrame(() => {
       const fold = window.innerHeight;
+      const authored = [...document.querySelectorAll<HTMLElement>("main [data-reveal], main " + STAGE_SELECTOR.split(", ").join(", main "))];
+      const candidates = [...document.querySelectorAll<HTMLElement>(REVEAL_SELECTOR)];
+      // Measure everything first, then write: interleaving reads and writes forced a layout per element.
+      const top = new Map<HTMLElement, number>();
+      for (const el of [...authored, ...candidates]) if (!top.has(el)) top.set(el, el.getBoundingClientRect().top);
       // Explicitly authored reveals (data-reveal="left" etc.) and stages.
-      for (const el of document.querySelectorAll<HTMLElement>("main [data-reveal], main " + STAGE_SELECTOR.split(", ").join(", main "))) {
-        if (el.getBoundingClientRect().top < fold) el.classList.add("is-in");
+      for (const el of authored) {
+        if (top.get(el)! < fold) el.classList.add("is-in");
         else io.observe(el);
       }
-      for (const el of document.querySelectorAll<HTMLElement>(REVEAL_SELECTOR)) {
+      for (const el of candidates) {
         // Skip nested matches and anything in a hero.
         if (el.hasAttribute("data-reveal") || el.closest("[data-reveal]") || el.closest(".h-hero, .zp-hero, .zs-hero, [data-no-reveal]")) continue;
-        if (el.getBoundingClientRect().top < fold) continue;
+        if (top.get(el)! < fold) continue;
         const parent = el.parentElement;
         const index = parent ? [...parent.children].indexOf(el) : 0;
         el.dataset.reveal = "";
