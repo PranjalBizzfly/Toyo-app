@@ -3,7 +3,7 @@
 import { chromium } from "playwright";
 import fs from "node:fs";
 const base = process.env.BASE ?? "http://localhost:4100";
-const NEW = ["growbizz", "speechwright", "1xl-infra-channel-partner-portal", "zeal-partner-program", "sopgalaxy", "theprojectchecker", "warwi", "dizola", "247meetings", "finzola", "social-magix"];
+const NEW = ["growbizz", "speechwright", "channel-partner-portal", "sopgalaxy", "theprojectchecker", "warwi", "dizola", "247meetings", "finzola", "social-magix", "fleetras", "meetingmind", "taskmagix"];
 const OLD = ["sibu", "oda7", "benj", "hrmagix", "zuzu", "cardizo"];
 const out = [];
 const log = (s) => { out.push(s); console.log(s); };
@@ -56,7 +56,7 @@ for (const slug of [...NEW, ...OLD]) {
 }
 // Search: each live new product is findable by name.
 const sp = await b.newPage();
-for (const q of ["GrowBizz", "Speechwright", "SOPGalaxy", "Dizola", "Warwi", "TheProjectChecker", "Social Magix", "FINZOLA", "Zeal Partner Program"]) {
+for (const q of ["GrowBizz", "Speechwright", "SOPGalaxy", "Dizola", "Warwi", "TheProjectChecker", "Social Magix", "FINZOLA", "Fleetras", "MeetingMind", "TaskMagix"]) {
   await sp.goto(`${base}/search?q=${encodeURIComponent(q)}`, { waitUntil: "networkidle" });
   const hit = await sp.evaluate((q) => document.querySelector("main").innerText.toLowerCase().includes(q.toLowerCase()), q);
   if (!hit) problems++;
