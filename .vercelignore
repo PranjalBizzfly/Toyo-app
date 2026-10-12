@@ -1,0 +1,13 @@
+# Vercel builds the site itself: never upload local builds, caches or scratch work.
+.next
+.next-*
+.npm-cache
+node_modules
+incoming-images
+scripts/.compare
+scripts/.ui-shots
+scripts/.ref
+scripts/.research
+scripts/_plan
+scripts/_research
+scripts/_tmp_*
