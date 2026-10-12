@@ -2,15 +2,15 @@ import { getResourceTypeFaqs } from "@/lib/faqs";
 import { notFound } from "next/navigation";
 import { ResourcesHubTemplate } from "@/components/templates/EntityTemplates";
 import { getResources } from "@/lib/catalog";
-import { resourceTypes, routes } from "@/lib/routes";
+import { resourceTypes, resourceTypeSegment, routes } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ type: string }> };
 export const dynamicParams = false;
-export const generateStaticParams = () => resourceTypes.map((r) => ({ type: r.type }));
+export const generateStaticParams = () => resourceTypes.map((r) => ({ type: resourceTypeSegment(r.type) }));
 const find = async (p: Props["params"]) => {
   const { type } = await p;
-  return resourceTypes.find((r) => r.type === type);
+  return resourceTypes.find((r) => resourceTypeSegment(r.type) === type);
 };
 
 export async function generateMetadata({ params }: Props) {

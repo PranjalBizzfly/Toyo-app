@@ -78,3 +78,26 @@ html body .pm__hero b, html body .pm__item b { color: var(--pm-ink) !important; 
 html body .pm__hero small, html body .pm__item small, html body .pm__stats small { color: var(--pm-mute) !important; }
 html body .pm__stats b { color: var(--primary) !important; }
 .pm__stats span, .pm__item { border-color: var(--pm-line); }
+
+/* Dashboard mock adapts to its own width (it sits in narrow hero columns too) */
+.dm { container-type: inline-size; }
+.dm__rt b, .dm__rt strong, .dm__rt > :first-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dm__h { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dm__cal { min-width: 0; }
+@container (max-width: 640px) {
+  .dm__body { grid-template-columns: 112px 1fr; min-height: 0; }
+  .dm__nav { padding: 10px 6px; font-size: 12px; }
+  .dm__nav li { padding: 7px 8px; }
+  .dm__main { padding: 12px; }
+  .dm__tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .dm__tile { padding: 8px; }
+  .dm__tile b { font-size: 16px; }
+  .dm__tile small { font-size: 10.5px; }
+  .dm__panes { grid-template-columns: minmax(0, 1fr); }
+  .dm__pane--cal { display: none; }
+}
+@container (max-width: 440px) {
+  .dm__body { grid-template-columns: 1fr; }
+  .dm__nav { display: none; }
+  .dm__search { display: none; }
+}

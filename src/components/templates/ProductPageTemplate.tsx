@@ -9,7 +9,6 @@ import {
   getRelatedProducts,
   groupFeatures,
   integrationHasPage,
-  previewMode,
 } from "@/lib/catalog";
 import { getProductCtas, platformLabels } from "@/lib/product-cta";
 import { getAvailableSections, getProductSectionData, OVERVIEW_FEATURE_LIMIT } from "@/lib/product-sections";
@@ -23,7 +22,7 @@ import { BranchTimeline } from "@/components/product/BranchTimeline";
 import { PastelCards, VoiceHero } from "@/components/product/VoiceParts";
 import "@/app/voice.css";
 import { SpotTabbar, StoryTabs, type StoryTab } from "@/components/product/StoryTabs";
-import { FaqList, Slot } from "@/components/ui/primitives";
+import { FaqList } from "@/components/ui/primitives";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import { SpotVisual } from "@/components/product/SpotVisual";
 import "@/app/product-zoho.css";
@@ -127,7 +126,7 @@ export function ProductPageTemplate({ product }: { product: Product }) {
     <div className={`pz zs zs--${story.look} zs-ref--${story.hero}${story.serif ? " zs--serif" : ""}`} data-ref={story.ref}>
       {story.recipe === "voice" ? (
         <>
-          <VoiceHero product={product} cta={cta} photos={[`/images/products/${product.slug}/hero-a.webp?v=2`, `/images/products/${product.slug}/hero-b.webp?v=2`]} />
+          <VoiceHero product={product} cta={cta} photos={[`/images/products/${product.slug}/hero-a.webp?v=2`, `/images/products/${product.slug}/hero-b.webp?v=2`]} photoAlts={["HR director in a charcoal blazer smiling in a modern office", "Young professional in a navy suit seated at his desk"]} />
           {groups.length >= 3 && (
             <section className="pc-sec" aria-labelledby="pc-title">
               <div className="container">
@@ -139,6 +138,7 @@ export function ProductPageTemplate({ product }: { product: Product }) {
                     title: g.group.name,
                     text: g.group.description ?? g.features.slice(0, 3).map((f) => f.name).join(", "),
                     image: `/images/products/${product.slug}/${["card-team", "card-recognition", "card-payroll"][i]}.webp`,
+                    alt: ["HR executive handing a joining folder to a new employee", "Employee marking attendance on a biometric fingerprint device", "Manager holding a performance review with an employee"][i],
                     href: `${featuresHref}#${g.group.slug}`,
                     label: ["Explore more", "See how it works", "Learn more"][i],
                   }))}
@@ -712,14 +712,6 @@ export function ProductPageTemplate({ product }: { product: Product }) {
           </div>
         </section>
       ) : null}
-
-      {previewMode && (
-        <section className="zs-band zs-band--plain">
-          <div className="container">
-            <Slot show label={`${product.name} customer proof`} hint="Testimonials, case studies and ratings (verified only)" />
-          </div>
-        </section>
-      )}
 
       {/* Related */}
       {related.length > 0 && (

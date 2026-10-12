@@ -11,7 +11,7 @@ import { Breadcrumbs } from "@/components/ui/primitives";
  * into a yellow circle and a blue arch with a voice-style waveform; light
  * peach page wash. Photos are licensed stock of Indian office professionals.
  */
-export function VoiceHero({ product, cta, photos }: { product: Product; cta: { label: string; href: string }; photos: [string, string] }) {
+export function VoiceHero({ product, cta, photos, photoAlts }: { product: Product; cta: { label: string; href: string }; photos: [string, string]; photoAlts?: [string, string] }) {
   const category = getCategory(product.category);
   const host = new URL(product.websiteUrl).hostname.replace(/^www\./, "");
   return (
@@ -53,17 +53,17 @@ export function VoiceHero({ product, cta, photos }: { product: Product; cta: { l
             </li>
           </ul>
         </div>
-        <div className="vh__art" aria-hidden="true">
+        <div className="vh__art">
           <span className="vh__arch">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={photos[1]} alt="" />
+            <img src={photos[1]} alt={photoAlts?.[1] ?? ""} />
           </span>
           <span className="vh__circle">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={photos[0]} alt="" />
+            <img src={photos[0]} alt={photoAlts?.[0] ?? ""} />
           </span>
-          <span className="vh__dots" />
-          <svg className="vh__wave" viewBox="0 0 220 40">
+          <span className="vh__dots" aria-hidden="true" />
+          <svg className="vh__wave" viewBox="0 0 220 40" aria-hidden="true">
             {Array.from({ length: 44 }, (_, i) => {
               const h = 4 + ((i * 37) % 30);
               return <rect key={i} x={i * 5} y={20 - h / 2} width="1.6" height={h} rx=".8" />;
@@ -79,6 +79,7 @@ export interface PastelCard {
   title: string;
   text: string;
   image: string;
+  alt?: string;
   href: string;
   label: string;
 }
@@ -91,7 +92,7 @@ export function PastelCards({ cards }: { cards: PastelCard[] }) {
         <article key={c.title} className={`pc__card pc__card--${i % 3}`} data-reveal style={{ "--reveal-delay": `${i * 110}ms` } as React.CSSProperties}>
           <span className="pc__img">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.image} alt="" loading="lazy" />
+            <img src={c.image} alt={c.alt ?? ""} loading="lazy" />
           </span>
           <h3>{c.title}</h3>
           <p>{c.text}</p>

@@ -82,5 +82,16 @@ html body main .zs-aud-1 .zs-ribbon li { font-size: clamp(17px, .9rem + .5vw, 22
 html body main :is(p + p) { margin-top: .85em; }
 
 /* FAQ inside a dark band: question rows sit on the band (white rows made white text unreadable). */
-html body main .zs-band--dark details { background: rgb(255 255 255 / .06) !important; border-color: rgb(255 255 255 / .18) !important; }
+html body main section.zs-band--dark details, html body main section.zs-band--dark .accordion details { background: rgb(12 27 42 / .92) !important; border-color: rgb(255 255 255 / .18) !important; }
+
+/* Brand-coloured use-case cards: in dark mode some brand tints are too light for white text, so deepen them. */
+html[data-theme="dark"] body main .zs-uses-0 .zs-usecase { box-shadow: inset 0 0 0 999px rgb(0 0 0 / .42); }
+/* Breadcrumbs on dark heroes. */
+html body main header.zs-hero--dark nav.breadcrumbs :is(ol, a, li, span) { color: #ffffff !important; opacity: 1 !important; }
+/* Accordion answers in dark mode: a touch lighter for AA on tinted bands. */
+html[data-theme="dark"] body main .accordion__body { color: #aebdcc; }
 html body main .zs-band--dark details :is(summary, .accordion__body, .accordion__body *) { color: #e6eef6 !important; }
+
+/* ToyoApps guide label on product resource pages: inherits the hero text colour, so it stays legible on every look. */
+html body main .fz-guide-note { margin-top: 14px; max-width: 62ch; padding: 8px 14px; border-left: 3px solid currentColor; font-size: 14.5px; line-height: 1.55; color: inherit; }
+html body main .fz-guide-note a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }

@@ -456,7 +456,7 @@ a.primary-nav__trigger[aria-current="page"]::after {
 .sfoot__badge-text { display: grid; }
 .sfoot__badge-text small { font-size: 10.5px; letter-spacing: .02em; }
 .sfoot__badge-text strong { font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
-.sfoot__badge--chrome { background: #1e88e5; color: #fff; }
+.sfoot__badge--chrome { background: #1565c0; color: #fff; }
 .sfoot__badge--chrome .sfoot__badge-icon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 6px; background: #fff; }
 .sfoot__badge--chrome .sfoot__badge-text strong { font-size: 13.5px; }
 .sfoot__badge--chrome .sfoot__badge-text small { font-size: 13.5px; font-weight: 600; }
@@ -475,6 +475,8 @@ a.sfoot__badge:hover { transform: translateY(-2px); }
 .sfoot__card--american-express { background: #2671b9; }
 .sfoot__card-word { font-family: Arial, Helvetica, sans-serif; font-weight: 900; font-style: italic; letter-spacing: -.02em; }
 .sfoot__card-word--visa { font-size: 17px; color: #1a1f71; }
+/* Visa and PayPal marks are printed on white, in both themes. */
+.sfoot__card:has(.sfoot__card-word--visa, .sfoot__card-word--paypal) { background: #fff !important; }
 .sfoot__card-word--amex { font-size: 12px; font-style: normal; color: #fff; }
 .sfoot__card-word--paypal { font-size: 22px; color: #003087; text-shadow: 3px 2px 0 #009cde; }
 @media (max-width: 640px) { .sfoot__badges { justify-content: center; } .sfoot__apps, .sfoot__pay { justify-content: center; } }
@@ -497,7 +499,7 @@ a.sfoot__badge:hover { transform: translateY(-2px); }
 .sfoot__brand .sfoot__badge { width: 168px; height: 48px; }
 .sfoot__brand .sfoot__badge--meta { width: 170px; }
 .sfoot__brand .sfoot__pay { flex-wrap: nowrap; gap: 6px; }
-.sfoot__brand .sfoot__card { width: 42px; height: 30px; }
+.sfoot__brand .sfoot__card { width: 52px; height: 34px; }
 .sfoot__brand .sfoot__card svg { width: 32px; height: 20px; }
 .sfoot__brand .sfoot__card-word--visa { font-size: 13px; }
 .sfoot__brand .sfoot__card-word--amex { font-size: 9.5px; }
@@ -703,3 +705,20 @@ ol.steps, ol.flow { list-style: none; margin: 0; padding: 0; }
 .pricing-card .btn { border-radius: 3px; text-transform: uppercase; letter-spacing: .02em; min-width: 200px; }
 .pricing-card--recommended { border-color: var(--heading); }
 .pricing-card__tag { position: absolute; top: 0; right: 10px; transform: translateY(-50%); background: var(--highlight); color: #1f2a12; border-radius: 3px; font-weight: 600; }
+
+/* Footer payment cards: 3 per row so the row stays inside the brand column (matches the 168px badges) */
+.sfoot--wide .sfoot__brand .sfoot__pay { flex-wrap: wrap; max-width: 170px; }
+@media (max-width: 1099.98px) { .sfoot--wide .sfoot__brand .sfoot__pay { max-width: none; } }
+
+/* Footer type polish (desktop): calmer headings that stay on one line, even link rhythm,
+   "View all" sized like the links it follows. Layout and column order unchanged. */
+@media (min-width: 1100px) {
+  .sfoot--wide .fgroup__title { font-size: 20px; font-weight: 500; white-space: nowrap; }
+  .sfoot--wide .fgroup__list { margin-top: 18px; }
+  .sfoot--wide .fgroup__list li + li { margin-top: 12px; }
+  .sfoot--wide .fgroup__list a { font-size: 15px; line-height: 1.45; }
+  .sfoot--wide .sfoot__note { font-size: 15px; }
+  .sfoot--wide .sfoot__more { margin-top: 16px; font-size: 15px; font-weight: 600; gap: 6px; }
+  .sfoot--wide .sfoot__more svg { width: 12px; height: 12px; transition: transform .2s var(--ease); }
+  .sfoot--wide .sfoot__more:hover svg { transform: translateX(3px); }
+}

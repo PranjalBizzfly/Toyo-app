@@ -1,7 +1,7 @@
 /* Contrast fixes, pass 4 (scripts/compare/contrast-audit.mjs). */
 
 /* Breadcrumbs on the blue feature-page hero */
-html body .fz-hero .breadcrumbs :is(a, li, span) { color: #ffffff !important; opacity: .92; }
+html body .fz-hero .breadcrumbs :is(ol, a, li, span) { color: #ffffff !important; opacity: 1; }
 
 /* Search: "Solution" / "Industry" chips use the green tone */
 :root:not([data-theme="dark"]) body .srch-card:is([data-type="Solution"], [data-type="Industry"]) .srch-card__type { color: #1f5a27 !important; }
@@ -31,6 +31,6 @@ html body .zc-band .eyebrow, html body [class*="band"] > .container > p.eyebrow 
 :root[data-theme="dark"] body .fz-sec--band { background-color: #0b5f93; }
 
 /* Feature-page split band lead and centred heading on the blue band */
-html body .fz-sec--band .fz-split__copy .fz-lead { color: #ffffff; }
+html body .fz-sec--band .fz-split__copy .fz-lead { color: #ffffff !important; opacity: 1; }
 :root[data-theme="dark"] body .fz-center .fz-h2 { color: var(--heading); }
-html body .hs__card-in i { filter: brightness(.66) !important; }
+html body .hs__card-in i { filter: brightness(.6) !important; }

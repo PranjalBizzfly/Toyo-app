@@ -15,8 +15,12 @@
 .pt:is(.look-midnight, .look-forest, .look-ocean, .look-aurora, .look-void, .look-ink),
 :root[data-theme="dark"] .pt {
   --hero-ink: #ffffff;
-  --hero-ink-2: #e2ecf5;    /* ≥ 4.6:1 even on the bright ocean-blue hero */
+  --hero-ink-2: #e2ecf5;    /* ≥ 4.6:1 on midnight/forest/aurora/void/ink heroes */
 }
+/* The ocean hero is the brightest dark hero (about rgb(17,117,182) behind the crumbs): #e2ecf5 reaches only 4.1:1 there, white reaches 5:1. */
+.pt.look-ocean, :root[data-theme] .pt.look-ocean { --hero-ink-2: #ffffff; }
+/* Its brightest point sits under the breadcrumbs (white reached only 4.497:1 on the solution-page hero): a faint top shade keeps crumbs above 4.5:1. */
+html body main .pt.look-ocean :is(.fz-vhero, .fz-hero, .pz-sec-hero, .zs-hero) { box-shadow: inset 0 170px 150px -90px rgb(3 28 50 / .2); }
 html body main .pt :is(.zs-hero, .fz-hero, .zf-hero, .pz-sec-hero, .ez-hero, .fz-vhero) :is(
   .eyebrow, .zs-kicker, .fz-kicker, .fz-hero__eyebrow, .pz-sec-hero__eyebrow, .zc-kicker, .ez-kicker, .ez-heading__kicker,
   .fz-more, .zs-hero__trial, .breadcrumbs [aria-current], .fz-crumbs [aria-current]

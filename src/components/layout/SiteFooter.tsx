@@ -86,7 +86,15 @@ export function SiteFooter() {
 
         <nav aria-label="Footer" className="sfoot__cols">
           <FooterGroup title="Products">
-            <LinkList links={products} />
+            <LinkList links={products.slice(0, 9)} />
+            {products.length > 9 && (
+              <Link href={routes.products()} className="sfoot__more">
+                View all {products.length}
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                  <path d="M3 8h10M9 4l4 4-4 4" />
+                </svg>
+              </Link>
+            )}
           </FooterGroup>
 
           <FooterGroup title="Categories">

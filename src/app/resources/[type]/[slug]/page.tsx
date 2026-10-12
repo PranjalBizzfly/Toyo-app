@@ -1,16 +1,16 @@
 import { notFound } from "next/navigation";
 import { ResourcePageTemplate } from "@/components/templates/EntityTemplates";
 import { getResources } from "@/lib/catalog";
-import { resourceTypes, routes } from "@/lib/routes";
+import { resourceTypes, routes, resourceTypeSegment } from "@/lib/routes";
 import { buildMetadata } from "@/lib/seo";
 
 type Props = { params: Promise<{ type: string; slug: string }> };
 export const dynamicParams = false;
-export const generateStaticParams = () => getResources().map((r) => ({ type: r.type, slug: r.slug }));
+export const generateStaticParams = () => getResources().map((r) => ({ type: resourceTypeSegment(r.type), slug: r.slug }));
 
 async function find(params: Props["params"]) {
   const { type, slug } = await params;
-  return getResources().find((r) => r.type === type && r.slug === slug);
+  return getResources().find((r) => resourceTypeSegment(r.type) === type && r.slug === slug);
 }
 
 export async function generateMetadata({ params }: Props) {

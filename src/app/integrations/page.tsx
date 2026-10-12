@@ -33,7 +33,7 @@ export default function IntegrationsPage() {
         crumbs={[{ name: "Integrations", href: routes.integrations() }]}
         eyebrow="Integration directory"
         title="Connect ToyoApps products with the tools you already use"
-        lead="Every integration listed here is one a ToyoApps product documents on its own site: storage that feeds Sibu's asset library, Google Workspace for SigChanger, messaging alerts in ZapBuzzer and Fantom, and the apps TaskMagic automates. Search by tool, or filter by category or product."
+        lead="Every integration listed here is one a ToyoApps product documents on its own site: storage that feeds Sibu's asset library, Google Workspace for SigChanger and messaging alerts in ZapBuzzer and Fantom. Search by tool, or filter by category or product."
         stats={[
           { value: entries.length, label: "Integrations" },
           { value: categories.length, label: "Categories" },

@@ -5,7 +5,11 @@ type SpotFeature = { name: string; capabilities?: string[]; howItWorks?: string[
 /** First clause of a sentence, for compact visuals ("Search across X, Y and Z" → "Search across X"). */
 const clip = (s: string, max = 46) => {
   const first = s.split(/[;:—–]|, (?=and |or |so |which )/)[0].trim().replace(/\.$/, "");
-  return first.length > max ? `${first.slice(0, max - 1).replace(/\s+\S*$/, "")}…` : first;
+  if (first.length <= max) return first;
+  // Prefer a natural break (comma, "with", "by", "so", "for") over a mid-phrase "…"
+  const cut = first.slice(0, max);
+  const at = Math.max(cut.lastIndexOf(","), ...[" with ", " by ", " so ", " for ", " that "].map((w) => cut.lastIndexOf(w)));
+  return at > 14 ? first.slice(0, at).trim().replace(/[,;]$/, "") : `${cut.replace(/\s+\S*$/, "")}…`;
 };
 
 /**

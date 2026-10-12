@@ -133,7 +133,8 @@ export default async function ProductSectionPage({ params }: Props) {
               { name: sectionLabels[section], href: routes.productSection(product.slug, section) },
             ]}
           />
-          <h1>{c.title}</h1>
+          {/* The page name ("Pricing"); the " | Product" part belongs to the browser-tab title only. */}
+          <h1>{c.title.split(" | ")[0]}</h1>
           <p className="pz-sec-hero__lead">{section === "pricing" ? product.pricing?.note ?? c.description : c.description}</p>
           {pricing?.trial && (
             <ul className="pz-sec-hero__checks">

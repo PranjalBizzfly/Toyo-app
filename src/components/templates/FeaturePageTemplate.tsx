@@ -105,6 +105,11 @@ export function FeaturePageTemplate({ product, feature }: { product: Product; fe
             <p className="fz-hero__eyebrow">{group ? `${product.name} · ${group.name}` : product.name}</p>
             <h1>{feature.name}</h1>
             <p className="fz-hero__lead">{feature.summary}</p>
+            {feature.evidence === "listed" && (
+              <p className="fz-guide-note">
+                {product.name} lists this feature on its official site without further detail. This page explains what it is; check the product's own site for specifics.
+              </p>
+            )}
             <div className="fz-hero__ctas">
               <a href={primary.href} rel="noopener" className="fz-btn fz-btn--light">
                 {primary.label}

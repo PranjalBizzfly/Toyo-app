@@ -23,7 +23,7 @@ html body .fz-sec--band .fz-kicker { color: #ffffff !important; }
 
 /* Section-page hero eyebrow: light heroes use the primary, dark heroes the yellow */
 /* Hero eyebrows follow the hero text colour, so they read on light and dark heroes alike */
-html body :is(.pz-sec-hero__eyebrow, .fz-hero__eyebrow, .fz-hero__ctas .fz-more) { color: inherit !important; opacity: .92; }
+html body :is(.pz-sec-hero__eyebrow, .fz-hero__eyebrow, .fz-hero__ctas .fz-more) { color: inherit !important; opacity: 1; }
 
 /* Home small items */
 :root[data-theme="dark"] body .hh__highlight-text small { color: #a9bccd !important; }

@@ -380,7 +380,8 @@ a.zs-card:hover { border-color: color-mix(in srgb, var(--primary) 45%, var(--bor
   .zs-win--main { inset: 0 0 18% 0; }
   .zs-hero--center .zs-win--main { inset: 0 0 18% 0; }
   .zs-float { min-width: 0; max-width: 62%; }
-  .zs-float--a { right: -4px; top: auto; bottom: 0; }
+  .zs-float--a { right: 6px; top: auto; bottom: 6px; }
+  .zs-float--a b { white-space: normal; }
   .zs-float--b { display: none; }
   .zs-tiles { grid-template-columns: repeat(3, 1fr); }
   .zs-node { font-size: 12px; padding: 8px 10px; }
@@ -392,7 +393,7 @@ a.zs-card:hover { border-color: color-mix(in srgb, var(--primary) 45%, var(--bor
 .zs-timeline, .zs-hub__list, .zs-plans { margin-inline: auto; }
 .zs-timeline { padding-left: 56px; }
 @media (min-width: 960px) { .zs-timeline { padding-left: 0; } }
-.zs-float--a { top: -2%; }
+@media (min-width: 641px) { .zs-float--a { top: -2%; } }
 
 /* Related-product cards: capability badges wrap instead of overflowing on phones. */
 .product-card__caps { display: flex; flex-wrap: wrap; min-width: 0; }
@@ -404,3 +405,6 @@ a.zs-card:hover { border-color: color-mix(in srgb, var(--primary) 45%, var(--bor
   .zs-plans:not(.zs-plans-1):has(> li:nth-child(5)) { max-width: 1200px; }
   .zs-plans:not(.zs-plans-1):has(> li:nth-child(5)) strong { font-size: 30px; }
 }
+
+/* A floating card with a title and a description stacks them (never squeezes the title) */
+.zs-float--a:has(> b + small, > small + b) { flex-direction: column; align-items: flex-start; gap: 4px; }

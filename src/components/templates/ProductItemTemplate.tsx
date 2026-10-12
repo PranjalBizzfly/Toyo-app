@@ -171,6 +171,12 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
             </p>
             <h1>{title}</h1>
             <p className="fz-hero__lead">{item.summary}</p>
+            {(item as { author?: string }).author === "toyoapps" && (
+              <p className="fz-guide-note">
+                A ToyoApps guide: general advice for this kind of work. For what {product.name} itself does, see its{" "}
+                <Link href={routes.productSection(product.slug, "features")}>features</Link>.
+              </p>
+            )}
             <div className="fz-hero__ctas">
               <a href={primary.href} rel="noopener" className="fz-btn">
                 {primary.label}
@@ -436,7 +442,7 @@ export function ProductItemTemplate({ product, section, item }: { product: Produ
           <div className="fz-fact">
             <h2>Source</h2>
             <p>
-              Written from{" "}
+              {(e as { author?: string }).author === "toyoapps" ? "Written by ToyoApps. Product details checked against " : "Written from "}
               {e.sources.map((s, i) => (
                 <span key={s}>
                   {i > 0 && ", "}
