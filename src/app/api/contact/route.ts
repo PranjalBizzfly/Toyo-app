@@ -76,7 +76,7 @@ function sendWebhook(url: string, data: ContactPayload) {
   return fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ ...data, typeLabel: typeLabel(data.type), source: `${site.url}/contact`, submittedAt: new Date().toISOString() }),
+    body: JSON.stringify({ ...data, typeLabel: typeLabel(data.type), source: `${site.url}/contact-us`, submittedAt: new Date().toISOString() }),
     signal: AbortSignal.timeout(10_000),
   });
 }
