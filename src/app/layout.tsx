@@ -30,6 +30,7 @@ import "./contrast.css";
 import "./pattern-cards.css";
 import "./balanced-grids.css";
 import "./grid-balance.css";
+import "./footer-motion.css";
 
 // Same typefaces as the original toyoapps.com: Inter for text, Space Grotesk for the wordmark and headings.
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });

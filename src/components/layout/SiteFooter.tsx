@@ -4,6 +4,7 @@ import { getCategories, getComparisons, getIndustries, getIntegrations, getProdu
 import { routes } from "@/lib/routes";
 import { Icon } from "@/components/ui/Icon";
 import { FooterGroup } from "./FooterGroup";
+import { FooterReveal } from "./FooterReveal";
 import { Logo, LogoMark } from "./Logo";
 import { SocialIcon } from "./SocialIcon";
 
@@ -57,6 +58,7 @@ export function SiteFooter() {
 
   return (
     <footer className="site-footer sfoot sfoot--wide">
+      <FooterReveal />
       <div className="container sfoot__grid">
         {/* Brand column: logo, one line about ToyoApps, social icons */}
         <div className="sfoot__brand">
@@ -228,7 +230,7 @@ function FooterBadges() {
       </ul>
       <ul className="sfoot__pay" aria-label="Accepted payment methods">
         {b.payments.map((p) => (
-          <li key={p} className={`sfoot__card sfoot__card--${p.toLowerCase().replace(/[^a-z]+/g, "-")}`} title={p}>
+          <li key={p} className={`sfoot__card sfoot__card--${p.toLowerCase().replace(/[^a-z]+/g, "-")}`} data-name={p}>
             <PaymentMark name={p} />
             <span className="sr-only">{p}</span>
           </li>

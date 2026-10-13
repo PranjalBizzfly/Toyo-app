@@ -1,3 +1,4 @@
+import { PlanAlign } from "@/components/product/PlanAlign";
 import { Labelled } from "@/components/ui/Labelled";
 import { ProductCta } from "@/components/product/ProductCta";
 import Link from "next/link";
@@ -157,6 +158,7 @@ export default async function ProductSectionPage({ params }: Props) {
               {pricing.unit && <span>Per {pricing.unit}</span>}
               {pricing.currency && <span>{pricing.currency}</span>}
             </p>
+            <PlanAlign />
             <div className="pz-plans">
               {pricing.plans.map((p) => (
                 <article key={p.name} className={`pz-plan${p.recommended ? " pz-plan--rec" : ""}`}>

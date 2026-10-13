@@ -215,10 +215,10 @@
 .pz-plan__desc { font-size: 15px; color: var(--text-secondary); }
 .pz-plan__price { margin-top: 22px; font-family: var(--font-display); font-size: clamp(2.6rem, 2rem + 2vw, 3.75rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1; color: var(--heading); }
 .pz-plan__period { font-size: 15px; color: var(--text); }
-.pz-plan__cta { display: inline-flex; align-items: center; justify-content: center; min-width: 200px; min-height: 44px; margin: 34px 0 30px; padding: 0 20px; border: 1px solid var(--primary); background: var(--primary-soft); color: var(--primary); font-size: 15px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; transition: background .2s var(--ease), color .2s var(--ease); }
+.pz-plan__cta { display: inline-flex; align-items: center; justify-content: center; min-width: 200px; min-height: 44px; margin: 28px 0 22px; padding: 0 20px; border: 1px solid var(--primary); background: var(--primary-soft); color: var(--primary); font-size: 15px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; transition: background .2s var(--ease), color .2s var(--ease); }
 .pz-plan__cta:hover, .pz-plan--rec .pz-plan__cta { background: var(--primary); color: var(--on-primary); }
 .pz-plan--rec .pz-plan__cta:hover { background: var(--primary-hover); }
-.pz-plan__list { align-self: stretch; display: grid; gap: 16px; text-align: left; }
+.pz-plan__list { align-self: stretch; display: grid; gap: 12px; text-align: left; }
 .pz-plan__list li { position: relative; padding-left: 30px; font-size: 16px; line-height: 1.45; color: var(--text); }
 .pz-plan__list li::before { content: "✓"; position: absolute; left: 4px; top: 0; color: var(--text-muted); }
 .pz-pricing__foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px 32px; margin-top: 40px; font-size: 13px; color: var(--text-secondary); }

@@ -30,6 +30,11 @@ import { tintStyle } from "@/lib/tint";
 import "@/app/home.css";
 import "@/app/home-zoho.css";
 import "@/app/home-hero.css";
+import "@/app/home-premium.css";
+import { HomeCoverflow } from "@/components/home/HomeCoverflow";
+import { HomeFilter } from "@/components/home/HomeFilter";
+import { HomeGlow } from "@/components/home/HomeGlow";
+import { HomeTabs } from "@/components/home/HomeTabs";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 
 export const metadata = buildMetadata({
@@ -210,6 +215,12 @@ export default function HomePage() {
   );
   const resourceList = resourceItems.slice(0, 6);
 
+  // Integration types for the filter chips. Source data mixes "Creative tools" / "Creative Tools", so group case-insensitively.
+  const typeId = (c?: string) => (c ?? "other").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  const intTypes = [...new Map(integrations.map((i) => [typeId(i.category), i.category ?? "Other"])).entries()]
+    .map(([id, label]) => ({ id, label, count: integrations.filter((i) => typeId(i.category) === id).length }))
+    .sort((a, b) => b.count - a.count);
+
   const stats = [
     { n: products.length, label: "Products" },
     { n: ecosystem.length, label: "Categories" },
@@ -239,6 +250,7 @@ export default function HomePage() {
 
   return (
     <div className="home">
+      <HomeGlow />
       {/* 1. Hero */}
       <HomeHero
         siteName={site.name}
@@ -412,9 +424,10 @@ export default function HomePage() {
         <section className="h-sec h-sec--dark st-curve" aria-labelledby="needs-title">
           <div className="container">
             <SectionHead id="needs-title" kicker="Start from the problem" title="What are you looking to solve?" align="center" />
-            <ul className="h-needs">
+            {/* 3D coverflow: the chosen problem faces forward, the rest fan out in depth. Every card stays in the HTML. */}
+            <HomeCoverflow label="Business problems" names={needs.map((n) => n.title)}>
               {needs.map((n) => (
-                <li key={n.key}>
+                <div key={n.key} className="hp-need-panel">
                   <Link href={n.href} className="h-need" style={n.tint ? tintStyle(n.tint) : undefined}>
                     <span className="icon-tile">
                       <Icon name={n.icon} />
@@ -433,10 +446,13 @@ export default function HomePage() {
                       </span>
                     )}
                     {n.meta && !n.points?.length && <span className="h-need__meta">{n.meta}</span>}
+                    <span className="hp-need__cta" aria-hidden>
+                      Explore <span>→</span>
+                    </span>
                   </Link>
-                </li>
+                </div>
               ))}
-            </ul>
+            </HomeCoverflow>
           </div>
         </section>
       )}
@@ -445,7 +461,7 @@ export default function HomePage() {
       <section className="h-sec" aria-labelledby="eco-title">
         <div className="container">
           <SectionHead id="eco-title" kicker="Ecosystem" title="Products by category" lead="Each product is listed under the business area it serves. Some also appear in a second category where they fit." />
-          <div className="h-eco">
+          <HomeTabs label="Product categories" tabs={ecosystem.map(({ category, products: list }) => ({ id: category.slug, label: category.name, meta: String(list.length) }))}>
             {ecosystem.map(({ category, products: list }) => (
               <article key={category.slug} className="h-eco__row" style={tintStyle(category.slug)}>
                 <div className="h-eco__about">
@@ -459,7 +475,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <ul className="h-eco__apps">
-                  {list.slice(0, 4).map((p) => (
+                  {list.map((p) => (
                     <li key={p.slug}>
                       <Link href={routes.product(p.slug)}>
                         <ProductLogo product={p} />
@@ -471,7 +487,7 @@ export default function HomePage() {
                 <TextLink href={routes.category(category.slug)}>Explore {category.name}</TextLink>
               </article>
             ))}
-          </div>
+          </HomeTabs>
         </div>
       </section>
 
@@ -479,33 +495,51 @@ export default function HomePage() {
       <section className="h-sec h-sec--surface" aria-labelledby="portfolio-title">
         <div className="container">
           <SectionHead id="portfolio-title" kicker="Portfolio" title="Every product in the catalog" lead={`All ${plural(products.length, "product")}, A to Z within each category.`} />
+          <HomeFilter
+            label="Filter products by category"
+            allLabel="All"
+            total={products.length}
+            options={ecosystem.map(({ category, products: list }) => ({ id: category.slug, label: category.name, count: list.length }))}
+          >
           <ul className="h-portfolio">
             {products.map((p) => (
-              <li key={p.slug}>
-                <Link href={routes.product(p.slug)} className="h-pcard">
-                  <ProductLogo product={p} />
-                  <span className="h-pcard__body">
-                  <span className="h-pcard__head">
-                    <strong>{p.name}</strong>
-                    <small>{catName(p.category)}</small>
-                  </span>
-                  <span className="h-pcard__desc">{p.shortDescription}</span>
-                  {p.primaryUseCase && (
-                    <span className="h-pcard__focus">
-                      <b>Focus:</b> {p.primaryUseCase}
+              <li key={p.slug} data-cats={ecosystem.filter((e) => e.products.some((x) => x.slug === p.slug)).map((e) => e.category.slug).join(" ") || p.category}>
+                {/* Flip card: front names the product, back carries the detail. Both faces are always in the HTML. */}
+                <Link href={routes.product(p.slug)} className="h-pcard hp-flip">
+                  <span className="hp-flip__inner">
+                    <span className="hp-flip__face hp-flip__front">
+                      <ProductLogo product={p} />
+                      <span className="h-pcard__head">
+                        <strong>{p.name}</strong>
+                        <small>{catName(p.category)}</small>
+                      </span>
+                      {p.primaryUseCase && (
+                        <span className="h-pcard__focus">
+                          <b>Focus:</b> {p.primaryUseCase}
+                        </span>
+                      )}
+                      <span className="hp-flip__hint" aria-hidden>
+                        Hover for details
+                      </span>
                     </span>
-                  )}
-                  <span className="h-pcard__foot">
-                    <StatusBadge status={p.status} pending={isPending(p)} />
-                    <span className="h-more">
-                      View <span aria-hidden>›</span>
+                    <span className="hp-flip__face hp-flip__back">
+                      <span className="h-pcard__head" aria-hidden>
+                        <strong>{p.name}</strong>
+                      </span>
+                      <span className="h-pcard__desc">{p.shortDescription}</span>
+                      <span className="h-pcard__foot">
+                        <StatusBadge status={p.status} pending={isPending(p)} />
+                        <span className="h-more">
+                          View <span aria-hidden>›</span>
+                        </span>
+                      </span>
                     </span>
-                  </span>
                   </span>
                 </Link>
               </li>
             ))}
           </ul>
+          </HomeFilter>
         </div>
       </section>
 
@@ -649,7 +683,7 @@ export default function HomePage() {
         <section className="h-sec" aria-labelledby="depth-title">
           <div className="container">
             <SectionHead id="depth-title" kicker="Feature depth" title="Go deep on what each product does" lead="These features have a page of their own explaining the problem they solve, how they work step by step, and who uses them." />
-            <div className="h-depth">
+            <HomeTabs label="Products with feature pages" tabs={depth.map(({ product: p, features }) => ({ id: p.slug, label: p.name, meta: String(features.length) }))}>
               {depth.map(({ product: p, features }) => (
                 <article key={p.slug} className="h-depth__col">
                   <Link href={routes.product(p.slug)} className="h-depth__head">
@@ -669,7 +703,7 @@ export default function HomePage() {
                   {hasHub(p) && <TextLink href={routes.productSection(p.slug, "features")}>All {p.name} features</TextLink>}
                 </article>
               ))}
-            </div>
+            </HomeTabs>
           </div>
         </section>
       )}
@@ -693,10 +727,14 @@ export default function HomePage() {
                 <ImageSlot src="/images/home/integrations.webp" alt="Connected business tools" width={560} height={420} />
               </div>
             </div>
+            <HomeFilter label="Filter integrations by type" allLabel="All" total={integrations.length} options={intTypes}>
             <ul className="h-ints">
               {integrations.map((i) => (
-                <li key={i.slug}>
+                <li key={i.slug} data-cats={typeId(i.category)}>
                   <Link href={integrationHasPage(i) ? routes.integration(i.slug) : `${routes.integrations()}#${i.slug}`} className="h-int">
+                    <b className="hp-int__mark" aria-hidden>
+                      {i.name.replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).slice(0, 2).map((w) => w[0]).join("")}
+                    </b>
                     <strong>{i.name}</strong>
                     <small>{i.category}</small>
                     <span>{i.summary}</span>
@@ -705,6 +743,7 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
+            </HomeFilter>
           </div>
         </section>
       )}
@@ -736,12 +775,18 @@ export default function HomePage() {
             <ul className="h-res">
               {resourceList.map(({ product: p, section, item }) => (
                 <li key={`${p.slug}-${section}-${item.slug}`}>
-                  <Link href={routes.productItem(p.slug, section, item.slug)} className="h-card h-res__item">
+                  <Link href={routes.productItem(p.slug, section, item.slug)} className="h-card h-res__item hp-res" data-type={section === "support" ? "support" : "resource"}>
+                    <span className="hp-res__type" aria-hidden>
+                      <Icon name={section === "support" ? "headset" : "layers"} />
+                    </span>
                     <small>
                       {p.name} · {section === "support" ? "Support" : "Resource"}
                     </small>
                     <strong>{item.name}</strong>
-                    <span>{item.summary}</span>
+                    <span className="hp-res__text">{item.summary}</span>
+                    <span className="hp-res__go" aria-hidden>
+                      <Icon name="arrow-right" />
+                    </span>
                   </Link>
                 </li>
               ))}

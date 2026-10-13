@@ -1,0 +1,116 @@
+/*
+ * Site footer interactions. Hover and focus states only: no sizes, spacing,
+ * display or grid properties change, so the footer layout stays exactly as it is.
+ */
+.sfoot { --fm-ease: cubic-bezier(.2, .7, .2, 1); --fm-spring: cubic-bezier(.34, 1.56, .64, 1); }
+
+/* Link columns: an underline draws in and the link nudges right */
+.sfoot .fgroup__list a {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: color .2s ease, background-size .35s var(--fm-ease), translate .3s var(--fm-ease);
+}
+.sfoot .fgroup__list a:is(:hover, :focus-visible) { color: var(--primary); background-size: 100% 1px; translate: 3px 0; }
+
+/* Column headings: a short accent bar grows under the title */
+.sfoot .fgroup__title { position: relative; }
+.sfoot .fgroup__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s var(--fm-ease);
+}
+.sfoot .fgroup:hover .fgroup__title::after { transform: scaleX(1); }
+
+/* Logo */
+.sfoot .sfoot__logo img, .sfoot .sfoot__logo svg { transition: transform .5s var(--fm-spring); }
+.sfoot .sfoot__logo:hover :is(img, svg) { transform: rotate(-6deg) scale(1.06); }
+
+/* Social icons: lift, fill with brand colour, icon spins */
+.sfoot .sfoot__social li > * { transition: transform .35s var(--fm-spring), background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .3s ease; }
+.sfoot .sfoot__social li > * svg { transition: transform .5s var(--fm-spring); }
+.sfoot .sfoot__social li > *:is(:hover, :focus-visible) {
+  transform: translateY(-4px);
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-primary);
+  box-shadow: 0 10px 20px -10px color-mix(in srgb, var(--primary) 70%, transparent);
+}
+.sfoot .sfoot__social li > *:hover svg { transform: rotate(360deg); }
+
+/* App and partner badges, payment cards: lift with a soft shadow */
+.sfoot :is(.sfoot__apps, .sfoot__badges, .sfoot__pay) > li > * { transition: transform .35s var(--fm-spring), box-shadow .3s ease, filter .3s ease; }
+.sfoot :is(.sfoot__apps, .sfoot__badges, .sfoot__pay) > li > *:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 22px -14px rgb(15 34 53 / .5);
+  filter: saturate(1.15);
+}
+
+/* Contact pills and "View all" link */
+.sfoot .sfoot__pill { transition: transform .3s var(--fm-ease), box-shadow .3s ease, background-color .25s ease, color .25s ease; }
+.sfoot .sfoot__pill:hover { transform: translateY(-2px); box-shadow: 0 12px 22px -12px color-mix(in srgb, var(--primary) 70%, transparent); }
+.sfoot .sfoot__pill--outline:hover { background-color: var(--primary); color: var(--on-primary); }
+.sfoot :is(.sfoot__pill, .sfoot__more) svg { transition: transform .3s var(--fm-ease); }
+.sfoot :is(.sfoot__pill, .sfoot__more):hover svg { transform: translateX(4px); }
+
+/* Buttons (Talk to us, All products, app and partner badges): a shine sweeps across, and they press down on click */
+.sfoot :is(.sfoot__pill, .sfoot__apps > li > *, .sfoot__badge) { position: relative; overflow: hidden; isolation: isolate; }
+.sfoot :is(.sfoot__pill, .sfoot__apps > li > *, .sfoot__badge)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / .45) 50%, transparent 70%);
+  translate: -120% 0;
+  transition: translate .8s var(--fm-ease);
+}
+.sfoot :is(.sfoot__pill, .sfoot__apps > li > *, .sfoot__badge):hover::after { translate: 120% 0; }
+.sfoot :is(.sfoot__pill, .sfoot__apps > li > *, .sfoot__badge, .sfoot__social li > *):active { transform: translateY(0) scale(.96); transition-duration: .1s; }
+
+/* Entrance: columns fade up one after another (state set by FooterReveal; visible without JS) */
+.sfoot[data-fm-reveal] :is(.sfoot__brand, .sfoot__cols > *, .sfoot__contact) { transition: opacity .7s ease, translate .7s var(--fm-ease); }
+.sfoot[data-fm-reveal="ready"] :is(.sfoot__brand, .sfoot__cols > *, .sfoot__contact) { opacity: 0; translate: 0 24px; }
+.sfoot .sfoot__cols > :nth-child(1) { transition-delay: .08s; }
+.sfoot .sfoot__cols > :nth-child(2) { transition-delay: .16s; }
+.sfoot .sfoot__cols > :nth-child(3) { transition-delay: .24s; }
+.sfoot .sfoot__cols > :nth-child(4) { transition-delay: .32s; }
+.sfoot .sfoot__cols > :nth-child(5) { transition-delay: .4s; }
+.sfoot .sfoot__cols > :nth-child(n + 6) { transition-delay: .48s; }
+
+/* Payment cards: a small name tooltip on hover */
+.sfoot .sfoot__pay > li { position: relative; }
+.sfoot .sfoot__pay > li::before {
+  content: attr(data-name);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  z-index: 5;
+  padding: 4px 9px;
+  border-radius: 6px;
+  background: var(--heading);
+  color: var(--bg);
+  font-size: 11.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  translate: -50% 4px;
+  transition: opacity .2s ease, translate .25s var(--fm-ease);
+}
+.sfoot .sfoot__pay > li:hover::before { opacity: 1; translate: -50% 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sfoot *::after { transition: none !important; }
+  .sfoot * { transition-duration: .01ms !important; }
+  .sfoot :hover { transform: none !important; translate: none !important; }
+}
