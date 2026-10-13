@@ -799,6 +799,41 @@ export const zuzu: Product = {
   },
   supportUrl: "mailto:support@bizzfly.com",
   connections: [{ product: "hrmagix", description: "ZUZU lists an attendance sync with HRMagix." }],
+  productIntegrations: [
+    {
+      slug: "zuzu-hrmagix-integration",
+      name: "HRMagix",
+      summary: "Connect HRMagix so its attendance appears beside ZUZU's tracked time, and add HRMagix employees to ZUZU directly.",
+      connects:
+        "ZUZU connects to HRMagix, the HR, attendance and payroll suite, sharing attendance only: never screenshots or activity.",
+      body: [
+        "ZUZU's integration screen describes HRMagix as an HR, attendance and payroll suite. Connecting takes about two minutes and uses a one-time pairing code that expires after 15 minutes. Once connected, every daily report shows HRMagix punch-in and punch-out beside the work ZUZU recorded.",
+        "HRMagix attendance is shown beside tracked time and never added to it. ZUZU points out that a gap between the two is not idle time, because meetings and calls happen away from the keyboard. Linking an employee does not change what is tracked.",
+      ],
+      workflow: [
+        "An admin creates a pairing code in ZUZU",
+        "In HRMagix, the code is entered under Settings, Integrations, usezuzu to finish connecting",
+        "Employees with the same email address in both products are linked, each link made and audited separately",
+        "Every daily report then compares HRMagix punch-in and punch-out with tracked time",
+      ],
+      benefits: [
+        "Hire once in HRMagix and the employee can be added to ZUZU with name, email, department and designation filled in",
+        "The activation code for the desktop app is emailed to the linked employee",
+        "Optionally, HRMagix punches can start and stop desktop tracking for linked employees",
+        "Keys can be rotated in one step, with the previous keys working for 24 hours",
+      ],
+      setup: [
+        "Disconnecting revokes every credential and ends every employee link; attendance already mirrored is kept and tracking is not affected",
+        "Attendance dates follow HRMagix, so align the two time zones in Settings",
+      ],
+      faqs: [
+        { question: "Does HRMagix see screenshots or activity?", answer: "No. ZUZU says the connection shares attendance only, never screenshots or activity." },
+        { question: "Is HRMagix attendance counted as tracked time?", answer: "No. It is shown beside tracked time and never added to it." },
+        { question: "Where does this information come from?", answer: "From the HRMagix integration screen inside the ZUZU app, served from usezuzu.com. That screen sits behind sign-in, and ZUZU's public marketing pages do not yet describe the integration." },
+      ],
+      sources: [HOME],
+    },
+  ],
   useCases: [
     { title: "Daily reporting without writing reports", description: "Managers get an AI-written report per person per day, delivered as a digest before the meeting starts." },
     { title: "Spotting change early", description: "Behaviour-change detection flags work that drifts from a person's own baseline and routes it to review." },

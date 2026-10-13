@@ -65,6 +65,23 @@ export const productSections = [
 ] as const;
 export type ProductSection = (typeof productSections)[number];
 
+/**
+ * Fixed product navigation order, shared by every product. A product shows an
+ * item only when that section exists; sections left out here (Compare) keep
+ * their pages and URLs but are not linked from the product navigation.
+ */
+export const productNavSections = [
+  "overview",
+  "features",
+  "solutions",
+  "industries",
+  "integrations",
+  "pricing",
+  "security",
+  "resources",
+  "support",
+] as const satisfies readonly ProductSection[];
+
 export const sectionLabels: Record<ProductSection, string> = {
   overview: "Overview",
   features: "Features",

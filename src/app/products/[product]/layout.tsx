@@ -13,7 +13,7 @@ import "@/app/edge-transitions.css";
 import "@/app/card-styles.css";
 import { getProductStory } from "@/lib/product-story";
 import { getProductCtas } from "@/lib/product-cta";
-import { routes, sectionLabels } from "@/lib/routes";
+import { productNavSections, routes, sectionLabels } from "@/lib/routes";
 
 type Props = { children: React.ReactNode; params: Promise<{ product: string }> };
 
@@ -28,7 +28,8 @@ export default async function ProductLayout({ children, params }: Props) {
   const product = getProduct((await params).product);
   if (!product) notFound();
 
-  const items = getAvailableSections(product).map((s) => ({
+  const available = getAvailableSections(product);
+  const items = productNavSections.filter((s) => available.includes(s)).map((s) => ({
     label: s === "overview" ? product.name : sectionLabels[s],
     href: routes.productSection(product.slug, s),
   }));

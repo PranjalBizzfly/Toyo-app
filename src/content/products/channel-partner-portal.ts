@@ -32,6 +32,25 @@ export const channelPartnerPortal: Product = {
   },
   websiteUrl: "https://cp.infra.1xl.com/",
   appUrl: "https://cp.infra.1xl.com/register",
+  pricing: {
+    note: "Joining is free, with no setup fees and no monthly costs. Partners earn a flat 1% commission on every booking; binding rates and payment terms are those in the signed Channel Partner Agreement.",
+    plans: [
+      {
+        name: "Channel Partner",
+        price: "Free",
+        description: "For channel partners selling 1XL Infra's UAE developments.",
+        features: [
+          "Flat 1% commission on every booking",
+          "Tranche-based tracking across the sale lifecycle",
+          "Bank transfer directly to your registered IBAN",
+          "Full audit log of every disbursement",
+        ],
+        cta: { label: "Become a Partner", href: "https://cp.infra.1xl.com/register" },
+      },
+    ],
+    asOf: "2026-10-13",
+    sourceUrl: "https://cp.infra.1xl.com/",
+  },
   featureCategories: [
     {
       slug: "selling",

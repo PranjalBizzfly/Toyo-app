@@ -857,6 +857,36 @@ export const taskmagic: Product = {
       sources: [`${TM}/use-cases`],
     },
   ],
+  productIntegrations: [
+    {
+      slug: "taskmagix-sop-galaxy-integration",
+      name: "SOP Galaxy",
+      summary: "Sync SOPs into TaskMagix through the optional SOP Galaxy software integration.",
+      connects:
+        "The SOP Galaxy software integration lets a team sync its SOPs into TaskMagix, as an alternative to uploading each procedure directly.",
+      body: [
+        "TaskMagix runs on SOPs, so the procedure library is where the work starts. Its privacy policy and terms describe SOPs being either uploaded directly or synced through the SOP Galaxy software integration.",
+        "The integration is optional and only runs when you enable it. When it is on, SOPs and their metadata pass to SOP Galaxy for processing under SOP Galaxy's own terms.",
+      ],
+      workflow: [
+        "Choose to enable the SOP Galaxy integration",
+        "SOPs are synced through SOP Galaxy instead of being uploaded directly",
+        "TaskMagix forwards SOPs to SOP Galaxy while the integration is enabled",
+      ],
+      benefits: [
+        "A second way to bring SOPs in, alongside direct upload",
+        "You keep ownership of SOPs synced through SOP Galaxy",
+        "Nothing is shared with SOP Galaxy unless you choose to sync",
+      ],
+      features: ["sop-galaxy-sync", "sop-library"],
+      faqs: [
+        { question: "Does TaskMagix own SOPs synced through SOP Galaxy?", answer: "No. The terms say you keep ownership of all SOPs you upload, including those synced through SOP Galaxy." },
+        { question: "Where can I see which integrations are active?", answer: "The privacy policy says a current list of subprocessors and active integrations is available on request." },
+        { question: "Where does this information come from?", answer: "Only from TaskMagix's privacy policy and terms of service. The public site does not yet document setup steps for the SOP Galaxy integration, so this page does not describe them." },
+      ],
+      sources: [`${TM}/privacy-policy`, `${TM}/terms-of-service`],
+    },
+  ],
   supportTopics: [
     {
       slug: "importing-from-other-tools",

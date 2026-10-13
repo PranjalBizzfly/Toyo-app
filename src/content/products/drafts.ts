@@ -1553,6 +1553,33 @@ export const meetingmind: Product = {
       { name: "Premium", price: "$49", period: "month", description: "For teams that run on meetings.", features: ["Unlimited meeting analyses", "Premium modules: AI Project Manager, Client, Sales and Recruitment", "Everything in Pro"], cta: { label: "Choose Premium", href: `${MM}/signup` }, recommended: true },
     ],
   },
+  productIntegrations: [
+    {
+      slug: "meetingmind-google-meet-integration",
+      name: "Google Meet",
+      summary: "The MeetingMind bot joins a Google Meet call from a pasted link and captures the audio for transcripts, summaries and action items.",
+      connects: "MeetingMind connects to Google Meet calls by sending a bot that joins the call from a meeting link you paste in.",
+      body: [
+        "Google Meet is the only conferencing platform the MeetingMind site names. The bot captures the call's audio, so the rest of the team installs nothing for a meeting to be captured.",
+      ],
+      workflow: [
+        "Paste a Google Meet link into MeetingMind to invite the bot",
+        "The bot joins the call and captures the audio",
+        "A speaker-labelled, timestamped transcript is produced in the meeting's language",
+        "The summary, decisions and action items appear on your dashboard",
+      ],
+      benefits: [
+        "Nothing for other participants to install",
+        "No one has to take notes by hand during the call",
+        "Connect Google Calendar and the bot joins your scheduled Google Meet meetings automatically",
+      ],
+      faqs: [
+        { question: "Does the bot work with Zoom or Microsoft Teams?", answer: "The site names only Google Meet." },
+      ],
+      features: ["meeting-bot", "searchable-transcripts", "ai-summaries-and-decisions"],
+      sources: [`${MM}/`],
+    },
+  ],
   sources: [`${MM}/`, `${MM}/signup`, `${MM}/login`],
   lastVerified: "2026-10-12",
 };
